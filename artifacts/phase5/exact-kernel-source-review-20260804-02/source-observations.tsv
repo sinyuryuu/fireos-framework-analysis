@@ -1,0 +1,8 @@
+source_member	lines	observation	confidence
+kernel/mediatek/4.4/kernel/locking/rtmutex.c	1079-1090	remove_waiter() locks current->pi_lock, dequeues waiter, and clears current->pi_blocked_on	已證實（source scope）
+kernel/mediatek/4.4/kernel/locking/rtmutex.c	1657-1689	rt_mutex_start_proxy_lock() calls remove_waiter() after an error from the proxy path	已證實（source scope）
+kernel/mediatek/4.4/kernel/futex.c	1946;2930;3220-3252	FUTEX PI requeue operations call rt_mutex_start_proxy_lock/finish_proxy_lock and expose the relevant operation cases	已證實（source scope）
+kernel/mediatek/4.4/kernel/locking/rtmutex_common.h	25-36	AArch64 non-debug rt_mutex_waiter layout is two rb_nodes, task pointer, lock pointer, and prio	已證實（source/ABI scope）
+kernel/mediatek/4.4/arch/arm64/configs/mt8183_defconfig	5;163-164;169;249;363;436;1634;1642;2605;3672-3675	ARM64, KALLSYMS, FUTEX, RT_MUTEXES, PREEMPT, RANDOMIZE_BASE, ION/MTK_ION and TEE settings; GenieZone enable is not set in this defconfig	已證實（defconfig scope）
+kernel/mediatek/4.4/drivers/staging/android/ion/ion.c	1482-1601;1626-1664;1912-1930	ION userspace ioctl dispatch, custom ioctl callback, open/release and misc device registration	已證實（source scope）
+kernel/mediatek/4.4/drivers/staging/android/ion/mtk/ion_drv.c	319-405;410-435;605-617	MTK custom ioctl path copies userspace data, validates handles, and has a GET_PHYS path; no capable() check is visible in this function	已證實（source scope; not exploitability）

@@ -1,0 +1,8 @@
+# Host-only commands used for this evidence package
+curl --fail --silent --show-error --location --range 2535000000-2588816415 https://fireos-tablet-src.s3.amazonaws.com/7OU0BzzYt2YlM3MKwchLwgyUHM/Fire_HD10-7.3.3.0-20240730.tar.bz2 -o source.range
+bzip2recover source.range
+bzip2 -dc rec*source.range.bz2 > slice.raw
+python3 tools/scripts/extract_phase5_exact_kernel_members.py --input slice.raw --output member-extract --pattern '(^|/)rtmutex\\.c$' --pattern '(^|/)futex\\.c$'
+python3 tools/scripts/compare_phase5_exact_rtmutex_source.py --amazon member-extract/members/rtmutex.c.52aef7133971.txt --reference artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v4.4.146.c --output rtmutex-comparison.json
+python3 tools/scripts/calculate_phase5_rtmutex_source_layout.py --config adb/phase5/PHASE5F-CMDQ-RUNTIME-20260803-02/kernel_config.stdout.txt --schema tools/configs/phase5/linux-v4.4-rtmutex-waiter-layout.json --pointer-size 8 --output artifacts/phase5/exact-source-layout-review-20260804-01
+# No adb, fastboot, BROM, DA, ioctl, exploit, root, bootloader, or partition command ran.

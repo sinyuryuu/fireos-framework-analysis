@@ -779,3 +779,37 @@ remain source/applicability hypotheses only. No new ioctl, kernel trigger,
 Bluetooth activation, root, BROM/DA, fastboot, remount, partition operation or
 boot-chain action was performed. Any such follow-up needs its own exact
 operation-specific Level 3 report and approval.
+
+### Phase 5N — exact Amazon kernel source and GhostLock review
+
+Phase 5N extended the bounded official Fire HD 10 7.3.3.0 source review into
+the archive tail and recovered the exact `kernel/locking/rtmutex.c` member. Its
+SHA-256 is identical to the pinned Linux stable v4.4.146 snapshot, and the
+source retains the pre-fix `remove_waiter()` proxy-path pattern described by
+GhostLock/CVE-2026-43499. The exact `futex.c` source contains the PI requeue
+and proxy-lock paths, while the captured config has `CONFIG_FUTEX=y` and
+`CONFIG_RT_MUTEXES=y`.
+
+This is strong source/config applicability evidence only. It does not prove
+the signed PS7330 kernel binary is unpatched, does not calculate runtime
+kernel/KASLR offsets, and does not authorize a live exploit. The bounded
+source-derived layout remains `task=0x30`, `lock=0x38`, `prio=0x40`, and
+`sizeof(struct rt_mutex_waiter)=0x48` for the non-debug AArch64 model.
+
+The exact MT8183 source/config review also confirms ION and MTK_ION build
+surfaces, but no ION node was opened and no ioctl or kernel trigger was sent.
+GenieZone source is present in the sampled tree, while the MT8183 defconfig
+has `CONFIG_MTK_ENABLE_GENIEZONE` unset; source presence is not runtime
+reachability.
+
+New outputs:
+
+- `findings/phase-5n-exact-source-ghostlock-review.md`
+- `findings/phase-5n-evidence-index.md`
+- `artifacts/phase5/exact-kernel-source-review-20260804-02/`
+- `tools/scripts/extract_phase5_exact_kernel_members.py`
+- `tools/scripts/compare_phase5_exact_rtmutex_source.py`
+- `artifacts/phase5/exact-source-layout-review-20260804-01/`
+
+No device mutation, exploit compilation/execution, root, BROM/DA, fastboot,
+bootloader, remount, or partition operation was performed in Phase 5N.
