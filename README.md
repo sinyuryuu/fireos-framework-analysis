@@ -1095,3 +1095,37 @@ The finding narrows the AEE route to a root-only vendor device interface; it
 does not create a shell-readable root primitive. AEE `open`/`read`/`write`/
 `ioctl`, crash/race triggering, permission changes, SELinux changes, boot-chain
 operations and partition writes remain out of scope.
+
+### Phase 5Z — Android AEE implementation map
+
+Phase 5Z documents the Android-side implementation rather than treating a
+public kernel PoC as a Fire root method. Public MediaTek Android source shows
+that `aed0` and `aed1` are kernel misc devices with `read`/`write`/`ioctl`
+operations, `/proc/aed` reporting, and an `aed_init()` registration path. MTK
+SELinux references show that the userspace reader is normally a privileged
+`aee_aed`/`aee_aedv`-style daemon/domain. The exact Fire PS7330 runtime has the
+same AEE device surface, but the nodes are `root:root 0600`, SELinux-labeled
+`aed_device`, and shell read/write checks are both zero. No node was opened and
+no AEE daemon or crash trigger was executed.
+
+The GhostLock Android boundary is separate: native/Bionic futex PI reaches the
+Linux futex/rtmutex path. The cited public report says Android-specific
+exploitation is future work; the captured public AArch64 target tree contains
+other Google build profiles, not `KFTRWI/trona/MT8183/PS7330`.
+
+Phase 5Z outputs:
+
+- `tools/scripts/inspect_phase5y_exact_source_aee_paths.sh`
+- `tools/scripts/analyze_phase5z_android_aee.py`
+- `artifacts/phase5/exact-source-aee-paths-20260804-01/`
+- `artifacts/phase5/android-aee-implementation-review-20260804-04/`
+- `findings/phase-5z-android-aee-implementation-review.md`
+- `findings/phase-5z-evidence-index.md`
+- `output/tables/phase5z-android-aee-implementation.csv`
+- `output/call-graphs/phase5z-android-aee-flow.mmd`
+
+The AEE node ABI, daemon-domain integration and exact Fire shell boundary are
+now separated. Exact daemon binary/patch status and complete source-member
+inventory remain unresolved. Node open/read/write/ioctl, malformed AEE input,
+race/crash, root payload, BROM/DA, fastboot, remount and partition operations
+remain explicitly rejected.

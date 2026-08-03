@@ -1,0 +1,1 @@
+curl --fail --retry 2 --max-time 1800 -sS https://fireos-tablet-src.s3.amazonaws.com/7OU0BzzYt2YlM3MKwchLwgyUHM/Fire_HD10-7.3.3.0-20240730.tar.bz2 | bzip2 -dc | tar -tf - | awk filter for AEE/AED/MRDUMP/IPANIC names

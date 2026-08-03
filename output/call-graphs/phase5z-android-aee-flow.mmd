@@ -1,0 +1,18 @@
+flowchart TD
+    K[MediaTek kernel AEE API / driver] --> R0[CONFIG_MTK_AEE_AED]
+    R0 --> E[aed_init]
+    E --> D0[misc_register aed0]
+    E --> D1[misc_register aed1]
+    D0 --> N0[/dev/aed0 EE node]
+    D1 --> N1[/dev/aed1 KE node]
+    E --> P[/proc/aed current reports]
+    K --> I[IPANIC / MRDUMP / ATF logger]
+    N0 -->|privileged read/write/ioctl| U[AEE userspace reader, if present]
+    N1 -->|privileged read/write/ioctl| U
+    U --> S[init + SELinux AEE domain on MTK branches]
+    X[Exact Fire PS7330 shell UID 2000] -.->|read=0, write=0| N0
+    X -.->|read=0, write=0| N1
+    X -.->|read=0, write=0| T[/dev/atf_log]
+    Q[GhostLock native/Bionic futex PI] --> F[Linux futex / rtmutex kernel path]
+    F -. separate from AEE .-> K
+
