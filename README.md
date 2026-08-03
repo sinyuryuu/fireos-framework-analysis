@@ -1657,3 +1657,29 @@ Phase 5AT outputs:
 - `findings/phase-5at-ps7330-artifact-followup.md`
 - `findings/phase-5at-evidence-index.md`
 - `artifacts/phase5/ps7330-artifact-followup-20260804-01/metadata.md`
+
+### Phase 5AU — PS7330 OTA residue and update-service read-only review
+
+Phase 5AU captured the exact PS7330.4104N runtime and inspected OTA package,
+settings, service, storage-path and bounded file-search surfaces without
+triggering an update. The shell-visible shared Download directory had no OTA
+bin/zip; private cache and OTA data paths were permission denied. The OTA debug
+dashboard requires the Amazon privileged permission
+com.amazon.dcp.permission.DISPLAY_DEBUG_UI and was not bypassed.
+
+The existing OTA APK was reviewed offline with JADX 1.5.6. Its data model has
+PublishedUpdates.RemoteURI and PendingUpdates.LocalURI, but the live app
+database is private and was not read through a permission bypass. No exact
+PS7330 download URL or pending URI was recovered.
+
+Phase 5AU outputs:
+
+- `tools/scripts/capture_phase5au_ota_residue.sh`
+- `findings/phase-5au-ota-residue-review.md`
+- `findings/phase-5au-evidence-index.md`
+- `artifacts/phase5/ota-apk-static-review-20260804-01/`
+
+The raw device capture remains local-only because it contains device-specific
+identifiers. The capture script requires an explicit serial, refuses to
+overwrite an output directory, supports --dry-run, and records SHA-256 hashes.
+No package, settings, OTA, reboot, root or partition state changed.
