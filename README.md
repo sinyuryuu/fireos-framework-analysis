@@ -1458,3 +1458,28 @@ Phase 5AK outputs:
 The next measurement requires the researcher to enable the service in Android
 Settings and turn on the visible app toggle. The shell collector intentionally
 does not automate that consent.
+
+### Phase 5AL — MTK Android 9 exact-device CVE surface triage
+
+Phase 5AL compared official MediaTek bulletin scope with a fresh, read-only
+capture from the exact `KFTRWI/trona/MT8183/PS7330.4104N` device. The closest
+public candidates are `CVE-2022-20053/20054` (IMS/AT), but no IMS package,
+IMS service, CCCI/modem/AT node, or matching daemon was observed; only the
+basic `IMms` and `telephony.registry` services were present. `CVE-2022-20067`
+has MT8183/Android 9 scope but requires system execution privileges. Preloader
+rows were rejected as Android-version/boot-chain inputs, and Wi-Fi rows were
+not root-impact vulnerabilities.
+
+Phase 5AL outputs:
+
+- `tools/scripts/capture_phase5al_mtk_cve_surface.sh`
+- `findings/phase-5al-mtk-cve-surface-review.md`
+- `findings/phase-5al-evidence-index.md`
+- `output/tables/phase5al-mtk-cve-surface-matrix.csv`
+- `output/call-graphs/phase5al-mtk-cve-surface.mmd`
+- `adb/phase5/PHASE5AL-MTK-CVE-SURFACE-20260804-02/`
+- `artifacts/phase5/phase5al-mtk-cve-surface-review-20260804-01/`
+
+The collector supports `--dry-run` and does not open a device node, call
+ioctl, send AT/modem traffic, trigger a kernel race, reboot, or write any
+partition.
