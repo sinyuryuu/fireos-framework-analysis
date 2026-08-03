@@ -1,0 +1,358 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/cmdq_driver.c */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 52-55 */
+   52	static const struct of_device_id cmdq_of_ids[] = {
+   53		{.compatible = "mediatek,gce",},
+   54		{}
+   55	};
+/* END source lines 52-55 */
+
+/* BEGIN source lines 120-178 */
+  120	static int cmdq_open(struct inode *pInode, struct file *pFile)
+  121	{
+  122		struct cmdqFileNodeStruct *pNode;
+  123	
+  124		CMDQ_VERBOSE("CMDQ driver open fd=%p begin\n", pFile);
+  125	
+  126		pFile->private_data = kzalloc(sizeof(struct cmdqFileNodeStruct), GFP_KERNEL);
+  127		if (pFile->private_data == NULL) {
+  128			CMDQ_ERR("Can't allocate memory for CMDQ file node\n");
+  129			return -ENOMEM;
+  130		}
+  131	
+  132		pNode = (struct cmdqFileNodeStruct *) pFile->private_data;
+  133		pNode->userPID = current->pid;
+  134		pNode->userTGID = current->tgid;
+  135	
+  136		INIT_LIST_HEAD(&(pNode->taskList));
+  137		spin_lock_init(&pNode->nodeLock);
+  138	
+  139		CMDQ_VERBOSE("CMDQ driver open end\n");
+  140	
+  141		return 0;
+  142	}
+  143	
+  144	
+  145	static int cmdq_release(struct inode *pInode, struct file *pFile)
+  146	{
+  147		struct cmdqFileNodeStruct *pNode;
+  148		unsigned long flags;
+  149	
+  150		CMDQ_VERBOSE("CMDQ driver release fd=%p begin\n", pFile);
+  151	
+  152		pNode = (struct cmdqFileNodeStruct *) pFile->private_data;
+  153	
+  154		if (pNode == NULL) {
+  155			CMDQ_ERR("CMDQ file node NULL\n");
+  156			return -EFAULT;
+  157		}
+  158	
+  159		spin_lock_irqsave(&pNode->nodeLock, flags);
+  160	
+  161		/* note that we did not release CMDQ tasks */
+  162		/* issued by this file node, */
+  163		/* since their HW operation may be pending. */
+  164	
+  165		spin_unlock_irqrestore(&pNode->nodeLock, flags);
+  166	
+  167		/* scan through tasks that created by this file node and release them */
+  168		cmdq_core_release_task_by_file_node((void *)pNode);
+  169		cmdqCoreFreeWriteAddressNode((void *)pNode);
+  170	
+  171		if (pFile->private_data != NULL) {
+  172			kfree(pFile->private_data);
+  173			pFile->private_data = NULL;
+  174		}
+  175	
+  176		CMDQ_VERBOSE("CMDQ driver release end\n");
+  177	
+  178		return 0;
+/* END source lines 120-178 */
+
+/* BEGIN source lines 663-706 */
+  663	static long cmdq_ioctl(struct file *pFile, unsigned int code, unsigned long param)
+  664	{
+  665		int32_t status = 0;
+  666	
+  667		switch (code) {
+  668		case CMDQ_IOCTL_QUERY_USAGE:
+  669			status = cmdq_driver_ioctl_query_usage(pFile, param);
+  670			break;
+  671		case CMDQ_IOCTL_QUERY_CAP_BITS:
+  672			status = cmdq_driver_ioctl_query_cap_bits(param);
+  673			break;
+  674		case CMDQ_IOCTL_QUERY_DTS:
+  675			status = cmdq_driver_ioctl_query_dts(param);
+  676			break;
+  677		case CMDQ_IOCTL_NOTIFY_ENGINE:
+  678			status = cmdq_driver_ioctl_notify_engine(param);
+  679			break;
+  680		case CMDQ_IOCTL_ASYNC_EXEC:
+  681			CMDQ_MSG("ioctl CMDQ_IOCTL_ASYNC_EXEC\n");
+  682			status = mdp_ioctl_async_exec(pFile, param);
+  683			break;
+  684		case CMDQ_IOCTL_ASYNC_WAIT:
+  685			CMDQ_MSG("ioctl CMDQ_IOCTL_ASYNC_WAIT\n");
+  686			status = mdp_ioctl_async_wait(param);
+  687			break;
+  688		case CMDQ_IOCTL_ALLOC_READBACK_SLOTS:
+  689			CMDQ_MSG("ioctl CMDQ_IOCTL_ALLOC_READBACK_SLOTS\n");
+  690			status = mdp_ioctl_alloc_readback_slots(pFile, param);
+  691			break;
+  692		case CMDQ_IOCTL_FREE_READBACK_SLOTS:
+  693			CMDQ_MSG("ioctl CMDQ_IOCTL_FREE_READBACK_SLOTS\n");
+  694			status = mdp_ioctl_free_readback_slots(pFile, param);
+  695			break;
+  696		case CMDQ_IOCTL_READ_READBACK_SLOTS:
+  697			CMDQ_MSG("ioctl CMDQ_IOCTL_READ_READBACK_SLOTS\n");
+  698			status = mdp_ioctl_read_readback_slots(param);
+  699			break;
+  700		default:
+  701			CMDQ_ERR("unrecognized ioctl 0x%08x\n", code);
+  702			return -ENOIOCTLCMD;
+  703		}
+  704	
+  705		return status;
+  706	}
+/* END source lines 663-706 */
+
+/* BEGIN source lines 708-746 */
+  708	#ifdef CONFIG_COMPAT
+  709	static long cmdq_ioctl_compat(struct file *pFile, unsigned int code, unsigned long param)
+  710	{
+  711		switch (code) {
+  712		case CMDQ_IOCTL_QUERY_USAGE:
+  713		case CMDQ_IOCTL_QUERY_CAP_BITS:
+  714		case CMDQ_IOCTL_QUERY_DTS:
+  715		case CMDQ_IOCTL_NOTIFY_ENGINE:
+  716		case CMDQ_IOCTL_ASYNC_EXEC:
+  717		case CMDQ_IOCTL_ASYNC_WAIT:
+  718		case CMDQ_IOCTL_ALLOC_READBACK_SLOTS:
+  719		case CMDQ_IOCTL_FREE_READBACK_SLOTS:
+  720		case CMDQ_IOCTL_READ_READBACK_SLOTS:
+  721			/* All ioctl structures should be the same size in 32-bit and 64-bit linux. */
+  722			return cmdq_ioctl(pFile, code, param);
+  723		case CMDQ_IOCTL_LOCK_MUTEX:
+  724		case CMDQ_IOCTL_UNLOCK_MUTEX:
+  725			CMDQ_ERR("[COMPAT]deprecated ioctl 0x%08x\n", code);
+  726			return -ENOIOCTLCMD;
+  727		default:
+  728			CMDQ_ERR("[COMPAT]unrecognized ioctl 0x%08x\n", code);
+  729			return -ENOIOCTLCMD;
+  730		}
+  731	
+  732		CMDQ_ERR("[COMPAT]unrecognized ioctl 0x%08x\n", code);
+  733		return -ENOIOCTLCMD;
+  734	}
+  735	#endif
+  736	
+  737	
+  738	static const struct file_operations cmdqOP = {
+  739		.owner = THIS_MODULE,
+  740		.open = cmdq_open,
+  741		.release = cmdq_release,
+  742		.unlocked_ioctl = cmdq_ioctl,
+  743	#ifdef CONFIG_COMPAT
+  744		.compat_ioctl = cmdq_ioctl_compat,
+  745	#endif
+  746	};
+/* END source lines 708-746 */
+
+/* BEGIN source lines 817-909 */
+  817		struct proc_dir_entry *debugDirEntry = NULL;
+  818	
+  819		debugDirEntry = proc_mkdir(CMDQ_DRIVER_DEVICE_NAME "_debug", NULL);
+  820		if (debugDirEntry) {
+  821			struct proc_dir_entry *entry = NULL;
+  822	
+  823			entry = proc_create("status", 0440, debugDirEntry, &cmdqDebugStatusOp);
+  824			entry = proc_create("record", 0440, debugDirEntry, &cmdqDebugRecordOp);
+  825	#ifdef CMDQ_INSTRUCTION_COUNT
+  826			entry =
+  827			    proc_create("instructionCount", 0440, debugDirEntry,
+  828					&cmdqDebugInstructionCountOp);
+  829	#endif
+  830		}
+  831	
+  832		return 0;
+  833	}
+  834	
+  835	static int cmdq_probe(struct platform_device *pDevice)
+  836	{
+  837		int status;
+  838		struct device *cmdq_dev = NULL;
+  839	
+  840		CMDQ_MSG("CMDQ driver probe begin\n");
+  841	
+  842		/* Function link */
+  843		cmdq_virtual_function_setting();
+  844	
+  845		/* init cmdq device related data */
+  846		cmdq_dev_init(pDevice);
+  847	
+  848		/* init cmdq context */
+  849		cmdqCoreInitialize();
+  850	
+  851		status = alloc_chrdev_region(&gCmdqDevNo, 0, 1, CMDQ_DRIVER_DEVICE_NAME);
+  852		if (status != 0) {
+  853			/* Cannot get CMDQ device major number */
+  854			CMDQ_ERR("Get CMDQ device major number(%d) failed(%d)\n", gCmdqDevNo, status);
+  855		} else {
+  856			/* Get CMDQ device major number successfully */
+  857			CMDQ_MSG("Get CMDQ device major number(%d) success(%d)\n", gCmdqDevNo, status);
+  858		}
+  859	
+  860		/* ioctl access point (/dev/mtk_cmdq) */
+  861		gCmdqCDev = cdev_alloc();
+  862		gCmdqCDev->owner = THIS_MODULE;
+  863		gCmdqCDev->ops = &cmdqOP;
+  864	
+  865		status = cdev_add(gCmdqCDev, gCmdqDevNo, 1);
+  866	
+  867		gCMDQClass = class_create(THIS_MODULE, CMDQ_DRIVER_DEVICE_NAME);
+  868		cmdq_dev = device_create(gCMDQClass, NULL, gCmdqDevNo, NULL, CMDQ_DRIVER_DEVICE_NAME);
+  869	
+  870		status =
+  871		    request_irq(cmdq_dev_get_irq_id(), cmdq_irq_handler,
+  872				IRQF_TRIGGER_LOW | IRQF_SHARED, CMDQ_DRIVER_DEVICE_NAME, gCmdqCDev);
+  873		if (status != 0) {
+  874			CMDQ_ERR("Register cmdq driver irq handler(%d) failed(%d)\n", gCmdqDevNo, status);
+  875			return -EFAULT;
+  876		}
+  877	
+  878		/* although secusre CMDQ driver is responsible for handle secure IRQ, */
+  879		/* MUST registet secure IRQ to GIC in normal world to ensure it will be initialize correctly */
+  880		/* (that's because t-base does not support GIC init IRQ in secure world...) */
+  881	#ifdef CMDQ_SECURE_PATH_SUPPORT
+  882		status =
+  883		    request_irq(cmdq_dev_get_irq_secure_id(), cmdq_irq_handler, IRQF_TRIGGER_LOW,
+  884				CMDQ_DRIVER_DEVICE_NAME, gCmdqCDev);
+  885		CMDQ_MSG("register sec IRQ:%d\n", cmdq_dev_get_irq_secure_id());
+  886		if (status != 0) {
+  887			CMDQ_ERR("Register cmdq driver secure irq handler(%d) failed(%d)\n", gCmdqDevNo,
+  888				 status);
+  889			return -EFAULT;
+  890		}
+  891	#endif
+  892	
+  893		/* proc debug access point */
+  894		cmdq_create_debug_entries();
+  895	
+  896		/* device attributes for debugging */
+  897		device_create_file(&pDevice->dev, &dev_attr_error);
+  898		device_create_file(&pDevice->dev, &dev_attr_log_level);
+  899		device_create_file(&pDevice->dev, &dev_attr_profile_enable);
+  900	#ifdef CMDQ_INSTRUCTION_COUNT
+  901		device_create_file(&pDevice->dev, &dev_attr_instruction_count_level);
+  902	#endif
+  903	
+  904		mdp_limit_dev_create(pDevice);
+  905		CMDQ_MSG("CMDQ driver probe end\n");
+  906		cmdq_mdp_get_func()->mdp_probe();
+  907		return 0;
+  908	}
+  909	
+/* END source lines 817-909 */
+
+/* BEGIN source lines 947-1045 */
+  947		.restore = NULL,
+  948		.restore_noirq = cmdq_pm_restore_noirq,
+  949	};
+  950	
+  951	
+  952	static struct platform_driver gCmdqDriver = {
+  953		.probe = cmdq_probe,
+  954		.remove = cmdq_remove,
+  955		.driver = {
+  956			   .name = CMDQ_DRIVER_DEVICE_NAME,
+  957			   .owner = THIS_MODULE,
+  958			   .pm = &cmdq_pm_ops,
+  959			   .of_match_table = cmdq_of_ids,
+  960			   }
+  961	};
+  962	
+  963	static int __init cmdq_init(void)
+  964	{
+  965		int status;
+  966	
+  967		CMDQ_MSG("CMDQ driver init begin\n");
+  968	
+  969		/* Initialize group callback */
+  970		cmdqCoreInitGroupCB();
+  971	
+  972		/* MDP function link */
+  973		cmdq_mdp_virtual_function_setting();
+  974		cmdq_mdp_platform_function_setting();
+  975	
+  976		/* Register MDP callback */
+  977		cmdqCoreRegisterCB(CMDQ_GROUP_MDP,
+  978				   cmdq_mdp_get_func()->mdpClockOn, cmdq_mdp_get_func()->mdpDumpInfo,
+  979				   cmdq_mdp_get_func()->mdpResetEng, cmdq_mdp_get_func()->mdpClockOff);
+  980	
+  981		cmdqCoreRegisterErrorResetCB(CMDQ_GROUP_MDP,
+  982				   cmdq_mdp_get_func()->errorReset);
+  983	
+  984		/* Register module dispatch callback */
+  985		cmdqCoreRegisterDispatchModCB(CMDQ_GROUP_MDP,
+  986				   cmdq_mdp_get_func()->dispatchModule);
+  987	
+  988		/* Register restore task */
+  989		cmdqCoreRegisterTrackTaskCB(CMDQ_GROUP_MDP,
+  990				   cmdq_mdp_get_func()->trackTask);
+  991	
+  992		cmdqCoreRegisterTaskCycleCB(CMDQ_GROUP_MDP,
+  993			cmdq_mdp_get_func()->beginTask,
+  994			cmdq_mdp_get_func()->endTask);
+  995	
+  996		cmdqCoreRegisterTaskCycleCB(CMDQ_GROUP_ISP,
+  997			cmdq_mdp_get_func()->beginISPTask,
+  998			cmdq_mdp_get_func()->endISPTask);
+  999	
+ 1000		/* Register VENC callback */
+ 1001		cmdqCoreRegisterCB(CMDQ_GROUP_VENC, NULL, cmdq_mdp_get_func()->vEncDumpInfo, NULL, NULL);
+ 1002	
+ 1003		cmdqCoreRegisterMonitorTaskCB(CMDQ_GROUP_MDP,
+ 1004			cmdq_mdp_get_func()->startTask_atomic, cmdq_mdp_get_func()->finishTask_atomic);
+ 1005	
+ 1006		status = platform_driver_register(&gCmdqDriver);
+ 1007		if (status != 0) {
+ 1008			CMDQ_ERR("Failed to register the CMDQ driver(%d)\n", status);
+ 1009			return -ENODEV;
+ 1010		}
+ 1011	
+ 1012		/* register pm notifier */
+ 1013		status = register_pm_notifier(&cmdq_pm_notifier_block);
+ 1014		if (status != 0) {
+ 1015			CMDQ_ERR("Failed to register_pm_notifier(%d)\n", status);
+ 1016			return -ENODEV;
+ 1017		}
+ 1018	
+ 1019		CMDQ_MSG("CMDQ driver init end\n");
+ 1020	
+ 1021		return 0;
+ 1022	}
+ 1023	
+ 1024	static void __exit cmdq_exit(void)
+ 1025	{
+ 1026		int32_t status;
+ 1027	
+ 1028		CMDQ_MSG("CMDQ driver exit begin\n");
+ 1029	
+ 1030		device_destroy(gCMDQClass, gCmdqDevNo);
+ 1031	
+ 1032		class_destroy(gCMDQClass);
+ 1033	
+ 1034		cdev_del(gCmdqCDev);
+ 1035	
+ 1036		gCmdqCDev = NULL;
+ 1037	
+ 1038		unregister_chrdev_region(gCmdqDevNo, 1);
+ 1039	
+ 1040		platform_driver_unregister(&gCmdqDriver);
+ 1041	
+ 1042		/* register pm notifier */
+ 1043		status = unregister_pm_notifier(&cmdq_pm_notifier_block);
+ 1044		if (status != 0) {
+ 1045			/* Failed to unregister_pm_notifier */
+/* END source lines 947-1045 */

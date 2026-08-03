@@ -599,6 +599,15 @@ The public compact evidence, hashes, and bounded-range metadata are under:
 - `tools/scripts/scan_phase5_exact_source_cmdq.sh`
 - `tools/scripts/extract_phase5_source_members.py`
 
+A subsequent read-only runtime capture read `/proc/config.gz`, module lists,
+device-node metadata, and IRQ metadata. It confirmed the installed kernel's
+`CONFIG_MTK_PLATFORM="mt8183"`, `CONFIG_MTK_CMDQ=y`, and
+`CONFIG_MTK_CMDQ_TAB=y`; the raw capture and manifest are under
+`adb/phase5/PHASE5F-CMDQ-RUNTIME-20260803-02/`, with the interpretation in
+`findings/phase-5g-runtime-cmdq-corroboration.md`. This raises the v2/v3
+payload mismatch to a high-confidence inference, while the compiled driver
+identity and CVE status remain unverified.
+
 No new device mutation or exploit execution was performed. A v3-aware payload,
 standalone CMDQ ioctl probe, kernel-memory primitive, BROM/DA action, or boot
 chain write is outside the prior approval and remains a new Level 3 task.

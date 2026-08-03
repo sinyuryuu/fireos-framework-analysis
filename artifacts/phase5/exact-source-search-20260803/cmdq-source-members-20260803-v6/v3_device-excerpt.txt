@@ -1,0 +1,55 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/cmdq_device.c */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 473-522 */
+  473	void cmdq_dev_init(struct platform_device *pDevice)
+  474	{
+  475		struct device_node *node = pDevice->dev.of_node;
+  476	
+  477		/* init cmdq device dependent data */
+  478		do {
+  479			memset(&gCmdqDev, 0x0, sizeof(struct CmdqDeviceStruct));
+  480	
+  481			gCmdqDev.pDev = &pDevice->dev;
+  482			gCmdqDev.regBaseVA = (unsigned long)of_iomap(node, 0);
+  483			gCmdqDev.regBasePA = cmdq_dev_get_gce_node_PA(node, 0);
+  484			gCmdqDev.irqId = irq_of_parse_and_map(node, 0);
+  485			gCmdqDev.irqSecId = irq_of_parse_and_map(node, 1);
+  486			gCmdqDev.clk_gce = devm_clk_get(&pDevice->dev, "GCE");
+  487			gCmdqDev.clk_gce_timer = devm_clk_get(&pDevice->dev, "GCE_TIMER");
+  488	
+  489			CMDQ_LOG
+  490			    ("[CMDQ] platform_dev dev:%p PA:%pa VA:%lx irqId:%d irqSecId:%d clk gce:0x%p timer:0x%p\n",
+  491			     gCmdqDev.pDev, &gCmdqDev.regBasePA, gCmdqDev.regBaseVA, gCmdqDev.irqId,
+  492			     gCmdqDev.irqSecId, gCmdqDev.clk_gce, gCmdqDev.clk_gce_timer);
+  493		} while (0);
+  494	
+  495		if (!enable_4G()) {
+  496			/* Not special 4GB case, use dma_mask to restrict dma memory to low 4GB address */
+  497			gCmdqDev.dma_mask_result = dma_set_coherent_mask(&pDevice->dev, DMA_BIT_MASK(32));
+  498			CMDQ_LOG("set dma mask result: %d\n", gCmdqDev.dma_mask_result);
+  499		}
+  500	
+  501		/* map MMSYS VA */
+  502		cmdq_mdp_map_mmsys_VA();
+  503		/* init module VA */
+  504		cmdq_dev_init_module_base_VA();
+  505		/* init module clock */
+  506		cmdq_dev_init_module_clk();
+  507		/* init module PA for instruction count */
+  508		cmdq_get_func()->initModulePAStat();
+  509		/* init load HW information from device tree */
+  510		cmdq_dev_init_device_tree(node);
+  511	}
+  512	
+  513	void cmdq_dev_deinit(void)
+  514	{
+  515		/* unmap MMSYS VA */
+  516		cmdq_mdp_unmap_mmsys_VA();
+  517		cmdq_dev_deinit_module_base_VA();
+  518	
+  519		/* deinit cmdq device dependent data */
+  520		do {
+  521			cmdq_dev_free_module_base_VA(cmdq_dev_get_module_base_VA_GCE());
+  522			gCmdqDev.regBaseVA = 0;
+/* END source lines 473-522 */

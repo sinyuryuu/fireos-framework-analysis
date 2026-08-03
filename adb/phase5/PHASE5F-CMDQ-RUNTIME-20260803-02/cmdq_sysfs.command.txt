@@ -1,0 +1,1 @@
+adb -s G001LT0511550CFT shell for\ p\ in\ /sys/class/misc/mtk_cmdq\ /sys/class/misc/mtk_cmdq/dev\ /sys/class/misc/mtk_cmdq/uevent\ /sys/class/misc/mtk_cmdq/device/uevent\ /sys/class/misc/mtk_cmdq/device/modalias\;\ do\ echo\ \"---\ \$p\"\;\ ls\ -ldZ\ \"\$p\"\ 2\>\&1\;\ \[\ -f\ \"\$p\"\ \]\ \&\&\ cat\ \"\$p\"\ 2\>\&1\;\ done

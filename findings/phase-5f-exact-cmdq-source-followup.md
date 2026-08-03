@@ -226,6 +226,13 @@ artifact or additional source provenance. No safe conclusion should be drawn
 from the v2 vulnerable-looking code until the running implementation is
 matched.
 
+The subsequent read-only runtime corroboration is recorded in
+`findings/phase-5g-runtime-cmdq-corroboration.md`. The installed kernel's
+`/proc/config.gz` reports the expected MT8183/CMDQ configuration and the
+device exposes `/dev/mtk_cmdq` plus `mtk_cmdq` IRQs. This raises the v2/v3
+explanation to **High confidence**, while preserving the remaining binary
+provenance and CVE-status uncertainty.
+
 ## Public references
 
 - [Android March 2020 security bulletin](https://source.android.com/docs/security/bulletin/2020-03-01?hl=en)

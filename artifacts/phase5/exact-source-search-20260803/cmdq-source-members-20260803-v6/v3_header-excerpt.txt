@@ -1,0 +1,44 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/cmdq_driver.h */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 47-85 */
+   47	struct cmdqWriteAddressStruct {
+   48		/* [IN] count of the writable buffer (unit is # of uint32_t, NOT in byte) */
+   49		uint32_t count;
+   50	
+   51		/* [OUT] When Alloc, this is the resulting PA. It is guaranteed to be continuous. */
+   52		/* [IN]  When Free, please pass returned address down to ioctl. */
+   53		/*  */
+   54		/* indeed param startPA should be UNSIGNED LONG type for 64 bit kernel. */
+   55		/* Considering our plartform supports max 4GB RAM(upper-32bit don't care for SW) */
+   56		/* and consistent common code interface, remain uint32_t type. */
+   57		uint32_t startPA;
+   58	};
+   59	
+   60	#define CMDQ_IOCTL_MAGIC_NUMBER 'x'
+   61	
+   62	#define CMDQ_IOCTL_LOCK_MUTEX   _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 1, int)
+   63	#define CMDQ_IOCTL_UNLOCK_MUTEX _IOR(CMDQ_IOCTL_MAGIC_NUMBER, 2, int)
+   64	#define CMDQ_IOCTL_QUERY_USAGE  _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 4, struct cmdqUsageInfoStruct)
+   65	
+   66	/*  */
+   67	/* Chip capability query. output parameter is a bit field. */
+   68	/* Bit definition is CMDQ_CAP_BITS. */
+   69	/*  */
+   70	#define CMDQ_IOCTL_QUERY_CAP_BITS _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 10, int)
+   71	
+   72	/*  */
+   73	/* HW info. from DTS */
+   74	/*  */
+   75	#define CMDQ_IOCTL_QUERY_DTS _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 11, struct cmdqDTSDataStruct)
+   76	
+   77	/*  */
+   78	/* Notify MDP will use specified engine before really use. */
+   79	/* input int is same as EngineFlag. */
+   80	/*  */
+   81	#define CMDQ_IOCTL_NOTIFY_ENGINE _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 12, uint64_t)
+   82	
+   83	s32 cmdq_driver_ioctl_query_usage(struct file *pf, unsigned long param);
+   84	s32 cmdq_driver_ioctl_query_cap_bits(unsigned long param);
+   85	s32 cmdq_driver_ioctl_query_dts(unsigned long param);
+/* END source lines 47-85 */

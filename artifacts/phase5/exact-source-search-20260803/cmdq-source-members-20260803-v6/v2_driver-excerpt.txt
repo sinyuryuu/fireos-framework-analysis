@@ -1,0 +1,62 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v2/cmdq_driver.c */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 709-752 */
+  709		case CMDQ_IOCTL_ALLOC_WRITE_ADDRESS:
+  710			do {
+  711				struct cmdqWriteAddressStruct addrReq;
+  712				dma_addr_t paStart = 0;
+  713	
+  714				CMDQ_MSG("CMDQ_IOCTL_ALLOC_WRITE_ADDRESS\n");
+  715	
+  716				if (copy_from_user(&addrReq, (void *)param, sizeof(addrReq))) {
+  717					CMDQ_ERR("CMDQ_IOCTL_ALLOC_WRITE_ADDRESS copy_from_user failed\n");
+  718					return -EFAULT;
+  719				}
+  720	
+  721				status = cmdqCoreAllocWriteAddress(addrReq.count, &paStart);
+  722				if (status != 0) {
+  723					CMDQ_ERR
+  724					    ("CMDQ_IOCTL_ALLOC_WRITE_ADDRESS cmdqCoreAllocWriteAddress() failed\n");
+  725					return status;
+  726				}
+  727	
+  728	
+  729				addrReq.startPA = (uint32_t) paStart;
+  730				CMDQ_MSG("CMDQ_IOCTL_ALLOC_WRITE_ADDRESS get 0x%08x\n", addrReq.startPA);
+  731	
+  732				if (copy_to_user((void *)param, &addrReq, sizeof(addrReq))) {
+  733					CMDQ_ERR("CMDQ_IOCTL_ALLOC_WRITE_ADDRESS copy_to_user failed\n");
+  734					return -EFAULT;
+  735				}
+  736				status = 0;
+  737			} while (0);
+  738			break;
+  739		case CMDQ_IOCTL_FREE_WRITE_ADDRESS:
+  740			do {
+  741				struct cmdqWriteAddressStruct freeReq;
+  742	
+  743				CMDQ_MSG("CMDQ_IOCTL_FREE_WRITE_ADDRESS\n");
+  744	
+  745				if (copy_from_user(&freeReq, (void *)param, sizeof(freeReq))) {
+  746					CMDQ_ERR("CMDQ_IOCTL_FREE_WRITE_ADDRESS copy_from_user failed\n");
+  747					return -EFAULT;
+  748				}
+  749	
+  750				status = cmdqCoreFreeWriteAddress(freeReq.startPA);
+  751				if (status != 0)
+  752					return status;
+/* END source lines 709-752 */
+
+/* BEGIN source lines 973-982 */
+  973		/* ioctl access point (/dev/mtk_cmdq) */
+  974		gCmdqCDev = cdev_alloc();
+  975		gCmdqCDev->owner = THIS_MODULE;
+  976		gCmdqCDev->ops = &cmdqOP;
+  977	
+  978		status = cdev_add(gCmdqCDev, gCmdqDevNo, 1);
+  979	
+  980		gCMDQClass = class_create(THIS_MODULE, CMDQ_DRIVER_DEVICE_NAME);
+  981		object = device_create(gCMDQClass, NULL, gCmdqDevNo, NULL, CMDQ_DRIVER_DEVICE_NAME);
+  982	
+/* END source lines 973-982 */

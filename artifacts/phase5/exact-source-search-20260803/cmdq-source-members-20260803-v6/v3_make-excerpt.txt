@@ -1,0 +1,40 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/Makefile */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 14-29 */
+   14	# common driver code for CMDQ
+   15	
+   16	ccflags-y += -I$(srctree)/drivers/misc/mediatek/smi/ \
+   17	             -I$(srctree)/drivers/misc/mediatek/mmp/ \
+   18	             -I$(srctree)/drivers/misc/mediatek/mdp/ \
+   19	             -I$(srctree)/drivers/iommu/ \
+   20	             -I$(srctree)/drivers/misc/mediatek/m4u/$(MTK_PLATFORM) \
+   21	             -I$(srctree)/drivers/misc/mediatek/mach/$(MTK_PLATFORM)/include
+   22	
+   23	MDP_PLATFORM_DIR=$(srctree)/drivers/misc/mediatek/cmdq/v3/$(MTK_PLATFORM)
+   24	platformdir_exists=$(shell if [ -d ${MDP_PLATFORM_DIR} ]; then echo "y"; else echo "n"; fi;)
+   25	ifeq ($(platformdir_exists), y)
+   26	ccflags-y += -I$(MDP_PLATFORM_DIR)/
+   27	else
+   28	ccflags-y += -DCMDQ_COMMON_ENG_SUPPORT
+   29	endif
+/* END source lines 14-29 */
+
+/* BEGIN source lines 80-95 */
+   80	# driver module
+   81	obj-y += cmdq_record.o
+   82	obj-y += cmdq_core.o
+   83	obj-y += cmdq_virtual.o
+   84	obj-y += cmdq_device.o
+   85	obj-y += cmdq_driver.o
+   86	obj-y += cmdq_mmp.o
+   87	obj-y += cmdq_mdp_common.o
+   88	obj-y += cmdq_prof.o
+   89	obj-y += cmdq_test.o
+   90	obj-y += cmdq_sec.o
+   91	obj-y += cmdq_event_common.o
+   92	obj-y += cmdq_subsys_common.o
+   93	
+   94	ifeq ($(platformdir_exists), y)
+   95	obj-y += $(subst ",,$(CONFIG_MTK_PLATFORM)")/
+/* END source lines 80-95 */

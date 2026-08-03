@@ -24,7 +24,9 @@ TARGETS: dict[str, str] = {
     "v2_core_header": "kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v2/cmdq_core.h",
     "v2_driver": "kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v2/cmdq_driver.c",
     "v2_header": "kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v2/cmdq_driver.h",
+    "v3_device": "kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/cmdq_device.c",
     "v3_driver": "kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/cmdq_driver.c",
+    "v3_header": "kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/cmdq_driver.h",
     "v3_make": "kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/Makefile",
 }
 
@@ -35,7 +37,9 @@ EXCERPTS: dict[str, tuple[tuple[int, int], ...]] = {
     "v2_core_header": ((112, 120),),
     "v2_driver": ((709, 752), (973, 982)),
     "v2_header": ((46, 74),),
-    "v3_driver": ((663, 706), (708, 746)),
+    "v3_device": ((473, 522),),
+    "v3_driver": ((52, 55), (120, 178), (663, 706), (708, 746), (817, 909), (947, 1045)),
+    "v3_header": ((47, 85),),
     "v3_make": ((14, 29), (80, 95)),
 }
 

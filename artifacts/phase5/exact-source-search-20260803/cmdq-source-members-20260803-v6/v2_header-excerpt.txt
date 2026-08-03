@@ -1,0 +1,34 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v2/cmdq_driver.h */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 46-74 */
+   46	struct cmdqWriteAddressStruct {
+   47		/* [IN] count of the writable buffer (unit is # of uint32_t, NOT in byte) */
+   48		uint32_t count;
+   49	
+   50		/* [OUT] When Alloc, this is the resulting PA. It is guaranteed to be continuous. */
+   51		/* [IN]  When Free, please pass returned address down to ioctl. */
+   52		/*  */
+   53		/* indeed param startPA should be UNSIGNED LONG type for 64 bit kernel. */
+   54		/* Considering our plartform supports max 4GB RAM(upper-32bit don't care for SW) */
+   55		/* and consistent common code interface, remain uint32_t type. */
+   56		uint32_t startPA;
+   57	};
+   58	
+   59	#define CMDQ_IOCTL_MAGIC_NUMBER 'x'
+   60	
+   61	#define CMDQ_IOCTL_LOCK_MUTEX   _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 1, int)
+   62	#define CMDQ_IOCTL_UNLOCK_MUTEX _IOR(CMDQ_IOCTL_MAGIC_NUMBER, 2, int)
+   63	#define CMDQ_IOCTL_EXEC_COMMAND _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 3, struct cmdqCommandStruct)
+   64	#define CMDQ_IOCTL_QUERY_USAGE  _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 4, struct cmdqUsageInfoStruct)
+   65	
+   66	/*  */
+   67	/* Async operations */
+   68	/*  */
+   69	#define CMDQ_IOCTL_ASYNC_JOB_EXEC _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 5, struct cmdqJobStruct)
+   70	#define CMDQ_IOCTL_ASYNC_JOB_WAIT_AND_CLOSE _IOR(CMDQ_IOCTL_MAGIC_NUMBER, 6, struct cmdqJobResultStruct)
+   71	
+   72	#define CMDQ_IOCTL_ALLOC_WRITE_ADDRESS _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 7, struct cmdqWriteAddressStruct)
+   73	#define CMDQ_IOCTL_FREE_WRITE_ADDRESS _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 8, struct cmdqWriteAddressStruct)
+   74	#define CMDQ_IOCTL_READ_ADDRESS_VALUE _IOW(CMDQ_IOCTL_MAGIC_NUMBER, 9, struct cmdqReadAddressStruct)
+/* END source lines 46-74 */

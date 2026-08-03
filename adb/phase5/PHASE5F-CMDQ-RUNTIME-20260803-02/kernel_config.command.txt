@@ -1,0 +1,1 @@
+adb -s G001LT0511550CFT shell if\ \[\ -r\ /proc/config.gz\ \]\;\ then\ toybox\ gzip\ -dc\ /proc/config.gz\;\ else\ echo\ CONFIG_NOT_READABLE_OR_ABSENT\;\ exit\ 4\;\ fi
