@@ -1129,3 +1129,33 @@ now separated. Exact daemon binary/patch status and complete source-member
 inventory remain unresolved. Node open/read/write/ioctl, malformed AEE input,
 race/crash, root payload, BROM/DA, fastboot, remount and partition operations
 remain explicitly rejected.
+
+### Phase 5AA — Public Android implementation recheck
+
+Phase 5AA records the Android-side implementation of the public routes discussed
+after Phase 5Z. `mtk-easy-su` is confirmed as a Kotlin wrapper around Git-LFS
+precompiled MTK/Magisk assets; its pinned `mtk-su64` is the same payload already
+tested and failed on the exact PS7330 build. The public GhostLock Android ports
+are target-specific native implementations: `popsicle` targets Snapdragon/
+Android 16/6.12.23, while `aristotle` targets MediaTek/XIG04/Android 12/5.10.136
+and explicitly says it was not hardware-validated. The Android detector and
+Pixel Dirty Pipe projects are not portable root methods, and their own warnings
+make installation or triggering inappropriate for this device.
+
+The review also separates Qualcomm/Xiaomi service candidates from MTK, and
+preloader/secure-boot projects from Android userspace. No external APK, native
+payload, exploit, BROM/DA, device node, boot image, preloader, fastboot or
+partition operation was performed.
+
+Phase 5AA outputs:
+
+- `tools/scripts/analyze_phase5aa_android_implementations.py`
+- `artifacts/phase5/android-implementation-public-review-20260804-01/`
+- `findings/phase-5aa-android-implementation-review.md`
+- `findings/phase-5aa-evidence-index.md`
+- `output/tables/phase5aa-android-implementation-matrix.csv`
+
+The only remaining safe research value is offline comparison against a
+verifiable exact PS7330 signed kernel/boot artifact. Without that artifact,
+there is no evidence for a new exact Android root implementation or a safe
+payload adaptation; no equivalent public payload should be rerun.

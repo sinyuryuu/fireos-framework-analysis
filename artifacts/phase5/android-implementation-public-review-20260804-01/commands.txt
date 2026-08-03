@@ -1,0 +1,12 @@
+# Host-only metadata review. No repository was executed or built.
+git ls-remote https://github.com/KoCleo/mtk-easy-su.git refs/heads/master
+curl -fsSL https://api.github.com/repos/<owner>/<repo>
+curl -fsSL https://api.github.com/repos/<owner>/<repo>/commits/<branch>
+curl -fsSL https://raw.githubusercontent.com/<owner>/<repo>/<commit>/README.md
+curl -fsSL https://raw.githubusercontent.com/KoCleo/mtk-easy-su/8c6871ac7c15b8e98a47e25c35ab93b87e260475/app/src/main/AndroidManifest.xml
+curl -fsSL https://raw.githubusercontent.com/KoCleo/mtk-easy-su/8c6871ac7c15b8e98a47e25c35ab93b87e260475/app/src/main/java/juniojsv/mtk/easy/su/ExploitHandler.kt
+python3 tools/scripts/analyze_phase5aa_android_implementations.py --dry-run \
+  --device-report findings/phase-5m-evidence-index.md \
+  --existing-review findings/phase-5x-android-implementation-and-route-review.md \
+  --source-metadata artifacts/phase5/android-implementation-public-review-20260804-01/repo-metadata.tsv \
+  --output output/tables/phase5aa-derived

@@ -1,0 +1,25 @@
+# Phase 5AA evidence index
+
+| Evidence ID | Source / file | Test / time | Observed result | Interpretation | Confidence |
+|---|---|---|---|---|---|
+| P5AA-BASE-001 | `findings/phase-5m-evidence-index.md` → `P5M-BASE-001` | preserved exact-device baseline | KFTRWI/trona, MT8183, Android 9/API 28, PS7330.4104N, patch 2024-02-01, kernel 4.4.146+, green VB, SELinux Enforcing | exact target for all comparisons | Confirmed |
+| P5AA-MTK-001 | `artifacts/phase5/android-implementation-public-review-20260804-01/repo-metadata.tsv`; `source-boundary.tsv`; `artifacts/phase5/mtk-easy-su-current-review-20260804-01/` | public source review, 2026-08-04 | pinned mtk-easy-su is Kotlin wrapper + LFS payload; mtk-su64 object matches prior tested payload; no exact profile | no new Android implementation or payload is present | Confirmed |
+| P5AA-MTK-002 | `findings/phase-5-evidence-index.md` → `P5E-CMDQ-007` | `MTK-SU-CMDQ-T03` | same verified mtk-su64 failed with exit 1 and `Failed critical init step 3`; no UID 0 marker | tested pinned payload did not produce root on exact PS7330 | Confirmed, route-scoped |
+| P5AA-ANDROID-001 | [popsicle README](https://github.com/x-spy/CVE-2026-43499-popsicle) at commit `2765ac6c5d9be686bc6cd07ad8c998d1c2e67012` | public source review, 2026-08-04 | target is Xiaomi/Snapdragon/Android 16/kernel 6.12.23; target generated from boot/XBL data | device-specific native Android implementation, not MT8183/PS7330 | Confirmed |
+| P5AA-ANDROID-005 | [Linuxoid-cn/CVE-2026-43499-Poc-Analysis](https://github.com/Linuxoid-cn/CVE-2026-43499-Poc-Analysis) at commit `d7e805fc1a13b87ecf644a8869e6d313f2d1ecde` | public source review, 2026-08-04 | generic Android arm64 profile/target generator; exact boot/profile required | porting framework only; no exact target | Confirmed |
+| P5AA-ANDROID-006 | [BuSung-dev/Root-My-Galaxy](https://github.com/BuSung-dev/Root-My-Galaxy) at commit `b2f2361eda73bba133a931ff5a2499a549d52479` | public source review, 2026-08-04 | Kotlin app selects model/kernel-specific Samsung payloads | no Amazon target or payload match | Confirmed |
+| P5AA-ANDROID-002 | [aristotle README](https://github.com/soralis0912/CVE-2026-43499-aristotle) at commit `b270dc68cb0fac959720a838f6450bdffa607874` | public source review, 2026-08-04 | target is Xiaomi XIG04/MediaTek/Android 12/kernel 5.10.136; README says not hardware validated | closest methodology, not exact target | Confirmed |
+| P5AA-ANDROID-003 | [CakesTwix detector README](https://github.com/CakesTwix/Android-CVE-2026-43499) at commit `13f949ae8e7388f31b3394f707f34c8fca4ed34d` | public source review, 2026-08-04 | Kotlin detector launches ABI native test; README warns possible crash/reboot | detector only; no install/trigger justified | Confirmed |
+| P5AA-ANDROID-004 | [DirtyPipe Android README](https://github.com/polygraphene/DirtyPipe-Android) at commit `ecddccb91ba1a1c62951a6f0faddde5369a679c7` | public source review, 2026-08-04 | Pixel 6 and 2022 patch window only; warning includes crash/brick risk | not compatible with exact 4.4.146+/2024-02 target | Confirmed |
+| P5AA-ANDROID-007 | [NebuSec/CyberMeowfia](https://github.com/NebuSec/CyberMeowfia) at commit `2c83bfb0c9230dc063e1bbfc3e06228d45dd938f` | public source review, 2026-08-04 | public Linux/native research tree; Android target varies by port | source reference only; no exact trona target | Strong evidence |
+| P5AA-ANDROID-008 | [tiann/DirtyPipeRoot](https://github.com/tiann/DirtyPipeRoot) at commit `c635bd4746d54a2e7f65e578a5141df77068bba3` | public source review, 2026-08-04 | temporary-root wrapper with explicit device-risk warning | does not establish exact-device support | Confirmed |
+| P5AA-BOOT-001 | `findings/phase-5-evidence-index.md` → `P5-WEB-004`, `P5-LK-004`; public fenrir/OPlus metadata | public source review, 2026-08-04 | reviewed boot-chain projects have no exact trona/KFTRWI/PS7330 loader/recovery set | not Android userspace; Level 3 only | Strong evidence |
+| P5AA-HACKMD-001 | [user-provided HackMD](https://hackmd.io/@lokey0905/rk-hQSzibl) | public index review, 2026-08-04 | Qualcomm ABL/Adreno and Xiaomi MQSAS/Magica entries have OEM/SoC-specific prerequisites | no exact MT8183 Amazon service/boot path shown | Confirmed, scope-scoped |
+| P5AA-CVE-001 | `findings/phase-5x-android-implementation-and-route-review.md`; [NebuSec article](https://nebusec.ai/research/ionstack-part-2/) | source attribution review | GhostLock is `CVE-2026-43499`; `CVE-2026-43503` is a separate networking issue | prevents mixing unrelated Android/kernel routes | Confirmed |
+| P5AA-SAFETY-001 | `artifacts/phase5/android-implementation-public-review-20260804-01/README.txt` and `commands.txt` | 2026-08-04 | host-only metadata/source review; no device mutation or payload execution | exact device state unchanged in this review | Confirmed |
+
+## Hashes
+
+The artifact directory contains `sha256sums.txt`; hashes cover the retained
+metadata, commands, source-boundary note and derived files, not external
+repositories or un-downloaded binaries.

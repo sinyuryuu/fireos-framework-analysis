@@ -1,0 +1,8 @@
+source	observed_boundary	not_observed	classification
+KoCleo/mtk-easy-su AndroidManifest.xml	INTERNET and RECEIVE_BOOT_COMPLETED; ordinary exported MainActivity/receiver	No privileged Android permission or exact device profile	wrapper metadata
+KoCleo/mtk-easy-su ExploitHandler.kt	Extracts assets, chooses 32/64 path, executes bundled shell/Magisk flow, checks /sbin/su	No source for the native mtk-su payload; assets are Git-LFS pointers	Android wrapper only
+KoCleo/mtk-easy-su mtk-su64	Git-LFS pointer with recorded object ID and size	No public source-level implementation in the Android tree; no new download	precompiled payload boundary
+x-spy popsicle README	Boot/XBL-derived target generation and Android NDK native preload	No MT8183/PS7330 target	device-specific native port
+aristotle README	MediaTek 5.10.136 target re-derivation; README says not hardware validated	No Android 9/4.4.146/PS7330 target	methodology reference
+CakesTwix detector README	Native detector launched repeatedly and inferred from process behavior	No root transition; warning says crash/reboot possible	unsafe detector, not installed
+DirtyPipe Android README	Pixel 6-specific Android native root runner	No KFTRWI/MT8183 support; explicit device/patch limits	version mismatch
