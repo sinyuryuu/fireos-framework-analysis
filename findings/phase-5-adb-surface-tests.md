@@ -94,3 +94,52 @@ Classification:
 - **已排除：** `pm hide` as a shell-level HOME bypass on this build.
 - **未知：** behavior from a privileged/device-policy caller; that is outside
   current ADB authority.
+
+## PM-UNINSTALL-FIRE-T01
+
+The next distinct user-state route was tested once:
+
+```text
+adb -s G001LT0511550CFT shell pm uninstall --user 0 com.amazon.firelauncher
+```
+
+The command returned exit code `1`:
+
+```text
+Failure [DELETE_FAILED_INTERNAL_ERROR]
+```
+
+The complete pre/post snapshots and the raw mutation output are under
+`adb/mutation-tests/PM-UNINSTALL-FIRE-T01/` and
+`adb/mutation-tests/PM-UNINSTALL-FIRE-T01-after/`. The post-state remained:
+
+```text
+installed=true hidden=false suspended=false stopped=false enabled=0
+HOME=com.amazon.firelauncher/.Launcher priority=50
+```
+
+The corresponding PackageManager log is:
+
+```text
+PackageManager: Attempted to delete protected package: com.amazon.firelauncher
+```
+
+Rollback was verified with:
+
+```text
+adb -s G001LT0511550CFT shell pm install-existing --user 0 com.amazon.firelauncher
+```
+
+It returned `Package com.amazon.firelauncher installed for user: 0`; the
+package was already installed because the uninstall request was rejected.
+
+Classification:
+
+- **已證實：** the user-0 uninstall route is rejected for Fire Launcher on
+  this build and logs an explicit protected-package deletion warning.
+- **已證實：** no package state, HOME resolver state, or foreground state
+  changed.
+- **已排除：** `pm uninstall --user 0` as a shell-level route for removing
+  Fire Launcher from HOME on this build.
+- **未知：** whether a privileged caller could remove the package; that is
+  outside the current ADB authority and is not a safe next experiment.
