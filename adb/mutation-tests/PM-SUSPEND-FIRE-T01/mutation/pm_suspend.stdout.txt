@@ -1,0 +1,12 @@
+Security exception: setPackagesSuspendedAsUser: Neither user 2000 nor current process has android.permission.SUSPEND_APPS.
+
+java.lang.SecurityException: setPackagesSuspendedAsUser: Neither user 2000 nor current process has android.permission.SUSPEND_APPS.
+\tat android.app.ContextImpl.enforce(ContextImpl.java:1861)
+\tat android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:1889)
+\tat com.android.server.pm.PackageManagerService.setPackagesSuspendedAsUser(PackageManagerService.java:14356)
+\tat com.android.server.pm.PackageManagerShellCommand.runSuspend(PackageManagerShellCommand.java:1704)
+\tat com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:220)
+\tat android.os.ShellCommand.exec(ShellCommand.java:634)
+\tat android.os.Binder.onTransact(Binder.java:634)
+\tat android.content.pm.IPackageManager$Stub.onTransact(IPackageManager.java:2796)
+\tat android.os.Binder.execTransact(Binder.java:634)

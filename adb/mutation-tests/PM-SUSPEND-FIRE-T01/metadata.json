@@ -1,0 +1,13 @@
+{
+  "test_id": "PM-SUSPEND-FIRE-T01",
+  "serial": "G001LT0511550CFT",
+  "user": 0,
+  "target": "com.amazon.firelauncher",
+  "operation": "pm suspend",
+  "timestamp_utc": "2026-08-03",
+  "precondition": "Fire Launcher installed, enabled, visible, unsuspended; Microsoft Launcher installed as a control candidate",
+  "restore_command": "adb -s G001LT0511550CFT shell pm unsuspend --user 0 com.amazon.firelauncher",
+  "observed_exit_code": 255,
+  "state_mutation_observed": false,
+  "confidence": "Confirmed"
+}
