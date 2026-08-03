@@ -1,0 +1,4 @@
+curl -I --max-time 30 https://fireos-tablet-src.s3.amazonaws.com/7OU0BzzYt2YlM3MKwchLwgyUHM/Fire_HD10-7.3.3.0-20240730.tar.bz2
+curl --range 0-16777215 --max-time 120 https://fireos-tablet-src.s3.amazonaws.com/7OU0BzzYt2YlM3MKwchLwgyUHM/Fire_HD10-7.3.3.0-20240730.tar.bz2 | bzip2 -dc | tar -tvf -
+curl --range 0-16777215 --max-time 120 https://fireos-tablet-src.s3.amazonaws.com/7OU0BzzYt2YlM3MKwchLwgyUHM/Fire_HD10-7.3.3.0-20240730.tar.bz2 | bzip2 -dc | tar -xOf - README.txt
+shasum -a 256 firmware/extracted/PS7331/images/preloader.img firmware/extracted/PS7331/images/lk.img firmware/extracted/PS7331/images/boot.img

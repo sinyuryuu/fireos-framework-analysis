@@ -488,3 +488,23 @@ seccfg changes, and userdata/metadata erasure. No BROM probe, DA upload,
 payload, unlock, erase, or partition write was executed. The proposed boundary
 is documented in `findings/phase-5b-brom-identification-level3-report.md` and
 is not approval-ready.
+
+### Phase 5C — exact-version source and loader search
+
+The public Amazon S3 source archive
+Fire_HD10-7.3.3.0-20240730.tar.bz2 was identified and inspected through a
+bounded HTTP range. It is a 2.59 GB source/build-material archive, not an OTA,
+preloader, LK image, DA, or recovery package. The retained prefix and exact
+headers are under
+artifacts/phase5/exact-source-search-20260803/; the repeatable collector is
+tools/scripts/inspect_phase5_exact_source_metadata.sh. The archive README
+references kernel, BusyBox, U-Boot and AOSP android-9.0.0_r1 build flows, but
+the bounded inspection does not establish a signed PS7330 boot-chain set.
+
+Historical update-endpoint redirects and the current public trona metadata
+sequence were also checked. The retained snapshots contain PS7319, PS7322,
+PS7323, PS7326, PS7328 and PS7331 targets, while the independent metadata
+sequence contains PS7319, PS7321–PS7324, PS7326–PS7329 and PS7331; no PS7330
+URL was recovered. This is a search boundary, not proof that Amazon never
+published a PS7330 package. No new BROM, DA, payload, unlock, write, erase or
+partition operation was executed.
