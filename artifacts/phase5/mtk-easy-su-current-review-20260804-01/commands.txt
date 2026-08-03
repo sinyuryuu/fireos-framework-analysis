@@ -1,0 +1,5 @@
+# Host-only metadata commands. These do not download Git LFS objects.
+curl -fsSL https://api.github.com/repos/KoCleo/mtk-easy-su/commits/master
+curl -fsSL 'https://api.github.com/repos/KoCleo/mtk-easy-su/git/trees/c5faba51c97dae3d17d7190b04b6ab880f253a52?recursive=1'
+curl -fsSL https://raw.githubusercontent.com/KoCleo/mtk-easy-su/8c6871ac7c15b8e98a47e25c35ab93b87e260475/app/src/main/assets/mtk-su64
+shasum -a 256 adb/phase5/MTK-SU-CMDQ-T03/host/mtk-su64

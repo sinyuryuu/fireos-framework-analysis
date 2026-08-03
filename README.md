@@ -907,3 +907,25 @@ Phase 5Q outputs:
 The analyzer is host-only, supports `--dry-run`, refuses to overwrite derived
 outputs, and reads only recovered source excerpts plus the prior archived
 runtime stdout.
+
+### Phase 5R — current MTK root-route revalidation
+
+Phase 5R rechecked the user-provided KoCleo fork and the MediaTek boot-chain
+projects referenced by the supplied HackMD index. The pinned KoCleo
+`mtk-su64` Git LFS object has SHA-256
+`328632e853ff6427af9f35cb83a91d9e960f35d01188ee66d46ae9c7ce7c7827`;
+the repository pointer actually resolves to the same hash as the binary that
+was already executed once in `MTK-SU-CMDQ-T03`. Therefore rerunning the fork
+would be a duplicate payload test, not a new experiment.
+
+The reviewed `fenrir` and `lkpatcher` projects operate at the MediaTek
+secure-boot/LK image layer and do not list `trona/KFTRWI` as an exact target.
+The workspace lacks a matching PS7330 LK/recovery set and only contains a
+PS7331 version-mismatched boot-chain artifact. No preloader, LK, DA, fastboot
+write, or boot-chain exploit was run in Phase 5R.
+
+Phase 5R outputs:
+
+- `findings/phase-5r-mtk-root-route-review.md`
+- `findings/phase-5r-evidence-index.md`
+- `artifacts/phase5/mtk-easy-su-current-review-20260804-01/`

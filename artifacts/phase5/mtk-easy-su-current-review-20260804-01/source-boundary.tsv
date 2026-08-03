@@ -1,0 +1,5 @@
+project	public_scope	device_match	live_action	decision
+KoCleo/mtk-easy-su	legacy MediaTek bootless root wrapper; LFS mtk-su payload	mtk-su64 hash exactly matches prior tested binary	no new execution	duplicate payload; do not repeat
+R0rt1z2/fenrir	MediaTek secure boot chain / EL3 PoC; device-specific supported list	no trona/KFTRWI profile	no preloader or boot-chain action	Level 3 candidate only if exact profile and recovery exist
+R0rt1z2/lkpatcher	LK image parser/patcher and patched-image output	no exact PS7330 LK input available	no image patch or write	static review only
+Shocked-Cat/oppo-mtk-fastboot-unlock	OPlus factory preloader modification and write path	Amazon trona is a different OEM target	no preloader write	inapplicable direct route
