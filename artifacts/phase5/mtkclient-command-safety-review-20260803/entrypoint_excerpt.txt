@@ -1,0 +1,22 @@
+Source: mtk.py, commit 0542a8729993000661e2325e838217ee754d1632
+
+CMDS_HELP includes:
+  printgpt: Print GPT Table information
+  r: Read flash to filename
+  dumppreloader: Try to dump the preloader
+  payload: Run a specific kamakiri / da payload
+  crash: Try to crash the preloader
+  dumpbrom: Try to dump the bootrom
+
+The parser exposes a Bootrom / Preloader Exploit group with:
+  --loader
+  --preloader
+  --ptype
+  --var1
+  --brom_addr
+  --da_addr
+  --wdt
+
+The existence of a command named “read” or “printgpt” is not sufficient to
+classify startup as passive; the command path initializes the preloader USB
+protocol first.

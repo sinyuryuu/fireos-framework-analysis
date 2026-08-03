@@ -1,0 +1,20 @@
+Source: mtkclient/Library/mtk_main.py and mtk_preloader.py, commit
+0542a8729993000661e2325e838217ee754d1632
+
+Observed control-flow excerpts:
+
+1. `dumppreloader` calls `mtk.preloader.init()`, then `mtk.crasher()`, then
+   `PLTools.run_dump_preloader(...)`.
+2. `dumpbrom` calls `mtk.preloader.init()`, then `mtk.crasher()`, then
+   `PLTools.run_dump_brom(...)`.
+3. `cmd_stage` calls `mtk.preloader.init()`, obtains a crasher, and uploads
+   stage 1 before sending stage 2.
+4. `cmd_peek` can parse a supplied preloader and calls `send_da(...)` and
+   `jump_da(...)` before reading memory.
+5. `mtk_preloader.init()` waits for “PreLoader VCOM”, reads hardware values,
+   may send authentication material when DAA is active, and contains device
+   register writes in some mode paths.
+
+Therefore “dump” and “read” are not proven non-invasive at the transport
+boundary. They can require a crash, payload, DA, authentication, or register
+operation before the requested read.

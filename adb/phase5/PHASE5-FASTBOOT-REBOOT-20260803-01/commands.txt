@@ -1,0 +1,16 @@
+Timestamp UTC: 2026-08-03 (after explicit command approval)
+Device serial: G001LT0511550CFT
+
+Command:
+fastboot -s G001LT0511550CFT reboot
+Observed result: Rebooting OKAY; Finished. Total time: 0.005s; exit code 0
+
+Verification commands:
+adb -s G001LT0511550CFT get-state
+adb devices -l
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+adb -s G001LT0511550CFT shell getprop ro.boot.verifiedbootstate
+adb -s G001LT0511550CFT shell getprop ro.boot.flash.locked
+
+No package, settings, partition, boot image, or bootloader lock state was
+modified by this test.
