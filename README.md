@@ -880,3 +880,30 @@ networking issue. No Android exploit, APK, native payload, root attempt,
 kernel panic trigger, bootloader, fastboot, remount, or partition operation was
 performed in Phase 5P. A live device-specific trigger would require a separate
 operation-specific Level 3 report and approval.
+
+### Phase 5Q — Android CMDQ implementation and Fire v2/v3 ABI comparison
+
+Phase 5Q records the Android-side implementation of CVE-2020-0069 without
+repeating a live ioctl. The official AOSP implementation is a native CTS
+`cc_test`/`poc.c`, not a normal APK. Its historical CMDQ v2 request contract
+uses the write-address/free/command paths. The recovered exact Fire source
+shows that MT8183 selects the v3 dispatcher: the v2 excerpt has the write-
+address case, while the v3 dispatcher has no such case and returns
+`-ENOIOCTLCMD` for an unknown request. The already archived single request #7
+runtime result is raw `-ENOTTY`, which corroborates the ABI mismatch for that
+tested request.
+
+This is a source/runtime-scoped diagnosis, not proof that every v3 ioctl is
+safe or that the signed PS7330 kernel is free of every CMDQ issue. No PoC was
+compiled, installed, or run; no device node was opened in Phase 5Q.
+
+Phase 5Q outputs:
+
+- `findings/phase-5q-android-cmdq-implementation-review.md`
+- `findings/phase-5q-evidence-index.md`
+- `tools/scripts/analyze_phase5q_android_cmdq_implementation.py`
+- `artifacts/phase5/android-cmdq-implementation-review-20260804-01/`
+
+The analyzer is host-only, supports `--dry-run`, refuses to overwrite derived
+outputs, and reads only recovered source excerpts plus the prior archived
+runtime stdout.

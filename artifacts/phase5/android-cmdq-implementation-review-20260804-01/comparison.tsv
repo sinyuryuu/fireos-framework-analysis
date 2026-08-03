@@ -1,0 +1,6 @@
+factor	public_observation	fire_observation	classification
+AOSP CTS implementation form	native CTS cc_test / poc.c; device-node and ioctl path	no APK or live PoC used in this review	Confirmed
+CMDQ write-address ioctl #7	CMDQ_IOCTL_ALLOC_WRITE_ADDRESS 0x40087807	present in recovered v2 excerpt; absent from v3 dispatcher excerpt; saved runtime result is -25 (-ENOTTY)	Confirmed, source/runtime scoped
+v2 allocation implementation	copy_from_user -> cmdqCoreAllocWriteAddress -> copy_to_user	recovered v2 source only; not evidence that installed v3 exposes it	Confirmed, source scoped
+v3 unknown-request behavior	not applicable to the old AOSP PoC contract	default branch returns -ENOIOCTLCMD	Confirmed, source scoped
+CVE status of signed PS7330 kernel	public PoC targets a historical CMDQ contract	exact signed driver binary/backport status is not proven by source excerpts	Unknown

@@ -1,0 +1,60 @@
+{
+  "analyzer": "analyze_phase5q_android_cmdq_implementation.py",
+  "scope": "host-only; no ADB, ioctl, exploit build, or device mutation",
+  "inputs": {
+    "v2_excerpt": {
+      "path": "artifacts/phase5/exact-source-search-20260803/cmdq-source-members-20260803-v6/v2_driver-excerpt.txt",
+      "sha256": "da476f7ab6dd71af3cf583b12159af70b27ee70ce11221486465c72a75338699"
+    },
+    "v3_excerpt": {
+      "path": "artifacts/phase5/exact-source-search-20260803/cmdq-source-members-20260803-v6/v3_driver-excerpt.txt",
+      "sha256": "e0406f014d505144e6ea4b3d9307aacb4d7b3c40cfec0464ac8e1a3ebf630578"
+    },
+    "runtime_result": {
+      "path": "adb/phase5/CMDQ-IOCTL-V3-COMPAT-T01-20260803-01/probe.stdout.txt",
+      "sha256": "433152f505fd3e68dd05811b051b2d1b7285fe8c80703cc1afaee8d1e1bb53d6"
+    }
+  },
+  "checks": {
+    "v2_has_alloc_write_case": true,
+    "v2_has_copy_from_user": true,
+    "v2_has_alloc_helper": true,
+    "v3_has_alloc_write_case": false,
+    "v3_has_unknown_ioctl_return": true,
+    "runtime_open_ret": "3 (0x3)",
+    "runtime_ioctl_ret": "-25 (0xffffffffffffffe7)"
+  },
+  "rows": [
+    {
+      "factor": "AOSP CTS implementation form",
+      "public_observation": "native CTS cc_test / poc.c; device-node and ioctl path",
+      "fire_observation": "no APK or live PoC used in this review",
+      "classification": "Confirmed"
+    },
+    {
+      "factor": "CMDQ write-address ioctl #7",
+      "public_observation": "CMDQ_IOCTL_ALLOC_WRITE_ADDRESS 0x40087807",
+      "fire_observation": "present in recovered v2 excerpt; absent from v3 dispatcher excerpt; saved runtime result is -25 (-ENOTTY)",
+      "classification": "Confirmed, source/runtime scoped"
+    },
+    {
+      "factor": "v2 allocation implementation",
+      "public_observation": "copy_from_user -> cmdqCoreAllocWriteAddress -> copy_to_user",
+      "fire_observation": "recovered v2 source only; not evidence that installed v3 exposes it",
+      "classification": "Confirmed, source scoped"
+    },
+    {
+      "factor": "v3 unknown-request behavior",
+      "public_observation": "not applicable to the old AOSP PoC contract",
+      "fire_observation": "default branch returns -ENOIOCTLCMD",
+      "classification": "Confirmed, source scoped"
+    },
+    {
+      "factor": "CVE status of signed PS7330 kernel",
+      "public_observation": "public PoC targets a historical CMDQ contract",
+      "fire_observation": "exact signed driver binary/backport status is not proven by source excerpts",
+      "classification": "Unknown"
+    }
+  ],
+  "decision": "The saved evidence supports a v2-PoC versus v3-driver ABI mismatch for the tested request. It does not prove that all v3 interfaces are safe or that CVE-2020-0069 is absent from the signed kernel."
+}
