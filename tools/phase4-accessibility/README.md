@@ -5,12 +5,17 @@ requires the device owner to install the APK and manually enable the service in
 Android Settings. It never requests or automates that consent.
 
 The service observes only `TYPE_WINDOW_STATE_CHANGED` events whose package is
-`com.amazon.firelauncher`. It does not read window text, input content, the
-view tree, passwords, or notifications. It has an explicit in-app enable
-toggle, a cooldown and loop guard, and starts only the explicitly named Phase
-4 test activity. The current source uses the public Android 9-compatible
+`com.amazon.firelauncher`. The current source variant also requests the public
+`FLAG_REQUEST_FILTER_KEY_EVENTS` capability and handles only `KEYCODE_HOME`
+after the service has been manually enabled and the visible in-app toggle is
+on. It does not read window text, input content, the view tree, passwords, or
+notifications. It has an explicit in-app enable toggle, a cooldown and loop
+guard, and starts only the explicitly named Phase 4 test activity. The current
+source uses the public Android 9-compatible
 `PendingIntent.getActivity(...).send()` launch boundary; the historical T03
 APK used direct `startActivity()` and remains preserved as historical evidence.
+If the target cannot be dispatched, the HOME key is not consumed, so the
+system's normal HOME path remains available.
 Remove the APK or disable the service to roll back.
 
 No network permission, device-admin declaration, background service, overlay,

@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.accessibility.AccessibilityEvent;
 
 public final class LauncherRedirectService extends AccessibilityService {
@@ -17,6 +18,7 @@ public final class LauncherRedirectService extends AccessibilityService {
     private static final long COOLDOWN_MS = 1500L;
     private static final int REDIRECT_REQUEST_CODE = 0;
     private long lastLaunch;
+    private boolean homeKeyConsumed;
 
     @Override
     protected void onServiceConnected() {
@@ -26,10 +28,32 @@ public final class LauncherRedirectService extends AccessibilityService {
             info.eventTypes = AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED;
             info.feedbackType = android.accessibilityservice.AccessibilityServiceInfo.FEEDBACK_GENERIC;
             info.notificationTimeout = 250;
-            info.flags = android.accessibilityservice.AccessibilityServiceInfo.DEFAULT;
+            info.flags = android.accessibilityservice.AccessibilityServiceInfo.DEFAULT
+                    | android.accessibilityservice.AccessibilityServiceInfo.FLAG_REQUEST_FILTER_KEY_EVENTS;
             setServiceInfo(info);
         }
-        Log.i(TAG, "service connected; manual toggle still required");
+        Log.i(TAG, "service connected; manual toggle and key-event consent still required");
+    }
+
+    @Override
+    public boolean onKeyEvent(KeyEvent event) {
+        if (event == null || event.getKeyCode() != KeyEvent.KEYCODE_HOME) {
+            return false;
+        }
+        boolean enabled = getSharedPreferences(ControlActivity.PREFS, MODE_PRIVATE)
+                .getBoolean(ControlActivity.ENABLED, false);
+        if (!enabled) {
+            return false;
+        }
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            homeKeyConsumed = dispatchRedirect("home-key");
+            return homeKeyConsumed;
+        }
+        if (event.getAction() == KeyEvent.ACTION_UP && homeKeyConsumed) {
+            homeKeyConsumed = false;
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -45,9 +69,13 @@ public final class LauncherRedirectService extends AccessibilityService {
                 .getBoolean(ControlActivity.ENABLED, false)) {
             return;
         }
+        dispatchRedirect("fire-window");
+    }
+
+    private boolean dispatchRedirect(String reason) {
         long now = SystemClock.uptimeMillis();
         if (now - lastLaunch < COOLDOWN_MS) {
-            return;
+            return false;
         }
         lastLaunch = now;
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -63,12 +91,14 @@ public final class LauncherRedirectService extends AccessibilityService {
             PendingIntent pendingIntent = PendingIntent.getActivity(
                     this, REDIRECT_REQUEST_CODE, intent, 0);
             pendingIntent.send();
-            Log.i(TAG, "pending-intent redirect dispatched after Fire foreground event");
+            Log.i(TAG, "pending-intent redirect dispatched: " + reason);
+            return true;
         } catch (PendingIntent.CanceledException error) {
             Log.w(TAG, "redirect PendingIntent was canceled", error);
         } catch (RuntimeException error) {
             Log.w(TAG, "redirect target unavailable", error);
         }
+        return false;
     }
 
     @Override

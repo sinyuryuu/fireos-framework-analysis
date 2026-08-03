@@ -1243,3 +1243,32 @@ Phase 5AD outputs:
 
 No new payload, BROM, DA, device-node, fastboot or partition operation was
 performed.
+
+### Phase 5AE — Android KEYCODE_HOME/PendingIntent implementation
+
+Phase 5AE adds a second Android implementation boundary to the local harness:
+after the researcher manually enables Accessibility and the visible toggle,
+`AccessibilityService.onKeyEvent()` handles only `KEYCODE_HOME` and dispatches
+an explicit research Activity through `PendingIntent.getActivity().send()`.
+The service requests the public `FLAG_REQUEST_FILTER_KEY_EVENTS` capability and
+returns `false` when the toggle is off or the target cannot be dispatched, so
+the normal HOME path remains available. It does not read window text, write
+settings, modify Fire Launcher, or use overlay/private Binder/root APIs.
+
+Phase 5AE preparation installed the newly built redirect APK and alias APK,
+but intentionally did not enable Accessibility. The key-event measurement is
+therefore still 待驗證 and must not be described as a working workaround until
+manual consent and a separately identified measurement produce evidence.
+
+Phase 5AE outputs:
+
+- findings/phase-5ae-keyevent-pendingintent-review.md
+- output/tables/phase5ae-android-keyevent-matrix.csv
+- output/tables/phase5ae-android-keyevent-evidence.csv
+- artifacts/phase5/android-keyevent-implementation-review-20260804-01/
+- adb/phase5/PHASE5AE-KEYEVENT-PENDINGINTENT-T01/
+
+The APK was built locally with OpenJDK 17, Android platform API 35 and Build
+Tools 35.0.0; its v3 signature and SHA-256 are recorded in the report. The
+service is never enabled by ADB. No root payload, kernel trigger, ioctl,
+reboot, fastboot or partition operation was performed.

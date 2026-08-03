@@ -50,6 +50,9 @@ def build_rows(source: pathlib.Path) -> list[dict[str, str]]:
         "Intent.CATEGORY_LAUNCHER",
         "com.amazon.firelauncher",
         "REDIRECT_REQUEST_CODE",
+        "FLAG_REQUEST_FILTER_KEY_EVENTS",
+        "onKeyEvent",
+        "KeyEvent.KEYCODE_HOME",
     ]
     missing = [token for token in required if token not in text]
     if missing:
@@ -81,6 +84,21 @@ def build_rows(source: pathlib.Path) -> list[dict[str, str]]:
             "explicit_component": "yes",
             "background_start_boundary": "public PendingIntent dispatch",
             "requires_user_consent": "yes, Accessibility",
+            "requires_overlay": "no",
+            "requires_network": "no",
+            "changes_home_resolver": "no",
+            "device_state_mutation": "not run; source/build only",
+            "observed_result": "not measured",
+            "confidence": "待驗證",
+        },
+        {
+            "route": "pending-intent-keyevent-source-variant",
+            "source_or_evidence": source_id,
+            "trigger": "AccessibilityService.onKeyEvent(KEYCODE_HOME)",
+            "launch_api": "PendingIntent.getActivity().send",
+            "explicit_component": "yes",
+            "background_start_boundary": "public PendingIntent dispatch",
+            "requires_user_consent": "yes, Accessibility + key-event filter",
             "requires_overlay": "no",
             "requires_network": "no",
             "changes_home_resolver": "no",
