@@ -1,0 +1,858 @@
+30555: [new] 0182aa: 6e30 8404 5102                         |001b: invoke-virtual {v1, v5, v2}, Landroid/content/pm/PackageManager;.checkPermission:(Ljava/lang/String;Ljava/lang/String;)I // method@0484
+42118:    virtual_method #5768: checkPermission (ILjava/lang/String;)V
+46532: [new] 030398: 6e40 e103 3210                         |000a: invoke-virtual {v2, v3, v0, v1}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@03e1
+49200:    direct_method #6196: checkCallingOrSelfPermission (Landroid/content/Context;Ljava/lang/String;)I
+49218:       032512: 7150 3618 4321                         |0018: invoke-static {v3, v4, v1, v2, v0}, Landroid/support/v4/content/PermissionChecker;.checkPermission:(Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I // method@1836
+49221:    direct_method #6197: checkCallingPermission (Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
+49236:       032548: 7154 3618 3210                         |0014: invoke-static {v2, v3, v0, v1, v4}, Landroid/support/v4/content/PermissionChecker;.checkPermission:(Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I // method@1836
+49239:    direct_method #6198: checkPermission (Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I
+49244: [new] 032556: 6e40 e103 6587                         |0000: invoke-virtual {v5, v6, v7, v8}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@03e1
+49285:       0325cc: 7152 3618 4310                         |000c: invoke-static {v3, v4, v0, v1, v2}, Landroid/support/v4/content/PermissionChecker;.checkPermission:(Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I // method@1836
+151035:       09d264: 1a00 9347                              |0000: const-string v0, "android.permission.ACCESS_FINE_LOCATION" // string@4793
+151037: [new] 09d268: 6e20 df03 0300                         |0002: invoke-virtual {v3, v0}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@03df
+151045:       09d284: 1a00 9247                              |0010: const-string v0, "android.permission.ACCESS_COARSE_LOCATION" // string@4792
+151047: [new] 09d288: 6e20 df03 0300                         |0012: invoke-virtual {v3, v0}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@03df
+151078:       09d2f0: 1a00 9e47                              |0000: const-string v0, "android.permission.PEERS_MAC_ADDRESS" // string@479e
+151080: [new] 09d2f4: 6e20 df03 0100                         |0002: invoke-virtual {v1, v0}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@03df
+151170:       09d890: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+151173: [new] 09d898: 6e30 1e04 0201                         |0004: invoke-virtual {v2, v0, v1}, Landroid/content/ContextWrapper;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@041e
+154766:       0a1c1a: 1a02 9547                              |002c: const-string v2, "android.permission.BLUETOOTH" // string@4795
+154822:       0a1cc4: 1a02 9547                              |004d: const-string v2, "android.permission.BLUETOOTH" // string@4795
+154904:       0a1db4: 1a02 9547                              |004d: const-string v2, "android.permission.BLUETOOTH" // string@4795
+156431:       0a33cc: 1a02 9547                              |0026: const-string v2, "android.permission.BLUETOOTH" // string@4795
+157821:       0a440e: 1a02 9547                              |0013: const-string v2, "android.permission.BLUETOOTH" // string@4795
+157861:       0a4486: 1a02 9547                              |0018: const-string v2, "android.permission.BLUETOOTH" // string@4795
+179886:       0b6bc6: 1a05 9547                              |00a7: const-string v5, "android.permission.BLUETOOTH" // string@4795
+179941:       0b6c72: 1a06 9547                              |00fd: const-string v6, "android.permission.BLUETOOTH" // string@4795
+180615:       0b74bc: 1a03 9547                              |00a4: const-string v3, "android.permission.BLUETOOTH" // string@4795
+181068:       0b88c4: 1a02 9547                              |0035: const-string v2, "android.permission.BLUETOOTH" // string@4795
+181102:       0b892c: 1a02 9547                              |002c: const-string v2, "android.permission.BLUETOOTH" // string@4795
+181134:       0b898c: 1a02 9547                              |0028: const-string v2, "android.permission.BLUETOOTH" // string@4795
+186407:       0bc736: 1a08 9547                              |00b1: const-string v8, "android.permission.BLUETOOTH" // string@4795
+186489:       0bc856: 1a09 9547                              |0141: const-string v9, "android.permission.BLUETOOTH" // string@4795
+186508:       0bc89a: 1a08 9547                              |0163: const-string v8, "android.permission.BLUETOOTH" // string@4795
+186782:       0bcc1c: 1a03 9547                              |005d: const-string v3, "android.permission.BLUETOOTH" // string@4795
+186814:       0bcc76: 1a03 9547                              |008a: const-string v3, "android.permission.BLUETOOTH" // string@4795
+188571:       0bdb7c: 1a0b 9547                              |00a8: const-string v11, "android.permission.BLUETOOTH" // string@4795
+191642:       0bfaf8: 1a05 9547                              |0094: const-string v5, "android.permission.BLUETOOTH" // string@4795
+191676:       0bfb5e: 1a03 9547                              |00c7: const-string v3, "android.permission.BLUETOOTH" // string@4795
+192600:       0c239e: 1a01 9547                              |003b: const-string v1, "android.permission.BLUETOOTH" // string@4795
+192609:       0c05e6: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+192610:       0c05ea: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+192612: [new] 0c05ee: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+192787:       0bff92: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+192788:       0bff96: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+192790: [new] 0bff9a: 6e30 4a4b 0f01                         |0004: invoke-virtual {v15, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193350:       0c0260: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+193353: [new] 0c0268: 6e30 4a4b 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193465:       0c02a0: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+193468: [new] 0c02a8: 6e30 4a4b 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193505:       0c030c: 1a00 9647                              |0005: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+193508: [new] 0c0314: 6e30 4a4b 0201                         |0009: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193674:       0c0328: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+193677: [new] 0c0330: 6e30 4a4b 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193749:       0c03b6: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+193752: [new] 0c03be: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193783:       0c1c7c: 1a00 9947                              |0000: const-string v0, "android.permission.DUMP" // string@4799
+193786: [new] 0c1c84: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193887:       0c041e: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+193890: [new] 0c0426: 6e30 4a4b 0301                         |0005: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193944:       0c04c0: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+193945:       0c04c4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+193947: [new] 0c04c8: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193959:       0c04dc: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+193960:       0c04e0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+193962: [new] 0c04e4: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193973:       0c1114: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+193974:       0c1118: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+193976: [new] 0c111c: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193993:       0c1706: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+193994:       0c170a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+193996: [new] 0c170e: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+193997:       0c1714: 1a00 9a47                              |0007: const-string v0, "android.permission.LOCAL_MAC_ADDRESS" // string@479a
+194000: [new] 0c171c: 6e30 4a4b 0301                         |000b: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194107:       0c1236: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194108:       0c123a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194110: [new] 0c123e: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194127:       0c0100: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+194130: [new] 0c0108: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194141:       0c1266: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194142:       0c126a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194144: [new] 0c126e: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194161:       0c0120: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194162:       0c0124: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194164: [new] 0c0128: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194180:       0c1298: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194181:       0c129c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194183: [new] 0c12a0: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194203:       0c12c4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194204:       0c12c8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194206: [new] 0c12cc: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194217:       0c1824: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194218:       0c1828: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194220: [new] 0c182c: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194324:       0c1402: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194325:       0c1406: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194327: [new] 0c140a: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194338:       0c1422: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194339:       0c1426: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194341: [new] 0c142a: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194352:       0c1442: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194353:       0c1446: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194355: [new] 0c144a: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194382:       0c173e: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194383:       0c1742: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194385: [new] 0c1746: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194413:       0c1494: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194414:       0c1498: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194416: [new] 0c149c: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194427:       0c14b4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194428:       0c14b8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194430: [new] 0c14bc: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194441:       0c14d4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194442:       0c14d8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194444: [new] 0c14dc: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194455:       0c14f4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194456:       0c14f8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194458: [new] 0c14fc: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194469:       0c1514: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194470:       0c1518: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194472: [new] 0c151c: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194499:       0c1566: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194500:       0c156a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194502: [new] 0c156e: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194513:       0c17a6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194514:       0c17aa: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194516: [new] 0c17ae: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194533:       0c1586: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194534:       0c158a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194536: [new] 0c158e: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194556:       0c17d6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194557:       0c17da: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194559: [new] 0c17de: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194583:       0c15b6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194584:       0c15ba: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194586: [new] 0c15be: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194603:       0c0172: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194604:       0c0176: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194606: [new] 0c017a: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194623:       0c1602: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194624:       0c1606: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194626: [new] 0c160a: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194642:       0c1622: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194643:       0c1626: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194645: [new] 0c162a: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194684:       0c1674: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194685:       0c1678: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194687: [new] 0c167c: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194710:       0c16a2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194711:       0c16a6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194713: [new] 0c16aa: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194724:       0c04fc: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194725:       0c0500: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194727: [new] 0c0504: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194755:       0c01a2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194756:       0c01a6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194758: [new] 0c01aa: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194778:       0c0566: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194779:       0c056a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194781: [new] 0c056e: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194792:       0c0586: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194793:       0c058a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194795: [new] 0c058e: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194863:       0c0692: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194864:       0c0696: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194866: [new] 0c069a: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194883:       0c06c2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194884:       0c06c6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194886: [new] 0c06ca: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194897:       0c06e2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194898:       0c06e6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194900: [new] 0c06ea: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194916:       0c0710: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194917:       0c0714: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194919: [new] 0c0718: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194930:       0c0730: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194931:       0c0734: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194933: [new] 0c0738: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194944:       0c0750: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194945:       0c0754: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194947: [new] 0c0758: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194958:       0c0770: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194959:       0c0774: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194961: [new] 0c0778: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+194977:       0c0790: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+194978:       0c0794: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+194980: [new] 0c0798: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195014:       0c07ee: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+195015:       0c07f2: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+195017: [new] 0c07f6: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195326:       0c082c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+195327:       0c0830: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+195329: [new] 0c0834: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195367:       0c08fc: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+195370: [new] 0c0904: 6e30 4a4b 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195408:       0c095a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+195411: [new] 0c0962: 6e30 4a4b 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195440:       0c098e: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+195441:       0c0992: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+195443: [new] 0c0996: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195485:       0c09ba: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+195488: [new] 0c09c2: 6e30 4a4b 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195551:       0c0a5a: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+195552:       0c0a5e: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+195554: [new] 0c0a62: 6e30 4a4b 0901                         |0004: invoke-virtual {v9, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195619:       0c0b0c: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+195622: [new] 0c0b14: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195633:       0c0b2c: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+195636: [new] 0c0b34: 6e30 4a4b 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195664:       0c0b88: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+195667: [new] 0c0b90: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195678:       0c0ba8: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+195681: [new] 0c0bb0: 6e30 4a4b 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195720:       0c0c18: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+195721:       0c0c1c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+195723: [new] 0c0c20: 6e30 4a4b 0601                         |0004: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195782:       0c0cce: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+195785: [new] 0c0cd6: 6e30 4a4b 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195813:       0c0d2a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+195816: [new] 0c0d32: 6e30 4a4b 0601                         |0004: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195877:       0c0de6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+195878:       0c0dea: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+195880: [new] 0c0dee: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195897:       0c0e16: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+195900: [new] 0c0e1e: 6e30 4a4b 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195930:       0c0e56: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+195933: [new] 0c0e5e: 6e30 4a4b 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+195969:       0c0f3a: 1a00 9647                              |0005: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+195972: [new] 0c0f42: 6e30 4a4b 0201                         |0009: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4b4a
+197973:       0c4d20: 1a02 9647                              |002c: const-string v2, "android.permission.BLUETOOTH_ADMIN" // string@4796
+198306:       0c4ea4: 1a0d 9547                              |00b0: const-string v13, "android.permission.BLUETOOTH" // string@4795
+198793:       0c552a: 1a0b 9547                              |03f3: const-string v11, "android.permission.BLUETOOTH" // string@4795
+201814:       0c73d0: 1a00 9647                              |000b: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+201816: [new] 0c73d4: 6e20 cf4c 0400                         |000d: invoke-virtual {v4, v0}, Lcom/android/bluetooth/btservice/ProfileService;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@4ccf
+202589:       0c7dd4: 1a03 9547                              |002d: const-string v3, "android.permission.BLUETOOTH" // string@4795
+203289:       0c962c: 1a02 9547                              |0018: const-string v2, "android.permission.BLUETOOTH" // string@4795
+203316:       0c9676: 1a03 9647                              |001d: const-string v3, "android.permission.BLUETOOTH_ADMIN" // string@4796
+203453:       0c875a: 1a09 9547                              |00c2: const-string v9, "android.permission.BLUETOOTH" // string@4795
+203552:       0c88a8: 1a05 9547                              |0169: const-string v5, "android.permission.BLUETOOTH" // string@4795
+203733:       0c89e2: 1a04 9547                              |0061: const-string v4, "android.permission.BLUETOOTH" // string@4795
+203734:       0c89e6: 1a05 9247                              |0063: const-string v5, "android.permission.ACCESS_COARSE_LOCATION" // string@4792
+203886:       0c8c02: 1a0c 9547                              |0101: const-string v12, "android.permission.BLUETOOTH" // string@4795
+203993:       0c8d88: 1a0c 9547                              |01c4: const-string v12, "android.permission.BLUETOOTH" // string@4795
+218186:       0dc4ce: 1a02 9547                              |004d: const-string v2, "android.permission.BLUETOOTH" // string@4795
+218676:       0dcb3e: 1a03 9647                              |0029: const-string v3, "android.permission.BLUETOOTH_ADMIN" // string@4796
+222286:       0e52e4: 1a03 9547                              |004b: const-string v3, "android.permission.BLUETOOTH" // string@4795
+222398:       0e5444: 1a03 9547                              |0050: const-string v3, "android.permission.BLUETOOTH" // string@4795
+223680:       0e6552: 1a03 9547                              |0050: const-string v3, "android.permission.BLUETOOTH" // string@4795
+225279:       0e7650: 1a02 9547                              |0018: const-string v2, "android.permission.BLUETOOTH" // string@4795
+227666:       0e9fe2: 1a03 9547                              |0261: const-string v3, "android.permission.BLUETOOTH" // string@4795
+227719:       0ea08c: 1a03 9547                              |02b6: const-string v3, "android.permission.BLUETOOTH" // string@4795
+227903:       0ea2c4: 1a03 9547                              |03d2: const-string v3, "android.permission.BLUETOOTH" // string@4795
+227930:       0ea318: 1a03 9547                              |03fc: const-string v3, "android.permission.BLUETOOTH" // string@4795
+227957:       0ea36c: 1a03 9547                              |0426: const-string v3, "android.permission.BLUETOOTH" // string@4795
+227984:       0ea3c0: 1a03 9547                              |0450: const-string v3, "android.permission.BLUETOOTH" // string@4795
+228044:       0ea482: 1a03 9547                              |04b1: const-string v3, "android.permission.BLUETOOTH" // string@4795
+228104:       0ea546: 1a03 9547                              |0513: const-string v3, "android.permission.BLUETOOTH" // string@4795
+229975:       0ec58e: 1a02 9547                              |0022: const-string v2, "android.permission.BLUETOOTH" // string@4795
+230109:       0ec72e: 1a02 9547                              |009e: const-string v2, "android.permission.BLUETOOTH" // string@4795
+230975:       0ed2ea: 1a02 9547                              |002d: const-string v2, "android.permission.BLUETOOTH" // string@4795
+236929:       0f23f0: 1a06 9547                              |02d4: const-string v6, "android.permission.BLUETOOTH" // string@4795
+253867: [new] 0fbc76: 6e20 df03 0700                         |000c: invoke-virtual {v7, v0}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@03df
+276781:       1161d2: 1a00 9747                              |002e: const-string v0, "android.permission.BLUETOOTH_MAP" // string@4797
+276797:       1161fe: 1a01 9e35                              |0044: const-string v1, "Provider must be protected by android.permission.BLUETOOTH_MAP" // string@359e
+277576:       116dec: 1a00 9747                              |0038: const-string v0, "android.permission.BLUETOOTH_MAP" // string@4797
+277606:       116e48: 1a01 9e35                              |0066: const-string v1, "Provider must be protected by android.permission.BLUETOOTH_MAP" // string@359e
+282037:       11a992: 1a05 a147                              |018b: const-string v5, "android.permission.RECEIVE_SMS" // string@47a1
+283254:       11b79c: 1a02 9547                              |005e: const-string v2, "android.permission.BLUETOOTH" // string@4795
+289275:       11fe0a: 1a07 9d47                              |0197: const-string v7, "android.permission.NFC_HANDOVER_STATUS" // string@479d
+293719:       124bae: 1a02 9d47                              |022a: const-string v2, "android.permission.NFC_HANDOVER_STATUS" // string@479d
+305107:       13062a: 1a04 9647                              |00e3: const-string v4, "android.permission.BLUETOOTH_ADMIN" // string@4796
+308998:       134e04: 1a03 9547                              |0047: const-string v3, "android.permission.BLUETOOTH" // string@4795
+311973:       13828c: 1a02 9547                              |0057: const-string v2, "android.permission.BLUETOOTH" // string@4795
+317870:       13c85e: 1a05 9647                              |00e9: const-string v5, "android.permission.BLUETOOTH_ADMIN" // string@4796
+318357:       13e02c: 1a02 9647                              |002e: const-string v2, "android.permission.BLUETOOTH_ADMIN" // string@4796
+396905: [new] 056a36: 6e30 8404 7003                         |0012: invoke-virtual {v0, v7, v3}, Landroid/content/pm/PackageManager;.checkPermission:(Ljava/lang/String;Ljava/lang/String;)I // method@0484
+396918: [new] 056a5c: 6e40 e103 7043                         |0025: invoke-virtual {v0, v7, v3, v4}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@03e1
+397013:       056afa: 1a02 a347                              |0044: const-string v2, "android.permission.STATUS_BAR_SERVICE" // string@47a3
+397017:       056b0a: 1a02 9b47                              |004c: const-string v2, "android.permission.MEDIA_CONTENT_CONTROL" // string@479b
+421481:       09f38c: 1a01 9547                              |0034: const-string v1, "android.permission.BLUETOOTH" // string@4795
+421890:       09fb54: 1a01 9547                              |003f: const-string v1, "android.permission.BLUETOOTH" // string@4795
+422043:       09e36e: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+422046: [new] 09e376: 6e30 8f44 0601                         |0004: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422169:       09f47c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422170:       09f480: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422172: [new] 09f484: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422207:       09e59c: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+422210: [new] 09e5a4: 6e30 8f44 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422305:       09f56a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+422308: [new] 09f572: 6e30 8f44 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422348:       09f5f0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422349:       09f5f4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422351: [new] 09f5f8: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422386:       09e32c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422387:       09e330: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422389: [new] 09e334: 6e30 8f44 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422404:       09e290: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422405:       09e294: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422407: [new] 09e298: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422456:       09f0b2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422457:       09f0b6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422459: [new] 09f0ba: 6e30 8f44 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422495:       09efc0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422496:       09efc4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422498: [new] 09efc8: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422554:       09f19c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422555:       09f1a0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422557: [new] 09f1a4: 6e30 8f44 0901                         |0004: invoke-virtual {v9, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422615:       09f010: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+422618: [new] 09f018: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422635:       09f046: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+422638: [new] 09f04e: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422655:       09f07c: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+422658: [new] 09f084: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422682:       09e650: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+422683:       09e654: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+422685: [new] 09e658: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+422947:       09e88a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+422950: [new] 09e892: 6e30 8f44 0d01                         |0004: invoke-virtual {v13, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+423174:       09f9ac: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+423175:       09f9b0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+423177: [new] 09f9b4: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+423216:       09fa2a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+423219: [new] 09fa32: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+423254:       09eaec: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+423257: [new] 09eaf4: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+423290:       09fa9a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+423293: [new] 09faa2: 6e30 8f44 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dp/A2dpService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@448f
+423825:       0a2400: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+423828: [new] 0a2408: 6e30 2045 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+423855:       0a244a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+423858: [new] 0a2452: 6e30 2045 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+423893:       0a23d2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+423894:       0a23d6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+423896: [new] 0a23da: 6e30 2045 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+423907:       0a26ba: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+423908:       0a26be: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+423910: [new] 0a26c2: 6e30 2045 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+423921:       0a2664: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+423922:       0a2668: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+423924: [new] 0a266c: 6e30 2045 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+423935:       0a26da: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+423936:       0a26de: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+423938: [new] 0a26e2: 6e30 2045 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+423949:       0a2684: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+423952: [new] 0a268c: 6e30 2045 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+424027:       0a2486: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+424028:       0a248a: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+424030: [new] 0a248e: 6e30 2045 0301                         |0005: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+424074:       0a24f0: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+424077: [new] 0a24f8: 6e30 2045 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/a2dpsink/A2dpSinkService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4520
+427818:       0b4ece: 1a01 9547                              |006e: const-string v1, "android.permission.BLUETOOTH" // string@4795
+427819:       0b4ed2: 1a02 fd31                              |0070: const-string v2, "Need BLUETOOTH permission" // string@31fd
+427821: [new] 0b4ed6: 6e30 3349 1402                         |0072: invoke-virtual {v4, v1, v2}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428191:       0b580e: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428192:       0b5812: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428194: [new] 0b5816: 6e30 3349 0201                         |0005: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428213:       0b5786: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428214:       0b578a: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428216: [new] 0b578e: 6e30 3349 0201                         |0005: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428233:       0b5856: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428234:       0b585a: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428236: [new] 0b585e: 6e30 3349 0401                         |0005: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428329:       0b514c: 1a00 9547                              |006e: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428330:       0b5150: 1a01 fd31                              |0070: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428332: [new] 0b5154: 6e30 3349 0401                         |0072: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428359:       0b4ae0: 1a00 9547                              |000c: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428360:       0b4ae4: 1a01 fd31                              |000e: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428362: [new] 0b4ae8: 6e30 3349 0301                         |0010: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428459:       0b5284: 1a00 9547                              |006e: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428460:       0b5288: 1a01 fd31                              |0070: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428462: [new] 0b528c: 6e30 3349 0401                         |0072: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428541:       0b4d9e: 1a00 9547                              |0051: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428542:       0b4da2: 1a01 fd31                              |0053: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428544: [new] 0b4da6: 6e30 3349 0401                         |0055: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428626:       0b53bc: 1a00 9547                              |006e: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428627:       0b53c0: 1a01 fd31                              |0070: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428629: [new] 0b53c4: 6e30 3349 0401                         |0072: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428690:       0b4a8e: 1a01 9547                              |0042: const-string v1, "android.permission.BLUETOOTH" // string@4795
+428691:       0b4a92: 1a02 fd31                              |0044: const-string v2, "Need BLUETOOTH permission" // string@31fd
+428693: [new] 0b4a96: 6e30 3349 1402                         |0046: invoke-virtual {v4, v1, v2}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428920:       0b6574: 1a00 9547                              |0052: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428921:       0b6578: 1a01 fd31                              |0054: const-string v1, "Need BLUETOOTH permission" // string@31fd
+428923: [new] 0b657c: 6e30 3349 0301                         |0056: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+428997:       0b6664: 1a00 9547                              |0054: const-string v0, "android.permission.BLUETOOTH" // string@4795
+428998:       0b6668: 1a01 fd31                              |0056: const-string v1, "Need BLUETOOTH permission" // string@31fd
+429000: [new] 0b666c: 6e30 3349 0301                         |0058: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+429088:       0b54f4: 1a01 9547                              |006e: const-string v1, "android.permission.BLUETOOTH" // string@4795
+429089:       0b54f8: 1a02 fd31                              |0070: const-string v2, "Need BLUETOOTH permission" // string@31fd
+429091: [new] 0b54fc: 6e30 3349 1402                         |0072: invoke-virtual {v4, v1, v2}, Lcom/android/bluetooth/avrcpcontroller/AvrcpControllerService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4933
+432575:       0d0bb6: 1a00 a447                              |0000: const-string v0, "android.permission.UPDATE_DEVICE_STATS" // string@47a4
+432578: [new] 0d0bbe: 6e30 9f4e 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433427:       0cfee0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433428:       0cfee4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433430: [new] 0cfee8: 6e30 9f4e 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433579:       0d00d4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433580:       0d00d8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433582: [new] 0d00dc: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433639:       0d017e: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433640:       0d0182: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433642: [new] 0d0186: 6e30 9f4e 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433655:       0d01ae: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433656:       0d01b2: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433658: [new] 0d01b6: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433695:       0d022c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433696:       0d0230: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433698: [new] 0d0234: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433736:       0d02a6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433737:       0d02aa: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433739: [new] 0d02ae: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433788:       0d034a: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433789:       0d034e: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433791: [new] 0d0352: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433840:       0d03ee: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433841:       0d03f2: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433843: [new] 0d03f6: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+433895:       0d049c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+433896:       0d04a0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+433898: [new] 0d04a4: 6e30 9f4e 0c01                         |0004: invoke-virtual {v12, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434152:       0d08ba: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+434153:       0d08be: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+434155: [new] 0d08c2: 6e30 9f4e 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434195:       0d0936: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+434196:       0d093a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+434198: [new] 0d093e: 6e30 9f4e 0a01                         |0004: invoke-virtual {v10, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434365:       0d0b22: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+434366:       0d0b26: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+434368: [new] 0d0b2a: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434407:       0d0ba2: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+434410: [new] 0d0baa: 6e30 9f4e 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434417:       0d0bca: 1a00 9847                              |0000: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+434420: [new] 0d0bd2: 6e30 9f4e 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434521:       0cf788: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+434522:       0cf78c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+434524: [new] 0cf790: 6e30 9f4e 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434546:       0cf7d4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+434547:       0cf7d8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+434549: [new] 0cf7dc: 6e30 9f4e 0b01                         |0004: invoke-virtual {v11, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+434706:       0d0cb4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+434707:       0d0cb8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+434709: [new] 0d0cbc: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+437854:       0cf3d0: 1a02 9847                              |004f: const-string v2, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+437856: [new] 0cf3d4: 6e20 884e 2a00                         |0051: invoke-virtual {v10, v2}, Lcom/android/bluetooth/gatt/GattService;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@4e88
+437889:       0cf442: 1a02 9847                              |0088: const-string v2, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+437891: [new] 0cf446: 6e20 884e 2a00                         |008a: invoke-virtual {v10, v2}, Lcom/android/bluetooth/gatt/GattService;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@4e88
+437908:       0cf472: 1a00 9847                              |0006: const-string v0, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+437910: [new] 0cf476: 6e20 884e 0100                         |0008: invoke-virtual {v1, v0}, Lcom/android/bluetooth/gatt/GattService;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@4e88
+437922:       0d2ff0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+437923:       0d2ff4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+437925: [new] 0d2ff8: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+437985:       0d30b2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+437986:       0d30b6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+437988: [new] 0d30ba: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438048:       0d3174: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438049:       0d3178: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438051: [new] 0d317c: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438075:       0d31c8: 1a00 9547                              |0003: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438076:       0d31cc: 1a01 fd31                              |0005: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438078: [new] 0d31d0: 6e30 9f4e 0901                         |0007: invoke-virtual {v9, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438147:       0d32a6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438148:       0d32aa: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438150: [new] 0d32ae: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438172:       0d32f4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438173:       0d32f8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438175: [new] 0d32fc: 6e30 9f4e 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438213:       0d3366: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438214:       0d336a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438216: [new] 0d336e: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438357:       0d3526: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438358:       0d352a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438360: [new] 0d352e: 6e30 9f4e 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438391:       0d359e: 1a02 9847                              |003c: const-string v2, "android.permission.BLUETOOTH_PRIVILEGED" // string@4798
+438393: [new] 0d35a2: 6e20 884e 2800                         |003e: invoke-virtual {v8, v2}, Lcom/android/bluetooth/gatt/GattService;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@4e88
+438437:       0d3618: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438438:       0d361c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438440: [new] 0d3620: 6e30 9f4e 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438489:       0d36a0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438490:       0d36a4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438492: [new] 0d36a8: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438514:       0d37d2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438515:       0d37d6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438517: [new] 0d37da: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438569:       0d387a: 1a00 9547                              |0006: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438570:       0d387e: 1a01 fd31                              |0008: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438572: [new] 0d3882: 6e30 9f4e 0901                         |000a: invoke-virtual {v9, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438632:       0d399c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438633:       0d39a0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438635: [new] 0d39a4: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438657:       0d39ea: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438658:       0d39ee: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438660: [new] 0d39f2: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438698:       0d3a64: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438699:       0d3a68: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438701: [new] 0d3a6c: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438750:       0d3b08: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438751:       0d3b0c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438753: [new] 0d3b10: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+438826:       0d3bd8: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+438827:       0d3bdc: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+438829: [new] 0d3be0: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+439231:       0d3ff0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+439232:       0d3ff4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+439234: [new] 0d3ff8: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+439260:       0d4048: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+439261:       0d404c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+439263: [new] 0d4050: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+439292:       0d40a4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+439293:       0d40a8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+439295: [new] 0d40ac: 6e30 9f4e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+439334:       0d4118: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+439335:       0d411c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+439337: [new] 0d4120: 6e30 9f4e 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+439408:       0d41f6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+439409:       0d41fa: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+439411: [new] 0d41fe: 6e30 9f4e 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/GattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4e9f
+440530:       0d8258: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440531:       0d825c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440533: [new] 0d8260: 6e30 6850 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440541:       0d8274: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440542:       0d8278: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440544: [new] 0d827c: 6e30 6850 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440553:       0d8294: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440554:       0d8298: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440556: [new] 0d829c: 6e30 6850 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440682:       0d8868: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440683:       0d886c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440685: [new] 0d8870: 6e30 6850 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440699:       0d87ae: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440700:       0d87b2: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440702: [new] 0d87b6: 6e30 6850 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440710:       0d8892: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440711:       0d8896: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440713: [new] 0d889a: 6e30 6850 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440722:       0d8116: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440723:       0d811a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440725: [new] 0d811e: 6e30 6850 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440816:       0d82e0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440817:       0d82e4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440819: [new] 0d82e8: 6e30 6850 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+440921:       0d841c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+440922:       0d8420: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+440924: [new] 0d8424: 6e30 6850 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hdp/HealthService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5068
+441470:       0daa7a: 1a01 9547                              |0057: const-string v1, "android.permission.BLUETOOTH" // string@4795
+441611:       0d9632: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+441614: [new] 0d963a: 6e30 be50 0d01                         |0004: invoke-virtual {v13, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+441964:       0d98ac: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+441967: [new] 0d98b4: 6e30 be50 0b01                         |0004: invoke-virtual {v11, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+442179:       0da1e4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+442180:       0da1e8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+442182: [new] 0da1ec: 6e30 be50 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+442218:       0da064: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+442219:       0da068: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+442221: [new] 0da06c: 6e30 be50 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+442277:       0da31c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+442278:       0da320: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+442280: [new] 0da324: 6e30 be50 0d01                         |0004: invoke-virtual {v13, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+442365:       0da0b4: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+442368: [new] 0da0bc: 6e30 be50 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+442591:       0d9b10: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+442594: [new] 0d9b18: 6e30 be50 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+442678:       0d9c24: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+442681: [new] 0d9c2c: 6e30 be50 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hearingaid/HearingAidService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@50be
+444157:       0e1f5a: 1a02 9547                              |0027: const-string v2, "android.permission.BLUETOOTH" // string@4795
+444167:       0e1f6c: 1a01 9c47                              |0001: const-string v1, "android.permission.MODIFY_PHONE_STATE" // string@479c
+444170: [new] 0e1f74: 6e30 2252 1002                         |0005: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+444568:       0e2846: 1a00 9c47                              |0000: const-string v0, "android.permission.MODIFY_PHONE_STATE" // string@479c
+444571: [new] 0e284e: 6e30 2252 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+444667:       0e065e: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+444668:       0e0662: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+444670: [new] 0e0666: 6e30 2252 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+444803:       0e0cd6: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+444806: [new] 0e0cde: 6e30 2252 0901                         |0004: invoke-virtual {v9, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+444975:       0df864: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+444978: [new] 0df86c: 6e30 2252 0b01                         |0004: invoke-virtual {v11, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+445167:       0dfac4: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+445170: [new] 0dfacc: 6e30 2252 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+445206:       0dfb3c: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+445209: [new] 0dfb44: 6e30 2252 0601                         |0004: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+445442:       0dfe0c: 1a02 9547                              |008c: const-string v2, "android.permission.BLUETOOTH" // string@4795
+445469:       0dfe5c: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+445472: [new] 0dfe64: 6e30 2252 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+445557:       0dff78: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+445560: [new] 0dff80: 6e30 2252 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+445609:       0e0030: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+445612: [new] 0e0038: 6e30 2252 0601                         |0004: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+445976:       0df742: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+445977:       0df746: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+445979: [new] 0df74a: 6e30 2252 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+445994:       0e0180: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+445995:       0e0184: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+445997: [new] 0e0188: 6e30 2252 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446005:       0e1bc2: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446006:       0e1bc6: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446008: [new] 0e1bca: 6e30 2252 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446034:       0e1ca4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446035:       0e1ca8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446037: [new] 0e1cac: 6e30 2252 0601                         |0004: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446076:       0e1c14: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446077:       0e1c18: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446079: [new] 0e1c1c: 6e30 2252 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446105:       0e1d28: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446106:       0e1d2c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446108: [new] 0e1d30: 6e30 2252 0c01                         |0004: invoke-virtual {v12, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446225:       0e1c64: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446226:       0e1c68: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446228: [new] 0e1c6c: 6e30 2252 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446298:       0e01f8: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446299:       0e01fc: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446301: [new] 0e0200: 6e30 2252 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446331:       0e0300: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446332:       0e0304: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446334: [new] 0e0308: 6e30 2252 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446348:       0e032e: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446349:       0e0332: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446351: [new] 0e0336: 6e30 2252 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446490:       0e0514: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+446491:       0e0518: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+446493: [new] 0e051c: 6e30 2252 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+446889:       0e0744: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+446892: [new] 0e074c: 6e30 2252 0601                         |0004: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+447146:       0e2a20: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+447149: [new] 0e2a28: 6e30 2252 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+447181:       0e2a86: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+447184: [new] 0e2a8e: 6e30 2252 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+447212:       0e0a6c: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+447215: [new] 0e0a74: 6e30 2252 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+447383:       0e0eac: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+447384:       0e0eb0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+447386: [new] 0e0eb4: 6e30 2252 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+448063:       0e16e0: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+448066: [new] 0e16e8: 6e30 2252 0901                         |0004: invoke-virtual {v9, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+448120:       0e1794: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+448121:       0e1798: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+448123: [new] 0e179c: 6e30 2252 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/hfp/HeadsetService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5222
+451033:       0e929e: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451034:       0e92a2: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451036: [new] 0e92a6: 6e30 9a53 0201                         |0005: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451060:       0e942a: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451061:       0e942e: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451063: [new] 0e9432: 6e30 9a53 0801                         |0005: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451233:       0e8652: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451234:       0e8656: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451236: [new] 0e865a: 6e30 9a53 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451344:       0e87e4: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+451347: [new] 0e87ec: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451410:       0e88bc: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+451413: [new] 0e88c4: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451450:       0e84dc: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451451:       0e84e0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451453: [new] 0e84e4: 6e30 9a53 0c01                         |0004: invoke-virtual {v12, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451504:       0e8932: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+451507: [new] 0e893a: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451540:       0e899e: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+451543: [new] 0e89a6: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451608:       0e8a06: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451609:       0e8a0a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451611: [new] 0e8a0e: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451650:       0e8a82: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451651:       0e8a86: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451653: [new] 0e8a8a: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451721:       0e9338: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451722:       0e933c: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451724: [new] 0e9340: 6e30 9a53 0601                         |0005: invoke-virtual {v6, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451764:       0e8582: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451765:       0e8586: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451767: [new] 0e858a: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451799:       0e85ea: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451800:       0e85ee: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451802: [new] 0e85f2: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451834:       0e93c0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451835:       0e93c4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451837: [new] 0e93c8: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451874:       0e92e8: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+451877: [new] 0e92f0: 6e30 9a53 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+451906:       0e8afa: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+451907:       0e8afe: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+451909: [new] 0e8b02: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+452045:       0e8c4c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+452046:       0e8c50: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+452048: [new] 0e8c54: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+452085:       0e8cc4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+452086:       0e8cc8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+452088: [new] 0e8ccc: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+452127:       0e8d40: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+452130: [new] 0e8d48: 6e30 9a53 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+452243:       0e8ea0: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+452244:       0e8ea4: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+452246: [new] 0e8ea8: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+452347:       0e8fec: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+452348:       0e8ff0: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+452350: [new] 0e8ff4: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+452383:       0e9056: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+452384:       0e905a: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+452386: [new] 0e905e: 6e30 9a53 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hfpclient/HeadsetClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@539a
+453113:       0f1dce: 1a02 9547                              |0075: const-string v2, "android.permission.BLUETOOTH" // string@4795
+453197:       0f100a: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+453200: [new] 0f1012: 6e30 3155 0301                         |0005: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453237:       0f108a: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+453240: [new] 0f1092: 6e30 3155 0401                         |0005: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453288:       0f1844: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+453289:       0f1848: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+453291: [new] 0f184c: 6e30 3155 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453310:       0f18e8: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+453311:       0f18ec: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+453313: [new] 0f18f0: 6e30 3155 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453338:       0f1884: 1a00 9547                              |0001: const-string v0, "android.permission.BLUETOOTH" // string@4795
+453339:       0f1888: 1a01 fd31                              |0003: const-string v1, "Need BLUETOOTH permission" // string@31fd
+453341: [new] 0f188c: 6e30 3155 0201                         |0005: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453682:       0f1166: 1a00 9647                              |0003: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+453685: [new] 0f116e: 6e30 3155 0102                         |0007: invoke-virtual {v1, v0, v2}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453827:       0f132e: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+453830: [new] 0f1336: 6e30 3155 0301                         |0005: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453880:       0f13da: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+453883: [new] 0f13e2: 6e30 3155 0301                         |0005: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+453928:       0f1476: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+453931: [new] 0f147e: 6e30 3155 0301                         |0005: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+454052:       0f15ea: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+454055: [new] 0f15f2: 6e30 3155 0301                         |0005: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+454095:       0f1676: 1a00 9647                              |0001: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+454098: [new] 0f167e: 6e30 3155 0201                         |0005: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/hid/HidDeviceService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5531
+454686:       0f33da: 1a01 9547                              |0063: const-string v1, "android.permission.BLUETOOTH" // string@4795
+454737:       0f347c: 1a01 9547                              |0049: const-string v1, "android.permission.BLUETOOTH" // string@4795
+454819:       0f3586: 1a04 9547                              |007d: const-string v4, "android.permission.BLUETOOTH" // string@4795
+454840:       0f35c2: 1a01 9547                              |0016: const-string v1, "android.permission.BLUETOOTH" // string@4795
+454861:       0f35fe: 1a01 9547                              |0016: const-string v1, "android.permission.BLUETOOTH" // string@4795
+454901:       0f367e: 1a01 9547                              |0016: const-string v1, "android.permission.BLUETOOTH" // string@4795
+454944:       0f3708: 1a01 9547                              |001b: const-string v1, "android.permission.BLUETOOTH" // string@4795
+454965:       0f3744: 1a01 9547                              |0016: const-string v1, "android.permission.BLUETOOTH" // string@4795
+455497:       0f282e: 1a00 9547                              |001e: const-string v0, "android.permission.BLUETOOTH" // string@4795
+455498:       0f2832: 1a01 fd31                              |0020: const-string v1, "Need BLUETOOTH permission" // string@31fd
+455500: [new] 0f2836: 6e30 9755 0401                         |0022: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+455568:       0f290c: 1a00 9547                              |001e: const-string v0, "android.permission.BLUETOOTH" // string@4795
+455569:       0f2910: 1a01 fd31                              |0020: const-string v1, "Need BLUETOOTH permission" // string@31fd
+455571: [new] 0f2914: 6e30 9755 0301                         |0022: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+455643:       0f293a: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+455646: [new] 0f2942: 6e30 9755 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+455734:       0f31fa: 1a00 9547                              |000b: const-string v0, "android.permission.BLUETOOTH" // string@4795
+455735:       0f31fe: 1a01 fd31                              |000d: const-string v1, "Need BLUETOOTH permission" // string@31fd
+455737: [new] 0f3202: 6e30 9755 0701                         |000f: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+455770:       0f29d8: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+455773: [new] 0f29e0: 6e30 9755 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+455814:       0f3172: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+455817: [new] 0f317a: 6e30 9755 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+455851:       0f2a56: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+455854: [new] 0f2a5e: 6e30 9755 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+455895:       0f2ad2: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+455898: [new] 0f2ada: 6e30 9755 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+456026:       0f2c56: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+456029: [new] 0f2c5e: 6e30 9755 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+456063:       0f2cc8: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+456066: [new] 0f2cd0: 6e30 9755 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+456116:       0f2d64: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+456119: [new] 0f2d6c: 6e30 9755 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+456171:       0f2e18: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+456174: [new] 0f2e20: 6e30 9755 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+456219:       0f2e9c: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+456222: [new] 0f2ea4: 6e30 9755 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+456302:       0f2f8e: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+456305: [new] 0f2f96: 6e30 9755 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/hid/HidHostService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5597
+457056:       10c31c: 1a01 9547                              |001d: const-string v1, "android.permission.BLUETOOTH" // string@4795
+457057:       10c320: 1a02 fd31                              |001f: const-string v2, "Need BLUETOOTH permission" // string@31fd
+457059: [new] 10c324: 6e30 6658 1002                         |0021: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/map/BluetoothMapService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5866
+457881:       10da24: 1a01 9547                              |000b: const-string v1, "android.permission.BLUETOOTH" // string@4795
+458013:       10dbf8: 1a02 9547                              |004b: const-string v2, "android.permission.BLUETOOTH" // string@4795
+458888:       10ce88: 1a04 9647                              |0096: const-string v4, "android.permission.BLUETOOTH_ADMIN" // string@4796
+461264:       118a78: 1a01 9547                              |001d: const-string v1, "android.permission.BLUETOOTH" // string@4795
+461265:       118a7c: 1a02 fd31                              |001f: const-string v2, "Need BLUETOOTH permission" // string@31fd
+461267: [new] 118a80: 6e30 705a 1002                         |0021: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/mapclient/MapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5a70
+461399:       11897c: 1a02 9f47                              |000a: const-string v2, "android.permission.READ_SMS" // string@479f
+461402: [new] 118984: 6e30 705a 2103                         |000e: invoke-virtual {v1, v2, v3}, Lcom/android/bluetooth/mapclient/MapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5a70
+461443:       1189f8: 1a01 a247                              |0011: const-string v1, "android.permission.SEND_SMS" // string@47a2
+461446: [new] 118a00: 6e30 705a 1002                         |0015: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/mapclient/MapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5a70
+463726:       12276c: 1a05 9d47                              |005c: const-string v5, "android.permission.NFC_HANDOVER_STATUS" // string@479d
+467266:       12c2d4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+467267:       12c2d8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+467269: [new] 12c2dc: 6e30 d85d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pan/PanService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5dd8
+467303:       12c33c: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+467304:       12c340: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+467306: [new] 12c344: 6e30 d85d 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/pan/PanService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5dd8
+467406:       12c914: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+467407:       12c918: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+467409: [new] 12c91c: 6e30 d85d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pan/PanService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5dd8
+467436:       12c990: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+467437:       12c994: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+467439: [new] 12c998: 6e30 d85d 0701                         |0004: invoke-virtual {v7, v0, v1}, Lcom/android/bluetooth/pan/PanService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5dd8
+467474:       12c60e: 1a00 9647                              |0002: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+467477: [new] 12c616: 6e30 d85d 0301                         |0006: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pan/PanService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5dd8
+467784:       12cfe4: 1a03 9547                              |01d2: const-string v3, "android.permission.BLUETOOTH" // string@4795
+467860:       12d12c: 1a00 9647                              |0024: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+467863: [new] 12d134: 6e30 d85d 0801                         |0028: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/pan/PanService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5dd8
+467920:       12c3d0: 1a00 9647                              |0002: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+467923: [new] 12c3d8: 6e30 d85d 0301                         |0006: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pan/PanService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5dd8
+468802:       130d26: 1a04 9647                              |004d: const-string v4, "android.permission.BLUETOOTH_ADMIN" // string@4796
+468821:       130f3c: 1a00 9647                              |0000: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+468824: [new] 130f44: 6e30 885e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pbap/BluetoothPbapService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5e88
+468848:       130afa: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+468849:       130afe: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+468851: [new] 130b02: 6e30 885e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pbap/BluetoothPbapService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5e88
+468877:       130a6e: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+468878:       130a72: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+468880: [new] 130a76: 6e30 885e 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pbap/BluetoothPbapService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5e88
+468910:       130b54: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+468911:       130b58: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+468913: [new] 130b5c: 6e30 885e 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/pbap/BluetoothPbapService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5e88
+470731:       137412: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+470732:       137416: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+470734: [new] 13741a: 6e30 b75f 0801                         |0004: invoke-virtual {v8, v0, v1}, Lcom/android/bluetooth/pbapclient/PbapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5fb7
+470939:       13702e: 1a00 9647                              |0002: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+470942: [new] 137036: 6e30 b75f 0501                         |0006: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/pbapclient/PbapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5fb7
+471006:       13710c: 1a00 9647                              |0002: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+471009: [new] 137114: 6e30 b75f 0301                         |0006: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pbapclient/PbapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5fb7
+471055:       1373e8: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+471056:       1373ec: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+471058: [new] 1373f0: 6e30 b75f 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pbapclient/PbapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5fb7
+471072:       13734c: 1a00 9547                              |0002: const-string v0, "android.permission.BLUETOOTH" // string@4795
+471073:       137350: 1a01 fd31                              |0004: const-string v1, "Need BLUETOOTH permission" // string@31fd
+471075: [new] 137354: 6e30 b75f 0201                         |0006: invoke-virtual {v2, v0, v1}, Lcom/android/bluetooth/pbapclient/PbapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5fb7
+471097:       137394: 1a00 9647                              |0002: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+471100: [new] 13739c: 6e30 b75f 0301                         |0006: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pbapclient/PbapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5fb7
+471129:       137162: 1a00 9647                              |0002: const-string v0, "android.permission.BLUETOOTH_ADMIN" // string@4796
+471132: [new] 13716a: 6e30 b75f 0301                         |0006: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/pbapclient/PbapClientService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@5fb7
+471431:       13c2d6: 1a01 9547                              |001d: const-string v1, "android.permission.BLUETOOTH" // string@4795
+471432:       13c2da: 1a02 fd31                              |001f: const-string v2, "Need BLUETOOTH permission" // string@31fd
+471434: [new] 13c2de: 6e30 d060 1002                         |0021: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/sap/SapService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@60d0
+472169:       13d192: 1a01 9547                              |001c: const-string v1, "android.permission.BLUETOOTH" // string@4795
+472201:       13d1da: 1a01 9547                              |000b: const-string v1, "android.permission.BLUETOOTH" // string@4795
+472277:       13d2a4: 1a02 9547                              |002b: const-string v2, "android.permission.BLUETOOTH" // string@4795
+495964: [new] 02c97a: 6e30 8816 1004                         |0006: invoke-virtual {v0, v1, v4}, Landroid/support/v4/app/NotificationCompatSideChannelService;.checkPermission:(ILjava/lang/String;)V // method@1688
+495987: [new] 02c9c4: 6e30 8816 1004                         |0006: invoke-virtual {v0, v1, v4}, Landroid/support/v4/app/NotificationCompatSideChannelService;.checkPermission:(ILjava/lang/String;)V // method@1688
+496010: [new] 02ca0c: 6e30 8816 1004                         |0006: invoke-virtual {v0, v1, v4}, Landroid/support/v4/app/NotificationCompatSideChannelService;.checkPermission:(ILjava/lang/String;)V // method@1688
+501682:       0567e8: 1a01 9b47                              |0004: const-string v1, "android.permission.MEDIA_CONTENT_CONTROL" // string@479b
+501688: [new] 0567fc: 6e40 e103 1032                         |000e: invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@03e1
+507716:       0ccc7e: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+507717:       0ccc82: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+507719: [new] 0ccc86: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+507744:       0cccd4: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+507745:       0cccd8: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+507747: [new] 0cccdc: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+507773:       0ccd30: 1a01 9547                              |0002: const-string v1, "android.permission.BLUETOOTH" // string@4795
+507774:       0ccd34: 1a02 fd31                              |0004: const-string v2, "Need BLUETOOTH permission" // string@31fd
+507777: [new] 0ccd3c: 6e30 ec4d 1c02                         |0008: invoke-virtual {v12, v1, v2}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+507889:       0ccb9a: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+507890:       0ccb9e: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+507892: [new] 0ccba2: 6e30 ec4d 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509326:       0ce018: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+509327:       0ce01c: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+509329: [new] 0ce020: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509361:       0ce082: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+509362:       0ce086: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+509364: [new] 0ce08a: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509392:       0ce0e6: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+509393:       0ce0ea: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+509395: [new] 0ce0ee: 6e30 ec4d 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509446:       0ce18a: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+509447:       0ce18e: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+509449: [new] 0ce192: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509554:       0ce252: 1a00 9547                              |0000: const-string v0, "android.permission.BLUETOOTH" // string@4795
+509555:       0ce256: 1a01 fd31                              |0002: const-string v1, "Need BLUETOOTH permission" // string@31fd
+509557: [new] 0ce25a: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec

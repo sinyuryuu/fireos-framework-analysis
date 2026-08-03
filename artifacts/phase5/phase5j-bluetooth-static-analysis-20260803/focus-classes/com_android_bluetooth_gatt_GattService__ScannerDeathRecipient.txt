@@ -1,0 +1,105 @@
+  209712:   class #1731: GattService.ScannerDeathRecipient ('Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;')
+  209713:    access=0000 ()
+  209714:    source_file=GattService.java, class_data_off=223133 (2240819)
+  209715:    static_fields=0, instance_fields=2, direct_methods=2, virtual_methods=1
+  209716:    direct_method #20068: <init> (Lcom/android/bluetooth/gatt/GattService;I)V
+  209717:     access=10000 (CONSTRUCTOR)
+  209718:     codeOff=cefa2 (847778)
+  209719:     quickening_size=5 (5)
+  209720:       0cefa6: e801 0800                              |0000: iput-object-quick v1, v0, [obj+0008]
+  209721: [new] 0cefa6: 5b01 9d4b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.this$0:Lcom/android/bluetooth/gatt/GattService; // field@4b9d
+  209722:       0cefaa: 7010 0b6d 0000                         |0002: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@6d0b
+  209723:       0cefb0: e602 0c00                              |0005: iput-quick v2, v0, [obj+000c]
+  209724: [new] 0cefb0: 5902 9c4b                              |0005: iput v2, v0, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.mScannerId:I // field@4b9c
+  209725:       0cefb4: 0e00                                   |0007: return-void
+  209726:    direct_method #20070: isScanClient (I)Z
+  209727:     access=0002 (PRIVATE)
+  209728:     codeOff=cef20 (847648)
+  209729:     quickening_size=11 (17)
+  209730:       0cef24: e540 0800                              |0000: iget-object-quick v0, v4, [obj+0008]
+  209731: [new] 0cef24: 5440 9d4b                              |0000: iget-object v0, v4, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.this$0:Lcom/android/bluetooth/gatt/GattService; // field@4b9d
+  209732:       0cef28: e500 6400                              |0002: iget-object-quick v0, v0, [obj+0064]
+  209733: [new] 0cef28: 5400 be4b                              |0002: iget-object v0, v0, Lcom/android/bluetooth/gatt/GattService;.mScanManager:Lcom/android/bluetooth/gatt/ScanManager; // field@4bbe
+  209734:       0cef2c: e910 1100 0000                         |0004: invoke-virtual-quick {v0}, [0011] // vtable #0011
+  209735: [new] 0cef2c: 6e10 0a50 0000                         |0004: invoke-virtual {v0}, Lcom/android/bluetooth/gatt/ScanManager;.getRegularScanQueue:()Ljava/util/Set; // method@500a
+  209736:       0cef32: 0c00                                   |0007: move-result-object v0
+  209737:       0cef34: 7210 2f6f 0000                         |0008: invoke-interface {v0}, Ljava/util/Set;.iterator:()Ljava/util/Iterator; // method@6f2f
+  209738:       0cef3a: 0c00                                   |000b: move-result-object v0
+  209739:       0cef3c: 7210 c46e 0000                         |000c: invoke-interface {v0}, Ljava/util/Iterator;.hasNext:()Z // method@6ec4
+  209740:       0cef42: 0a01                                   |000f: move-result v1
+  209741:       0cef44: 1212                                   |0010: const/4 v2, #int 1 // #1
+  209742:       0cef46: 3801 0e00                              |0011: if-eqz v1, 001f // +000e
+  209743:       0cef4a: 7210 c56e 0000                         |0013: invoke-interface {v0}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@6ec5
+  209744:       0cef50: 0c01                                   |0016: move-result-object v1
+  209745:       0cef52: 1f01 e50b                              |0017: check-cast v1, Lcom/android/bluetooth/gatt/ScanClient; // type@0be5
+  209746:       0cef56: e313 2800                              |0019: iget-quick v3, v1, [obj+0028]
+  209747: [new] 0cef56: 5213 ee4b                              |0019: iget v3, v1, Lcom/android/bluetooth/gatt/ScanClient;.scannerId:I // field@4bee
+  209748:       0cef5a: 3353 0300                              |001b: if-ne v3, v5, 001e // +0003
+  209749:       0cef5e: 0f02                                   |001d: return v2
+  209750:       0cef60: 28ee                                   |001e: goto 000c // -0012
+  209751:       0cef62: e540 0800                              |001f: iget-object-quick v0, v4, [obj+0008]
+  209752: [new] 0cef62: 5440 9d4b                              |001f: iget-object v0, v4, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.this$0:Lcom/android/bluetooth/gatt/GattService; // field@4b9d
+  209753:       0cef66: e500 6400                              |0021: iget-object-quick v0, v0, [obj+0064]
+  209754: [new] 0cef66: 5400 be4b                              |0021: iget-object v0, v0, Lcom/android/bluetooth/gatt/GattService;.mScanManager:Lcom/android/bluetooth/gatt/ScanManager; // field@4bbe
+  209755:       0cef6a: e910 0e00 0000                         |0023: invoke-virtual-quick {v0}, [000e] // vtable #000e
+  209756: [new] 0cef6a: 6e10 0750 0000                         |0023: invoke-virtual {v0}, Lcom/android/bluetooth/gatt/ScanManager;.getBatchScanQueue:()Ljava/util/Set; // method@5007
+  209757:       0cef70: 0c00                                   |0026: move-result-object v0
+  209758:       0cef72: 7210 2f6f 0000                         |0027: invoke-interface {v0}, Ljava/util/Set;.iterator:()Ljava/util/Iterator; // method@6f2f
+  209759:       0cef78: 0c00                                   |002a: move-result-object v0
+  209760:       0cef7a: 7210 c46e 0000                         |002b: invoke-interface {v0}, Ljava/util/Iterator;.hasNext:()Z // method@6ec4
+  209761:       0cef80: 0a01                                   |002e: move-result v1
+  209762:       0cef82: 3801 0e00                              |002f: if-eqz v1, 003d // +000e
+  209763:       0cef86: 7210 c56e 0000                         |0031: invoke-interface {v0}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@6ec5
+  209764:       0cef8c: 0c01                                   |0034: move-result-object v1
+  209765:       0cef8e: 1f01 e50b                              |0035: check-cast v1, Lcom/android/bluetooth/gatt/ScanClient; // type@0be5
+  209766:       0cef92: e313 2800                              |0037: iget-quick v3, v1, [obj+0028]
+  209767: [new] 0cef92: 5213 ee4b                              |0037: iget v3, v1, Lcom/android/bluetooth/gatt/ScanClient;.scannerId:I // field@4bee
+  209768:       0cef96: 3353 0300                              |0039: if-ne v3, v5, 003c // +0003
+  209769:       0cef9a: 0f02                                   |003b: return v2
+  209770:       0cef9c: 28ef                                   |003c: goto 002b // -0011
+  209771:       0cef9e: 1200                                   |003d: const/4 v0, #int 0 // #0
+  209772:       0cefa0: 0f00                                   |003e: return v0
+  209773:    virtual_method #20069: binderDied ()V
+  209774:     access=0001 (PUBLIC)
+  209775:     codeOff=cefb6 (847798)
+  209776:     quickening_size=17 (23)
+  209777:       0cefba: 7100 824e 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/gatt/GattService;.access$000:()Z // method@4e82
+  209778:       0cefc0: 0a00                                   |0003: move-result v0
+  209779:       0cefc2: 3800 1f00                              |0004: if-eqz v0, 0023 // +001f
+  209780:       0cefc6: 1a00 480c                              |0006: const-string v0, "BtGatt.GattService" // string@0c48
+  209781:       0cefca: 2201 c40e                              |0008: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  209782:       0cefce: 7010 646d 0100                         |000a: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  209783:       0cefd4: 1a02 390b                              |000d: const-string v2, "Binder is dead - unregistering scanner (" // string@0b39
+  209784:       0cefd8: e920 4b00 2100                         |000f: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  209785: [new] 0cefd8: 6e20 6e6d 2100                         |000f: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  209786:       0cefde: e332 0c00                              |0012: iget-quick v2, v3, [obj+000c]
+  209787: [new] 0cefde: 5232 9c4b                              |0012: iget v2, v3, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.mScannerId:I // field@4b9c
+  209788:       0cefe2: e920 4600 2100                         |0014: invoke-virtual-quick {v1, v2}, [0046] // vtable #0046
+  209789: [new] 0cefe2: 6e20 6a6d 2100                         |0014: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  209790:       0cefe8: 1a02 8104                              |0017: const-string v2, ")!" // string@0481
+  209791:       0cefec: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  209792: [new] 0cefec: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  209793:       0ceff2: e910 0700 0100                         |001c: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  209794: [new] 0ceff2: 6e10 786d 0100                         |001c: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  209795:       0ceff8: 0c01                                   |001f: move-result-object v1
+  209796:       0ceffa: 7120 9239 1000                         |0020: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  209797:       0cf000: e330 0c00                              |0023: iget-quick v0, v3, [obj+000c]
+  209798: [new] 0cf000: 5230 9c4b                              |0023: iget v0, v3, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.mScannerId:I // field@4b9c
+  209799:       0cf004: 7020 664e 0300                         |0025: invoke-direct {v3, v0}, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.isScanClient:(I)Z // method@4e66
+  209800:       0cf00a: 0a00                                   |0028: move-result v0
+  209801:       0cf00c: 3800 1300                              |0029: if-eqz v0, 003c // +0013
+  209802:       0cf010: 2200 e50b                              |002b: new-instance v0, Lcom/android/bluetooth/gatt/ScanClient; // type@0be5
+  209803:       0cf014: e331 0c00                              |002d: iget-quick v1, v3, [obj+000c]
+  209804: [new] 0cf014: 5231 9c4b                              |002d: iget v1, v3, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.mScannerId:I // field@4b9c
+  209805:       0cf018: 7020 764f 1000                         |002f: invoke-direct {v0, v1}, Lcom/android/bluetooth/gatt/ScanClient;.<init>:(I)V // method@4f76
+  209806:       0cf01e: 1211                                   |0032: const/4 v1, #int 1 // #1
+  209807:       0cf020: eb01 2c00                              |0033: iput-boolean-quick v1, v0, [obj+002c]
+  209808: [new] 0cf020: 5c01 e74b                              |0033: iput-boolean v1, v0, Lcom/android/bluetooth/gatt/ScanClient;.appDied:Z // field@4be7
+  209809:       0cf024: e531 0800                              |0035: iget-object-quick v1, v3, [obj+0008]
+  209810: [new] 0cf024: 5431 9d4b                              |0035: iget-object v1, v3, Lcom/android/bluetooth/gatt/GattService$ScannerDeathRecipient;.this$0:Lcom/android/bluetooth/gatt/GattService; // field@4b9d
+  209811:       0cf028: e302 2800                              |0037: iget-quick v2, v0, [obj+0028]
+  209812: [new] 0cf028: 5202 ee4b                              |0037: iget v2, v0, Lcom/android/bluetooth/gatt/ScanClient;.scannerId:I // field@4bee
+  209813:       0cf02c: e920 4901 2100                         |0039: invoke-virtual-quick {v1, v2}, [0149] // vtable #0149
+  209814: [new] 0cf02c: 6e20 424f 2100                         |0039: invoke-virtual {v1, v2}, Lcom/android/bluetooth/gatt/GattService;.stopScan:(I)V // method@4f42
+  209815:       0cf032: 7300                                   |003c: return-void-no-barrier
+  209816: [new] 0cf032: 0e00                                   |003c: return-void

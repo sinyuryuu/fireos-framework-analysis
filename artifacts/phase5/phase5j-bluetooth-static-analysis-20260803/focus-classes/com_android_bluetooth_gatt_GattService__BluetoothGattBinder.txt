@@ -1,0 +1,917 @@
+  431373:   class #2615: GattService.BluetoothGattBinder ('Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;')
+  431374:    access=0001 (PUBLIC)
+  431375:    source_file=GattService.java, class_data_off=23165a (2299482)
+  431376:    static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=58
+  431377:    direct_method #19989: <init> (Lcom/android/bluetooth/gatt/GattService;)V
+  431378:     access=10000 (CONSTRUCTOR)
+  431379:     codeOff=ce82a (845866)
+  431380:     quickening_size=3 (3)
+  431381:       0ce82e: 7010 1003 0000                         |0000: invoke-direct {v0}, Landroid/bluetooth/IBluetoothGatt$Stub;.<init>:()V // method@0310
+  431382:       0ce834: e801 1800                              |0003: iput-object-quick v1, v0, [obj+0018]
+  431383: [new] 0ce834: 5b01 934b                              |0003: iput-object v1, v0, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/GattService; // field@4b93
+  431384:       0ce838: 7300                                   |0005: return-void-no-barrier
+  431385: [new] 0ce838: 0e00                                   |0005: return-void
+  431386:    virtual_method #19990: addService (ILandroid/bluetooth/BluetoothGattService;)V
+  431387:     access=0001 (PUBLIC)
+  431388:     codeOff=ce83a (845882)
+  431389:     quickening_size=5 (5)
+  431390:       0ce83e: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431391: [new] 0ce83e: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431392:       0ce844: 0c00                                   |0003: move-result-object v0
+  431393:       0ce846: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431394:       0ce84a: 7300                                   |0006: return-void-no-barrier
+  431395: [new] 0ce84a: 0e00                                   |0006: return-void
+  431396:       0ce84c: e930 db00 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [00db] // vtable #00db
+  431397: [new] 0ce84c: 6e30 864e 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.addService:(ILandroid/bluetooth/BluetoothGattService;)V // method@4e86
+  431398:       0ce852: 7300                                   |000a: return-void-no-barrier
+  431399: [new] 0ce852: 0e00                                   |000a: return-void
+  431400:    virtual_method #19991: beginReliableWrite (ILjava/lang/String;)V
+  431401:     access=0001 (PUBLIC)
+  431402:     codeOff=ce854 (845908)
+  431403:     quickening_size=5 (5)
+  431404:       0ce858: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431405: [new] 0ce858: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431406:       0ce85e: 0c00                                   |0003: move-result-object v0
+  431407:       0ce860: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431408:       0ce864: 7300                                   |0006: return-void-no-barrier
+  431409: [new] 0ce864: 0e00                                   |0006: return-void
+  431410:       0ce866: e930 dc00 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [00dc] // vtable #00dc
+  431411: [new] 0ce866: 6e30 874e 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.beginReliableWrite:(ILjava/lang/String;)V // method@4e87
+  431412:       0ce86c: 7300                                   |000a: return-void-no-barrier
+  431413: [new] 0ce86c: 0e00                                   |000a: return-void
+  431414:    virtual_method #19992: cleanup ()V
+  431415:     access=0001 (PUBLIC)
+  431416:     codeOff=ce86e (845934)
+  431417:     quickening_size=3 (3)
+  431418:       0ce872: 1200                                   |0000: const/4 v0, #int 0 // #0
+  431419:       0ce874: e810 1800                              |0001: iput-object-quick v0, v1, [obj+0018]
+  431420: [new] 0ce874: 5b10 934b                              |0001: iput-object v0, v1, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/GattService; // field@4b93
+  431421:       0ce878: 7300                                   |0003: return-void-no-barrier
+  431422: [new] 0ce878: 0e00                                   |0003: return-void
+  431423:    virtual_method #19993: clearServices (I)V
+  431424:     access=0001 (PUBLIC)
+  431425:     codeOff=ce87a (845946)
+  431426:     quickening_size=5 (5)
+  431427:       0ce87e: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431428: [new] 0ce87e: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431429:       0ce884: 0c00                                   |0003: move-result-object v0
+  431430:       0ce886: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431431:       0ce88a: 7300                                   |0006: return-void-no-barrier
+  431432: [new] 0ce88a: 0e00                                   |0006: return-void
+  431433:       0ce88c: e920 dd00 2000                         |0007: invoke-virtual-quick {v0, v2}, [00dd] // vtable #00dd
+  431434: [new] 0ce88c: 6e20 8c4e 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.clearServices:(I)V // method@4e8c
+  431435:       0ce892: 7300                                   |000a: return-void-no-barrier
+  431436: [new] 0ce892: 0e00                                   |000a: return-void
+  431437:    virtual_method #19994: clientConnect (ILjava/lang/String;ZIZI)V
+  431438:     access=0001 (PUBLIC)
+  431439:     codeOff=ce894 (845972)
+  431440:     quickening_size=5 (5)
+  431441:       0ce898: e910 5400 0800                         |0000: invoke-virtual-quick {v8}, [0054] // vtable #0054
+  431442: [new] 0ce898: 6e10 294e 0800                         |0000: invoke-virtual {v8}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431443:       0ce89e: 0c07                                   |0003: move-result-object v7
+  431444:       0ce8a0: 3907 0300                              |0004: if-nez v7, 0007 // +0003
+  431445:       0ce8a4: 7300                                   |0006: return-void-no-barrier
+  431446: [new] 0ce8a4: 0e00                                   |0006: return-void
+  431447:       0ce8a6: 0770                                   |0007: move-object v0, v7
+  431448:       0ce8a8: 0191                                   |0008: move v1, v9
+  431449:       0ce8aa: 07a2                                   |0009: move-object v2, v10
+  431450:       0ce8ac: 01b3                                   |000a: move v3, v11
+  431451:       0ce8ae: 01c4                                   |000b: move v4, v12
+  431452:       0ce8b0: 01d5                                   |000c: move v5, v13
+  431453:       0ce8b2: 01e6                                   |000d: move v6, v14
+  431454:       0ce8b4: ea07 de00 0000                         |000e: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5, v6}, [00de] // vtable #00de
+  431455: [new] 0ce8b4: 7407 8d4e 0000                         |000e: invoke-virtual/range {v0, v1, v2, v3, v4, v5, v6}, Lcom/android/bluetooth/gatt/GattService;.clientConnect:(ILjava/lang/String;ZIZI)V // method@4e8d
+  431456:       0ce8ba: 7300                                   |0011: return-void-no-barrier
+  431457: [new] 0ce8ba: 0e00                                   |0011: return-void
+  431458:    virtual_method #19995: clientDisconnect (ILjava/lang/String;)V
+  431459:     access=0001 (PUBLIC)
+  431460:     codeOff=ce8bc (846012)
+  431461:     quickening_size=5 (5)
+  431462:       0ce8c0: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431463: [new] 0ce8c0: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431464:       0ce8c6: 0c00                                   |0003: move-result-object v0
+  431465:       0ce8c8: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431466:       0ce8cc: 7300                                   |0006: return-void-no-barrier
+  431467: [new] 0ce8cc: 0e00                                   |0006: return-void
+  431468:       0ce8ce: e930 df00 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [00df] // vtable #00df
+  431469: [new] 0ce8ce: 6e30 8e4e 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.clientDisconnect:(ILjava/lang/String;)V // method@4e8e
+  431470:       0ce8d4: 7300                                   |000a: return-void-no-barrier
+  431471: [new] 0ce8d4: 0e00                                   |000a: return-void
+  431472:    virtual_method #19996: clientReadPhy (ILjava/lang/String;)V
+  431473:     access=0001 (PUBLIC)
+  431474:     codeOff=ce8d6 (846038)
+  431475:     quickening_size=5 (5)
+  431476:       0ce8da: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431477: [new] 0ce8da: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431478:       0ce8e0: 0c00                                   |0003: move-result-object v0
+  431479:       0ce8e2: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431480:       0ce8e6: 7300                                   |0006: return-void-no-barrier
+  431481: [new] 0ce8e6: 0e00                                   |0006: return-void
+  431482:       0ce8e8: e930 e000 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [00e0] // vtable #00e0
+  431483: [new] 0ce8e8: 6e30 8f4e 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.clientReadPhy:(ILjava/lang/String;)V // method@4e8f
+  431484:       0ce8ee: 7300                                   |000a: return-void-no-barrier
+  431485: [new] 0ce8ee: 0e00                                   |000a: return-void
+  431486:    virtual_method #19997: clientSetPreferredPhy (ILjava/lang/String;III)V
+  431487:     access=0001 (PUBLIC)
+  431488:     codeOff=ce8f0 (846064)
+  431489:     quickening_size=5 (5)
+  431490:       0ce8f4: e910 5400 0700                         |0000: invoke-virtual-quick {v7}, [0054] // vtable #0054
+  431491: [new] 0ce8f4: 6e10 294e 0700                         |0000: invoke-virtual {v7}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431492:       0ce8fa: 0c06                                   |0003: move-result-object v6
+  431493:       0ce8fc: 3906 0300                              |0004: if-nez v6, 0007 // +0003
+  431494:       0ce900: 7300                                   |0006: return-void-no-barrier
+  431495: [new] 0ce900: 0e00                                   |0006: return-void
+  431496:       0ce902: 0760                                   |0007: move-object v0, v6
+  431497:       0ce904: 0181                                   |0008: move v1, v8
+  431498:       0ce906: 0792                                   |0009: move-object v2, v9
+  431499:       0ce908: 01a3                                   |000a: move v3, v10
+  431500:       0ce90a: 01b4                                   |000b: move v4, v11
+  431501:       0ce90c: 01c5                                   |000c: move v5, v12
+  431502:       0ce90e: ea06 e100 0000                         |000d: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5}, [00e1] // vtable #00e1
+  431503: [new] 0ce90e: 7406 904e 0000                         |000d: invoke-virtual/range {v0, v1, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.clientSetPreferredPhy:(ILjava/lang/String;III)V // method@4e90
+  431504:       0ce914: 7300                                   |0010: return-void-no-barrier
+  431505: [new] 0ce914: 0e00                                   |0010: return-void
+  431506:    virtual_method #19998: configureMTU (ILjava/lang/String;I)V
+  431507:     access=0001 (PUBLIC)
+  431508:     codeOff=ce916 (846102)
+  431509:     quickening_size=5 (5)
+  431510:       0ce91a: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431511: [new] 0ce91a: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431512:       0ce920: 0c00                                   |0003: move-result-object v0
+  431513:       0ce922: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431514:       0ce926: 7300                                   |0006: return-void-no-barrier
+  431515: [new] 0ce926: 0e00                                   |0006: return-void
+  431516:       0ce928: e940 e200 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4}, [00e2] // vtable #00e2
+  431517: [new] 0ce928: 6e40 914e 2043                         |0007: invoke-virtual {v0, v2, v3, v4}, Lcom/android/bluetooth/gatt/GattService;.configureMTU:(ILjava/lang/String;I)V // method@4e91
+  431518:       0ce92e: 7300                                   |000a: return-void-no-barrier
+  431519: [new] 0ce92e: 0e00                                   |000a: return-void
+  431520:    virtual_method #19999: connectionParameterUpdate (ILjava/lang/String;I)V
+  431521:     access=0001 (PUBLIC)
+  431522:     codeOff=ce930 (846128)
+  431523:     quickening_size=5 (5)
+  431524:       0ce934: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431525: [new] 0ce934: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431526:       0ce93a: 0c00                                   |0003: move-result-object v0
+  431527:       0ce93c: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431528:       0ce940: 7300                                   |0006: return-void-no-barrier
+  431529: [new] 0ce940: 0e00                                   |0006: return-void
+  431530:       0ce942: e940 e300 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4}, [00e3] // vtable #00e3
+  431531: [new] 0ce942: 6e40 924e 2043                         |0007: invoke-virtual {v0, v2, v3, v4}, Lcom/android/bluetooth/gatt/GattService;.connectionParameterUpdate:(ILjava/lang/String;I)V // method@4e92
+  431532:       0ce948: 7300                                   |000a: return-void-no-barrier
+  431533: [new] 0ce948: 0e00                                   |000a: return-void
+  431534:    virtual_method #20000: disconnectAll ()V
+  431535:     access=0001 (PUBLIC)
+  431536:     codeOff=ce94a (846154)
+  431537:     quickening_size=5 (5)
+  431538:       0ce94e: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431539: [new] 0ce94e: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431540:       0ce954: 0c00                                   |0003: move-result-object v0
+  431541:       0ce956: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431542:       0ce95a: 7300                                   |0006: return-void-no-barrier
+  431543: [new] 0ce95a: 0e00                                   |0006: return-void
+  431544:       0ce95c: e910 e600 0000                         |0007: invoke-virtual-quick {v0}, [00e6] // vtable #00e6
+  431545: [new] 0ce95c: 6e10 974e 0000                         |0007: invoke-virtual {v0}, Lcom/android/bluetooth/gatt/GattService;.disconnectAll:()V // method@4e97
+  431546:       0ce962: 7300                                   |000a: return-void-no-barrier
+  431547: [new] 0ce962: 0e00                                   |000a: return-void
+  431548:    virtual_method #20001: discoverServiceByUuid (ILjava/lang/String;Landroid/os/ParcelUuid;)V
+  431549:     access=0001 (PUBLIC)
+  431550:     codeOff=ce964 (846180)
+  431551:     quickening_size=7 (7)
+  431552:       0ce968: e910 5400 0200                         |0000: invoke-virtual-quick {v2}, [0054] // vtable #0054
+  431553: [new] 0ce968: 6e10 294e 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431554:       0ce96e: 0c00                                   |0003: move-result-object v0
+  431555:       0ce970: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431556:       0ce974: 7300                                   |0006: return-void-no-barrier
+  431557: [new] 0ce974: 0e00                                   |0006: return-void
+  431558:       0ce976: e910 0c00 0500                         |0007: invoke-virtual-quick {v5}, [000c] // vtable #000c
+  431559: [new] 0ce976: 6e10 5e0d 0500                         |0007: invoke-virtual {v5}, Landroid/os/ParcelUuid;.getUuid:()Ljava/util/UUID; // method@0d5e
+  431560:       0ce97c: 0c01                                   |000a: move-result-object v1
+  431561:       0ce97e: e940 e700 3014                         |000b: invoke-virtual-quick {v0, v3, v4, v1}, [00e7] // vtable #00e7
+  431562: [new] 0ce97e: 6e40 984e 3014                         |000b: invoke-virtual {v0, v3, v4, v1}, Lcom/android/bluetooth/gatt/GattService;.discoverServiceByUuid:(ILjava/lang/String;Ljava/util/UUID;)V // method@4e98
+  431563:       0ce984: 7300                                   |000e: return-void-no-barrier
+  431564: [new] 0ce984: 0e00                                   |000e: return-void
+  431565:    virtual_method #20002: discoverServices (ILjava/lang/String;)V
+  431566:     access=0001 (PUBLIC)
+  431567:     codeOff=ce986 (846214)
+  431568:     quickening_size=5 (5)
+  431569:       0ce98a: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431570: [new] 0ce98a: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431571:       0ce990: 0c00                                   |0003: move-result-object v0
+  431572:       0ce992: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431573:       0ce996: 7300                                   |0006: return-void-no-barrier
+  431574: [new] 0ce996: 0e00                                   |0006: return-void
+  431575:       0ce998: e930 e800 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [00e8] // vtable #00e8
+  431576: [new] 0ce998: 6e30 994e 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.discoverServices:(ILjava/lang/String;)V // method@4e99
+  431577:       0ce99e: 7300                                   |000a: return-void-no-barrier
+  431578: [new] 0ce99e: 0e00                                   |000a: return-void
+  431579:    virtual_method #20003: enableAdvertisingSet (IZII)V
+  431580:     access=0001 (PUBLIC)
+  431581:     codeOff=ce9a0 (846240)
+  431582:     quickening_size=5 (5)
+  431583:       0ce9a4: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431584: [new] 0ce9a4: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431585:       0ce9aa: 0c00                                   |0003: move-result-object v0
+  431586:       0ce9ac: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431587:       0ce9b0: 7300                                   |0006: return-void-no-barrier
+  431588: [new] 0ce9b0: 0e00                                   |0006: return-void
+  431589:       0ce9b2: e955 e900 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [00e9] // vtable #00e9
+  431590: [new] 0ce9b2: 6e55 9c4e 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.enableAdvertisingSet:(IZII)V // method@4e9c
+  431591:       0ce9b8: 7300                                   |000a: return-void-no-barrier
+  431592: [new] 0ce9b8: 0e00                                   |000a: return-void
+  431593:    virtual_method #20004: endReliableWrite (ILjava/lang/String;Z)V
+  431594:     access=0001 (PUBLIC)
+  431595:     codeOff=ce9ba (846266)
+  431596:     quickening_size=5 (5)
+  431597:       0ce9be: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431598: [new] 0ce9be: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431599:       0ce9c4: 0c00                                   |0003: move-result-object v0
+  431600:       0ce9c6: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431601:       0ce9ca: 7300                                   |0006: return-void-no-barrier
+  431602: [new] 0ce9ca: 0e00                                   |0006: return-void
+  431603:       0ce9cc: e940 ea00 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4}, [00ea] // vtable #00ea
+  431604: [new] 0ce9cc: 6e40 9d4e 2043                         |0007: invoke-virtual {v0, v2, v3, v4}, Lcom/android/bluetooth/gatt/GattService;.endReliableWrite:(ILjava/lang/String;Z)V // method@4e9d
+  431605:       0ce9d2: 7300                                   |000a: return-void-no-barrier
+  431606: [new] 0ce9d2: 0e00                                   |000a: return-void
+  431607:    virtual_method #20005: flushPendingBatchResults (I)V
+  431608:     access=0001 (PUBLIC)
+  431609:     codeOff=ce9d4 (846292)
+  431610:     quickening_size=5 (5)
+  431611:       0ce9d8: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431612: [new] 0ce9d8: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431613:       0ce9de: 0c00                                   |0003: move-result-object v0
+  431614:       0ce9e0: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431615:       0ce9e4: 7300                                   |0006: return-void-no-barrier
+  431616: [new] 0ce9e4: 0e00                                   |0006: return-void
+  431617:       0ce9e6: e920 ee00 2000                         |0007: invoke-virtual-quick {v0, v2}, [00ee] // vtable #00ee
+  431618: [new] 0ce9e6: 6e20 a44e 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.flushPendingBatchResults:(I)V // method@4ea4
+  431619:       0ce9ec: 7300                                   |000a: return-void-no-barrier
+  431620: [new] 0ce9ec: 0e00                                   |000a: return-void
+  431621:    virtual_method #20006: getDevicesMatchingConnectionStates ([I)Ljava/util/List;
+  431622:     access=0001 (PUBLIC)
+  431623:     codeOff=ce804 (845828)
+  431624:     quickening_size=5 (5)
+  431625:       0ce808: e910 5400 0200                         |0000: invoke-virtual-quick {v2}, [0054] // vtable #0054
+  431626: [new] 0ce808: 6e10 294e 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431627:       0ce80e: 0c00                                   |0003: move-result-object v0
+  431628:       0ce810: 3900 0800                              |0004: if-nez v0, 000c // +0008
+  431629:       0ce814: 2201 050f                              |0006: new-instance v1, Ljava/util/ArrayList; // type@0f05
+  431630:       0ce818: 7010 336e 0100                         |0008: invoke-direct {v1}, Ljava/util/ArrayList;.<init>:()V // method@6e33
+  431631:       0ce81e: 1101                                   |000b: return-object v1
+  431632:       0ce820: e920 f300 3000                         |000c: invoke-virtual-quick {v0, v3}, [00f3] // vtable #00f3
+  431633: [new] 0ce820: 6e20 cc4e 3000                         |000c: invoke-virtual {v0, v3}, Lcom/android/bluetooth/gatt/GattService;.getDevicesMatchingConnectionStates:([I)Ljava/util/List; // method@4ecc
+  431634:       0ce826: 0c01                                   |000f: move-result-object v1
+  431635:       0ce828: 1101                                   |0010: return-object v1
+  431636:    virtual_method #20007: getExtended ()Landroid/os/IBinder;
+  431637:     access=0001 (PUBLIC)
+  431638:     codeOff=ce786 (845702)
+  431639:     quickening_size=5 (5)
+  431640:       0ce78a: e910 5400 0300                         |0000: invoke-virtual-quick {v3}, [0054] // vtable #0054
+  431641: [new] 0ce78a: 6e10 294e 0300                         |0000: invoke-virtual {v3}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431642:       0ce790: 0c00                                   |0003: move-result-object v0
+  431643:       0ce792: 3900 0b00                              |0004: if-nez v0, 000f // +000b
+  431644:       0ce796: 1a01 480c                              |0006: const-string v1, "BtGatt.GattService" // string@0c48
+  431645:       0ce79a: 1a02 5e14                              |0008: const-string v2, "Error: IBluetoothGatt.getExtended but service is NULL" // string@145e
+  431646:       0ce79e: 7120 9439 2100                         |000a: invoke-static {v1, v2}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@3994
+  431647:       0ce7a4: 1201                                   |000d: const/4 v1, #int 0 // #0
+  431648:       0ce7a6: 1101                                   |000e: return-object v1
+  431649:       0ce7a8: e910 f400 0000                         |000f: invoke-virtual-quick {v0}, [00f4] // vtable #00f4
+  431650: [new] 0ce7a8: 6e10 cd4e 0000                         |000f: invoke-virtual {v0}, Lcom/android/bluetooth/gatt/GattService;.getExtended:()Landroid/os/IBinder; // method@4ecd
+  431651:       0ce7ae: 0c01                                   |0012: move-result-object v1
+  431652:       0ce7b0: 1101                                   |0013: return-object v1
+  431653:    virtual_method #20008: getOwnAddress (I)V
+  431654:     access=0001 (PUBLIC)
+  431655:     codeOff=ce9ee (846318)
+  431656:     quickening_size=5 (5)
+  431657:       0ce9f2: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431658: [new] 0ce9f2: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431659:       0ce9f8: 0c00                                   |0003: move-result-object v0
+  431660:       0ce9fa: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431661:       0ce9fe: 7300                                   |0006: return-void-no-barrier
+  431662: [new] 0ce9fe: 0e00                                   |0006: return-void
+  431663:       0cea00: e920 f500 2000                         |0007: invoke-virtual-quick {v0, v2}, [00f5] // vtable #00f5
+  431664: [new] 0cea00: 6e20 cf4e 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.getOwnAddress:(I)V // method@4ecf
+  431665:       0cea06: 7300                                   |000a: return-void-no-barrier
+  431666: [new] 0cea06: 0e00                                   |000a: return-void
+  431667:    virtual_method #20009: getService ()Lcom/android/bluetooth/gatt/GattService;
+  431668:     access=0000 ()
+  431669:     codeOff=ce7b2 (845746)
+  431670:     quickening_size=7 (7)
+  431671:       0ce7b6: e520 1800                              |0000: iget-object-quick v0, v2, [obj+0018]
+  431672: [new] 0ce7b6: 5420 934b                              |0000: iget-object v0, v2, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/GattService; // field@4b93
+  431673:       0ce7ba: 3800 0d00                              |0002: if-eqz v0, 000f // +000d
+  431674:       0ce7be: e520 1800                              |0004: iget-object-quick v0, v2, [obj+0018]
+  431675: [new] 0ce7be: 5420 934b                              |0004: iget-object v0, v2, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/GattService; // field@4b93
+  431676:       0ce7c2: 7110 834e 0000                         |0006: invoke-static {v0}, Lcom/android/bluetooth/gatt/GattService;.access$100:(Lcom/android/bluetooth/gatt/GattService;)Z // method@4e83
+  431677:       0ce7c8: 0a00                                   |0009: move-result v0
+  431678:       0ce7ca: 3800 0500                              |000a: if-eqz v0, 000f // +0005
+  431679:       0ce7ce: e520 1800                              |000c: iget-object-quick v0, v2, [obj+0018]
+  431680: [new] 0ce7ce: 5420 934b                              |000c: iget-object v0, v2, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/GattService; // field@4b93
+  431681:       0ce7d2: 1100                                   |000e: return-object v0
+  431682:       0ce7d4: 1a00 480c                              |000f: const-string v0, "BtGatt.GattService" // string@0c48
+  431683:       0ce7d8: 1a01 5461                              |0011: const-string v1, "getService() - Service requested, but not available!" // string@6154
+  431684:       0ce7dc: 7120 9439 1000                         |0013: invoke-static {v0, v1}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@3994
+  431685:       0ce7e2: 1200                                   |0016: const/4 v0, #int 0 // #0
+  431686:       0ce7e4: 1100                                   |0017: return-object v0
+  431687:    virtual_method #20010: leConnectionUpdate (ILjava/lang/String;IIIIII)V
+  431688:     access=0001 (PUBLIC)
+  431689:     codeOff=cea08 (846344)
+  431690:     quickening_size=5 (5)
+  431691:       0cea0c: e910 5400 0a00                         |0000: invoke-virtual-quick {v10}, [0054] // vtable #0054
+  431692: [new] 0cea0c: 6e10 294e 0a00                         |0000: invoke-virtual {v10}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431693:       0cea12: 0c09                                   |0003: move-result-object v9
+  431694:       0cea14: 3909 0300                              |0004: if-nez v9, 0007 // +0003
+  431695:       0cea18: 7300                                   |0006: return-void-no-barrier
+  431696: [new] 0cea18: 0e00                                   |0006: return-void
+  431697:       0cea1a: 0790                                   |0007: move-object v0, v9
+  431698:       0cea1c: 01b1                                   |0008: move v1, v11
+  431699:       0cea1e: 07c2                                   |0009: move-object v2, v12
+  431700:       0cea20: 01d3                                   |000a: move v3, v13
+  431701:       0cea22: 01e4                                   |000b: move v4, v14
+  431702:       0cea24: 01f5                                   |000c: move v5, v15
+  431703:       0cea26: 0206 1000                              |000d: move/from16 v6, v16
+  431704:       0cea2a: 0207 1100                              |000f: move/from16 v7, v17
+  431705:       0cea2e: 0208 1200                              |0011: move/from16 v8, v18
+  431706:       0cea32: ea09 f800 0000                         |0013: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5, v6, v7, v8}, [00f8] // vtable #00f8
+  431707: [new] 0cea32: 7409 e04e 0000                         |0013: invoke-virtual/range {v0, v1, v2, v3, v4, v5, v6, v7, v8}, Lcom/android/bluetooth/gatt/GattService;.leConnectionUpdate:(ILjava/lang/String;IIIIII)V // method@4ee0
+  431708:       0cea38: 7300                                   |0016: return-void-no-barrier
+  431709: [new] 0cea38: 0e00                                   |0016: return-void
+  431710:    virtual_method #20011: numHwTrackFiltersAvailable ()I
+  431711:     access=0001 (PUBLIC)
+  431712:     codeOff=ce7e6 (845798)
+  431713:     quickening_size=5 (5)
+  431714:       0ce7ea: e910 5400 0200                         |0000: invoke-virtual-quick {v2}, [0054] // vtable #0054
+  431715: [new] 0ce7ea: 6e10 294e 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431716:       0ce7f0: 0c00                                   |0003: move-result-object v0
+  431717:       0ce7f2: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  431718:       0ce7f6: 1201                                   |0006: const/4 v1, #int 0 // #0
+  431719:       0ce7f8: 0f01                                   |0007: return v1
+  431720:       0ce7fa: e910 fa00 0000                         |0008: invoke-virtual-quick {v0}, [00fa] // vtable #00fa
+  431721: [new] 0ce7fa: 6e10 e34e 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/gatt/GattService;.numHwTrackFiltersAvailable:()I // method@4ee3
+  431722:       0ce800: 0a01                                   |000b: move-result v1
+  431723:       0ce802: 0f01                                   |000c: return v1
+  431724:    virtual_method #20012: readCharacteristic (ILjava/lang/String;II)V
+  431725:     access=0001 (PUBLIC)
+  431726:     codeOff=cea3a (846394)
+  431727:     quickening_size=5 (5)
+  431728:       0cea3e: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431729: [new] 0cea3e: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431730:       0cea44: 0c00                                   |0003: move-result-object v0
+  431731:       0cea46: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431732:       0cea4a: 7300                                   |0006: return-void-no-barrier
+  431733: [new] 0cea4a: 0e00                                   |0006: return-void
+  431734:       0cea4c: e955 2d01 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [012d] // vtable #012d
+  431735: [new] 0cea4c: 6e55 1c4f 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.readCharacteristic:(ILjava/lang/String;II)V // method@4f1c
+  431736:       0cea52: 7300                                   |000a: return-void-no-barrier
+  431737: [new] 0cea52: 0e00                                   |000a: return-void
+  431738:    virtual_method #20013: readDescriptor (ILjava/lang/String;II)V
+  431739:     access=0001 (PUBLIC)
+  431740:     codeOff=cea54 (846420)
+  431741:     quickening_size=5 (5)
+  431742:       0cea58: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431743: [new] 0cea58: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431744:       0cea5e: 0c00                                   |0003: move-result-object v0
+  431745:       0cea60: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431746:       0cea64: 7300                                   |0006: return-void-no-barrier
+  431747: [new] 0cea64: 0e00                                   |0006: return-void
+  431748:       0cea66: e955 2e01 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [012e] // vtable #012e
+  431749: [new] 0cea66: 6e55 1d4f 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.readDescriptor:(ILjava/lang/String;II)V // method@4f1d
+  431750:       0cea6c: 7300                                   |000a: return-void-no-barrier
+  431751: [new] 0cea6c: 0e00                                   |000a: return-void
+  431752:    virtual_method #20014: readRemoteRssi (ILjava/lang/String;)V
+  431753:     access=0001 (PUBLIC)
+  431754:     codeOff=cea6e (846446)
+  431755:     quickening_size=5 (5)
+  431756:       0cea72: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431757: [new] 0cea72: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431758:       0cea78: 0c00                                   |0003: move-result-object v0
+  431759:       0cea7a: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431760:       0cea7e: 7300                                   |0006: return-void-no-barrier
+  431761: [new] 0cea7e: 0e00                                   |0006: return-void
+  431762:       0cea80: e930 2f01 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [012f] // vtable #012f
+  431763: [new] 0cea80: 6e30 1e4f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.readRemoteRssi:(ILjava/lang/String;)V // method@4f1e
+  431764:       0cea86: 7300                                   |000a: return-void-no-barrier
+  431765: [new] 0cea86: 0e00                                   |000a: return-void
+  431766:    virtual_method #20015: readUsingCharacteristicUuid (ILjava/lang/String;Landroid/os/ParcelUuid;III)V
+  431767:     access=0001 (PUBLIC)
+  431768:     codeOff=cea88 (846472)
+  431769:     quickening_size=7 (7)
+  431770:       0cea8c: e910 5400 0800                         |0000: invoke-virtual-quick {v8}, [0054] // vtable #0054
+  431771: [new] 0cea8c: 6e10 294e 0800                         |0000: invoke-virtual {v8}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431772:       0cea92: 0c07                                   |0003: move-result-object v7
+  431773:       0cea94: 3907 0300                              |0004: if-nez v7, 0007 // +0003
+  431774:       0cea98: 7300                                   |0006: return-void-no-barrier
+  431775: [new] 0cea98: 0e00                                   |0006: return-void
+  431776:       0cea9a: e910 0c00 0b00                         |0007: invoke-virtual-quick {v11}, [000c] // vtable #000c
+  431777: [new] 0cea9a: 6e10 5e0d 0b00                         |0007: invoke-virtual {v11}, Landroid/os/ParcelUuid;.getUuid:()Ljava/util/UUID; // method@0d5e
+  431778:       0ceaa0: 0c03                                   |000a: move-result-object v3
+  431779:       0ceaa2: 0770                                   |000b: move-object v0, v7
+  431780:       0ceaa4: 0191                                   |000c: move v1, v9
+  431781:       0ceaa6: 07a2                                   |000d: move-object v2, v10
+  431782:       0ceaa8: 01c4                                   |000e: move v4, v12
+  431783:       0ceaaa: 01d5                                   |000f: move v5, v13
+  431784:       0ceaac: 01e6                                   |0010: move v6, v14
+  431785:       0ceaae: ea07 3001 0000                         |0011: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5, v6}, [0130] // vtable #0130
+  431786: [new] 0ceaae: 7407 1f4f 0000                         |0011: invoke-virtual/range {v0, v1, v2, v3, v4, v5, v6}, Lcom/android/bluetooth/gatt/GattService;.readUsingCharacteristicUuid:(ILjava/lang/String;Ljava/util/UUID;III)V // method@4f1f
+  431787:       0ceab4: 7300                                   |0014: return-void-no-barrier
+  431788: [new] 0ceab4: 0e00                                   |0014: return-void
+  431789:    virtual_method #20016: refreshDevice (ILjava/lang/String;)V
+  431790:     access=0001 (PUBLIC)
+  431791:     codeOff=ceab6 (846518)
+  431792:     quickening_size=5 (5)
+  431793:       0ceaba: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431794: [new] 0ceaba: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431795:       0ceac0: 0c00                                   |0003: move-result-object v0
+  431796:       0ceac2: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431797:       0ceac6: 7300                                   |0006: return-void-no-barrier
+  431798: [new] 0ceac6: 0e00                                   |0006: return-void
+  431799:       0ceac8: e930 3101 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0131] // vtable #0131
+  431800: [new] 0ceac8: 6e30 204f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.refreshDevice:(ILjava/lang/String;)V // method@4f20
+  431801:       0ceace: 7300                                   |000a: return-void-no-barrier
+  431802: [new] 0ceace: 0e00                                   |000a: return-void
+  431803:    virtual_method #20017: registerClient (Landroid/os/ParcelUuid;Landroid/bluetooth/IBluetoothGattCallback;)V
+  431804:     access=0001 (PUBLIC)
+  431805:     codeOff=cead0 (846544)
+  431806:     quickening_size=7 (7)
+  431807:       0cead4: e910 5400 0200                         |0000: invoke-virtual-quick {v2}, [0054] // vtable #0054
+  431808: [new] 0cead4: 6e10 294e 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431809:       0ceada: 0c00                                   |0003: move-result-object v0
+  431810:       0ceadc: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431811:       0ceae0: 7300                                   |0006: return-void-no-barrier
+  431812: [new] 0ceae0: 0e00                                   |0006: return-void
+  431813:       0ceae2: e910 0c00 0300                         |0007: invoke-virtual-quick {v3}, [000c] // vtable #000c
+  431814: [new] 0ceae2: 6e10 5e0d 0300                         |0007: invoke-virtual {v3}, Landroid/os/ParcelUuid;.getUuid:()Ljava/util/UUID; // method@0d5e
+  431815:       0ceae8: 0c01                                   |000a: move-result-object v1
+  431816:       0ceaea: e930 3201 1004                         |000b: invoke-virtual-quick {v0, v1, v4}, [0132] // vtable #0132
+  431817: [new] 0ceaea: 6e30 214f 1004                         |000b: invoke-virtual {v0, v1, v4}, Lcom/android/bluetooth/gatt/GattService;.registerClient:(Ljava/util/UUID;Landroid/bluetooth/IBluetoothGattCallback;)V // method@4f21
+  431818:       0ceaf0: 7300                                   |000e: return-void-no-barrier
+  431819: [new] 0ceaf0: 0e00                                   |000e: return-void
+  431820:    virtual_method #20018: registerForNotification (ILjava/lang/String;IZ)V
+  431821:     access=0001 (PUBLIC)
+  431822:     codeOff=ceaf2 (846578)
+  431823:     quickening_size=5 (5)
+  431824:       0ceaf6: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431825: [new] 0ceaf6: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431826:       0ceafc: 0c00                                   |0003: move-result-object v0
+  431827:       0ceafe: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431828:       0ceb02: 7300                                   |0006: return-void-no-barrier
+  431829: [new] 0ceb02: 0e00                                   |0006: return-void
+  431830:       0ceb04: e955 3301 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [0133] // vtable #0133
+  431831: [new] 0ceb04: 6e55 224f 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.registerForNotification:(ILjava/lang/String;IZ)V // method@4f22
+  431832:       0ceb0a: 7300                                   |000a: return-void-no-barrier
+  431833: [new] 0ceb0a: 0e00                                   |000a: return-void
+  431834:    virtual_method #20019: registerScanner (Landroid/bluetooth/le/IScannerCallback;Landroid/os/WorkSource;)V
+  431835:     access=0001 (PUBLIC)
+  431836:     codeOff=ceb0c (846604)
+  431837:     quickening_size=5 (5)
+  431838:       0ceb10: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431839: [new] 0ceb10: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431840:       0ceb16: 0c00                                   |0003: move-result-object v0
+  431841:       0ceb18: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431842:       0ceb1c: 7300                                   |0006: return-void-no-barrier
+  431843: [new] 0ceb1c: 0e00                                   |0006: return-void
+  431844:       0ceb1e: e930 3501 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0135] // vtable #0135
+  431845: [new] 0ceb1e: 6e30 254f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.registerScanner:(Landroid/bluetooth/le/IScannerCallback;Landroid/os/WorkSource;)V // method@4f25
+  431846:       0ceb24: 7300                                   |000a: return-void-no-barrier
+  431847: [new] 0ceb24: 0e00                                   |000a: return-void
+  431848:    virtual_method #20020: registerServer (Landroid/os/ParcelUuid;Landroid/bluetooth/IBluetoothGattServerCallback;)V
+  431849:     access=0001 (PUBLIC)
+  431850:     codeOff=ceb26 (846630)
+  431851:     quickening_size=7 (7)
+  431852:       0ceb2a: e910 5400 0200                         |0000: invoke-virtual-quick {v2}, [0054] // vtable #0054
+  431853: [new] 0ceb2a: 6e10 294e 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431854:       0ceb30: 0c00                                   |0003: move-result-object v0
+  431855:       0ceb32: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431856:       0ceb36: 7300                                   |0006: return-void-no-barrier
+  431857: [new] 0ceb36: 0e00                                   |0006: return-void
+  431858:       0ceb38: e910 0c00 0300                         |0007: invoke-virtual-quick {v3}, [000c] // vtable #000c
+  431859: [new] 0ceb38: 6e10 5e0d 0300                         |0007: invoke-virtual {v3}, Landroid/os/ParcelUuid;.getUuid:()Ljava/util/UUID; // method@0d5e
+  431860:       0ceb3e: 0c01                                   |000a: move-result-object v1
+  431861:       0ceb40: e930 3601 1004                         |000b: invoke-virtual-quick {v0, v1, v4}, [0136] // vtable #0136
+  431862: [new] 0ceb40: 6e30 264f 1004                         |000b: invoke-virtual {v0, v1, v4}, Lcom/android/bluetooth/gatt/GattService;.registerServer:(Ljava/util/UUID;Landroid/bluetooth/IBluetoothGattServerCallback;)V // method@4f26
+  431863:       0ceb46: 7300                                   |000e: return-void-no-barrier
+  431864: [new] 0ceb46: 0e00                                   |000e: return-void
+  431865:    virtual_method #20021: registerSync (Landroid/bluetooth/le/ScanResult;IILandroid/bluetooth/le/IPeriodicAdvertisingCallback;)V
+  431866:     access=0001 (PUBLIC)
+  431867:     codeOff=ceb48 (846664)
+  431868:     quickening_size=5 (5)
+  431869:       0ceb4c: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431870: [new] 0ceb4c: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431871:       0ceb52: 0c00                                   |0003: move-result-object v0
+  431872:       0ceb54: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431873:       0ceb58: 7300                                   |0006: return-void-no-barrier
+  431874: [new] 0ceb58: 0e00                                   |0006: return-void
+  431875:       0ceb5a: e955 3701 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [0137] // vtable #0137
+  431876: [new] 0ceb5a: 6e55 274f 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.registerSync:(Landroid/bluetooth/le/ScanResult;IILandroid/bluetooth/le/IPeriodicAdvertisingCallback;)V // method@4f27
+  431877:       0ceb60: 7300                                   |000a: return-void-no-barrier
+  431878: [new] 0ceb60: 0e00                                   |000a: return-void
+  431879:    virtual_method #20022: removeService (II)V
+  431880:     access=0001 (PUBLIC)
+  431881:     codeOff=ceb62 (846690)
+  431882:     quickening_size=5 (5)
+  431883:       0ceb66: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431884: [new] 0ceb66: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431885:       0ceb6c: 0c00                                   |0003: move-result-object v0
+  431886:       0ceb6e: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431887:       0ceb72: 7300                                   |0006: return-void-no-barrier
+  431888: [new] 0ceb72: 0e00                                   |0006: return-void
+  431889:       0ceb74: e930 3801 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0138] // vtable #0138
+  431890: [new] 0ceb74: 6e30 284f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.removeService:(II)V // method@4f28
+  431891:       0ceb7a: 7300                                   |000a: return-void-no-barrier
+  431892: [new] 0ceb7a: 0e00                                   |000a: return-void
+  431893:    virtual_method #20023: sendNotification (ILjava/lang/String;IZ[B)V
+  431894:     access=0001 (PUBLIC)
+  431895:     codeOff=ceb7c (846716)
+  431896:     quickening_size=5 (5)
+  431897:       0ceb80: e910 5400 0700                         |0000: invoke-virtual-quick {v7}, [0054] // vtable #0054
+  431898: [new] 0ceb80: 6e10 294e 0700                         |0000: invoke-virtual {v7}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431899:       0ceb86: 0c06                                   |0003: move-result-object v6
+  431900:       0ceb88: 3906 0300                              |0004: if-nez v6, 0007 // +0003
+  431901:       0ceb8c: 7300                                   |0006: return-void-no-barrier
+  431902: [new] 0ceb8c: 0e00                                   |0006: return-void
+  431903:       0ceb8e: 0760                                   |0007: move-object v0, v6
+  431904:       0ceb90: 0181                                   |0008: move v1, v8
+  431905:       0ceb92: 0792                                   |0009: move-object v2, v9
+  431906:       0ceb94: 01a3                                   |000a: move v3, v10
+  431907:       0ceb96: 01b4                                   |000b: move v4, v11
+  431908:       0ceb98: 07c5                                   |000c: move-object v5, v12
+  431909:       0ceb9a: ea06 3901 0000                         |000d: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5}, [0139] // vtable #0139
+  431910: [new] 0ceb9a: 7406 2c4f 0000                         |000d: invoke-virtual/range {v0, v1, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.sendNotification:(ILjava/lang/String;IZ[B)V // method@4f2c
+  431911:       0ceba0: 7300                                   |0010: return-void-no-barrier
+  431912: [new] 0ceba0: 0e00                                   |0010: return-void
+  431913:    virtual_method #20024: sendResponse (ILjava/lang/String;III[B)V
+  431914:     access=0001 (PUBLIC)
+  431915:     codeOff=ceba2 (846754)
+  431916:     quickening_size=5 (5)
+  431917:       0ceba6: e910 5400 0800                         |0000: invoke-virtual-quick {v8}, [0054] // vtable #0054
+  431918: [new] 0ceba6: 6e10 294e 0800                         |0000: invoke-virtual {v8}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431919:       0cebac: 0c07                                   |0003: move-result-object v7
+  431920:       0cebae: 3907 0300                              |0004: if-nez v7, 0007 // +0003
+  431921:       0cebb2: 7300                                   |0006: return-void-no-barrier
+  431922: [new] 0cebb2: 0e00                                   |0006: return-void
+  431923:       0cebb4: 0770                                   |0007: move-object v0, v7
+  431924:       0cebb6: 0191                                   |0008: move v1, v9
+  431925:       0cebb8: 07a2                                   |0009: move-object v2, v10
+  431926:       0cebba: 01b3                                   |000a: move v3, v11
+  431927:       0cebbc: 01c4                                   |000b: move v4, v12
+  431928:       0cebbe: 01d5                                   |000c: move v5, v13
+  431929:       0cebc0: 07e6                                   |000d: move-object v6, v14
+  431930:       0cebc2: ea07 3a01 0000                         |000e: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5, v6}, [013a] // vtable #013a
+  431931: [new] 0cebc2: 7407 2d4f 0000                         |000e: invoke-virtual/range {v0, v1, v2, v3, v4, v5, v6}, Lcom/android/bluetooth/gatt/GattService;.sendResponse:(ILjava/lang/String;III[B)V // method@4f2d
+  431932:       0cebc8: 7300                                   |0011: return-void-no-barrier
+  431933: [new] 0cebc8: 0e00                                   |0011: return-void
+  431934:    virtual_method #20025: serverConnect (ILjava/lang/String;ZI)V
+  431935:     access=0001 (PUBLIC)
+  431936:     codeOff=cebca (846794)
+  431937:     quickening_size=5 (5)
+  431938:       0cebce: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431939: [new] 0cebce: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431940:       0cebd4: 0c00                                   |0003: move-result-object v0
+  431941:       0cebd6: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431942:       0cebda: 7300                                   |0006: return-void-no-barrier
+  431943: [new] 0cebda: 0e00                                   |0006: return-void
+  431944:       0cebdc: e955 3b01 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [013b] // vtable #013b
+  431945: [new] 0cebdc: 6e55 304f 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.serverConnect:(ILjava/lang/String;ZI)V // method@4f30
+  431946:       0cebe2: 7300                                   |000a: return-void-no-barrier
+  431947: [new] 0cebe2: 0e00                                   |000a: return-void
+  431948:    virtual_method #20026: serverDisconnect (ILjava/lang/String;)V
+  431949:     access=0001 (PUBLIC)
+  431950:     codeOff=cebe4 (846820)
+  431951:     quickening_size=5 (5)
+  431952:       0cebe8: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431953: [new] 0cebe8: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431954:       0cebee: 0c00                                   |0003: move-result-object v0
+  431955:       0cebf0: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431956:       0cebf4: 7300                                   |0006: return-void-no-barrier
+  431957: [new] 0cebf4: 0e00                                   |0006: return-void
+  431958:       0cebf6: e930 3c01 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [013c] // vtable #013c
+  431959: [new] 0cebf6: 6e30 314f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.serverDisconnect:(ILjava/lang/String;)V // method@4f31
+  431960:       0cebfc: 7300                                   |000a: return-void-no-barrier
+  431961: [new] 0cebfc: 0e00                                   |000a: return-void
+  431962:    virtual_method #20027: serverReadPhy (ILjava/lang/String;)V
+  431963:     access=0001 (PUBLIC)
+  431964:     codeOff=cebfe (846846)
+  431965:     quickening_size=5 (5)
+  431966:       0cec02: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  431967: [new] 0cec02: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431968:       0cec08: 0c00                                   |0003: move-result-object v0
+  431969:       0cec0a: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  431970:       0cec0e: 7300                                   |0006: return-void-no-barrier
+  431971: [new] 0cec0e: 0e00                                   |0006: return-void
+  431972:       0cec10: e930 3d01 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [013d] // vtable #013d
+  431973: [new] 0cec10: 6e30 324f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.serverReadPhy:(ILjava/lang/String;)V // method@4f32
+  431974:       0cec16: 7300                                   |000a: return-void-no-barrier
+  431975: [new] 0cec16: 0e00                                   |000a: return-void
+  431976:    virtual_method #20028: serverSetPreferredPhy (ILjava/lang/String;III)V
+  431977:     access=0001 (PUBLIC)
+  431978:     codeOff=cec18 (846872)
+  431979:     quickening_size=5 (5)
+  431980:       0cec1c: e910 5400 0700                         |0000: invoke-virtual-quick {v7}, [0054] // vtable #0054
+  431981: [new] 0cec1c: 6e10 294e 0700                         |0000: invoke-virtual {v7}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  431982:       0cec22: 0c06                                   |0003: move-result-object v6
+  431983:       0cec24: 3906 0300                              |0004: if-nez v6, 0007 // +0003
+  431984:       0cec28: 7300                                   |0006: return-void-no-barrier
+  431985: [new] 0cec28: 0e00                                   |0006: return-void
+  431986:       0cec2a: 0760                                   |0007: move-object v0, v6
+  431987:       0cec2c: 0181                                   |0008: move v1, v8
+  431988:       0cec2e: 0792                                   |0009: move-object v2, v9
+  431989:       0cec30: 01a3                                   |000a: move v3, v10
+  431990:       0cec32: 01b4                                   |000b: move v4, v11
+  431991:       0cec34: 01c5                                   |000c: move v5, v12
+  431992:       0cec36: ea06 3e01 0000                         |000d: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5}, [013e] // vtable #013e
+  431993: [new] 0cec36: 7406 334f 0000                         |000d: invoke-virtual/range {v0, v1, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.serverSetPreferredPhy:(ILjava/lang/String;III)V // method@4f33
+  431994:       0cec3c: 7300                                   |0010: return-void-no-barrier
+  431995: [new] 0cec3c: 0e00                                   |0010: return-void
+  431996:    virtual_method #20029: setAdvertisingData (ILandroid/bluetooth/le/AdvertiseData;)V
+  431997:     access=0001 (PUBLIC)
+  431998:     codeOff=cec3e (846910)
+  431999:     quickening_size=5 (5)
+  432000:       0cec42: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432001: [new] 0cec42: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432002:       0cec48: 0c00                                   |0003: move-result-object v0
+  432003:       0cec4a: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432004:       0cec4e: 7300                                   |0006: return-void-no-barrier
+  432005: [new] 0cec4e: 0e00                                   |0006: return-void
+  432006:       0cec50: e930 3f01 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [013f] // vtable #013f
+  432007: [new] 0cec50: 6e30 344f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.setAdvertisingData:(ILandroid/bluetooth/le/AdvertiseData;)V // method@4f34
+  432008:       0cec56: 7300                                   |000a: return-void-no-barrier
+  432009: [new] 0cec56: 0e00                                   |000a: return-void
+  432010:    virtual_method #20030: setAdvertisingParameters (ILandroid/bluetooth/le/AdvertisingSetParameters;)V
+  432011:     access=0001 (PUBLIC)
+  432012:     codeOff=cec58 (846936)
+  432013:     quickening_size=5 (5)
+  432014:       0cec5c: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432015: [new] 0cec5c: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432016:       0cec62: 0c00                                   |0003: move-result-object v0
+  432017:       0cec64: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432018:       0cec68: 7300                                   |0006: return-void-no-barrier
+  432019: [new] 0cec68: 0e00                                   |0006: return-void
+  432020:       0cec6a: e930 4001 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0140] // vtable #0140
+  432021: [new] 0cec6a: 6e30 354f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.setAdvertisingParameters:(ILandroid/bluetooth/le/AdvertisingSetParameters;)V // method@4f35
+  432022:       0cec70: 7300                                   |000a: return-void-no-barrier
+  432023: [new] 0cec70: 0e00                                   |000a: return-void
+  432024:    virtual_method #20031: setPeriodicAdvertisingData (ILandroid/bluetooth/le/AdvertiseData;)V
+  432025:     access=0001 (PUBLIC)
+  432026:     codeOff=cec72 (846962)
+  432027:     quickening_size=5 (5)
+  432028:       0cec76: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432029: [new] 0cec76: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432030:       0cec7c: 0c00                                   |0003: move-result-object v0
+  432031:       0cec7e: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432032:       0cec82: 7300                                   |0006: return-void-no-barrier
+  432033: [new] 0cec82: 0e00                                   |0006: return-void
+  432034:       0cec84: e930 4201 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0142] // vtable #0142
+  432035: [new] 0cec84: 6e30 384f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.setPeriodicAdvertisingData:(ILandroid/bluetooth/le/AdvertiseData;)V // method@4f38
+  432036:       0cec8a: 7300                                   |000a: return-void-no-barrier
+  432037: [new] 0cec8a: 0e00                                   |000a: return-void
+  432038:    virtual_method #20032: setPeriodicAdvertisingEnable (IZ)V
+  432039:     access=0001 (PUBLIC)
+  432040:     codeOff=cec8c (846988)
+  432041:     quickening_size=5 (5)
+  432042:       0cec90: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432043: [new] 0cec90: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432044:       0cec96: 0c00                                   |0003: move-result-object v0
+  432045:       0cec98: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432046:       0cec9c: 7300                                   |0006: return-void-no-barrier
+  432047: [new] 0cec9c: 0e00                                   |0006: return-void
+  432048:       0cec9e: e930 4301 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0143] // vtable #0143
+  432049: [new] 0cec9e: 6e30 394f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.setPeriodicAdvertisingEnable:(IZ)V // method@4f39
+  432050:       0ceca4: 7300                                   |000a: return-void-no-barrier
+  432051: [new] 0ceca4: 0e00                                   |000a: return-void
+  432052:    virtual_method #20033: setPeriodicAdvertisingParameters (ILandroid/bluetooth/le/PeriodicAdvertisingParameters;)V
+  432053:     access=0001 (PUBLIC)
+  432054:     codeOff=ceca6 (847014)
+  432055:     quickening_size=5 (5)
+  432056:       0cecaa: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432057: [new] 0cecaa: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432058:       0cecb0: 0c00                                   |0003: move-result-object v0
+  432059:       0cecb2: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432060:       0cecb6: 7300                                   |0006: return-void-no-barrier
+  432061: [new] 0cecb6: 0e00                                   |0006: return-void
+  432062:       0cecb8: e930 4401 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0144] // vtable #0144
+  432063: [new] 0cecb8: 6e30 3a4f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.setPeriodicAdvertisingParameters:(ILandroid/bluetooth/le/PeriodicAdvertisingParameters;)V // method@4f3a
+  432064:       0cecbe: 7300                                   |000a: return-void-no-barrier
+  432065: [new] 0cecbe: 0e00                                   |000a: return-void
+  432066:    virtual_method #20034: setScanResponseData (ILandroid/bluetooth/le/AdvertiseData;)V
+  432067:     access=0001 (PUBLIC)
+  432068:     codeOff=cecc0 (847040)
+  432069:     quickening_size=5 (5)
+  432070:       0cecc4: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432071: [new] 0cecc4: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432072:       0cecca: 0c00                                   |0003: move-result-object v0
+  432073:       0ceccc: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432074:       0cecd0: 7300                                   |0006: return-void-no-barrier
+  432075: [new] 0cecd0: 0e00                                   |0006: return-void
+  432076:       0cecd2: e930 4501 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [0145] // vtable #0145
+  432077: [new] 0cecd2: 6e30 3b4f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.setScanResponseData:(ILandroid/bluetooth/le/AdvertiseData;)V // method@4f3b
+  432078:       0cecd8: 7300                                   |000a: return-void-no-barrier
+  432079: [new] 0cecd8: 0e00                                   |000a: return-void
+  432080:    virtual_method #20035: startAdvertisingSet (Landroid/bluetooth/le/AdvertisingSetParameters;Landroid/bluetooth/le/AdvertiseData;Landroid/bluetooth/le/AdvertiseData;Landroid/bluetooth/le/PeriodicAdvertisingParameters;Landroid/bluetooth/le/AdvertiseData;IILandroid/bluetooth/le/IAdvertisingSetCallback;)V
+  432081:     access=0001 (PUBLIC)
+  432082:     codeOff=cecda (847066)
+  432083:     quickening_size=5 (5)
+  432084:       0cecde: e910 5400 0a00                         |0000: invoke-virtual-quick {v10}, [0054] // vtable #0054
+  432085: [new] 0cecde: 6e10 294e 0a00                         |0000: invoke-virtual {v10}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432086:       0cece4: 0c09                                   |0003: move-result-object v9
+  432087:       0cece6: 3909 0300                              |0004: if-nez v9, 0007 // +0003
+  432088:       0cecea: 7300                                   |0006: return-void-no-barrier
+  432089: [new] 0cecea: 0e00                                   |0006: return-void
+  432090:       0cecec: 0790                                   |0007: move-object v0, v9
+  432091:       0cecee: 07b1                                   |0008: move-object v1, v11
+  432092:       0cecf0: 07c2                                   |0009: move-object v2, v12
+  432093:       0cecf2: 07d3                                   |000a: move-object v3, v13
+  432094:       0cecf4: 07e4                                   |000b: move-object v4, v14
+  432095:       0cecf6: 07f5                                   |000c: move-object v5, v15
+  432096:       0cecf8: 0206 1000                              |000d: move/from16 v6, v16
+  432097:       0cecfc: 0207 1100                              |000f: move/from16 v7, v17
+  432098:       0ced00: 0808 1200                              |0011: move-object/from16 v8, v18
+  432099:       0ced04: ea09 4601 0000                         |0013: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5, v6, v7, v8}, [0146] // vtable #0146
+  432100: [new] 0ced04: 7409 3d4f 0000                         |0013: invoke-virtual/range {v0, v1, v2, v3, v4, v5, v6, v7, v8}, Lcom/android/bluetooth/gatt/GattService;.startAdvertisingSet:(Landroid/bluetooth/le/AdvertisingSetParameters;Landroid/bluetooth/le/AdvertiseData;Landroid/bluetooth/le/AdvertiseData;Landroid/bluetooth/le/PeriodicAdvertisingParameters;Landroid/bluetooth/le/AdvertiseData;IILandroid/bluetooth/le/IAdvertisingSetCallback;)V // method@4f3d
+  432101:       0ced0a: 7300                                   |0016: return-void-no-barrier
+  432102: [new] 0ced0a: 0e00                                   |0016: return-void
+  432103:    virtual_method #20036: startScan (ILandroid/bluetooth/le/ScanSettings;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V
+  432104:     access=0001 (PUBLIC)
+  432105:     codeOff=ced0c (847116)
+  432106:     quickening_size=5 (5)
+  432107:       0ced10: e910 5400 0700                         |0000: invoke-virtual-quick {v7}, [0054] // vtable #0054
+  432108: [new] 0ced10: 6e10 294e 0700                         |0000: invoke-virtual {v7}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432109:       0ced16: 0c06                                   |0003: move-result-object v6
+  432110:       0ced18: 3906 0300                              |0004: if-nez v6, 0007 // +0003
+  432111:       0ced1c: 7300                                   |0006: return-void-no-barrier
+  432112: [new] 0ced1c: 0e00                                   |0006: return-void
+  432113:       0ced1e: 0760                                   |0007: move-object v0, v6
+  432114:       0ced20: 0181                                   |0008: move v1, v8
+  432115:       0ced22: 0792                                   |0009: move-object v2, v9
+  432116:       0ced24: 07a3                                   |000a: move-object v3, v10
+  432117:       0ced26: 07b4                                   |000b: move-object v4, v11
+  432118:       0ced28: 07c5                                   |000c: move-object v5, v12
+  432119:       0ced2a: ea06 4701 0000                         |000d: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5}, [0147] // vtable #0147
+  432120: [new] 0ced2a: 7406 3e4f 0000                         |000d: invoke-virtual/range {v0, v1, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.startScan:(ILandroid/bluetooth/le/ScanSettings;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V // method@4f3e
+  432121:       0ced30: 7300                                   |0010: return-void-no-barrier
+  432122: [new] 0ced30: 0e00                                   |0010: return-void
+  432123:    virtual_method #20037: startScanForIntent (Landroid/app/PendingIntent;Landroid/bluetooth/le/ScanSettings;Ljava/util/List;Ljava/lang/String;)V
+  432124:     access=0001 (PUBLIC)
+  432125:     codeOff=ced32 (847154)
+  432126:     quickening_size=5 (5)
+  432127:       0ced36: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432128: [new] 0ced36: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432129:       0ced3c: 0c00                                   |0003: move-result-object v0
+  432130:       0ced3e: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432131:       0ced42: 7300                                   |0006: return-void-no-barrier
+  432132: [new] 0ced42: 0e00                                   |0006: return-void
+  432133:       0ced44: e955 3401 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [0134] // vtable #0134
+  432134: [new] 0ced44: 6e55 234f 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.registerPiAndStartScan:(Landroid/app/PendingIntent;Landroid/bluetooth/le/ScanSettings;Ljava/util/List;Ljava/lang/String;)V // method@4f23
+  432135:       0ced4a: 7300                                   |000a: return-void-no-barrier
+  432136: [new] 0ced4a: 0e00                                   |000a: return-void
+  432137:    virtual_method #20038: stopAdvertisingSet (Landroid/bluetooth/le/IAdvertisingSetCallback;)V
+  432138:     access=0001 (PUBLIC)
+  432139:     codeOff=ced4c (847180)
+  432140:     quickening_size=5 (5)
+  432141:       0ced50: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432142: [new] 0ced50: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432143:       0ced56: 0c00                                   |0003: move-result-object v0
+  432144:       0ced58: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432145:       0ced5c: 7300                                   |0006: return-void-no-barrier
+  432146: [new] 0ced5c: 0e00                                   |0006: return-void
+  432147:       0ced5e: e920 4801 2000                         |0007: invoke-virtual-quick {v0, v2}, [0148] // vtable #0148
+  432148: [new] 0ced5e: 6e20 404f 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.stopAdvertisingSet:(Landroid/bluetooth/le/IAdvertisingSetCallback;)V // method@4f40
+  432149:       0ced64: 7300                                   |000a: return-void-no-barrier
+  432150: [new] 0ced64: 0e00                                   |000a: return-void
+  432151:    virtual_method #20039: stopScan (I)V
+  432152:     access=0001 (PUBLIC)
+  432153:     codeOff=ced66 (847206)
+  432154:     quickening_size=5 (5)
+  432155:       0ced6a: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432156: [new] 0ced6a: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432157:       0ced70: 0c00                                   |0003: move-result-object v0
+  432158:       0ced72: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432159:       0ced76: 7300                                   |0006: return-void-no-barrier
+  432160: [new] 0ced76: 0e00                                   |0006: return-void
+  432161:       0ced78: e920 4901 2000                         |0007: invoke-virtual-quick {v0, v2}, [0149] // vtable #0149
+  432162: [new] 0ced78: 6e20 424f 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.stopScan:(I)V // method@4f42
+  432163:       0ced7e: 7300                                   |000a: return-void-no-barrier
+  432164: [new] 0ced7e: 0e00                                   |000a: return-void
+  432165:    virtual_method #20040: stopScanForIntent (Landroid/app/PendingIntent;Ljava/lang/String;)V
+  432166:     access=0001 (PUBLIC)
+  432167:     codeOff=ced80 (847232)
+  432168:     quickening_size=5 (5)
+  432169:       0ced84: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432170: [new] 0ced84: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432171:       0ced8a: 0c00                                   |0003: move-result-object v0
+  432172:       0ced8c: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432173:       0ced90: 7300                                   |0006: return-void-no-barrier
+  432174: [new] 0ced90: 0e00                                   |0006: return-void
+  432175:       0ced92: e930 4a01 2003                         |0007: invoke-virtual-quick {v0, v2, v3}, [014a] // vtable #014a
+  432176: [new] 0ced92: 6e30 434f 2003                         |0007: invoke-virtual {v0, v2, v3}, Lcom/android/bluetooth/gatt/GattService;.stopScan:(Landroid/app/PendingIntent;Ljava/lang/String;)V // method@4f43
+  432177:       0ced98: 7300                                   |000a: return-void-no-barrier
+  432178: [new] 0ced98: 0e00                                   |000a: return-void
+  432179:    virtual_method #20041: unregAll ()V
+  432180:     access=0001 (PUBLIC)
+  432181:     codeOff=ced9a (847258)
+  432182:     quickening_size=5 (5)
+  432183:       0ced9e: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432184: [new] 0ced9e: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432185:       0ceda4: 0c00                                   |0003: move-result-object v0
+  432186:       0ceda6: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432187:       0cedaa: 7300                                   |0006: return-void-no-barrier
+  432188: [new] 0cedaa: 0e00                                   |0006: return-void
+  432189:       0cedac: e910 4b01 0000                         |0007: invoke-virtual-quick {v0}, [014b] // vtable #014b
+  432190: [new] 0cedac: 6e10 444f 0000                         |0007: invoke-virtual {v0}, Lcom/android/bluetooth/gatt/GattService;.unregAll:()V // method@4f44
+  432191:       0cedb2: 7300                                   |000a: return-void-no-barrier
+  432192: [new] 0cedb2: 0e00                                   |000a: return-void
+  432193:    virtual_method #20042: unregisterClient (I)V
+  432194:     access=0001 (PUBLIC)
+  432195:     codeOff=cedb4 (847284)
+  432196:     quickening_size=5 (5)
+  432197:       0cedb8: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432198: [new] 0cedb8: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432199:       0cedbe: 0c00                                   |0003: move-result-object v0
+  432200:       0cedc0: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432201:       0cedc4: 7300                                   |0006: return-void-no-barrier
+  432202: [new] 0cedc4: 0e00                                   |0006: return-void
+  432203:       0cedc6: e920 4c01 2000                         |0007: invoke-virtual-quick {v0, v2}, [014c] // vtable #014c
+  432204: [new] 0cedc6: 6e20 454f 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.unregisterClient:(I)V // method@4f45
+  432205:       0cedcc: 7300                                   |000a: return-void-no-barrier
+  432206: [new] 0cedcc: 0e00                                   |000a: return-void
+  432207:    virtual_method #20043: unregisterScanner (I)V
+  432208:     access=0001 (PUBLIC)
+  432209:     codeOff=cedce (847310)
+  432210:     quickening_size=5 (5)
+  432211:       0cedd2: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432212: [new] 0cedd2: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432213:       0cedd8: 0c00                                   |0003: move-result-object v0
+  432214:       0cedda: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432215:       0cedde: 7300                                   |0006: return-void-no-barrier
+  432216: [new] 0cedde: 0e00                                   |0006: return-void
+  432217:       0cede0: e920 4d01 2000                         |0007: invoke-virtual-quick {v0, v2}, [014d] // vtable #014d
+  432218: [new] 0cede0: 6e20 474f 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.unregisterScanner:(I)V // method@4f47
+  432219:       0cede6: 7300                                   |000a: return-void-no-barrier
+  432220: [new] 0cede6: 0e00                                   |000a: return-void
+  432221:    virtual_method #20044: unregisterServer (I)V
+  432222:     access=0001 (PUBLIC)
+  432223:     codeOff=cede8 (847336)
+  432224:     quickening_size=5 (5)
+  432225:       0cedec: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432226: [new] 0cedec: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432227:       0cedf2: 0c00                                   |0003: move-result-object v0
+  432228:       0cedf4: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432229:       0cedf8: 7300                                   |0006: return-void-no-barrier
+  432230: [new] 0cedf8: 0e00                                   |0006: return-void
+  432231:       0cedfa: e920 4e01 2000                         |0007: invoke-virtual-quick {v0, v2}, [014e] // vtable #014e
+  432232: [new] 0cedfa: 6e20 484f 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.unregisterServer:(I)V // method@4f48
+  432233:       0cee00: 7300                                   |000a: return-void-no-barrier
+  432234: [new] 0cee00: 0e00                                   |000a: return-void
+  432235:    virtual_method #20045: unregisterSync (Landroid/bluetooth/le/IPeriodicAdvertisingCallback;)V
+  432236:     access=0001 (PUBLIC)
+  432237:     codeOff=cee02 (847362)
+  432238:     quickening_size=5 (5)
+  432239:       0cee06: e910 5400 0100                         |0000: invoke-virtual-quick {v1}, [0054] // vtable #0054
+  432240: [new] 0cee06: 6e10 294e 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432241:       0cee0c: 0c00                                   |0003: move-result-object v0
+  432242:       0cee0e: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  432243:       0cee12: 7300                                   |0006: return-void-no-barrier
+  432244: [new] 0cee12: 0e00                                   |0006: return-void
+  432245:       0cee14: e920 4f01 2000                         |0007: invoke-virtual-quick {v0, v2}, [014f] // vtable #014f
+  432246: [new] 0cee14: 6e20 494f 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/gatt/GattService;.unregisterSync:(Landroid/bluetooth/le/IPeriodicAdvertisingCallback;)V // method@4f49
+  432247:       0cee1a: 7300                                   |000a: return-void-no-barrier
+  432248: [new] 0cee1a: 0e00                                   |000a: return-void
+  432249:    virtual_method #20046: writeCharacteristic (ILjava/lang/String;III[B)V
+  432250:     access=0001 (PUBLIC)
+  432251:     codeOff=cee1c (847388)
+  432252:     quickening_size=5 (5)
+  432253:       0cee20: e910 5400 0800                         |0000: invoke-virtual-quick {v8}, [0054] // vtable #0054
+  432254: [new] 0cee20: 6e10 294e 0800                         |0000: invoke-virtual {v8}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432255:       0cee26: 0c07                                   |0003: move-result-object v7
+  432256:       0cee28: 3907 0300                              |0004: if-nez v7, 0007 // +0003
+  432257:       0cee2c: 7300                                   |0006: return-void-no-barrier
+  432258: [new] 0cee2c: 0e00                                   |0006: return-void
+  432259:       0cee2e: 0770                                   |0007: move-object v0, v7
+  432260:       0cee30: 0191                                   |0008: move v1, v9
+  432261:       0cee32: 07a2                                   |0009: move-object v2, v10
+  432262:       0cee34: 01b3                                   |000a: move v3, v11
+  432263:       0cee36: 01c4                                   |000b: move v4, v12
+  432264:       0cee38: 01d5                                   |000c: move v5, v13
+  432265:       0cee3a: 07e6                                   |000d: move-object v6, v14
+  432266:       0cee3c: ea07 5001 0000                         |000e: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5, v6}, [0150] // vtable #0150
+  432267: [new] 0cee3c: 7407 4a4f 0000                         |000e: invoke-virtual/range {v0, v1, v2, v3, v4, v5, v6}, Lcom/android/bluetooth/gatt/GattService;.writeCharacteristic:(ILjava/lang/String;III[B)V // method@4f4a
+  432268:       0cee42: 7300                                   |0011: return-void-no-barrier
+  432269: [new] 0cee42: 0e00                                   |0011: return-void
+  432270:    virtual_method #20047: writeDescriptor (ILjava/lang/String;II[B)V
+  432271:     access=0001 (PUBLIC)
+  432272:     codeOff=cee44 (847428)
+  432273:     quickening_size=5 (5)
+  432274:       0cee48: e910 5400 0700                         |0000: invoke-virtual-quick {v7}, [0054] // vtable #0054
+  432275: [new] 0cee48: 6e10 294e 0700                         |0000: invoke-virtual {v7}, Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;.getService:()Lcom/android/bluetooth/gatt/GattService; // method@4e29
+  432276:       0cee4e: 0c06                                   |0003: move-result-object v6
+  432277:       0cee50: 3906 0300                              |0004: if-nez v6, 0007 // +0003
+  432278:       0cee54: 7300                                   |0006: return-void-no-barrier
+  432279: [new] 0cee54: 0e00                                   |0006: return-void
+  432280:       0cee56: 0760                                   |0007: move-object v0, v6
+  432281:       0cee58: 0181                                   |0008: move v1, v8
+  432282:       0cee5a: 0792                                   |0009: move-object v2, v9
+  432283:       0cee5c: 01a3                                   |000a: move v3, v10
+  432284:       0cee5e: 01b4                                   |000b: move v4, v11
+  432285:       0cee60: 07c5                                   |000c: move-object v5, v12
+  432286:       0cee62: ea06 5101 0000                         |000d: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5}, [0151] // vtable #0151
+  432287: [new] 0cee62: 7406 4b4f 0000                         |000d: invoke-virtual/range {v0, v1, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/GattService;.writeDescriptor:(ILjava/lang/String;II[B)V // method@4f4b
+  432288:       0cee68: 7300                                   |0010: return-void-no-barrier
+  432289: [new] 0cee68: 0e00                                   |0010: return-void

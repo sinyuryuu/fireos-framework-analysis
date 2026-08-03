@@ -25,4 +25,9 @@ without changing the test scope.
 
 No GitHub token, private key, or local credential is part of the repository. Public files retain the research package names, device-derived observations, report paths, and evidence hashes needed to audit the analysis. Excluded artifacts remain in the local workspace and are referenced by reports where their hashes are available.
 
+Phase 5J follows the same boundary: exact Bluetooth APK/ODEX/VDEX/native
+binaries and the full VDEX extractor log remain local-only. The public copy
+keeps the capture manifests, failed-pull records, vendor init/permission XML,
+focused class slices, hashes, and reproducible host-only extraction script.
+
 The public repository is not a replacement for the immutable local evidence archive. Raw evidence should be distributed only after reviewing device identifiers, licensing, and applicable firmware/APK redistribution terms.

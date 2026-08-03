@@ -1,0 +1,821 @@
+  160864:   class #1586: AmazonBtPolicyManagerAdapter ('Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;')
+  160865:    access=0011 (PUBLIC FINAL)
+  160866:    source_file=AmazonBtPolicyManagerAdapter.java, class_data_off=21fede (2227934)
+  160867:    static_fields=19, instance_fields=1, direct_methods=20, virtual_methods=25
+  160868:    direct_method #17934: <clinit> ()V
+  160869:     access=10008 (STATIC CONSTRUCTOR)
+  160870:     codeOff=682a4 (426660)
+  160871:       0682a8: 0e00                                   |0000: return-void
+  160872:    direct_method #17935: <init> ()V
+  160873:     access=10002 (PRIVATE CONSTRUCTOR)
+  160874:     codeOff=a64c8 (681160)
+  160875:     quickening_size=1 (1)
+  160876:       0a64cc: 7010 0b6d 0000                         |0000: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@6d0b
+  160877:       0a64d2: 6900 1a46                              |0003: sput-object v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+  160878:       0a64d6: 7300                                   |0005: return-void-no-barrier
+  160879: [new] 0a64d6: 0e00                                   |0005: return-void
+  160880:    direct_method #17940: btpmLeAclStateChangeNtfyNative (ILjava/lang/String;I)V
+  160881:     access=0102 (PRIVATE NATIVE)
+  160882:     codeOff=0 (0)
+  160883:    direct_method #17941: btpmLeConnectNative (IILjava/lang/String;ZZ)V
+  160884:     access=0102 (PRIVATE NATIVE)
+  160885:     codeOff=0 (0)
+  160886:    direct_method #17942: btpmLeConnectNtfyNative (ILjava/lang/String;)V
+  160887:     access=0102 (PRIVATE NATIVE)
+  160888:     codeOff=0 (0)
+  160889:    direct_method #17943: btpmLeDisconnectNative (ILjava/lang/String;)V
+  160890:     access=0102 (PRIVATE NATIVE)
+  160891:     codeOff=0 (0)
+  160892:    direct_method #17944: btpmLeDisconnectNtfyNative (ILjava/lang/String;)V
+  160893:     access=0102 (PRIVATE NATIVE)
+  160894:     codeOff=0 (0)
+  160895:    direct_method #17945: btpmLeGetAvailableLinkCountNative ()I
+  160896:     access=0102 (PRIVATE NATIVE)
+  160897:     codeOff=0 (0)
+  160898:    direct_method #17947: btpmLeRegisterAppNative (IJJ)V
+  160899:     access=0102 (PRIVATE NATIVE)
+  160900:     codeOff=0 (0)
+  160901:    direct_method #17948: btpmLeScanNative (Z)V
+  160902:     access=0102 (PRIVATE NATIVE)
+  160903:     codeOff=0 (0)
+  160904:    direct_method #17949: btpmLeSetAppClientIfNative (IJJ)V
+  160905:     access=0102 (PRIVATE NATIVE)
+  160906:     codeOff=0 (0)
+  160907:    direct_method #17950: btpmLeSetReqPriorityNative (ILjava/lang/String;I)V
+  160908:     access=0102 (PRIVATE NATIVE)
+  160909:     codeOff=0 (0)
+  160910:    direct_method #17951: btpmLeSetScanParametersNative (III)V
+  160911:     access=0102 (PRIVATE NATIVE)
+  160912:     codeOff=0 (0)
+  160913:    direct_method #17952: btpmLeUnregisterAppByUuidNative (JJ)V
+  160914:     access=0102 (PRIVATE NATIVE)
+  160915:     codeOff=0 (0)
+  160916:    direct_method #17953: btpmLeUnregisterAppNative (I)V
+  160917:     access=0102 (PRIVATE NATIVE)
+  160918:     codeOff=0 (0)
+  160919:    direct_method #17958: classBtpmInitNative ()V
+  160920:     access=010a (PRIVATE STATIC NATIVE)
+  160921:     codeOff=0 (0)
+  160922:    direct_method #17959: cleanupNative ()V
+  160923:     access=0102 (PRIVATE NATIVE)
+  160924:     codeOff=0 (0)
+  160925:    direct_method #17961: getInstance ()Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;
+  160926:     access=20009 (PUBLIC STATIC DECLARED_SYNCHRONIZED)
+  160927:     codeOff=a6348 (680776)
+  160928:     quickening_size=7 (7)
+  160929:       0a634c: 1c00 1f0b                              |0000: const-class v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // type@0b1f
+  160930:       0a6350: 1d00                                   |0002: monitor-enter v0
+  160931:       0a6352: 6201 1a46                              |0003: sget-object v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+  160932:       0a6356: 3901 0900                              |0005: if-nez v1, 000e // +0009
+  160933:       0a635a: 2201 1f0b                              |0007: new-instance v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // type@0b1f
+  160934:       0a635e: 7010 0f46 0100                         |0009: invoke-direct {v1}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.<init>:()V // method@460f
+  160935:       0a6364: 6901 1a46                              |000c: sput-object v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+  160936:       0a6368: 1a01 660a                              |000e: const-string v1, "BTPM_JAVA_NATIVE" // string@0a66
+  160937:       0a636c: 2202 c40e                              |0010: new-instance v2, Ljava/lang/StringBuilder; // type@0ec4
+  160938:       0a6370: 7010 646d 0200                         |0012: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  160939:       0a6376: 1a03 075e                              |0015: const-string v3, "getInstance() sInstance=" // string@5e07
+  160940:       0a637a: e920 4b00 3200                         |0017: invoke-virtual-quick {v2, v3}, [004b] // vtable #004b
+  160941: [new] 0a637a: 6e20 6e6d 3200                         |0017: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  160942:       0a6380: 6203 1a46                              |001a: sget-object v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+  160943:       0a6384: e920 4a00 3200                         |001c: invoke-virtual-quick {v2, v3}, [004a] // vtable #004a
+  160944: [new] 0a6384: 6e20 6d6d 3200                         |001c: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@6d6d
+  160945:       0a638a: e910 0700 0200                         |001f: invoke-virtual-quick {v2}, [0007] // vtable #0007
+  160946: [new] 0a638a: 6e10 786d 0200                         |001f: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  160947:       0a6390: 0c02                                   |0022: move-result-object v2
+  160948:       0a6392: 7120 9239 2100                         |0023: invoke-static {v1, v2}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  160949:       0a6398: 6201 1a46                              |0026: sget-object v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+  160950:       0a639c: 1e00                                   |0028: monitor-exit v0
+  160951:       0a639e: 1101                                   |0029: return-object v1
+  160952:       0a63a0: 0d01                                   |002a: move-exception v1
+  160953:       0a63a2: 1e00                                   |002b: monitor-exit v0
+  160954:       0a63a4: 2701                                   |002c: throw v1
+  160955:    direct_method #17963: initializeBtpmNative ()V
+  160956:     access=0102 (PRIVATE NATIVE)
+  160957:     codeOff=0 (0)
+  160958:    direct_method #17976: statusToString (I)Ljava/lang/String;
+  160959:     access=0009 (PUBLIC STATIC)
+  160960:     codeOff=a63e8 (680936)
+  160961:     quickening_size=b (11)
+  160962:       0a63ec: 2b02 4a00 0000                         |0000: packed-switch v2, 0000004a // +00000002
+  160963:       0a63f2: 2200 c40e                              |0003: new-instance v0, Ljava/lang/StringBuilder; // type@0ec4
+  160964:       0a63f6: 7010 646d 0000                         |0005: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  160965:       0a63fc: 1a01 2d3e                              |0008: const-string v1, "Unknown status(" // string@3e2d
+  160966:       0a6400: e920 4b00 1000                         |000a: invoke-virtual-quick {v0, v1}, [004b] // vtable #004b
+  160967: [new] 0a6400: 6e20 6e6d 1000                         |000a: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  160968:       0a6406: e920 4600 2000                         |000d: invoke-virtual-quick {v0, v2}, [0046] // vtable #0046
+  160969: [new] 0a6406: 6e20 6a6d 2000                         |000d: invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  160970:       0a640c: 1a01 7204                              |0010: const-string v1, ")" // string@0472
+  160971:       0a6410: e920 4b00 1000                         |0012: invoke-virtual-quick {v0, v1}, [004b] // vtable #004b
+  160972: [new] 0a6410: 6e20 6e6d 1000                         |0012: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  160973:       0a6416: e910 0700 0000                         |0015: invoke-virtual-quick {v0}, [0007] // vtable #0007
+  160974: [new] 0a6416: 6e10 786d 0000                         |0015: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  160975:       0a641c: 0c00                                   |0018: move-result-object v0
+  160976:       0a641e: 1100                                   |0019: return-object v0
+  160977:       0a6420: 1a00 6d0a                              |001a: const-string v0, "BTPM_STATUS_DONE" // string@0a6d
+  160978:       0a6424: 1100                                   |001c: return-object v0
+  160979:       0a6426: 1a00 740a                              |001d: const-string v0, "BTPM_STATUS_REMOVE_FROM_DIRPENDL" // string@0a74
+  160980:       0a642a: 1100                                   |001f: return-object v0
+  160981:       0a642c: 1a00 730a                              |0020: const-string v0, "BTPM_STATUS_REMOVE_FROM_DIRL" // string@0a73
+  160982:       0a6430: 1100                                   |0022: return-object v0
+  160983:       0a6432: 1a00 750a                              |0023: const-string v0, "BTPM_STATUS_REMOVE_FROM_DIRWAITL" // string@0a75
+  160984:       0a6436: 1100                                   |0025: return-object v0
+  160985:       0a6438: 1a00 6c0a                              |0026: const-string v0, "BTPM_STATUS_DIRPENDL_TO_DIRL" // string@0a6c
+  160986:       0a643c: 1100                                   |0028: return-object v0
+  160987:       0a643e: 1a00 720a                              |0029: const-string v0, "BTPM_STATUS_REMOVE_FROM_BGWAITL" // string@0a72
+  160988:       0a6442: 1100                                   |002b: return-object v0
+  160989:       0a6444: 1a00 710a                              |002c: const-string v0, "BTPM_STATUS_REMOVE_FROM_BGL" // string@0a71
+  160990:       0a6448: 1100                                   |002e: return-object v0
+  160991:       0a644a: 1a00 700a                              |002f: const-string v0, "BTPM_STATUS_REMOVE_FROM_ACCEPTL" // string@0a70
+  160992:       0a644e: 1100                                   |0031: return-object v0
+  160993:       0a6450: 1a00 680a                              |0032: const-string v0, "BTPM_STATUS_ACCEPTL_TO_BGL" // string@0a68
+  160994:       0a6454: 1100                                   |0034: return-object v0
+  160995:       0a6456: 1a00 690a                              |0035: const-string v0, "BTPM_STATUS_ACCEPTL_TO_BGWAITL" // string@0a69
+  160996:       0a645a: 1100                                   |0037: return-object v0
+  160997:       0a645c: 1a00 6b0a                              |0038: const-string v0, "BTPM_STATUS_BGL_TO_WAITL" // string@0a6b
+  160998:       0a6460: 1100                                   |003a: return-object v0
+  160999:       0a6462: 1a00 6a0a                              |003b: const-string v0, "BTPM_STATUS_BGL_TO_ACCEPTL" // string@0a6a
+  161000:       0a6466: 1100                                   |003d: return-object v0
+  161001:       0a6468: 1a00 670a                              |003e: const-string v0, "BTPM_STATUS_ABORT" // string@0a67
+  161002:       0a646c: 1100                                   |0040: return-object v0
+  161003:       0a646e: 1a00 6f0a                              |0041: const-string v0, "BTPM_STATUS_PENDING" // string@0a6f
+  161004:       0a6472: 1100                                   |0043: return-object v0
+  161005:       0a6474: 1a00 6e0a                              |0044: const-string v0, "BTPM_STATUS_FAIL" // string@0a6e
+  161006:       0a6478: 1100                                   |0046: return-object v0
+  161007:       0a647a: 1a00 760a                              |0047: const-string v0, "BTPM_STATUS_SUCCESS" // string@0a76
+  161008:       0a647e: 1100                                   |0049: return-object v0
+  161009:       0a6480: 0001 1000 0000 0000 4700 0000 4400 ... |004a: packed-switch-data (36 units)
+  161010:    virtual_method #17936: btpmConnNtfyCallback (IILjava/lang/String;)V
+  161011:     access=0000 ()
+  161012:     codeOff=a64d8 (681176)
+  161013:     quickening_size=15 (21)
+  161014:       0a64dc: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161015:       0a64e0: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161016:       0a64e4: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161017:       0a64ea: 1a02 4c4b                              |0007: const-string v2, "btpmConnNtfyCallback() - clientIf=" // string@4b4c
+  161018:       0a64ee: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161019: [new] 0a64ee: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161020:       0a64f4: e920 4600 5100                         |000c: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161021: [new] 0a64f4: 6e20 6a6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161022:       0a64fa: 1a02 8e05                              |000f: const-string v2, ", status=" // string@058e
+  161023:       0a64fe: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161024: [new] 0a64fe: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161025:       0a6504: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161026: [new] 0a6504: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161027:       0a650a: 1a02 df04                              |0017: const-string v2, ", address=" // string@04df
+  161028:       0a650e: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161029: [new] 0a650e: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161030:       0a6514: e920 4b00 6100                         |001c: invoke-virtual-quick {v1, v6}, [004b] // vtable #004b
+  161031: [new] 0a6514: 6e20 6e6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161032:       0a651a: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161033: [new] 0a651a: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161034:       0a6520: 0c01                                   |0022: move-result-object v1
+  161035:       0a6522: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161036:       0a6528: e530 0800                              |0026: iget-object-quick v0, v3, [obj+0008]
+  161037: [new] 0a6528: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161038:       0a652c: 3800 0700                              |0028: if-eqz v0, 002f // +0007
+  161039:       0a6530: e530 0800                              |002a: iget-object-quick v0, v3, [obj+0008]
+  161040: [new] 0a6530: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161041:       0a6534: e940 5401 4065                         |002c: invoke-virtual-quick {v0, v4, v5, v6}, [0154] // vtable #0154
+  161042: [new] 0a6534: 6e40 f34d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmConnNotifyCallback:(IILjava/lang/String;)V // method@4df3
+  161043:       0a653a: 7300                                   |002f: return-void-no-barrier
+  161044: [new] 0a653a: 0e00                                   |002f: return-void
+  161045:    virtual_method #17937: btpmConnReqCallback (IILjava/lang/String;)V
+  161046:     access=0000 ()
+  161047:     codeOff=a653c (681276)
+  161048:     quickening_size=15 (21)
+  161049:       0a6540: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161050:       0a6544: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161051:       0a6548: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161052:       0a654e: 1a02 4e4b                              |0007: const-string v2, "btpmConnReqCallback() - clientIf=" // string@4b4e
+  161053:       0a6552: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161054: [new] 0a6552: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161055:       0a6558: e920 4600 5100                         |000c: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161056: [new] 0a6558: 6e20 6a6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161057:       0a655e: 1a02 8e05                              |000f: const-string v2, ", status=" // string@058e
+  161058:       0a6562: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161059: [new] 0a6562: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161060:       0a6568: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161061: [new] 0a6568: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161062:       0a656e: 1a02 df04                              |0017: const-string v2, ", address=" // string@04df
+  161063:       0a6572: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161064: [new] 0a6572: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161065:       0a6578: e920 4b00 6100                         |001c: invoke-virtual-quick {v1, v6}, [004b] // vtable #004b
+  161066: [new] 0a6578: 6e20 6e6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161067:       0a657e: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161068: [new] 0a657e: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161069:       0a6584: 0c01                                   |0022: move-result-object v1
+  161070:       0a6586: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161071:       0a658c: e530 0800                              |0026: iget-object-quick v0, v3, [obj+0008]
+  161072: [new] 0a658c: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161073:       0a6590: 3800 0700                              |0028: if-eqz v0, 002f // +0007
+  161074:       0a6594: e530 0800                              |002a: iget-object-quick v0, v3, [obj+0008]
+  161075: [new] 0a6594: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161076:       0a6598: e940 5501 4065                         |002c: invoke-virtual-quick {v0, v4, v5, v6}, [0155] // vtable #0155
+  161077: [new] 0a6598: 6e40 f44d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmConnReqCallback:(IILjava/lang/String;)V // method@4df4
+  161078:       0a659e: 7300                                   |002f: return-void-no-barrier
+  161079: [new] 0a659e: 0e00                                   |002f: return-void
+  161080:    virtual_method #17938: btpmDisConnNtfyCallback (IILjava/lang/String;)V
+  161081:     access=0000 ()
+  161082:     codeOff=a65a0 (681376)
+  161083:     quickening_size=15 (21)
+  161084:       0a65a4: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161085:       0a65a8: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161086:       0a65ac: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161087:       0a65b2: 1a02 504b                              |0007: const-string v2, "btpmDisConnNtfyCallback() - clientIf=" // string@4b50
+  161088:       0a65b6: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161089: [new] 0a65b6: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161090:       0a65bc: e920 4600 5100                         |000c: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161091: [new] 0a65bc: 6e20 6a6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161092:       0a65c2: 1a02 8e05                              |000f: const-string v2, ", status=" // string@058e
+  161093:       0a65c6: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161094: [new] 0a65c6: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161095:       0a65cc: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161096: [new] 0a65cc: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161097:       0a65d2: 1a02 df04                              |0017: const-string v2, ", address=" // string@04df
+  161098:       0a65d6: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161099: [new] 0a65d6: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161100:       0a65dc: e920 4b00 6100                         |001c: invoke-virtual-quick {v1, v6}, [004b] // vtable #004b
+  161101: [new] 0a65dc: 6e20 6e6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161102:       0a65e2: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161103: [new] 0a65e2: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161104:       0a65e8: 0c01                                   |0022: move-result-object v1
+  161105:       0a65ea: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161106:       0a65f0: e530 0800                              |0026: iget-object-quick v0, v3, [obj+0008]
+  161107: [new] 0a65f0: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161108:       0a65f4: 3800 0700                              |0028: if-eqz v0, 002f // +0007
+  161109:       0a65f8: e530 0800                              |002a: iget-object-quick v0, v3, [obj+0008]
+  161110: [new] 0a65f8: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161111:       0a65fc: e940 5601 4065                         |002c: invoke-virtual-quick {v0, v4, v5, v6}, [0156] // vtable #0156
+  161112: [new] 0a65fc: 6e40 f54d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmDisconnNotifyCallback:(IILjava/lang/String;)V // method@4df5
+  161113:       0a6602: 7300                                   |002f: return-void-no-barrier
+  161114: [new] 0a6602: 0e00                                   |002f: return-void
+  161115:    virtual_method #17939: btpmDisConnReqCallback (IILjava/lang/String;)V
+  161116:     access=0000 ()
+  161117:     codeOff=a6604 (681476)
+  161118:     quickening_size=15 (21)
+  161119:       0a6608: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161120:       0a660c: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161121:       0a6610: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161122:       0a6616: 1a02 524b                              |0007: const-string v2, "btpmDisConnReqCallback() - clientIf=" // string@4b52
+  161123:       0a661a: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161124: [new] 0a661a: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161125:       0a6620: e920 4600 5100                         |000c: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161126: [new] 0a6620: 6e20 6a6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161127:       0a6626: 1a02 8e05                              |000f: const-string v2, ", status=" // string@058e
+  161128:       0a662a: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161129: [new] 0a662a: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161130:       0a6630: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161131: [new] 0a6630: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161132:       0a6636: 1a02 df04                              |0017: const-string v2, ", address=" // string@04df
+  161133:       0a663a: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161134: [new] 0a663a: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161135:       0a6640: e920 4b00 6100                         |001c: invoke-virtual-quick {v1, v6}, [004b] // vtable #004b
+  161136: [new] 0a6640: 6e20 6e6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161137:       0a6646: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161138: [new] 0a6646: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161139:       0a664c: 0c01                                   |0022: move-result-object v1
+  161140:       0a664e: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161141:       0a6654: e530 0800                              |0026: iget-object-quick v0, v3, [obj+0008]
+  161142: [new] 0a6654: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161143:       0a6658: 3800 0700                              |0028: if-eqz v0, 002f // +0007
+  161144:       0a665c: e530 0800                              |002a: iget-object-quick v0, v3, [obj+0008]
+  161145: [new] 0a665c: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161146:       0a6660: e940 5701 4065                         |002c: invoke-virtual-quick {v0, v4, v5, v6}, [0157] // vtable #0157
+  161147: [new] 0a6660: 6e40 f64d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmDisconnReqCallback:(IILjava/lang/String;)V // method@4df6
+  161148:       0a6666: 7300                                   |002f: return-void-no-barrier
+  161149: [new] 0a6666: 0e00                                   |002f: return-void
+  161150:    virtual_method #17946: btpmLePreferredConnParamsCallback (ILjava/lang/String;ZIIII)V
+  161151:     access=0000 ()
+  161152:     codeOff=a666a (681578)
+  161153:     quickening_size=25 (37)
+  161154:       0a666e: 0800 1000                              |0000: move-object/from16 v0, v16
+  161155:       0a6672: 1a01 660a                              |0002: const-string v1, "BTPM_JAVA_NATIVE" // string@0a66
+  161156:       0a6676: 2202 c40e                              |0004: new-instance v2, Ljava/lang/StringBuilder; // type@0ec4
+  161157:       0a667a: 7010 646d 0200                         |0006: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161158:       0a6680: 1a03 5a4b                              |0009: const-string v3, "btpmLePreferredConnParamsCallback() - clientIf=" // string@4b5a
+  161159:       0a6684: e920 4b00 3200                         |000b: invoke-virtual-quick {v2, v3}, [004b] // vtable #004b
+  161160: [new] 0a6684: 6e20 6e6d 3200                         |000b: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161161:       0a668a: 0203 1100                              |000e: move/from16 v3, v17
+  161162:       0a668e: e920 4600 3200                         |0010: invoke-virtual-quick {v2, v3}, [0046] // vtable #0046
+  161163: [new] 0a668e: 6e20 6a6d 3200                         |0010: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161164:       0a6694: 1a04 df04                              |0013: const-string v4, ", address=" // string@04df
+  161165:       0a6698: e920 4b00 4200                         |0015: invoke-virtual-quick {v2, v4}, [004b] // vtable #004b
+  161166: [new] 0a6698: 6e20 6e6d 4200                         |0015: invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161167:       0a669e: 080c 1200                              |0018: move-object/from16 v12, v18
+  161168:       0a66a2: e920 4b00 c200                         |001a: invoke-virtual-quick {v2, v12}, [004b] // vtable #004b
+  161169: [new] 0a66a2: 6e20 6e6d c200                         |001a: invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161170:       0a66a8: 1a04 3305                              |001d: const-string v4, ", isDirect=" // string@0533
+  161171:       0a66ac: e920 4b00 4200                         |001f: invoke-virtual-quick {v2, v4}, [004b] // vtable #004b
+  161172: [new] 0a66ac: 6e20 6e6d 4200                         |001f: invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161173:       0a66b2: 020d 1300                              |0022: move/from16 v13, v19
+  161174:       0a66b6: e920 4d00 d200                         |0024: invoke-virtual-quick {v2, v13}, [004d] // vtable #004d
+  161175: [new] 0a66b6: 6e20 6f6d d200                         |0024: invoke-virtual {v2, v13}, Ljava/lang/StringBuilder;.append:(Z)Ljava/lang/StringBuilder; // method@6d6f
+  161176:       0a66bc: 1a04 5305                              |0027: const-string v4, ", minInterval=" // string@0553
+  161177:       0a66c0: e920 4b00 4200                         |0029: invoke-virtual-quick {v2, v4}, [004b] // vtable #004b
+  161178: [new] 0a66c0: 6e20 6e6d 4200                         |0029: invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161179:       0a66c6: 020e 1400                              |002c: move/from16 v14, v20
+  161180:       0a66ca: e920 4600 e200                         |002e: invoke-virtual-quick {v2, v14}, [0046] // vtable #0046
+  161181: [new] 0a66ca: 6e20 6a6d e200                         |002e: invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161182:       0a66d0: 1a04 5005                              |0031: const-string v4, ", maxInterval=" // string@0550
+  161183:       0a66d4: e920 4b00 4200                         |0033: invoke-virtual-quick {v2, v4}, [004b] // vtable #004b
+  161184: [new] 0a66d4: 6e20 6e6d 4200                         |0033: invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161185:       0a66da: 020f 1500                              |0036: move/from16 v15, v21
+  161186:       0a66de: e920 4600 f200                         |0038: invoke-virtual-quick {v2, v15}, [0046] // vtable #0046
+  161187: [new] 0a66de: 6e20 6a6d f200                         |0038: invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161188:       0a66e4: 1a04 3905                              |003b: const-string v4, ", latency=" // string@0539
+  161189:       0a66e8: e920 4b00 4200                         |003d: invoke-virtual-quick {v2, v4}, [004b] // vtable #004b
+  161190: [new] 0a66e8: 6e20 6e6d 4200                         |003d: invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161191:       0a66ee: 020b 1600                              |0040: move/from16 v11, v22
+  161192:       0a66f2: e920 4600 b200                         |0042: invoke-virtual-quick {v2, v11}, [0046] // vtable #0046
+  161193: [new] 0a66f2: 6e20 6a6d b200                         |0042: invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161194:       0a66f8: 1a04 9705                              |0045: const-string v4, ", timeout=" // string@0597
+  161195:       0a66fc: e920 4b00 4200                         |0047: invoke-virtual-quick {v2, v4}, [004b] // vtable #004b
+  161196: [new] 0a66fc: 6e20 6e6d 4200                         |0047: invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161197:       0a6702: 020a 1700                              |004a: move/from16 v10, v23
+  161198:       0a6706: e920 4600 a200                         |004c: invoke-virtual-quick {v2, v10}, [0046] // vtable #0046
+  161199: [new] 0a6706: 6e20 6a6d a200                         |004c: invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161200:       0a670c: e910 0700 0200                         |004f: invoke-virtual-quick {v2}, [0007] // vtable #0007
+  161201: [new] 0a670c: 6e10 786d 0200                         |004f: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161202:       0a6712: 0c02                                   |0052: move-result-object v2
+  161203:       0a6714: 7120 9239 2100                         |0053: invoke-static {v1, v2}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161204:       0a671a: e501 0800                              |0056: iget-object-quick v1, v0, [obj+0008]
+  161205: [new] 0a671a: 5401 1946                              |0056: iget-object v1, v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161206:       0a671e: 3801 0f00                              |0058: if-eqz v1, 0067 // +000f
+  161207:       0a6722: e504 0800                              |005a: iget-object-quick v4, v0, [obj+0008]
+  161208: [new] 0a6722: 5404 1946                              |005a: iget-object v4, v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161209:       0a6726: 0135                                   |005c: move v5, v3
+  161210:       0a6728: 07c6                                   |005d: move-object v6, v12
+  161211:       0a672a: 01d7                                   |005e: move v7, v13
+  161212:       0a672c: 01e8                                   |005f: move v8, v14
+  161213:       0a672e: 01f9                                   |0060: move v9, v15
+  161214:       0a6730: 01ba                                   |0061: move v10, v11
+  161215:       0a6732: 020b 1700                              |0062: move/from16 v11, v23
+  161216:       0a6736: ea08 5801 0400                         |0064: invoke-virtual/range-quick {v4, v5, v6, v7, v8, v9, v10, v11}, [0158] // vtable #0158
+  161217: [new] 0a6736: 7408 f74d 0400                         |0064: invoke-virtual/range {v4, v5, v6, v7, v8, v9, v10, v11}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmPreferredConnParamsCallback:(ILjava/lang/String;ZIIII)V // method@4df7
+  161218:       0a673c: 7300                                   |0067: return-void-no-barrier
+  161219: [new] 0a673c: 0e00                                   |0067: return-void
+  161220:    virtual_method #17954: btpmLeUpdateScanParamsCallback (III)V
+  161221:     access=0000 ()
+  161222:     codeOff=a673e (681790)
+  161223:     quickening_size=15 (21)
+  161224:       0a6742: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161225:       0a6746: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161226:       0a674a: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161227:       0a6750: 1a02 634b                              |0007: const-string v2, "btpmLeUpdateScanParamsCallback() - clientIf=" // string@4b63
+  161228:       0a6754: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161229: [new] 0a6754: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161230:       0a675a: e920 4600 4100                         |000c: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161231: [new] 0a675a: 6e20 6a6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161232:       0a6760: 1a02 7f05                              |000f: const-string v2, ", scanInterval=" // string@057f
+  161233:       0a6764: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161234: [new] 0a6764: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161235:       0a676a: e920 4600 5100                         |0014: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161236: [new] 0a676a: 6e20 6a6d 5100                         |0014: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161237:       0a6770: 1a02 8005                              |0017: const-string v2, ", scanWindow=" // string@0580
+  161238:       0a6774: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161239: [new] 0a6774: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161240:       0a677a: e920 4600 6100                         |001c: invoke-virtual-quick {v1, v6}, [0046] // vtable #0046
+  161241: [new] 0a677a: 6e20 6a6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161242:       0a6780: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161243: [new] 0a6780: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161244:       0a6786: 0c01                                   |0022: move-result-object v1
+  161245:       0a6788: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161246:       0a678e: e530 0800                              |0026: iget-object-quick v0, v3, [obj+0008]
+  161247: [new] 0a678e: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161248:       0a6792: 3800 0700                              |0028: if-eqz v0, 002f // +0007
+  161249:       0a6796: e530 0800                              |002a: iget-object-quick v0, v3, [obj+0008]
+  161250: [new] 0a6796: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161251:       0a679a: e940 5c01 4065                         |002c: invoke-virtual-quick {v0, v4, v5, v6}, [015c] // vtable #015c
+  161252: [new] 0a679a: 6e40 fb4d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmUpdateScanParamsCallback:(III)V // method@4dfb
+  161253:       0a67a0: 7300                                   |002f: return-void-no-barrier
+  161254: [new] 0a67a0: 0e00                                   |002f: return-void
+  161255:    virtual_method #17955: btpmRegisterAppCallback (III)V
+  161256:     access=0000 ()
+  161257:     codeOff=a67a2 (681890)
+  161258:     quickening_size=15 (21)
+  161259:       0a67a6: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161260:       0a67aa: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161261:       0a67ae: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161262:       0a67b4: 1a02 654b                              |0007: const-string v2, "btpmRegsterAppCallback() - status=" // string@4b65
+  161263:       0a67b8: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161264: [new] 0a67b8: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161265:       0a67be: e920 4600 4100                         |000c: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161266: [new] 0a67be: 6e20 6a6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161267:       0a67c4: 1a02 e804                              |000f: const-string v2, ", amzn_appid=" // string@04e8
+  161268:       0a67c8: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161269: [new] 0a67c8: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161270:       0a67ce: e920 4600 5100                         |0014: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161271: [new] 0a67ce: 6e20 6a6d 5100                         |0014: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161272:       0a67d4: 1a02 fd04                              |0017: const-string v2, ", clientIf=" // string@04fd
+  161273:       0a67d8: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161274: [new] 0a67d8: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161275:       0a67de: e920 4600 6100                         |001c: invoke-virtual-quick {v1, v6}, [0046] // vtable #0046
+  161276: [new] 0a67de: 6e20 6a6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161277:       0a67e4: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161278: [new] 0a67e4: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161279:       0a67ea: 0c01                                   |0022: move-result-object v1
+  161280:       0a67ec: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161281:       0a67f2: e530 0800                              |0026: iget-object-quick v0, v3, [obj+0008]
+  161282: [new] 0a67f2: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161283:       0a67f6: 3800 0700                              |0028: if-eqz v0, 002f // +0007
+  161284:       0a67fa: e530 0800                              |002a: iget-object-quick v0, v3, [obj+0008]
+  161285: [new] 0a67fa: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161286:       0a67fe: e940 5901 4065                         |002c: invoke-virtual-quick {v0, v4, v5, v6}, [0159] // vtable #0159
+  161287: [new] 0a67fe: 6e40 f84d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmRegisterAppCallback:(III)V // method@4df8
+  161288:       0a6804: 7300                                   |002f: return-void-no-barrier
+  161289: [new] 0a6804: 0e00                                   |002f: return-void
+  161290:    virtual_method #17956: btpmSetConnScanParamsCallback (III)V
+  161291:     access=0000 ()
+  161292:     codeOff=a6806 (681990)
+  161293:     quickening_size=15 (21)
+  161294:       0a680a: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161295:       0a680e: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161296:       0a6812: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161297:       0a6818: 1a02 674b                              |0007: const-string v2, "btpmSetConnScanParamsCallback() - clientIf=" // string@4b67
+  161298:       0a681c: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161299: [new] 0a681c: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161300:       0a6822: e920 4600 4100                         |000c: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161301: [new] 0a6822: 6e20 6a6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161302:       0a6828: 1a02 7f05                              |000f: const-string v2, ", scanInterval=" // string@057f
+  161303:       0a682c: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161304: [new] 0a682c: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161305:       0a6832: e920 4600 5100                         |0014: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161306: [new] 0a6832: 6e20 6a6d 5100                         |0014: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161307:       0a6838: 1a02 8005                              |0017: const-string v2, ", scanWindow=" // string@0580
+  161308:       0a683c: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161309: [new] 0a683c: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161310:       0a6842: e920 4600 6100                         |001c: invoke-virtual-quick {v1, v6}, [0046] // vtable #0046
+  161311: [new] 0a6842: 6e20 6a6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161312:       0a6848: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161313: [new] 0a6848: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161314:       0a684e: 0c01                                   |0022: move-result-object v1
+  161315:       0a6850: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161316:       0a6856: e530 0800                              |0026: iget-object-quick v0, v3, [obj+0008]
+  161317: [new] 0a6856: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161318:       0a685a: 3800 0700                              |0028: if-eqz v0, 002f // +0007
+  161319:       0a685e: e530 0800                              |002a: iget-object-quick v0, v3, [obj+0008]
+  161320: [new] 0a685e: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161321:       0a6862: e940 5a01 4065                         |002c: invoke-virtual-quick {v0, v4, v5, v6}, [015a] // vtable #015a
+  161322: [new] 0a6862: 6e40 f94d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmSetConnScanParamsCallback:(III)V // method@4df9
+  161323:       0a6868: 7300                                   |002f: return-void-no-barrier
+  161324: [new] 0a6868: 0e00                                   |002f: return-void
+  161325:    virtual_method #17957: btpmSetReqPriorityCallback (IILjava/lang/String;I)V
+  161326:     access=0000 ()
+  161327:     codeOff=a686a (682090)
+  161328:     quickening_size=19 (25)
+  161329:       0a686e: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161330:       0a6872: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161331:       0a6876: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161332:       0a687c: 1a02 694b                              |0007: const-string v2, "btpmSetReqPriorityCallback() - clientIf=" // string@4b69
+  161333:       0a6880: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161334: [new] 0a6880: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161335:       0a6886: e920 4600 5100                         |000c: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161336: [new] 0a6886: 6e20 6a6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161337:       0a688c: 1a02 8e05                              |000f: const-string v2, ", status=" // string@058e
+  161338:       0a6890: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161339: [new] 0a6890: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161340:       0a6896: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161341: [new] 0a6896: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161342:       0a689c: 1a02 df04                              |0017: const-string v2, ", address=" // string@04df
+  161343:       0a68a0: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161344: [new] 0a68a0: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161345:       0a68a6: e920 4b00 6100                         |001c: invoke-virtual-quick {v1, v6}, [004b] // vtable #004b
+  161346: [new] 0a68a6: 6e20 6e6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161347:       0a68ac: 1a02 7405                              |001f: const-string v2, ", reqPriority=" // string@0574
+  161348:       0a68b0: e920 4b00 2100                         |0021: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161349: [new] 0a68b0: 6e20 6e6d 2100                         |0021: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161350:       0a68b6: e920 4600 7100                         |0024: invoke-virtual-quick {v1, v7}, [0046] // vtable #0046
+  161351: [new] 0a68b6: 6e20 6a6d 7100                         |0024: invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161352:       0a68bc: e910 0700 0100                         |0027: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161353: [new] 0a68bc: 6e10 786d 0100                         |0027: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161354:       0a68c2: 0c01                                   |002a: move-result-object v1
+  161355:       0a68c4: 7120 9239 1000                         |002b: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161356:       0a68ca: e530 0800                              |002e: iget-object-quick v0, v3, [obj+0008]
+  161357: [new] 0a68ca: 5430 1946                              |002e: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161358:       0a68ce: 3800 0700                              |0030: if-eqz v0, 0037 // +0007
+  161359:       0a68d2: e530 0800                              |0032: iget-object-quick v0, v3, [obj+0008]
+  161360: [new] 0a68d2: 5430 1946                              |0032: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161361:       0a68d6: e957 5b01 4065                         |0034: invoke-virtual-quick {v0, v4, v5, v6, v7}, [015b] // vtable #015b
+  161362: [new] 0a68d6: 6e57 fa4d 4065                         |0034: invoke-virtual {v0, v4, v5, v6, v7}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmSetReqPriorityCallback:(IILjava/lang/String;I)V // method@4dfa
+  161363:       0a68dc: 7300                                   |0037: return-void-no-barrier
+  161364: [new] 0a68dc: 0e00                                   |0037: return-void
+  161365:    virtual_method #17960: deinit ()V
+  161366:     access=0001 (PUBLIC)
+  161367:     codeOff=a68de (682206)
+  161368:     quickening_size=1 (1)
+  161369:       0a68e2: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161370:       0a68e6: 1a01 e552                              |0002: const-string v1, "deinit" // string@52e5
+  161371:       0a68ea: 7120 9239 1000                         |0004: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161372:       0a68f0: 7300                                   |0007: return-void-no-barrier
+  161373: [new] 0a68f0: 0e00                                   |0007: return-void
+  161374:    virtual_method #17962: init ()V
+  161375:     access=0001 (PUBLIC)
+  161376:     codeOff=a68f2 (682226)
+  161377:     quickening_size=1 (1)
+  161378:       0a68f6: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161379:       0a68fa: 1a01 0366                              |0002: const-string v1, "init" // string@6603
+  161380:       0a68fe: 7120 9239 1000                         |0004: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161381:       0a6904: 7300                                   |0007: return-void-no-barrier
+  161382: [new] 0a6904: 0e00                                   |0007: return-void
+  161383:    virtual_method #17964: leAclStateChangeNtfy (ILjava/lang/String;I)V
+  161384:     access=0001 (PUBLIC)
+  161385:     codeOff=a6906 (682246)
+  161386:     quickening_size=f (15)
+  161387:       0a690a: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161388:       0a690e: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161389:       0a6912: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161390:       0a6918: 1a02 006a                              |0007: const-string v2, "leAclStateChangeNtfy() - address=" // string@6a00
+  161391:       0a691c: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161392: [new] 0a691c: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161393:       0a6922: e920 4b00 5100                         |000c: invoke-virtual-quick {v1, v5}, [004b] // vtable #004b
+  161394: [new] 0a6922: 6e20 6e6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161395:       0a6928: 1a02 d804                              |000f: const-string v2, ", acl_status=" // string@04d8
+  161396:       0a692c: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161397: [new] 0a692c: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161398:       0a6932: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161399: [new] 0a6932: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161400:       0a6938: 1a02 d704                              |0017: const-string v2, ", acl_conn_state=" // string@04d7
+  161401:       0a693c: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161402: [new] 0a693c: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161403:       0a6942: e920 4600 6100                         |001c: invoke-virtual-quick {v1, v6}, [0046] // vtable #0046
+  161404: [new] 0a6942: 6e20 6a6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161405:       0a6948: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161406: [new] 0a6948: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161407:       0a694e: 0c01                                   |0022: move-result-object v1
+  161408:       0a6950: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161409:       0a6956: 7300                                   |0026: return-void-no-barrier
+  161410: [new] 0a6956: 0e00                                   |0026: return-void
+  161411:    virtual_method #17965: leConnect (IILjava/lang/String;ZZ)V
+  161412:     access=0001 (PUBLIC)
+  161413:     codeOff=a6958 (682328)
+  161414:     quickening_size=f (15)
+  161415:       0a695c: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161416:       0a6960: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161417:       0a6964: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161418:       0a696a: 1a02 026a                              |0007: const-string v2, "leConnect() - address=" // string@6a02
+  161419:       0a696e: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161420: [new] 0a696e: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161421:       0a6974: e920 4b00 6100                         |000c: invoke-virtual-quick {v1, v6}, [004b] // vtable #004b
+  161422: [new] 0a6974: 6e20 6e6d 6100                         |000c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161423:       0a697a: 1a02 3305                              |000f: const-string v2, ", isDirect=" // string@0533
+  161424:       0a697e: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161425: [new] 0a697e: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161426:       0a6984: e920 4d00 7100                         |0014: invoke-virtual-quick {v1, v7}, [004d] // vtable #004d
+  161427: [new] 0a6984: 6e20 6f6d 7100                         |0014: invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;.append:(Z)Ljava/lang/StringBuilder; // method@6d6f
+  161428:       0a698a: 1a02 fd04                              |0017: const-string v2, ", clientIf=" // string@04fd
+  161429:       0a698e: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161430: [new] 0a698e: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161431:       0a6994: e920 4600 5100                         |001c: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161432: [new] 0a6994: 6e20 6a6d 5100                         |001c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161433:       0a699a: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161434: [new] 0a699a: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161435:       0a69a0: 0c01                                   |0022: move-result-object v1
+  161436:       0a69a2: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161437:       0a69a8: 7300                                   |0026: return-void-no-barrier
+  161438: [new] 0a69a8: 0e00                                   |0026: return-void
+  161439:    virtual_method #17966: leConnectNtfy (ILjava/lang/String;)V
+  161440:     access=0001 (PUBLIC)
+  161441:     codeOff=a69aa (682410)
+  161442:     quickening_size=b (11)
+  161443:       0a69ae: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161444:       0a69b2: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161445:       0a69b6: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161446:       0a69bc: 1a02 046a                              |0007: const-string v2, "leConnectNtfy() - address=" // string@6a04
+  161447:       0a69c0: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161448: [new] 0a69c0: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161449:       0a69c6: e920 4b00 5100                         |000c: invoke-virtual-quick {v1, v5}, [004b] // vtable #004b
+  161450: [new] 0a69c6: 6e20 6e6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161451:       0a69cc: 1a02 fd04                              |000f: const-string v2, ", clientIf=" // string@04fd
+  161452:       0a69d0: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161453: [new] 0a69d0: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161454:       0a69d6: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161455: [new] 0a69d6: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161456:       0a69dc: e910 0700 0100                         |0017: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161457: [new] 0a69dc: 6e10 786d 0100                         |0017: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161458:       0a69e2: 0c01                                   |001a: move-result-object v1
+  161459:       0a69e4: 7120 9239 1000                         |001b: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161460:       0a69ea: 7300                                   |001e: return-void-no-barrier
+  161461: [new] 0a69ea: 0e00                                   |001e: return-void
+  161462:    virtual_method #17967: leDisconnect (ILjava/lang/String;)V
+  161463:     access=0001 (PUBLIC)
+  161464:     codeOff=a69ec (682476)
+  161465:     quickening_size=b (11)
+  161466:       0a69f0: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161467:       0a69f4: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161468:       0a69f8: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161469:       0a69fe: 1a02 086a                              |0007: const-string v2, "leDisconnect() - address=" // string@6a08
+  161470:       0a6a02: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161471: [new] 0a6a02: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161472:       0a6a08: e920 4b00 5100                         |000c: invoke-virtual-quick {v1, v5}, [004b] // vtable #004b
+  161473: [new] 0a6a08: 6e20 6e6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161474:       0a6a0e: 1a02 fd04                              |000f: const-string v2, ", clientIf=" // string@04fd
+  161475:       0a6a12: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161476: [new] 0a6a12: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161477:       0a6a18: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161478: [new] 0a6a18: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161479:       0a6a1e: e910 0700 0100                         |0017: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161480: [new] 0a6a1e: 6e10 786d 0100                         |0017: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161481:       0a6a24: 0c01                                   |001a: move-result-object v1
+  161482:       0a6a26: 7120 9239 1000                         |001b: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161483:       0a6a2c: 7300                                   |001e: return-void-no-barrier
+  161484: [new] 0a6a2c: 0e00                                   |001e: return-void
+  161485:    virtual_method #17968: leDisconnectNtfy (ILjava/lang/String;)V
+  161486:     access=0001 (PUBLIC)
+  161487:     codeOff=a6a2e (682542)
+  161488:     quickening_size=b (11)
+  161489:       0a6a32: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161490:       0a6a36: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161491:       0a6a3a: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161492:       0a6a40: 1a02 0a6a                              |0007: const-string v2, "leDisconnectNtfy() - address=" // string@6a0a
+  161493:       0a6a44: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161494: [new] 0a6a44: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161495:       0a6a4a: e920 4b00 5100                         |000c: invoke-virtual-quick {v1, v5}, [004b] // vtable #004b
+  161496: [new] 0a6a4a: 6e20 6e6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161497:       0a6a50: 1a02 fd04                              |000f: const-string v2, ", clientIf=" // string@04fd
+  161498:       0a6a54: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161499: [new] 0a6a54: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161500:       0a6a5a: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161501: [new] 0a6a5a: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161502:       0a6a60: e910 0700 0100                         |0017: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161503: [new] 0a6a60: 6e10 786d 0100                         |0017: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161504:       0a6a66: 0c01                                   |001a: move-result-object v1
+  161505:       0a6a68: 7120 9239 1000                         |001b: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161506:       0a6a6e: 7300                                   |001e: return-void-no-barrier
+  161507: [new] 0a6a6e: 0e00                                   |001e: return-void
+  161508:    virtual_method #17969: leGetAvailableLinkCount ()I
+  161509:     access=0001 (PUBLIC)
+  161510:     codeOff=a63b4 (680884)
+  161511:     quickening_size=7 (7)
+  161512:       0a63b8: 1200                                   |0000: const/4 v0, #int 0 // #0
+  161513:       0a63ba: 1a01 660a                              |0001: const-string v1, "BTPM_JAVA_NATIVE" // string@0a66
+  161514:       0a63be: 2202 c40e                              |0003: new-instance v2, Ljava/lang/StringBuilder; // type@0ec4
+  161515:       0a63c2: 7010 646d 0200                         |0005: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161516:       0a63c8: 1a03 0c6a                              |0008: const-string v3, "leGetAvailableLinkCount() - linkCount=" // string@6a0c
+  161517:       0a63cc: e920 4b00 3200                         |000a: invoke-virtual-quick {v2, v3}, [004b] // vtable #004b
+  161518: [new] 0a63cc: 6e20 6e6d 3200                         |000a: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161519:       0a63d2: e920 4600 0200                         |000d: invoke-virtual-quick {v2, v0}, [0046] // vtable #0046
+  161520: [new] 0a63d2: 6e20 6a6d 0200                         |000d: invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161521:       0a63d8: e910 0700 0200                         |0010: invoke-virtual-quick {v2}, [0007] // vtable #0007
+  161522: [new] 0a63d8: 6e10 786d 0200                         |0010: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161523:       0a63de: 0c02                                   |0013: move-result-object v2
+  161524:       0a63e0: 7120 9239 2100                         |0014: invoke-static {v1, v2}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161525:       0a63e6: 0f00                                   |0017: return v0
+  161526:    virtual_method #17970: leScan (Z)V
+  161527:     access=0001 (PUBLIC)
+  161528:     codeOff=a6a70 (682608)
+  161529:     quickening_size=7 (7)
+  161530:       0a6a74: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161531:       0a6a78: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161532:       0a6a7c: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161533:       0a6a82: 1a02 0e6a                              |0007: const-string v2, "leScan() - is_start=" // string@6a0e
+  161534:       0a6a86: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161535: [new] 0a6a86: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161536:       0a6a8c: e920 4d00 4100                         |000c: invoke-virtual-quick {v1, v4}, [004d] // vtable #004d
+  161537: [new] 0a6a8c: 6e20 6f6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(Z)Ljava/lang/StringBuilder; // method@6d6f
+  161538:       0a6a92: e910 0700 0100                         |000f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161539: [new] 0a6a92: 6e10 786d 0100                         |000f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161540:       0a6a98: 0c01                                   |0012: move-result-object v1
+  161541:       0a6a9a: 7120 9239 1000                         |0013: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161542:       0a6aa0: 7300                                   |0016: return-void-no-barrier
+  161543: [new] 0a6aa0: 0e00                                   |0016: return-void
+  161544:    virtual_method #17971: leSetReqPriority (ILjava/lang/String;I)V
+  161545:     access=0001 (PUBLIC)
+  161546:     codeOff=a6aa2 (682658)
+  161547:     quickening_size=f (15)
+  161548:       0a6aa6: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161549:       0a6aaa: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161550:       0a6aae: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161551:       0a6ab4: 1a02 106a                              |0007: const-string v2, "leSetReqPriority() - address=" // string@6a10
+  161552:       0a6ab8: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161553: [new] 0a6ab8: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161554:       0a6abe: e920 4b00 5100                         |000c: invoke-virtual-quick {v1, v5}, [004b] // vtable #004b
+  161555: [new] 0a6abe: 6e20 6e6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161556:       0a6ac4: 1a02 fd04                              |000f: const-string v2, ", clientIf=" // string@04fd
+  161557:       0a6ac8: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161558: [new] 0a6ac8: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161559:       0a6ace: e920 4600 4100                         |0014: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161560: [new] 0a6ace: 6e20 6a6d 4100                         |0014: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161561:       0a6ad4: 1a02 7505                              |0017: const-string v2, ", req_priority=" // string@0575
+  161562:       0a6ad8: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161563: [new] 0a6ad8: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161564:       0a6ade: e920 4600 6100                         |001c: invoke-virtual-quick {v1, v6}, [0046] // vtable #0046
+  161565: [new] 0a6ade: 6e20 6a6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161566:       0a6ae4: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161567: [new] 0a6ae4: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161568:       0a6aea: 0c01                                   |0022: move-result-object v1
+  161569:       0a6aec: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161570:       0a6af2: 7300                                   |0026: return-void-no-barrier
+  161571: [new] 0a6af2: 0e00                                   |0026: return-void
+  161572:    virtual_method #17972: leSetScanParameters (III)V
+  161573:     access=0001 (PUBLIC)
+  161574:     codeOff=a6af4 (682740)
+  161575:     quickening_size=f (15)
+  161576:       0a6af8: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161577:       0a6afc: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161578:       0a6b00: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161579:       0a6b06: 1a02 126a                              |0007: const-string v2, "leSetScanParameters() - clientIf=" // string@6a12
+  161580:       0a6b0a: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161581: [new] 0a6b0a: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161582:       0a6b10: e920 4600 4100                         |000c: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161583: [new] 0a6b10: 6e20 6a6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161584:       0a6b16: 1a02 7f05                              |000f: const-string v2, ", scanInterval=" // string@057f
+  161585:       0a6b1a: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161586: [new] 0a6b1a: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161587:       0a6b20: e920 4600 5100                         |0014: invoke-virtual-quick {v1, v5}, [0046] // vtable #0046
+  161588: [new] 0a6b20: 6e20 6a6d 5100                         |0014: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161589:       0a6b26: 1a02 8005                              |0017: const-string v2, ", scanWindow=" // string@0580
+  161590:       0a6b2a: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161591: [new] 0a6b2a: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161592:       0a6b30: e920 4600 6100                         |001c: invoke-virtual-quick {v1, v6}, [0046] // vtable #0046
+  161593: [new] 0a6b30: 6e20 6a6d 6100                         |001c: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161594:       0a6b36: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161595: [new] 0a6b36: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161596:       0a6b3c: 0c01                                   |0022: move-result-object v1
+  161597:       0a6b3e: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161598:       0a6b44: 7300                                   |0026: return-void-no-barrier
+  161599: [new] 0a6b44: 0e00                                   |0026: return-void
+  161600:    virtual_method #17973: registerApp (ILjava/util/UUID;)V
+  161601:     access=0001 (PUBLIC)
+  161602:     codeOff=a6b46 (682822)
+  161603:     quickening_size=b (11)
+  161604:       0a6b4a: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161605:       0a6b4e: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161606:       0a6b52: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161607:       0a6b58: 1a02 b585                              |0007: const-string v2, "registerApp() - amzn_appid=" // string@85b5
+  161608:       0a6b5c: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161609: [new] 0a6b5c: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161610:       0a6b62: e920 4600 4100                         |000c: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161611: [new] 0a6b62: 6e20 6a6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161612:       0a6b68: 1a02 d504                              |000f: const-string v2, ", UUID=" // string@04d5
+  161613:       0a6b6c: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161614: [new] 0a6b6c: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161615:       0a6b72: e920 4a00 5100                         |0014: invoke-virtual-quick {v1, v5}, [004a] // vtable #004a
+  161616: [new] 0a6b72: 6e20 6d6d 5100                         |0014: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@6d6d
+  161617:       0a6b78: e910 0700 0100                         |0017: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161618: [new] 0a6b78: 6e10 786d 0100                         |0017: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161619:       0a6b7e: 0c01                                   |001a: move-result-object v1
+  161620:       0a6b80: 7120 9239 1000                         |001b: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161621:       0a6b86: 7300                                   |001e: return-void-no-barrier
+  161622: [new] 0a6b86: 0e00                                   |001e: return-void
+  161623:    virtual_method #17974: setAppClientIf (ILjava/util/UUID;)V
+  161624:     access=0001 (PUBLIC)
+  161625:     codeOff=a6b88 (682888)
+  161626:     quickening_size=7 (7)
+  161627:       0a6b8c: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161628:       0a6b90: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161629:       0a6b94: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161630:       0a6b9a: 1a02 c28b                              |0007: const-string v2, "setAppClientIf() - UUID=" // string@8bc2
+  161631:       0a6b9e: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161632: [new] 0a6b9e: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161633:       0a6ba4: e920 4a00 5100                         |000c: invoke-virtual-quick {v1, v5}, [004a] // vtable #004a
+  161634: [new] 0a6ba4: 6e20 6d6d 5100                         |000c: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@6d6d
+  161635:       0a6baa: e910 0700 0100                         |000f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161636: [new] 0a6baa: 6e10 786d 0100                         |000f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161637:       0a6bb0: 0c01                                   |0012: move-result-object v1
+  161638:       0a6bb2: 7120 9239 1000                         |0013: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161639:       0a6bb8: 7300                                   |0016: return-void-no-barrier
+  161640: [new] 0a6bb8: 0e00                                   |0016: return-void
+  161641:    virtual_method #17975: setGattService (Lcom/android/bluetooth/gatt/FosGattService;)V
+  161642:     access=0001 (PUBLIC)
+  161643:     codeOff=a6bba (682938)
+  161644:     quickening_size=3 (3)
+  161645:       0a6bbe: e801 0800                              |0000: iput-object-quick v1, v0, [obj+0008]
+  161646: [new] 0a6bbe: 5b01 1946                              |0000: iput-object v1, v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+  161647:       0a6bc2: 7300                                   |0002: return-void-no-barrier
+  161648: [new] 0a6bc2: 0e00                                   |0002: return-void
+  161649:    virtual_method #17977: unregisterApp (I)V
+  161650:     access=0001 (PUBLIC)
+  161651:     codeOff=a6bc4 (682948)
+  161652:     quickening_size=7 (7)
+  161653:       0a6bc8: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161654:       0a6bcc: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161655:       0a6bd0: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161656:       0a6bd6: 1a02 7f96                              |0007: const-string v2, "unregisterApp() - clientIf=" // string@967f
+  161657:       0a6bda: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161658: [new] 0a6bda: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161659:       0a6be0: e920 4600 4100                         |000c: invoke-virtual-quick {v1, v4}, [0046] // vtable #0046
+  161660: [new] 0a6be0: 6e20 6a6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  161661:       0a6be6: e910 0700 0100                         |000f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161662: [new] 0a6be6: 6e10 786d 0100                         |000f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161663:       0a6bec: 0c01                                   |0012: move-result-object v1
+  161664:       0a6bee: 7120 9239 1000                         |0013: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161665:       0a6bf4: 7300                                   |0016: return-void-no-barrier
+  161666: [new] 0a6bf4: 0e00                                   |0016: return-void
+  161667:    virtual_method #17978: unregisterAppByUuid (Ljava/util/UUID;)V
+  161668:     access=0001 (PUBLIC)
+  161669:     codeOff=a6bf6 (682998)
+  161670:     quickening_size=7 (7)
+  161671:       0a6bfa: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+  161672:       0a6bfe: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  161673:       0a6c02: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  161674:       0a6c08: 1a02 3c3e                              |0007: const-string v2, "UnregisterAppByUuid() - UUID=" // string@3e3c
+  161675:       0a6c0c: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  161676: [new] 0a6c0c: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  161677:       0a6c12: e920 4a00 4100                         |000c: invoke-virtual-quick {v1, v4}, [004a] // vtable #004a
+  161678: [new] 0a6c12: 6e20 6d6d 4100                         |000c: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@6d6d
+  161679:       0a6c18: e910 0700 0100                         |000f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  161680: [new] 0a6c18: 6e10 786d 0100                         |000f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  161681:       0a6c1e: 0c01                                   |0012: move-result-object v1
+  161682:       0a6c20: 7120 9239 1000                         |0013: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  161683:       0a6c26: 7300                                   |0016: return-void-no-barrier
+  161684: [new] 0a6c26: 0e00                                   |0016: return-void

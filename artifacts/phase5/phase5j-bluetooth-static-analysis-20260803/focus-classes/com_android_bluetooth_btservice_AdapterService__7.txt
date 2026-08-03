@@ -1,0 +1,100 @@
+  189193:   class #1682: AdapterService.7 ('Lcom/android/bluetooth/btservice/AdapterService$7;')
+  189194:    access=0000 ()
+  189195:    source_file=AdapterService.java, class_data_off=221cb9 (2235577)
+  189196:    static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=1
+  189197:    direct_method #19105: <init> (Lcom/android/bluetooth/btservice/AdapterService;)V
+  189198:     access=10000 (CONSTRUCTOR)
+  189199:     codeOff=be564 (779620)
+  189200:     quickening_size=3 (3)
+  189201:       0be568: e801 1000                              |0000: iput-object-quick v1, v0, [obj+0010]
+  189202: [new] 0be568: 5b01 cc49                              |0000: iput-object v1, v0, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189203:       0be56c: 7010 9903 0000                         |0002: invoke-direct {v0}, Landroid/content/BroadcastReceiver;.<init>:()V // method@0399
+  189204:       0be572: 0e00                                   |0005: return-void
+  189205:    virtual_method #19106: onReceive (Landroid/content/Context;Landroid/content/Intent;)V
+  189206:     access=0001 (PUBLIC)
+  189207:     codeOff=be574 (779636)
+  189208:     quickening_size=2f (47)
+  189209:       0be578: 3805 7900                              |0000: if-eqz v5, 0079 // +0079
+  189210:       0be57c: e910 1400 0500                         |0002: invoke-virtual-quick {v5}, [0014] // vtable #0014
+  189211: [new] 0be57c: 6e10 2c04 0500                         |0002: invoke-virtual {v5}, Landroid/content/Intent;.getAction:()Ljava/lang/String; // method@042c
+  189212:       0be582: 0c00                                   |0005: move-result-object v0
+  189213:       0be584: 3800 7300                              |0006: if-eqz v0, 0079 // +0073
+  189214:       0be588: e910 1400 0500                         |0008: invoke-virtual-quick {v5}, [0014] // vtable #0014
+  189215: [new] 0be588: 6e10 2c04 0500                         |0008: invoke-virtual {v5}, Landroid/content/Intent;.getAction:()Ljava/lang/String; // method@042c
+  189216:       0be58e: 0c00                                   |000b: move-result-object v0
+  189217:       0be590: 1a01 0147                              |000c: const-string v1, "android.intent.action.SCREEN_OFF" // string@4701
+  189218:       0be594: e920 0100 1000                         |000e: invoke-virtual-quick {v0, v1}, [0001] // vtable #0001
+  189219: [new] 0be594: 6e20 346d 1000                         |000e: invoke-virtual {v0, v1}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@6d34
+  189220:       0be59a: 0a00                                   |0011: move-result v0
+  189221:       0be59c: 1201                                   |0012: const/4 v1, #int 0 // #0
+  189222:       0be59e: 3800 0f00                              |0013: if-eqz v0, 0022 // +000f
+  189223:       0be5a2: e530 1000                              |0015: iget-object-quick v0, v3, [obj+0010]
+  189224: [new] 0be5a2: 5430 cc49                              |0015: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189225:       0be5a6: 1a02 8607                              |0017: const-string v2, "ACTION_SCREEN_OFF" // string@0786
+  189226:       0be5aa: 7120 104b 2000                         |0019: invoke-static {v0, v2}, Lcom/android/bluetooth/btservice/AdapterService;.access$000:(Lcom/android/bluetooth/btservice/AdapterService;Ljava/lang/String;)V // method@4b10
+  189227:       0be5b0: e530 1000                              |001c: iget-object-quick v0, v3, [obj+0010]
+  189228: [new] 0be5b0: 5430 cc49                              |001c: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189229:       0be5b4: e920 3e01 1000                         |001e: invoke-virtual-quick {v0, v1}, [013e] // vtable #013e
+  189230: [new] 0be5b4: 6e20 d64b 1000                         |001e: invoke-virtual {v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.setScanParam:(I)Z // method@4bd6
+  189231:       0be5ba: 2858                                   |0021: goto 0079 // +0058
+  189232:       0be5bc: e910 1400 0500                         |0022: invoke-virtual-quick {v5}, [0014] // vtable #0014
+  189233: [new] 0be5bc: 6e10 2c04 0500                         |0022: invoke-virtual {v5}, Landroid/content/Intent;.getAction:()Ljava/lang/String; // method@042c
+  189234:       0be5c2: 0c00                                   |0025: move-result-object v0
+  189235:       0be5c4: 1a02 f746                              |0026: const-string v2, "android.intent.action.DREAMING_STARTED" // string@46f7
+  189236:       0be5c8: e920 0100 2000                         |0028: invoke-virtual-quick {v0, v2}, [0001] // vtable #0001
+  189237: [new] 0be5c8: 6e20 346d 2000                         |0028: invoke-virtual {v0, v2}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@6d34
+  189238:       0be5ce: 0a00                                   |002b: move-result v0
+  189239:       0be5d0: 3800 0f00                              |002c: if-eqz v0, 003b // +000f
+  189240:       0be5d4: e530 1000                              |002e: iget-object-quick v0, v3, [obj+0010]
+  189241: [new] 0be5d4: 5430 cc49                              |002e: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189242:       0be5d8: 1a02 4a07                              |0030: const-string v2, "ACTION_DREAMING_STARTED" // string@074a
+  189243:       0be5dc: 7120 104b 2000                         |0032: invoke-static {v0, v2}, Lcom/android/bluetooth/btservice/AdapterService;.access$000:(Lcom/android/bluetooth/btservice/AdapterService;Ljava/lang/String;)V // method@4b10
+  189244:       0be5e2: e530 1000                              |0035: iget-object-quick v0, v3, [obj+0010]
+  189245: [new] 0be5e2: 5430 cc49                              |0035: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189246:       0be5e6: e920 3e01 1000                         |0037: invoke-virtual-quick {v0, v1}, [013e] // vtable #013e
+  189247: [new] 0be5e6: 6e20 d64b 1000                         |0037: invoke-virtual {v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.setScanParam:(I)Z // method@4bd6
+  189248:       0be5ec: 283f                                   |003a: goto 0079 // +003f
+  189249:       0be5ee: e910 1400 0500                         |003b: invoke-virtual-quick {v5}, [0014] // vtable #0014
+  189250: [new] 0be5ee: 6e10 2c04 0500                         |003b: invoke-virtual {v5}, Landroid/content/Intent;.getAction:()Ljava/lang/String; // method@042c
+  189251:       0be5f4: 0c00                                   |003e: move-result-object v0
+  189252:       0be5f6: 1a01 f846                              |003f: const-string v1, "android.intent.action.DREAMING_STOPPED" // string@46f8
+  189253:       0be5fa: e920 0100 1000                         |0041: invoke-virtual-quick {v0, v1}, [0001] // vtable #0001
+  189254: [new] 0be5fa: 6e20 346d 1000                         |0041: invoke-virtual {v0, v1}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@6d34
+  189255:       0be600: 0a00                                   |0044: move-result v0
+  189256:       0be602: 1211                                   |0045: const/4 v1, #int 1 // #1
+  189257:       0be604: 3800 1b00                              |0046: if-eqz v0, 0061 // +001b
+  189258:       0be608: e530 1000                              |0048: iget-object-quick v0, v3, [obj+0010]
+  189259: [new] 0be608: 5430 cc49                              |0048: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189260:       0be60c: 1a02 4b07                              |004a: const-string v2, "ACTION_DREAMING_STOPPED" // string@074b
+  189261:       0be610: 7120 104b 2000                         |004c: invoke-static {v0, v2}, Lcom/android/bluetooth/btservice/AdapterService;.access$000:(Lcom/android/bluetooth/btservice/AdapterService;Ljava/lang/String;)V // method@4b10
+  189262:       0be616: e530 1000                              |004f: iget-object-quick v0, v3, [obj+0010]
+  189263: [new] 0be616: 5430 cc49                              |004f: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189264:       0be61a: 7110 184b 0000                         |0051: invoke-static {v0}, Lcom/android/bluetooth/btservice/AdapterService;.access$1600:(Lcom/android/bluetooth/btservice/AdapterService;)Landroid/os/PowerManager; // method@4b18
+  189265:       0be620: 0c00                                   |0054: move-result-object v0
+  189266:       0be622: e910 1900 0000                         |0055: invoke-virtual-quick {v0}, [0019] // vtable #0019
+  189267: [new] 0be622: 6e10 670d 0000                         |0055: invoke-virtual {v0}, Landroid/os/PowerManager;.isInteractive:()Z // method@0d67
+  189268:       0be628: 0a00                                   |0058: move-result v0
+  189269:       0be62a: 3800 2000                              |0059: if-eqz v0, 0079 // +0020
+  189270:       0be62e: e530 1000                              |005b: iget-object-quick v0, v3, [obj+0010]
+  189271: [new] 0be62e: 5430 cc49                              |005b: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189272:       0be632: e920 3e01 1000                         |005d: invoke-virtual-quick {v0, v1}, [013e] // vtable #013e
+  189273: [new] 0be632: 6e20 d64b 1000                         |005d: invoke-virtual {v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.setScanParam:(I)Z // method@4bd6
+  189274:       0be638: 2819                                   |0060: goto 0079 // +0019
+  189275:       0be63a: e910 1400 0500                         |0061: invoke-virtual-quick {v5}, [0014] // vtable #0014
+  189276: [new] 0be63a: 6e10 2c04 0500                         |0061: invoke-virtual {v5}, Landroid/content/Intent;.getAction:()Ljava/lang/String; // method@042c
+  189277:       0be640: 0c00                                   |0064: move-result-object v0
+  189278:       0be642: 1a02 0247                              |0065: const-string v2, "android.intent.action.SCREEN_ON" // string@4702
+  189279:       0be646: e920 0100 2000                         |0067: invoke-virtual-quick {v0, v2}, [0001] // vtable #0001
+  189280: [new] 0be646: 6e20 346d 2000                         |0067: invoke-virtual {v0, v2}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@6d34
+  189281:       0be64c: 0a00                                   |006a: move-result v0
+  189282:       0be64e: 3800 0e00                              |006b: if-eqz v0, 0079 // +000e
+  189283:       0be652: e530 1000                              |006d: iget-object-quick v0, v3, [obj+0010]
+  189284: [new] 0be652: 5430 cc49                              |006d: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189285:       0be656: 1a02 8807                              |006f: const-string v2, "ACTION_SCREEN_ON" // string@0788
+  189286:       0be65a: 7120 104b 2000                         |0071: invoke-static {v0, v2}, Lcom/android/bluetooth/btservice/AdapterService;.access$000:(Lcom/android/bluetooth/btservice/AdapterService;Ljava/lang/String;)V // method@4b10
+  189287:       0be660: e530 1000                              |0074: iget-object-quick v0, v3, [obj+0010]
+  189288: [new] 0be660: 5430 cc49                              |0074: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$7;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49cc
+  189289:       0be664: e920 3e01 1000                         |0076: invoke-virtual-quick {v0, v1}, [013e] // vtable #013e
+  189290: [new] 0be664: 6e20 d64b 1000                         |0076: invoke-virtual {v0, v1}, Lcom/android/bluetooth/btservice/AdapterService;.setScanParam:(I)Z // method@4bd6
+  189291:       0be66a: 7300                                   |0079: return-void-no-barrier
+  189292: [new] 0be66a: 0e00                                   |0079: return-void

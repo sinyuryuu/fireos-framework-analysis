@@ -1,0 +1,30 @@
+  189079:   class #1678: AdapterService.3 ('Lcom/android/bluetooth/btservice/AdapterService$3;')
+  189080:    access=0000 ()
+  189081:    source_file=AdapterService.java, class_data_off=221c5a (2235482)
+  189082:    static_fields=0, instance_fields=0, direct_methods=1, virtual_methods=1
+  189083:    direct_method #19097: <init> ()V
+  189084:     access=10000 (CONSTRUCTOR)
+  189085:     codeOff=327a2 (206754)
+  189086:       0327a6: 7010 9903 0000                         |0000: invoke-direct {v0}, Landroid/content/BroadcastReceiver;.<init>:()V // method@0399
+  189087:       0327ac: 0e00                                   |0003: return-void
+  189088:    virtual_method #19098: onReceive (Landroid/content/Context;Landroid/content/Intent;)V
+  189089:     access=0001 (PUBLIC)
+  189090:     codeOff=be48a (779402)
+  189091:     quickening_size=7 (7)
+  189092:       0be48e: 1a00 0647                              |0000: const-string v0, "android.intent.action.USER_SWITCHED" // string@4706
+  189093:       0be492: e910 1400 0400                         |0002: invoke-virtual-quick {v4}, [0014] // vtable #0014
+  189094: [new] 0be492: 6e10 2c04 0400                         |0002: invoke-virtual {v4}, Landroid/content/Intent;.getAction:()Ljava/lang/String; // method@042c
+  189095:       0be498: 0c01                                   |0005: move-result-object v1
+  189096:       0be49a: e920 0100 1000                         |0006: invoke-virtual-quick {v0, v1}, [0001] // vtable #0001
+  189097: [new] 0be49a: 6e20 346d 1000                         |0006: invoke-virtual {v0, v1}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@6d34
+  189098:       0be4a0: 0a00                                   |0009: move-result v0
+  189099:       0be4a2: 3800 0f00                              |000a: if-eqz v0, 0019 // +000f
+  189100:       0be4a6: 1a00 1d47                              |000c: const-string v0, "android.intent.extra.user_handle" // string@471d
+  189101:       0be4aa: 1201                                   |000e: const/4 v1, #int 0 // #0
+  189102:       0be4ac: e930 2f00 0401                         |000f: invoke-virtual-quick {v4, v0, v1}, [002f] // vtable #002f
+  189103: [new] 0be4ac: 6e30 3704 0401                         |000f: invoke-virtual {v4, v0, v1}, Landroid/content/Intent;.getIntExtra:(Ljava/lang/String;I)I // method@0437
+  189104:       0be4b2: 0a00                                   |0012: move-result v0
+  189105:       0be4b4: 7110 4144 0000                         |0013: invoke-static {v0}, Lcom/android/bluetooth/Utils;.setForegroundUserId:(I)V // method@4441
+  189106:       0be4ba: 7110 234b 0000                         |0016: invoke-static {v0}, Lcom/android/bluetooth/btservice/AdapterService;.access$700:(I)V // method@4b23
+  189107:       0be4c0: 7300                                   |0019: return-void-no-barrier
+  189108: [new] 0be4c0: 0e00                                   |0019: return-void

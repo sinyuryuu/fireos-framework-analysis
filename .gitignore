@@ -20,6 +20,16 @@ artifacts/**/*.vdex
 artifacts/**/*.dex
 artifacts/**/*.so
 
+# Phase 5J exact Bluetooth pulled binaries and full VDEX disassembly remain
+# local-only; the public copy keeps hashes, manifests, configs, and focused
+# derived slices.
+adb/phase5/PHASE5J-BLUETOOTH-ARTIFACTS-*/files/*.apk
+adb/phase5/PHASE5J-BLUETOOTH-ARTIFACTS-*/files/*.odex
+adb/phase5/PHASE5J-BLUETOOTH-ARTIFACTS-*/files/*.vdex
+adb/phase5/PHASE5J-BLUETOOTH-ARTIFACTS-*/files/*.so
+adb/phase5/PHASE5J-BLUETOOTH-ARTIFACTS-*/files/*.ko
+artifacts/phase5/phase5j-bluetooth-vdex-extract/
+
 # Large generated indexes are reproducible and are not source evidence.
 output/tables/*.tsv
 output/tables/*.absolute.tsv

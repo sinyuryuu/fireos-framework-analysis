@@ -1,0 +1,46 @@
+  209817:   class #1732: GattService.ServerDeathRecipient ('Lcom/android/bluetooth/gatt/GattService$ServerDeathRecipient;')
+  209818:    access=0000 ()
+  209819:    source_file=GattService.java, class_data_off=223153 (2240851)
+  209820:    static_fields=0, instance_fields=2, direct_methods=1, virtual_methods=1
+  209821:    direct_method #20081: <init> (Lcom/android/bluetooth/gatt/GattService;I)V
+  209822:     access=10000 (CONSTRUCTOR)
+  209823:     codeOff=cf044 (847940)
+  209824:     quickening_size=5 (5)
+  209825:       0cf048: e801 0800                              |0000: iput-object-quick v1, v0, [obj+0008]
+  209826: [new] 0cf048: 5b01 a04b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/GattService$ServerDeathRecipient;.this$0:Lcom/android/bluetooth/gatt/GattService; // field@4ba0
+  209827:       0cf04c: 7010 0b6d 0000                         |0002: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@6d0b
+  209828:       0cf052: e602 0c00                              |0005: iput-quick v2, v0, [obj+000c]
+  209829: [new] 0cf052: 5902 9f4b                              |0005: iput v2, v0, Lcom/android/bluetooth/gatt/GattService$ServerDeathRecipient;.mAppIf:I // field@4b9f
+  209830:       0cf056: 0e00                                   |0007: return-void
+  209831:    virtual_method #20082: binderDied ()V
+  209832:     access=0001 (PUBLIC)
+  209833:     codeOff=cf058 (847960)
+  209834:     quickening_size=11 (17)
+  209835:       0cf05c: 7100 824e 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/gatt/GattService;.access$000:()Z // method@4e82
+  209836:       0cf062: 0a00                                   |0003: move-result v0
+  209837:       0cf064: 3800 1f00                              |0004: if-eqz v0, 0023 // +001f
+  209838:       0cf068: 1a00 480c                              |0006: const-string v0, "BtGatt.GattService" // string@0c48
+  209839:       0cf06c: 2201 c40e                              |0008: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  209840:       0cf070: 7010 646d 0100                         |000a: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  209841:       0cf076: 1a02 3a0b                              |000d: const-string v2, "Binder is dead - unregistering server (" // string@0b3a
+  209842:       0cf07a: e920 4b00 2100                         |000f: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  209843: [new] 0cf07a: 6e20 6e6d 2100                         |000f: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  209844:       0cf080: e332 0c00                              |0012: iget-quick v2, v3, [obj+000c]
+  209845: [new] 0cf080: 5232 9f4b                              |0012: iget v2, v3, Lcom/android/bluetooth/gatt/GattService$ServerDeathRecipient;.mAppIf:I // field@4b9f
+  209846:       0cf084: e920 4600 2100                         |0014: invoke-virtual-quick {v1, v2}, [0046] // vtable #0046
+  209847: [new] 0cf084: 6e20 6a6d 2100                         |0014: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  209848:       0cf08a: 1a02 8104                              |0017: const-string v2, ")!" // string@0481
+  209849:       0cf08e: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  209850: [new] 0cf08e: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  209851:       0cf094: e910 0700 0100                         |001c: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  209852: [new] 0cf094: 6e10 786d 0100                         |001c: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  209853:       0cf09a: 0c01                                   |001f: move-result-object v1
+  209854:       0cf09c: 7120 9239 1000                         |0020: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  209855:       0cf0a2: e530 0800                              |0023: iget-object-quick v0, v3, [obj+0008]
+  209856: [new] 0cf0a2: 5430 a04b                              |0023: iget-object v0, v3, Lcom/android/bluetooth/gatt/GattService$ServerDeathRecipient;.this$0:Lcom/android/bluetooth/gatt/GattService; // field@4ba0
+  209857:       0cf0a6: e331 0c00                              |0025: iget-quick v1, v3, [obj+000c]
+  209858: [new] 0cf0a6: 5231 9f4b                              |0025: iget v1, v3, Lcom/android/bluetooth/gatt/GattService$ServerDeathRecipient;.mAppIf:I // field@4b9f
+  209859:       0cf0aa: e920 4e01 1000                         |0027: invoke-virtual-quick {v0, v1}, [014e] // vtable #014e
+  209860: [new] 0cf0aa: 6e20 484f 1000                         |0027: invoke-virtual {v0, v1}, Lcom/android/bluetooth/gatt/GattService;.unregisterServer:(I)V // method@4f48
+  209861:       0cf0b0: 7300                                   |002a: return-void-no-barrier
+  209862: [new] 0cf0b0: 0e00                                   |002a: return-void

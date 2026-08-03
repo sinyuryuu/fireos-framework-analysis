@@ -1,0 +1,28 @@
+  189109:   class #1679: AdapterService.4 ('Lcom/android/bluetooth/btservice/AdapterService$4;')
+  189110:    access=0000 ()
+  189111:    source_file=AdapterService.java, class_data_off=221c6e (2235502)
+  189112:    static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=1
+  189113:    direct_method #19099: <init> (Lcom/android/bluetooth/btservice/AdapterService;)V
+  189114:     access=10000 (CONSTRUCTOR)
+  189115:     codeOff=be4c2 (779458)
+  189116:     quickening_size=3 (3)
+  189117:       0be4c6: e801 1000                              |0000: iput-object-quick v1, v0, [obj+0010]
+  189118: [new] 0be4c6: 5b01 c949                              |0000: iput-object v1, v0, Lcom/android/bluetooth/btservice/AdapterService$4;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49c9
+  189119:       0be4ca: 7010 9903 0000                         |0002: invoke-direct {v0}, Landroid/content/BroadcastReceiver;.<init>:()V // method@0399
+  189120:       0be4d0: 0e00                                   |0005: return-void
+  189121:    virtual_method #19100: onReceive (Landroid/content/Context;Landroid/content/Intent;)V
+  189122:     access=0001 (PUBLIC)
+  189123:     codeOff=be4d2 (779474)
+  189124:     quickening_size=7 (7)
+  189125:       0be4d6: e520 1000                              |0000: iget-object-quick v0, v2, [obj+0010]
+  189126: [new] 0be4d6: 5420 c949                              |0000: iget-object v0, v2, Lcom/android/bluetooth/btservice/AdapterService$4;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49c9
+  189127:       0be4da: 7110 254b 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/btservice/AdapterService;.access$900:(Lcom/android/bluetooth/btservice/AdapterService;)Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceHandler; // method@4b25
+  189128:       0be4e0: 0c00                                   |0005: move-result-object v0
+  189129:       0be4e2: e521 1000                              |0006: iget-object-quick v1, v2, [obj+0010]
+  189130: [new] 0be4e2: 5421 c949                              |0006: iget-object v1, v2, Lcom/android/bluetooth/btservice/AdapterService$4;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49c9
+  189131:       0be4e6: 7110 244b 0100                         |0008: invoke-static {v1}, Lcom/android/bluetooth/btservice/AdapterService;.access$800:(Lcom/android/bluetooth/btservice/AdapterService;)Ljava/lang/Runnable; // method@4b24
+  189132:       0be4ec: 0c01                                   |000b: move-result-object v1
+  189133:       0be4ee: e920 1d00 1000                         |000c: invoke-virtual-quick {v0, v1}, [001d] // vtable #001d
+  189134: [new] 0be4ee: 6e20 084b 1000                         |000c: invoke-virtual {v0, v1}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceHandler;.post:(Ljava/lang/Runnable;)Z // method@4b08
+  189135:       0be4f4: 7300                                   |000f: return-void-no-barrier
+  189136: [new] 0be4f4: 0e00                                   |000f: return-void

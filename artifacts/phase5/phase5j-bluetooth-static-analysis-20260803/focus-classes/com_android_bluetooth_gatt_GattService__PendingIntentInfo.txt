@@ -1,0 +1,31 @@
+  209681:   class #1730: GattService.PendingIntentInfo ('Lcom/android/bluetooth/gatt/GattService$PendingIntentInfo;')
+  209682:    access=0000 ()
+  209683:    source_file=GattService.java, class_data_off=223112 (2240786)
+  209684:    static_fields=0, instance_fields=5, direct_methods=1, virtual_methods=1
+  209685:    direct_method #20066: <init> (Lcom/android/bluetooth/gatt/GattService;)V
+  209686:     access=10000 (CONSTRUCTOR)
+  209687:     codeOff=cef10 (847632)
+  209688:     quickening_size=3 (3)
+  209689:       0cef14: e801 1800                              |0000: iput-object-quick v1, v0, [obj+0018]
+  209690: [new] 0cef14: 5b01 9b4b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/GattService$PendingIntentInfo;.this$0:Lcom/android/bluetooth/gatt/GattService; // field@4b9b
+  209691:       0cef18: 7010 0b6d 0000                         |0002: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@6d0b
+  209692:       0cef1e: 0e00                                   |0005: return-void
+  209693:    virtual_method #20067: equals (Ljava/lang/Object;)Z
+  209694:     access=0001 (PUBLIC)
+  209695:     codeOff=ceee8 (847592)
+  209696:     quickening_size=b (11)
+  209697:       0ceeec: 2030 d90b                              |0000: instance-of v0, v3, Lcom/android/bluetooth/gatt/GattService$PendingIntentInfo; // type@0bd9
+  209698:       0ceef0: 3900 0400                              |0002: if-nez v0, 0006 // +0004
+  209699:       0ceef4: 1200                                   |0004: const/4 v0, #int 0 // #0
+  209700:       0ceef6: 0f00                                   |0005: return v0
+  209701:       0ceef8: e520 1000                              |0006: iget-object-quick v0, v2, [obj+0010]
+  209702: [new] 0ceef8: 5420 994b                              |0006: iget-object v0, v2, Lcom/android/bluetooth/gatt/GattService$PendingIntentInfo;.intent:Landroid/app/PendingIntent; // field@4b99
+  209703:       0ceefc: 0731                                   |0008: move-object v1, v3
+  209704:       0ceefe: 0000                                   |0009: nop // spacer
+  209705: [new] 0ceefe: 1f01 d90b                              |0009: check-cast v1, Lcom/android/bluetooth/gatt/GattService$PendingIntentInfo; // type@0bd9
+  209706:       0cef02: e511 1000                              |000b: iget-object-quick v1, v1, [obj+0010]
+  209707: [new] 0cef02: 5411 994b                              |000b: iget-object v1, v1, Lcom/android/bluetooth/gatt/GattService$PendingIntentInfo;.intent:Landroid/app/PendingIntent; // field@4b99
+  209708:       0cef06: e920 0100 1000                         |000d: invoke-virtual-quick {v0, v1}, [0001] // vtable #0001
+  209709: [new] 0cef06: 6e20 1001 1000                         |000d: invoke-virtual {v0, v1}, Landroid/app/PendingIntent;.equals:(Ljava/lang/Object;)Z // method@0110
+  209710:       0cef0c: 0a00                                   |0010: move-result v0
+  209711:       0cef0e: 0f00                                   |0011: return v0

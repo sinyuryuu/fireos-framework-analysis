@@ -1,0 +1,1365 @@
+  189424:   class #1684: AdapterService.AdapterServiceBinder ('Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;')
+  189425:    access=0000 ()
+  189426:    source_file=AdapterService.java, class_data_off=221ceb (2235627)
+  189427:    static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=72
+  189428:    direct_method #19109: <init> (Lcom/android/bluetooth/btservice/AdapterService;)V
+  189429:     access=10000 (CONSTRUCTOR)
+  189430:     codeOff=bf8be (784574)
+  189431:     quickening_size=3 (3)
+  189432:       0bf8c2: 7010 0a03 0000                         |0000: invoke-direct {v0}, Landroid/bluetooth/IBluetooth$Stub;.<init>:()V // method@030a
+  189433:       0bf8c8: e801 1800                              |0003: iput-object-quick v1, v0, [obj+0018]
+  189434: [new] 0bf8c8: 5b01 ce49                              |0003: iput-object v1, v0, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189435:       0bf8cc: 7300                                   |0005: return-void-no-barrier
+  189436: [new] 0bf8cc: 0e00                                   |0005: return-void
+  189437:    virtual_method #19110: cancelBondProcess (Landroid/bluetooth/BluetoothDevice;)Z
+  189438:     access=0001 (PUBLIC)
+  189439:     codeOff=bed56 (781654)
+  189440:     quickening_size=5 (5)
+  189441:       0bed5a: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189442:       0bed60: 0a00                                   |0003: move-result v0
+  189443:       0bed62: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189444:       0bed64: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  189445:       0bed68: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189446:       0bed6c: 1a02 704c                              |0009: const-string v2, "cancelBondProcess() - Not allowed for non-active user" // string@4c70
+  189447:       0bed70: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189448:       0bed76: 0f01                                   |000e: return v1
+  189449:       0bed78: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189450: [new] 0bed78: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189451:       0bed7e: 0c00                                   |0012: move-result-object v0
+  189452:       0bed80: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  189453:       0bed84: 0f01                                   |0015: return v1
+  189454:       0bed86: e920 d300 4000                         |0016: invoke-virtual-quick {v0, v4}, [00d3] // vtable #00d3
+  189455: [new] 0bed86: 6e20 2e4b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.cancelBondProcess:(Landroid/bluetooth/BluetoothDevice;)Z // method@4b2e
+  189456:       0bed8c: 0a01                                   |0019: move-result v1
+  189457:       0bed8e: 0f01                                   |001a: return v1
+  189458:    virtual_method #19111: cancelDiscovery ()Z
+  189459:     access=0001 (PUBLIC)
+  189460:     codeOff=bed90 (781712)
+  189461:     quickening_size=5 (5)
+  189462:       0bed94: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189463:       0bed9a: 0a00                                   |0003: move-result v0
+  189464:       0bed9c: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189465:       0bed9e: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  189466:       0beda2: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189467:       0beda6: 1a02 744c                              |0009: const-string v2, "cancelDiscovery() - Not allowed for non-active user" // string@4c74
+  189468:       0bedaa: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189469:       0bedb0: 0f01                                   |000e: return v1
+  189470:       0bedb2: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189471: [new] 0bedb2: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189472:       0bedb8: 0c00                                   |0012: move-result-object v0
+  189473:       0bedba: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  189474:       0bedbe: 0f01                                   |0015: return v1
+  189475:       0bedc0: e910 d400 0000                         |0016: invoke-virtual-quick {v0}, [00d4] // vtable #00d4
+  189476: [new] 0bedc0: 6e10 2f4b 0000                         |0016: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.cancelDiscovery:()Z // method@4b2f
+  189477:       0bedc6: 0a01                                   |0019: move-result v1
+  189478:       0bedc8: 0f01                                   |001a: return v1
+  189479:    virtual_method #19112: cleanup ()V
+  189480:     access=0001 (PUBLIC)
+  189481:     codeOff=bf8ce (784590)
+  189482:     quickening_size=3 (3)
+  189483:       0bf8d2: 1200                                   |0000: const/4 v0, #int 0 // #0
+  189484:       0bf8d4: e810 1800                              |0001: iput-object-quick v0, v1, [obj+0018]
+  189485: [new] 0bf8d4: 5b10 ce49                              |0001: iput-object v0, v1, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189486:       0bf8d8: 7300                                   |0003: return-void-no-barrier
+  189487: [new] 0bf8d8: 0e00                                   |0003: return-void
+  189488:    virtual_method #19113: createBond (Landroid/bluetooth/BluetoothDevice;I)Z
+  189489:     access=0001 (PUBLIC)
+  189490:     codeOff=bedca (781770)
+  189491:     quickening_size=7 (7)
+  189492:       0bedce: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  189493: [new] 0bedce: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189494:       0bedd2: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  189495:       0bedd8: 0a00                                   |0005: move-result v0
+  189496:       0bedda: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189497:       0beddc: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  189498:       0bede0: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189499:       0bede4: 1a02 3951                              |000b: const-string v2, "createBond() - Not allowed for non-active user" // string@5139
+  189500:       0bede8: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189501:       0bedee: 0f01                                   |0010: return v1
+  189502:       0bedf0: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189503: [new] 0bedf0: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189504:       0bedf6: 0c00                                   |0014: move-result-object v0
+  189505:       0bedf8: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  189506:       0bedfc: 0f01                                   |0017: return v1
+  189507:       0bedfe: 1201                                   |0018: const/4 v1, #int 0 // #0
+  189508:       0bee00: e940 d700 4015                         |0019: invoke-virtual-quick {v0, v4, v5, v1}, [00d7] // vtable #00d7
+  189509: [new] 0bee00: 6e40 394b 4015                         |0019: invoke-virtual {v0, v4, v5, v1}, Lcom/android/bluetooth/btservice/AdapterService;.createBond:(Landroid/bluetooth/BluetoothDevice;ILandroid/bluetooth/OobData;)Z // method@4b39
+  189510:       0bee06: 0a01                                   |001c: move-result v1
+  189511:       0bee08: 0f01                                   |001d: return v1
+  189512:    virtual_method #19114: createBondOutOfBand (Landroid/bluetooth/BluetoothDevice;ILandroid/bluetooth/OobData;)Z
+  189513:     access=0001 (PUBLIC)
+  189514:     codeOff=bee0a (781834)
+  189515:     quickening_size=7 (7)
+  189516:       0bee0e: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  189517: [new] 0bee0e: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189518:       0bee12: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  189519:       0bee18: 0a00                                   |0005: move-result v0
+  189520:       0bee1a: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189521:       0bee1c: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  189522:       0bee20: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189523:       0bee24: 1a02 3c51                              |000b: const-string v2, "createBondOutOfBand() - Not allowed for non-active user" // string@513c
+  189524:       0bee28: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189525:       0bee2e: 0f01                                   |0010: return v1
+  189526:       0bee30: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189527: [new] 0bee30: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189528:       0bee36: 0c00                                   |0014: move-result-object v0
+  189529:       0bee38: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  189530:       0bee3c: 0f01                                   |0017: return v1
+  189531:       0bee3e: e940 d700 4065                         |0018: invoke-virtual-quick {v0, v4, v5, v6}, [00d7] // vtable #00d7
+  189532: [new] 0bee3e: 6e40 394b 4065                         |0018: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/btservice/AdapterService;.createBond:(Landroid/bluetooth/BluetoothDevice;ILandroid/bluetooth/OobData;)Z // method@4b39
+  189533:       0bee44: 0a01                                   |001b: move-result v1
+  189534:       0bee46: 0f01                                   |001c: return v1
+  189535:    virtual_method #19115: disable ()Z
+  189536:     access=0001 (PUBLIC)
+  189537:     codeOff=bee48 (781896)
+  189538:     quickening_size=5 (5)
+  189539:       0bee4c: 7100 810c 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0c81
+  189540:       0bee52: 0a00                                   |0003: move-result v0
+  189541:       0bee54: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189542:       0bee56: 1302 e803                              |0005: const/16 v2, #int 1000 // #3e8
+  189543:       0bee5a: 3220 1000                              |0007: if-eq v0, v2, 0017 // +0010
+  189544:       0bee5e: 7100 2944 0000                         |0009: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189545:       0bee64: 0a00                                   |000c: move-result v0
+  189546:       0bee66: 3900 0a00                              |000d: if-nez v0, 0017 // +000a
+  189547:       0bee6a: 1a00 4e0b                              |000f: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189548:       0bee6e: 1a02 cb53                              |0011: const-string v2, "disable() - Not allowed for non-active user and non system user" // string@53cb
+  189549:       0bee72: 7120 9b39 2000                         |0013: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189550:       0bee78: 0f01                                   |0016: return v1
+  189551:       0bee7a: e910 6000 0300                         |0017: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189552: [new] 0bee7a: 6e10 c74a 0300                         |0017: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189553:       0bee80: 0c00                                   |001a: move-result-object v0
+  189554:       0bee82: 3900 0300                              |001b: if-nez v0, 001e // +0003
+  189555:       0bee86: 0f01                                   |001d: return v1
+  189556:       0bee88: e910 db00 0000                         |001e: invoke-virtual-quick {v0}, [00db] // vtable #00db
+  189557: [new] 0bee88: 6e10 3e4b 0000                         |001e: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.disable:()Z // method@4b3e
+  189558:       0bee8e: 0a01                                   |0021: move-result v1
+  189559:       0bee90: 0f01                                   |0022: return v1
+  189560:    virtual_method #19116: dump (Ljava/io/FileDescriptor;[Ljava/lang/String;)V
+  189561:     access=0001 (PUBLIC)
+  189562:     codeOff=bf8da (784602)
+  189563:     quickening_size=7 (7)
+  189564:       0bf8de: 2200 8c0e                              |0000: new-instance v0, Ljava/io/PrintWriter; // type@0e8c
+  189565:       0bf8e2: 2201 800e                              |0002: new-instance v1, Ljava/io/FileOutputStream; // type@0e80
+  189566:       0bf8e6: 7020 2c6c 3100                         |0004: invoke-direct {v1, v3}, Ljava/io/FileOutputStream;.<init>:(Ljava/io/FileDescriptor;)V // method@6c2c
+  189567:       0bf8ec: 7020 536c 1000                         |0007: invoke-direct {v0, v1}, Ljava/io/PrintWriter;.<init>:(Ljava/io/OutputStream;)V // method@6c53
+  189568:       0bf8f2: e910 6000 0200                         |000a: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189569: [new] 0bf8f2: 6e10 c74a 0200                         |000a: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189570:       0bf8f8: 0c01                                   |000d: move-result-object v1
+  189571:       0bf8fa: 3901 0300                              |000e: if-nez v1, 0011 // +0003
+  189572:       0bf8fe: 7300                                   |0010: return-void-no-barrier
+  189573: [new] 0bf8fe: 0e00                                   |0010: return-void
+  189574:       0bf900: e940 b900 3140                         |0011: invoke-virtual-quick {v1, v3, v0, v4}, [00b9] // vtable #00b9
+  189575: [new] 0bf900: 6e40 404b 3140                         |0011: invoke-virtual {v1, v3, v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.dump:(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V // method@4b40
+  189576:       0bf906: e910 1100 0000                         |0014: invoke-virtual-quick {v0}, [0011] // vtable #0011
+  189577: [new] 0bf906: 6e10 556c 0000                         |0014: invoke-virtual {v0}, Ljava/io/PrintWriter;.close:()V // method@6c55
+  189578:       0bf90c: 7300                                   |0017: return-void-no-barrier
+  189579: [new] 0bf90c: 0e00                                   |0017: return-void
+  189580:    virtual_method #19117: enable ()Z
+  189581:     access=0001 (PUBLIC)
+  189582:     codeOff=bee92 (781970)
+  189583:     quickening_size=5 (5)
+  189584:       0bee96: 7100 810c 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0c81
+  189585:       0bee9c: 0a00                                   |0003: move-result v0
+  189586:       0bee9e: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189587:       0beea0: 1302 e803                              |0005: const/16 v2, #int 1000 // #3e8
+  189588:       0beea4: 3220 1000                              |0007: if-eq v0, v2, 0017 // +0010
+  189589:       0beea8: 7100 2944 0000                         |0009: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189590:       0beeae: 0a00                                   |000c: move-result v0
+  189591:       0beeb0: 3900 0a00                              |000d: if-nez v0, 0017 // +000a
+  189592:       0beeb4: 1a00 4e0b                              |000f: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189593:       0beeb8: 1a02 a855                              |0011: const-string v2, "enable() - Not allowed for non-active user and non system user" // string@55a8
+  189594:       0beebc: 7120 9b39 2000                         |0013: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189595:       0beec2: 0f01                                   |0016: return v1
+  189596:       0beec4: e910 6000 0300                         |0017: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189597: [new] 0beec4: 6e10 c74a 0300                         |0017: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189598:       0beeca: 0c00                                   |001a: move-result-object v0
+  189599:       0beecc: 3900 0300                              |001b: if-nez v0, 001e // +0003
+  189600:       0beed0: 0f01                                   |001d: return v1
+  189601:       0beed2: e910 dd00 0000                         |001e: invoke-virtual-quick {v0}, [00dd] // vtable #00dd
+  189602: [new] 0beed2: 6e10 444b 0000                         |001e: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.enable:()Z // method@4b44
+  189603:       0beed8: 0a01                                   |0021: move-result v1
+  189604:       0beeda: 0f01                                   |0022: return v1
+  189605:    virtual_method #19118: enableNoAutoConnect ()Z
+  189606:     access=0001 (PUBLIC)
+  189607:     codeOff=beedc (782044)
+  189608:     quickening_size=5 (5)
+  189609:       0beee0: 7100 810c 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0c81
+  189610:       0beee6: 0a00                                   |0003: move-result v0
+  189611:       0beee8: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189612:       0beeea: 1302 e803                              |0005: const/16 v2, #int 1000 // #3e8
+  189613:       0beeee: 3220 1000                              |0007: if-eq v0, v2, 0017 // +0010
+  189614:       0beef2: 7100 2944 0000                         |0009: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189615:       0beef8: 0a00                                   |000c: move-result v0
+  189616:       0beefa: 3900 0a00                              |000d: if-nez v0, 0017 // +000a
+  189617:       0beefe: 1a00 4e0b                              |000f: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189618:       0bef02: 1a02 b655                              |0011: const-string v2, "enableNoAuto() - Not allowed for non-active user and non system user" // string@55b6
+  189619:       0bef06: 7120 9b39 2000                         |0013: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189620:       0bef0c: 0f01                                   |0016: return v1
+  189621:       0bef0e: e910 6000 0300                         |0017: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189622: [new] 0bef0e: 6e10 c74a 0300                         |0017: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189623:       0bef14: 0c00                                   |001a: move-result-object v0
+  189624:       0bef16: 3900 0300                              |001b: if-nez v0, 001e // +0003
+  189625:       0bef1a: 0f01                                   |001d: return v1
+  189626:       0bef1c: e910 e000 0000                         |001e: invoke-virtual-quick {v0}, [00e0] // vtable #00e0
+  189627: [new] 0bef1c: 6e10 484b 0000                         |001e: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.enableNoAutoConnect:()Z // method@4b48
+  189628:       0bef22: 0a01                                   |0021: move-result v1
+  189629:       0bef24: 0f01                                   |0022: return v1
+  189630:    virtual_method #19119: factoryReset ()Z
+  189631:     access=0001 (PUBLIC)
+  189632:     codeOff=bef26 (782118)
+  189633:     quickening_size=7 (7)
+  189634:       0bef2a: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189635: [new] 0bef2a: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189636:       0bef30: 0c00                                   |0003: move-result-object v0
+  189637:       0bef32: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  189638:       0bef36: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189639:       0bef38: 0f01                                   |0007: return v1
+  189640:       0bef3a: e910 db00 0000                         |0008: invoke-virtual-quick {v0}, [00db] // vtable #00db
+  189641: [new] 0bef3a: 6e10 3e4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.disable:()Z // method@4b3e
+  189642:       0bef40: e910 e100 0000                         |000b: invoke-virtual-quick {v0}, [00e1] // vtable #00e1
+  189643: [new] 0bef40: 6e10 4c4b 0000                         |000b: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.factoryReset:()Z // method@4b4c
+  189644:       0bef46: 0a01                                   |000e: move-result v1
+  189645:       0bef48: 0f01                                   |000f: return v1
+  189646:    virtual_method #19120: fetchRemoteUuids (Landroid/bluetooth/BluetoothDevice;)Z
+  189647:     access=0001 (PUBLIC)
+  189648:     codeOff=bef4a (782154)
+  189649:     quickening_size=7 (7)
+  189650:       0bef4e: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  189651: [new] 0bef4e: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189652:       0bef52: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  189653:       0bef58: 0a00                                   |0005: move-result v0
+  189654:       0bef5a: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189655:       0bef5c: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  189656:       0bef60: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189657:       0bef64: 1a02 9157                              |000b: const-string v2, "fetchRemoteUuids() - Not allowed for non-active user" // string@5791
+  189658:       0bef68: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189659:       0bef6e: 0f01                                   |0010: return v1
+  189660:       0bef70: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189661: [new] 0bef70: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189662:       0bef76: 0c00                                   |0014: move-result-object v0
+  189663:       0bef78: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  189664:       0bef7c: 0f01                                   |0017: return v1
+  189665:       0bef7e: e920 e300 4000                         |0018: invoke-virtual-quick {v0, v4}, [00e3] // vtable #00e3
+  189666: [new] 0bef7e: 6e20 4e4b 4000                         |0018: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.fetchRemoteUuids:(Landroid/bluetooth/BluetoothDevice;)Z // method@4b4e
+  189667:       0bef84: 0a01                                   |001b: move-result v1
+  189668:       0bef86: 0f01                                   |001c: return v1
+  189669:    virtual_method #19121: getAdapterConnectionState ()I
+  189670:     access=0001 (PUBLIC)
+  189671:     codeOff=bf47a (783482)
+  189672:     quickening_size=5 (5)
+  189673:       0bf47e: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189674: [new] 0bf47e: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189675:       0bf484: 0c00                                   |0003: move-result-object v0
+  189676:       0bf486: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  189677:       0bf48a: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189678:       0bf48c: 0f01                                   |0007: return v1
+  189679:       0bf48e: e910 e400 0000                         |0008: invoke-virtual-quick {v0}, [00e4] // vtable #00e4
+  189680: [new] 0bf48e: 6e10 4f4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getAdapterConnectionState:()I // method@4b4f
+  189681:       0bf494: 0a01                                   |000b: move-result v1
+  189682:       0bf496: 0f01                                   |000c: return v1
+  189683:    virtual_method #19122: getAddress ()Ljava/lang/String;
+  189684:     access=0001 (PUBLIC)
+  189685:     codeOff=bf74e (784206)
+  189686:     quickening_size=7 (7)
+  189687:       0bf752: 7100 810c 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0c81
+  189688:       0bf758: 0a00                                   |0003: move-result v0
+  189689:       0bf75a: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189690:       0bf75c: 1302 e803                              |0005: const/16 v2, #int 1000 // #3e8
+  189691:       0bf760: 3220 1200                              |0007: if-eq v0, v2, 0019 // +0012
+  189692:       0bf764: e530 1800                              |0009: iget-object-quick v0, v3, [obj+0018]
+  189693: [new] 0bf764: 5430 ce49                              |0009: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189694:       0bf768: 7110 2a44 0000                         |000b: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  189695:       0bf76e: 0a00                                   |000e: move-result v0
+  189696:       0bf770: 3900 0a00                              |000f: if-nez v0, 0019 // +000a
+  189697:       0bf774: 1a00 4e0b                              |0011: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189698:       0bf778: 1a02 055a                              |0013: const-string v2, "getAddress() - Not allowed for non-active user and non system user" // string@5a05
+  189699:       0bf77c: 7120 9b39 2000                         |0015: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189700:       0bf782: 1101                                   |0018: return-object v1
+  189701:       0bf784: e910 6000 0300                         |0019: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189702: [new] 0bf784: 6e10 c74a 0300                         |0019: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189703:       0bf78a: 0c00                                   |001c: move-result-object v0
+  189704:       0bf78c: 3900 0300                              |001d: if-nez v0, 0020 // +0003
+  189705:       0bf790: 1101                                   |001f: return-object v1
+  189706:       0bf792: e910 e700 0000                         |0020: invoke-virtual-quick {v0}, [00e7] // vtable #00e7
+  189707: [new] 0bf792: 6e10 534b 0000                         |0020: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getAddress:()Ljava/lang/String; // method@4b53
+  189708:       0bf798: 0c01                                   |0023: move-result-object v1
+  189709:       0bf79a: 1101                                   |0024: return-object v1
+  189710:    virtual_method #19123: getBatteryLevel (Landroid/bluetooth/BluetoothDevice;)I
+  189711:     access=0001 (PUBLIC)
+  189712:     codeOff=bf498 (783512)
+  189713:     quickening_size=5 (5)
+  189714:       0bf49c: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189715:       0bf4a2: 0a00                                   |0003: move-result v0
+  189716:       0bf4a4: 12f1                                   |0004: const/4 v1, #int -1 // #ff
+  189717:       0bf4a6: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  189718:       0bf4aa: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189719:       0bf4ae: 1a02 9f5a                              |0009: const-string v2, "getBatteryLevel(): not allowed for non-active user" // string@5a9f
+  189720:       0bf4b2: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189721:       0bf4b8: 0f01                                   |000e: return v1
+  189722:       0bf4ba: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189723: [new] 0bf4ba: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189724:       0bf4c0: 0c00                                   |0012: move-result-object v0
+  189725:       0bf4c2: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  189726:       0bf4c6: 0f01                                   |0015: return v1
+  189727:       0bf4c8: e920 eb00 4000                         |0016: invoke-virtual-quick {v0, v4}, [00eb] // vtable #00eb
+  189728: [new] 0bf4c8: 6e20 584b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getBatteryLevel:(Landroid/bluetooth/BluetoothDevice;)I // method@4b58
+  189729:       0bf4ce: 0a01                                   |0019: move-result v1
+  189730:       0bf4d0: 0f01                                   |001a: return v1
+  189731:    virtual_method #19124: getBluetoothClass ()Landroid/bluetooth/BluetoothClass;
+  189732:     access=0001 (PUBLIC)
+  189733:     codeOff=bec36 (781366)
+  189734:     quickening_size=5 (5)
+  189735:       0bec3a: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189736:       0bec40: 0a00                                   |0003: move-result v0
+  189737:       0bec42: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189738:       0bec44: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  189739:       0bec48: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189740:       0bec4c: 1a02 be5a                              |0009: const-string v2, "getBluetoothClass() - Not allowed for non-active user" // string@5abe
+  189741:       0bec50: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189742:       0bec56: 1101                                   |000e: return-object v1
+  189743:       0bec58: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189744: [new] 0bec58: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189745:       0bec5e: 0c00                                   |0012: move-result-object v0
+  189746:       0bec60: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  189747:       0bec64: 1101                                   |0015: return-object v1
+  189748:       0bec66: e910 ec00 0000                         |0016: invoke-virtual-quick {v0}, [00ec] // vtable #00ec
+  189749: [new] 0bec66: 6e10 594b 0000                         |0016: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getBluetoothClass:()Landroid/bluetooth/BluetoothClass; // method@4b59
+  189750:       0bec6c: 0c01                                   |0019: move-result-object v1
+  189751:       0bec6e: 1101                                   |001a: return-object v1
+  189752:    virtual_method #19125: getBondState (Landroid/bluetooth/BluetoothDevice;)I
+  189753:     access=0001 (PUBLIC)
+  189754:     codeOff=bf4d2 (783570)
+  189755:     quickening_size=5 (5)
+  189756:       0bf4d6: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189757: [new] 0bf4d6: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189758:       0bf4dc: 0c00                                   |0003: move-result-object v0
+  189759:       0bf4de: 3900 0500                              |0004: if-nez v0, 0009 // +0005
+  189760:       0bf4e2: 1301 0a00                              |0006: const/16 v1, #int 10 // #a
+  189761:       0bf4e6: 0f01                                   |0008: return v1
+  189762:       0bf4e8: e920 ed00 3000                         |0009: invoke-virtual-quick {v0, v3}, [00ed] // vtable #00ed
+  189763: [new] 0bf4e8: 6e20 5a4b 3000                         |0009: invoke-virtual {v0, v3}, Lcom/android/bluetooth/btservice/AdapterService;.getBondState:(Landroid/bluetooth/BluetoothDevice;)I // method@4b5a
+  189764:       0bf4ee: 0a01                                   |000c: move-result v1
+  189765:       0bf4f0: 0f01                                   |000d: return v1
+  189766:    virtual_method #19126: getBondedDevices ()[Landroid/bluetooth/BluetoothDevice;
+  189767:     access=0001 (PUBLIC)
+  189768:     codeOff=bec70 (781424)
+  189769:     quickening_size=5 (5)
+  189770:       0bec74: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189771: [new] 0bec74: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189772:       0bec7a: 0c00                                   |0003: move-result-object v0
+  189773:       0bec7c: 3900 0600                              |0004: if-nez v0, 000a // +0006
+  189774:       0bec80: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189775:       0bec82: 2311 940f                              |0007: new-array v1, v1, [Landroid/bluetooth/BluetoothDevice; // type@0f94
+  189776:       0bec86: 1101                                   |0009: return-object v1
+  189777:       0bec88: e910 ee00 0000                         |000a: invoke-virtual-quick {v0}, [00ee] // vtable #00ee
+  189778: [new] 0bec88: 6e10 5b4b 0000                         |000a: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getBondedDevices:()[Landroid/bluetooth/BluetoothDevice; // method@4b5b
+  189779:       0bec8e: 0c01                                   |000d: move-result-object v1
+  189780:       0bec90: 1101                                   |000e: return-object v1
+  189781:    virtual_method #19127: getConnectionState (Landroid/bluetooth/BluetoothDevice;)I
+  189782:     access=0001 (PUBLIC)
+  189783:     codeOff=bf4f2 (783602)
+  189784:     quickening_size=5 (5)
+  189785:       0bf4f6: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189786: [new] 0bf4f6: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189787:       0bf4fc: 0c00                                   |0003: move-result-object v0
+  189788:       0bf4fe: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  189789:       0bf502: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189790:       0bf504: 0f01                                   |0007: return v1
+  189791:       0bf506: e920 f000 3000                         |0008: invoke-virtual-quick {v0, v3}, [00f0] // vtable #00f0
+  189792: [new] 0bf506: 6e20 5d4b 3000                         |0008: invoke-virtual {v0, v3}, Lcom/android/bluetooth/btservice/AdapterService;.getConnectionState:(Landroid/bluetooth/BluetoothDevice;)I // method@4b5d
+  189793:       0bf50c: 0a01                                   |000b: move-result v1
+  189794:       0bf50e: 0f01                                   |000c: return v1
+  189795:    virtual_method #19128: getDiscoverableTimeout ()I
+  189796:     access=0001 (PUBLIC)
+  189797:     codeOff=bf510 (783632)
+  189798:     quickening_size=5 (5)
+  189799:       0bf514: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189800:       0bf51a: 0a00                                   |0003: move-result v0
+  189801:       0bf51c: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189802:       0bf51e: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  189803:       0bf522: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189804:       0bf526: 1a02 8f5c                              |0009: const-string v2, "getDiscoverableTimeout() - Not allowed for non-active user" // string@5c8f
+  189805:       0bf52a: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189806:       0bf530: 0f01                                   |000e: return v1
+  189807:       0bf532: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189808: [new] 0bf532: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189809:       0bf538: 0c00                                   |0012: move-result-object v0
+  189810:       0bf53a: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  189811:       0bf53e: 0f01                                   |0015: return v1
+  189812:       0bf540: e910 f300 0000                         |0016: invoke-virtual-quick {v0}, [00f3] // vtable #00f3
+  189813: [new] 0bf540: 6e10 614b 0000                         |0016: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getDiscoverableTimeout:()I // method@4b61
+  189814:       0bf546: 0a01                                   |0019: move-result v1
+  189815:       0bf548: 0f01                                   |001a: return v1
+  189816:    virtual_method #19129: getDiscoveryEndMillis ()J
+  189817:     access=0001 (PUBLIC)
+  189818:     codeOff=bf862 (784482)
+  189819:     quickening_size=5 (5)
+  189820:       0bf866: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189821:       0bf86c: 0a00                                   |0003: move-result v0
+  189822:       0bf86e: 1601 ffff                              |0004: const-wide/16 v1, #int -1 // #ffff
+  189823:       0bf872: 3900 0a00                              |0006: if-nez v0, 0010 // +000a
+  189824:       0bf876: 1a00 4e0b                              |0008: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189825:       0bf87a: 1a03 915c                              |000a: const-string v3, "getDiscoveryEndMillis() - Not allowed for non-active user" // string@5c91
+  189826:       0bf87e: 7120 9b39 3000                         |000c: invoke-static {v0, v3}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189827:       0bf884: 1001                                   |000f: return-wide v1
+  189828:       0bf886: e910 6000 0400                         |0010: invoke-virtual-quick {v4}, [0060] // vtable #0060
+  189829: [new] 0bf886: 6e10 c74a 0400                         |0010: invoke-virtual {v4}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189830:       0bf88c: 0c00                                   |0013: move-result-object v0
+  189831:       0bf88e: 3900 0300                              |0014: if-nez v0, 0017 // +0003
+  189832:       0bf892: 1001                                   |0016: return-wide v1
+  189833:       0bf894: e910 f400 0000                         |0017: invoke-virtual-quick {v0}, [00f4] // vtable #00f4
+  189834: [new] 0bf894: 6e10 624b 0000                         |0017: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getDiscoveryEndMillis:()J // method@4b62
+  189835:       0bf89a: 0b01                                   |001a: move-result-wide v1
+  189836:       0bf89c: 1001                                   |001b: return-wide v1
+  189837:    virtual_method #19130: getExtended ()Landroid/os/IBinder;
+  189838:     access=0001 (PUBLIC)
+  189839:     codeOff=becb0 (781488)
+  189840:     quickening_size=3 (3)
+  189841:       0becb4: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189842: [new] 0becb4: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189843:       0becba: 0c00                                   |0003: move-result-object v0
+  189844:       0becbc: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  189845:       0becc0: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189846:       0becc2: 1101                                   |0007: return-object v1
+  189847:       0becc4: 7110 154b 0000                         |0008: invoke-static {v0}, Lcom/android/bluetooth/btservice/AdapterService;.access$1300:(Lcom/android/bluetooth/btservice/AdapterService;)Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinderExtended; // method@4b15
+  189848:       0becca: 0c01                                   |000b: move-result-object v1
+  189849:       0beccc: 1101                                   |000c: return-object v1
+  189850:    virtual_method #19131: getLeMaximumAdvertisingDataLength ()I
+  189851:     access=0001 (PUBLIC)
+  189852:     codeOff=bf54a (783690)
+  189853:     quickening_size=5 (5)
+  189854:       0bf54e: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189855: [new] 0bf54e: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189856:       0bf554: 0c00                                   |0003: move-result-object v0
+  189857:       0bf556: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  189858:       0bf55a: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189859:       0bf55c: 0f01                                   |0007: return v1
+  189860:       0bf55e: e910 f800 0000                         |0008: invoke-virtual-quick {v0}, [00f8] // vtable #00f8
+  189861: [new] 0bf55e: 6e10 684b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getLeMaximumAdvertisingDataLength:()I // method@4b68
+  189862:       0bf564: 0a01                                   |000b: move-result v1
+  189863:       0bf566: 0f01                                   |000c: return v1
+  189864:    virtual_method #19132: getMaxConnectedAudioDevices ()I
+  189865:     access=0001 (PUBLIC)
+  189866:     codeOff=bf568 (783720)
+  189867:     quickening_size=5 (5)
+  189868:       0bf56c: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  189869: [new] 0bf56c: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189870:       0bf572: 0c00                                   |0003: move-result-object v0
+  189871:       0bf574: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  189872:       0bf578: 1211                                   |0006: const/4 v1, #int 1 // #1
+  189873:       0bf57a: 0f01                                   |0007: return v1
+  189874:       0bf57c: e910 f900 0000                         |0008: invoke-virtual-quick {v0}, [00f9] // vtable #00f9
+  189875: [new] 0bf57c: 6e10 6a4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getMaxConnectedAudioDevices:()I // method@4b6a
+  189876:       0bf582: 0a01                                   |000b: move-result v1
+  189877:       0bf584: 0f01                                   |000c: return v1
+  189878:    virtual_method #19133: getMessageAccessPermission (Landroid/bluetooth/BluetoothDevice;)I
+  189879:     access=0001 (PUBLIC)
+  189880:     codeOff=bf586 (783750)
+  189881:     quickening_size=5 (5)
+  189882:       0bf58a: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189883:       0bf590: 0a00                                   |0003: move-result v0
+  189884:       0bf592: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189885:       0bf594: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  189886:       0bf598: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189887:       0bf59c: 1a02 f55e                              |0009: const-string v2, "getMessageAccessPermission() - Not allowed for non-active user" // string@5ef5
+  189888:       0bf5a0: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189889:       0bf5a6: 0f01                                   |000e: return v1
+  189890:       0bf5a8: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189891: [new] 0bf5a8: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189892:       0bf5ae: 0c00                                   |0012: move-result-object v0
+  189893:       0bf5b0: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  189894:       0bf5b4: 0f01                                   |0015: return v1
+  189895:       0bf5b6: e920 fa00 4000                         |0016: invoke-virtual-quick {v0, v4}, [00fa] // vtable #00fa
+  189896: [new] 0bf5b6: 6e20 6b4b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getMessageAccessPermission:(Landroid/bluetooth/BluetoothDevice;)I // method@4b6b
+  189897:       0bf5bc: 0a01                                   |0019: move-result v1
+  189898:       0bf5be: 0f01                                   |001a: return v1
+  189899:    virtual_method #19134: getName ()Ljava/lang/String;
+  189900:     access=0001 (PUBLIC)
+  189901:     codeOff=bf79c (784284)
+  189902:     quickening_size=5 (5)
+  189903:       0bf7a0: 7100 810c 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0c81
+  189904:       0bf7a6: 0a00                                   |0003: move-result v0
+  189905:       0bf7a8: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189906:       0bf7aa: 1302 e803                              |0005: const/16 v2, #int 1000 // #3e8
+  189907:       0bf7ae: 3220 1000                              |0007: if-eq v0, v2, 0017 // +0010
+  189908:       0bf7b2: 7100 2944 0000                         |0009: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189909:       0bf7b8: 0a00                                   |000c: move-result v0
+  189910:       0bf7ba: 3900 0a00                              |000d: if-nez v0, 0017 // +000a
+  189911:       0bf7be: 1a00 4e0b                              |000f: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189912:       0bf7c2: 1a02 345f                              |0011: const-string v2, "getName() - Not allowed for non-active user and non system user" // string@5f34
+  189913:       0bf7c6: 7120 9b39 2000                         |0013: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189914:       0bf7cc: 1101                                   |0016: return-object v1
+  189915:       0bf7ce: e910 6000 0300                         |0017: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189916: [new] 0bf7ce: 6e10 c74a 0300                         |0017: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189917:       0bf7d4: 0c00                                   |001a: move-result-object v0
+  189918:       0bf7d6: 3900 0300                              |001b: if-nez v0, 001e // +0003
+  189919:       0bf7da: 1101                                   |001d: return-object v1
+  189920:       0bf7dc: e910 fb00 0000                         |001e: invoke-virtual-quick {v0}, [00fb] // vtable #00fb
+  189921: [new] 0bf7dc: 6e10 6c4b 0000                         |001e: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getName:()Ljava/lang/String; // method@4b6c
+  189922:       0bf7e2: 0c01                                   |0021: move-result-object v1
+  189923:       0bf7e4: 1101                                   |0022: return-object v1
+  189924:    virtual_method #19135: getPhonebookAccessPermission (Landroid/bluetooth/BluetoothDevice;)I
+  189925:     access=0001 (PUBLIC)
+  189926:     codeOff=bf5c0 (783808)
+  189927:     quickening_size=5 (5)
+  189928:       0bf5c4: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  189929:       0bf5ca: 0a00                                   |0003: move-result v0
+  189930:       0bf5cc: 1201                                   |0004: const/4 v1, #int 0 // #0
+  189931:       0bf5ce: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  189932:       0bf5d2: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189933:       0bf5d6: 1a02 0860                              |0009: const-string v2, "getPhonebookAccessPermission() - Not allowed for non-active user" // string@6008
+  189934:       0bf5da: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189935:       0bf5e0: 0f01                                   |000e: return v1
+  189936:       0bf5e2: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189937: [new] 0bf5e2: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189938:       0bf5e8: 0c00                                   |0012: move-result-object v0
+  189939:       0bf5ea: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  189940:       0bf5ee: 0f01                                   |0015: return v1
+  189941:       0bf5f0: e920 0001 4000                         |0016: invoke-virtual-quick {v0, v4}, [0100] // vtable #0100
+  189942: [new] 0bf5f0: 6e20 724b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getPhonebookAccessPermission:(Landroid/bluetooth/BluetoothDevice;)I // method@4b72
+  189943:       0bf5f6: 0a01                                   |0019: move-result v1
+  189944:       0bf5f8: 0f01                                   |001a: return v1
+  189945:    virtual_method #19136: getProfileConnectionState (I)I
+  189946:     access=0001 (PUBLIC)
+  189947:     codeOff=bf5fa (783866)
+  189948:     quickening_size=7 (7)
+  189949:       0bf5fe: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  189950: [new] 0bf5fe: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189951:       0bf602: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  189952:       0bf608: 0a00                                   |0005: move-result v0
+  189953:       0bf60a: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189954:       0bf60c: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  189955:       0bf610: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189956:       0bf614: 1a02 5060                              |000b: const-string v2, "getProfileConnectionState- Not allowed for non-active user" // string@6050
+  189957:       0bf618: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189958:       0bf61e: 0f01                                   |0010: return v1
+  189959:       0bf620: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189960: [new] 0bf620: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189961:       0bf626: 0c00                                   |0014: move-result-object v0
+  189962:       0bf628: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  189963:       0bf62c: 0f01                                   |0017: return v1
+  189964:       0bf62e: e920 0101 4000                         |0018: invoke-virtual-quick {v0, v4}, [0101] // vtable #0101
+  189965: [new] 0bf62e: 6e20 734b 4000                         |0018: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getProfileConnectionState:(I)I // method@4b73
+  189966:       0bf634: 0a01                                   |001b: move-result v1
+  189967:       0bf636: 0f01                                   |001c: return v1
+  189968:    virtual_method #19137: getRemoteAlias (Landroid/bluetooth/BluetoothDevice;)Ljava/lang/String;
+  189969:     access=0001 (PUBLIC)
+  189970:     codeOff=bf7e6 (784358)
+  189971:     quickening_size=7 (7)
+  189972:       0bf7ea: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  189973: [new] 0bf7ea: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189974:       0bf7ee: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  189975:       0bf7f4: 0a00                                   |0005: move-result v0
+  189976:       0bf7f6: 1201                                   |0006: const/4 v1, #int 0 // #0
+  189977:       0bf7f8: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  189978:       0bf7fc: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  189979:       0bf800: 1a02 a160                              |000b: const-string v2, "getRemoteAlias() - Not allowed for non-active user" // string@60a1
+  189980:       0bf804: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  189981:       0bf80a: 1101                                   |0010: return-object v1
+  189982:       0bf80c: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  189983: [new] 0bf80c: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  189984:       0bf812: 0c00                                   |0014: move-result-object v0
+  189985:       0bf814: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  189986:       0bf818: 1101                                   |0017: return-object v1
+  189987:       0bf81a: e920 0201 4000                         |0018: invoke-virtual-quick {v0, v4}, [0102] // vtable #0102
+  189988: [new] 0bf81a: 6e20 744b 4000                         |0018: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getRemoteAlias:(Landroid/bluetooth/BluetoothDevice;)Ljava/lang/String; // method@4b74
+  189989:       0bf820: 0c01                                   |001b: move-result-object v1
+  189990:       0bf822: 1101                                   |001c: return-object v1
+  189991:    virtual_method #19138: getRemoteClass (Landroid/bluetooth/BluetoothDevice;)I
+  189992:     access=0001 (PUBLIC)
+  189993:     codeOff=bf638 (783928)
+  189994:     quickening_size=7 (7)
+  189995:       0bf63c: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  189996: [new] 0bf63c: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  189997:       0bf640: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  189998:       0bf646: 0a00                                   |0005: move-result v0
+  189999:       0bf648: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190000:       0bf64a: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  190001:       0bf64e: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190002:       0bf652: 1a02 a360                              |000b: const-string v2, "getRemoteClass() - Not allowed for non-active user" // string@60a3
+  190003:       0bf656: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190004:       0bf65c: 0f01                                   |0010: return v1
+  190005:       0bf65e: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190006: [new] 0bf65e: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190007:       0bf664: 0c00                                   |0014: move-result-object v0
+  190008:       0bf666: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  190009:       0bf66a: 0f01                                   |0017: return v1
+  190010:       0bf66c: e920 0301 4000                         |0018: invoke-virtual-quick {v0, v4}, [0103] // vtable #0103
+  190011: [new] 0bf66c: 6e20 754b 4000                         |0018: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getRemoteClass:(Landroid/bluetooth/BluetoothDevice;)I // method@4b75
+  190012:       0bf672: 0a01                                   |001b: move-result v1
+  190013:       0bf674: 0f01                                   |001c: return v1
+  190014:    virtual_method #19139: getRemoteName (Landroid/bluetooth/BluetoothDevice;)Ljava/lang/String;
+  190015:     access=0001 (PUBLIC)
+  190016:     codeOff=bf824 (784420)
+  190017:     quickening_size=7 (7)
+  190018:       0bf828: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  190019: [new] 0bf828: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190020:       0bf82c: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  190021:       0bf832: 0a00                                   |0005: move-result v0
+  190022:       0bf834: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190023:       0bf836: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  190024:       0bf83a: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190025:       0bf83e: 1a02 b460                              |000b: const-string v2, "getRemoteName() - Not allowed for non-active user" // string@60b4
+  190026:       0bf842: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190027:       0bf848: 1101                                   |0010: return-object v1
+  190028:       0bf84a: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190029: [new] 0bf84a: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190030:       0bf850: 0c00                                   |0014: move-result-object v0
+  190031:       0bf852: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  190032:       0bf856: 1101                                   |0017: return-object v1
+  190033:       0bf858: e920 0501 4000                         |0018: invoke-virtual-quick {v0, v4}, [0105] // vtable #0105
+  190034: [new] 0bf858: 6e20 774b 4000                         |0018: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getRemoteName:(Landroid/bluetooth/BluetoothDevice;)Ljava/lang/String; // method@4b77
+  190035:       0bf85e: 0c01                                   |001b: move-result-object v1
+  190036:       0bf860: 1101                                   |001c: return-object v1
+  190037:    virtual_method #19140: getRemoteType (Landroid/bluetooth/BluetoothDevice;)I
+  190038:     access=0001 (PUBLIC)
+  190039:     codeOff=bf676 (783990)
+  190040:     quickening_size=7 (7)
+  190041:       0bf67a: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  190042: [new] 0bf67a: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190043:       0bf67e: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  190044:       0bf684: 0a00                                   |0005: move-result v0
+  190045:       0bf686: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190046:       0bf688: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  190047:       0bf68c: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190048:       0bf690: 1a02 be60                              |000b: const-string v2, "getRemoteType() - Not allowed for non-active user" // string@60be
+  190049:       0bf694: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190050:       0bf69a: 0f01                                   |0010: return v1
+  190051:       0bf69c: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190052: [new] 0bf69c: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190053:       0bf6a2: 0c00                                   |0014: move-result-object v0
+  190054:       0bf6a4: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  190055:       0bf6a8: 0f01                                   |0017: return v1
+  190056:       0bf6aa: e920 0701 4000                         |0018: invoke-virtual-quick {v0, v4}, [0107] // vtable #0107
+  190057: [new] 0bf6aa: 6e20 7a4b 4000                         |0018: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getRemoteType:(Landroid/bluetooth/BluetoothDevice;)I // method@4b7a
+  190058:       0bf6b0: 0a01                                   |001b: move-result v1
+  190059:       0bf6b2: 0f01                                   |001c: return v1
+  190060:    virtual_method #19141: getRemoteUuids (Landroid/bluetooth/BluetoothDevice;)[Landroid/os/ParcelUuid;
+  190061:     access=0001 (PUBLIC)
+  190062:     codeOff=becce (781518)
+  190063:     quickening_size=7 (7)
+  190064:       0becd2: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  190065: [new] 0becd2: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190066:       0becd6: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  190067:       0becdc: 0a00                                   |0005: move-result v0
+  190068:       0becde: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190069:       0bece0: 3900 0c00                              |0007: if-nez v0, 0013 // +000c
+  190070:       0bece4: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190071:       0bece8: 1a02 c160                              |000b: const-string v2, "getRemoteUuids() - Not allowed for non-active user" // string@60c1
+  190072:       0becec: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190073:       0becf2: 2310 ae0f                              |0010: new-array v0, v1, [Landroid/os/ParcelUuid; // type@0fae
+  190074:       0becf6: 1100                                   |0012: return-object v0
+  190075:       0becf8: e910 6000 0300                         |0013: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190076: [new] 0becf8: 6e10 c74a 0300                         |0013: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190077:       0becfe: 0c00                                   |0016: move-result-object v0
+  190078:       0bed00: 3900 0500                              |0017: if-nez v0, 001c // +0005
+  190079:       0bed04: 2311 ae0f                              |0019: new-array v1, v1, [Landroid/os/ParcelUuid; // type@0fae
+  190080:       0bed08: 1101                                   |001b: return-object v1
+  190081:       0bed0a: e920 0801 4000                         |001c: invoke-virtual-quick {v0, v4}, [0108] // vtable #0108
+  190082: [new] 0bed0a: 6e20 7b4b 4000                         |001c: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getRemoteUuids:(Landroid/bluetooth/BluetoothDevice;)[Landroid/os/ParcelUuid; // method@4b7b
+  190083:       0bed10: 0c01                                   |001f: move-result-object v1
+  190084:       0bed12: 1101                                   |0020: return-object v1
+  190085:    virtual_method #19142: getScanMode ()I
+  190086:     access=0001 (PUBLIC)
+  190087:     codeOff=bf6b4 (784052)
+  190088:     quickening_size=7 (7)
+  190089:       0bf6b8: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  190090: [new] 0bf6b8: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190091:       0bf6bc: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  190092:       0bf6c2: 0a00                                   |0005: move-result v0
+  190093:       0bf6c4: 1301 1400                              |0006: const/16 v1, #int 20 // #14
+  190094:       0bf6c8: 3900 0a00                              |0008: if-nez v0, 0012 // +000a
+  190095:       0bf6cc: 1a00 4e0b                              |000a: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190096:       0bf6d0: 1a02 2c61                              |000c: const-string v2, "getScanMode() - Not allowed for non-active user" // string@612c
+  190097:       0bf6d4: 7120 9b39 2000                         |000e: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190098:       0bf6da: 0f01                                   |0011: return v1
+  190099:       0bf6dc: e910 6000 0300                         |0012: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190100: [new] 0bf6dc: 6e10 c74a 0300                         |0012: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190101:       0bf6e2: 0c00                                   |0015: move-result-object v0
+  190102:       0bf6e4: 3900 0300                              |0016: if-nez v0, 0019 // +0003
+  190103:       0bf6e8: 0f01                                   |0018: return v1
+  190104:       0bf6ea: e910 0901 0000                         |0019: invoke-virtual-quick {v0}, [0109] // vtable #0109
+  190105: [new] 0bf6ea: 6e10 7e4b 0000                         |0019: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getScanMode:()I // method@4b7e
+  190106:       0bf6f0: 0a01                                   |001c: move-result v1
+  190107:       0bf6f2: 0f01                                   |001d: return v1
+  190108:    virtual_method #19143: getService ()Lcom/android/bluetooth/btservice/AdapterService;
+  190109:     access=0001 (PUBLIC)
+  190110:     codeOff=bf454 (783444)
+  190111:     quickening_size=7 (7)
+  190112:       0bf458: e510 1800                              |0000: iget-object-quick v0, v1, [obj+0018]
+  190113: [new] 0bf458: 5410 ce49                              |0000: iget-object v0, v1, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190114:       0bf45c: 3800 0d00                              |0002: if-eqz v0, 000f // +000d
+  190115:       0bf460: e510 1800                              |0004: iget-object-quick v0, v1, [obj+0018]
+  190116: [new] 0bf460: 5410 ce49                              |0004: iget-object v0, v1, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190117:       0bf464: 7110 124b 0000                         |0006: invoke-static {v0}, Lcom/android/bluetooth/btservice/AdapterService;.access$1000:(Lcom/android/bluetooth/btservice/AdapterService;)Z // method@4b12
+  190118:       0bf46a: 0a00                                   |0009: move-result v0
+  190119:       0bf46c: 3800 0500                              |000a: if-eqz v0, 000f // +0005
+  190120:       0bf470: e510 1800                              |000c: iget-object-quick v0, v1, [obj+0018]
+  190121: [new] 0bf470: 5410 ce49                              |000c: iget-object v0, v1, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190122:       0bf474: 1100                                   |000e: return-object v0
+  190123:       0bf476: 1200                                   |000f: const/4 v0, #int 0 // #0
+  190124:       0bf478: 1100                                   |0010: return-object v0
+  190125:    virtual_method #19144: getSimAccessPermission (Landroid/bluetooth/BluetoothDevice;)I
+  190126:     access=0001 (PUBLIC)
+  190127:     codeOff=bf6f4 (784116)
+  190128:     quickening_size=5 (5)
+  190129:       0bf6f8: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190130:       0bf6fe: 0a00                                   |0003: move-result v0
+  190131:       0bf700: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190132:       0bf702: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190133:       0bf706: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190134:       0bf70a: 1a02 8261                              |0009: const-string v2, "getSimAccessPermission() - Not allowed for non-active user" // string@6182
+  190135:       0bf70e: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190136:       0bf714: 0f01                                   |000e: return v1
+  190137:       0bf716: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190138: [new] 0bf716: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190139:       0bf71c: 0c00                                   |0012: move-result-object v0
+  190140:       0bf71e: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190141:       0bf722: 0f01                                   |0015: return v1
+  190142:       0bf724: e920 0b01 4000                         |0016: invoke-virtual-quick {v0, v4}, [010b] // vtable #010b
+  190143: [new] 0bf724: 6e20 814b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.getSimAccessPermission:(Landroid/bluetooth/BluetoothDevice;)I // method@4b81
+  190144:       0bf72a: 0a01                                   |0019: move-result v1
+  190145:       0bf72c: 0f01                                   |001a: return v1
+  190146:    virtual_method #19145: getSocketManager ()Landroid/bluetooth/IBluetoothSocketManager;
+  190147:     access=0001 (PUBLIC)
+  190148:     codeOff=bec92 (781458)
+  190149:     quickening_size=5 (5)
+  190150:       0bec96: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190151: [new] 0bec96: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190152:       0bec9c: 0c00                                   |0003: move-result-object v0
+  190153:       0bec9e: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190154:       0beca2: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190155:       0beca4: 1101                                   |0007: return-object v1
+  190156:       0beca6: e910 0c01 0000                         |0008: invoke-virtual-quick {v0}, [010c] // vtable #010c
+  190157: [new] 0beca6: 6e10 824b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getSocketManager:()Landroid/bluetooth/IBluetoothSocketManager; // method@4b82
+  190158:       0becac: 0c01                                   |000b: move-result-object v1
+  190159:       0becae: 1101                                   |000c: return-object v1
+  190160:    virtual_method #19146: getState ()I
+  190161:     access=0001 (PUBLIC)
+  190162:     codeOff=bf72e (784174)
+  190163:     quickening_size=5 (5)
+  190164:       0bf732: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190165: [new] 0bf732: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190166:       0bf738: 0c00                                   |0003: move-result-object v0
+  190167:       0bf73a: 3900 0500                              |0004: if-nez v0, 0009 // +0005
+  190168:       0bf73e: 1301 0a00                              |0006: const/16 v1, #int 10 // #a
+  190169:       0bf742: 0f01                                   |0008: return v1
+  190170:       0bf744: e910 0d01 0000                         |0009: invoke-virtual-quick {v0}, [010d] // vtable #010d
+  190171: [new] 0bf744: 6e10 844b 0000                         |0009: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getState:()I // method@4b84
+  190172:       0bf74a: 0a01                                   |000c: move-result v1
+  190173:       0bf74c: 0f01                                   |000d: return v1
+  190174:    virtual_method #19147: getSupportedProfiles ()J
+  190175:     access=0001 (PUBLIC)
+  190176:     codeOff=bf89e (784542)
+  190177:     quickening_size=5 (5)
+  190178:       0bf8a2: e910 6000 0300                         |0000: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190179: [new] 0bf8a2: 6e10 c74a 0300                         |0000: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190180:       0bf8a8: 0c00                                   |0003: move-result-object v0
+  190181:       0bf8aa: 3900 0500                              |0004: if-nez v0, 0009 // +0005
+  190182:       0bf8ae: 1601 0000                              |0006: const-wide/16 v1, #int 0 // #0
+  190183:       0bf8b2: 1001                                   |0008: return-wide v1
+  190184:       0bf8b4: e910 0e01 0000                         |0009: invoke-virtual-quick {v0}, [010e] // vtable #010e
+  190185: [new] 0bf8b4: 6e10 864b 0000                         |0009: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getSupportedProfiles:()J // method@4b86
+  190186:       0bf8ba: 0b01                                   |000c: move-result-wide v1
+  190187:       0bf8bc: 1001                                   |000d: return-wide v1
+  190188:    virtual_method #19148: getUuids ()[Landroid/os/ParcelUuid;
+  190189:     access=0001 (PUBLIC)
+  190190:     codeOff=bed14 (781588)
+  190191:     quickening_size=5 (5)
+  190192:       0bed18: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190193:       0bed1e: 0a00                                   |0003: move-result v0
+  190194:       0bed20: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190195:       0bed22: 3900 0c00                              |0005: if-nez v0, 0011 // +000c
+  190196:       0bed26: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190197:       0bed2a: 1a02 a262                              |0009: const-string v2, "getUuids() - Not allowed for non-active user" // string@62a2
+  190198:       0bed2e: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190199:       0bed34: 2310 ae0f                              |000e: new-array v0, v1, [Landroid/os/ParcelUuid; // type@0fae
+  190200:       0bed38: 1100                                   |0010: return-object v0
+  190201:       0bed3a: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190202: [new] 0bed3a: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190203:       0bed40: 0c00                                   |0014: move-result-object v0
+  190204:       0bed42: 3900 0500                              |0015: if-nez v0, 001a // +0005
+  190205:       0bed46: 2311 ae0f                              |0017: new-array v1, v1, [Landroid/os/ParcelUuid; // type@0fae
+  190206:       0bed4a: 1101                                   |0019: return-object v1
+  190207:       0bed4c: e910 1101 0000                         |001a: invoke-virtual-quick {v0}, [0111] // vtable #0111
+  190208: [new] 0bed4c: 6e10 8b4b 0000                         |001a: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getUuids:()[Landroid/os/ParcelUuid; // method@4b8b
+  190209:       0bed52: 0c01                                   |001d: move-result-object v1
+  190210:       0bed54: 1101                                   |001e: return-object v1
+  190211:    virtual_method #19149: isA2dpOffloadEnabled ()Z
+  190212:     access=0001 (PUBLIC)
+  190213:     codeOff=bef88 (782216)
+  190214:     quickening_size=5 (5)
+  190215:       0bef8c: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190216: [new] 0bef8c: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190217:       0bef92: 0c00                                   |0003: move-result-object v0
+  190218:       0bef94: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190219:       0bef98: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190220:       0bef9a: 0f01                                   |0007: return v1
+  190221:       0bef9c: e910 1401 0000                         |0008: invoke-virtual-quick {v0}, [0114] // vtable #0114
+  190222: [new] 0bef9c: 6e10 924b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isA2dpOffloadEnabled:()Z // method@4b92
+  190223:       0befa2: 0a01                                   |000b: move-result v1
+  190224:       0befa4: 0f01                                   |000c: return v1
+  190225:    virtual_method #19150: isActivityAndEnergyReportingSupported ()Z
+  190226:     access=0001 (PUBLIC)
+  190227:     codeOff=befa6 (782246)
+  190228:     quickening_size=3 (3)
+  190229:       0befaa: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190230: [new] 0befaa: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190231:       0befb0: 0c00                                   |0003: move-result-object v0
+  190232:       0befb2: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190233:       0befb6: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190234:       0befb8: 0f01                                   |0007: return v1
+  190235:       0befba: 7110 134b 0000                         |0008: invoke-static {v0}, Lcom/android/bluetooth/btservice/AdapterService;.access$1100:(Lcom/android/bluetooth/btservice/AdapterService;)Z // method@4b13
+  190236:       0befc0: 0a01                                   |000b: move-result v1
+  190237:       0befc2: 0f01                                   |000c: return v1
+  190238:    virtual_method #19151: isBondingInitiatedLocally (Landroid/bluetooth/BluetoothDevice;)Z
+  190239:     access=0001 (PUBLIC)
+  190240:     codeOff=befc4 (782276)
+  190241:     quickening_size=5 (5)
+  190242:       0befc8: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190243: [new] 0befc8: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190244:       0befce: 0c00                                   |0003: move-result-object v0
+  190245:       0befd0: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190246:       0befd4: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190247:       0befd6: 0f01                                   |0007: return v1
+  190248:       0befd8: e920 1701 3000                         |0008: invoke-virtual-quick {v0, v3}, [0117] // vtable #0117
+  190249: [new] 0befd8: 6e20 974b 3000                         |0008: invoke-virtual {v0, v3}, Lcom/android/bluetooth/btservice/AdapterService;.isBondingInitiatedLocally:(Landroid/bluetooth/BluetoothDevice;)Z // method@4b97
+  190250:       0befde: 0a01                                   |000b: move-result v1
+  190251:       0befe0: 0f01                                   |000c: return v1
+  190252:    virtual_method #19152: isDiscovering ()Z
+  190253:     access=0001 (PUBLIC)
+  190254:     codeOff=befe2 (782306)
+  190255:     quickening_size=7 (7)
+  190256:       0befe6: e530 1800                              |0000: iget-object-quick v0, v3, [obj+0018]
+  190257: [new] 0befe6: 5430 ce49                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.mService:Lcom/android/bluetooth/btservice/AdapterService; // field@49ce
+  190258:       0befea: 7110 2a44 0000                         |0002: invoke-static {v0}, Lcom/android/bluetooth/Utils;.checkCallerAllowManagedProfiles:(Landroid/content/Context;)Z // method@442a
+  190259:       0beff0: 0a00                                   |0005: move-result v0
+  190260:       0beff2: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190261:       0beff4: 3900 0a00                              |0007: if-nez v0, 0011 // +000a
+  190262:       0beff8: 1a00 4e0b                              |0009: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190263:       0beffc: 1a02 8567                              |000b: const-string v2, "isDiscovering() - Not allowed for non-active user" // string@6785
+  190264:       0bf000: 7120 9b39 2000                         |000d: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190265:       0bf006: 0f01                                   |0010: return v1
+  190266:       0bf008: e910 6000 0300                         |0011: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190267: [new] 0bf008: 6e10 c74a 0300                         |0011: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190268:       0bf00e: 0c00                                   |0014: move-result-object v0
+  190269:       0bf010: 3900 0300                              |0015: if-nez v0, 0018 // +0003
+  190270:       0bf014: 0f01                                   |0017: return v1
+  190271:       0bf016: e910 1801 0000                         |0018: invoke-virtual-quick {v0}, [0118] // vtable #0118
+  190272: [new] 0bf016: 6e10 984b 0000                         |0018: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isDiscovering:()Z // method@4b98
+  190273:       0bf01c: 0a01                                   |001b: move-result v1
+  190274:       0bf01e: 0f01                                   |001c: return v1
+  190275:    virtual_method #19153: isEnabled ()Z
+  190276:     access=0001 (PUBLIC)
+  190277:     codeOff=bf020 (782368)
+  190278:     quickening_size=5 (5)
+  190279:       0bf024: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190280: [new] 0bf024: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190281:       0bf02a: 0c00                                   |0003: move-result-object v0
+  190282:       0bf02c: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190283:       0bf030: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190284:       0bf032: 0f01                                   |0007: return v1
+  190285:       0bf034: e910 1901 0000                         |0008: invoke-virtual-quick {v0}, [0119] // vtable #0119
+  190286: [new] 0bf034: 6e10 994b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isEnabled:()Z // method@4b99
+  190287:       0bf03a: 0a01                                   |000b: move-result v1
+  190288:       0bf03c: 0f01                                   |000c: return v1
+  190289:    virtual_method #19154: isLe2MPhySupported ()Z
+  190290:     access=0001 (PUBLIC)
+  190291:     codeOff=bf03e (782398)
+  190292:     quickening_size=5 (5)
+  190293:       0bf042: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190294: [new] 0bf042: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190295:       0bf048: 0c00                                   |0003: move-result-object v0
+  190296:       0bf04a: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190297:       0bf04e: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190298:       0bf050: 0f01                                   |0007: return v1
+  190299:       0bf052: e910 1a01 0000                         |0008: invoke-virtual-quick {v0}, [011a] // vtable #011a
+  190300: [new] 0bf052: 6e10 9a4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isLe2MPhySupported:()Z // method@4b9a
+  190301:       0bf058: 0a01                                   |000b: move-result v1
+  190302:       0bf05a: 0f01                                   |000c: return v1
+  190303:    virtual_method #19155: isLeCodedPhySupported ()Z
+  190304:     access=0001 (PUBLIC)
+  190305:     codeOff=bf05c (782428)
+  190306:     quickening_size=5 (5)
+  190307:       0bf060: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190308: [new] 0bf060: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190309:       0bf066: 0c00                                   |0003: move-result-object v0
+  190310:       0bf068: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190311:       0bf06c: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190312:       0bf06e: 0f01                                   |0007: return v1
+  190313:       0bf070: e910 1b01 0000                         |0008: invoke-virtual-quick {v0}, [011b] // vtable #011b
+  190314: [new] 0bf070: 6e10 9b4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isLeCodedPhySupported:()Z // method@4b9b
+  190315:       0bf076: 0a01                                   |000b: move-result v1
+  190316:       0bf078: 0f01                                   |000c: return v1
+  190317:    virtual_method #19156: isLeExtendedAdvertisingSupported ()Z
+  190318:     access=0001 (PUBLIC)
+  190319:     codeOff=bf07a (782458)
+  190320:     quickening_size=5 (5)
+  190321:       0bf07e: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190322: [new] 0bf07e: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190323:       0bf084: 0c00                                   |0003: move-result-object v0
+  190324:       0bf086: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190325:       0bf08a: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190326:       0bf08c: 0f01                                   |0007: return v1
+  190327:       0bf08e: e910 1c01 0000                         |0008: invoke-virtual-quick {v0}, [011c] // vtable #011c
+  190328: [new] 0bf08e: 6e10 9c4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isLeExtendedAdvertisingSupported:()Z // method@4b9c
+  190329:       0bf094: 0a01                                   |000b: move-result v1
+  190330:       0bf096: 0f01                                   |000c: return v1
+  190331:    virtual_method #19157: isLePeriodicAdvertisingSupported ()Z
+  190332:     access=0001 (PUBLIC)
+  190333:     codeOff=bf098 (782488)
+  190334:     quickening_size=5 (5)
+  190335:       0bf09c: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190336: [new] 0bf09c: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190337:       0bf0a2: 0c00                                   |0003: move-result-object v0
+  190338:       0bf0a4: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190339:       0bf0a8: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190340:       0bf0aa: 0f01                                   |0007: return v1
+  190341:       0bf0ac: e910 1d01 0000                         |0008: invoke-virtual-quick {v0}, [011d] // vtable #011d
+  190342: [new] 0bf0ac: 6e10 9d4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isLePeriodicAdvertisingSupported:()Z // method@4b9d
+  190343:       0bf0b2: 0a01                                   |000b: move-result v1
+  190344:       0bf0b4: 0f01                                   |000c: return v1
+  190345:    virtual_method #19158: isMultiAdvertisementSupported ()Z
+  190346:     access=0001 (PUBLIC)
+  190347:     codeOff=bf0b6 (782518)
+  190348:     quickening_size=5 (5)
+  190349:       0bf0ba: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190350: [new] 0bf0ba: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190351:       0bf0c0: 0c00                                   |0003: move-result-object v0
+  190352:       0bf0c2: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190353:       0bf0c6: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190354:       0bf0c8: 0f01                                   |0007: return v1
+  190355:       0bf0ca: e910 1f01 0000                         |0008: invoke-virtual-quick {v0}, [011f] // vtable #011f
+  190356: [new] 0bf0ca: 6e10 9f4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.isMultiAdvertisementSupported:()Z // method@4b9f
+  190357:       0bf0d0: 0a01                                   |000b: move-result v1
+  190358:       0bf0d2: 0f01                                   |000c: return v1
+  190359:    virtual_method #19159: isOffloadedFilteringSupported ()Z
+  190360:     access=0001 (PUBLIC)
+  190361:     codeOff=bf0d4 (782548)
+  190362:     quickening_size=7 (7)
+  190363:       0bf0d8: e910 6000 0400                         |0000: invoke-virtual-quick {v4}, [0060] // vtable #0060
+  190364: [new] 0bf0d8: 6e10 c74a 0400                         |0000: invoke-virtual {v4}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190365:       0bf0de: 0c00                                   |0003: move-result-object v0
+  190366:       0bf0e0: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190367:       0bf0e2: 3900 0300                              |0005: if-nez v0, 0008 // +0003
+  190368:       0bf0e6: 0f01                                   |0007: return v1
+  190369:       0bf0e8: e910 fe00 0000                         |0008: invoke-virtual-quick {v0}, [00fe] // vtable #00fe
+  190370: [new] 0bf0e8: 6e10 6f4b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getNumOfOffloadedScanFilterSupported:()I // method@4b6f
+  190371:       0bf0ee: 0a02                                   |000b: move-result v2
+  190372:       0bf0f0: 1303 0a00                              |000c: const/16 v3, #int 10 // #a
+  190373:       0bf0f4: 3432 0400                              |000e: if-lt v2, v3, 0012 // +0004
+  190374:       0bf0f8: 1211                                   |0010: const/4 v1, #int 1 // #1
+  190375:       0bf0fa: 0000                                   |0011: nop // spacer
+  190376:       0bf0fc: 0f01                                   |0012: return v1
+  190377:    virtual_method #19160: isOffloadedScanBatchingSupported ()Z
+  190378:     access=0001 (PUBLIC)
+  190379:     codeOff=bf0fe (782590)
+  190380:     quickening_size=7 (7)
+  190381:       0bf102: e910 6000 0400                         |0000: invoke-virtual-quick {v4}, [0060] // vtable #0060
+  190382: [new] 0bf102: 6e10 c74a 0400                         |0000: invoke-virtual {v4}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190383:       0bf108: 0c00                                   |0003: move-result-object v0
+  190384:       0bf10a: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190385:       0bf10c: 3900 0300                              |0005: if-nez v0, 0008 // +0003
+  190386:       0bf110: 0f01                                   |0007: return v1
+  190387:       0bf112: e910 ff00 0000                         |0008: invoke-virtual-quick {v0}, [00ff] // vtable #00ff
+  190388: [new] 0bf112: 6e10 704b 0000                         |0008: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.getOffloadedScanResultStorage:()I // method@4b70
+  190389:       0bf118: 0a02                                   |000b: move-result v2
+  190390:       0bf11a: 1303 0004                              |000c: const/16 v3, #int 1024 // #400
+  190391:       0bf11e: 3432 0400                              |000e: if-lt v2, v3, 0012 // +0004
+  190392:       0bf122: 1211                                   |0010: const/4 v1, #int 1 // #1
+  190393:       0bf124: 0000                                   |0011: nop // spacer
+  190394:       0bf126: 0f01                                   |0012: return v1
+  190395:    virtual_method #19161: onBrEdrDown ()V
+  190396:     access=0001 (PUBLIC)
+  190397:     codeOff=bf90e (784654)
+  190398:     quickening_size=5 (5)
+  190399:       0bf912: e910 6000 0100                         |0000: invoke-virtual-quick {v1}, [0060] // vtable #0060
+  190400: [new] 0bf912: 6e10 c74a 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190401:       0bf918: 0c00                                   |0003: move-result-object v0
+  190402:       0bf91a: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  190403:       0bf91e: 7300                                   |0006: return-void-no-barrier
+  190404: [new] 0bf91e: 0e00                                   |0006: return-void
+  190405:       0bf920: e910 2201 0000                         |0007: invoke-virtual-quick {v0}, [0122] // vtable #0122
+  190406: [new] 0bf920: 6e10 a34b 0000                         |0007: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.onBrEdrDown:()V // method@4ba3
+  190407:       0bf926: 7300                                   |000a: return-void-no-barrier
+  190408: [new] 0bf926: 0e00                                   |000a: return-void
+  190409:    virtual_method #19162: onLeServiceUp ()V
+  190410:     access=0001 (PUBLIC)
+  190411:     codeOff=bf928 (784680)
+  190412:     quickening_size=5 (5)
+  190413:       0bf92c: e910 6000 0100                         |0000: invoke-virtual-quick {v1}, [0060] // vtable #0060
+  190414: [new] 0bf92c: 6e10 c74a 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190415:       0bf932: 0c00                                   |0003: move-result-object v0
+  190416:       0bf934: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  190417:       0bf938: 7300                                   |0006: return-void-no-barrier
+  190418: [new] 0bf938: 0e00                                   |0006: return-void
+  190419:       0bf93a: e910 2301 0000                         |0007: invoke-virtual-quick {v0}, [0123] // vtable #0123
+  190420: [new] 0bf93a: 6e10 a64b 0000                         |0007: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.onLeServiceUp:()V // method@4ba6
+  190421:       0bf940: 7300                                   |000a: return-void-no-barrier
+  190422: [new] 0bf940: 0e00                                   |000a: return-void
+  190423:    virtual_method #19163: registerCallback (Landroid/bluetooth/IBluetoothCallback;)V
+  190424:     access=0001 (PUBLIC)
+  190425:     codeOff=bf942 (784706)
+  190426:     quickening_size=5 (5)
+  190427:       0bf946: e910 6000 0100                         |0000: invoke-virtual-quick {v1}, [0060] // vtable #0060
+  190428: [new] 0bf946: 6e10 c74a 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190429:       0bf94c: 0c00                                   |0003: move-result-object v0
+  190430:       0bf94e: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  190431:       0bf952: 7300                                   |0006: return-void-no-barrier
+  190432: [new] 0bf952: 0e00                                   |0006: return-void
+  190433:       0bf954: e920 2601 2000                         |0007: invoke-virtual-quick {v0, v2}, [0126] // vtable #0126
+  190434: [new] 0bf954: 6e20 af4b 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/btservice/AdapterService;.registerCallback:(Landroid/bluetooth/IBluetoothCallback;)V // method@4baf
+  190435:       0bf95a: 7300                                   |000a: return-void-no-barrier
+  190436: [new] 0bf95a: 0e00                                   |000a: return-void
+  190437:    virtual_method #19164: removeBond (Landroid/bluetooth/BluetoothDevice;)Z
+  190438:     access=0001 (PUBLIC)
+  190439:     codeOff=bf128 (782632)
+  190440:     quickening_size=5 (5)
+  190441:       0bf12c: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190442:       0bf132: 0a00                                   |0003: move-result v0
+  190443:       0bf134: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190444:       0bf136: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190445:       0bf13a: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190446:       0bf13e: 1a02 5386                              |0009: const-string v2, "removeBond() - Not allowed for non-active user" // string@8653
+  190447:       0bf142: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190448:       0bf148: 0f01                                   |000e: return v1
+  190449:       0bf14a: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190450: [new] 0bf14a: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190451:       0bf150: 0c00                                   |0012: move-result-object v0
+  190452:       0bf152: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190453:       0bf156: 0f01                                   |0015: return v1
+  190454:       0bf158: e920 2701 4000                         |0016: invoke-virtual-quick {v0, v4}, [0127] // vtable #0127
+  190455: [new] 0bf158: 6e20 b24b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.removeBond:(Landroid/bluetooth/BluetoothDevice;)Z // method@4bb2
+  190456:       0bf15e: 0a01                                   |0019: move-result v1
+  190457:       0bf160: 0f01                                   |001a: return v1
+  190458:    virtual_method #19165: reportActivityInfo ()Landroid/bluetooth/BluetoothActivityEnergyInfo;
+  190459:     access=0001 (PUBLIC)
+  190460:     codeOff=bec18 (781336)
+  190461:     quickening_size=3 (3)
+  190462:       0bec1c: e910 6000 0200                         |0000: invoke-virtual-quick {v2}, [0060] // vtable #0060
+  190463: [new] 0bec1c: 6e10 c74a 0200                         |0000: invoke-virtual {v2}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190464:       0bec22: 0c00                                   |0003: move-result-object v0
+  190465:       0bec24: 3900 0400                              |0004: if-nez v0, 0008 // +0004
+  190466:       0bec28: 1201                                   |0006: const/4 v1, #int 0 // #0
+  190467:       0bec2a: 1101                                   |0007: return-object v1
+  190468:       0bec2c: 7110 144b 0000                         |0008: invoke-static {v0}, Lcom/android/bluetooth/btservice/AdapterService;.access$1200:(Lcom/android/bluetooth/btservice/AdapterService;)Landroid/bluetooth/BluetoothActivityEnergyInfo; // method@4b14
+  190469:       0bec32: 0c01                                   |000b: move-result-object v1
+  190470:       0bec34: 1101                                   |000c: return-object v1
+  190471:    virtual_method #19166: requestActivityInfo (Landroid/os/ResultReceiver;)V
+  190472:     access=0001 (PUBLIC)
+  190473:     codeOff=bf95c (784732)
+  190474:     quickening_size=7 (7)
+  190475:       0bf960: 2200 b002                              |0000: new-instance v0, Landroid/os/Bundle; // type@02b0
+  190476:       0bf964: 7010 840c 0000                         |0002: invoke-direct {v0}, Landroid/os/Bundle;.<init>:()V // method@0c84
+  190477:       0bf96a: 1a01 ae50                              |0005: const-string v1, "controller_activity" // string@50ae
+  190478:       0bf96e: e910 4e00 0300                         |0007: invoke-virtual-quick {v3}, [004e] // vtable #004e
+  190479: [new] 0bf96e: 6e10 dd4a 0300                         |0007: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.reportActivityInfo:()Landroid/bluetooth/BluetoothActivityEnergyInfo; // method@4add
+  190480:       0bf974: 0c02                                   |000a: move-result-object v2
+  190481:       0bf976: e930 7000 1002                         |000b: invoke-virtual-quick {v0, v1, v2}, [0070] // vtable #0070
+  190482: [new] 0bf976: 6e30 b30c 1002                         |000b: invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;.putParcelable:(Ljava/lang/String;Landroid/os/Parcelable;)V // method@0cb3
+  190483:       0bf97c: 1201                                   |000e: const/4 v1, #int 0 // #0
+  190484:       0bf97e: e930 0d00 1400                         |000f: invoke-virtual-quick {v4, v1, v0}, [000d] // vtable #000d
+  190485: [new] 0bf97e: 6e30 7a0d 1400                         |000f: invoke-virtual {v4, v1, v0}, Landroid/os/ResultReceiver;.send:(ILandroid/os/Bundle;)V // method@0d7a
+  190486:       0bf984: 7300                                   |0012: return-void-no-barrier
+  190487: [new] 0bf984: 0e00                                   |0012: return-void
+  190488:    virtual_method #19167: sdpSearch (Landroid/bluetooth/BluetoothDevice;Landroid/os/ParcelUuid;)Z
+  190489:     access=0001 (PUBLIC)
+  190490:     codeOff=bf162 (782690)
+  190491:     quickening_size=5 (5)
+  190492:       0bf166: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190493:       0bf16c: 0a00                                   |0003: move-result v0
+  190494:       0bf16e: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190495:       0bf170: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190496:       0bf174: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190497:       0bf178: 1a02 de89                              |0009: const-string v2, "sdpSea(): not allowed for non-active user" // string@89de
+  190498:       0bf17c: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190499:       0bf182: 0f01                                   |000e: return v1
+  190500:       0bf184: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190501: [new] 0bf184: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190502:       0bf18a: 0c00                                   |0012: move-result-object v0
+  190503:       0bf18c: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190504:       0bf190: 0f01                                   |0015: return v1
+  190505:       0bf192: e930 2b01 4005                         |0016: invoke-virtual-quick {v0, v4, v5}, [012b] // vtable #012b
+  190506: [new] 0bf192: 6e30 ba4b 4005                         |0016: invoke-virtual {v0, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.sdpSearch:(Landroid/bluetooth/BluetoothDevice;Landroid/os/ParcelUuid;)Z // method@4bba
+  190507:       0bf198: 0a01                                   |0019: move-result v1
+  190508:       0bf19a: 0f01                                   |001a: return v1
+  190509:    virtual_method #19168: sendConnectionStateChange (Landroid/bluetooth/BluetoothDevice;III)V
+  190510:     access=0001 (PUBLIC)
+  190511:     codeOff=bf986 (784774)
+  190512:     quickening_size=5 (5)
+  190513:       0bf98a: e910 6000 0100                         |0000: invoke-virtual-quick {v1}, [0060] // vtable #0060
+  190514: [new] 0bf98a: 6e10 c74a 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190515:       0bf990: 0c00                                   |0003: move-result-object v0
+  190516:       0bf992: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  190517:       0bf996: 7300                                   |0006: return-void-no-barrier
+  190518: [new] 0bf996: 0e00                                   |0006: return-void
+  190519:       0bf998: e955 2d01 2043                         |0007: invoke-virtual-quick {v0, v2, v3, v4, v5}, [012d] // vtable #012d
+  190520: [new] 0bf998: 6e55 bf4b 2043                         |0007: invoke-virtual {v0, v2, v3, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.sendConnectionStateChange:(Landroid/bluetooth/BluetoothDevice;III)V // method@4bbf
+  190521:       0bf99e: 7300                                   |000a: return-void-no-barrier
+  190522: [new] 0bf99e: 0e00                                   |000a: return-void
+  190523:    virtual_method #19169: setBluetoothClass (Landroid/bluetooth/BluetoothClass;)Z
+  190524:     access=0001 (PUBLIC)
+  190525:     codeOff=bf19c (782748)
+  190526:     quickening_size=5 (5)
+  190527:       0bf1a0: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190528:       0bf1a6: 0a00                                   |0003: move-result v0
+  190529:       0bf1a8: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190530:       0bf1aa: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190531:       0bf1ae: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190532:       0bf1b2: 1a02 038c                              |0009: const-string v2, "setBluetoothClass() - Not allowed for non-active user" // string@8c03
+  190533:       0bf1b6: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190534:       0bf1bc: 0f01                                   |000e: return v1
+  190535:       0bf1be: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190536: [new] 0bf1be: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190537:       0bf1c4: 0c00                                   |0012: move-result-object v0
+  190538:       0bf1c6: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190539:       0bf1ca: 0f01                                   |0015: return v1
+  190540:       0bf1cc: e920 3001 4000                         |0016: invoke-virtual-quick {v0, v4}, [0130] // vtable #0130
+  190541: [new] 0bf1cc: 6e20 c54b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.setBluetoothClass:(Landroid/bluetooth/BluetoothClass;)Z // method@4bc5
+  190542:       0bf1d2: 0a01                                   |0019: move-result v1
+  190543:       0bf1d4: 0f01                                   |001a: return v1
+  190544:    virtual_method #19170: setDiscoverableTimeout (I)Z
+  190545:     access=0001 (PUBLIC)
+  190546:     codeOff=bf1d6 (782806)
+  190547:     quickening_size=5 (5)
+  190548:       0bf1da: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190549:       0bf1e0: 0a00                                   |0003: move-result v0
+  190550:       0bf1e2: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190551:       0bf1e4: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190552:       0bf1e8: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190553:       0bf1ec: 1a02 ee8c                              |0009: const-string v2, "setDiscoverableTimeout() - Not allowed for non-active user" // string@8cee
+  190554:       0bf1f0: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190555:       0bf1f6: 0f01                                   |000e: return v1
+  190556:       0bf1f8: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190557: [new] 0bf1f8: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190558:       0bf1fe: 0c00                                   |0012: move-result-object v0
+  190559:       0bf200: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190560:       0bf204: 0f01                                   |0015: return v1
+  190561:       0bf206: e920 3501 4000                         |0016: invoke-virtual-quick {v0, v4}, [0135] // vtable #0135
+  190562: [new] 0bf206: 6e20 cb4b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.setDiscoverableTimeout:(I)Z // method@4bcb
+  190563:       0bf20c: 0a01                                   |0019: move-result v1
+  190564:       0bf20e: 0f01                                   |001a: return v1
+  190565:    virtual_method #19171: setMessageAccessPermission (Landroid/bluetooth/BluetoothDevice;I)Z
+  190566:     access=0001 (PUBLIC)
+  190567:     codeOff=bf210 (782864)
+  190568:     quickening_size=5 (5)
+  190569:       0bf214: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190570:       0bf21a: 0a00                                   |0003: move-result v0
+  190571:       0bf21c: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190572:       0bf21e: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190573:       0bf222: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190574:       0bf226: 1a02 398e                              |0009: const-string v2, "setMessageAccessPermission() - Not allowed for non-active user" // string@8e39
+  190575:       0bf22a: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190576:       0bf230: 0f01                                   |000e: return v1
+  190577:       0bf232: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190578: [new] 0bf232: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190579:       0bf238: 0c00                                   |0012: move-result-object v0
+  190580:       0bf23a: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190581:       0bf23e: 0f01                                   |0015: return v1
+  190582:       0bf240: e930 3601 4005                         |0016: invoke-virtual-quick {v0, v4, v5}, [0136] // vtable #0136
+  190583: [new] 0bf240: 6e30 cd4b 4005                         |0016: invoke-virtual {v0, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.setMessageAccessPermission:(Landroid/bluetooth/BluetoothDevice;I)Z // method@4bcd
+  190584:       0bf246: 0a01                                   |0019: move-result v1
+  190585:       0bf248: 0f01                                   |001a: return v1
+  190586:    virtual_method #19172: setName (Ljava/lang/String;)Z
+  190587:     access=0001 (PUBLIC)
+  190588:     codeOff=bf24a (782922)
+  190589:     quickening_size=5 (5)
+  190590:       0bf24e: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190591:       0bf254: 0a00                                   |0003: move-result v0
+  190592:       0bf256: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190593:       0bf258: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190594:       0bf25c: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190595:       0bf260: 1a02 668e                              |0009: const-string v2, "setName() - Not allowed for non-active user" // string@8e66
+  190596:       0bf264: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190597:       0bf26a: 0f01                                   |000e: return v1
+  190598:       0bf26c: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190599: [new] 0bf26c: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190600:       0bf272: 0c00                                   |0012: move-result-object v0
+  190601:       0bf274: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190602:       0bf278: 0f01                                   |0015: return v1
+  190603:       0bf27a: e920 3701 4000                         |0016: invoke-virtual-quick {v0, v4}, [0137] // vtable #0137
+  190604: [new] 0bf27a: 6e20 ce4b 4000                         |0016: invoke-virtual {v0, v4}, Lcom/android/bluetooth/btservice/AdapterService;.setName:(Ljava/lang/String;)Z // method@4bce
+  190605:       0bf280: 0a01                                   |0019: move-result v1
+  190606:       0bf282: 0f01                                   |001a: return v1
+  190607:    virtual_method #19173: setPairingConfirmation (Landroid/bluetooth/BluetoothDevice;Z)Z
+  190608:     access=0001 (PUBLIC)
+  190609:     codeOff=bf284 (782980)
+  190610:     quickening_size=5 (5)
+  190611:       0bf288: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190612:       0bf28e: 0a00                                   |0003: move-result v0
+  190613:       0bf290: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190614:       0bf292: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190615:       0bf296: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190616:       0bf29a: 1a02 db8e                              |0009: const-string v2, "setPairingConfirmation() - Not allowed for non-active user" // string@8edb
+  190617:       0bf29e: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190618:       0bf2a4: 0f01                                   |000e: return v1
+  190619:       0bf2a6: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190620: [new] 0bf2a6: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190621:       0bf2ac: 0c00                                   |0012: move-result-object v0
+  190622:       0bf2ae: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190623:       0bf2b2: 0f01                                   |0015: return v1
+  190624:       0bf2b4: e930 3801 4005                         |0016: invoke-virtual-quick {v0, v4, v5}, [0138] // vtable #0138
+  190625: [new] 0bf2b4: 6e30 cf4b 4005                         |0016: invoke-virtual {v0, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.setPairingConfirmation:(Landroid/bluetooth/BluetoothDevice;Z)Z // method@4bcf
+  190626:       0bf2ba: 0a01                                   |0019: move-result v1
+  190627:       0bf2bc: 0f01                                   |001a: return v1
+  190628:    virtual_method #19174: setPasskey (Landroid/bluetooth/BluetoothDevice;ZI[B)Z
+  190629:     access=0001 (PUBLIC)
+  190630:     codeOff=bf2be (783038)
+  190631:     quickening_size=5 (5)
+  190632:       0bf2c2: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190633:       0bf2c8: 0a00                                   |0003: move-result v0
+  190634:       0bf2ca: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190635:       0bf2cc: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190636:       0bf2d0: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190637:       0bf2d4: 1a02 e78e                              |0009: const-string v2, "setPasskey() - Not allowed for non-active user" // string@8ee7
+  190638:       0bf2d8: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190639:       0bf2de: 0f01                                   |000e: return v1
+  190640:       0bf2e0: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190641: [new] 0bf2e0: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190642:       0bf2e6: 0c00                                   |0012: move-result-object v0
+  190643:       0bf2e8: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190644:       0bf2ec: 0f01                                   |0015: return v1
+  190645:       0bf2ee: e957 3901 4065                         |0016: invoke-virtual-quick {v0, v4, v5, v6, v7}, [0139] // vtable #0139
+  190646: [new] 0bf2ee: 6e57 d04b 4065                         |0016: invoke-virtual {v0, v4, v5, v6, v7}, Lcom/android/bluetooth/btservice/AdapterService;.setPasskey:(Landroid/bluetooth/BluetoothDevice;ZI[B)Z // method@4bd0
+  190647:       0bf2f4: 0a01                                   |0019: move-result v1
+  190648:       0bf2f6: 0f01                                   |001a: return v1
+  190649:    virtual_method #19175: setPhonebookAccessPermission (Landroid/bluetooth/BluetoothDevice;I)Z
+  190650:     access=0001 (PUBLIC)
+  190651:     codeOff=bf2f8 (783096)
+  190652:     quickening_size=5 (5)
+  190653:       0bf2fc: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190654:       0bf302: 0a00                                   |0003: move-result v0
+  190655:       0bf304: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190656:       0bf306: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190657:       0bf30a: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190658:       0bf30e: 1a02 fe8e                              |0009: const-string v2, "setPhonebookAccessPermission() - Not allowed for non-active user" // string@8efe
+  190659:       0bf312: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190660:       0bf318: 0f01                                   |000e: return v1
+  190661:       0bf31a: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190662: [new] 0bf31a: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190663:       0bf320: 0c00                                   |0012: move-result-object v0
+  190664:       0bf322: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190665:       0bf326: 0f01                                   |0015: return v1
+  190666:       0bf328: e930 3a01 4005                         |0016: invoke-virtual-quick {v0, v4, v5}, [013a] // vtable #013a
+  190667: [new] 0bf328: 6e30 d14b 4005                         |0016: invoke-virtual {v0, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.setPhonebookAccessPermission:(Landroid/bluetooth/BluetoothDevice;I)Z // method@4bd1
+  190668:       0bf32e: 0a01                                   |0019: move-result v1
+  190669:       0bf330: 0f01                                   |001a: return v1
+  190670:    virtual_method #19176: setPin (Landroid/bluetooth/BluetoothDevice;ZI[B)Z
+  190671:     access=0001 (PUBLIC)
+  190672:     codeOff=bf332 (783154)
+  190673:     quickening_size=5 (5)
+  190674:       0bf336: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190675:       0bf33c: 0a00                                   |0003: move-result v0
+  190676:       0bf33e: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190677:       0bf340: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190678:       0bf344: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190679:       0bf348: 1a02 018f                              |0009: const-string v2, "setPin() - Not allowed for non-active user" // string@8f01
+  190680:       0bf34c: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190681:       0bf352: 0f01                                   |000e: return v1
+  190682:       0bf354: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190683: [new] 0bf354: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190684:       0bf35a: 0c00                                   |0012: move-result-object v0
+  190685:       0bf35c: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190686:       0bf360: 0f01                                   |0015: return v1
+  190687:       0bf362: e957 3b01 4065                         |0016: invoke-virtual-quick {v0, v4, v5, v6, v7}, [013b] // vtable #013b
+  190688: [new] 0bf362: 6e57 d24b 4065                         |0016: invoke-virtual {v0, v4, v5, v6, v7}, Lcom/android/bluetooth/btservice/AdapterService;.setPin:(Landroid/bluetooth/BluetoothDevice;ZI[B)Z // method@4bd2
+  190689:       0bf368: 0a01                                   |0019: move-result v1
+  190690:       0bf36a: 0f01                                   |001a: return v1
+  190691:    virtual_method #19177: setRemoteAlias (Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)Z
+  190692:     access=0001 (PUBLIC)
+  190693:     codeOff=bf36c (783212)
+  190694:     quickening_size=5 (5)
+  190695:       0bf370: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190696:       0bf376: 0a00                                   |0003: move-result v0
+  190697:       0bf378: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190698:       0bf37a: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190699:       0bf37e: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190700:       0bf382: 1a02 548f                              |0009: const-string v2, "setRemoteAlias() - Not allowed for non-active user" // string@8f54
+  190701:       0bf386: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190702:       0bf38c: 0f01                                   |000e: return v1
+  190703:       0bf38e: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190704: [new] 0bf38e: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190705:       0bf394: 0c00                                   |0012: move-result-object v0
+  190706:       0bf396: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190707:       0bf39a: 0f01                                   |0015: return v1
+  190708:       0bf39c: e930 3c01 4005                         |0016: invoke-virtual-quick {v0, v4, v5}, [013c] // vtable #013c
+  190709: [new] 0bf39c: 6e30 d44b 4005                         |0016: invoke-virtual {v0, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.setRemoteAlias:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)Z // method@4bd4
+  190710:       0bf3a2: 0a01                                   |0019: move-result v1
+  190711:       0bf3a4: 0f01                                   |001a: return v1
+  190712:    virtual_method #19178: setScanMode (II)Z
+  190713:     access=0001 (PUBLIC)
+  190714:     codeOff=bf3a6 (783270)
+  190715:     quickening_size=5 (5)
+  190716:       0bf3aa: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190717:       0bf3b0: 0a00                                   |0003: move-result v0
+  190718:       0bf3b2: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190719:       0bf3b4: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190720:       0bf3b8: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190721:       0bf3bc: 1a02 888f                              |0009: const-string v2, "setScanMode() - Not allowed for non-active user" // string@8f88
+  190722:       0bf3c0: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190723:       0bf3c6: 0f01                                   |000e: return v1
+  190724:       0bf3c8: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190725: [new] 0bf3c8: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190726:       0bf3ce: 0c00                                   |0012: move-result-object v0
+  190727:       0bf3d0: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190728:       0bf3d4: 0f01                                   |0015: return v1
+  190729:       0bf3d6: e930 3d01 4005                         |0016: invoke-virtual-quick {v0, v4, v5}, [013d] // vtable #013d
+  190730: [new] 0bf3d6: 6e30 d54b 4005                         |0016: invoke-virtual {v0, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.setScanMode:(II)Z // method@4bd5
+  190731:       0bf3dc: 0a01                                   |0019: move-result v1
+  190732:       0bf3de: 0f01                                   |001a: return v1
+  190733:    virtual_method #19179: setSimAccessPermission (Landroid/bluetooth/BluetoothDevice;I)Z
+  190734:     access=0001 (PUBLIC)
+  190735:     codeOff=bf3e0 (783328)
+  190736:     quickening_size=5 (5)
+  190737:       0bf3e4: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190738:       0bf3ea: 0a00                                   |0003: move-result v0
+  190739:       0bf3ec: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190740:       0bf3ee: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190741:       0bf3f2: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190742:       0bf3f6: 1a02 d28f                              |0009: const-string v2, "setSimAccessPermission() - Not allowed for non-active user" // string@8fd2
+  190743:       0bf3fa: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190744:       0bf400: 0f01                                   |000e: return v1
+  190745:       0bf402: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190746: [new] 0bf402: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190747:       0bf408: 0c00                                   |0012: move-result-object v0
+  190748:       0bf40a: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190749:       0bf40e: 0f01                                   |0015: return v1
+  190750:       0bf410: e930 4001 4005                         |0016: invoke-virtual-quick {v0, v4, v5}, [0140] // vtable #0140
+  190751: [new] 0bf410: 6e30 d84b 4005                         |0016: invoke-virtual {v0, v4, v5}, Lcom/android/bluetooth/btservice/AdapterService;.setSimAccessPermission:(Landroid/bluetooth/BluetoothDevice;I)Z // method@4bd8
+  190752:       0bf416: 0a01                                   |0019: move-result v1
+  190753:       0bf418: 0f01                                   |001a: return v1
+  190754:    virtual_method #19180: startDiscovery ()Z
+  190755:     access=0001 (PUBLIC)
+  190756:     codeOff=bf41a (783386)
+  190757:     quickening_size=5 (5)
+  190758:       0bf41e: 7100 2944 0000                         |0000: invoke-static {}, Lcom/android/bluetooth/Utils;.checkCaller:()Z // method@4429
+  190759:       0bf424: 0a00                                   |0003: move-result v0
+  190760:       0bf426: 1201                                   |0004: const/4 v1, #int 0 // #0
+  190761:       0bf428: 3900 0a00                              |0005: if-nez v0, 000f // +000a
+  190762:       0bf42c: 1a00 4e0b                              |0007: const-string v0, "BluetoothAdapterService" // string@0b4e
+  190763:       0bf430: 1a02 1592                              |0009: const-string v2, "startDiscovery() - Not allowed for non-active user" // string@9215
+  190764:       0bf434: 7120 9b39 2000                         |000b: invoke-static {v0, v2}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@399b
+  190765:       0bf43a: 0f01                                   |000e: return v1
+  190766:       0bf43c: e910 6000 0300                         |000f: invoke-virtual-quick {v3}, [0060] // vtable #0060
+  190767: [new] 0bf43c: 6e10 c74a 0300                         |000f: invoke-virtual {v3}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190768:       0bf442: 0c00                                   |0012: move-result-object v0
+  190769:       0bf444: 3900 0300                              |0013: if-nez v0, 0016 // +0003
+  190770:       0bf448: 0f01                                   |0015: return v1
+  190771:       0bf44a: e910 4201 0000                         |0016: invoke-virtual-quick {v0}, [0142] // vtable #0142
+  190772: [new] 0bf44a: 6e10 dd4b 0000                         |0016: invoke-virtual {v0}, Lcom/android/bluetooth/btservice/AdapterService;.startDiscovery:()Z // method@4bdd
+  190773:       0bf450: 0a01                                   |0019: move-result v1
+  190774:       0bf452: 0f01                                   |001a: return v1
+  190775:    virtual_method #19181: unregisterCallback (Landroid/bluetooth/IBluetoothCallback;)V
+  190776:     access=0001 (PUBLIC)
+  190777:     codeOff=bf9a0 (784800)
+  190778:     quickening_size=5 (5)
+  190779:       0bf9a4: e910 6000 0100                         |0000: invoke-virtual-quick {v1}, [0060] // vtable #0060
+  190780: [new] 0bf9a4: 6e10 c74a 0100                         |0000: invoke-virtual {v1}, Lcom/android/bluetooth/btservice/AdapterService$AdapterServiceBinder;.getService:()Lcom/android/bluetooth/btservice/AdapterService; // method@4ac7
+  190781:       0bf9aa: 0c00                                   |0003: move-result-object v0
+  190782:       0bf9ac: 3900 0300                              |0004: if-nez v0, 0007 // +0003
+  190783:       0bf9b0: 7300                                   |0006: return-void-no-barrier
+  190784: [new] 0bf9b0: 0e00                                   |0006: return-void
+  190785:       0bf9b2: e920 4601 2000                         |0007: invoke-virtual-quick {v0, v2}, [0146] // vtable #0146
+  190786: [new] 0bf9b2: 6e20 e74b 2000                         |0007: invoke-virtual {v0, v2}, Lcom/android/bluetooth/btservice/AdapterService;.unregisterCallback:(Landroid/bluetooth/IBluetoothCallback;)V // method@4be7
+  190787:       0bf9b8: 7300                                   |000a: return-void-no-barrier
+  190788: [new] 0bf9b8: 0e00                                   |000a: return-void

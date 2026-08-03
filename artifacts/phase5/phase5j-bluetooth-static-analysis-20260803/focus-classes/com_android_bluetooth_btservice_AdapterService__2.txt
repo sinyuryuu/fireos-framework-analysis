@@ -1,0 +1,43 @@
+  189036:   class #1677: AdapterService.2 ('Lcom/android/bluetooth/btservice/AdapterService$2;')
+  189037:    access=0000 ()
+  189038:    source_file=AdapterService.java, class_data_off=221c3a (2235450)
+  189039:    static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=2
+  189040:    direct_method #19093: <init> (Lcom/android/bluetooth/btservice/AdapterService;)V
+  189041:     access=10000 (CONSTRUCTOR)
+  189042:     codeOff=be47a (779386)
+  189043:     quickening_size=3 (3)
+  189044:       0be47e: e801 2000                              |0000: iput-object-quick v1, v0, [obj+0020]
+  189045: [new] 0be47e: 5b01 c849                              |0000: iput-object v1, v0, Lcom/android/bluetooth/btservice/AdapterService$2;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49c8
+  189046:       0be482: 7010 780c 0000                         |0002: invoke-direct {v0}, Landroid/os/AsyncTask;.<init>:()V // method@0c78
+  189047:       0be488: 0e00                                   |0005: return-void
+  189048:    virtual_method #19094: doInBackground ([Ljava/lang/Object;)Ljava/lang/Object;
+  189049:     access=1044 (PROTECTED BRIDGE SYNTHETIC)
+  189050:     codeOff=be434 (779316)
+  189051:     quickening_size=3 (3)
+  189052:       0be438: 1f01 0910                              |0000: check-cast v1, [Ljava/lang/Void; // type@1009
+  189053:       0be43c: e920 1900 1000                         |0002: invoke-virtual-quick {v0, v1}, [0019] // vtable #0019
+  189054: [new] 0be43c: 6e20 974a 1000                         |0002: invoke-virtual {v0, v1}, Lcom/android/bluetooth/btservice/AdapterService$2;.doInBackground:([Ljava/lang/Void;)Ljava/lang/Void; // method@4a97
+  189055:       0be442: 0c01                                   |0005: move-result-object v1
+  189056:       0be444: 1101                                   |0006: return-object v1
+  189057:    virtual_method #19095: doInBackground ([Ljava/lang/Void;)Ljava/lang/Void;
+  189058:     access=0084 (PROTECTED VARARGS)
+  189059:     codeOff=be446 (779334)
+  189060:     quickening_size=d (13)
+  189061:       0be44a: e530 2000                              |0000: iget-object-quick v0, v3, [obj+0020]
+  189062: [new] 0be44a: 5430 c849                              |0000: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$2;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49c8
+  189063:       0be44e: 1a01 b881                              |0002: const-string v1, "phonebook_access_permission" // string@81b8
+  189064:       0be452: 1202                                   |0004: const/4 v2, #int 0 // #0
+  189065:       0be454: e930 5a00 1002                         |0005: invoke-virtual-quick {v0, v1, v2}, [005a] // vtable #005a
+  189066: [new] 0be454: 6e30 804b 1002                         |0005: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/btservice/AdapterService;.getSharedPreferences:(Ljava/lang/String;I)Landroid/content/SharedPreferences; // method@4b80
+  189067:       0be45a: e530 2000                              |0008: iget-object-quick v0, v3, [obj+0020]
+  189068: [new] 0be45a: 5430 c849                              |0008: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$2;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49c8
+  189069:       0be45e: 1a01 6f77                              |000a: const-string v1, "message_access_permission" // string@776f
+  189070:       0be462: e930 5a00 1002                         |000c: invoke-virtual-quick {v0, v1, v2}, [005a] // vtable #005a
+  189071: [new] 0be462: 6e30 804b 1002                         |000c: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/btservice/AdapterService;.getSharedPreferences:(Ljava/lang/String;I)Landroid/content/SharedPreferences; // method@4b80
+  189072:       0be468: e530 2000                              |000f: iget-object-quick v0, v3, [obj+0020]
+  189073: [new] 0be468: 5430 c849                              |000f: iget-object v0, v3, Lcom/android/bluetooth/btservice/AdapterService$2;.this$0:Lcom/android/bluetooth/btservice/AdapterService; // field@49c8
+  189074:       0be46c: 1a01 2991                              |0011: const-string v1, "sim_access_permission" // string@9129
+  189075:       0be470: e930 5a00 1002                         |0013: invoke-virtual-quick {v0, v1, v2}, [005a] // vtable #005a
+  189076: [new] 0be470: 6e30 804b 1002                         |0013: invoke-virtual {v0, v1, v2}, Lcom/android/bluetooth/btservice/AdapterService;.getSharedPreferences:(Ljava/lang/String;I)Landroid/content/SharedPreferences; // method@4b80
+  189077:       0be476: 1200                                   |0016: const/4 v0, #int 0 // #0
+  189078:       0be478: 1100                                   |0017: return-object v0

@@ -1,0 +1,129 @@
+  507529:   class #2842: FosGattService.AmazonClientMap ('Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;')
+  507530:    access=0000 ()
+  507531:    source_file=FosGattService.java, class_data_off=236e02 (2321922)
+  507532:    static_fields=0, instance_fields=2, direct_methods=2, virtual_methods=4
+  507533:    direct_method #19924: <init> (Lcom/android/bluetooth/gatt/FosGattService;)V
+  507534:     access=10002 (PRIVATE CONSTRUCTOR)
+  507535:     codeOff=cc8b8 (837816)
+  507536:     quickening_size=5 (5)
+  507537:       0cc8bc: e801 1c00                              |0000: iput-object-quick v1, v0, [obj+001c]
+  507538: [new] 0cc8bc: 5b01 624b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.this$0:Lcom/android/bluetooth/gatt/FosGattService; // field@4b62
+  507539:       0cc8c0: 7020 524e 1000                         |0002: invoke-direct {v0, v1}, Lcom/android/bluetooth/gatt/GattService$ClientMap;.<init>:(Lcom/android/bluetooth/gatt/GattService;)V // method@4e52
+  507540:       0cc8c6: 2201 290f                              |0005: new-instance v1, Ljava/util/WeakHashMap; // type@0f29
+  507541:       0cc8ca: 7010 5d6f 0100                         |0007: invoke-direct {v1}, Ljava/util/WeakHashMap;.<init>:()V // method@6f5d
+  507542:       0cc8d0: e801 1800                              |000a: iput-object-quick v1, v0, [obj+0018]
+  507543: [new] 0cc8d0: 5b01 614b                              |000a: iput-object v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+  507544:       0cc8d4: 0e00                                   |000c: return-void
+  507545:    direct_method #19925: <init> (Lcom/android/bluetooth/gatt/FosGattService;Lcom/android/bluetooth/gatt/FosGattService$1;)V
+  507546:     access=11000 (SYNTHETIC CONSTRUCTOR)
+  507547:     codeOff=cc8d6 (837846)
+  507548:     quickening_size=1 (1)
+  507549:       0cc8da: 7020 d44d 1000                         |0000: invoke-direct {v0, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.<init>:(Lcom/android/bluetooth/gatt/FosGattService;)V // method@4dd4
+  507550:       0cc8e0: 0e00                                   |0003: return-void
+  507551:    virtual_method #19926: add (Ljava/util/UUID;Landroid/os/WorkSource;Landroid/bluetooth/IBluetoothGattCallback;Ljava/lang/Void;Lcom/android/bluetooth/gatt/GattService;)Lcom/android/bluetooth/gatt/ContextMap$App;
+  507552:     access=0000 ()
+  507553:     codeOff=cc78c (837516)
+  507554:     quickening_size=3 (3)
+  507555:       0cc790: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+  507556:       0cc794: 1a01 4f09                              |0002: const-string v1, "AmazonContextMap.add called. Use default priority(10), and appId(0)." // string@094f
+  507557:       0cc798: 7120 9239 1000                         |0004: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  507558:       0cc79e: 1208                                   |0007: const/4 v8, #int 0 // #0
+  507559:       0cc7a0: 1309 0a00                              |0008: const/16 v9, #int 10 // #a
+  507560:       0cc7a4: 07a2                                   |000a: move-object v2, v10
+  507561:       0cc7a6: 07b3                                   |000b: move-object v3, v11
+  507562:       0cc7a8: 07c4                                   |000c: move-object v4, v12
+  507563:       0cc7aa: 07d5                                   |000d: move-object v5, v13
+  507564:       0cc7ac: 07e6                                   |000e: move-object v6, v14
+  507565:       0cc7ae: 07f7                                   |000f: move-object v7, v15
+  507566:       0cc7b0: ea08 2100 0200                         |0010: invoke-virtual/range-quick {v2, v3, v4, v5, v6, v7, v8, v9}, [0021] // vtable #0021
+  507567: [new] 0cc7b0: 7408 d74d 0200                         |0010: invoke-virtual/range {v2, v3, v4, v5, v6, v7, v8, v9}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.add:(Ljava/util/UUID;Landroid/os/WorkSource;Landroid/bluetooth/IBluetoothGattCallback;Ljava/lang/Void;Lcom/android/bluetooth/gatt/GattService;II)Lcom/android/bluetooth/gatt/ContextMap$App; // method@4dd7
+  507568:       0cc7b6: 0c00                                   |0013: move-result-object v0
+  507569:       0cc7b8: 1100                                   |0014: return-object v0
+  507570:    virtual_method #19927: add (Ljava/util/UUID;Landroid/os/WorkSource;Landroid/bluetooth/IBluetoothGattCallback;Ljava/lang/Void;Lcom/android/bluetooth/gatt/GattService;II)Lcom/android/bluetooth/gatt/ContextMap$App;
+  507571:     access=0000 ()
+  507572:     codeOff=cc7ba (837562)
+  507573:     quickening_size=1d (29)
+  507574:       0cc7be: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+  507575:       0cc7c2: 2201 c40e                              |0002: new-instance v1, Ljava/lang/StringBuilder; // type@0ec4
+  507576:       0cc7c6: 7010 646d 0100                         |0004: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  507577:       0cc7cc: 1a02 5009                              |0007: const-string v2, "AmazonContextMap.add called. uuid=" // string@0950
+  507578:       0cc7d0: e920 4b00 2100                         |0009: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  507579: [new] 0cc7d0: 6e20 6e6d 2100                         |0009: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  507580:       0cc7d6: e920 4a00 7100                         |000c: invoke-virtual-quick {v1, v7}, [004a] // vtable #004a
+  507581: [new] 0cc7d6: 6e20 6d6d 7100                         |000c: invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@6d6d
+  507582:       0cc7dc: 1a02 7705                              |000f: const-string v2, ", requestPriority=" // string@0577
+  507583:       0cc7e0: e920 4b00 2100                         |0011: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  507584: [new] 0cc7e0: 6e20 6e6d 2100                         |0011: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  507585:       0cc7e6: e920 4600 d100                         |0014: invoke-virtual-quick {v1, v13}, [0046] // vtable #0046
+  507586: [new] 0cc7e6: 6e20 6a6d d100                         |0014: invoke-virtual {v1, v13}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  507587:       0cc7ec: 1a02 e904                              |0017: const-string v2, ", applicationType=" // string@04e9
+  507588:       0cc7f0: e920 4b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [004b] // vtable #004b
+  507589: [new] 0cc7f0: 6e20 6e6d 2100                         |0019: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  507590:       0cc7f6: e920 4600 c100                         |001c: invoke-virtual-quick {v1, v12}, [0046] // vtable #0046
+  507591: [new] 0cc7f6: 6e20 6a6d c100                         |001c: invoke-virtual {v1, v12}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@6d6a
+  507592:       0cc7fc: e910 0700 0100                         |001f: invoke-virtual-quick {v1}, [0007] // vtable #0007
+  507593: [new] 0cc7fc: 6e10 786d 0100                         |001f: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  507594:       0cc802: 0c01                                   |0022: move-result-object v1
+  507595:       0cc804: 7120 9239 1000                         |0023: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@3992
+  507596:       0cc80a: 1200                                   |0026: const/4 v0, #int 0 // #0
+  507597:       0cc80c: e561 1800                              |0027: iget-object-quick v1, v6, [obj+0018]
+  507598: [new] 0cc80c: 5461 614b                              |0027: iget-object v1, v6, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+  507599:       0cc810: 1d01                                   |0029: monitor-enter v1
+  507600:       0cc812: 7506 534e 0600                         |002a: invoke-super/range {v6, v7, v8, v9, v10, v11}, Lcom/android/bluetooth/gatt/GattService$ClientMap;.add:(Ljava/util/UUID;Landroid/os/WorkSource;Ljava/lang/Object;Ljava/lang/Object;Lcom/android/bluetooth/gatt/GattService;)Lcom/android/bluetooth/gatt/ContextMap$App; // method@4e53
+  507601:       0cc818: 0c02                                   |002d: move-result-object v2
+  507602:       0cc81a: 0720                                   |002e: move-object v0, v2
+  507603:       0cc81c: e920 1800 7600                         |002f: invoke-virtual-quick {v6, v7}, [0018] // vtable #0018
+  507604: [new] 0cc81c: 6e20 d94d 7600                         |002f: invoke-virtual {v6, v7}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getByUuid:(Ljava/util/UUID;)Lcom/android/bluetooth/gatt/ContextMap$App; // method@4dd9
+  507605:       0cc822: 0c02                                   |0032: move-result-object v2
+  507606:       0cc824: 3802 0d00                              |0033: if-eqz v2, 0040 // +000d
+  507607:       0cc828: e563 1800                              |0035: iget-object-quick v3, v6, [obj+0018]
+  507608: [new] 0cc828: 5463 614b                              |0035: iget-object v3, v6, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+  507609:       0cc82c: 2204 cf0b                              |0037: new-instance v4, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // type@0bcf
+  507610:       0cc830: 7040 c04d 64dc                         |0039: invoke-direct {v4, v6, v12, v13}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.<init>:(Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;II)V // method@4dc0
+  507611:       0cc836: e930 1200 2304                         |003c: invoke-virtual-quick {v3, v2, v4}, [0012] // vtable #0012
+  507612: [new] 0cc836: 6e30 636f 2304                         |003c: invoke-virtual {v3, v2, v4}, Ljava/util/WeakHashMap;.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@6f63
+  507613:       0cc83c: 2817                                   |003f: goto 0056 // +0017
+  507614:       0cc83e: 1a03 470c                              |0040: const-string v3, "BtGatt.FosGattService" // string@0c47
+  507615:       0cc842: 2204 c40e                              |0042: new-instance v4, Ljava/lang/StringBuilder; // type@0ec4
+  507616:       0cc846: 7010 646d 0400                         |0044: invoke-direct {v4}, Ljava/lang/StringBuilder;.<init>:()V // method@6d64
+  507617:       0cc84c: 1a05 5109                              |0047: const-string v5, "AmazonContextMap.add: But getByUuid() could not find uuid=" // string@0951
+  507618:       0cc850: e920 4b00 5400                         |0049: invoke-virtual-quick {v4, v5}, [004b] // vtable #004b
+  507619: [new] 0cc850: 6e20 6e6d 5400                         |0049: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6d6e
+  507620:       0cc856: e920 4a00 7400                         |004c: invoke-virtual-quick {v4, v7}, [004a] // vtable #004a
+  507621: [new] 0cc856: 6e20 6d6d 7400                         |004c: invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@6d6d
+  507622:       0cc85c: e910 0700 0400                         |004f: invoke-virtual-quick {v4}, [0007] // vtable #0007
+  507623: [new] 0cc85c: 6e10 786d 0400                         |004f: invoke-virtual {v4}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6d78
+  507624:       0cc862: 0c04                                   |0052: move-result-object v4
+  507625:       0cc864: 7120 9439 4300                         |0053: invoke-static {v3, v4}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@3994
+  507626:       0cc86a: 1e01                                   |0056: monitor-exit v1
+  507627:       0cc86c: 1100                                   |0057: return-object v0
+  507628:       0cc86e: 0d02                                   |0058: move-exception v2
+  507629:       0cc870: 1e01                                   |0059: monitor-exit v1
+  507630:       0cc872: 2702                                   |005a: throw v2
+  507631:    virtual_method #19928: add (Ljava/util/UUID;Landroid/os/WorkSource;Ljava/lang/Object;Ljava/lang/Object;Lcom/android/bluetooth/gatt/GattService;)Lcom/android/bluetooth/gatt/ContextMap$App;
+  507632:     access=1040 (BRIDGE SYNTHETIC)
+  507633:     codeOff=cc880 (837760)
+  507634:     quickening_size=3 (3)
+  507635:       0cc884: 0793                                   |0000: move-object v3, v9
+  507636:       0cc886: 1f03 ed00                              |0001: check-cast v3, Landroid/bluetooth/IBluetoothGattCallback; // type@00ed
+  507637:       0cc88a: 07a4                                   |0003: move-object v4, v10
+  507638:       0cc88c: 1f04 ca0e                              |0004: check-cast v4, Ljava/lang/Void; // type@0eca
+  507639:       0cc890: 0760                                   |0006: move-object v0, v6
+  507640:       0cc892: 0771                                   |0007: move-object v1, v7
+  507641:       0cc894: 0782                                   |0008: move-object v2, v8
+  507642:       0cc896: 07b5                                   |0009: move-object v5, v11
+  507643:       0cc898: ea06 2000 0000                         |000a: invoke-virtual/range-quick {v0, v1, v2, v3, v4, v5}, [0020] // vtable #0020
+  507644: [new] 0cc898: 7406 d64d 0000                         |000a: invoke-virtual/range {v0, v1, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.add:(Ljava/util/UUID;Landroid/os/WorkSource;Landroid/bluetooth/IBluetoothGattCallback;Ljava/lang/Void;Lcom/android/bluetooth/gatt/GattService;)Lcom/android/bluetooth/gatt/ContextMap$App; // method@4dd6
+  507645:       0cc89e: 0c07                                   |000d: move-result-object v7
+  507646:       0cc8a0: 1107                                   |000e: return-object v7
+  507647:    virtual_method #19930: getFosApp (Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;
+  507648:     access=0000 ()
+  507649:     codeOff=cc8a2 (837794)
+  507650:     quickening_size=5 (5)
+  507651:       0cc8a6: e510 1800                              |0000: iget-object-quick v0, v1, [obj+0018]
+  507652: [new] 0cc8a6: 5410 614b                              |0000: iget-object v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+  507653:       0cc8aa: e920 0f00 2000                         |0002: invoke-virtual-quick {v0, v2}, [000f] // vtable #000f
+  507654: [new] 0cc8aa: 6e20 606f 2000                         |0002: invoke-virtual {v0, v2}, Ljava/util/WeakHashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@6f60
+  507655:       0cc8b0: 0c00                                   |0005: move-result-object v0
+  507656:       0cc8b2: 1f00 cf0b                              |0006: check-cast v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // type@0bcf
+  507657:       0cc8b6: 1100                                   |0008: return-object v0

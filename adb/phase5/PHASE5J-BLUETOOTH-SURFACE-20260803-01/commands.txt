@@ -1,0 +1,22 @@
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell id
+adb -s G001LT0511550CFT shell getprop
+adb -s G001LT0511550CFT shell getenforce
+adb -s G001LT0511550CFT shell service list
+adb -s G001LT0511550CFT shell ps -A -o USER,PID,PPID,NAME,ARGS
+adb -s G001LT0511550CFT shell pm list packages -f
+adb -s G001LT0511550CFT shell pm path com.android.bluetooth
+adb -s G001LT0511550CFT shell dumpsys bluetooth_manager
+adb -s G001LT0511550CFT shell dumpsys package com.android.bluetooth
+adb -s G001LT0511550CFT shell dumpsys activity services
+adb -s G001LT0511550CFT shell dumpsys meminfo com.android.bluetooth
+adb -s G001LT0511550CFT shell ls -la /dev | grep -i bluetooth
+adb -s G001LT0511550CFT shell ls -la /dev | grep -i hci
+adb -s G001LT0511550CFT shell ls -la /sys/class/bluetooth
+adb -s G001LT0511550CFT shell find /vendor/etc -maxdepth 3 -type f
+adb -s G001LT0511550CFT shell find /vendor/bin -maxdepth 2 -type f
+adb -s G001LT0511550CFT shell find /vendor/lib -maxdepth 3 -type f
+adb -s G001LT0511550CFT shell find /vendor/lib64 -maxdepth 3 -type f
+adb -s G001LT0511550CFT shell find /system/lib -maxdepth 3 -type f
+adb -s G001LT0511550CFT shell find /system/lib64 -maxdepth 3 -type f
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME

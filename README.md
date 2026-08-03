@@ -661,3 +661,39 @@ unknown Binder transaction was sent, and no new exploit or boot-chain action
 was performed. Any such follow-up requires a new exact risk report and
 authorization; the consumed `CMDQ-IOCTL-V3-COMPAT-T01` approval does not
 extend to IMS/ATCI.
+
+### Phase 5J — Bluetooth / MT8183 Android 9 applicability triage
+
+Phase 5J is a read-only review of the exact PS7330 Bluetooth surface. The
+device-side snapshot reported Bluetooth disabled, never enabled, zero crashes,
+and `Bluetooth Service not connected`; raw process, service, property, init,
+package, and HOME outputs are retained. The exact `com.android.bluetooth`
+APK, ARM64 ODEX/VDEX, system Bluetooth libraries, permission XML, and init
+configuration were pulled without crossing the shell visibility boundary.
+Vendor HAL and kernel-module pulls failed with permission denied and are kept
+as failed evidence.
+
+The exact VDEX contains Amazon-specific
+`AmazonBtPolicyManagerAdapter` and `FosGattService` classes. They add BTPM/LE
+policy and GATT callback paths protected by Bluetooth/admin/privileged checks;
+the focused slice contains no Fire Launcher, PackageManager, HOME, or shell-UID
+privilege transition. The Bluetooth manifest uses shared UID
+`android.uid.bluetooth`/UID 1002 and receives high privileges, but this is not
+an ADB shell route or root evidence. Public MediaTek MT8183/Android 9 CVE
+scope is recorded as external applicability only; exact PS7330 patch status
+and exploit reachability remain unknown.
+
+The host-only focused extractor is
+`tools/scripts/extract_phase5j_bluetooth_focus.py`; it supports `--dry-run`,
+refuses overwrite, and never executes device or binary code. Derived class and
+call-site slices are under
+`artifacts/phase5/phase5j-bluetooth-static-analysis-20260803/`. The report and
+new evidence index are:
+
+- `findings/phase-5j-bluetooth-mtk-android9-triage.md`
+- `findings/phase-5j-evidence-index.md`
+
+No Bluetooth enable/start/stop, HCI/AT command, private Binder call, vendor
+binary execution, exploit payload, alternate CMDQ ioctl, root, BROM/DA,
+remount, or boot-chain operation was performed. The one-shot CMDQ approval is
+consumed and does not authorize any of these follow-ups.

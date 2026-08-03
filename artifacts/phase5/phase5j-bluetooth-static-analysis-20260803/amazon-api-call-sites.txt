@@ -1,0 +1,773 @@
+12244:       00a33c: 7010 1c3f 0000                         |0000: invoke-direct {v0}, Lcom/amazon/fireos/BaseVendorCallback;.<init>:()V // method@3f1c
+12297:       00a2f8: 7110 bf09 0000                         |0002: invoke-static {v0}, Landroid/net/dhcp/VendorDhcpClientCallback;.findCallbacksHelper:(Ljava/lang/Class;)[Lcom/amazon/fireos/BaseVendorCallback; // method@09bf
+12323:       00a33c: 7010 1c3f 0000                         |0000: invoke-direct {v0}, Lcom/amazon/fireos/BaseVendorCallback;.<init>:()V // method@3f1c
+12358:       00a38e: 7110 c709 0000                         |0002: invoke-static {v0}, Landroid/net/dhcp/VendorDhcpPacketCallback;.findCallbacksHelper:(Ljava/lang/Class;)[Lcom/amazon/fireos/BaseVendorCallback; // method@09c7
+19844:       00a33c: 7010 1c3f 0000                         |0000: invoke-direct {v0}, Lcom/amazon/fireos/BaseVendorCallback;.<init>:()V // method@3f1c
+19865:       00fa38: 7110 7b0b 0000                         |0002: invoke-static {v0}, Landroid/net/ip/VendorIpManagerCallback;.findCallbacksHelper:(Ljava/lang/Class;)[Lcom/amazon/fireos/BaseVendorCallback; // method@0b7b
+154505: [new] 0a1abe: 5b20 8945                              |0010: iput-object v0, v2, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4589
+154557:       0a1b4c: 2200 b40a                              |0057: new-instance v0, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+154558:       0a1b50: 7020 1d3f 4000                         |0059: invoke-direct {v0, v4}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+154560: [new] 0a1b56: 5b20 8945                              |005c: iput-object v0, v2, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4589
+154753:       0a1bee: 1a01 1646                              |0016: const-string v1, "amazon.bluetooth.adapter.action.AUDIO_ACL_PRIORITY_CHANGED" // string@4616
+154758:       0a1c02: 1a01 1746                              |0020: const-string v1, "amazon.bluetooth.adapter.extra.AUDIO_ACL_PRIORITY" // string@4617
+154830: [new] 0a1cde: 5431 8845                              |005a: iget-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4588
+154833: [new] 0a1ce6: 5431 8845                              |005e: iget-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4588
+154835: [new] 0a1cea: 6e10 433f 0100                         |0060: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+154838: [new] 0a1cf2: 5b31 8845                              |0064: iput-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4588
+154843: [new] 0a1d00: 5431 8945                              |006b: iget-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4589
+154847: [new] 0a1d08: 6e20 213f 2100                         |006f: invoke-virtual {v1, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.a2dpSrcPlayingTime:(Landroid/bluetooth/BluetoothDevice;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f21
+154850: [new] 0a1d10: 5b31 8845                              |0073: iput-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4588
+154910: [new] 0a1dc6: 5431 8045                              |0056: iget-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4580
+154913: [new] 0a1dce: 5431 8045                              |005a: iget-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4580
+154915: [new] 0a1dd2: 6e10 433f 0100                         |005c: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+154918: [new] 0a1dda: 5b31 8045                              |0060: iput-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4580
+154924: [new] 0a1dea: 5431 8945                              |0068: iget-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4589
+154928: [new] 0a1df2: 6e20 203f 2100                         |006c: invoke-virtual {v1, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.a2dpSrcConnectedTime:(Landroid/bluetooth/BluetoothDevice;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f20
+154931: [new] 0a1dfa: 5b31 8045                              |0070: iput-object v1, v3, Lcom/android/bluetooth/a2dp/A2dpStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4580
+157330: [new] 0a4290: 5b20 cd45                              |0013: iput-object v0, v2, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@45cd
+157389:       0a433a: 7100 1b3f 0000                         |0068: invoke-static {}, Lcom/amazon/android/metrics/Mlog;.getLogger:()Lcom/amazon/android/metrics/MetricsFactory; // method@3f1b
+157392: [new] 0a4342: 5b20 c445                              |006c: iput-object v0, v2, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@45c4
+157393:       0a4346: 2200 b40a                              |006e: new-instance v0, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+157394:       0a434a: 7020 1d3f 3000                         |0070: invoke-direct {v0, v3}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+157396: [new] 0a4350: 5b20 cd45                              |0073: iput-object v0, v2, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@45cd
+157901: [new] 0a4506: 5495 c445                              |0058: iget-object v5, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@45c4
+157904:       0a4512: 7230 193f 6507                         |005e: invoke-interface {v5, v6, v7}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+157908:       0a4520: 7240 183f 6587                         |0065: invoke-interface {v5, v6, v7, v8}, Lcom/amazon/android/metrics/MetricEvent;.addTimer:(Ljava/lang/String;D)V // method@3f18
+157910: [new] 0a4526: 5496 c445                              |0068: iget-object v6, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@45c4
+157911:       0a452a: 7220 1a3f 5600                         |006a: invoke-interface {v6, v5}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+157915: [new] 0a4534: 5491 c745                              |006f: iget-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45c7
+157918: [new] 0a453c: 5491 c745                              |0073: iget-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45c7
+157920: [new] 0a4540: 6e10 433f 0100                         |0075: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+157923: [new] 0a4548: 5b91 c745                              |0079: iput-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45c7
+157932: [new] 0a4562: 5491 cd45                              |0086: iget-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@45cd
+157934: [new] 0a4566: 6e20 1f3f a100                         |0088: invoke-virtual {v1, v10}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.a2dpSnkPlayingTime:(Landroid/bluetooth/BluetoothDevice;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f1f
+157937: [new] 0a456e: 5b91 c745                              |008c: iput-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mPlayingTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45c7
+157958: [new] 0a45a0: 5495 c445                              |0014: iget-object v5, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@45c4
+157961:       0a45ac: 7230 193f 6507                         |001a: invoke-interface {v5, v6, v7}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+157965:       0a45ba: 7240 183f 6587                         |0021: invoke-interface {v5, v6, v7, v8}, Lcom/amazon/android/metrics/MetricEvent;.addTimer:(Ljava/lang/String;D)V // method@3f18
+157967: [new] 0a45c0: 5496 c445                              |0024: iget-object v6, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@45c4
+157968:       0a45c4: 7220 1a3f 5600                         |0026: invoke-interface {v6, v5}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+157972: [new] 0a45ce: 5491 bd45                              |002b: iget-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45bd
+157975: [new] 0a45d6: 5491 bd45                              |002f: iget-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45bd
+157977: [new] 0a45da: 6e10 433f 0100                         |0031: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+157980: [new] 0a45e2: 5b91 bd45                              |0035: iput-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45bd
+157990: [new] 0a45fe: 5491 cd45                              |0043: iget-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@45cd
+157992: [new] 0a4602: 6e20 1e3f a100                         |0045: invoke-virtual {v1, v10}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.a2dpSnkConnectedTime:(Landroid/bluetooth/BluetoothDevice;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f1e
+157995: [new] 0a460a: 5b91 bd45                              |0049: iput-object v1, v9, Lcom/android/bluetooth/a2dpsink/A2dpSinkStateMachine;.mConnectedTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@45bd
+160864:   class #1586: AmazonBtPolicyManagerAdapter ('Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;')
+160866:    source_file=AmazonBtPolicyManagerAdapter.java, class_data_off=21fede (2227934)
+160877:       0a64d2: 6900 1a46                              |0003: sput-object v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+160880:    direct_method #17940: btpmLeAclStateChangeNtfyNative (ILjava/lang/String;I)V
+160883:    direct_method #17941: btpmLeConnectNative (IILjava/lang/String;ZZ)V
+160886:    direct_method #17942: btpmLeConnectNtfyNative (ILjava/lang/String;)V
+160889:    direct_method #17943: btpmLeDisconnectNative (ILjava/lang/String;)V
+160892:    direct_method #17944: btpmLeDisconnectNtfyNative (ILjava/lang/String;)V
+160895:    direct_method #17945: btpmLeGetAvailableLinkCountNative ()I
+160898:    direct_method #17947: btpmLeRegisterAppNative (IJJ)V
+160901:    direct_method #17948: btpmLeScanNative (Z)V
+160904:    direct_method #17949: btpmLeSetAppClientIfNative (IJJ)V
+160907:    direct_method #17950: btpmLeSetReqPriorityNative (ILjava/lang/String;I)V
+160910:    direct_method #17951: btpmLeSetScanParametersNative (III)V
+160913:    direct_method #17952: btpmLeUnregisterAppByUuidNative (JJ)V
+160916:    direct_method #17953: btpmLeUnregisterAppNative (I)V
+160925:    direct_method #17961: getInstance ()Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;
+160929:       0a634c: 1c00 1f0b                              |0000: const-class v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // type@0b1f
+160931:       0a6352: 6201 1a46                              |0003: sget-object v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+160933:       0a635a: 2201 1f0b                              |0007: new-instance v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // type@0b1f
+160934:       0a635e: 7010 0f46 0100                         |0009: invoke-direct {v1}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.<init>:()V // method@460f
+160935:       0a6364: 6901 1a46                              |000c: sput-object v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+160936:       0a6368: 1a01 660a                              |000e: const-string v1, "BTPM_JAVA_NATIVE" // string@0a66
+160942:       0a6380: 6203 1a46                              |001a: sget-object v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+160949:       0a6398: 6201 1a46                              |0026: sget-object v1, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.sInstance:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@461a
+160977:       0a6420: 1a00 6d0a                              |001a: const-string v0, "BTPM_STATUS_DONE" // string@0a6d
+160979:       0a6426: 1a00 740a                              |001d: const-string v0, "BTPM_STATUS_REMOVE_FROM_DIRPENDL" // string@0a74
+160981:       0a642c: 1a00 730a                              |0020: const-string v0, "BTPM_STATUS_REMOVE_FROM_DIRL" // string@0a73
+160983:       0a6432: 1a00 750a                              |0023: const-string v0, "BTPM_STATUS_REMOVE_FROM_DIRWAITL" // string@0a75
+160985:       0a6438: 1a00 6c0a                              |0026: const-string v0, "BTPM_STATUS_DIRPENDL_TO_DIRL" // string@0a6c
+160987:       0a643e: 1a00 720a                              |0029: const-string v0, "BTPM_STATUS_REMOVE_FROM_BGWAITL" // string@0a72
+160989:       0a6444: 1a00 710a                              |002c: const-string v0, "BTPM_STATUS_REMOVE_FROM_BGL" // string@0a71
+160991:       0a644a: 1a00 700a                              |002f: const-string v0, "BTPM_STATUS_REMOVE_FROM_ACCEPTL" // string@0a70
+160993:       0a6450: 1a00 680a                              |0032: const-string v0, "BTPM_STATUS_ACCEPTL_TO_BGL" // string@0a68
+160995:       0a6456: 1a00 690a                              |0035: const-string v0, "BTPM_STATUS_ACCEPTL_TO_BGWAITL" // string@0a69
+160997:       0a645c: 1a00 6b0a                              |0038: const-string v0, "BTPM_STATUS_BGL_TO_WAITL" // string@0a6b
+160999:       0a6462: 1a00 6a0a                              |003b: const-string v0, "BTPM_STATUS_BGL_TO_ACCEPTL" // string@0a6a
+161001:       0a6468: 1a00 670a                              |003e: const-string v0, "BTPM_STATUS_ABORT" // string@0a67
+161003:       0a646e: 1a00 6f0a                              |0041: const-string v0, "BTPM_STATUS_PENDING" // string@0a6f
+161005:       0a6474: 1a00 6e0a                              |0044: const-string v0, "BTPM_STATUS_FAIL" // string@0a6e
+161007:       0a647a: 1a00 760a                              |0047: const-string v0, "BTPM_STATUS_SUCCESS" // string@0a76
+161010:    virtual_method #17936: btpmConnNtfyCallback (IILjava/lang/String;)V
+161014:       0a64dc: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161017:       0a64ea: 1a02 4c4b                              |0007: const-string v2, "btpmConnNtfyCallback() - clientIf=" // string@4b4c
+161037: [new] 0a6528: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161040: [new] 0a6530: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161042: [new] 0a6534: 6e40 f34d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmConnNotifyCallback:(IILjava/lang/String;)V // method@4df3
+161045:    virtual_method #17937: btpmConnReqCallback (IILjava/lang/String;)V
+161049:       0a6540: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161052:       0a654e: 1a02 4e4b                              |0007: const-string v2, "btpmConnReqCallback() - clientIf=" // string@4b4e
+161072: [new] 0a658c: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161075: [new] 0a6594: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161077: [new] 0a6598: 6e40 f44d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmConnReqCallback:(IILjava/lang/String;)V // method@4df4
+161080:    virtual_method #17938: btpmDisConnNtfyCallback (IILjava/lang/String;)V
+161084:       0a65a4: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161087:       0a65b2: 1a02 504b                              |0007: const-string v2, "btpmDisConnNtfyCallback() - clientIf=" // string@4b50
+161107: [new] 0a65f0: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161110: [new] 0a65f8: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161112: [new] 0a65fc: 6e40 f54d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmDisconnNotifyCallback:(IILjava/lang/String;)V // method@4df5
+161115:    virtual_method #17939: btpmDisConnReqCallback (IILjava/lang/String;)V
+161119:       0a6608: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161122:       0a6616: 1a02 524b                              |0007: const-string v2, "btpmDisConnReqCallback() - clientIf=" // string@4b52
+161142: [new] 0a6654: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161145: [new] 0a665c: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161147: [new] 0a6660: 6e40 f64d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmDisconnReqCallback:(IILjava/lang/String;)V // method@4df6
+161150:    virtual_method #17946: btpmLePreferredConnParamsCallback (ILjava/lang/String;ZIIII)V
+161155:       0a6672: 1a01 660a                              |0002: const-string v1, "BTPM_JAVA_NATIVE" // string@0a66
+161158:       0a6680: 1a03 5a4b                              |0009: const-string v3, "btpmLePreferredConnParamsCallback() - clientIf=" // string@4b5a
+161205: [new] 0a671a: 5401 1946                              |0056: iget-object v1, v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161208: [new] 0a6722: 5404 1946                              |005a: iget-object v4, v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161217: [new] 0a6736: 7408 f74d 0400                         |0064: invoke-virtual/range {v4, v5, v6, v7, v8, v9, v10, v11}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmPreferredConnParamsCallback:(ILjava/lang/String;ZIIII)V // method@4df7
+161220:    virtual_method #17954: btpmLeUpdateScanParamsCallback (III)V
+161224:       0a6742: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161227:       0a6750: 1a02 634b                              |0007: const-string v2, "btpmLeUpdateScanParamsCallback() - clientIf=" // string@4b63
+161247: [new] 0a678e: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161250: [new] 0a6796: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161252: [new] 0a679a: 6e40 fb4d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmUpdateScanParamsCallback:(III)V // method@4dfb
+161255:    virtual_method #17955: btpmRegisterAppCallback (III)V
+161259:       0a67a6: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161262:       0a67b4: 1a02 654b                              |0007: const-string v2, "btpmRegsterAppCallback() - status=" // string@4b65
+161282: [new] 0a67f2: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161285: [new] 0a67fa: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161287: [new] 0a67fe: 6e40 f84d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmRegisterAppCallback:(III)V // method@4df8
+161290:    virtual_method #17956: btpmSetConnScanParamsCallback (III)V
+161294:       0a680a: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161297:       0a6818: 1a02 674b                              |0007: const-string v2, "btpmSetConnScanParamsCallback() - clientIf=" // string@4b67
+161317: [new] 0a6856: 5430 1946                              |0026: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161320: [new] 0a685e: 5430 1946                              |002a: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161322: [new] 0a6862: 6e40 f94d 4065                         |002c: invoke-virtual {v0, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmSetConnScanParamsCallback:(III)V // method@4df9
+161325:    virtual_method #17957: btpmSetReqPriorityCallback (IILjava/lang/String;I)V
+161329:       0a686e: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161332:       0a687c: 1a02 694b                              |0007: const-string v2, "btpmSetReqPriorityCallback() - clientIf=" // string@4b69
+161357: [new] 0a68ca: 5430 1946                              |002e: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161360: [new] 0a68d2: 5430 1946                              |0032: iget-object v0, v3, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161362: [new] 0a68d6: 6e57 fa4d 4065                         |0034: invoke-virtual {v0, v4, v5, v6, v7}, Lcom/android/bluetooth/gatt/FosGattService;.onBtpmSetReqPriorityCallback:(IILjava/lang/String;I)V // method@4dfa
+161369:       0a68e2: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161378:       0a68f6: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161387:       0a690a: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161415:       0a695c: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161443:       0a69ae: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161466:       0a69f0: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161489:       0a6a32: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161513:       0a63ba: 1a01 660a                              |0001: const-string v1, "BTPM_JAVA_NATIVE" // string@0a66
+161530:       0a6a74: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161548:       0a6aa6: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161576:       0a6af8: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161604:       0a6b4a: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161627:       0a6b8c: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161641:    virtual_method #17975: setGattService (Lcom/android/bluetooth/gatt/FosGattService;)V
+161646: [new] 0a6bbe: 5b01 1946                              |0000: iput-object v1, v0, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.mGattService:Lcom/android/bluetooth/gatt/FosGattService; // field@4619
+161653:       0a6bc8: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+161671:       0a6bfa: 1a00 660a                              |0000: const-string v0, "BTPM_JAVA_NATIVE" // string@0a66
+185440:       0bc4ec: 7100 1b3f 0000                         |001d: invoke-static {}, Lcom/amazon/android/metrics/Mlog;.getLogger:()Lcom/amazon/android/metrics/MetricsFactory; // method@3f1b
+185443: [new] 0bc4f4: 5b50 ad49                              |0021: iput-object v0, v5, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+185451: [new] 0bc506: 5b50 c749                              |002a: iput-object v0, v5, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+185470:       0bc544: 2200 b40a                              |0049: new-instance v0, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+185471:       0bc548: 7020 1d3f 6000                         |004b: invoke-direct {v0, v6}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+185473: [new] 0bc54e: 5b50 c749                              |004e: iput-object v0, v5, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+186754: [new] 0bcbc4: 5495 ad49                              |0031: iget-object v5, v9, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+186757:       0bcbd0: 7230 193f 6507                         |0037: invoke-interface {v5, v6, v7}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+186761:       0bcbde: 7240 183f 6587                         |003e: invoke-interface {v5, v6, v7, v8}, Lcom/amazon/android/metrics/MetricEvent;.addTimer:(Ljava/lang/String;D)V // method@3f18
+186763: [new] 0bcbe4: 5496 ad49                              |0041: iget-object v6, v9, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+186764:       0bcbe8: 7220 1a3f 5600                         |0043: invoke-interface {v6, v5}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+186768: [new] 0bcbf2: 5491 a349                              |0048: iget-object v1, v9, Lcom/android/bluetooth/btservice/AdapterProperties;.mDiscoveryTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@49a3
+186771: [new] 0bcbfa: 5491 a349                              |004c: iget-object v1, v9, Lcom/android/bluetooth/btservice/AdapterProperties;.mDiscoveryTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@49a3
+186773: [new] 0bcbfe: 6e10 433f 0100                         |004e: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+186776: [new] 0bcc06: 5b91 a349                              |0052: iput-object v1, v9, Lcom/android/bluetooth/btservice/AdapterProperties;.mDiscoveryTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@49a3
+186803: [new] 0bcc54: 5491 c749                              |0079: iget-object v1, v9, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+186805: [new] 0bcc58: 6e10 2d3f 0100                         |007b: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.discoveryTimer:()Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f2d
+186808: [new] 0bcc60: 5b91 a349                              |007f: iput-object v1, v9, Lcom/android/bluetooth/btservice/AdapterProperties;.mDiscoveryTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@49a3
+187785: [new] 0bd13e: 5440 ad49                              |0000: iget-object v0, v4, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+187788:       0bd14a: 7230 193f 1002                         |0006: invoke-interface {v0, v1, v2}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+187792:       0bd15a: 7240 173f 1032                         |000e: invoke-interface {v0, v1, v2, v3}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+187794: [new] 0bd160: 5441 ad49                              |0011: iget-object v1, v4, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+187795:       0bd164: 7220 1a3f 0100                         |0013: invoke-interface {v1, v0}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+187797: [new] 0bd16a: 5441 c749                              |0016: iget-object v1, v4, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+187799: [new] 0bd16e: 6e10 2f3f 0100                         |0018: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.heartbeat:()V // method@3f2f
+187819: [new] 0bd19c: 5482 ad49                              |0011: iget-object v2, v8, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+187822:       0bd1a8: 7230 193f 3204                         |0017: invoke-interface {v2, v3, v4}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+187892:       0bd2ac: 7240 173f 5276                         |0099: invoke-interface {v2, v5, v6, v7}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+187894: [new] 0bd2b2: 5485 ad49                              |009c: iget-object v5, v8, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+187895:       0bd2b6: 7220 1a3f 2500                         |009e: invoke-interface {v5, v2}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+187897: [new] 0bd2bc: 5485 c749                              |00a1: iget-object v5, v8, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+187901: [new] 0bd2ca: 6e20 423f 6500                         |00a8: invoke-virtual {v5, v6}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.usedProfileList:(Ljava/util/List;)V // method@3f42
+187949:       0bd366: 7110 473f 0a00                         |0047: invoke-static {v10}, Lcom/amazon/wirelessmetrics/WirelessMetricsUtils;.isAmazonRemoteControl:(Landroid/bluetooth/BluetoothDevice;)Z // method@3f47
+188143: [new] 0bd622: 5404 ad49                              |01a5: iget-object v4, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188146:       0bd62e: 7230 193f 940a                         |01ab: invoke-interface {v4, v9, v10}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+188169:       0bd67e: 7240 173f 94ba                         |01d3: invoke-interface {v4, v9, v10, v11}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188171: [new] 0bd684: 540a ad49                              |01d6: iget-object v10, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188172:       0bd688: 7220 1a3f 4a00                         |01d8: invoke-interface {v10, v4}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188174: [new] 0bd68e: 540a c749                              |01db: iget-object v10, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188176: [new] 0bd692: 6e30 373f 6a07                         |01dd: invoke-virtual {v10, v6, v7}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairedCodCount:(II)V // method@3f37
+188181:       0bd6a4: 7240 173f 94ba                         |01e6: invoke-interface {v4, v9, v10, v11}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188183: [new] 0bd6aa: 5409 ad49                              |01e9: iget-object v9, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188184:       0bd6ae: 7220 1a3f 4900                         |01eb: invoke-interface {v9, v4}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188186: [new] 0bd6b4: 5409 c749                              |01ee: iget-object v9, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188190: [new] 0bd6c2: 6e20 383f a900                         |01f5: invoke-virtual {v9, v10}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairedList:(Ljava/util/List;)V // method@3f38
+188214:       0bd71a: 7240 173f 94ba                         |0221: invoke-interface {v4, v9, v10, v11}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188216: [new] 0bd720: 5409 ad49                              |0224: iget-object v9, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188217:       0bd724: 7220 1a3f 4900                         |0226: invoke-interface {v9, v4}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188219: [new] 0bd72a: 5409 c749                              |0229: iget-object v9, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188221: [new] 0bd72e: 6e20 303f 2900                         |022b: invoke-virtual {v9, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.numberPaired:(I)V // method@3f30
+188224: [new] 0bd738: 5409 c749                              |0230: iget-object v9, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188226: [new] 0bd73c: 6e20 313f 8900                         |0232: invoke-virtual {v9, v8}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.numberPairedLE:(I)V // method@3f31
+188238: [new] 0bd75c: 5404 ad49                              |0242: iget-object v4, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188241:       0bd768: 7230 193f 5406                         |0248: invoke-interface {v4, v5, v6}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+188259:       0bd7b0: 7240 173f 84a9                         |026c: invoke-interface {v4, v8, v9, v10}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188261: [new] 0bd7b6: 540b ad49                              |026f: iget-object v11, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188262:       0bd7ba: 7220 1a3f 4b00                         |0271: invoke-interface {v11, v4}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188264: [new] 0bd7c0: 540b c749                              |0274: iget-object v11, v0, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188266: [new] 0bd7c4: 6e20 393f 8b00                         |0276: invoke-virtual {v11, v8}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.profilePerUser:(Ljava/lang/String;)V // method@3f39
+188614: [new] 0bdc02: 541a ad49                              |00eb: iget-object v10, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188617:       0bdc0e: 7230 193f ba0c                         |00f1: invoke-interface {v10, v11, v12}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+188619:       0bdc16: 7240 173f 0a87                         |00f5: invoke-interface {v10, v0, v7, v8}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188621: [new] 0bdc1c: 541b ad49                              |00f8: iget-object v11, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188622:       0bdc20: 7220 1a3f ab00                         |00fa: invoke-interface {v11, v10}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188631: [new] 0bdc40: 541b c749                              |010a: iget-object v11, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188633: [new] 0bdc44: 6e30 253f 2b00                         |010c: invoke-virtual {v11, v2, v0}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectAttempt:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V // method@3f25
+188637: [new] 0bdc54: 541b c749                              |0114: iget-object v11, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188639: [new] 0bdc58: 6e30 283f 2b00                         |0116: invoke-virtual {v11, v2, v0}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectTime:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f28
+188642: [new] 0bdc60: 5b1b 9e49                              |011a: iput-object v11, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188652: [new] 0bdc7c: 541d ad49                              |0128: iget-object v13, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188655:       0bdc88: 7230 193f ed0f                         |012e: invoke-interface {v13, v14, v15}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+188657:       0bdc90: 7240 173f 0d87                         |0132: invoke-interface {v13, v0, v7, v8}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188659: [new] 0bdc96: 541e ad49                              |0135: iget-object v14, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188660:       0bdc9a: 7220 1a3f de00                         |0137: invoke-interface {v14, v13}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188667: [new] 0bdcb8: 541e c749                              |0146: iget-object v14, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188669: [new] 0bdcbc: 6e30 253f 2e00                         |0148: invoke-virtual {v14, v2, v0}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectAttempt:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V // method@3f25
+188677: [new] 0bdcd2: 541f c749                              |0153: iget-object v15, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188679: [new] 0bdcd6: 6e40 273f 2fe0                         |0155: invoke-virtual {v15, v2, v0, v14}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectSuccess:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;I)V // method@3f27
+188681: [new] 0bdcdc: 541f c749                              |0158: iget-object v15, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188683: [new] 0bdce0: 6e30 3a3f 2f00                         |015a: invoke-virtual {v15, v2, v0}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.profileUsed:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V // method@3f3a
+188703: [new] 0bdd1c: 541c c749                              |0178: iget-object v12, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188708: [new] 0bdd28: 6e30 2a3f 2c07                         |017e: invoke-virtual {v12, v2, v7}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.deviceConnected:(Landroid/bluetooth/BluetoothDevice;I)V // method@3f2a
+188736: [new] 0bdd7e: 541b ad49                              |01a9: iget-object v11, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188739:       0bdd8a: 7230 193f cb0f                         |01af: invoke-interface {v11, v12, v15}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+188742:       0bdd94: 7240 183f 0ba9                         |01b4: invoke-interface {v11, v0, v9, v10}, Lcom/amazon/android/metrics/MetricEvent;.addTimer:(Ljava/lang/String;D)V // method@3f18
+188744: [new] 0bdd9a: 5419 ad49                              |01b7: iget-object v9, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188745:       0bdd9e: 7220 1a3f b900                         |01b9: invoke-interface {v9, v11}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188747: [new] 0bdda4: 5419 9e49                              |01bc: iget-object v9, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188750: [new] 0bddac: 5419 9e49                              |01c0: iget-object v9, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188752: [new] 0bddb0: 6e10 433f 0900                         |01c2: invoke-virtual {v9}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+188755: [new] 0bddb8: 5b19 9e49                              |01c6: iput-object v9, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188768: [new] 0bdde4: 5417 c749                              |01dc: iget-object v7, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188779: [new] 0bddfe: 6e59 293f 078a                         |01e9: invoke-virtual {v7, v0, v10, v8, v9}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectTopology:(Ljava/lang/String;ZILjava/util/List;)V // method@3f29
+188787: [new] 0bde1c: 5417 ad49                              |01f8: iget-object v7, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188790:       0bde28: 7230 193f 8709                         |01fe: invoke-interface {v7, v8, v9}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+188793:       0bde34: 7240 173f 0798                         |0204: invoke-interface {v7, v0, v8, v9}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188795: [new] 0bde3a: 5418 ad49                              |0207: iget-object v8, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188796:       0bde3e: 7220 1a3f 7800                         |0209: invoke-interface {v8, v7}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188799: [new] 0bde48: 541a 9e49                              |020e: iget-object v10, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188802: [new] 0bde50: 541a 9e49                              |0212: iget-object v10, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188804: [new] 0bde54: 6e10 463f 0a00                         |0214: invoke-virtual {v10}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.stopTimer:()V // method@3f46
+188806: [new] 0bde5a: 541a 9e49                              |0217: iget-object v10, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188808: [new] 0bde5e: 6e10 443f 0a00                         |0219: invoke-virtual {v10}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.getDuration:()J // method@3f44
+188812: [new] 0bde68: 5b1a 9e49                              |021e: iput-object v10, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mConnectTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@499e
+188814: [new] 0bde6c: 541a c749                              |0220: iget-object v10, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188816: [new] 0bde70: 6e59 263f 2a80                         |0222: invoke-virtual {v10, v2, v0, v8, v9}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectFailure:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;J)V // method@3f26
+188818: [new] 0bde76: 541a c749                              |0225: iget-object v10, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188829: [new] 0bde90: 6e5c 293f 0abd                         |0232: invoke-virtual {v10, v0, v13, v11, v12}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectTopology:(Ljava/lang/String;ZILjava/util/List;)V // method@3f29
+188836: [new] 0bdea6: 5417 ad49                              |023d: iget-object v7, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188839:       0bdeb2: 7230 193f 8709                         |0243: invoke-interface {v7, v8, v9}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+188842:       0bdebe: 7240 173f 0798                         |0249: invoke-interface {v7, v0, v8, v9}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+188844: [new] 0bdec4: 5418 ad49                              |024c: iget-object v8, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@49ad
+188845:       0bdec8: 7220 1a3f 7800                         |024e: invoke-interface {v8, v7}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+188849: [new] 0bded8: 5418 c749                              |0256: iget-object v8, v1, Lcom/android/bluetooth/btservice/AdapterProperties;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@49c7
+188851: [new] 0bdedc: 6e30 2c3f 2800                         |0258: invoke-virtual {v8, v2, v0}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.disconnect:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V // method@3f2c
+189315:       0be690: 1a01 1e46                              |0008: const-string v1, "amazon.intent.action.ENTERING_STR_MODE" // string@461e
+189370:       0be736: 1a01 1f46                              |005b: const-string v1, "amazon.intent.action.POWER_ON_EVENT" // string@461f
+190797:       0bec00: 7010 0100 0000                         |0000: invoke-direct {v0}, Lamazon/bluetooth/IAmazonBluetooth$Stub;.<init>:()V // method@0001
+191211:       0bfb84: 7100 0000 0000                         |0000: invoke-static {}, Lamazon/bluetooth/AmazonBluetoothGatt;.getGattServiceName:()Ljava/lang/String; // method@0000
+191622:       0bfab8: 1a05 1a46                              |0074: const-string v5, "amazon.bluetooth.device.action.TXPOWER_UPDATE" // string@461a
+191657:       0bfb24: 1a03 1946                              |00aa: const-string v3, "amazon.bluetooth.device.action.RSSI_UPDATE" // string@4619
+191745: [new] 0c18ec: 5b31 244a                              |003d: iput-object v1, v3, Lcom/android/bluetooth/btservice/AdapterService;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a24
+192584:       0c2364: 1a01 1846                              |001e: const-string v1, "amazon.bluetooth.device.action.IRK_PAIR_UPDATE" // string@4618
+192980:       0c2938: 7100 0000 0000                         |0000: invoke-static {}, Lamazon/bluetooth/AmazonBluetoothGatt;.getGattServiceName:()Ljava/lang/String; // method@0000
+193014:       0c29aa: 7100 0000 0000                         |0008: invoke-static {}, Lamazon/bluetooth/AmazonBluetoothGatt;.getGattServiceName:()Ljava/lang/String; // method@0000
+194819:    virtual_method #19349: isAmazonHfRemote (Landroid/bluetooth/BluetoothDevice;)Z
+194837:       0c0634: 1a04 1967                              |0017: const-string v4, "isAmazonHfRemote devicePid: " // string@6719
+195139:       0c24e0: 2200 b40a                              |0090: new-instance v0, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+195140:       0c24e4: 7020 1d3f 9000                         |0092: invoke-direct {v0, v9}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+195142: [new] 0c24ea: 5b90 244a                              |0095: iput-object v0, v9, Lcom/android/bluetooth/btservice/AdapterService;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a24
+195155: [new] 0c251a: 5491 244a                              |00ad: iget-object v1, v9, Lcom/android/bluetooth/btservice/AdapterService;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a24
+195157: [new] 0c251e: 6e10 223f 0100                         |00af: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.btEnabled:()V // method@3f22
+195982:       0c2a44: 7100 0000 0000                         |0005: invoke-static {}, Lamazon/bluetooth/AmazonBluetoothGatt;.getGattServiceName:()Ljava/lang/String; // method@0000
+196057:       0c2b5a: 7100 0000 0000                         |0005: invoke-static {}, Lamazon/bluetooth/AmazonBluetoothGatt;.getGattServiceName:()Ljava/lang/String; // method@0000
+196776:       0c3a74: 7110 524c 0300                         |00ac: invoke-static {v3}, Lcom/android/bluetooth/btservice/BondStateMachine;.access$1300:(Lcom/android/bluetooth/btservice/BondStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@4c52
+196781:       0c3a84: 7110 524c 0300                         |00b4: invoke-static {v3}, Lcom/android/bluetooth/btservice/BondStateMachine;.access$1300:(Lcom/android/bluetooth/btservice/BondStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@4c52
+196784: [new] 0c3a8c: 6e10 453f 0300                         |00b8: invoke-virtual {v3}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.resumeTimer:()V // method@3f45
+197213: [new] 0c4974: 5b20 934a                              |0006: iput-object v0, v2, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+197215: [new] 0c4978: 5b20 8b4a                              |0008: iput-object v0, v2, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+197253:       0c49e2: 7100 1b3f 0000                         |003d: invoke-static {}, Lcom/amazon/android/metrics/Mlog;.getLogger:()Lcom/amazon/android/metrics/MetricsFactory; // method@3f1b
+197256: [new] 0c49ea: 5b20 8c4a                              |0041: iput-object v0, v2, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+197260:       0c49f6: 2200 b40a                              |0047: new-instance v0, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+197261:       0c49fa: 7020 1d3f 3000                         |0049: invoke-direct {v0, v3}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+197263: [new] 0c4a00: 5b20 934a                              |004c: iput-object v0, v2, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+197303:    direct_method #19538: access$1300 (Lcom/android/bluetooth/btservice/BondStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;
+197308: [new] 0c4356: 5410 8b4a                              |0000: iget-object v0, v1, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+197878: [new] 0c4286: 5451 934a                              |004b: iget-object v1, v5, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+197880: [new] 0c428a: 6e20 3f3f 6100                         |004d: invoke-virtual {v1, v6}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.unpairAttempt:(Landroid/bluetooth/BluetoothDevice;)V // method@3f3f
+197936: [new] 0c4344: 5451 934a                              |00aa: iget-object v1, v5, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+197938: [new] 0c4348: 6e20 403f 6100                         |00ac: invoke-virtual {v1, v6}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.unpairFailure:(Landroid/bluetooth/BluetoothDevice;)V // method@3f40
+197977: [new] 0c4d2a: 5431 8b4a                              |0031: iget-object v1, v3, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+197980: [new] 0c4d32: 5431 8b4a                              |0035: iget-object v1, v3, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+197982: [new] 0c4d36: 6e10 463f 0100                         |0037: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.stopTimer:()V // method@3f46
+198298:       0c4e88: 1a0b 1d46                              |00a2: const-string v11, "amazon.bluetooth.input.profile.action.HID_REACH_LIMIT" // string@461d
+198407: [new] 0c5008: 5407 934a                              |0162: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+198409: [new] 0c500c: 6e30 323f 170d                         |0164: invoke-virtual {v7, v1, v13}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairAttempt:(Landroid/bluetooth/BluetoothDevice;I)V // method@3f32
+198411: [new] 0c5012: 5407 934a                              |0167: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+198413: [new] 0c5016: 6e20 363f 1700                         |0169: invoke-virtual {v7, v1}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairTimer:(Landroid/bluetooth/BluetoothDevice;)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f36
+198416: [new] 0c501e: 5b07 8b4a                              |016d: iput-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+198434: [new] 0c505a: 5407 8c4a                              |018b: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198437:       0c5066: 7230 193f 8709                         |0191: invoke-interface {v7, v8, v9}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+198439:       0c506e: 7240 173f b7fe                         |0195: invoke-interface {v7, v11, v14, v15}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+198441: [new] 0c5074: 5408 8c4a                              |0198: iget-object v8, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198442:       0c5078: 7220 1a3f 7800                         |019a: invoke-interface {v8, v7}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+198494: [new] 0c5138: 5409 934a                              |01fa: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+198496: [new] 0c513c: 6e40 353f 198d                         |01fc: invoke-virtual {v9, v1, v13, v8}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairSuccess:(Landroid/bluetooth/BluetoothDevice;IZ)V // method@3f35
+198498: [new] 0c5142: 5409 8b4a                              |01ff: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+198501: [new] 0c514a: 5409 8b4a                              |0203: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+198503: [new] 0c514e: 6e10 433f 0900                         |0205: invoke-virtual {v9}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+198505: [new] 0c5154: 5b07 8b4a                              |0208: iput-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+198507: [new] 0c5158: 5407 8c4a                              |020a: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198510:       0c5164: 7230 193f 970c                         |0210: invoke-interface {v7, v9, v12}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+198513:       0c5170: 7240 173f b7fe                         |0216: invoke-interface {v7, v11, v14, v15}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+198515: [new] 0c5176: 5409 8c4a                              |0219: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198516:       0c517a: 7220 1a3f 7900                         |021b: invoke-interface {v9, v7}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+198525: [new] 0c5196: 5407 8c4a                              |0229: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198528:       0c51a2: 7230 193f 8709                         |022f: invoke-interface {v7, v8, v9}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+198531:       0c51ac: 7240 183f b798                         |0234: invoke-interface {v7, v11, v8, v9}, Lcom/amazon/android/metrics/MetricEvent;.addTimer:(Ljava/lang/String;D)V // method@3f18
+198533: [new] 0c51b2: 5408 8c4a                              |0237: iget-object v8, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198534:       0c51b6: 7220 1a3f 7800                         |0239: invoke-interface {v8, v7}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+198602: [new] 0c52aa: 5409 934a                              |02b3: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+198605: [new] 0c52b2: 6e40 343f 19dc                         |02b7: invoke-virtual {v9, v1, v12, v13}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairFailure:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;I)V // method@3f34
+198610: [new] 0c52c2: 5409 934a                              |02bf: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+198612: [new] 0c52c6: 6e40 333f 19d3                         |02c1: invoke-virtual {v9, v1, v3, v13}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairFailure:(Landroid/bluetooth/BluetoothDevice;II)V // method@3f33
+198615: [new] 0c52ce: 5409 934a                              |02c5: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+198617: [new] 0c52d2: 6e40 343f 19d8                         |02c7: invoke-virtual {v9, v1, v8, v13}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.pairFailure:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;I)V // method@3f34
+198619: [new] 0c52d8: 5b07 8b4a                              |02ca: iput-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mBondSuccessTimer:Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // field@4a8b
+198624: [new] 0c52e2: 5407 8c4a                              |02cf: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198627:       0c52ee: 7230 193f 970c                         |02d5: invoke-interface {v7, v9, v12}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+198630:       0c52fa: 7240 173f 87fe                         |02db: invoke-interface {v7, v8, v14, v15}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+198632: [new] 0c5300: 5409 8c4a                              |02de: iget-object v9, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198633:       0c5304: 7220 1a3f 7900                         |02e0: invoke-interface {v9, v7}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+198669: [new] 0c5388: 5407 934a                              |0322: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4a93
+198671: [new] 0c538c: 6e20 413f 1700                         |0324: invoke-virtual {v7, v1}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.unpairSuccess:(Landroid/bluetooth/BluetoothDevice;)V // method@3f41
+198673: [new] 0c5392: 5407 8c4a                              |0327: iget-object v7, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198676:       0c539e: 7230 193f 8709                         |032d: invoke-interface {v7, v8, v9}, Lcom/amazon/android/metrics/MetricsFactory;.createMetricEvent:(Ljava/lang/String;Ljava/lang/String;)Lcom/amazon/android/metrics/MetricEvent; // method@3f19
+198679:       0c53aa: 7240 173f b798                         |0333: invoke-interface {v7, v11, v8, v9}, Lcom/amazon/android/metrics/MetricEvent;.addCounter:(Ljava/lang/String;D)V // method@3f17
+198681: [new] 0c53b0: 5408 8c4a                              |0336: iget-object v8, v0, Lcom/android/bluetooth/btservice/BondStateMachine;.mMetricsFactory:Lcom/amazon/android/metrics/MetricsFactory; // field@4a8c
+198682:       0c53b4: 7220 1a3f 7800                         |0338: invoke-interface {v8, v7}, Lcom/amazon/android/metrics/MetricsFactory;.record:(Lcom/amazon/android/metrics/MetricEvent;)V // method@3f1a
+199167:       0c5a44: 7100 0000 0000                         |0014: invoke-static {}, Lamazon/bluetooth/AmazonBluetoothGatt;.getGattServiceName:()Ljava/lang/String; // method@0000
+199330:       0c5c00: 7100 2946 0000                         |0003: invoke-static {}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.getInstance:()Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // method@4629
+199336: [new] 0c5c12: 6e40 2c46 3051                         |000c: invoke-virtual {v0, v3, v1, v5}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.leAclStateChangeNtfy:(ILjava/lang/String;I)V // method@462c
+201911:       0c770a: 1a01 1b46                              |001d: const-string v1, "amazon.bluetooth.input.profile.action.BATTERY_LEVEL_UPDATE" // string@461b
+202680:       0c7ec4: 1f00 b50a                              |0006: check-cast v0, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // type@0ab5
+202684:       0c7ed0: 7110 1d4d 0100                         |000c: invoke-static {v1}, Lcom/android/bluetooth/btservice/RemoteDevices;.access$300:(Lcom/android/bluetooth/btservice/RemoteDevices;)Lcom/amazon/wirelessmetrics/WirelessMetrics; // method@4d1d
+202691: [new] 0c7ee0: 6e40 2b3f 2135                         |0014: invoke-virtual {v1, v2, v5, v3}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.deviceConnectedTime:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;I)Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // method@3f2b
+202746:       0c7f8a: 1f01 b50a                              |001c: check-cast v1, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // type@0ab5
+202748: [new] 0c7f8e: 6e10 433f 0100                         |001e: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+202750: [new] 0c7f94: 6e10 443f 0100                         |0021: invoke-virtual {v1}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.getDuration:()J // method@3f44
+202780:       0c7fe6: 1f00 b50a                              |0006: check-cast v0, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer; // type@0ab5
+202783: [new] 0c7fee: 6e10 433f 0000                         |000a: invoke-virtual {v0}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.done:()V // method@3f43
+202785: [new] 0c7ff4: 6e10 443f 0000                         |000d: invoke-virtual {v0}, Lcom/amazon/wirelessmetrics/WirelessMetricsTimer;.getDuration:()J // method@3f44
+202879: [new] 0c853c: 5b20 e44a                              |000b: iput-object v0, v2, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+202906:       0c859c: 2200 b40a                              |003b: new-instance v0, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+202907:       0c85a0: 7020 1d3f 3000                         |003d: invoke-direct {v0, v3}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+202909: [new] 0c85a6: 5b20 e44a                              |0040: iput-object v0, v2, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+202921:    direct_method #19741: access$300 (Lcom/android/bluetooth/btservice/RemoteDevices;)Lcom/amazon/wirelessmetrics/WirelessMetrics;
+202926: [new] 0c813c: 5410 e44a                              |0000: iget-object v0, v1, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+203217: [new] 0c90b4: 54a7 e44a                              |0020: iget-object v7, v10, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+203219: [new] 0c90b8: 6e53 2e3f b761                         |0022: invoke-virtual {v7, v11, v1, v6, v3}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.hciErrorCode:(Landroid/bluetooth/BluetoothDevice;III)V // method@3f2e
+203227: [new] 0c90d4: 54a0 e44a                              |0030: iget-object v0, v10, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+203230: [new] 0c90dc: 6e30 253f b007                         |0034: invoke-virtual {v0, v11, v7}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectAttempt:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V // method@3f25
+203232: [new] 0c90e2: 54a0 e44a                              |0037: iget-object v0, v10, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+203236: [new] 0c90ec: 6e59 263f b087                         |003c: invoke-virtual {v0, v11, v7, v8, v9}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.connectFailure:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;J)V // method@3f26
+203429: [new] 0c8706: 54a5 e44a                              |0098: iget-object v5, v10, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+203431: [new] 0c870a: 6e30 3b3f 0504                         |009a: invoke-virtual {v5, v0, v4}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.rssiAtConnect:(Landroid/bluetooth/BluetoothDevice;I)V // method@3f3b
+203510: [new] 0c8818: 54a6 e44a                              |0121: iget-object v6, v10, Lcom/android/bluetooth/btservice/RemoteDevices;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4ae4
+203512: [new] 0c881c: 6e58 2e3f 0645                         |0123: invoke-virtual {v6, v0, v5, v4, v8}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.hciErrorCode:(Landroid/bluetooth/BluetoothDevice;III)V // method@3f2e
+204263:       0c9190: 1a01 1b46                              |001e: const-string v1, "amazon.bluetooth.input.profile.action.BATTERY_LEVEL_UPDATE" // string@461b
+204343:       0c9264: 1a01 1346                              |0012: const-string v1, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL" // string@4613
+204353:       0c9284: 1a01 1346                              |0022: const-string v1, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL" // string@4613
+208979:   class #1724: FosGattService.1 ('Lcom/android/bluetooth/gatt/FosGattService$1;')
+208981:    source_file=FosGattService.java, class_data_off=0 (0)
+208982:   class #1725: FosGattService.AmazonClientMap.FosApp ('Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;')
+208984:    source_file=FosGattService.java, class_data_off=222fc6 (2240454)
+208986:    direct_method #19904: <init> (Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;II)V
+208991: [new] 0cc724: 5b01 604b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.this$1:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b60
+208994: [new] 0cc72e: 5903 5e4b                              |0005: iput v3, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mRequestPriority:I // field@4b5e
+208996: [new] 0cc732: 5902 554b                              |0007: iput v2, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mApplicationType:I // field@4b55
+208998:    direct_method #19905: access$200 (Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;)I
+209003: [new] 0cc6e8: 5210 554b                              |0000: iget v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mApplicationType:I // field@4b55
+209005:    virtual_method #19906: getAmazonGattCallback ()Lamazon/bluetooth/IAmazonBluetoothGattCallback;
+209010: [new] 0cc6b6: 5410 594b                              |0000: iget-object v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIAmazonGattCallback:Lamazon/bluetooth/IAmazonBluetoothGattCallback; // field@4b59
+209017: [new] 0cc6c0: 5510 564b                              |0000: iget-boolean v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mCalledOnDisconnected:Z // field@4b56
+209024: [new] 0cc6f2: 5210 574b                              |0000: iget v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mConnId:I // field@4b57
+209031: [new] 0cc6fc: 5210 584b                              |0000: iget v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mDisconnectedStatus:I // field@4b58
+209038: [new] 0cc6ca: 5510 5a4b                              |0000: iget-boolean v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIsDirect:Z // field@4b5a
+209045: [new] 0cc6d4: 5510 5b4b                              |0000: iget-boolean v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIsPolicyMgrInitiatedDisconnect:Z // field@4b5b
+209052: [new] 0cc6de: 5510 5c4b                              |0000: iget-boolean v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mOpportunistic:Z // field@4b5c
+209059: [new] 0cc706: 5210 5d4b                              |0000: iget v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mPhy:I // field@4b5d
+209066: [new] 0cc710: 5210 5e4b                              |0000: iget v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mRequestPriority:I // field@4b5e
+209073: [new] 0cc71a: 5210 5f4b                              |0000: iget v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mTransport:I // field@4b5f
+209075:    virtual_method #19916: setAmazonGattCallback (Lamazon/bluetooth/IAmazonBluetoothGattCallback;)V
+209080: [new] 0cc73c: 5b01 594b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIAmazonGattCallback:Lamazon/bluetooth/IAmazonBluetoothGattCallback; // field@4b59
+209088: [new] 0cc746: 5901 574b                              |0000: iput v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mConnId:I // field@4b57
+209096: [new] 0cc750: 5901 584b                              |0000: iput v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mDisconnectedStatus:I // field@4b58
+209098: [new] 0cc754: 5c02 564b                              |0002: iput-boolean v2, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mCalledOnDisconnected:Z // field@4b56
+209106: [new] 0cc75e: 5c01 5a4b                              |0000: iput-boolean v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIsDirect:Z // field@4b5a
+209114: [new] 0cc768: 5c01 5b4b                              |0000: iput-boolean v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIsPolicyMgrInitiatedDisconnect:Z // field@4b5b
+209122: [new] 0cc772: 5c01 5c4b                              |0000: iput-boolean v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mOpportunistic:Z // field@4b5c
+209130: [new] 0cc77c: 5901 5d4b                              |0000: iput v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mPhy:I // field@4b5d
+209138: [new] 0cc786: 5901 5f4b                              |0000: iput v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mTransport:I // field@4b5f
+211285:    virtual_method #20356: addScanFilter (Lamazon/bluetooth/le/AmazonScanFilter;)V
+212419:       0d6428: 7100 2946 0000                         |0021: invoke-static {}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.getInstance:()Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // method@4629
+212422: [new] 0d6430: 5b40 314c                              |0025: iput-object v0, v4, Lcom/android/bluetooth/gatt/ScanManager$ScanNative;.mAmznPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4c31
+213728: [new] 0d6784: 5474 314c                              |00af: iget-object v4, v7, Lcom/android/bluetooth/gatt/ScanManager$ScanNative;.mAmznPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4c31
+213732: [new] 0d678c: 6e40 3446 5423                         |00b3: invoke-virtual {v4, v5, v3, v2}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.leSetScanParameters:(III)V // method@4634
+213914: [new] 0d6b30: 5430 314c                              |0050: iget-object v0, v3, Lcom/android/bluetooth/gatt/ScanManager$ScanNative;.mAmznPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4c31
+213917: [new] 0d6b36: 6e20 3246 1000                         |0053: invoke-virtual {v0, v1}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.leScan:(Z)V // method@4632
+214057: [new] 0d6f80: 5420 314c                              |002d: iget-object v0, v2, Lcom/android/bluetooth/gatt/ScanManager$ScanNative;.mAmznPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4c31
+214059: [new] 0d6f84: 6e20 3246 1000                         |002f: invoke-virtual {v0, v1}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.leScan:(Z)V // method@4632
+214150: [new] 0d70a6: 5471 314c                              |006e: iget-object v1, v7, Lcom/android/bluetooth/gatt/ScanManager$ScanNative;.mAmznPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4c31
+214152: [new] 0d70aa: 6e20 3246 2100                         |0070: invoke-virtual {v1, v2}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.leScan:(Z)V // method@4632
+222295:       0e5302: 7110 f352 0100                         |005a: invoke-static {v1}, Lcom/android/bluetooth/hfp/HeadsetStateMachine;.access$300:(Lcom/android/bluetooth/hfp/HeadsetStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetrics; // method@52f3
+222302: [new] 0e5316: 6e20 3c3f 2100                         |0064: invoke-virtual {v1, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.scoConnectAttempt:(Landroid/bluetooth/BluetoothDevice;)V // method@3f3c
+222312:       0e533a: 7110 f352 0100                         |0076: invoke-static {v1}, Lcom/android/bluetooth/hfp/HeadsetStateMachine;.access$300:(Lcom/android/bluetooth/hfp/HeadsetStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetrics; // method@52f3
+222319: [new] 0e534e: 6e20 3c3f 2100                         |0080: invoke-virtual {v1, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.scoConnectAttempt:(Landroid/bluetooth/BluetoothDevice;)V // method@3f3c
+222322:       0e5358: 7110 f352 0100                         |0085: invoke-static {v1}, Lcom/android/bluetooth/hfp/HeadsetStateMachine;.access$300:(Lcom/android/bluetooth/hfp/HeadsetStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetrics; // method@52f3
+222329: [new] 0e536c: 6e20 3e3f 2100                         |008f: invoke-virtual {v1, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.scoConnectSuccess:(Landroid/bluetooth/BluetoothDevice;)V // method@3f3e
+222336:       0e5384: 7110 f352 0100                         |009b: invoke-static {v1}, Lcom/android/bluetooth/hfp/HeadsetStateMachine;.access$300:(Lcom/android/bluetooth/hfp/HeadsetStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetrics; // method@52f3
+222343: [new] 0e5398: 6e20 3d3f 2100                         |00a5: invoke-virtual {v1, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.scoConnectFailure:(Landroid/bluetooth/BluetoothDevice;)V // method@3f3d
+223142: [new] 0e6214: 5b30 d94d                              |000e: iput-object v0, v3, Lcom/android/bluetooth/hfp/HeadsetStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4dd9
+223251:       0e6364: 2200 b40a                              |00b6: new-instance v0, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+223252:       0e6368: 7020 1d3f 6000                         |00b8: invoke-direct {v0, v6}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+223254: [new] 0e636e: 5b30 d94d                              |00bb: iput-object v0, v3, Lcom/android/bluetooth/hfp/HeadsetStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4dd9
+223437:    direct_method #21235: access$300 (Lcom/android/bluetooth/hfp/HeadsetStateMachine;)Lcom/amazon/wirelessmetrics/WirelessMetrics;
+223442: [new] 0e5c18: 5410 d94d                              |0000: iget-object v0, v1, Lcom/android/bluetooth/hfp/HeadsetStateMachine;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4dd9
+236549:       0f1f1e: 1a02 1546                              |006b: const-string v2, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MIN" // string@4615
+236553:       0f1f2a: 1a02 1446                              |0071: const-string v2, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MAX" // string@4614
+236922:       0f23d8: 1a05 1d46                              |02c8: const-string v5, "amazon.bluetooth.input.profile.action.HID_REACH_LIMIT" // string@461d
+431138:   class #2614: FosGattService.FosBluetoothGattBinder ('Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;')
+431140:    source_file=FosGattService.java, class_data_off=231616 (2299414)
+431146:       0cc924: 7010 0400 0000                         |0000: invoke-direct {v0}, Lamazon/bluetooth/IFosBluetoothGatt$Stub;.<init>:()V // method@0004
+431149:    direct_method #19932: <init> (Lcom/android/bluetooth/gatt/FosGattService$1;)V
+431153:       0cc930: 7010 db4d 0000                         |0000: invoke-direct {v0}, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.<init>:()V // method@4ddb
+431162: [new] 0cc93e: 5b10 644b                              |0001: iput-object v0, v1, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431169:       0cc948: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+431172:       0cc956: 1a02 6416                              |0007: const-string v2, "FosGattService.connectionParameterUpdate() called. connectionPriority=" // string@1664
+431197: [new] 0cc9a4: 5480 634b                              |002e: iget-object v0, v8, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b63
+431205: [new] 0cc9b6: 5481 644b                              |0037: iget-object v1, v8, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431210: [new] 0cc9c0: 5482 644b                              |003c: iget-object v2, v8, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431217: [new] 0cc9ce: 7406 ea4d 0200                         |0043: invoke-virtual/range {v2, v3, v4, v5, v6, v7}, Lcom/android/bluetooth/gatt/FosGattService;.connectionParameterUpdate:(ILjava/lang/String;III)V // method@4dea
+431224:       0cc8e6: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+431225:       0cc8ea: 1a01 6516                              |0002: const-string v1, "FosGattService.getLeAvailableLinkCount() called." // string@1665
+431228: [new] 0cc8f4: 5430 634b                              |0007: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b63
+431236: [new] 0cc908: 5432 644b                              |0011: iget-object v2, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431240: [new] 0cc912: 5431 644b                              |0016: iget-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431242: [new] 0cc916: 6e10 ef4d 0100                         |0018: invoke-virtual {v1}, Lcom/android/bluetooth/gatt/FosGattService;.getLeAvailableLinkCount:()I // method@4def
+431245:    virtual_method #19936: init (Lcom/android/bluetooth/gatt/FosGattService;Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;)V
+431250: [new] 0cc9da: 5b01 644b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431252: [new] 0cc9de: 5b02 634b                              |0002: iput-object v2, v0, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b63
+431259:       0cc9e8: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+431262:       0cc9f6: 1a02 7516                              |0007: const-string v2, "FosGattService.registerClient() called. requestPriority=" // string@1675
+431277: [new] 0cca24: 5430 634b                              |001e: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b63
+431285: [new] 0cca36: 5431 644b                              |0027: iget-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431290: [new] 0cca40: 5431 644b                              |002c: iget-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431295: [new] 0cca4c: 6e57 014e 2165                         |0032: invoke-virtual {v1, v2, v5, v6, v7}, Lcom/android/bluetooth/gatt/FosGattService;.registerClient:(Ljava/util/UUID;Landroid/bluetooth/IBluetoothGattCallback;II)V // method@4e01
+431298:    virtual_method #19938: setAmazonBluetoothGattCallback (Landroid/os/ParcelUuid;Lamazon/bluetooth/IAmazonBluetoothGattCallback;)V
+431302:       0cca58: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+431303:       0cca5c: 1a01 7916                              |0002: const-string v1, "FosGattService.setAmazonBluetoothGattCallback() called." // string@1679
+431306: [new] 0cca66: 5430 634b                              |0007: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b63
+431314: [new] 0cca78: 5431 644b                              |0010: iget-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431319: [new] 0cca82: 5431 644b                              |0015: iget-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431324: [new] 0cca8e: 6e30 024e 2105                         |001b: invoke-virtual {v1, v2, v5}, Lcom/android/bluetooth/gatt/FosGattService;.setAmazonBluetoothGattCallback:(Ljava/util/UUID;Lamazon/bluetooth/IAmazonBluetoothGattCallback;)V // method@4e02
+431332: [new] 0cca9a: 5420 634b                              |0000: iget-object v0, v2, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b63
+431340: [new] 0ccaac: 5421 644b                              |0009: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431345: [new] 0ccab6: 5421 644b                              |000e: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431347: [new] 0ccaba: 6e40 034e 3154                         |0010: invoke-virtual {v1, v3, v4, v5}, Lcom/android/bluetooth/gatt/FosGattService;.setRequestPriority:(ILjava/lang/String;I)V // method@4e03
+431355: [new] 0ccac6: 5420 634b                              |0000: iget-object v0, v2, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b63
+431363: [new] 0ccad8: 5421 644b                              |0009: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431368: [new] 0ccae2: 5421 644b                              |000e: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.mService:Lcom/android/bluetooth/gatt/FosGattService; // field@4b64
+431370: [new] 0ccae6: 6e56 054e 3154                         |0010: invoke-virtual {v1, v3, v4, v5, v6}, Lcom/android/bluetooth/gatt/FosGattService;.startScan:(ILandroid/bluetooth/le/ScanSettings;Ljava/util/List;Ljava/lang/String;)V // method@4e05
+432795:    direct_method #20185: isAmazonRestrictedCharUUID (Ljava/util/UUID;)Z
+432814:    direct_method #20186: isAmazonRestrictedServiceUUID (Ljava/util/UUID;)Z
+432878:       0cf248: 7020 d94e 2100                         |0006: invoke-direct {v1, v2}, Lcom/android/bluetooth/gatt/GattService;.isAmazonRestrictedCharUUID:(Ljava/util/UUID;)Z // method@4ed9
+432893:       0cf26e: 7020 da4e 2100                         |0006: invoke-direct {v1, v2}, Lcom/android/bluetooth/gatt/GattService;.isAmazonRestrictedServiceUUID:(Ljava/util/UUID;)Z // method@4eda
+444026: [new] 0e1eac: 5b20 824d                              |0004: iput-object v0, v2, Lcom/android/bluetooth/hfp/HeadsetService;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4d82
+444942: [new] 0e0e80: 5491 824d                              |00d5: iget-object v1, v9, Lcom/android/bluetooth/hfp/HeadsetService;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4d82
+444947: [new] 0e0e8c: 6e30 233f 2103                         |00db: invoke-virtual {v1, v2, v3}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.callAccepted:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V // method@3f23
+447339:       0e0c4c: 2201 b40a                              |007f: new-instance v1, Lcom/amazon/wirelessmetrics/WirelessMetrics; // type@0ab4
+447340:       0e0c50: 7020 1d3f 4100                         |0081: invoke-direct {v1, v4}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.<init>:(Landroid/content/Context;)V // method@3f1d
+447342: [new] 0e0c56: 5b41 824d                              |0084: iput-object v1, v4, Lcom/android/bluetooth/hfp/HeadsetService;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4d82
+448105: [new] 0e1760: 5490 824d                              |0040: iget-object v0, v9, Lcom/android/bluetooth/hfp/HeadsetService;.mWirelessMetrics:Lcom/amazon/wirelessmetrics/WirelessMetrics; // field@4d82
+448110: [new] 0e176c: 6e30 243f 1002                         |0046: invoke-virtual {v0, v1, v2}, Lcom/amazon/wirelessmetrics/WirelessMetrics;.callTerminated:(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;)V // method@3f24
+454666:       0f3394: 1a01 1b46                              |0040: const-string v1, "amazon.bluetooth.input.profile.action.BATTERY_LEVEL_UPDATE" // string@461b
+454674:       0f33b2: 1a01 1346                              |004f: const-string v1, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL" // string@4613
+454677:       0f33bc: 1a01 1546                              |0054: const-string v1, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MIN" // string@4615
+454680:       0f33c6: 1a01 1446                              |0059: const-string v1, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MAX" // string@4614
+454723:       0f344a: 1a01 1c46                              |0030: const-string v1, "amazon.bluetooth.input.profile.action.BATTERY_REPORT_FOUND" // string@461c
+454728:       0f345e: 1a01 1546                              |003a: const-string v1, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MIN" // string@4615
+454731:       0f3468: 1a01 1446                              |003f: const-string v1, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MAX" // string@4614
+455094:       0f38fc: 1a02 1546                              |0035: const-string v2, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MIN" // string@4615
+455097:       0f3906: 1a02 1446                              |003a: const-string v2, "amazon.bluetooth.BluetoothInputDevice.extra.BATTERY_LEVEL_MAX" // string@4614
+507529:   class #2842: FosGattService.AmazonClientMap ('Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;')
+507531:    source_file=FosGattService.java, class_data_off=236e02 (2321922)
+507533:    direct_method #19924: <init> (Lcom/android/bluetooth/gatt/FosGattService;)V
+507538: [new] 0cc8bc: 5b01 624b                              |0000: iput-object v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.this$0:Lcom/android/bluetooth/gatt/FosGattService; // field@4b62
+507543: [new] 0cc8d0: 5b01 614b                              |000a: iput-object v1, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+507545:    direct_method #19925: <init> (Lcom/android/bluetooth/gatt/FosGattService;Lcom/android/bluetooth/gatt/FosGattService$1;)V
+507549:       0cc8da: 7020 d44d 1000                         |0000: invoke-direct {v0, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.<init>:(Lcom/android/bluetooth/gatt/FosGattService;)V // method@4dd4
+507555:       0cc790: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+507556:       0cc794: 1a01 4f09                              |0002: const-string v1, "AmazonContextMap.add called. Use default priority(10), and appId(0)." // string@094f
+507567: [new] 0cc7b0: 7408 d74d 0200                         |0010: invoke-virtual/range {v2, v3, v4, v5, v6, v7, v8, v9}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.add:(Ljava/util/UUID;Landroid/os/WorkSource;Landroid/bluetooth/IBluetoothGattCallback;Ljava/lang/Void;Lcom/android/bluetooth/gatt/GattService;II)Lcom/android/bluetooth/gatt/ContextMap$App; // method@4dd7
+507574:       0cc7be: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+507577:       0cc7cc: 1a02 5009                              |0007: const-string v2, "AmazonContextMap.add called. uuid=" // string@0950
+507598: [new] 0cc80c: 5461 614b                              |0027: iget-object v1, v6, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+507604: [new] 0cc81c: 6e20 d94d 7600                         |002f: invoke-virtual {v6, v7}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getByUuid:(Ljava/util/UUID;)Lcom/android/bluetooth/gatt/ContextMap$App; // method@4dd9
+507608: [new] 0cc828: 5463 614b                              |0035: iget-object v3, v6, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+507609:       0cc82c: 2204 cf0b                              |0037: new-instance v4, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // type@0bcf
+507610:       0cc830: 7040 c04d 64dc                         |0039: invoke-direct {v4, v6, v12, v13}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.<init>:(Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;II)V // method@4dc0
+507614:       0cc83e: 1a03 470c                              |0040: const-string v3, "BtGatt.FosGattService" // string@0c47
+507617:       0cc84c: 1a05 5109                              |0047: const-string v5, "AmazonContextMap.add: But getByUuid() could not find uuid=" // string@0951
+507644: [new] 0cc898: 7406 d64d 0000                         |000a: invoke-virtual/range {v0, v1, v2, v3, v4, v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.add:(Ljava/util/UUID;Landroid/os/WorkSource;Landroid/bluetooth/IBluetoothGattCallback;Ljava/lang/Void;Lcom/android/bluetooth/gatt/GattService;)Lcom/android/bluetooth/gatt/ContextMap$App; // method@4dd6
+507647:    virtual_method #19930: getFosApp (Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;
+507652: [new] 0cc8a6: 5410 614b                              |0000: iget-object v0, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.mFosApps:Ljava/util/WeakHashMap; // field@4b61
+507656:       0cc8b2: 1f00 cf0b                              |0006: check-cast v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // type@0bcf
+507658:   class #2843: FosGattService ('Lcom/android/bluetooth/gatt/FosGattService;')
+507660:    source_file=FosGattService.java, class_data_off=236e34 (2321972)
+507667:       0ccc04: 6a00 694b                              |0002: sput-boolean v0, Lcom/android/bluetooth/gatt/FosGattService;.VDBG:Z // field@4b69
+507675:       0ccc14: 2200 d10b                              |0003: new-instance v0, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder; // type@0bd1
+507677:       0ccc1a: 7020 dc4d 1000                         |0006: invoke-direct {v0, v1}, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.<init>:(Lcom/android/bluetooth/gatt/FosGattService$1;)V // method@4ddc
+507679: [new] 0ccc20: 5b30 6d4b                              |0009: iput-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mExtendedBinder:Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder; // field@4b6d
+507682:       0ccc28: 1a00 470c                              |000d: const-string v0, "BtGatt.FosGattService" // string@0c47
+507683:       0ccc2c: 1a02 6216                              |000f: const-string v2, "FosGattService constructor called." // string@1662
+507685:       0ccc36: 2200 d00b                              |0014: new-instance v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // type@0bd0
+507686:       0ccc3a: 7030 d54d 3001                         |0016: invoke-direct {v0, v3, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.<init>:(Lcom/android/bluetooth/gatt/FosGattService;Lcom/android/bluetooth/gatt/FosGattService$1;)V // method@4dd5
+507688: [new] 0ccc40: 5b30 6e4b                              |0019: iput-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+507690: [new] 0ccc44: 5430 6e4b                              |001b: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+507699:       0ccc52: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+507704: [new] 0ccc66: 5420 6a4b                              |000a: iget-object v0, v2, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+507707: [new] 0ccc6e: 5420 6a4b                              |000e: iget-object v0, v2, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+507709: [new] 0ccc72: 6e10 2846 0000                         |0010: invoke-virtual {v0}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.deinit:()V // method@4628
+507719: [new] 0ccc86: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+507720:       0ccc8c: 1a00 470c                              |0007: const-string v0, "BtGatt.FosGattService" // string@0c47
+507747: [new] 0cccdc: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+507748:       0ccce2: 1a00 470c                              |0007: const-string v0, "BtGatt.FosGattService" // string@0c47
+507777: [new] 0ccd3c: 6e30 ec4d 1c02                         |0008: invoke-virtual {v12, v1, v2}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+507782: [new] 0ccd4e: 7401 f04d 1000                         |0011: invoke-virtual/range {v16}, Lcom/android/bluetooth/gatt/FosGattService;.getResources:()Landroid/content/res/Resources; // method@4df0
+507790: [new] 0ccd66: 7401 f04d 1000                         |001d: invoke-virtual/range {v16}, Lcom/android/bluetooth/gatt/FosGattService;.getResources:()Landroid/content/res/Resources; // method@4df0
+507801: [new] 0ccd88: 7401 f04d 1000                         |002e: invoke-virtual/range {v16}, Lcom/android/bluetooth/gatt/FosGattService;.getResources:()Landroid/content/res/Resources; // method@4df0
+507808: [new] 0ccd9e: 7401 f04d 1000                         |0039: invoke-virtual/range {v16}, Lcom/android/bluetooth/gatt/FosGattService;.getResources:()Landroid/content/res/Resources; // method@4df0
+507816: [new] 0ccdb6: 7401 f04d 1000                         |0045: invoke-virtual/range {v16}, Lcom/android/bluetooth/gatt/FosGattService;.getResources:()Landroid/content/res/Resources; // method@4df0
+507823: [new] 0ccdcc: 7401 f04d 1000                         |0050: invoke-virtual/range {v16}, Lcom/android/bluetooth/gatt/FosGattService;.getResources:()Landroid/content/res/Resources; // method@4df0
+507831:       0ccde6: 1a03 470c                              |005d: const-string v3, "BtGatt.FosGattService" // string@0c47
+507880: [new] 0cce7e: 7409 ee4d 0300                         |00a9: invoke-virtual/range {v3, v4, v5, v6, v7, v8, v9, v10, v11}, Lcom/android/bluetooth/gatt/FosGattService;.gattConnectionParameterUpdateNative:(ILjava/lang/String;IIIIII)V // method@4dee
+507892: [new] 0ccba2: 6e30 ec4d 0401                         |0004: invoke-virtual {v4, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+507895: [new] 0ccbaa: 5441 6a4b                              |0008: iget-object v1, v4, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+507897:       0ccbb2: 1a01 470c                              |000c: const-string v1, "BtGatt.FosGattService" // string@0c47
+507898:       0ccbb6: 1a02 678f                              |000e: const-string v2, "setRequestPriority: mAmazonPolicyMgrAdapter is NULL" // string@8f67
+507902: [new] 0ccbc2: 5441 6a4b                              |0014: iget-object v1, v4, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+507904: [new] 0ccbc6: 6e10 3146 0100                         |0016: invoke-virtual {v1}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.leGetAvailableLinkCount:()I // method@4631
+507906:       0ccbce: 1a01 470c                              |001a: const-string v1, "BtGatt.FosGattService" // string@0c47
+507909:       0ccbdc: 1a03 6616                              |0021: const-string v3, "FosGattService.getLeAvailableLinkCount() called. linkCount=" // string@1666
+507923:       0ccb64: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+507924:       0ccb68: 1a01 6316                              |0002: const-string v1, "FosGattService initBinder called." // string@1663
+507931: [new] 0ccb80: 5b31 6b4b                              |000e: iput-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+507933: [new] 0ccb84: 5431 6d4b                              |0010: iget-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService;.mExtendedBinder:Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder; // field@4b6d
+507937: [new] 0ccb8e: 6e30 e04d 3102                         |0015: invoke-virtual {v1, v3, v2}, Lcom/android/bluetooth/gatt/FosGattService$FosBluetoothGattBinder;.init:(Lcom/android/bluetooth/gatt/FosGattService;Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder;)V // method@4de0
+507943:       0ccea0: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+507946:       0cceae: 1a02 6816                              |0007: const-string v2, "FosGattService.onBtpmConnNotifyCallback() called. status=" // string@1668
+507949:       0cceb8: 7110 3846 0800                         |000c: invoke-static {v8}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+507968: [new] 0ccef4: 5470 6b4b                              |002a: iget-object v0, v7, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+507977:       0ccf0c: 1a01 470c                              |0036: const-string v1, "BtGatt.FosGattService" // string@0c47
+507980:       0ccf1a: 1a03 6916                              |003d: const-string v3, "FosGattService.onBtpmConnNotifyCallback(): unexpected BTPM_STATUS_FAIL status. calling onConnected, status=" // string@1669
+507983:       0ccf24: 7110 3846 0800                         |0042: invoke-static {v8}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508003: [new] 0ccf62: 5472 6c4b                              |0061: iget-object v2, v7, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+508008:       0ccf72: 1a03 470c                              |0069: const-string v3, "BtGatt.FosGattService" // string@0c47
+508022: [new] 0ccfa0: 5473 6e4b                              |0080: iget-object v3, v7, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+508024: [new] 0ccfa4: 6e20 da4d 2300                         |0082: invoke-virtual {v3, v2}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getFosApp:(Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // method@4dda
+508027:       0ccfb0: 1a04 470c                              |0088: const-string v4, "BtGatt.FosGattService" // string@0c47
+508041: [new] 0ccfde: 6e10 c44d 0300                         |009f: invoke-virtual {v3}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getConnId:()I // method@4dc4
+508043:       0ccfe6: 1a04 470c                              |00a3: const-string v4, "BtGatt.FosGattService" // string@0c47
+508069:       0cd03e: 1a04 470c                              |00cf: const-string v4, "BtGatt.FosGattService" // string@0c47
+508091:       0cd090: 1a00 470c                              |0008: const-string v0, "BtGatt.FosGattService" // string@0c47
+508094:       0cd09e: 1a02 6a16                              |000f: const-string v2, "FosGattService.onBtpmConnReqCallback() called. status=" // string@166a
+508097:       0cd0a8: 7701 3846 1300                         |0014: invoke-static/range {v19}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508116: [new] 0cd0e4: 5480 6b4b                              |0032: iget-object v0, v8, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+508125: [new] 0cd0f8: 5481 6c4b                              |003c: iget-object v1, v8, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+508130:       0cd108: 1a01 470c                              |0044: const-string v1, "BtGatt.FosGattService" // string@0c47
+508145: [new] 0cd138: 5481 6e4b                              |005c: iget-object v1, v8, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+508147: [new] 0cd13c: 6e20 da4d d100                         |005e: invoke-virtual {v1, v13}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getFosApp:(Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // method@4dda
+508150:       0cd148: 1a01 470c                              |0064: const-string v1, "BtGatt.FosGattService" // string@0c47
+508170: [new] 0cd186: 6e10 c64d 0e00                         |0083: invoke-virtual {v14}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getIsDirect:()Z // method@4dc6
+508173: [new] 0cd18e: 6e10 cb4d 0e00                         |0087: invoke-virtual {v14}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getTransport:()I // method@4dcb
+508176: [new] 0cd196: 6e10 c84d 0e00                         |008b: invoke-virtual {v14}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getOpportunistic:()Z // method@4dc8
+508179: [new] 0cd19e: 6e10 c94d 0e00                         |008f: invoke-virtual {v14}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getPhy:()I // method@4dc9
+508181:       0cd1a6: 1a04 470c                              |0093: const-string v4, "BtGatt.FosGattService" // string@0c47
+508241:       0cd26a: 1a00 470c                              |00f5: const-string v0, "BtGatt.FosGattService" // string@0c47
+508244:       0cd278: 1a03 6b16                              |00fc: const-string v3, "FosGattService.onBtpmConnReqCallback(): calling clientDisconnect. status=" // string@166b
+508247:       0cd282: 7701 3846 1300                         |0101: invoke-static/range {v19}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508267: [new] 0cd2c2: 6e20 d04d 1e00                         |0121: invoke-virtual {v14, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.setIsPolicyMgrInitiatedDisconnect:(Z)V // method@4dd0
+508271:       0cd2d6: 1a00 470c                              |012b: const-string v0, "BtGatt.FosGattService" // string@0c47
+508274:       0cd2e4: 1a02 6d16                              |0132: const-string v2, "FosGattService.onBtpmConnReqCallback(): unexpected BTPM_STATUS_FAIL status.calling onConnected with status GATT_ERROR(133), status=" // string@166d
+508277:       0cd2ee: 7701 3846 1300                         |0137: invoke-static/range {v19}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508298: [new] 0cd330: 6e10 c44d 0e00                         |0158: invoke-virtual {v14}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getConnId:()I // method@4dc4
+508301: [new] 0cd338: 6e10 c64d 0e00                         |015c: invoke-virtual {v14}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getIsDirect:()Z // method@4dc6
+508304:       0cd344: 1a01 470c                              |0162: const-string v1, "BtGatt.FosGattService" // string@0c47
+508307:       0cd352: 1a03 f77b                              |0169: const-string v3, "onBtpmConnReqCallback: unexpected BTPM_STATUS_FAIL for clientIf=" // string@7bf7
+508325:       0cd38c: 1a02 470c                              |0186: const-string v2, "BtGatt.FosGattService" // string@0c47
+508340:       0cd3c0: 1a00 470c                              |01a0: const-string v0, "BtGatt.FosGattService" // string@0c47
+508343:       0cd3ce: 1a03 6c16                              |01a7: const-string v3, "FosGattService.onBtpmConnReqCallback(): unexpected BTPM_STATUS_ACCEPTL_TO_BGWAITL status. Calling clientDisconnect, status=" // string@166c
+508346:       0cd3d8: 7701 3846 1300                         |01ac: invoke-static/range {v19}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508366: [new] 0cd418: 6e20 d04d 1e00                         |01cc: invoke-virtual {v14, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.setIsPolicyMgrInitiatedDisconnect:(Z)V // method@4dd0
+508369:       0cd426: 1a00 470c                              |01d3: const-string v0, "BtGatt.FosGattService" // string@0c47
+508372:       0cd434: 1a02 6e16                              |01da: const-string v2, "FosGattService.onBtpmConnReqCallback(): unexpected status. Calling clientDisconnect, status=" // string@166e
+508375:       0cd43e: 7701 3846 1300                         |01df: invoke-static/range {v19}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508399:       0cd48e: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+508405:       0cd4a6: 7110 3846 0b00                         |000c: invoke-static {v11}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508424: [new] 0cd4e2: 54a0 6b4b                              |002a: iget-object v0, v10, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+508433:       0cd4fa: 1a02 470c                              |0036: const-string v2, "BtGatt.FosGattService" // string@0c47
+508436:       0cd508: 1a04 fe7b                              |003d: const-string v4, "onBtpmDisconnNotifyCallback(): unexpected BTPM_STATUS_FAIL status. Calling onDisconnected, status=" // string@7bfe
+508439:       0cd512: 7110 3846 0b00                         |0042: invoke-static {v11}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508460:       0cd55a: 1a02 470c                              |0066: const-string v2, "BtGatt.FosGattService" // string@0c47
+508463:       0cd568: 1a04 fd7b                              |006d: const-string v4, "onBtpmDisconnNotifyCallback(): BTPM_STATUS_REMOVE_FROM_DIRPENDL status. Call onConnected with error status, status=" // string@7bfd
+508466:       0cd572: 7110 3846 0b00                         |0072: invoke-static {v11}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508487:       0cd5b8: 1a02 470c                              |0095: const-string v2, "BtGatt.FosGattService" // string@0c47
+508490:       0cd5c6: 1a04 fc7b                              |009c: const-string v4, "onBtpmDisconnNotifyCallback(): BTPM_STATUS_REMOVE_FROM_DIRL status. Call onConnected with error status, status=" // string@7bfc
+508493:       0cd5d0: 7110 3846 0b00                         |00a1: invoke-static {v11}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508512:       0cd60e: 1a02 470c                              |00c0: const-string v2, "BtGatt.FosGattService" // string@0c47
+508518:       0cd626: 7110 3846 0b00                         |00cc: invoke-static {v11}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508541: [new] 0cd66a: 54a6 6c4b                              |00ee: iget-object v6, v10, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+508546:       0cd67a: 1a07 470c                              |00f6: const-string v7, "BtGatt.FosGattService" // string@0c47
+508560: [new] 0cd6a8: 54a7 6e4b                              |010d: iget-object v7, v10, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+508562: [new] 0cd6ac: 6e20 da4d 6700                         |010f: invoke-virtual {v7, v6}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getFosApp:(Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // method@4dda
+508565:       0cd6b8: 1a07 470c                              |0115: const-string v7, "BtGatt.FosGattService" // string@0c47
+508579: [new] 0cd6e6: 6e10 c44d 0500                         |012c: invoke-virtual {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getConnId:()I // method@4dc4
+508582: [new] 0cd6ee: 6e10 c54d 0500                         |0130: invoke-virtual {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getDisconnectedStatus:()I // method@4dc5
+508585: [new] 0cd6f6: 6e10 c34d 0500                         |0134: invoke-virtual {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getCalledOnDisconnected:()Z // method@4dc3
+508587:       0cd6fe: 1a07 470c                              |0138: const-string v7, "BtGatt.FosGattService" // string@0c47
+508621:       0cd772: 1a07 470c                              |0172: const-string v7, "BtGatt.FosGattService" // string@0c47
+508627:       0cd78a: 7110 c14d 0500                         |017e: invoke-static {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.access$200:(Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;)I // method@4dc1
+508635: [new] 0cd7a2: 6e10 c74d 0500                         |018a: invoke-virtual {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getIsPolicyMgrInitiatedDisconnect:()Z // method@4dc7
+508650: [new] 0cd7d2: 6e10 c74d 0500                         |01a2: invoke-virtual {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getIsPolicyMgrInitiatedDisconnect:()Z // method@4dc7
+508654: [new] 0cd7de: 6e10 c64d 0500                         |01a8: invoke-virtual {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.getIsDirect:()Z // method@4dc6
+508657:       0cd7ea: 7110 c14d 0500                         |01ae: invoke-static {v5}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.access$200:(Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;)I // method@4dc1
+508667:       0cd80e: 1a07 470c                              |01c0: const-string v7, "BtGatt.FosGattService" // string@0c47
+508682: [new] 0cd840: 6e20 d04d 1500                         |01d9: invoke-virtual {v5, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.setIsPolicyMgrInitiatedDisconnect:(Z)V // method@4dd0
+508689:       0cd85a: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+508692:       0cd868: 1a02 6f16                              |0007: const-string v2, "FosGattService.onBtpmDisconnReqCallback() called. status=" // string@166f
+508695:       0cd872: 7110 3846 0500                         |000c: invoke-static {v5}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508714: [new] 0cd8ae: 5440 6b4b                              |002a: iget-object v0, v4, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+508732:       0cd8e8: 1a01 470c                              |0047: const-string v1, "BtGatt.FosGattService" // string@0c47
+508735:       0cd8f6: 1a03 7116                              |004e: const-string v3, "FosGattService.onBtpmDisconnReqCallback(): unexpected status. Calling clientDisconnect, status=" // string@1671
+508738:       0cd900: 7110 3846 0500                         |0053: invoke-static {v5}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508757:       0cd93e: 1a01 470c                              |0072: const-string v1, "BtGatt.FosGattService" // string@0c47
+508760:       0cd94c: 1a03 7016                              |0079: const-string v3, "FosGattService.onBtpmDisconnReqCallback(): nothing to do, status=" // string@1670
+508763:       0cd956: 7110 3846 0500                         |007e: invoke-static {v5}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508790:       0cd9a6: 1a01 470c                              |0002: const-string v1, "BtGatt.FosGattService" // string@0c47
+508840: [new] 0cda4e: 5412 6b4b                              |0056: iget-object v2, v1, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+508861: [new] 0cda86: 7409 ee4d 0400                         |0072: invoke-virtual/range {v4, v5, v6, v7, v8, v9, v10, v11, v12}, Lcom/android/bluetooth/gatt/FosGattService;.gattConnectionParameterUpdateNative:(ILjava/lang/String;IIIIII)V // method@4dee
+508868:       0cda92: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+508871:       0cdaa0: 1a02 7416                              |0007: const-string v2, "FosGattService.onBtpmRegisterAppCallback() called. status=" // string@1674
+508874:       0cdaaa: 7110 3846 0b00                         |000c: invoke-static {v11}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508893: [new] 0cdae6: 54a0 6b4b                              |002a: iget-object v0, v10, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+508901:       0cdafc: 1a01 470c                              |0035: const-string v1, "BtGatt.FosGattService" // string@0c47
+508904:       0cdb0a: 1a03 7216                              |003c: const-string v3, "FosGattService.onBtpmRegisterAppCallback() called. Invalid status=" // string@1672
+508907:       0cdb14: 7110 3846 0b00                         |0041: invoke-static {v11}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+508926: [new] 0cdb50: 54a1 6c4b                              |005f: iget-object v1, v10, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+508931:       0cdb60: 1a02 470c                              |0067: const-string v2, "BtGatt.FosGattService" // string@0c47
+508934:       0cdb6e: 1a04 7316                              |006e: const-string v4, "FosGattService.onBtpmRegisterAppCallback() called. Unable to find App using clientIf=" // string@1673
+508964:       0cdbc2: 1a04 470c                              |0098: const-string v4, "BtGatt.FosGattService" // string@0c47
+508982:       0cdc02: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509005: [new] 0cdc4e: 5430 6b4b                              |0026: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+509019:       0cdc6c: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509025:       0cdc84: 7110 3846 0700                         |000c: invoke-static {v7}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.statusToString:(I)Ljava/lang/String; // method@4638
+509049: [new] 0cdcd0: 5460 6b4b                              |0032: iget-object v0, v6, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+509058: [new] 0cdce4: 5462 6c4b                              |003c: iget-object v2, v6, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+509063:       0cdcf4: 1a03 470c                              |0044: const-string v3, "BtGatt.FosGattService" // string@0c47
+509077: [new] 0cdd22: 5463 6e4b                              |005b: iget-object v3, v6, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+509079: [new] 0cdd26: 6e20 da4d 2300                         |005d: invoke-virtual {v3, v2}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getFosApp:(Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // method@4dda
+509082:       0cdd32: 1a03 470c                              |0063: const-string v3, "BtGatt.FosGattService" // string@0c47
+509096: [new] 0cdd60: 5413 594b                              |007a: iget-object v3, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIAmazonGattCallback:Lamazon/bluetooth/IAmazonBluetoothGattCallback; // field@4b59
+509098:       0cdd68: 1a03 470c                              |007e: const-string v3, "BtGatt.FosGattService" // string@0c47
+509101:       0cdd76: 1a05 0a7c                              |0085: const-string v5, "onBtpmSetReqPriorityCallback: invoke mIAmazonGattCallback.onSetRequestPriority clientIf=" // string@7c0a
+509111: [new] 0cdd94: 5413 594b                              |0094: iget-object v3, v1, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIAmazonGattCallback:Lamazon/bluetooth/IAmazonBluetoothGattCallback; // field@4b59
+509112:       0cdd98: 725a 0300 7398                         |0096: invoke-interface {v3, v7, v8, v9, v10}, Lamazon/bluetooth/IAmazonBluetoothGattCallback;.onSetRequestPriority:(IILjava/lang/String;I)V // method@0003
+509119:       0cdda4: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509142: [new] 0cddf0: 5430 6b4b                              |0026: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mBluetoothGattBinder:Lcom/android/bluetooth/gatt/GattService$BluetoothGattBinder; // field@4b6b
+509150: [new] 0cde02: 5431 6f4b                              |002f: iget-object v1, v3, Lcom/android/bluetooth/gatt/FosGattService;.mScanManager:Lcom/android/bluetooth/gatt/ScanManager; // field@4b6f
+509160: [new] 0cde12: 5460 6c4b                              |0000: iget-object v0, v6, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+509164:       0cde1e: 1a01 470c                              |0006: const-string v1, "BtGatt.FosGattService" // string@0c47
+509191: [new] 0cde78: 5461 6c4b                              |0033: iget-object v1, v6, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+509196:       0cde88: 1a02 470c                              |003b: const-string v2, "BtGatt.FosGattService" // string@0c47
+509210: [new] 0cdeb6: 5462 6e4b                              |0052: iget-object v2, v6, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+509212: [new] 0cdeba: 6e20 da4d 1200                         |0054: invoke-virtual {v2, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getFosApp:(Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // method@4dda
+509215:       0cdec6: 1a03 470c                              |005a: const-string v3, "BtGatt.FosGattService" // string@0c47
+509229: [new] 0cdef4: 5423 594b                              |0071: iget-object v3, v2, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIAmazonGattCallback:Lamazon/bluetooth/IAmazonBluetoothGattCallback; // field@4b59
+509231:       0cdefc: 1a03 470c                              |0075: const-string v3, "BtGatt.FosGattService" // string@0c47
+509234:       0cdf0a: 1a05 3d7c                              |007c: const-string v5, "onClientCongestion: invoke mIAmazonGattCallback.onClientCongestion address=" // string@7c3d
+509244: [new] 0cdf28: 5423 594b                              |008b: iget-object v3, v2, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIAmazonGattCallback:Lamazon/bluetooth/IAmazonBluetoothGattCallback; // field@4b59
+509245:       0cdf2c: 7230 0200 0308                         |008d: invoke-interface {v3, v0, v8}, Lamazon/bluetooth/IAmazonBluetoothGattCallback;.onClientCongestion:(Ljava/lang/String;Z)V // method@0002
+509253:       0cdf3e: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509263:       0cdf58: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509297:       0cdfc0: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509329: [new] 0ce020: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509330:       0ce026: 1a00 470c                              |0007: const-string v0, "BtGatt.FosGattService" // string@0c47
+509333:       0ce034: 1a02 7716                              |000e: const-string v2, "FosGattService.registerClient(): uuid=" // string@1677
+509343: [new] 0ce052: 5430 6a4b                              |001d: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509345:       0ce05a: 1a00 470c                              |0021: const-string v0, "BtGatt.FosGattService" // string@0c47
+509346:       0ce05e: 1a01 c385                              |0023: const-string v1, "registerClient: mAmazonPolicyMgrAdapter is NULL" // string@85c3
+509350: [new] 0ce06a: 5430 6a4b                              |0029: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509353: [new] 0ce070: 6e30 3546 1004                         |002c: invoke-virtual {v0, v1, v4}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.registerApp:(ILjava/util/UUID;)V // method@4635
+509364: [new] 0ce08a: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509365:       0ce090: 1a00 470c                              |0007: const-string v0, "BtGatt.FosGattService" // string@0c47
+509368:       0ce09e: 1a02 7616                              |000e: const-string v2, "FosGattService.registerClient(): requestPriority=" // string@1676
+509382:       0ce0cc: 1a00 470c                              |0025: const-string v0, "BtGatt.FosGattService" // string@0c47
+509388:    virtual_method #19970: setAmazonBluetoothGattCallback (Ljava/util/UUID;Lamazon/bluetooth/IAmazonBluetoothGattCallback;)V
+509395: [new] 0ce0ee: 6e30 ec4d 0501                         |0004: invoke-virtual {v5, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509396:       0ce0f4: 1a00 470c                              |0007: const-string v0, "BtGatt.FosGattService" // string@0c47
+509397:       0ce0f8: 1a01 7816                              |0009: const-string v1, "FosGattService.setAmazonBluetoothGattCallback()" // string@1678
+509401: [new] 0ce104: 5451 6c4b                              |000f: iget-object v1, v5, Lcom/android/bluetooth/gatt/FosGattService;.mClientMap:Lcom/android/bluetooth/gatt/GattService$ClientMap; // field@4b6c
+509406:       0ce114: 1a02 470c                              |0017: const-string v2, "BtGatt.FosGattService" // string@0c47
+509409:       0ce122: 1a04 af8b                              |001e: const-string v4, "setAmazonBluetoothGattCallback: unable to find App for uuid=" // string@8baf
+509420: [new] 0ce142: 5452 6e4b                              |002e: iget-object v2, v5, Lcom/android/bluetooth/gatt/FosGattService;.mFosClientMap:Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap; // field@4b6e
+509422: [new] 0ce146: 6e20 da4d 1200                         |0030: invoke-virtual {v2, v1}, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap;.getFosApp:(Lcom/android/bluetooth/gatt/ContextMap$App;)Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp; // method@4dda
+509425:       0ce152: 1a02 470c                              |0036: const-string v2, "BtGatt.FosGattService" // string@0c47
+509428:       0ce160: 1a04 b08b                              |003d: const-string v4, "setAmazonBluetoothGattCallback: unable to find fosApp from App for uuid=" // string@8bb0
+509439: [new] 0ce180: 5b07 594b                              |004d: iput-object v7, v0, Lcom/android/bluetooth/gatt/FosGattService$AmazonClientMap$FosApp;.mIAmazonGattCallback:Lamazon/bluetooth/IAmazonBluetoothGattCallback; // field@4b59
+509449: [new] 0ce192: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509450:       0ce198: 1a00 470c                              |0007: const-string v0, "BtGatt.FosGattService" // string@0c47
+509453:       0ce1a6: 1a02 7a16                              |000e: const-string v2, "FosGattService.setRequestPriority() called. priority=" // string@167a
+509472:       0ce1e4: 1a00 470c                              |002d: const-string v0, "BtGatt.FosGattService" // string@0c47
+509481:       0ccaf2: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509488:       0ccb0e: 7100 2946 0000                         |000e: invoke-static {}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.getInstance:()Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // method@4629
+509491: [new] 0ccb16: 5b21 6a4b                              |0012: iput-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509493: [new] 0ccb1a: 5421 6a4b                              |0014: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509495: [new] 0ccb1e: 6e10 2a46 0100                         |0016: invoke-virtual {v1}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.init:()V // method@462a
+509497: [new] 0ccb24: 5421 6a4b                              |0019: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509499: [new] 0ccb28: 6e20 3746 2100                         |001b: invoke-virtual {v1, v2}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.setGattService:(Lcom/android/bluetooth/gatt/FosGattService;)V // method@4637
+509506:       0ce1f8: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509509:       0ce206: 1a02 7b16                              |0007: const-string v2, "FosGattService.startScan() called. clientIf=" // string@167b
+509524: [new] 0ce234: 6e10 eb4d 0300                         |001e: invoke-virtual {v3}, Lcom/android/bluetooth/gatt/FosGattService;.enforceAdminPermission:()V // method@4deb
+509526: [new] 0ce23a: 6e20 f24d 5300                         |0021: invoke-virtual {v3, v5}, Lcom/android/bluetooth/gatt/FosGattService;.needsPrivilegedPermissionForScan:(Landroid/bluetooth/le/ScanSettings;)Z // method@4df2
+509530: [new] 0ce246: 6e10 ed4d 0300                         |0027: invoke-virtual {v3}, Lcom/android/bluetooth/gatt/FosGattService;.enforcePrivilegedPermission:()V // method@4ded
+509537:       0ccb36: 1a00 470c                              |0000: const-string v0, "BtGatt.FosGattService" // string@0c47
+509543: [new] 0ccb4c: 5421 6a4b                              |000b: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509546: [new] 0ccb54: 5421 6a4b                              |000f: iget-object v1, v2, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509548: [new] 0ccb58: 6e10 2846 0100                         |0011: invoke-virtual {v1}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.deinit:()V // method@4628
+509557: [new] 0ce25a: 6e30 ec4d 0301                         |0004: invoke-virtual {v3, v0, v1}, Lcom/android/bluetooth/gatt/FosGattService;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@4dec
+509558:       0ce260: 1a00 470c                              |0007: const-string v0, "BtGatt.FosGattService" // string@0c47
+509571: [new] 0ce28c: 5430 6a4b                              |001d: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509573:       0ce294: 1a00 470c                              |0021: const-string v0, "BtGatt.FosGattService" // string@0c47
+509574:       0ce298: 1a01 8f96                              |0023: const-string v1, "unregisterClient: mAmazonPolicyMgrAdapter is NULL" // string@968f
+509578: [new] 0ce2a4: 5430 6a4b                              |0029: iget-object v0, v3, Lcom/android/bluetooth/gatt/FosGattService;.mAmazonPolicyMgrAdapter:Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter; // field@4b6a
+509580: [new] 0ce2a8: 6e20 3946 4000                         |002b: invoke-virtual {v0, v4}, Lcom/android/bluetooth/amznbtpolicymgr/AmazonBtPolicyManagerAdapter;.unregisterApp:(I)V // method@4639
