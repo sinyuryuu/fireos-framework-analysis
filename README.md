@@ -439,3 +439,11 @@ Audit artifacts and the explicit Level 3 rejection are in:
 - `findings/phase-5-mtk-easy-su-review.md`
 - `artifacts/phase5/mtk-easy-su-audit-20260803/`
 - `findings/phase-5-evidence-index.md` (`P5-WEB-007`, `P5-WEB-008`)
+
+The user-provided HackMD vulnerability index was also triaged against the
+device's exact hardware and kernel. Qualcomm-only chains, listed OPlus/fenrir
+device-specific boot-chain projects, and Dirty Pipe were rejected by hardware
+or kernel prerequisites; no exploit code was run. The evidence is in
+`artifacts/phase5/hackmd-vulnerability-review-20260803/` and the proposed
+`mtk-easy-su` APK operation is explicitly gated by
+`findings/phase-5-mtk-easy-su-level3-approval.md`.
