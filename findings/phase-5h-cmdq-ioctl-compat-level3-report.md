@@ -2,7 +2,11 @@
 
 ## Status
 
-**Probe prepared. Not approved. Not executed on the device.**
+**Executed once under explicit approval; completed; no retry.**
+
+Execution result is recorded in
+`findings/phase-5h-cmdq-ioctl-result.md` and the raw evidence directory
+`adb/phase5/CMDQ-IOCTL-V3-COMPAT-T01-20260803-01/`.
 
 This document proposes one bounded diagnostic operation. It is not a root
 attempt and does not propose a kernel-memory primitive. It must not be
@@ -69,9 +73,9 @@ cannot by itself prove the running dispatcher.
 
 ## Exact proposed command sequence
 
-These commands are proposed only; they were not run. The reviewed host-built
-binary and its SHA-256 are recorded below; recording them does not authorize
-the `adb push` step.
+The command sequence below was executed once under the exact approval. The
+reviewed host-built binary and its SHA-256 are recorded below; this does not
+authorize any additional execution.
 
 ```sh
 adb -s G001LT0511550CFT get-state
@@ -115,11 +119,17 @@ The source, object files, disassembly, ELF metadata, tool versions, and
 manifest are retained under the artifact directory above. This is host-only
 preparation evidence; it is not evidence of the device's ioctl result.
 
-The live run would additionally save before/after `getprop`, shell identity,
-SELinux state, ADB state, HOME resolver, window/activity state, CMDQ node
-metadata, and a bounded logcat window. The temporary directory is the only
-device filesystem location changed; no system partition or settings provider
-is touched.
+The executed capture saved before/after shell identity, SELinux state, ADB
+state, build fingerprint, verified-boot state, and HOME resolver. It also
+saved the probe output, per-command exit codes, and cleanup output. The
+temporary directory was the only device filesystem location changed; no
+system partition or settings provider was touched. Kernel log capture was not
+included in the explicitly approved scope.
+
+The executed run opened the node as fd 3 and returned raw `ioctl_ret=-25`
+(`-ENOTTY`). The process exit code was 0 because the probe exits normally
+after reporting the raw ioctl result. Cleanup returned 0. The complete
+before/after state capture is in the raw evidence directory above.
 
 ## Files or images to be written
 
@@ -187,10 +197,10 @@ Continue offline matching of the PS7330 kernel/driver artifact or obtain
 additional exact source provenance. This is preferred if a matching signed
 kernel artifact becomes available.
 
-## Approval required
+## Approval consumed
 
-Execution requires explicit approval naming **`CMDQ-IOCTL-V3-COMPAT-T01`** and
-the exact reviewed binary SHA-256
-`e0077240040bce55099b8b1b28d9d10723357ef3d3b9640282bd6f6bef2f11fb`.
-Approval for the earlier
-`MTK-SU-CMDQ-T03` run does not cover this operation.
+The approval for `CMDQ-IOCTL-V3-COMPAT-T01` and binary SHA-256
+`e0077240040bce55099b8b1b28d9d10723357ef3d3b9640282bd6f6bef2f11fb` has been
+consumed by the single recorded run. It does not authorize any follow-up
+ioctl, v3-aware payload, kernel-memory operation, BROM/DA action, or
+boot-chain write.

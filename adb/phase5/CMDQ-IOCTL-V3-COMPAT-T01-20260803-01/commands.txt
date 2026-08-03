@@ -1,0 +1,15 @@
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell id
+adb -s G001LT0511550CFT shell getenforce
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+adb -s G001LT0511550CFT shell test ! -e /data/local/tmp/CMDQ-IOCTL-V3-COMPAT-T01
+adb -s G001LT0511550CFT shell mkdir /data/local/tmp/CMDQ-IOCTL-V3-COMPAT-T01
+adb -s G001LT0511550CFT push artifacts/phase5/cmdq-compat-probe-build-20260803-03/cmdq_compat_probe /data/local/tmp/CMDQ-IOCTL-V3-COMPAT-T01/probe
+adb -s G001LT0511550CFT shell chmod 0700 /data/local/tmp/CMDQ-IOCTL-V3-COMPAT-T01/probe
+adb -s G001LT0511550CFT shell /data/local/tmp/CMDQ-IOCTL-V3-COMPAT-T01/probe
+adb -s G001LT0511550CFT shell rm -rf /data/local/tmp/CMDQ-IOCTL-V3-COMPAT-T01
+adb -s G001LT0511550CFT get-state (post)
+adb -s G001LT0511550CFT shell id (post)
+adb -s G001LT0511550CFT shell getenforce (post)
+adb -s G001LT0511550CFT shell getprop ro.boot.verifiedbootstate (post)
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME (post)

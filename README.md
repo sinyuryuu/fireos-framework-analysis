@@ -608,18 +608,21 @@ device-node metadata, and IRQ metadata. It confirmed the installed kernel's
 payload mismatch to a high-confidence inference, while the compiled driver
 identity and CVE status remain unverified.
 
-The next possible low-level discriminator is documented, but not executed, in
-`findings/phase-5h-cmdq-ioctl-compat-level3-report.md`. A host-only AArch64
-probe is prepared at
+The bounded low-level discriminator is documented in
+`findings/phase-5h-cmdq-ioctl-compat-level3-report.md` and its result is in
+`findings/phase-5h-cmdq-ioctl-result.md`. The host-built AArch64 probe at
 `artifacts/phase5/cmdq-compat-probe-build-20260803-03/cmdq_compat_probe` with
 SHA-256
 `e0077240040bce55099b8b1b28d9d10723357ef3d3b9640282bd6f6bef2f11fb`. It
-proposes one `count=0` ioctl #7 call to distinguish v2 from v3 without a
-non-zero DMA allocation. This is a new Level 3 operation and requires approval
-naming `CMDQ-IOCTL-V3-COMPAT-T01` plus that exact binary/hash; the earlier T03
-approval does not cover it. The build script never invokes the binary or any
-device transport.
+performed one approved `count=0` ioctl #7 call and returned raw `-25`
+(`-ENOTTY`), matching the exact MT8183 CMDQ v3 unsupported-request path. The
+run did not allocate a non-zero buffer, obtain Root, or change device state;
+raw output and before/after captures are under
+`adb/phase5/CMDQ-IOCTL-V3-COMPAT-T01-20260803-01/`. The approval is consumed;
+any follow-up ioctl, v3-aware payload, kernel-memory primitive, BROM/DA action,
+or boot-chain write remains a new Level 3 task.
 
-No new device mutation or exploit execution was performed. A v3-aware payload,
-standalone CMDQ ioctl probe, kernel-memory primitive, BROM/DA action, or boot
-chain write is outside the prior approval and remains a new Level 3 task.
+No exploit, v3-aware payload, kernel-memory primitive, BROM/DA action, or
+boot-chain write was performed. The one bounded CMDQ compatibility probe is
+the separately recorded P5H-CMDQ-003 run; any follow-up ioctl or lower-level
+operation remains a new Level 3 task.
