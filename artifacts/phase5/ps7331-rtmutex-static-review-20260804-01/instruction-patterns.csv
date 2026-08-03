@@ -1,0 +1,7 @@
+symbol,pattern,instruction,interpretation
+remove_waiter,current_task_source,"mrs <reg>, SP_EL0",reads the architecture current-task source
+remove_waiter,current_task_blocked_on_clear,"str xzr, [current_task_reg, <field-immediate>]",clears a field through the task loaded from SP_EL0
+rt_mutex_start_proxy_lock,proxy_error_calls_remove_waiter,bl remove_waiter,proxy-lock path contains a remove_waiter call
+rt_mutex_finish_proxy_lock,current_task_source,"mrs <reg>, SP_EL0",reads the architecture current-task source
+futex_requeue,current_task_source,"mrs <reg>, SP_EL0",reads the architecture current-task source
+futex_requeue,current_task_source,"mrs <reg>, SP_EL0",reads the architecture current-task source

@@ -1602,3 +1602,37 @@ Phase 5AQ outputs:
 - `output/tables/phase5aq-config-diff.csv`
 - `output/call-graphs/phase5aq-config-to-ghostlock.mmd`
 - `adb/phase5/PHASE5AQ-DEVICE-CONFIG-20260804-02/`
+
+### Phase 5AR — PS7331 compiled `rtmutex` review
+
+Phase 5AR extends the earlier PS7331 boot-image/config review with a host-only,
+address-sanitized inspection of the reconstructed PS7331 ARM64 kernel Image.
+The recovered symbol table contains `remove_waiter` and the proxy-lock symbols;
+the inspected `remove_waiter` path reads the AArch64 current-task source and
+clears the blocked-on field through that task, while the proxy error path calls
+`remove_waiter`. This is direct compiled evidence for the old GhostLock
+root-cause pattern in the inspected function path. It is not evidence of a
+working root exploit and does not establish the same compiled result for the
+installed PS7330 image.
+
+The exact current-device PS7330 source remains the 7.3.3.0 Amazon archive listed
+in Phase 5N. The supplied source-notice backup page confirms that archive for the
+11th-generation device but does not list an 11th-generation 7.3.3.1 source
+archive in its 2025-02-26 snapshot. Software-version availability and source-
+notice availability are kept separate.
+
+Phase 5AR/5AS outputs:
+
+- `tools/scripts/analyze_phase5ar_ps7331_rtmutex_binary.py`
+- `findings/phase-5ar-ps7331-compiled-rtmutex-review.md`
+- `findings/phase-5as-source-notice-archive-review.md`
+- `findings/phase-5ar-evidence-index.md`
+- `output/tables/phase5ar-rtmutex-binary-evidence.csv`
+- `output/call-graphs/phase5ar-rtmutex-flow.mmd`
+- `artifacts/phase5/ps7331-rtmutex-static-review-20260804-01/`
+- `artifacts/phase5/technically-competent-source-notice-review-20260804-01/`
+
+The analyzer supports `--dry-run`, refuses to overwrite an existing output,
+uses only host `nm`/`objdump`, and omits absolute addresses, branch targets,
+gadget data and exploit offsets. No device state changed; no futex race, native
+payload, ioctl, bootloader action, partition operation or image write was run.

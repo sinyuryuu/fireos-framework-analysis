@@ -1,0 +1,57 @@
+{
+  "address_output": "intentionally omitted",
+  "device_execution": false,
+  "input_elf_sha256": "fd9424539a6e005a948f713965c09a3a61996be6481ca1fb7e83469b60e3dc49",
+  "patterns": [
+    {
+      "instruction": "mrs <reg>, SP_EL0",
+      "interpretation": "reads the architecture current-task source",
+      "pattern": "current_task_source",
+      "symbol": "remove_waiter"
+    },
+    {
+      "instruction": "str xzr, [current_task_reg, <field-immediate>]",
+      "interpretation": "clears a field through the task loaded from SP_EL0",
+      "pattern": "current_task_blocked_on_clear",
+      "symbol": "remove_waiter"
+    },
+    {
+      "instruction": "bl remove_waiter",
+      "interpretation": "proxy-lock path contains a remove_waiter call",
+      "pattern": "proxy_error_calls_remove_waiter",
+      "symbol": "rt_mutex_start_proxy_lock"
+    },
+    {
+      "instruction": "mrs <reg>, SP_EL0",
+      "interpretation": "reads the architecture current-task source",
+      "pattern": "current_task_source",
+      "symbol": "rt_mutex_finish_proxy_lock"
+    },
+    {
+      "instruction": "mrs <reg>, SP_EL0",
+      "interpretation": "reads the architecture current-task source",
+      "pattern": "current_task_source",
+      "symbol": "futex_requeue"
+    },
+    {
+      "instruction": "mrs <reg>, SP_EL0",
+      "interpretation": "reads the architecture current-task source",
+      "pattern": "current_task_source",
+      "symbol": "futex_requeue"
+    }
+  ],
+  "source_fixed_sha256": "aee270b96a626ec014809b93586be1de907e15fe7b1d04974b84033d0cdcfd27",
+  "source_old_sha256": "c4ddac5fe820c7f07670bc332425be05b0df0400ae334a147b483f0ee9b07345",
+  "symbols_present": [
+    "remove_waiter",
+    "rt_mutex_start_proxy_lock",
+    "rt_mutex_finish_proxy_lock",
+    "futex_requeue"
+  ],
+  "symbols_requested": [
+    "remove_waiter",
+    "rt_mutex_start_proxy_lock",
+    "rt_mutex_finish_proxy_lock",
+    "futex_requeue"
+  ]
+}

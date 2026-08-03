@@ -1,0 +1,11 @@
+flowchart TD
+    B[PS7331 boot.img / kernel Image] --> K[kallsyms reconstruction]
+    K --> S[remove_waiter symbol]
+    K --> P[rt_mutex_start_proxy_lock symbol]
+    P --> E[proxy error path]
+    E --> S
+    S --> C[SP_EL0 current-task source]
+    C --> O[current-based blocked-on clear]
+    O --> R[pre-fix GhostLock code pattern]
+    A[PS7330 exact 7.3.3.0 source] --> R
+    R -. no live trigger .-> X[Exploitability remains untested]
