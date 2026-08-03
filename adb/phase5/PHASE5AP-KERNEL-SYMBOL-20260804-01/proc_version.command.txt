@@ -1,0 +1,1 @@
+adb -s G001LT0511550CFT shell cat\ /proc/version\;\ cat\ /proc/cmdline\ 2\>\&1\;\ cat\ /proc/config.gz\ 2\>\&1\ \|\ gzip\ -dc\ 2\>\&1\ \|\ grep\ -E\ \"\^\(CONFIG_\(FUTEX\|RT_MUTEXES\|PREEMPT\|KALLSYMS\|KALLSYMS_ALL\|RANDOMIZE_BASE\|ARM64\|THREAD_INFO_IN_TASK\)\)=\"\ \|\|\ true 

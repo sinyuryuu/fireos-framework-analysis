@@ -1564,3 +1564,20 @@ Phase 5AO outputs:
 
 No PS7331 image was flashed, no partition was written, and no GhostLock race or
 root payload was run.
+
+### Phase 5AP — PS7330 kernel symbol visibility
+
+Phase 5AP performed a new read-only exact-device capture. The ADB shell can read
+the kernel version and module list, but `/proc/kallsyms` and
+`/proc/sys/kernel/kptr_restrict` return `Permission denied`; `perf_event_paranoid`
+is readable as `3`. This confirms that the current shell path cannot obtain a live
+PS7330 symbol-address profile. No procfs bypass, pointer leak, futex race, ioctl,
+root payload, reboot, or partition operation was attempted.
+
+Phase 5AP outputs:
+
+- `tools/scripts/capture_phase5ap_kernel_symbol_surface.sh`
+- `findings/phase-5ap-kernel-symbol-surface.md`
+- `findings/phase-5ap-evidence-index.md`
+- `output/tables/phase5ap-kernel-symbol-surface.csv`
+- `adb/phase5/PHASE5AP-KERNEL-SYMBOL-20260804-01/`

@@ -1,0 +1,1 @@
+adb -s G001LT0511550CFT shell for\ p\ in\ /proc/kallsyms\ /proc/sys/kernel/kptr_restrict\ /proc/sys/kernel/perf_event_paranoid\ /proc/sys/kernel/yama/ptrace_scope\;\ do\ echo\ \"###\ \$p\"\;\ ls\ -l\ \"\$p\"\ 2\>\&1\;\ cat\ \"\$p\"\ 2\>\&1\;\ done 
