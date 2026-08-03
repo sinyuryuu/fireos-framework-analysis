@@ -1,0 +1,858 @@
+Activity Resolver Table:
+  Schemes:
+      amzn:
+        e9418b8 com.amazon.firelauncher/.Launcher filter c151c83
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "amzn"
+          Authority: "com.amazon.firelauncher": -1
+
+  Non-Data Actions:
+      com.amazon.firelauncher.REQUEST_LOCATION_PERMISSION:
+        e9418b8 com.amazon.firelauncher/.Launcher filter 6a32732
+          Action: "com.amazon.firelauncher.REQUEST_LOCATION_PERMISSION"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.firelauncher.intent.action.TUTORIALDONE:
+        e9418b8 com.amazon.firelauncher/.Launcher filter ef3033d
+          Action: "android.intent.action.MAIN"
+          Action: "com.amazon.firelauncher.intent.action.ALEXA_TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIALDONE"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=50, mOrder=0, mHasPartialTypes=false
+      com.amazon.firelauncher.intent.action.ALEXA_TUTORIAL:
+        e9418b8 com.amazon.firelauncher/.Launcher filter ef3033d
+          Action: "android.intent.action.MAIN"
+          Action: "com.amazon.firelauncher.intent.action.ALEXA_TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIALDONE"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=50, mOrder=0, mHasPartialTypes=false
+      android.intent.action.MAIN:
+        e9418b8 com.amazon.firelauncher/.Launcher filter ef3033d
+          Action: "android.intent.action.MAIN"
+          Action: "com.amazon.firelauncher.intent.action.ALEXA_TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIALDONE"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=50, mOrder=0, mHasPartialTypes=false
+        ae6c691 com.amazon.firelauncher/.LauncherUserSettings filter 3ff3e00
+          Action: "android.intent.action.MAIN"
+          Action: "android.intent.action.VIEW"
+          Category: "amazon.intent.category.SETTINGS"
+      android.intent.action.VIEW:
+        ae6c691 com.amazon.firelauncher/.LauncherUserSettings filter 3ff3e00
+          Action: "android.intent.action.MAIN"
+          Action: "android.intent.action.VIEW"
+          Category: "amazon.intent.category.SETTINGS"
+      com.amazon.firelauncher.intent.action.TUTORIAL:
+        e9418b8 com.amazon.firelauncher/.Launcher filter ef3033d
+          Action: "android.intent.action.MAIN"
+          Action: "com.amazon.firelauncher.intent.action.ALEXA_TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIAL"
+          Action: "com.amazon.firelauncher.intent.action.TUTORIALDONE"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=50, mOrder=0, mHasPartialTypes=false
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.amazon.action.PACKAGE_RECENCY_NOTIFICATION:
+        9e8e9f6 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.SystemNotificationProducerService$PackageRecencyReceiver filter 3860f2a
+          Action: "com.amazon.action.PACKAGE_RECENCY_NOTIFICATION"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.mp3.USER_BENEFIT_UPDATE:
+        9b8c1f7 com.amazon.firelauncher/.reccardproducer.ProducerService$MusicUnlimitedRegistrationReceiver filter 18e59fc
+          Action: "com.amazon.mp3.USER_BENEFIT_UPDATE"
+      com.amazon.cmsfirecardproducer.REMOVE_FROM_DEVICE:
+        ace0864 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.CardActionService$RemoveFromDeviceReceiverOld filter 78b92b8
+          Action: "com.amazon.cmsfirecardproducer.REMOVE_FROM_DEVICE"
+      com.amazon.cmsfirecardproducer.REMOVE_FROM_HOME:
+        1a03acd com.amazon.firelauncher/com.amazon.fireappscardproducer.service.CardActionService$RemoveFromHomeReceiverOld filter d2f711b
+          Action: "com.amazon.cmsfirecardproducer.REMOVE_FROM_HOME"
+      com.amazon.firecard.action.remove.FROM_HOME.CONTENT_TYPE_APPS:
+        ab1af82 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.CardActionService$RemoveFromHomeReceiver filter f71b891
+          Action: "com.amazon.firecard.action.remove.FROM_HOME.CONTENT_TYPE_APPS"
+          Action: "com.amazon.firecard.action.remove.FROM_HOME.CONTENT_TYPE_GAMES"
+      com.amazon.firelauncher.appmanager.APPS_REMOVED:
+        1ad8693 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.LauncherNotificationProducerService$PackageChangeReceiver filter 3ab93ff
+          Action: "com.amazon.firelauncher.appmanager.APPS_ADDED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_REMOVED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_UPDATED"
+          Action: "com.amazon.firelauncher.APP_RECENCY_REBUILD"
+      com.amazon.intent.SYNC:
+        e9546d0 com.amazon.firelauncher/.ui.GlobalSyncReceiver filter 59c3e6e
+          Action: "com.amazon.intent.SYNC"
+        602b6c9 com.amazon.firelauncher/com.amazon.heroshoveler.weather.WeatherRefreshService$GlobalSyncReceiver filter 5a0490f
+          Action: "com.amazon.intent.SYNC"
+        b4f41ce com.amazon.firelauncher/.cardproducer.LauncherProducerService$GlobalSyncReceiver filter 10a90a3
+          Action: "com.amazon.intent.SYNC"
+        a1ff8ef com.amazon.firelauncher/com.amazon.hintscardproducer.HintsCardRefreshService$GlobalSyncReceiver filter acad70b
+          Action: "com.amazon.intent.SYNC"
+      android.intent.action.DEVICE_STORAGE_LOW:
+        54ffffc com.amazon.firelauncher/.images.storage.LowStorageReceiver filter 1da2222
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+      com.amazon.firelauncher.appmanager.APPS_ADDED:
+        1ad8693 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.LauncherNotificationProducerService$PackageChangeReceiver filter 3ab93ff
+          Action: "com.amazon.firelauncher.appmanager.APPS_ADDED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_REMOVED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_UPDATED"
+          Action: "com.amazon.firelauncher.APP_RECENCY_REBUILD"
+      com.amazon.firelauncher.START_EDIT_MODE_EXTERNAL:
+        bf6f685 com.amazon.firelauncher/.appsgrid.StartEditModeReceiver filter 1e941e9
+          Action: "com.amazon.firelauncher.START_EDIT_MODE_EXTERNAL"
+          mPriority=100, mOrder=0, mHasPartialTypes=false
+      com.amazon.device.messaging.intent.REGISTRATION:
+        721acda com.amazon.firelauncher/com.amazon.firecard.deviceclient.clients.MultiplexingMessageReceiver filter aa36fa0
+          Action: "com.amazon.device.messaging.intent.REGISTRATION"
+          Action: "com.amazon.device.messaging.intent.RECEIVE"
+          Category: "com.amazon.firelauncher"
+      com.amazon.firelauncher.action.REC_SUPPRESS:
+        69d350b com.amazon.firelauncher/.reccardproducer.ProducerService$ItemSuppressionReceiver filter d10e893
+          Action: "com.amazon.firelauncher.action.REC_SUPPRESS"
+      com.amazon.firelauncher.action.UPSELL_TAPPED_NOTIFICATION:
+        89b1fe8 com.amazon.firelauncher/.reccardproducer.ProducerService$UpsellTappedNotificationReceiver filter 5577aef
+          Action: "com.amazon.firelauncher.action.UPSELL_TAPPED_NOTIFICATION"
+      com.amazon.dcp.sso.action.session.users.changed:
+        3357601 com.amazon.firelauncher/com.amazon.identity.auth.accounts.SessionUserChangedToAccountForPackageChangedAdpater filter 365ec94
+          Action: "com.amazon.dcp.sso.action.session.users.changed"
+      com.amazon.firelauncher.action.WEBLAB_UPDATE:
+        d7dbca6 com.amazon.firelauncher/.reccardproducer.ProducerService$UpNextWeblabUpdateReceiver filter e8b8bce
+          Action: "com.amazon.firelauncher.action.WEBLAB_UPDATE"
+      com.amazon.firecard.action.REFRESH_CARDS:
+        c6816e7 com.amazon.firelauncher/com.amazon.heroshoveler.weather.RefreshCardsBroadcastReceiver filter 2a2672b
+          Action: "com.amazon.firecard.action.REFRESH_CARDS"
+        cf65294 com.amazon.firelauncher/.cardproducer.LauncherProducerService$RefreshCardsReceiver filter 66c4434
+          Action: "com.amazon.firecard.action.REFRESH_CARDS"
+          Action: "android.intent.action.LOCALE_CHANGED"
+        482713d com.amazon.firelauncher/com.amazon.firecard.deviceclient.CloudCardEventService$RefreshCardsReceiver filter 9597759
+          Action: "com.amazon.firecard.action.REFRESH_CARDS"
+        c38fd32 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.LauncherNotificationProducerService$RefreshCardsReceiver filter 54b1f1e
+          Action: "com.amazon.firecard.action.REFRESH_CARDS"
+        8153a83 com.amazon.firelauncher/.reccardproducer.ProducerService$RefreshCardsReceiver filter 4c32264
+          Action: "com.amazon.firecard.action.REFRESH_CARDS"
+        d300400 com.amazon.firelauncher/com.amazon.hintscardproducer.HintsCardRefreshService$RefreshCardsReceiver filter 2d896da
+          Action: "com.amazon.firecard.action.REFRESH_CARDS"
+      com.amazon.firelauncher.action.FOR_YOU_CHANNEL_VISIBLE:
+        6a9e439 com.amazon.firelauncher/com.amazon.heroshoveler.weather.WeatherRefreshBroadcastReceiver filter 9be4521
+          Action: "com.amazon.firelauncher.action.FOR_YOU_CHANNEL_VISIBLE"
+        6f5ba7e com.amazon.firelauncher/.cardproducer.LauncherProducerService$ChannelVisibilityChangeReceiver filter 83357d2
+          Action: "com.amazon.firelauncher.action.FOR_YOU_CHANNEL_VISIBLE"
+        e6fbdf com.amazon.firelauncher/com.amazon.fireappscardproducer.service.LauncherNotificationProducerService$ChannelVisibilityChangeReceiver filter 4a03f7
+          Action: "com.amazon.firelauncher.action.FOR_YOU_CHANNEL_VISIBLE"
+      com.amazon.identity.auth.account.removed.on.device:
+        91602c com.amazon.firelauncher/.cardproducer.LauncherProducerService$AccountChangeReceiver filter d19125d
+          Action: "com.amazon.identity.auth.account.added.on.device"
+          Action: "com.amazon.identity.auth.account.removed.on.device"
+      android.intent.action.LOCALE_CHANGED:
+        73b8af5 com.amazon.firelauncher/com.amazon.heroshoveler.weather.WeatherRefreshService$LocaleChangedReceiver filter c1bdd9c
+          Action: "android.intent.action.LOCALE_CHANGED"
+        72f008a com.amazon.firelauncher/amazon.alexa.locale.AlexaLocaleHelper filter 95e4b07
+          Action: "android.intent.action.LOCALE_CHANGED"
+        cf65294 com.amazon.firelauncher/.cardproducer.LauncherProducerService$RefreshCardsReceiver filter 66c4434
+          Action: "com.amazon.firecard.action.REFRESH_CARDS"
+          Action: "android.intent.action.LOCALE_CHANGED"
+        5e976fb com.amazon.firelauncher/com.amazon.fireappscardproducer.service.SystemNotificationProducerService$LocaleChangeReceiver filter 1a13015
+          Action: "android.intent.action.LOCALE_CHANGED"
+        7ca5318 com.amazon.firelauncher/.reccardproducer.ProducerService$LocaleChangedReceiver filter 5dd5982
+          Action: "android.intent.action.LOCALE_CHANGED"
+        306e171 com.amazon.firelauncher/com.amazon.hintscardproducer.HintsCardRefreshService$LocaleChangedReceiver filter 36519e8
+          Action: "android.intent.action.LOCALE_CHANGED"
+      com.amazon.firelauncher.action.TAB_SETTINGS_CHANGED:
+        1049b56 com.amazon.firelauncher/.reccardproducer.ProducerService$TabSuppressionReceiver filter bc200d0
+          Action: "com.amazon.firelauncher.action.TAB_SETTINGS_CHANGED"
+      com.amazon.firelauncher.action.HOST_APP_COLD_START_ACTION:
+        ce87d7 com.amazon.firelauncher/.reccardproducer.ProducerService$ColdStartReceiver filter def4885
+          Action: "com.amazon.firelauncher.action.HOST_APP_COLD_START_ACTION"
+        c9d88c4 com.amazon.firelauncher/com.amazon.hintscardproducer.HintsCardRefreshService$ColdStartReceiver filter eb946a6
+          Action: "com.amazon.firelauncher.action.HOST_APP_COLD_START_ACTION"
+      android.intent.action.TIME_SET:
+        a5723ad com.amazon.firelauncher/com.amazon.identity.auth.device.storage.LambortishClock$ChangeTimestampsBroadcastReceiver filter 2cdd8e7
+          Action: "android.intent.action.TIME_SET"
+      com.amazon.firecard.action.remove.FROM_HOME.CONTENT_TYPE_GAMES:
+        ab1af82 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.CardActionService$RemoveFromHomeReceiver filter f71b891
+          Action: "com.amazon.firecard.action.remove.FROM_HOME.CONTENT_TYPE_APPS"
+          Action: "com.amazon.firecard.action.remove.FROM_HOME.CONTENT_TYPE_GAMES"
+      com.amazon.firelauncher.APP_RECENCY_REBUILD:
+        1ad8693 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.LauncherNotificationProducerService$PackageChangeReceiver filter 3ab93ff
+          Action: "com.amazon.firelauncher.appmanager.APPS_ADDED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_REMOVED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_UPDATED"
+          Action: "com.amazon.firelauncher.APP_RECENCY_REBUILD"
+      com.amazon.firelauncher.action.RECENCY_UPDATE:
+        8c716e2 com.amazon.firelauncher/.reccardproducer.ProducerService$RecencyUpdateReceiver filter eb9e8c9
+          Action: "com.amazon.firelauncher.action.RECENCY_UPDATE"
+      com.amazon.device.messaging.intent.RECEIVE:
+        721acda com.amazon.firelauncher/com.amazon.firecard.deviceclient.clients.MultiplexingMessageReceiver filter aa36fa0
+          Action: "com.amazon.device.messaging.intent.REGISTRATION"
+          Action: "com.amazon.device.messaging.intent.RECEIVE"
+          Category: "com.amazon.firelauncher"
+      com.amazon.identity.auth.account.added.on.device:
+        91602c com.amazon.firelauncher/.cardproducer.LauncherProducerService$AccountChangeReceiver filter d19125d
+          Action: "com.amazon.identity.auth.account.added.on.device"
+          Action: "com.amazon.identity.auth.account.removed.on.device"
+      com.amazon.kor.demo.CMS_RESET:
+        a89ca73 com.amazon.firelauncher/.appsgrid.DemoModeMonitor$CmsResetReceiver filter c608a70
+          Action: "com.amazon.kor.demo.CMS_RESET"
+          mPriority=100, mOrder=0, mHasPartialTypes=false
+        4c6d30 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.SystemNotificationProducerService$DemoResetReceiver filter acdf3f6
+          Action: "com.amazon.kor.demo.CMS_RESET"
+          mPriority=100, mOrder=0, mHasPartialTypes=false
+      com.amazon.dcp.sso.broadcast.CORPFMHasChanged:
+        cef4da9 com.amazon.firelauncher/.weblab.sync.EarlyWeblabSyncService$CorPfmChangeReceiver filter 78bae17
+          Action: "com.amazon.dcp.sso.broadcast.CORPFMHasChanged"
+          mPriority=999, mOrder=0, mHasPartialTypes=false
+      com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL:
+        543bf2e com.amazon.firelauncher/.tutorial.TutorialDisabledExternalReceiver filter 89314b3
+          Action: "com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL"
+      com.amazon.firelauncher.appmanager.APPS_UPDATED:
+        1ad8693 com.amazon.firelauncher/com.amazon.fireappscardproducer.service.LauncherNotificationProducerService$PackageChangeReceiver filter 3ab93ff
+          Action: "com.amazon.firelauncher.appmanager.APPS_ADDED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_REMOVED"
+          Action: "com.amazon.firelauncher.appmanager.APPS_UPDATED"
+          Action: "com.amazon.firelauncher.APP_RECENCY_REBUILD"
+      com.amazon.weather.WEATHER_UPDATED:
+        dac9acf com.amazon.firelauncher/com.amazon.heroshoveler.weather.WeatherAppRefreshBroadcastReceiver filter d73788
+          Action: "com.amazon.weather.WEATHER_UPDATED"
+      com.amazon.dcp.sso.action.account.added:
+        4c32c5c com.amazon.firelauncher/.weblab.sync.EarlyWeblabSyncService$AccountChangeReceiver filter 24e5204
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+          mPriority=999, mOrder=0, mHasPartialTypes=false
+        9c61b65 com.amazon.firelauncher/.images.prefetcher.PrefetcherAccountReceiver filter b6e53ed
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+        ad0a03a com.amazon.firelauncher/com.amazon.heroshoveler.weather.WeatherRefreshService$AccountChangeReceiver filter 80b13a5
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+        28214eb com.amazon.firelauncher/com.amazon.fireappscardproducer.service.SystemNotificationProducerService$RegistrationChangeReceiver filter d5fe5cc
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+        c84b248 com.amazon.firelauncher/.reccardproducer.ProducerService$RegistrationReceiver filter 8e84ccd
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+        e8208e1 com.amazon.firelauncher/com.amazon.hintscardproducer.HintsCardRefreshService$AccountChangeReceiver filter 160e801
+          Action: "com.amazon.dcp.sso.action.account.added"
+      com.amazon.heroshoveler.weather.test.ALL_CARDS:
+        b188606 com.amazon.firelauncher/com.amazon.heroshoveler.weather.WeatherTestBroadcastReceiver filter 799ad46
+          Action: "com.amazon.heroshoveler.weather.test.ALL_CARDS"
+      com.amazon.dcp.sso.action.account.removed:
+        4c32c5c com.amazon.firelauncher/.weblab.sync.EarlyWeblabSyncService$AccountChangeReceiver filter 24e5204
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+          mPriority=999, mOrder=0, mHasPartialTypes=false
+        9c61b65 com.amazon.firelauncher/.images.prefetcher.PrefetcherAccountReceiver filter b6e53ed
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+        ad0a03a com.amazon.firelauncher/com.amazon.heroshoveler.weather.WeatherRefreshService$AccountChangeReceiver filter 80b13a5
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+        28214eb com.amazon.firelauncher/com.amazon.fireappscardproducer.service.SystemNotificationProducerService$RegistrationChangeReceiver filter d5fe5cc
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+        c84b248 com.amazon.firelauncher/.reccardproducer.ProducerService$RegistrationReceiver filter 8e84ccd
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+
+Service Resolver Table:
+  Non-Data Actions:
+      android.content.SyncAdapter:
+        eb14c7 com.amazon.firelauncher/.arcus.LauncherArcusSyncService filter 3765140
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        d56aaf4 com.amazon.firelauncher/.weblab.sync.WeblabSyncService filter da24879
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        2b5521d com.amazon.firelauncher/.recency.RecencyManagerSyncService filter 6c3e9be
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        5a6fc92 com.amazon.firelauncher/com.amazon.firecard.deviceclient.csf.DeviceClientSyncService filter 9969a1f
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        3fa3663 com.amazon.firelauncher/.reccardproducer.SyncService filter 8d0e3ca
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+      com.amazon.identity.action.SYNC_DIRTY_DATA:
+        1ad8260 com.amazon.firelauncher/com.amazon.identity.auth.device.storage.DirtyDataSyncingService filter 4650858
+          Action: "com.amazon.identity.action.SYNC_DIRTY_DATA"
+      com.amazon.firecard.action.CONSUMER_BIND:
+        ad9f319 com.amazon.firelauncher/com.amazon.firecard.deviceagent.CardDeviceAgent filter b0f416c permission com.amazon.firecard.permission.CARD_CONSUMER
+          Action: "com.amazon.firecard.action.CONSUMER_BIND"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=2147483647, mOrder=0, mHasPartialTypes=false
+      com.amazon.identity.action.BOOTSTRAP_SSO:
+        5344fde com.amazon.firelauncher/com.amazon.identity.auth.device.bootstrapSSO.BootstrapSSOService filter e94b93b
+          Action: "com.amazon.identity.action.BOOTSTRAP_SSO"
+      com.amazon.identity.action.CLEAN_DATA:
+        b4fd5bf com.amazon.firelauncher/com.amazon.identity.auth.device.storage.DatabaseCleaner$DatabaseCleaningService filter 39f8db1
+          Action: "com.amazon.identity.action.CLEAN_DATA"
+      android.accounts.AccountAuthenticator:
+        4d8648c com.amazon.firelauncher/.account.AuthenticatorService filter dfb74c3
+          Action: "android.accounts.AccountAuthenticator"
+        f0da7d5 com.amazon.firelauncher/.cardproducer.utils.account.GenericAccountService filter 17296
+          Action: "android.accounts.AccountAuthenticator"
+      com.amazon.sync.SyncProvider:
+        eb14c7 com.amazon.firelauncher/.arcus.LauncherArcusSyncService filter 3765140
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        d56aaf4 com.amazon.firelauncher/.weblab.sync.WeblabSyncService filter da24879
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        2b5521d com.amazon.firelauncher/.recency.RecencyManagerSyncService filter 6c3e9be
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        5a6fc92 com.amazon.firelauncher/com.amazon.firecard.deviceclient.csf.DeviceClientSyncService filter 9969a1f
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+        3fa3663 com.amazon.firelauncher/.reccardproducer.SyncService filter 8d0e3ca
+          Action: "android.content.SyncAdapter"
+          Action: "com.amazon.sync.SyncProvider"
+      com.amazon.firecard.action.PRODUCER_BIND:
+        5b18bea com.amazon.firelauncher/com.amazon.firecard.deviceagent.service.LocalProviderService filter f5f335 permission com.amazon.firecard.permission.CARD_PRODUCER
+          Action: "com.amazon.firecard.action.PRODUCER_BIND"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=2147483647, mOrder=0, mHasPartialTypes=false
+
+Provider Resolver Table:
+  Non-Data Actions:
+      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+        6360edb com.amazon.firelauncher/.search.SearchIndexingProvider filter fc6b872
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+
+Permissions:
+  Permission [com.amazon.firelauncher.cardproducer.utils.HOST_APP_COLD_START_RECEIVER] (5ed3d78):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{18dec51 com.amazon.firelauncher.cardproducer.utils.HOST_APP_COLD_START_RECEIVER}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.SD_CARD_STATE_RECEIVER_BROADCAST_PERMISSION] (47cbdb7):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{d74b924 com.amazon.firelauncher.permission.SD_CARD_STATE_RECEIVER_BROADCAST_PERMISSION}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.RETRY_SYNC] (f3fc8d):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{e3ae42 com.amazon.firelauncher.permission.RETRY_SYNC}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION] (9157e53):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{1d64390 com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.BADGING] (230d489):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=normal
+    perm=Permission{a826c8e com.amazon.firelauncher.permission.BADGING}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.START_EDIT_MODE_EXTERNAL] (a6facaf):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{68408bc com.amazon.firelauncher.permission.START_EDIT_MODE_EXTERNAL}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.RECEIVE_ADM_MESSAGE] (e493045):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{c3cc39a com.amazon.firelauncher.permission.RECEIVE_ADM_MESSAGE}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.CHECK_FEATURE_SUPPORT] (c9464cb):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{1e6f4a8 com.amazon.firelauncher.permission.CHECK_FEATURE_SUPPORT}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firecard.permission.BROADCAST_CHANNEL_VISIBILITY] (fd18bc1):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{d137f66 com.amazon.firecard.permission.BROADCAST_CHANNEL_VISIBILITY}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_USER] (10282a7):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{60ab354 com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_USER}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.PACKAGE_CHANGED] (c2a22fd):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{1482bf2 com.amazon.firelauncher.permission.PACKAGE_CHANGED}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.RECENCY] (84aa243):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{809b0c0 com.amazon.firelauncher.permission.RECENCY}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.REC_PRODUCER_ACCESS] (47af1f9):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{da9153e com.amazon.firelauncher.REC_PRODUCER_ACCESS}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.WEBLAB_UPDATE] (16b1f9f):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{23918ec com.amazon.firelauncher.permission.WEBLAB_UPDATE}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firecard.permission.DIAGNOSTIC] (a6fb4b5):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{39d474a com.amazon.firecard.permission.DIAGNOSTIC}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.LIBRARY_CHANNEL_CARD_PRODUCER] (2ec16bb):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{d14d7d8 com.amazon.firelauncher.permission.LIBRARY_CHANNEL_CARD_PRODUCER}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.LAUNCH] (4b3e731):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{1f08e16 com.amazon.firelauncher.permission.LAUNCH}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL] (9bb6397):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{aeb9984 com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.BROADCAST_ACTION] (f2ec56d):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{65f75a2 com.amazon.firelauncher.permission.BROADCAST_ACTION}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_OWNER] (9c8a233):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{24ac9f0 com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_OWNER}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Permissions:
+  Permission [com.amazon.firelauncher.permission.APP_WIDGET_UPDATE] (2ff4b69):
+    sourcePackage=com.amazon.firelauncher
+    uid=10120 gids=null type=0 prot=signature
+    perm=Permission{be349ee com.amazon.firelauncher.permission.APP_WIDGET_UPDATE}
+    packageSetting=PackageSetting{f147cb6 com.amazon.firelauncher/10120}
+
+Registered ContentProviders:
+  com.amazon.firelauncher/.appsgrid.db.AppsGridDataProvider:
+    Provider{c612e8f com.amazon.firelauncher/.appsgrid.db.AppsGridDataProvider}
+  com.amazon.firelauncher/.recency.RecencyProvider:
+    Provider{32a951c com.amazon.firelauncher/.recency.RecencyProvider}
+  com.amazon.firelauncher/com.amazon.firecard.deviceagent.provider.CdaDiagProvider:
+    Provider{2383525 com.amazon.firelauncher/com.amazon.firecard.deviceagent.provider.CdaDiagProvider}
+  com.amazon.firelauncher/.reccardproducer.csf.syncproviders.SyncContentProviderStub:
+    Provider{1be16fa com.amazon.firelauncher/.reccardproducer.csf.syncproviders.SyncContentProviderStub}
+  com.amazon.firelauncher/.arcus.LauncherArcusStubProvider:
+    Provider{84c24ab com.amazon.firelauncher/.arcus.LauncherArcusStubProvider}
+  com.amazon.firelauncher/.recency.RecencyStubContentProvider:
+    Provider{2d9e708 com.amazon.firelauncher/.recency.RecencyStubContentProvider}
+  com.amazon.firelauncher/.appsgrid.BadgingProvider:
+    Provider{35bfea1 com.amazon.firelauncher/.appsgrid.BadgingProvider}
+  com.amazon.firelauncher/com.amazon.firecard.deviceclient.csf.DeviceClientContentProviderStub:
+    Provider{746a8c6 com.amazon.firelauncher/com.amazon.firecard.deviceclient.csf.DeviceClientContentProviderStub}
+  com.amazon.firelauncher/.appsgrid.db.AppDiagInfoProvider:
+    Provider{fa66087 com.amazon.firelauncher/.appsgrid.db.AppDiagInfoProvider}
+  com.amazon.firelauncher/.search.SearchIndexingProvider:
+    Provider{6360edb com.amazon.firelauncher/.search.SearchIndexingProvider}
+  com.amazon.firelauncher/.feature.FeatureContentProvider:
+    Provider{aaa6bb4 com.amazon.firelauncher/.feature.FeatureContentProvider}
+  com.amazon.firelauncher/.weblab.sync.WeblabStubContentProvider:
+    Provider{898e3dd com.amazon.firelauncher/.weblab.sync.WeblabStubContentProvider}
+  com.amazon.firelauncher/com.amazon.firecard.deviceagent.provider.CardProvider:
+    Provider{8748b52 com.amazon.firelauncher/com.amazon.firecard.deviceagent.provider.CardProvider}
+  com.amazon.firelauncher/.channels.LibraryStateContentProvider:
+    Provider{f7e7e23 com.amazon.firelauncher/.channels.LibraryStateContentProvider}
+
+ContentProvider Authorities:
+  [com.amazon.firecard.deviceagent.provider]:
+    Provider{8748b52 com.amazon.firelauncher/com.amazon.firecard.deviceagent.provider.CardProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.recencymanager.provider]:
+    Provider{2d9e708 com.amazon.firelauncher/.recency.RecencyStubContentProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.feature.featurecontentprovider]:
+    Provider{aaa6bb4 com.amazon.firelauncher/.feature.FeatureContentProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.recency.provider]:
+    Provider{32a951c com.amazon.firelauncher/.recency.RecencyProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher]:
+    Provider{6360edb com.amazon.firelauncher/.search.SearchIndexingProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.appdiaginfoprovider]:
+    Provider{fa66087 com.amazon.firelauncher/.appsgrid.db.AppDiagInfoProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.badging.provider]:
+    Provider{35bfea1 com.amazon.firelauncher/.appsgrid.BadgingProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.arcus.provider]:
+    Provider{84c24ab com.amazon.firelauncher/.arcus.LauncherArcusStubProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.channels.librarystatecontentprovider]:
+    Provider{f7e7e23 com.amazon.firelauncher/.channels.LibraryStateContentProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.weblab.provider]:
+    Provider{898e3dd com.amazon.firelauncher/.weblab.sync.WeblabStubContentProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firecard.deviceclient.provider]:
+    Provider{746a8c6 com.amazon.firelauncher/com.amazon.firecard.deviceclient.csf.DeviceClientContentProviderStub}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.reccardproducer.provider]:
+    Provider{1be16fa com.amazon.firelauncher/.reccardproducer.csf.syncproviders.SyncContentProviderStub}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firecard.deviceagent.diagnostic.provider]:
+    Provider{2383525 com.amazon.firelauncher/com.amazon.firecard.deviceagent.provider.CdaDiagProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+  [com.amazon.firelauncher.appsgriddataprovider]:
+    Provider{c612e8f com.amazon.firelauncher/.appsgrid.db.AppsGridDataProvider}
+      applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+
+Key Set Manager:
+  [com.amazon.firelauncher]
+      Signing KeySets: 2
+
+Packages:
+  Package [com.amazon.firelauncher] (f147cb6):
+    userId=10120
+    pkg=Package{ec4e0d9 com.amazon.firelauncher}
+    codePath=/system/priv-app/com.amazon.firelauncher
+    resourcePath=/system/priv-app/com.amazon.firelauncher
+    legacyNativeLibraryDir=/system/priv-app/com.amazon.firelauncher/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=82020310 minSdk=28 targetSdk=28
+    versionName=1.3.232663.0_82020310
+    splits=[base]
+    apkSigningVersion=1
+    applicationInfo=ApplicationInfo{55c8f20 com.amazon.firelauncher}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE PARTIALLY_DIRECT_BOOT_AWARE PRIVILEGED ]
+    dataDir=/data/user/0/com.amazon.firelauncher
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      com.fireos.sdk.retaildemo
+      com.fireos.sdk.mapclientlib
+      com.fireos.sdk.csf
+      com.fireos.sdk.messaging
+      com.fireos.sdk.minerva
+      com.fireos.sdk.adm
+      com.amazon.device.messaging
+      com.amazon.identity.auth.device
+    usesOptionalLibraries:
+      com.amazon.asp
+      com.amazon.client.metrics.api
+    usesLibraryFiles:
+      /system/framework/retaildemoapi.jar
+      /system/framework/com.amazon.identity.auth.device.jar
+      /system/framework/com.amazon.sync.api.jar
+      /system/priv-app/DeviceMessagingAndroidInternalSDK/DeviceMessagingAndroidInternalSDK.apk
+      /system/priv-app/MinervaApi/MinervaApi.apk
+      /system/priv-app/DeviceMessagingAndroidSDK/DeviceMessagingAndroidSDK.apk
+      /system/framework/aspclient.jar
+      /system/priv-app/MetricsApi/MetricsApi.apk
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{72c0a9e version:1, signatures:[e627f73a], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE ]
+    declared permissions:
+      com.amazon.firelauncher.permission.BADGING: prot=normal, INSTALLED
+      com.amazon.firelauncher.permission.RECENCY: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.WEBLAB_UPDATE: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.RETRY_SYNC: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.LAUNCH: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.BROADCAST_ACTION: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_OWNER: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_USER: prot=signature, INSTALLED
+      com.amazon.firecard.permission.BROADCAST_CHANNEL_VISIBILITY: prot=signature, INSTALLED
+      com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.APP_WIDGET_UPDATE: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.CHECK_FEATURE_SUPPORT: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.SD_CARD_STATE_RECEIVER_BROADCAST_PERMISSION: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.PACKAGE_CHANGED: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.LIBRARY_CHANNEL_CARD_PRODUCER: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.START_EDIT_MODE_EXTERNAL: prot=signature, INSTALLED
+      com.amazon.firelauncher.permission.RECEIVE_ADM_MESSAGE: prot=signature, INSTALLED
+      com.amazon.firecard.permission.CARD_CONSUMER: prot=signature
+      com.amazon.firecard.permission.CARD_PRODUCER: prot=signature
+      com.amazon.firecard.permission.DIAGNOSTIC: prot=signature, INSTALLED
+      com.amazon.firecard.permission.CDA_IMAGE_PROVIDER_ACCESS_PERMISSION: prot=signature
+      com.amazon.firecard.permission.PRODUCER_CALLBACK_ACCESS: prot=signature
+      com.amazon.firelauncher.REC_PRODUCER_ACCESS: prot=signature, INSTALLED
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: prot=signature|privileged
+      com.amazon.identity.auth.device.perm.AUTH_SDK: prot=signature|privileged
+      com.amazon.dcp.sso.permission.account.changed: prot=signature|privileged
+      com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed: prot=signature|privileged
+      com.amazon.identity.permission.CALL_AMAZON_DEVICE_INFORMATION_PROVIDER: prot=signature|privileged
+      com.amazon.appmanager.preload.permission.READ_PRELOAD_DEVICE_INFO_PROVIDER: prot=signature|privileged
+      com.amazon.firelauncher.cardproducer.utils.HOST_APP_COLD_START_RECEIVER: prot=signature, INSTALLED
+    requested permissions:
+      android.permission.INTERNET
+      amazon.permission.APPLICATION_SETTINGS
+      com.amazon.SHOW_CONTENT_LIBRARY
+      com.amazon.avod.SDK_ACCESS
+      com.amazon.dcp.sso.permission.account.changed
+      com.amazon.firecard.permission.CARD_CONSUMER
+      com.amazon.kindle.permission.LIBRARY_ACCESS
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER
+      com.amazon.permission.ParentalControl
+      amazon.permission.COLLECT_METRICS
+      android.permission.WAKE_LOCK
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.dcp.settings.permission.READ_SETTINGS
+      android.permission.WRITE_SETTINGS
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.READ_SYNC_SETTINGS
+      android.permission.WRITE_SYNC_SETTINGS
+      android.permission.AUTHENTICATE_ACCOUNTS
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.WRITE_EXTERNAL_STORAGE
+      com.amazon.precog.ALLOW_HINTING
+      android.permission.SET_WALLPAPER_HINTS
+      com.amazon.kindle.unifiedSearch.PRE_WARM
+      com.lab126.downloads.DOWNLOAD_SVC_CLIENT_CONNECT
+      com.amazon.sync.attributes.USE_SYNC_ATTRIBUTE_PROVIDER
+      com.amazon.firelauncher.permission.RETRY_SYNC
+      amazon.alexa.tablets.RenderCard
+      com.amazon.firelauncher.permission.BROADCAST_ACTION
+      com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_OWNER
+      com.amazon.STORE_ACCESS
+      com.amazon.kindle.dtcp.permission.DTCP_SERVICE_ACCESS
+      com.amazon.firecard.permission.BROADCAST_CHANNEL_VISIBILITY
+      amazon.permission.SHARED_STORAGE_WRITE
+      com.amazon.permission.LAUNCH_INSTANT_SEARCH
+      com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL
+      android.permission.BIND_APPWIDGET
+      com.amazon.firelauncher.permission.APP_WIDGET_UPDATE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      com.amazon.firelauncher.permission.PACKAGE_CHANGED
+      com.amazon.firelauncher.permission.SD_CARD_STATE_RECEIVER_BROADCAST_PERMISSION
+      android.permission.REQUEST_DELETE_PACKAGES
+      com.amazon.CONTENT_PROVIDER_ACCESS
+      com.audible.application.kindle.permission.MANAGE_DOWNLOADS
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM
+      com.amazon.dcp.messaging.permission.QUEUE_MESSAGE
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION
+      com.amazon.kindle.cms.CMS_ACCESS
+      com.amazon.kindle.permission.SIS_ID_ACCESS
+      com.amazon.firelauncher.permission.WEBLAB_UPDATE
+      android.permission.MANAGE_USERS
+      com.amazon.firecard.permission.CDA_IMAGE_PROVIDER_ACCESS_PERMISSION
+      com.amazon.kindle.otter.oobe.OOBE_PERMISSION
+      com.amazon.permission.GET_PROFILE
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS
+      com.amazon.firecard.permission.CARD_PRODUCER
+      android.permission.ACCESS_FINE_LOCATION
+      com.amazon.weather.permission.ACCESS_WEATHER_PREFERENCES
+      com.amazon.weather.permission.ACCESS_WEATHER_REFRESH
+      com.amazon.permission.GLOBAL_SYNC
+      android.permission.ACCESS_WIFI_STATE
+      com.amazon.firelauncher.permission.RECEIVE_ADM_MESSAGE
+      com.amazon.device.messaging.permission.RECEIVE
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.READ_PHONE_STATE
+      com.amazon.identity.permission.GENERIC_IPC
+      com.amazon.mas.client.CONTENT_PROVIDER_READ_com.amazon.venezia
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION
+      com.amazon.permission.UPDATE_PACKAGE_RECENCY_FILTER
+      android.permission.READ_PROFILE
+      com.amazon.firecard.permission.PRODUCER_CALLBACK_ACCESS
+      android.permission.USE_CREDENTIALS
+      android.permission.MANAGE_ACCOUNTS
+      com.amazon.firelauncher.REC_PRODUCER_ACCESS
+      com.amazon.identity.permission.MULTIPLE_PROFILE_AWARE
+      com.amazon.firelauncher.permission.RECENCY
+      com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_USER
+      com.amazon.firelauncher.cardproducer.utils.HOST_APP_COLD_START_RECEIVER
+      com.amazon.mp3.user.update.broadcast
+      amazon.speech.permission.CONNECT_WITH_SIM
+      com.amazon.mas.client.pdiservice.INVOKE_PDI_SERVICE_com.amazon.venezia
+      com.amazon.mas.client.install.INVOKE_INSTALL_SERVICE_com.amazon.venezia
+      com.amazon.mas.client.locker.service.appmgr.INVOKE_APP_MANAGER_SERVICE_com.amazon.venezia
+      com.amazon.mas.client.deleteservice.INVOKE_DELETE_SERVICE_com.amazon.venezia
+      com.amazon.mas.client.download.service.INVOKE_DOWNLOAD_SERVICE_com.amazon.venezia
+      com.amazon.mas.client.GLOBAL_BROADCAST_com.amazon.venezia
+      com.amazon.mas.client.CONTENT_PROVIDER_READ
+      amazon.speech.permission.SEND_DATA_TO_ALEXA
+      com.amazon.permission.ASP_PERMISSION
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED
+      android.permission.GET_ACCOUNTS
+      com.amazon.identity.auth.device.perm.AUTH_SDK
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER
+      com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed
+      com.amazon.identity.permission.CALL_AMAZON_DEVICE_INFORMATION_PROVIDER
+      com.amazon.appmanager.preload.permission.READ_PRELOAD_DEVICE_INFO_PROVIDER
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+    install permissions:
+      com.amazon.firelauncher.cardproducer.utils.HOST_APP_COLD_START_RECEIVER: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      com.amazon.firelauncher.permission.SD_CARD_STATE_RECEIVER_BROADCAST_PERMISSION: granted=true
+      com.amazon.mas.client.GLOBAL_BROADCAST_com.amazon.venezia: granted=true
+      com.audible.application.kindle.permission.MANAGE_DOWNLOADS: granted=true
+      com.amazon.appmanager.preload.permission.READ_PRELOAD_DEVICE_INFO_PROVIDER: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.amazon.weather.permission.ACCESS_WEATHER_PREFERENCES: granted=true
+      com.amazon.mas.client.pdiservice.INVOKE_PDI_SERVICE_com.amazon.venezia: granted=true
+      com.amazon.mas.client.download.service.INVOKE_DOWNLOAD_SERVICE_com.amazon.venezia: granted=true
+      com.amazon.firelauncher.permission.RETRY_SYNC: granted=true
+      amazon.permission.SHARED_STORAGE_WRITE: granted=true
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      com.amazon.avod.SDK_ACCESS: granted=true
+      com.amazon.kindle.unifiedSearch.PRE_WARM: granted=true
+      com.amazon.mas.client.CONTENT_PROVIDER_READ: granted=true
+      com.lab126.downloads.DOWNLOAD_SVC_CLIENT_CONNECT: granted=true
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      com.amazon.mas.client.locker.service.appmgr.INVOKE_APP_MANAGER_SERVICE_com.amazon.venezia: granted=true
+      android.permission.WRITE_SYNC_SETTINGS: granted=true
+      amazon.speech.permission.CONNECT_WITH_SIM: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.amazon.mas.client.CONTENT_PROVIDER_READ_com.amazon.venezia: granted=true
+      com.amazon.firelauncher.permission.RECEIVE_ADM_MESSAGE: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM: granted=true
+      com.amazon.firecard.permission.BROADCAST_CHANNEL_VISIBILITY: granted=true
+      com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_USER: granted=true
+      com.amazon.CONTENT_PROVIDER_ACCESS: granted=true
+      android.permission.READ_PROFILE: granted=true
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER: granted=true
+      com.amazon.firelauncher.permission.PACKAGE_CHANGED: granted=true
+      com.amazon.sync.attributes.USE_SYNC_ATTRIBUTE_PROVIDER: granted=true
+      com.amazon.mas.client.deleteservice.INVOKE_DELETE_SERVICE_com.amazon.venezia: granted=true
+      com.amazon.kindle.otter.oobe.OOBE_PERMISSION: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      com.amazon.firecard.permission.CDA_IMAGE_PROVIDER_ACCESS_PERMISSION: granted=true
+      com.amazon.STORE_ACCESS: granted=true
+      com.amazon.device.messaging.permission.RECEIVE: granted=true
+      com.amazon.device.permission.ACCESS_SALE_PROVIDER: granted=true
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED: granted=true
+      com.amazon.firecard.permission.CARD_PRODUCER: granted=true
+      com.amazon.dcp.settings.permission.READ_SETTINGS: granted=true
+      android.permission.BIND_APPWIDGET: granted=true
+      com.amazon.firelauncher.permission.RECENCY: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.amazon.mas.client.install.INVOKE_INSTALL_SERVICE_com.amazon.venezia: granted=true
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      amazon.speech.permission.SEND_DATA_TO_ALEXA: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      com.amazon.identity.permission.MULTIPLE_PROFILE_AWARE: granted=true
+      com.amazon.permission.ParentalControl: granted=true
+      com.amazon.firecard.permission.CARD_CONSUMER: granted=true
+      com.amazon.dcp.sso.permission.account.changed: granted=true
+      amazon.permission.APPLICATION_SETTINGS: granted=true
+      com.amazon.firelauncher.REC_PRODUCER_ACCESS: granted=true
+      com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed: granted=true
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      com.amazon.kindle.permission.LIBRARY_ACCESS: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      com.amazon.identity.auth.device.perm.AUTH_SDK: granted=true
+      com.amazon.kindle.cms.CMS_ACCESS: granted=true
+      com.amazon.identity.permission.CALL_AMAZON_DEVICE_INFORMATION_PROVIDER: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      com.amazon.precog.ALLOW_HINTING: granted=true
+      com.amazon.permission.GLOBAL_SYNC: granted=true
+      com.amazon.firelauncher.permission.WEBLAB_UPDATE: granted=true
+      com.amazon.permission.ASP_PERMISSION: granted=true
+      android.permission.REQUEST_DELETE_PACKAGES: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      com.amazon.mp3.user.update.broadcast: granted=true
+      com.amazon.firecard.permission.PRODUCER_CALLBACK_ACCESS: granted=true
+      com.amazon.SHOW_CONTENT_LIBRARY: granted=true
+      android.permission.SET_WALLPAPER_HINTS: granted=true
+      com.amazon.permission.GET_PROFILE: granted=true
+      android.permission.READ_SYNC_SETTINGS: granted=true
+      com.amazon.kindle.dtcp.permission.DTCP_SERVICE_ACCESS: granted=true
+      com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL: granted=true
+      com.amazon.firelauncher.permission.BROADCAST_ACTION: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: granted=true
+      com.amazon.permission.UPDATE_PACKAGE_RECENCY_FILTER: granted=true
+      com.amazon.weather.permission.ACCESS_WEATHER_REFRESH: granted=true
+      com.amazon.firelauncher.permission.TAB_SUPPRESSION_SETTINGS_OWNER: granted=true
+      com.amazon.dcp.messaging.permission.QUEUE_MESSAGE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      com.amazon.permission.LAUNCH_INSTANT_SEARCH: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+      com.amazon.firelauncher.permission.APP_WIDGET_UPDATE: granted=true
+    User 0: ceDataInode=852182 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[5901, 3003]
+      runtime permissions:
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+      disabledComponents:
+        com.amazon.firelauncher.images.storage.LowStorageReceiver
+        com.amazon.identity.auth.device.storage.DatabaseCleaner$DatabaseCleaningService
+        com.amazon.identity.auth.device.storage.DirtyDataSyncingService
+        com.amazon.identity.auth.accounts.SessionUserChangedToAccountForPackageChangedAdpater
+      enabledComponents:
+        com.amazon.identity.auth.device.bootstrapSSO.BootstrapSSOService
+
+Package Changes:
+  Sequence number=10
+  User 0:
+    seq=4, package=com.google.android.gms
+    seq=5, package=com.microsoft.launcher
+    seq=9, package=juniojsv.mtk.easy.su
+
+
+Dexopt state:
+  [com.amazon.firelauncher]
+    path: /system/priv-app/com.amazon.firelauncher/com.amazon.firelauncher.apk
+      arm64: [status=speed] [reason=prebuilt]
+      used by other apps: [com.amazon.sync.provider.ipc]
+
+
+Compiler stats:
+  [com.amazon.firelauncher]
+    (No recorded stats)

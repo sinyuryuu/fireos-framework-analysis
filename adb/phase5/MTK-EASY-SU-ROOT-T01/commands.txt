@@ -1,0 +1,31 @@
+Test ID: MTK-EASY-SU-ROOT-T01
+Serial: G001LT0511550CFT
+
+Pre-state:
+tools/scripts/capture_mutation_snapshot.sh --serial G001LT0511550CFT --test-id MTK-EASY-SU-ROOT-T01-PRE --output adb/phase5/MTK-EASY-SU-ROOT-T01-PRE
+shasum -a 256 artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
+
+Approved staging:
+adb -s G001LT0511550CFT install --user 0 artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
+adb -s G001LT0511550CFT logcat -c
+adb -s G001LT0511550CFT shell am start -W --user 0 -n juniojsv.mtk.easy.su/.MainActivity
+adb -s G001LT0511550CFT shell uiautomator dump /sdcard/mtk-easy-su-root-t01-window.xml
+adb -s G001LT0511550CFT shell cat /sdcard/mtk-easy-su-root-t01-window.xml
+
+Observed stop condition:
+The app showed a Warning dialog with message:
+Misuse of superuser access can seriously damage your device, moreover you are fully responsible for your device.
+The only visible action was Accept. It was not clicked. The Root control was not reached.
+
+Read-only observation:
+adb -s G001LT0511550CFT logcat -d -b all -v threadtime
+adb -s G001LT0511550CFT shell dumpsys activity activities
+adb -s G001LT0511550CFT shell dumpsys window windows
+adb -s G001LT0511550CFT shell id
+adb -s G001LT0511550CFT shell getenforce
+adb -s G001LT0511550CFT shell getprop ro.boot.verifiedbootstate
+adb -s G001LT0511550CFT shell getprop ro.boot.flash.locked
+
+Rollback:
+adb -s G001LT0511550CFT uninstall juniojsv.mtk.easy.su
+tools/scripts/capture_mutation_snapshot.sh --serial G001LT0511550CFT --test-id MTK-EASY-SU-ROOT-T01-POST --output adb/phase5/MTK-EASY-SU-ROOT-T01-POST

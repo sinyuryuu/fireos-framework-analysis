@@ -1,0 +1,12 @@
+Test ID: MTK-EASY-SU-ROOT-T02-OBS
+Serial: G001LT0511550CFT
+
+Read-only observation commands:
+adb -s G001LT0511550CFT logcat -d -b all -v threadtime
+adb -s G001LT0511550CFT shell ps -A -o USER,PID,PPID,NAME,ARGS
+adb -s G001LT0511550CFT shell pm list packages juniojsv.mtk.easy.su
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+adb -s G001LT0511550CFT shell getenforce
+
+No install, launch, click, Root command, package mutation, partition write,
+or rollback command was issued by the collecting observation.

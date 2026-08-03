@@ -11,7 +11,7 @@
 - 套件停用、標準 Home 設定測試、喚醒/解除鎖屏與重開機都屬於受控狀態變更；只有在使用者明確授權、指定 serial 且輸入腳本要求的核准字串後才執行。本輪已完成 `PACKAGE-T01`/`T02`/`T03`/`T04`/`T05`、`HOME-DEFAULT-T01`、`HOME-PREF-T01`、`HOME-PREF-T02`、`HOME-PREF-T03`、解鎖後有效矩陣 `HOME-T14`/`T15`/`T16`、`HOME-PREF-T17`、直接前景矩陣 `HOME-T18`/`T19`、Settings UI probes `HOME-T20`/`T21`/`T22`/`T23` 與 `REBOOT-T02`/`T03`，原始輸出均保留。`PACKAGE-T04` 是修正 `cmd package` 呼叫前的無效命令驗證紀錄，不作因果證據。
 - DevicePolicy probe `POLICY-T01` 僅讀取 owner/admin/restriction 與相關套件狀態；Settings picker probes `SETTINGS-T01`/`T02`/`T03` 只切換前景並在結束時返回 Home，沒有選取 Launcher 或寫入預設 App 狀態。新增原始輸出均保留並通過 SHA-256 驗證。
 - Component probes `COMPONENT-T01`/`T02` 對 Fire Launcher Home component 執行受控停用測試；`pm` 與 `cmd package` 都被同一 protected-package gate 拒絕，沒有留下 component state 變更。原始輸出均保留並通過 SHA-256 驗證。
-- 本專案不執行 Root、DRM/帳號繞過、清除資料、factory reset、sideload 或 flash。
+- 本專案不執行未經精確 Level 3 核准的 Root、DRM/帳號繞過、清除資料、factory reset、sideload 或 flash；已核准的 Root control 嘗試仍禁止自行擴張操作範圍。
 - 原始輸出使用唯一 run ID，已存在的檔案不覆寫。
 
 ## 第一輪使用方式
@@ -453,3 +453,18 @@ The exact staged APK record is in `adb/phase5/MTK-EASY-SU-APK-T01/`, with
 read-only pre/post snapshots under the corresponding `-PRE` and `-POST`
 directories. The local APK binary remains ignored; its release digest and
 static inspection outputs are publishable.
+
+The first Root-control attempt is recorded in
+`findings/phase-5-mtk-easy-su-root-test.md`: it stopped at the visible
+superuser warning and was rolled back. A later device-side observation is
+recorded in `findings/phase-5-mtk-easy-su-root-followup.md`. It shows the APK
+reached its ordinary-user device preflight, but no UID-0, successful `su`, or
+`/sbin/su` signal was captured; the practical result is failed/no confirmed
+root. The device returned to Fire Launcher and the package was absent.
+
+The offline payload inspection is reproducible with
+`tools/scripts/inspect_mtk_easy_su_payload.sh`; it never executes extracted
+assets. The resulting hashes and selected static review are under
+`artifacts/phase5/mtk-easy-su-audit-20260803/payload-inspection-20260803/`
+and summarized in `findings/phase-5-mtk-easy-su-payload-analysis.md`. A
+further device-side retry would require a new exact Level 3 scope.

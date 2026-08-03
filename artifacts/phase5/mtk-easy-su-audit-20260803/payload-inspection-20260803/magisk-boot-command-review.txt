@@ -1,0 +1,33 @@
+7:# It uses mtk-su, the temporary root tool for MediaTek ARMv8 chips.
+22:    DEVICES=$(find /dev/block -type l -iname $BLOCK) 2>/dev/null
+32:  local FILELIST=$(grep -s PARTNAME= /sys/dev/block/*/uevent) 2>/dev/null
+55:cd $HOMEDIR || { setenforce 1; exit 1; }
+58:./magiskpolicy --live --magisk "allow magisk * * *"
+61:	mount | grep -qF rootfs
+64:		mount -o rw,remount /
+69:			setenforce 1
+72:		mount -o ro,remount /
+76:	./magisk -c >&2
+80:	if [ ! -f /sbin/magiskinit ] || [ ! -f /sbin/magisk ]; then
+81:		echo "Bad /sbin mount?" >&2
+82:		setenforce 1
+87:	cp magiskinit /sbin/
+90:		mkdir /sbin/.magisk/mirror/system_root
+91:		block=$(mount | grep " / " | cut -d\  -f1)
+92:		[ $block = "/dev/root" ] && block=/dev/block/dm-0
+93:		mount -o ro $block /sbin/.magisk/mirror/system_root
+94:		for file in /sbin/.magisk/mirror/system_root/sbin/*; do
+106:	magisk --post-fs-data
+108:	magisk --service
+109:	magisk --boot-complete
+113:APK_PATH="/sdcard/Android/data/juniojsv.mtk.easy.su/files/magisk-manager.apk"
+114:ALT_APK_PATH="/mnt/sdcard/Android/data/juniojsv.mtk.easy.su/files/magisk-manager.apk"
+121:    pm uninstall com.topjohnwu.magisk
+122:    pm install -r "$APK_PATH"
+126:    pm uninstall com.topjohnwu.magisk
+127:    pm install -r "$ALT_APK_PATH"
+132:setenforce 1
+137:ln -fs magiskinit magiskpolicy
+138:ln -fs magiskinit magisk
+141:ctx=$(cat /proc/$$/attr/current)
+146:echo "$SU_MINISCRIPT" | "./mtk-su" -v -Z $newctx

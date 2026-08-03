@@ -1,0 +1,1803 @@
+--- assets/magisk-boot.sh ---
+# This script sets up bootless root with Magisk on MediaTek Android devices.
+# It uses mtk-su, the temporary root tool for MediaTek ARMv8 chips.
+# WARNING: DO NOT UPDATE MAGISK THROUGH MAGISK MANAGER OR YOU WILL BRICK YOUR
+   DEVICE ON A LOCKED BOOTLOADER
+# Android 5.x may not support, so we use /data/local/tmp :|
+SU_MINISCRIPT='
+# Magisk function to find boot partition and prevent the installer from finding
+# Root only at this point; hoping selinux is permissive
+echo "Root user only" >&2
+SLOT=$(getprop ro.boot.slot_suffix)
+find_block boot$SLOT
+cd $HOMEDIR || { setenforce 1; exit 1; }
+./magiskpolicy --live --magisk "allow magisk * * *"
+# Set up /root links to /sbin files
+mount | grep -qF rootfs
+have_rootfs=$?
+if [ $have_rootfs -eq 0 ]; then
+mount -o rw,remount /
+mkdir -p /root
+chmod 750 /root
+if ! ln /sbin/* /root; then
+setenforce 1
+mount -o ro,remount /
+# This may crash on system-as-root with no /root directory
+./magisk -c >&2
+if [ ! -f /sbin/magiskinit ] || [ ! -f /sbin/magisk ]; then
+echo "Bad /sbin mount?" >&2
+setenforce 1
+cp magiskinit /sbin/
+if [ $have_rootfs -ne 0 ]; then
+mkdir /sbin/.magisk/mirror/system_root
+block=$(mount | grep " / " | cut -d\  -f1)
+[ $block = "/dev/root" ] && block=/dev/block/dm-0
+mount -o ro $block /sbin/.magisk/mirror/system_root
+for file in /sbin/.magisk/mirror/system_root/sbin/*; do
+magisk --post-fs-data
+magisk --service
+magisk --boot-complete
+# Install Magisk Manager APK if found
+APK_PATH="/sdcard/Android/data/juniojsv.mtk.easy.su/files/magisk-manager.apk"
+ALT_APK_PATH="/mnt/sdcard/Android/data/juniojsv.mtk.easy.su/files/magisk-manager.apk"
+# Install Magisk Manager
+    pm uninstall com.topjohnwu.magisk
+    pm uninstall com.topjohnwu.magisk
+    echo "Magisk Manager APK not found (not extracted), assuming already installed" >&2
+setenforce 1
+ln -fs magiskinit magiskpolicy
+ln -fs magiskinit magisk
+# start SU daemon
+echo "$SU_MINISCRIPT" | "./mtk-su" -v -Z $newctx
+--- assets/mtk-su32 ---
+This firmware cannot be supported
+Firmware support not implemented
+Temporary root by diplomatic@XDA
+https://forum.xda-developers.com/android/development/amazing-temp-root-mediatek-armv8-t3922213
+--- assets/mtk-su64 ---
+This firmware cannot be supported
+Firmware support not implemented
+Temporary root by diplomatic@XDA
+https://forum.xda-developers.com/android/development/amazing-temp-root-mediatek-armv8-t3922213
+--- assets/magiskinit32 ---
+G<Suh
+a4sUkTF
+/magisk
+vroot
+Cannot find root partition, abort
+/proc/mounts
+.magisk
+magiskinit
+./magiskinit
+magiskpolicy
+supolicy
+./magisk
+magiskhide
+.magisk/block
+.magisk/mirror
+.magisk/mirror/system_root
+/.magisk/mirror/system_root
+.magisk/mirror/system_root/sbin
+.magisk/rootdir/init
+.magisk/rootdir%s
+.magisk/rootdir/sbin
+.magisk/rootdir/init.rc
+.magisk/rootdir/system/etc/init/hw/init.rc
+.magisk/rootdir/.mount_list
+${MAGISKTMP}
+/root
+/sbin/magisk
+/sbin/.magisk/mirror/sepolicy.rules
+REMOUNT_ROOT
+/.backup/.magisk
+%s/fstab_suffix
+androidboot.slot_suffix
+androidboot.slot
+androidboot.force_normal_boot
+rootwait
+androidboot.android_dt_dir
+androidboot.hardware
+androidboot.hardware.platform
+androidboot.fstab_suffix
+first_stage_mount
+Cannot determine fstab suffix!
+/system_root
+/dev/magiskinit
+MAGISKINIT
+.magisk/config
+.magisk/rootdir
+MagiskPolicy - Sepolicy Patch Tool
+   --magisk          inject built-in rules for a minimal
+                     Magisk selinux environment
+magisk
+mlstrustedsubject
+magisk_file
+magisk_client
+magisk_exec
+rootfs
+surfaceflinger
+support the match-all operator (*).
+Supported policy statements:
+- The only supported operation is 'ioctl'
+verifyatboot
+support_scfs
+policy version %u does not support extended permissions rules and one was specified
+Insufficient memory
+policy version %d cannot support MLS
+Warning! Policy version %d cannot support permissive types, but some were defined
+module policy version %u does not support ioctl extended permissions rules and one was specified
+Target platform %s does not support ioctl extended permissions rules and one was specified
+policy version %u does not support ioctl extendedpermissions rules and one was specified
+Warning! Module policy version %d cannot support permissive types, but one was defined
+fsuse
+<root>
+Conflicting type rules (scontext=%s tcontext=%s tclass=%s result=%s), existing=%s
+Expanded from type rule (scontext=%s tcontext=%s tclass=%s result=%s)
+ibpkeycon subnet prefix not in valid IPV6 format
+Expression result was undefined - disabling all rules
+Invalid fsuse type
+Bad fsuse declaration
+Problems processing fsuse rules
+Range operation only supported for categories permissionx
+Type rule result must be a type [%d]
+typetransition result is not a type or type alias
+roletransition must result in a role, but %s is a %s
+Low level category set must be a subset of the high level category set
+Invalid fsuse
+While testing expression, expression result was undefined - this should never happen.
+nnp_nosuid_transition
+out of dynamic memory in cil_yyensure_buffer_stack()
+mount %s->%s failed with %d: %s
+umount %s failed with %d: %s
+umount2 %s failed with %d: %s
+No such file or directory
+No such process
+No such device or address
+No such device
+Math result not representable
+Srmount error
+Protocol not supported
+Socket type not supported
+Operation not supported on transport endpoint
+Protocol family not supported
+Address family not supported by protocol
+7"CsU
+lSu_x
+/dev/root
+magiskinit: 
+    rm /dev/.magisk_unblock
+    wait /dev/.magisk_unblock 40
+    rm /dev/.magisk_unblock
+service %2$s %1$s/magisk --post-fs-data
+    user root
+    seclabel u:r:magisk:s0
+service %3$s %1$s/magisk --service
+    user root
+    seclabel u:r:magisk:s0
+on property:sys.boot_completed=1
+service %4$s %1$s/magisk --boot-complete
+    user root
+    seclabel u:r:magisk:s0
+--- assets/magiskinit64 ---
++EkKtOSUGrJ%
+T SU;]?
+/magisk
+vroot
+Cannot find root partition, abort
+/proc/mounts
+.magisk
+magiskinit
+./magiskinit
+magiskpolicy
+supolicy
+./magisk
+magiskhide
+.magisk/block
+.magisk/mirror
+.magisk/mirror/system_root
+/.magisk/mirror/system_root
+.magisk/mirror/system_root/sbin
+.magisk/rootdir/init
+.magisk/rootdir%s
+.magisk/rootdir/sbin
+.magisk/rootdir/init.rc
+.magisk/rootdir/system/etc/init/hw/init.rc
+.magisk/rootdir/.mount_list
+${MAGISKTMP}
+/root
+/sbin/magisk
+/sbin/.magisk/mirror/sepolicy.rules
+REMOUNT_ROOT
+/.backup/.magisk
+%s/fstab_suffix
+androidboot.slot_suffix
+androidboot.slot
+androidboot.force_normal_boot
+rootwait
+androidboot.android_dt_dir
+androidboot.hardware
+androidboot.hardware.platform
+androidboot.fstab_suffix
+first_stage_mount
+Cannot determine fstab suffix!
+/system_root
+/dev/magiskinit
+MAGISKINIT
+.magisk/config
+.magisk/rootdir
+MagiskPolicy - Sepolicy Patch Tool
+   --magisk          inject built-in rules for a minimal
+                     Magisk selinux environment
+magisk
+mlstrustedsubject
+magisk_file
+magisk_client
+magisk_exec
+rootfs
+surfaceflinger
+support the match-all operator (*).
+Supported policy statements:
+- The only supported operation is 'ioctl'
+verifyatboot
+support_scfs
+policy version %u does not support extended permissions rules and one was specified
+Insufficient memory
+policy version %d cannot support MLS
+Warning! Policy version %d cannot support permissive types, but some were defined
+module policy version %u does not support ioctl extended permissions rules and one was specified
+Target platform %s does not support ioctl extended permissions rules and one was specified
+policy version %u does not support ioctl extendedpermissions rules and one was specified
+Warning! Module policy version %d cannot support permissive types, but one was defined
+fsuse
+<root>
+Conflicting type rules (scontext=%s tcontext=%s tclass=%s result=%s), existing=%s
+Expanded from type rule (scontext=%s tcontext=%s tclass=%s result=%s)
+ibpkeycon subnet prefix not in valid IPV6 format
+Expression result was undefined - disabling all rules
+Invalid fsuse type
+Bad fsuse declaration
+Problems processing fsuse rules
+Range operation only supported for categories permissionx
+Type rule result must be a type [%d]
+typetransition result is not a type or type alias
+roletransition must result in a role, but %s is a %s
+Low level category set must be a subset of the high level category set
+Invalid fsuse
+While testing expression, expression result was undefined - this should never happen.
+nnp_nosuid_transition
+out of dynamic memory in cil_yyensure_buffer_stack()
+mount %s->%s failed with %d: %s
+umount %s failed with %d: %s
+umount2 %s failed with %d: %s
+No such file or directory
+No such process
+No such device or address
+No such device
+Math result not representable
+Srmount error
+Protocol not supported
+Socket type not supported
+Operation not supported on transport endpoint
+Protocol family not supported
+Address family not supported by protocol
+7"CsU
+lSu_x
+/dev/root
+magiskinit: 
+    rm /dev/.magisk_unblock
+    wait /dev/.magisk_unblock 40
+    rm /dev/.magisk_unblock
+service %2$s %1$s/magisk --post-fs-data
+    user root
+    seclabel u:r:magisk:s0
+service %3$s %1$s/magisk --service
+    user root
+    seclabel u:r:magisk:s0
+on property:sys.boot_completed=1
+service %4$s %1$s/magisk --boot-complete
+    user root
+    seclabel u:r:magisk:s0
+--- assets/magisk-manager.apk ---
+samsung
+**res/color/material_on_surface_disabled.xml
+44res/color/material_on_surface_emphasis_high_type.xml
+11res/color/material_on_surface_emphasis_medium.xml
+((res/color/material_on_surface_stroke.xml
+%%res/color/mtrl_chip_surface_color.xml
+res/SU.png
+res/SU.xml
+Submit query
+After hiding Magisk Manager, its name and icon might become difficult to recognize. Do you want to add a pretty shortcut to the home screen?
+Magisk Manager
+Your device needs additional setup for Magisk to work properly. It will download the Magisk setup zip, do you want to proceed now?
+00All root sessions use the global mount namespace
+Hide Magisk Manager failed
+Hiding Magisk Manager
+rrAlways make sure you're using open-source Magisk Manager. Manager of unknown source can perform malicious actions!
+wwMagisk is, and always will be, free and open-source. You can however show us that you care by sending a small donation.
+Support Us
+Your device will be FORCED to boot to the current inactive slot after a reboot!
+66Each root session will have its own isolated namespace
+##Magisk logs are empty, that's weird
+44You're log-free, try using your SU enabled apps more
+Log successfully cleared
+Magisk
+Magisk Update Available!
+MagiskHide
+  Magisk Manager Update Available!
+Mount Namespace Mode
+77Unsupported device or no biometric settings are enabled
+==Only owner can manage root access and receive request prompts
+Only owner has root access
+Magisk Manager is FOSS and doesn't contain Google's proprietary SafetyNet API code.
+Will you allow Magisk Manager to download an extension (contains GoogleApiClient) for SafetyNet checks?
+Reboot
+Reboot to Bootloader
+Rebooting in 5 seconds
+Reboot to Download
+Reboot to EDL
+Reboot to Recovery
+Soft reboot
+66Root sessions will inherit their requester's namespace
+Restore Magisk Manager failed
+Success!
+((Select mode which best suits your style!
+::Repackage Magisk Manager with random package and app names
+Hide Magisk Manager
+))Systemless hosts support for Adblock apps
+++Hide Magisk from various forms of detection
+::Restore Magisk Manager with original package and app names
+Restore Magisk Manager
+88Use biometric authentication to allow superuser requests
+BBReauthenticate superuser permissions after an application upgrades
+ccThe superuser prompt dialog will not respond to input while obscured by any other window or overlay
+!!%1$s was granted Superuser rights
+  %1$s was denied Superuser rights
+Superuser Request
+##Superuser rights of %1$s are denied
+$$Superuser rights of %1$s are granted
+Deny if you're not sure!
+Superuser
+Superuser Access
+Superuser Notification
+..No app has asked for superuser permission yet.
+RTBecause an app is obscuring a superuser request, Magisk can
+Root will be removed!
+Uninstall Magisk
+This version of Magisk Manager does not support Magisk version lower than %1$s.
+The app will behave as if no Magisk is installed, please upgrade Magisk as soon as possible.
+Unsupported Magisk Version
+Magisk Updates
+--Each user has his/her own separate root rules
+ Mount Namespace
+ Bootloader
+ Magisk
+ Magisk
+n Magisk'in d
+ var . Bu Magisk zip fayl
+Sonsuz
+n root sessyalar
+$(Magisk Manager'i gizl
+Magisk Manager gizl
+r bir root sessyas
+Magisk Yenil
+ Magisk Manager Yenil
+z cihaz sahibi root icaz
+z cihaz sahibinin root icaz
+Magisk Manager a
+Magisk Manager
+Bootloader'
+FPRoot sessyalar
+07Magisk Manager'i t
+Magisk Manager'i Gizl
+/4Magisk'i f
+38Magisk Manager'i orjinal s
+Magisk Manager'i Geri Qaytar
+n sonra superuser icaz
+'*%1$s SuperUser icaz
+)-%1$s SuperUser icaz
+Superuser T
+v olunsun?
+n Superuser icaz
+n Superuser icaz
+Superuser 
+Superuser Bildiri
+k. Root silin
+Magisk'i Sil
+n Magisk Versiyas
+Magisk Yenil
+ root qaydalar
+ Magisk Manager 
+ Magisk. 
+ Zip Magisk. 
+ Magisk Manager.
+ Magisk Manager
+ Magisk Manager. 
+Magisk 
+ Magisk!
+ Magisk Manager!
+Magisk Manager - 
+ Magisk Manager 
+ Bootloader
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ Magisk Manager 
+ Magisk Manager
+Root 
+ Magisk
+ Magisk Manager 
+ Magisk 
+ Magisk 
+ Magisk.
+ Magisk
+ Magisk
+ Magisk, 
+ Magisk. 
+ Magisk Manager 
+ Magisk Manager
+ Magisk.
+ Magisk Manager.
+Magisk Manager 
+ Magisk Manager 
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ Magisk Manager.
+ Magisk Manager
+ Superuser 
+ Superuser 
+ Superuser 
+ Superuser 
+ Superuser 
+ Superuser 
+Superuser 
+Superuser 
+ Magisk
+ Magisk
+Suzi
+Supr
+Esborra la consulta
+Consulta de cerca
+Envia la consulta
+s d'amagar Magisk Manager, el seu nom i icona poden ser dif
+ addicional per Magisk per funcionar correctament. Es baixar
+ de Magisk, vol procedir a la instal
+57L'usuari ha cancel
+&(L'usuari ha cancel
+??Totes les sessions d'arrel utilitzen el suport Namespace Global
+$$No s'ha pogut amagar Magisk Manager.
+Amagant Magisk Manager
+ utilitzant un Magisk Manager de codi lliure. M
+uyMagisk 
+Doni'ns suport
+46Els registre de Magisk estan buits. Aix
+]]No hi ha cap registre. Provi d'utilitzar aplicacions que requereixen permisos de superusuari.
+ de Magisk disponible!
+ de Magisk Manager disponible!
+Mode Multiusuari
+CFEl dispositiu no suporta o no t
+s l'administrador pot supervisar l'acc
+licituds d'altres usuaris
+Magisk Manager 
+Vol permetre que Magisk Manager baixi una extensi
+Reiniciar en Mode Bootloader
+@@Torna a empaquetar Magisk Manager amb un nom de paquet a l'atzar
+Amagar Magisk Manager
+DESuport per aplicacions tipus Adblock fora de la partici
+$$Amagar Magisk de diverses deteccions
+55Restaura Magisk Manager amb el nom de paquet original
+Restaurar Magisk Manager
+licituds de superusuari
+Y\Demanar permisos de superusuari novament si una aplicaci
+Usuari Independent
+))Permesos els drets de superusuari de %1$s
+))Denegats els drets de superusuari de %1$s
+ de superusuari
+%%Drets de superusuari de %1$s denegats
+%%Drets de superusuari de %1$s permesos
+Superusuari
+s de superusuari
+ de superusuari
+ ha demanat permisos de superusuari.
+lar Magisk
+ de Magisk Manager no suporta versions de Magisk m
+ com si Magisk no estigu
+lat, si us plau actualitzi Magisk com m
+ de Magisk incompatible
+ de Magisk
+ABTots els usuaris tenen separades les seves pr
+ Magisk Manager se m
+, aby Magisk fungoval spr
+ soubor (.zip) Magisk. Chcete pokra
+echny relace ROOT pou
+ Magisk Manager selhalo.
+ Magisk Manager
+Posunout nahoru
+te Magisk Manager s otev
+boMagisk je a v
+ relace ROOT m
+.3Protokoly Magisk jsou pr
+ SuperUser.
+ Aktualizace Magisk je dostupn
+'(Aktualizace Magisk Manager je dostupn
+stup ROOT m
+stup ROOT.
+Magisk Manager je FOSS a neobsahuje k
+Chcete povolit aplikaci Magisk Manager sta
+Restartovat do Bootloader
+68Relace ROOT je odvozena od jmenn
+ Magisk Manager selhalo.
+te Magisk Manager n
+t Magisk Manager
+'*Skryjete Magisk p
+te Magisk Manager na p
+Obnovit Magisk Manager
+ SuperUser.
+ SuperUser po aktualizaci aplikace.
+fpOkno dialogu SuperUser nebude reagovat na kliknut
+ SuperUser povoleno
+ SuperUser zak
+adavek SuperUser
+(-SuperUser opr
+(+SuperUser opr
+SuperUser
+stup SuperUser
+ SuperUser
+ SuperUser.
+adavek SuperUser, Magisk nem
+ROOT bude odstran
+Odinstalovat Magisk
+Tato verze Magisk Manager nepodporuje verzi Magisk ni
+ aktualizovat Magisk, nebo nainstalovat star
+ verze Magisk
+Aktualizace Magisk
+stupu ROOT.
+Suchen
+Suchanfrage l
+Suchanfrage
+Suche
+Sprachsuche
+tzlich eingerichtet werden, damit Magisk ordnungsgem
+ funktioniert. Es wird das Magisk Setup-Zip herunterladen, m
+89Zu viele Versuche. Versuche es bitte sp
+<<Alle Root-Sitzungen benutzen den global angelegten Namespace
+))Magisk Manager ausblenden fehlgeschlagen.
+Magisk Manager ausblenden
+uwBenutzen Sie nur den quelloffenen Magisk Manager. Magisk von unbekannten Quellen kann zu sch
+z|Magisk ist und wird immer frei und quelloffen sein. Sie k
+t wird gezwungen, nach einem Neustart in den inaktiven Slot zu booten! Verwenden Sie diese Option nur, wenn OTA abgeschlossen ist.
+00Jede Root-Sitzung hat ihren isolierten Namespace
+11Die Magisk-Protokolle sind leer, das ist seltsam.
+KLSie sind protokollfrei, versuchen Sie, Ihre SU-f
+Magisk Update verf
+ !Magisk Manager Update verf
+Mount Namespace Modus
+GHNur der Besitzer verwaltet den Root-Zugriff und erh
+!!Nur der Besitzer hat Root-Zugriff
+Magisk Manager ist FOSS und enth
+Wollen Sie Magisk Manager erlauben, eine Erweiterung (enth
+Neustart zum Bootloader
+22Root-Sitzungen erben den Namespace des Abfragenden
+Erneut versuchen
+34Magisk Manager mit zuf
+Magisk Manager verbergen
+11Versteckt Magisk vor diversen Entdeckungsmethoden
+=>Magisk Manager mit urspr
+Magisk Manager wiederherstellen
+NOBiometrische Authentifizierung verwenden, um Superuser-Anfragen zu erm
+99Superuser-Zugriff nach App-Aktualisierung erneut abfragen
+$%%1$s wurden Superuser-Rechte gew
+''%1$s wurden Superuser-Rechte verweigert
+Superuser-Anfrage
+$%Superuser-Rechte f
+!#Superuser-Rechte f
+Superuser-Zugriff
+Superuser-Benachrichtigung
+BBBisher hat noch keine App um die Erlaubnis des Superusers gebeten.
+Root wird entfernt!
+Deinstalliere Magisk
+Diese Version von Magisk Manager unterst
+tzt keine Magisk-Version kleiner als %1$s.
+lt sich, als ob kein Magisk installiert w
+re. Bitte Magisk so schnell wie m
+tzte Magisk-Version
+**Jeder Nutzer hat seine eigenen Root-Regeln
+ root 
+ Magisk Manager 
+ Magisk Manager
+ root 
+ Magisk 
+ Magisk Manager 
+ root 
+ root
+ Magisk Manager 
+ Magisk Manager 
+ Bootloader
+ root 
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ root 
+ Magisk
+ Magisk
+ root
+Submit query
+Suprimir
+Borrar consulta
+Consulta de b
+Enviar consulta
+s de esconder el Magisk Manager, su nombre e icono podr
+Su dispositivo requiere una instalaci
+n adicional para que Magisk funcione correctamente. Se descargar
+n de Magisk, 
+78El usuario ha cancelado la operaci
+)*El usuario ha cancelado la autenticaci
+??Todas las sesiones de root utilizan el soporte Global Namespace
+n de Magisk Manager ha fallado
+Ocultando Magisk Manager
+Subir
+digo abierto Magisk Manager. Un Manager de fuente desconocida puede realizar acciones maliciosas.
+swMagisk es, y siempre ser
+Su dispositivo ser
+n root tendr
+ su propia Namespace
+79Los registros de Magisk est
+s sus aplicaciones habilitadas para SU.
+n de Magisk disponible!
+n de Magisk Manager disponible!
+Modo multiusuario
+lo el administrador puede supervisar el acceso root y recibir solicitudes de otros usuarios
+lo el administrador tiene acceso root
+Magisk Manager es un software libre por lo que no contiene el c
+Desea permitir que Magisk Manager descargue una extensi
+Reiniciar en modo bootloader
+78Las sesiones de root heredar
+El respaldo de la imagen boot Stock no existe!
+Seleccione el modo que mejor se adapte a su estilo!
+==Re-empaquetar Magisk Manager con un nombre de paquete al azar
+Ocultar Magisk Manager
+$$Ocultar Magisk de varias detecciones
+//Restaura Magisk Manager con el paquete original
+trica para permitir solicitudes de superusuario
+XYPedir permisos de superusuario nuevamente si una aplicaci
+twEl cuadro de solicitud de superusuario no responder
+ oculto por cualquier otra ventana o superposici
+Usuario independiente
+--Permitidos derechos de superusuario para %1$s
+,,Denegados derechos de superusuario para %1$s
+n de superusuario
+,,Derechos de superusuario para %1$s denegados
+--Derechos de superusuario para %1$s permitidos
+Superusuario
+Acceso de superusuario
+n de superusuario
+n ha pedido permiso de superusuario todav
+Sus datos ser
+Desinstalar Magisk
+n de Magisk Manager no admite versiones de Magisk inferiores a %1$s.
+ como si no estuviera instalado Magisk, actual
+n de Magisk no soportada
+n de Magisk
+77Cada usuario tiene separadas sus propias reglas de root
+24El usuario cancel
+$&El usuario cancel
+rast Magisk Manageri peitmist v
+Kasuta parooli
+Sinu seade vajab Magiski korralikuks toimimiseks lisaseadistust. Laadime alla Magiski seadistus-ZIPi, kas soovid kohe j
+?@Selle funktsionaalsuse lubamiseks anna m
+(+Kasutaja t
+lje kasutamise.
+Kasutaja t
+ik juurkasutaja sessioonid kasutavad globaalset monteerimise nimeruumi
+%&Magisk Manageri peitmine eba
+Magisk Manageri peitmine
+Veendu alati, et kasutad avatud l
+htekoodiga Magisk Manageri. Tundmatust allikast p
+Magisk on ja j
+b alati tasuta ning avatud l
+Sinu seade SUNNITAKSE peale taask
+Kasuta seda valikut vaid peale 
+88Iga juurkasutaja sessioon saab oma isoleeritud nimeruumi
+ilita sunnitud kr
+'(Magiski logid on t
+OPSa oled logivaba, proovi oma superkasutaja 
+igustega rakendusi rohkem kasutada.
+Magiski uuendus on saadaval!
+$$Magisk Manageri uuendus on saadaval!
+Mitmikkasutaja re
+JMAinult omanik saab hallata juurkasutaja ligip
+su ja saada taotlusk
+'(Ainult omanikul on juurkasutaja 
+Magisk Manager on vaba ja avatud l
+htekoodiga ning ei sisalda Google'i suletud SafetyNeti API koodi.
+Kas lubad Magisk Manageril SafetyNeti kontrollide jaoks laadida alla laiendus (sisaldab GoogleApiClienti)?
+Laadi alla suletud koodi
+<>Juurkasutaja sessioonid v
+rgus olevate hoidlate kohta. See sunnib rakendust v
+?@Paki Magisk Manager juhusliku paketi- ja rakenduse nimega 
+Peida Magisk Manager
+&&Peida Magisk erinevate tuvastuste eest
+&&Taasta Magisk Manageri originaalpakett
+Taasta Magisk Manager
+FFKasuta superkasutaja taotluste kinnitamiseks biomeetrilist autentimist
+=>Taas-autendi superkasutaja 
+Kasutajast s
++,Rakendusele %1$s anti superkasutaja 
+-.Rakendusel %1$s keelati superkasutaja 
+Superkasutaja taotlus
+/0Superkasutaja 
+,-Superkasutaja 
+su sinu seadmele.
+Superkasutaja
+Superkasutaja ligip
+Superkasutaja teavitus
+kski rakendus ei ole veel superkasutaja 
+Juurkasutaja eemaldatakse!
+Eemalda Magisk
+See Magisk Manageri versioon ei toeta Magiski versiooni, mis on vanem kui %1$s.
+itub nii, nagu Magisk ei oleks paigaldatud, palun uuenda Magisk nii ruttu kui v
+Mittetoetatud Magiski versioon
+Magiski uuendused
+55Igal kasutajal on oma isiklikud juurkasutaja reeglid.
+Garbitu kontsulta
+Bilaketa-kontsulta
+Bidali kontsulta
+ ManagerMagisk 
+ Magisk 
+ Magisk zip 
+ Magisk Manager 
+ Magisk Manager
+ Magisk Manager 
+ (Magisk) 
+ Magisk 
+ Magisk 
+ Magisk Manager 
+ Magisk Manager 
+ Magisk Manager 
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ Magisk Manager 
+ Magisk Manager
+ Magisk
+ Magisk Manager 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk
+ Magisk 
+supprimer
+ Magisk
+une installation suppl
+mentaire afin que Magisk fonctionne correctement. Un fichier ZIP d
+installation pour Magisk doit 
+#$Installation suppl
+Appuyez sur lecteur d'empreinte
+ sur cet appareil
+SXToutes les sessions super
+'*Le masquage de Magisk Manager a
+Masquage de Magisk
+Assurez
+vous de toujours utiliser la version libre de Magisk
+Magisk est, et sera toujours, libre et open
+Suivant
+FIChaque session super
+15Les journaux de Magisk sont vides, c
+utiliser davantage vos applications sollicitant des droits de super
+ jour de Magisk est
+ jour de Magisk
+Supprimer
+s super
+s super
+Magisk
+vous Magisk
+PVLes sessions super
+chec de la restauration de Magisk Manager
+55Contournement de la censure du DNS dans certains pays
+DNS sur HTTPS
+empaqueter Magisk
+Masquer Magisk
+7:Rendre Magisk invisible 
+LQRestaurer Magisk
+Restaurer Magisk
+s en super
+s en super
+invite du super-utilisateur ne r
+Configuration suppl
+-/%1$s a obtenu les droits de super
+est vu refuser les droits de super
+s super
+38Les droits de super
+49Les droits de super
+Super
+s super
+ Notification super
+ de droits super
+une application obscurcit une demande du super-utilisateur, Magisk ne peut pas v
+s ou supprim
+s super
+sinstaller Magisk
+Cette version de Magisk
+Manager ne prend pas en charge les versions de Magisk inf
+application se comportera comme si Magisk n
+ jour Magisk aussi vite que
+%&Version de Magisk non prise en
+ jour de Magisk
+s super
+Borra a consulta
+Busca a consulta
+a a consulta
+46O usuario cancelou a operaci
+#$O usuario cancelou a autenticaci
+Nakon skrivanja Magisk Manager-a, njegov naziv i ikonu moglo bi postati te
+aju potrebno dodatno postavljanje kako bi Magisk ispravno radio. Preuzet 
+e se zip za postavljanje Magiska, 
+00Sve root sesije koriste globalni imenski prostor
+((Skrivanje Magisk Manager-a nije uspjelo.
+Skrivanje Magisk Manager-a
+|}Uvijek provjerite koristite li Magisk Manager s otvorenim kodom. Manager nepoznatog izvora mo
+svMagisk je i uvijek 
+33Svaka root sesija ima svoj vlastiti imenski prostor
+)*Zapisnici Magiska su prazni, to je 
+enim SU.
+Dostupno je Magisk a
+&'Dostupno je Magisk Manager a
+e upravljati root pristupom i primati zahtjeve za root pristup
+Samo vlasnik ima root pristup
+Magisk Manager je FOSS i ne sadr
+ete li dopustiti Magisk Manageru da preuzme pro
+Ponovo pokreni u Bootloader
+57Root sesije 
+Prati sustav
+CDPrepakiraj Magisk Manager s nasumi
+Sakrij Magisk Manager
+-.Sakrij Magisk od razli
+<<Vrati Magisk Manager s izvornim nazivima paketa i aplikacija
+Vrati Magisk Manager
+SUKoristi biometrijsku provjeru autenti
+ili zahtjeve Superuser-a
+nost Superuser-a dopu
+##%1$s su dodijeljena Superuser prava
+  %1$s su odbijena Superuser prava
+Superuser zahtjev
+##Superuser prava su odbijena za %1$s
+&&Superuser prava su dodijeljena za %1$s
+Obavijesti za %1$s su odbijene
+Obavijesti za %1$s su odobrene
+Superuser pristup
+Superuser obavijest
+ila Superuser prava.
+(Zadano sustavom)
+Root 
+i su podaci potencijalno 
+ nisu!
+Deinstaliraj Magisk
+Ova verzija Magisk Manager-a ne podr
+ava Magisk verziju ni
+ati kao da nije instaliran Magisk, a
+urirajte Magisk 
+ana Magisk verzija
+Magisk A
+((Svaki korisnik ima vlastita root pravila
+sszecsuk
+Telusuri...
+Telusuri kueri
+Telusuri
+Penelusuran suara
+Setelah menyembunyikan Magisk Manager, nama dan ikonnya mungkin menjadi sulit untuk dikenali. Apakah Anda ingin menambahkan pintasan yang menarik pada layar utama?
+Langsung instal (Disarankan)
+Perangkat Anda memerlukan penyiapan tambahan agar Magisk bekerja dengan baik. Perangkat akan mendownload zip untuk penyiapan Magisk, apakah Anda ingin melanjutkan sekarang?
+33Semua sesi root menggunakan ruang-nama mount global
+$$Gagal menyembunyikan Magisk Manager.
+ Menyembunyikan Magisk Manager
+Sumber
+Pastikan selalu menggunakan Magisk Manager dari sumber terbuka. Manager dari sumber yang tidak dikenal dapat melakukan tindakan jahat!
+Magisk gratis dan bersumber terbuka, dan akan selalu seperti itu. Bagaimanapun juga Anda dapat menunjukan kepedulian Anda kepada kami dengan mengirimkan sedikit donasi.
+Perangkat Anda akan DIPAKSA boot ke slot yang saat ini tidak aktif setelah perangkat dinyalakan ulang!
+44Setiap sesi root akan memiliki ruang-nama tersendiri
+Log Magisk kosong, ini aneh
+RRLog Anda masih kosong, coba gunakan lebih banyak aplikasi yang membutuhkan SU Anda
+Update Magisk tersedia!
+Update Magisk Manager tersedia!
+Mode ruang-nama mount
+KKHanya pemilik yang dapat mengelola akses root dan menerima pesan permintaan
+&&Hanya pemilik yang memiliki akses root
+Magisk Manager adalah aplikasi FOSS dan tidak memiliki kode proprieter API SafetyNet Google.
+Maukah mengizinkan Magisk Manager untuk mendownload ekstensi (berisi GoogleApiClient) untuk memeriksa SafetyNet?
+Nyalakan ke mode Bootloader
+11Sesi root akan mewarisi ruang-nama peminta mereka
+Gagal memulihkan Magisk Manager
+~~Tambahkan pintasan yang menarik pada layar utama seandainya nama dan ikon sulit untuk dikenali setelah menyembunyikan aplikasi
+JJKemas ulang Magisk Manager dengan nama paket dan nama aplikasi secara acak
+Sembunyikan Magisk Manager
+44Sembunyikan Magisk dari berbagai bentuk pendeteksian
+CCPulihkan Magisk Manager dengan nama paket dan nama aplikasi aslinya
+Pulihkan Magisk Manager
+DDGunakan autentikasi biometrik untuk mengizinkan permintaan superuser
+AAAutentikasi ulang izin akses superuser setelah aplikasi diupgrade
+kkDialog permintaan superuser tidak akan menanggapi masukan saat terhalangi oleh lapisan atau jendela lainnya
+Kanal khusus
+Masukkan URL khusus
+%1$s mendapatkan hak superuser
+%1$s ditolak atas hak superuser
+Permintaan superuser
+Hak superuser %1$s ditolak
+Hak superuser %1$s diberikan
+Akses superuser
+Notifikasi superuser
+//Belum ada aplikasi yang meminta izin superuser.
+ttKarena terdapat aplikasi yang menghalangi dialog permintaan superuser, Magisk tidak dapat memverifikasi respons Anda
+Root akan dihapus!
+Uninstal Magisk
+Versi Magisk Manager ini tidak mendukung Magisk di bawah versi %1$s.
+Aplikasi akan berperilaku seolah-olah Magisk tidak terinstal, harap meningkatkan Magisk sesegera mungkin.
+Versi Magisk tidak didukung
+Update Magisk
+33Setiap pengguna memiliki aturan root mereka sendiri
+Dopo aver nascosto Magisk Manager, il suo nome e la sua icona potrebbero diventare difficili da riconoscere. Vuoi aggiungere una scorciatoia alla schermata principale?
+00Nessuna app disponibile per gestire quest'azione
+Il tuo dispositivo necessita di una configurazione aggiuntiva per far funzionare Magisk correttamente. Verr
+ scaricato il file zip di Magisk, vuoi procedere ora?
+%%Nessuna impronta digitale registrata.
+;;Tutte le sessioni di root erediteranno il namespace globale
+ stato possibile nascondere Magisk Manager.
+Nascondendo Magisk Manager
+Assicurarsi di utilizzare la versione open source di Magisk Manager. Se proveniente da fonti sconosciute, potrebbe eseguire azioni dannose.
+|~Magisk 
+Supportaci
+34Ogni sessione di root avr
+ il suo namespace isolato
+>@Il registro eventi di Magisk 
+NNNon ci sono eventi, prova ad utilizzare un'app che richiede i diritti di root.
+ disponibile un aggiornamento di Magisk!
+ disponibile un aggiornamento di Magisk Manager!
+ mount namespace
+ supportato o le impostazioni biometriche sono disattivate
+(Nessuna informazione)
+Nessuno
+**Nessuna app disponibile per aprire il link
+ gestire l'accesso root e ricevere le richieste dalle app
+00Solo il proprietario possiede i permessi di root
+Magisk Manager 
+Riavvia in bootloader
+BBLe sessioni di root erediteranno il namespace del loro richiedente
+55Non esiste un backup dell'immagine di boot originale!
+ stato possibile ripristinare Magisk Manager.
+==Reinstalla Magisk Manager con un nome pacchetto e app casuali
+Nascondi Magisk Manager
+GHSupporto al file hosts systemless per le app che bloccano le pubblicit
+88Aggiunto modulo per il supporto al file hosts systemless
+22Nasconde Magisk da numerosi sistemi di rilevazione
+??Ripristina Magisk Manager con il nome pacchetto e app originali
+Ripristina Magisk Manager
+OOUtilizza l'autenticazione biometrica per accettare le richieste di accesso root
+EERichiedi nuovamente i permessi di root dopo l'aggiornamento di un'app
+La schermata di richiesta dei permessi di root non risponder
+##%1$s ha ottenuto i permessi di root
+''%1$s non ha ottenuto i permessi di root
+Richiesta di accesso root
+ ottenere i permessi di root
+ ottenere i permessi di root
+Accesso root
+Notifica di accesso root
+11Nessuna app ha ancora chiesto i permessi di root.
+ceMagisk non pu
+ un'app sta oscurando una richiesta di accesso root
+Il root verr
+Disinstalla Magisk
+Questa versione di Magisk Manager non supporta versioni di Magisk inferiori a %1$s.
+ come se non fosse installato Magisk, che deve essere aggiornato per procedere all'utilizzo.
+!!Versione di Magisk non supportata
+Aggiornamenti Magisk
+55Ogni utente ha le proprie regole di root indipendenti
+ Magisk Manager, 
+-Magisk 
+ Magisk, 
+ Magisk 
+ Magisk
+ Magisk 
+Magisk 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk
+ Magisk 
+ Magisk 
+ Magisk
+, Magisk 
+ Magisk
+ Magisk 
+ Magisk 
+ Magisk, 
+ Magisk 
+ Magisk 
+ Magisk
+Magisk Manager 
+Magisk 
+Magisk 
+ root 
+-Magisk Manager 
+'Magisk Manager 
+ Magisk Manager 
+Magisk 
+ Magisk 
+Groot 
+Magisk 
+ Magisk 
+*Magisk Manager 
+Magisk Manager 
+Magisk Manager 
+Bootloader 
+Jroot 
+#KMagisk Manager 
+Magisk Manager 
+Magisk
+ Magisk Manager 
+Magisk Manager 
+Root 
+"Magisk 
+ Magisk Manager 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk 
+Magisk 
+ Magisk-
+ Magisk setup.zip 
+ root 
+ LMagisk 
+ Magisk 
+ Magisk 
+2Magisk-
+ root 
+$TMagisk-
+ Root-
+ Magisk-
+ Magisk 
+Magisk 
+ Magisk 
+3Bootloader-
+Root 
+Magisk 
+8Magisk 
+$XMagisk-
+Magisk 
+(dMagisk 
+Root-
+2Magisk-
+ Magisk 
+ Magisk-
+ Magisk-
+ Magisk-
+ Magisk-
+/Magisk-
+Magisk Manager
+ Magisk
+. Magisk 
+6Magisk Manager
+"Magisk Manager
+ Magisk Manager
+Magisk
+. SU 
+ Magisk
+ Magisk Manager
+Magisk Manager
+Magisk Manager
+ Magisk Manager
+Magisk Manager 
+ Magisk
+ Magisk Manager
+Magisk Manager 
+Magisk 
+ Magisk Manager
+ Magisk
+ Magisk
+, Magisk
+ Magisk 
+Magisk 
+ka balsu
+Bendrinti su
+Sutraukti
+Kad Magisk veikt
+ Magisk zip fail
+/2Visos root sesijos naudoja globali
+Suteikti(a)
+ $Magisk Manager pasl
+Magisk Manager pasl
+58Kiekviena root sesija turi savo izoliuot
+Atsirado nauja Magisk versija!
+,,Atsirado naujas Magisk Manager atnaujinimas!
+"$Root sesijos vard
+renginio savinkas gali tvarkyti root prieig
+ias root prieigos
+renginio savininkas turi root prieig
+)1Suvestin
+Magisk Manager yra FOSS tod
+iate Magisk Manager atsisi
+ Bootloader
+26Root sesijos paveldi jos i
+Atstatyti boot fail
+koti Magisk ir Magisk Manager atnaujinim
+=>Perpakuoti Magisk Manager su atsitiktiniu pakuot
+pti Magisk Manager
+pti Magisk nuo 
+ susekim
+inti Magisk Manager su orginalia pakuote
+inti Magisk Manager
+KMPakartotinai patvirtinti supervartotojo leidimus po program
+%1$s gavo supervartotojo teises
+!"%1$s negavo supervartotojo teisi
+Supervartotojo pra
+/0Neleisti %1$s naudotis supervartotojo teis
+13%1$s supervartotojo teisi
+<>%1$s supervartotojo teisi
+ sura
+ sura
+Supervartotojo prieiga suteikia piln
+Supervartotojas
+Supervartotojo prieiga
+Supervartotojo prane
+alinti. Root bus panaikintas. Yra galimyb
+alinti Magisk
+Magisk Atnaujinimai
+77Kiekvienas vartotojas turi savo atskiras root taisykles
+t visu
+ Magisk 
+ Magisk, 
+ Magisk Manager 
+ Magisk Manager
+ Magisk!
+ Magisk Manager!
+4Magisk Manager 
+ Magisk Manager 
+ Bootloader 
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ Magisk Manager 
+ Magisk Manager
+ Magisk
+ Magisk
+Magisk 
+Carian suara
+Enheten din krever ekstra oppsett for at Magisk skal kunne fungere ordentlig. Den vil laste ned Magisk-oppsetts-ZIP-filen, vil du fortsette med det n
+?@Alle root-
+''Skjulingen av Magisk Manager mislyktes.
+Skjuler Magisk Manager 
+23Hver root-
+&&En Magisk-oppdatering er tilgjengelig!
+..En Magisk Manager-oppdatering er tilgjengelig!
+<=Bare eieren kan behandle root-tilgang og motta foresp
+Bare eieren har root-tilgang.
+Magisk Manager bruker FOSSS, og kommer ikke med Googles propriet
+Vil du tillate Magisk Manager 
+-/Root-
+;<Pakk inn Magisk Manager p
+Skjul Magisk Manager
+14Skjul Magisk fra diverse m
+66Gjenopprett Magisk Manager med den opprinnelige pakken
+Gjenopprett Magisk Manager
+NOAutentiser superbruker-tillatelser p
+((%1$s ble tildelt superbruker-rettigheter
+''%1$s ble nektet superbruker-rettigheter
+Superbruker-foresp
+23Superbruker-rettigheter for %1$s har blitt avsl
+22Superbruker-rettigheter for %1$s har blitt tildelt
+Superbruker
+Superbruker-tilgang
+Superbruker-notifikasjon
+Alle moduler vil bli avskrudd/fjernet. Root vil bli fjernet, og dataene dine blir kanskje kryptert dersom de ikke allerede er det.
+Avinstaller Magisk
+Magisk-oppdateringer
+--Hver bruker har hans/hennes egne root-regler.
+Als je Magisk Manager verbergt, herken je de naam en het pictogram mogelijk niet meer. Wil je een mooie snelkoppeling plaatsen op je startscherm?
+ggDe Magisk-installatie is nog niet afgerond. De Magisk-installatiezip wordt gedownload. Wil je doorgaan?
+00Alle rootsessies gebruiken de globale naamruimte
+))Magisk Manager kan niet worden verborgen.
+')Bezig met verbergen van Magisk Manager
+Zorg er voor dat je altijd de opensourceversie van Magisk Manager gebruikt. Magisk Manager van een onbekende bron kan schade veroorzaken.
+hhMagisk is en zal altijd gratis en open source blijven, maar als je wilt, kun je een kleine donatie doen.
+78Elke rootsessie heeft zijn eigen ge
+22Het Magisk-logboek is leeg. Dit is ongebruikelijk.
+>>Er is nog niks gelogd. Gebruik meer apps met superuserrechten!
+$$Er is een Magisk-update beschikbaar!
+,,Er is een Magisk Manager-update beschikbaar!
+DDAlleen de eigenaar kan roottoegang goedkeuren en verzoeken ontvangen
+,,Alleen de apparaateigenaar heeft roottoegang
+Magisk Manager is FOSS en bevat daarom geen Google SafetyNet API-code.
+Wil je dat Magisk Manager een uitbreiding downloadt (deze bevat GoogleApiClient) voor SafetyNet-controles?
+Bootloader starten
+44Rootsessies gebruiken de naamruimte van de verzoeker
+,,Pak Magisk Manager in onder een andere naam.
+..Maak Magisk onzichtbaar voor detectiesystemen.
+//Herstelt Magisk Manager's oorspronkelijke naam.
+Magisk Manager herstellen
+HHGebruik biometrische authenticatie om superuserverzoeken goed te keuren.
+33Superuserrechten opnieuw goedkeuren na app-updates.
+&&%1$s beschikt nu over superuserrechten
+!!Superuserrecht van %1$s geweigerd
+Superuserverzoek
+Superusertoegang
+Superusermelding
+,,Er zijn nog geen superuserverzoeken geweest.
+Root wordt verwijderd!
+Magisk de
+Deze versie van Magisk Manager heeft geen ondersteuning voor Magisk-versies ouder dan %1$s.
+De app werkt, maar doet alsof Magisk niet ge
+nstalleerd is. Update Magisk zo spoedig mogelijk.
+Niet-ondersteunde Magisk-versie
+Magisk-updates
+//Elke gebruiker heeft zijn/haar eigen rootregels
+Po ukryciu Managera Magisk, jego nazwa i ikona mog
+dzenie potrzebuje dodatkowej konfiguracji, aby Magisk dzia
+ poprawnie. Spowoduje to pobranie pliku instalacyjnego Magisk, czy chcesz kontynuowa
+GKWszystkie sesje roota b
+(*Ukrycie Managera Magisk nie powiod
+Ukrywanie Managera Magisk
+owego Managera Magisk. Manager z nieznanego 
+u~Magisk jest i zawsze b
+da sesja roota otrzyma w
+%&Logi Magisk s
+cych roota.
+Aktualizacja Magisk dost
+&'Aktualizacja Managera Magisk dost
+pu do roota i otrzymywa
+p do roota
+Magisk Manager to FOSS (wolne i otwarte oprogramowanie) i nie zawiera w
+ Managerowi Magisk na pobranie rozszerzenia (zawieraj
+Reboot do trybu Bootloader
+Reboot do trybu Download
+Reboot do trybu EDL
+Reboot do trybu Recovery
+kki reboot
+Limit czasu 
+5:Sesje roota odziedzicz
+cenie Managera Magisk nie powiod
+Sukces!
+Strona g
+@@Przepakuj Managera Magisk z losowymi nazwami pakietu i aplikacji
+Ukryj Managera Magisk
++-Ukryj Magisk przed r
+ Managera Magisk z oryginalnymi nazwami pakietu i aplikacji
+ Managera Magisk
+ uprawnienia Superusera
+ Superusera po uaktualnieniu aplikacji
+ uprawnienia Superusera
+ Superusera
+pu do Superusera
+ Superusera dla %1$s
+))Przyznano uprawnienia Superusera dla %1$s
+p do Superusera
+Powiadomienia Superusera
+a jeszcze o uprawnienia Superusera.
+czone/usuni
+Root zostanie usuni
+Odinstaluj Magisk
+Ta wersja Managera Magisk nie obs
+uguje wersji Magisk ni
+ tak, jakby Magisk nie by
+ zainstalowany. Zaktualizuj Magisk jak najszybciej.
+ugiwana wersja Magisk
+Aktualizacja Magisk
+pu do roota
+Limpar consulta
+Consulta de pesquisa
+o digital cancelada pelo usu
+o cancelada pelo usu
+Depois de ocultar o Magisk Manager, seu nome e 
+o adicional para que o Magisk funcione corretamente. Ele far
+o do Magisk. Deseja continuar agora?
+..Ocorreu uma falha ao ocultar o Magisk Manager.
+Ocultando o Magisk Manager
+ usando o Magisk Manager Open-Source. Vers
+Magisk 
+ACOs Registro de atividade do Magisk est
+o tem registros, tente usar mais os aplicativos habilitados para SU.
+Registro limpo com sucesso.
+o do Magisk dispon
+o do Magisk Manager dispon
+Modo multiusu
+o suportado ou nenhuma configura
+rio pode gerenciar o acesso root e receber prompts de solicita
+rio tem acesso root
+O Magisk Manager 
+ que o Magisk Manager baixe uma extens
+Reiniciar em Bootloader
+Sucesso!
+IJReinstalar o Magisk Manager com nomes aleat
+Ocultar o Magisk Manager
+55Suporte de hosts sem sistema para aplicativos Adblock
+-0Esconda o Magisk de v
+GGRestaurar o Magisk Manager com nomes de pacotes e aplicativos originais
+Restaurar o Magisk Manager
+es de superusu
+es de superusu
+Independente do usu
+&'%1$s foi concedido Acesso superusu
+#$%1$s foi negado Acesso superusu
+o de Superusu
+-/Os Acesso de superusu
+-/Acesso de superusu
+Superusu
+Acesso de Superusu
+o de superusu
+o de superusu
+o do Magisk Manager n
+o suporta a vers
+o Magisk inferior a %1$s. 
+o houvesse Magisk instalado, atualize o Magisk o mais r
+o Magisk n
+o suportada
+es do Magisk
+46Cada usu
+rio tem suas pr
+es root usam a identifica
+!#Falha ao esconder Magisk Manager
+A esconder Magisk Manager
+o root ter
+ sua pr
+Registo limpo com sucesso
+o do Magisk dispon
+o do Magisk Manager dispon
+rio pode gerir acesso root e receber pedidos
+rio tem acesso a root
+es de root herdar
+Esconder Magisk Manager
+-/Suporte de systemless para aplica
+ #Oculta Magisk de v
+es de root ap
+##%1$s foi permitido o acesso de root
+  %1$s foi negado o acesso de root
+Pedido de root
+  Acesso de root a %1$s foi negado
+##Acesso de root a %1$s foi permitido
+root
+Acesso de root
+o de root
+:;Cada utilizador tem suas pr
+prias regras de root separadas
+n sus
+ ascunderea Magisk Manager, numele 
+Dispozitivul are nevoie de configurare suplimentar
+ pentru ca Magisk s
+ierul zip de configurare Magisk, vrei s
+ configurare suplimentar
+78Toate sesiunile de root folosesc spa
+!"Ascunderea Magisk Manager a e
+Se ascunde Magisk Manager
+n sus
+Surs
+ia open-source Magisk Manager. Managerul din surse necunoscute poate efectua ac
+Magisk este 
+ booteze 
+>?Fiecare sesiune de root va avea propriul spa
+**Jurnalele Magisk sunt goale, asta-i ciudat
+iile cu acces de superutilizator
+Jurnal golit cu succes
+ Actualizare Magisk disponibil
+'(Actualizare Magisk Manager disponibil
+<=Dispozitiv nesuportat sau nu sunt activate set
+(Nu sunt furnizate informa
+ gestioneze accesul la root 
+$$Numai proprietarul are acces la root
+Magisk Manager este FOSS 
+i ca Magisk Manager s
+n modul bootloader
+?ASesiunile de root vor mo
+"#Restaurarea Magisk Manager a e
+Succes!
+spunsul este nevalid
+i pictograma sunt dificil de recunoscut dup
+ Magisk Manager cu numele aleatorii pentru pachet 
+Ascunde Magisk Manager
+UZSuport pentru fi
+--Ascunde Magisk de diferite forme de detectare
+ Magisk Manager cu numele originale pentru pachet 
+ Magisk Manager
+ pentru a permite cereri de superutilizator
+ permisiunile pentru superutilizator dup
+Caseta de dialog pentru solicitarea drepturilor de superutilizator nu va r
+ sau suprapunere
+Configurare suplimentar
+iei %1$s i-au fost acordate drepturi de superutilizator
+iei %1$s i-au fost refuzate drepturi de superutilizator
+Cerere de superutilizator
+::Drepturile de superutilizator pentru %1$s au fost refuzate
+::Drepturile de superutilizator pentru %1$s au fost acordate
+Superutilizator
+Acces pentru superutilizator
+Notificare de superutilizator
+ permisiuni de superutilizator.
+ie ascunde o cerere de superutilizator, Magisk nu 
+spunsul
+Rootul va fi eliminat!
+ nu sunt criptate deja!
+ Magisk
+ versiune de Magisk Manager nu suport
+ versiunea Magisk mai mic
+i cum nu este instalat Magisk, te rug
+ actualizezi Magisk c
+Versiune Magisk nesuportat
+ri Magisk
+AAFiecare utilizator are propriile sale reguli separate pentru root
+ Magisk Manager 
+ Magisk 
+ ZIP Magisk, 
+ Magisk Manager
+ Magisk Manager
+ Magisk (Manager) 
+Magisk 
+ Magisk 
+ Magisk!
+ Magisk Manager!
+ Root-
+ Root-
+6Magisk Manager 
+ Magisk Manager 
+ Bootloader
+ Magisk Manager
+ boot 
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ Magisk Manager 
+ Magisk Manager
+Root-
+ Magisk
+ Magisk Manager 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk
+ Magisk
+ Root-
+ Magisk Managera sa m
+vne fungovanie Magisku. Stiahne sa in
+bor Magisku, chcete pokra
+cie root pou
+lny mount namespace
+Skrytie Magisk Managera zlyhalo
+vanie Magisk Managera
+Posun
+vate Magisk Manager s otvoren
+Magisk je a v
+ nabootova
+cia root bude ma
+znamy Magisku s
+va Superu
+cia Magisku!
+cia Magisk Managera!
+im Mount Namespace
+stup root a prij
+&)Root pr
+Magisk Manager je FOSS, ktor
+ appke Magisk Manager stiahnu
+ do Bootloader
+cie root zdedia namespace od 
+!!Obnovenie Magisk Managera zlyhalo
+ Magisk Manager s n
+ Magisk Manager
++,Skryje Magisk pred r
+ Magisk Manager s p
+ Magisk Manager
+ Superu
+ Superu
+ okno superu
+va Superu
+va Superu
+iadavka superu
+va Superu
+va Superu
+Superu
+stup Superu
+Upozornenia Superu
+iadala o povolenie Superu
+iadavku superu
+a, Magisk nem
+Root bude odstr
+ Magisk
+cie Magisk Managera nepodporuje verziu Magisku ni
+, ako keby Magisk nebol nain
+, upgradnite Magisk 
+ verzia Magisku
+cie Magisku
+ pre root
+ keni fshehur Magisk Manager, emri dhe ikona e tij mund t
+ Magisk t
+ Magisk, doni t
+suar k
+!"Fsheh Menaxherin e Magisk d
+Fshehja e Magisk manager
+rdorur Magisk Manager me burim t
+ hapur. Magisk Manager i nj
+Magisk 
+48Regjistrat e Magisk jan
+ aktivizuara SU
+Regjistri u pastrua me sukses
+sohet azhurnimi i Magisk!
+ Magisk Manager!
+Magisk Manager 
+ Magisk Manager t
+ bootloader
+&'Rikthimi i menaxherin e Magisk d
+Suksese!
+LORipaketimi Magisk Manager me paketa t
+Fshih menaxherin e Magisk
+.0Fshih Magisk nga forma t
+GHRivendos Magisk Manager me paket
+Rivendos menaxherin e Magisk
+rkesat e superp
+ILRidentifikoni lejet e superp
+m i superp
+'(%1$s iu dha e drejta e superp
+ drejtat e Superp
+ drejtat e superp
+n e superp
+Superp
+ superp
+Njoftimi i superp
+r superp
+ superp
+rdoruesit, Magisk nuk mund t
+instalo Magisk
+Ky version i Magisk Manager nuk e mb
+shtet versionin Magisk m
+ Magisk, ju lutemi azhurnoni Magisk sa m
+shtetur i Magisk
+simet e Magisk
+=>Alla root-sessioner anv
+<<Varje root-session kommer att ha sin egen isolerade namnrymd
++,En uppdatering av Magisk finns tillg
+34En uppdatering av Magisk Manager finns tillg
+garen kan hantera root-
+garen har root-tillg
+46Root-sessioner kommer att 
+lj Magisk fr
+terautentisera superuser-beh
+righeter efter en applikationsuppdatering
+r beviljad Superuser-r
+r nekad Superuser-r
+Superuser-f
+&(Superuser-r
+)+Superuser-r
+Superuser-tillg
+Superuser-avisering
+Avinstallera Magisk
+Magiska uppdateringar
+ndare har sina egna separata root-regler
+ Magisk 
+ Magisk 
+11All root sessions use the global mount namespace.
+ Magisk Manager 
+ Magisk Manager
+77Each root session will have its own isolated namespace.
+ Magisk!
+ Magisk Manager!
+ root
+ root
+ Bootloader
+77Root sessions will inherit their requester's namespace.
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ Magisk Manager
+ Magisk Manager
+ superuser 
+ Superuser
+ Superuser
+ Superuser
+ Superuser 
+ Superuser 
+ Superuser
+ Superuser
+ Root 
+ Magisk
+ Magisk
+Isumite ang query
+CCMasyadong maraming pagsubok. Pakisubukan ulit sa ibang pagkakataon.
+Arama sorgusu
+Magisk Manager'
+n Magisk'in d
+ var. Bu Magisk kurulum zip dosyas
+imdi devam etmek istiyor musunuz?
+"&Magisk Manager'
+Magisk Manager Gizleniyor
+ Magisk Manager kulland
+Magisk 
+"Magisk g
+Magisk G
+#$Magisk Manager G
+Magisk Manager, FOSS(a
+Magisk Manager'
+ indirmesine izin veriyor musunuz?
+',Magisk Manager'
+ ile Magisk Manager'
+Magisk Manager'
+%(Magisk'i 
+ ile Magisk Manager'
+Magisk Manager'
+MQSuperuser isteklerine izin vermek i
+NSUygulama y
+ini engelliyor, Magisk senin yan
+Magisk'i kald
+Magisk Manager'
+k Magisk versiyonlar
+bir Magisk kurulu de
+sa zamanda Magisk'i y
+Desteklenmeyen Magisk S
+Magisk G
+ Magisk Manager, 
+ Magisk 
+ Magisk Manager.
+ Magisk Manager
+ Magisk Manager. Manager 
+Magisk 
+ Magisk 
+ Magisk!
+ Magisk Manager!
+ root-
+ root-
+Magisk Manager 
+ Magisk Manager 
+ Bootloader
+ Magisk Manager
+ Magisk Manager 
+ Magisk Manager
+ Magisk 
+ Magisk Manager 
+ Magisk Manager
+Magisk 
+ Magisk
+ Magisk Manager 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk 
+ Magisk
+ root-
+ sung 
+ Magisk ho
+p Magisk, b
+ sung
+n root s
+n Magisk Manager th
+n Magisk Manager
+n root s
+t Magisk m
+t Magisk Manager m
+p root v
+p root.
+Magisk Manager l
+p Magisk Manager t
+o Bootloader
+n root s
+i Magisk Manager v
+n Magisk Manager
+n Magisk kh
+c Magisk Manager v
+c Magisk Manager
+n superuser sau khi n
+ sung
+n Superuser
+n Superuser cho %1$s
+u Superuser
+n Superuser c
+n Superuser c
+p Superuser
+o Superuser
+. Root s
+ Magisk
+t Magisk
+c root ri
+ Magisk Manager 
+ Magisk 
+ Magisk 
+ ROOT 
+ Magisk Manager 
+ Magisk Manager
+LMagisk 
+ ROOT 
+ Magisk 
+Magisk 
+$Magisk Manager 
+Magisk Manager 
+ Magisk Manager 
+ Bootloader
+)ROOT 
+ Boot 
+ Magisk Manager 
+ Magisk Manager
+ Magisk Manager
+ Magisk 
+ Magisk Manager
+ Magisk Manager
+ Magisk 
+ Magisk
+ Magisk Manager 
+ Magisk
+ Magisk
+ Magisk 
+ Magisk Manager 
+ Magisk 
+ Magisk Manager 
+ Root 
+ Magisk Manager 
+ Magisk Manager
+ Magisk Manager
+.|Magisk 
+ Root 
++Magisk 
+ SU 
+Magisk 
+$Magisk Manager 
+ Root 
+ Root 
+Magisk Manager 
+ Magisk Manager 
+ Bootloader
+ Root 
+ Magisk Manager 
+ Magisk Manager
+ Magisk Manager
+ Magisk 
+ Magisk Manager
+ Magisk Manager
+ Superuser 
+ Root 
+ Superuser 
+ Magisk 
+Root 
+ Magisk
+ Magisk Manager 
+ Magisk %1$s 
+Magisk 
+ Magisk 
+Magisk 
+ Root 
+Sula inkinga
+esUS
+k{|su=
+HsuZ">
+{KsuI
+UlsU
+=sU4
+]9suHm
+su]I0
+(;su
+kvsuGiy
+suGo
+v'SU
+phWsU
+xsU&e
+SUP2
+*d[[sU4
+7su*
+res/SU.png
+res/SU.xmlu
+ksu,
+SU]Sw
+SU'F/
+SU]Sw
+res/color/material_on_surface_disabled.xmlu
+res/color/material_on_surface_emphasis_high_type.xmlu
+res/color/material_on_surface_emphasis_medium.xmlu
+res/color/material_on_surface_stroke.xmlu
+res/color/mtrl_chip_surface_color.xmlu
+*SU]
+$b[SU
+SurF
+{sup
+4PSU
+$b[SU
+res/SU.pngPK
+res/SU.xmlPK
+res/color/material_on_surface_disabled.xmlPK
+res/color/material_on_surface_emphasis_high_type.xmlPK
+res/color/material_on_surface_emphasis_medium.xmlPK
+res/color/material_on_surface_stroke.xmlPK
+res/color/mtrl_chip_surface_color.xmlPK
