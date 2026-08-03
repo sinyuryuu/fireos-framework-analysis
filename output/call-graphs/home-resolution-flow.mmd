@@ -1,0 +1,16 @@
+%% Phase 2 evidence: P2-MAN-001, P2-HOME-001..003, P2-KEY-001
+%% Physical hardware-button equivalence remains untested.
+flowchart TD
+    A[ADB keyevent 3\nor physical Home key] --> B[PhoneWindowManager.handleShortPressOnHome()]
+    B --> C[Amazon KeyPolicyManager / TabletKeyPolicyManager hook]
+    C -->|custom Home not handled in normal path| D[PhoneWindowManager.launchHomeFromHotKey()]
+    C -->|custom receiver branch\nUNCONFIRMED for this run| X[Amazon custom Home handling]
+    D --> E[startDockOrHome()]
+    E --> F[KeyPolicyManagerCommon\nACTION_MAIN + CATEGORY_HOME]
+    F --> G[ActivityManager / ActivityStarter]
+    G --> H[PackageManager HOME query]
+    H --> I[Fire Launcher priority 50\nMicrosoft priority 0\nFallbackHome -1000]
+    I --> J[com.amazon.firelauncher/.Launcher]
+    Q[am start ACTION_MAIN + CATEGORY_HOME] --> G
+    R[set-home-activity Microsoft] --> S[Preferred record written]
+    S -. effective resolve remains Fire in T01/T17 .-> H

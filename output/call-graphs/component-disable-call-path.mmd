@@ -1,0 +1,16 @@
+%% Phase 2 evidence: P2-RUN-001, P2-RUN-002, P2-STATIC-001..006
+%% VDEX offsets are not Java source line numbers.
+flowchart TD
+    A[pm / cmd package] --> B[PackageManagerShellCommand.runSetEnabledSetting(I)I\ncodeOff 0x2dbac8]
+    B -->|package target| C1[IPackageManager.setApplicationEnabledSetting(String,int,int,int,String)]
+    B -->|component target\n0x2dbbc2| C2[IPackageManager.setComponentEnabledSetting(ComponentName,int,int,int)]
+    C1 --> D[PackageManagerService.setEnabledSetting(String,String,int,int,int,String)\ncodeOff 0x2d432c]
+    C2 --> E[PackageManagerService.setComponentEnabledSetting(ComponentName,int,int,int)\ncodeOff 0x2d42f0]
+    E --> D
+    D --> F[ProtectedPackages.isPackageStateProtected(userId,packageName)\ncodeOff 0x2e156a]
+    F --> G[ProtectedPackages.isProtectedPackage(packageName)\ncodeOff 0x2e1590]
+    G --> H[VendorProtectedPackagesCallback.callShouldProtectPackage(...)]
+    H --> I[ControlProtectedPackagesCallback.shouldProtectPackage(uid,packageName,context)]
+    I --> J[system app AND DenyListKeyPackages membership AND uid == 2000]
+    J --> K[SecurityException\nCannot disable a protected package]
+    J -.-> U[Exact current deny-list membership\nnot readable by shell]

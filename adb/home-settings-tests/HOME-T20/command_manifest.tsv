@@ -1,0 +1,27 @@
+label	status	started_utc	finished_utc	command	output
+before_resolver	0	2026-08-03T03:58:15Z	2026-08-03T03:58:15Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/home-settings-tests/HOME-T20/before_resolver.txt
+before_activity	0	2026-08-03T03:58:15Z	2026-08-03T03:58:15Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T20/before_activity.txt
+before_window	0	2026-08-03T03:58:15Z	2026-08-03T03:58:15Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T20/before_window.txt
+before_input	0	2026-08-03T03:58:15Z	2026-08-03T03:58:15Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'input'	adb/home-settings-tests/HOME-T20/before_input.txt
+wake_screen	0	2026-08-03T03:58:15Z	2026-08-03T03:58:16Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'keyevent' '224'	adb/home-settings-tests/HOME-T20/wake_screen.txt
+after_wake_resolver	0	2026-08-03T03:58:18Z	2026-08-03T03:58:18Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/home-settings-tests/HOME-T20/after_wake_resolver.txt
+after_wake_activity	0	2026-08-03T03:58:18Z	2026-08-03T03:58:19Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T20/after_wake_activity.txt
+after_wake_window	0	2026-08-03T03:58:19Z	2026-08-03T03:58:19Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T20/after_wake_window.txt
+after_wake_input	0	2026-08-03T03:58:19Z	2026-08-03T03:58:19Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'input'	adb/home-settings-tests/HOME-T20/after_wake_input.txt
+dismiss_keyguard	0	2026-08-03T03:58:19Z	2026-08-03T03:58:20Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'swipe' '600' '1800' '600' '400' '300'	adb/home-settings-tests/HOME-T20/dismiss_keyguard.txt
+after_keyguard_dismiss_resolver	0	2026-08-03T03:58:22Z	2026-08-03T03:58:22Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/home-settings-tests/HOME-T20/after_keyguard_dismiss_resolver.txt
+after_keyguard_dismiss_activity	0	2026-08-03T03:58:22Z	2026-08-03T03:58:22Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T20/after_keyguard_dismiss_activity.txt
+after_keyguard_dismiss_window	0	2026-08-03T03:58:22Z	2026-08-03T03:58:22Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T20/after_keyguard_dismiss_window.txt
+after_keyguard_dismiss_input	0	2026-08-03T03:58:22Z	2026-08-03T03:58:22Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'input'	adb/home-settings-tests/HOME-T20/after_keyguard_dismiss_input.txt
+logcat_clear	0	2026-08-03T03:58:22Z	2026-08-03T03:58:22Z	adb -s 'G001LT0511550CFT' 'logcat' '-c'	adb/home-settings-tests/HOME-T20/logcat_clear.txt
+open_home_settings	0	2026-08-03T03:58:22Z	2026-08-03T03:58:22Z	adb -s 'G001LT0511550CFT' 'shell' 'am' 'start' '-a' 'android.settings.HOME_SETTINGS'	adb/home-settings-tests/HOME-T20/open_home_settings.txt
+settings_resolver	0	2026-08-03T03:58:27Z	2026-08-03T03:58:27Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/home-settings-tests/HOME-T20/settings_resolver.txt
+settings_activity	0	2026-08-03T03:58:27Z	2026-08-03T03:58:28Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T20/settings_activity.txt
+settings_window	0	2026-08-03T03:58:28Z	2026-08-03T03:58:28Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T20/settings_window.txt
+settings_input	0	2026-08-03T03:58:28Z	2026-08-03T03:58:28Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'input'	adb/home-settings-tests/HOME-T20/settings_input.txt
+settings_ui_dump	0	2026-08-03T03:58:28Z	2026-08-03T03:58:30Z	adb -s 'G001LT0511550CFT' 'shell' 'uiautomator' 'dump' '/dev/tty'	adb/home-settings-tests/HOME-T20/settings_ui.xml
+restore_home	0	2026-08-03T03:58:30Z	2026-08-03T03:58:30Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'keyevent' '3'	adb/home-settings-tests/HOME-T20/restore_home.txt
+after_restore_resolver	0	2026-08-03T03:58:33Z	2026-08-03T03:58:33Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/home-settings-tests/HOME-T20/after_restore_resolver.txt
+after_restore_activity	0	2026-08-03T03:58:33Z	2026-08-03T03:58:33Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T20/after_restore_activity.txt
+after_restore_window	0	2026-08-03T03:58:33Z	2026-08-03T03:58:34Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T20/after_restore_window.txt
+after_restore_input	0	2026-08-03T03:58:34Z	2026-08-03T03:58:34Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'input'	adb/home-settings-tests/HOME-T20/after_restore_input.txt

@@ -1,0 +1,14 @@
+label	status	started_utc	finished_utc	command	output
+before_getprop	0	2026-08-03T03:39:50Z	2026-08-03T03:39:50Z	adb -s 'G001LT0511550CFT' 'shell' 'getprop'	adb/logs/REBOOT-T03/before_getprop.txt
+before_home_resolve	0	2026-08-03T03:39:50Z	2026-08-03T03:39:50Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/logs/REBOOT-T03/before_home_resolve.txt
+before_home_query	0	2026-08-03T03:39:50Z	2026-08-03T03:39:50Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'query-activities' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/logs/REBOOT-T03/before_home_query.txt
+before_package_firelauncher	0	2026-08-03T03:39:50Z	2026-08-03T03:39:50Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.amazon.firelauncher'	adb/logs/REBOOT-T03/before_package_firelauncher.txt
+before_activity	0	2026-08-03T03:39:50Z	2026-08-03T03:39:51Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/logs/REBOOT-T03/before_activity.txt
+before_window	0	2026-08-03T03:39:51Z	2026-08-03T03:39:51Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/logs/REBOOT-T03/before_window.txt
+reboot	0	2026-08-03T03:39:51Z	2026-08-03T03:39:51Z	adb -s 'G001LT0511550CFT' 'reboot'	adb/logs/REBOOT-T03/reboot.txt
+after_getprop	0	2026-08-03T03:40:20Z	2026-08-03T03:40:20Z	adb -s 'G001LT0511550CFT' 'shell' 'getprop'	adb/logs/REBOOT-T03/after_getprop.txt
+after_home_resolve	0	2026-08-03T03:40:20Z	2026-08-03T03:40:21Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/logs/REBOOT-T03/after_home_resolve.txt
+after_home_query	0	2026-08-03T03:40:21Z	2026-08-03T03:40:21Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'query-activities' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME'	adb/logs/REBOOT-T03/after_home_query.txt
+after_package_firelauncher	0	2026-08-03T03:40:21Z	2026-08-03T03:40:21Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.amazon.firelauncher'	adb/logs/REBOOT-T03/after_package_firelauncher.txt
+after_activity	0	2026-08-03T03:40:21Z	2026-08-03T03:40:21Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/logs/REBOOT-T03/after_activity.txt
+after_window	0	2026-08-03T03:40:21Z	2026-08-03T03:40:21Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/logs/REBOOT-T03/after_window.txt

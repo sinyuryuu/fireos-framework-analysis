@@ -1,0 +1,24 @@
+label	status	started_utc	finished_utc	command	output
+before_activity	0	2026-08-03T04:03:44Z	2026-08-03T04:03:44Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T22/before_activity.txt
+before_window	0	2026-08-03T04:03:44Z	2026-08-03T04:03:44Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T22/before_window.txt
+before_package	0	2026-08-03T04:03:44Z	2026-08-03T04:03:45Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.amazon.firelauncher'	adb/home-settings-tests/HOME-T22/before_package.txt
+wake_screen	0	2026-08-03T04:03:45Z	2026-08-03T04:03:45Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'keyevent' '224'	adb/home-settings-tests/HOME-T22/wake_screen.txt
+after_wake_activity	0	2026-08-03T04:03:47Z	2026-08-03T04:03:47Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T22/after_wake_activity.txt
+after_wake_window	0	2026-08-03T04:03:47Z	2026-08-03T04:03:47Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T22/after_wake_window.txt
+after_wake_package	0	2026-08-03T04:03:47Z	2026-08-03T04:03:47Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.amazon.firelauncher'	adb/home-settings-tests/HOME-T22/after_wake_package.txt
+dismiss_keyguard	0	2026-08-03T04:03:47Z	2026-08-03T04:03:48Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'swipe' '600' '1800' '600' '400' '300'	adb/home-settings-tests/HOME-T22/dismiss_keyguard.txt
+after_keyguard_dismiss_activity	0	2026-08-03T04:03:50Z	2026-08-03T04:03:50Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T22/after_keyguard_dismiss_activity.txt
+after_keyguard_dismiss_window	0	2026-08-03T04:03:50Z	2026-08-03T04:03:50Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T22/after_keyguard_dismiss_window.txt
+after_keyguard_dismiss_package	0	2026-08-03T04:03:50Z	2026-08-03T04:03:50Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.amazon.firelauncher'	adb/home-settings-tests/HOME-T22/after_keyguard_dismiss_package.txt
+logcat_clear	0	2026-08-03T04:03:50Z	2026-08-03T04:03:50Z	adb -s 'G001LT0511550CFT' 'logcat' '-c'	adb/home-settings-tests/HOME-T22/logcat_clear.txt
+open_app_info	0	2026-08-03T04:03:50Z	2026-08-03T04:03:51Z	adb -s 'G001LT0511550CFT' 'shell' 'am' 'start' '-a' 'android.settings.APPLICATION_DETAILS_SETTINGS' '-d' 'package:com.amazon.firelauncher'	adb/home-settings-tests/HOME-T22/open_app_info.txt
+app_info_activity	0	2026-08-03T04:03:56Z	2026-08-03T04:03:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T22/app_info_activity.txt
+app_info_window	0	2026-08-03T04:03:56Z	2026-08-03T04:03:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T22/app_info_window.txt
+app_info_package	0	2026-08-03T04:03:56Z	2026-08-03T04:03:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.amazon.firelauncher'	adb/home-settings-tests/HOME-T22/app_info_package.txt
+app_info_ui_dump	0	2026-08-03T04:03:56Z	2026-08-03T04:03:57Z	adb -s 'G001LT0511550CFT' 'shell' 'uiautomator' 'dump' '/sdcard/codex-app-info-HOME-T22.xml'	adb/home-settings-tests/HOME-T22/app_info_ui_dump.txt
+app_info_ui_readback	0	2026-08-03T04:03:57Z	2026-08-03T04:03:58Z	adb -s 'G001LT0511550CFT' 'shell' 'cat' '/sdcard/codex-app-info-HOME-T22.xml'	adb/home-settings-tests/HOME-T22/app_info_ui.xml
+app_info_ui_cleanup	0	2026-08-03T04:03:58Z	2026-08-03T04:03:58Z	adb -s 'G001LT0511550CFT' 'shell' 'rm' '/sdcard/codex-app-info-HOME-T22.xml'	adb/home-settings-tests/HOME-T22/app_info_ui_cleanup.txt
+restore_home	0	2026-08-03T04:03:58Z	2026-08-03T04:03:58Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'keyevent' '3'	adb/home-settings-tests/HOME-T22/restore_home.txt
+after_restore_activity	0	2026-08-03T04:04:01Z	2026-08-03T04:04:01Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/home-settings-tests/HOME-T22/after_restore_activity.txt
+after_restore_window	0	2026-08-03T04:04:01Z	2026-08-03T04:04:01Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/home-settings-tests/HOME-T22/after_restore_window.txt
+after_restore_package	0	2026-08-03T04:04:01Z	2026-08-03T04:04:01Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.amazon.firelauncher'	adb/home-settings-tests/HOME-T22/after_restore_package.txt

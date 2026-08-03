@@ -1,0 +1,20 @@
+Starting: Intent { cmp=com.android.settings/.SubSettings (has extras) }
+Security exception: Permission Denial: starting Intent { flg=0x10000000 cmp=com.android.settings/.SubSettings (has extras) } from null (pid=7159, uid=2000) not exported from uid 1000
+
+java.lang.SecurityException: Permission Denial: starting Intent { flg=0x10000000 cmp=com.android.settings/.SubSettings (has extras) } from null (pid=7159, uid=2000) not exported from uid 1000
+	at com.android.server.am.ActivityStackSupervisor.checkStartAnyActivityPermission(ActivityStackSupervisor.java:1824)
+	at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:732)
+	at com.android.server.am.ActivityStarter.startActivity(ActivityStarter.java:556)
+	at com.android.server.am.ActivityStarter.startActivityMayWait(ActivityStarter.java:1139)
+	at com.android.server.am.ActivityStarter.execute(ActivityStarter.java:497)
+	at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:5235)
+	at com.android.server.am.ActivityManagerService.startActivityAsUser(ActivityManagerService.java:5204)
+	at com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:478)
+	at com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:160)
+	at android.os.ShellCommand.exec(ShellCommand.java:103)
+	at com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:16448)
+	at android.os.Binder.shellCommand(Binder.java:634)
+	at android.os.Binder.onTransact(Binder.java:532)
+	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:3592)
+	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3360)
+	at android.os.Binder.execTransact(Binder.java:731)

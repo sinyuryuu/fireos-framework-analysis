@@ -1,0 +1,83 @@
+Fire OS 7.3.3.0 / Android 9 — Preliminary Home Flow
+=====================================================
+
+Evidence labels:
+  Confirmed = directly observed in runtime, VDEX or configuration output
+  Strong evidence = independent runtime and static evidence agree
+  Hypothesis = branch or physical input not yet exercised
+  Disproved = contradicted for the inspected path
+
+Unlocked ADB KEYCODE_HOME path
+------------------------------
+adb shell input keyevent 3 [HOME-T14, HOME-T15, HOME-PREF-T17]
+  -> input/policy dispatch
+  -> PhoneWindowManager.handleShortPressOnHome()
+       [services/disassembly.log:977415-977448]
+  -> Amazon KeyPolicyManager.handleShortPressOnHome()
+       -> TabletKeyPolicyManager.handleShortPressOnHome()
+            -> getTopActivity()
+            -> IAmazonActivityManager.checkKillAppGoingIntoBg()
+            -> HomeEventHandler.handleCustomHome()
+                 [only an app with CUSTOM_HOME metadata/receiver/permission is consumed]
+  -> false/custom branch not observed consuming these unlocked probes
+  -> PhoneWindowManager.launchHomeFromHotKey()
+  -> PhoneWindowManager.startDockOrHome()
+       [services/disassembly.log:988383-988465]
+  -> VendorPhoneWindowManagerCallback.callCustomDockOrHome()
+       [callback opportunity; no direct Fire launch observed]
+  -> startActivityAsUser(mHomeIntent, UserHandle.CURRENT)
+  -> ActivityManager / ActivityStackSupervisor
+  -> PackageManagerService.resolveIntentInternal()
+       [services/disassembly.log:951258-951309]
+  -> PackageManagerService.chooseBestActivity()
+       [services/disassembly.log:934336-934420]
+  -> com.amazon.firelauncher/.Launcher (priority 50)
+
+Runtime confirmations:
+  HOME-T14: logcat_full.txt:1389-1403; mKeyguardShowing=false at after_activity_activities.txt:183-190
+  HOME-T15: logcat_full.txt:2594-2606; mKeyguardShowing=false at after_activity_activities.txt:183-190
+  HOME-PREF-T17: Microsoft preferred record at after_target_preferred_activities.txt:8874-8883;
+                 Fire start at logcat_full.txt:1764-1774
+
+Explicit HOME path
+------------------
+adb shell am start -a android.intent.action.MAIN -c android.intent.category.HOME [HOME-T16]
+  -> ActivityManager start request
+  -> HOME resolution
+  -> com.amazon.firelauncher/.Launcher
+       [HOME-T16/logcat_full.txt:1752-1763]
+
+Package protection path
+-----------------------
+pm disable-user --user 0 com.amazon.firelauncher [PACKAGE-T01]
+  -> PackageManagerService.setEnabledSetting()
+       [services/disassembly.log:953377-953546]
+  -> ProtectedPackages.isPackageStateProtected()
+  -> VendorProtectedPackagesCallback.callShouldProtectPackage()
+  -> Amazon ControlProtectedPackagesCallback.shouldProtectPackage()
+       [fosservices/disassembly.log:96950-97049]
+  -> SecurityException: Cannot disable a protected package
+
+Separate Amazon Home-task visibility policy
+--------------------------------------------
+ActivityStack.getRunningTasks()
+  -> VendorActivityStackCallback.callCanSeeHomeTask()
+       [services/disassembly.log:222322-222331]
+  -> LauncherHijackPreventerActivityStackCallback.canSeeHomeTask()
+       -> SELinux amazon_policies:see_home_task
+       -> Android-signature fallback
+       [fosservices/disassembly.log:136880-136953]
+  -> Home task visibility decision
+
+This callback is confirmed as a framework policy modification. It is not proven to start Fire Launcher.
+
+Keyguard control
+----------------
+HOME-PREF-T02/T03 showed mKeyguardShowing=true and are not valid unlocked resolver comparisons.
+The later wake/dismiss runs T14/T15/T16/T17 all showed mKeyguardShowing=false and resumed Fire.
+
+Unresolved branches
+-------------------
+Physical hardware Home button -> Hypothesis: not manually sampled.
+Amazon custom Home branch -> Hypothesis: requires an app exposing CUSTOM_HOME metadata/receiver/permission.
+Exact OTA / second Fire OS build -> Pending; current artifacts are device-pulled.

@@ -1,0 +1,39 @@
+# GitHub cannot accept the raw OTA/system images and several generated
+# disassembly files in this workspace. The public repository keeps reports,
+# scripts, manifests, small evidence, and source references; local-only inputs
+# are identified in PUBLIC_REPOSITORY_SCOPE.md.
+
+firmware/original/
+firmware/extracted/
+firmware/partitions/
+
+decompiled/baksmali/
+decompiled/apktool/
+decompiled/jadx/
+
+# Device-pulled binary artifacts remain local; their hashes/manifests and XML
+# registration files remain publishable.
+artifacts/**/*.apk
+artifacts/**/*.jar
+artifacts/**/*.odex
+artifacts/**/*.vdex
+artifacts/**/*.dex
+artifacts/**/*.so
+
+# Large generated indexes are reproducible and are not source evidence.
+output/tables/*.tsv
+output/tables/*.absolute.tsv
+output/tables/*method-signatures*.csv
+output/tables/*class-index*.csv
+
+# Generated reports that exceed ordinary GitHub review/hosting limits.
+diff/reports/**/methods_fireos_only.txt
+diff/reports/**/methods_aosp_only.txt
+diff/reports/**/launcher-reference-contexts*.tsv
+diff/reports/**/home-reference-index*.tsv
+
+# Local tool caches and OS/editor files.
+.git
+tools/third-party/vdexExtractor/
+.DS_Store
+*.swp

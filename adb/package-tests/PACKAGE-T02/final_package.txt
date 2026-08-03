@@ -1,0 +1,588 @@
+Activity Resolver Table:
+  Full MIME Types:
+      text/plain:
+        7ac9dad com.microsoft.launcher/com.microsoft.bing.ProcessTextSearch filter 268299e
+          Action: "android.intent.action.PROCESS_TEXT"
+          Category: "android.intent.category.DEFAULT"
+          Type: "text/plain"
+      image/*:
+        e36d806 com.microsoft.launcher/.wallpaper.activity.WallpaperPreviewActivity filter d5542b4
+          Action: "android.service.wallpaper.CROP_AND_SET_WALLPAPER"
+          Category: "android.intent.category.DEFAULT"
+          Type: "image"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+        e36d806 com.microsoft.launcher/.wallpaper.activity.WallpaperPreviewActivity filter 2d86edd
+          Action: "android.intent.action.ATTACH_DATA"
+          Category: "android.intent.category.DEFAULT"
+          Type: "image"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+
+  Base MIME Types:
+      text:
+        7ac9dad com.microsoft.launcher/com.microsoft.bing.ProcessTextSearch filter 268299e
+          Action: "android.intent.action.PROCESS_TEXT"
+          Category: "android.intent.category.DEFAULT"
+          Type: "text/plain"
+
+  Wild MIME Types:
+      image:
+        e36d806 com.microsoft.launcher/.wallpaper.activity.WallpaperPreviewActivity filter d5542b4
+          Action: "android.service.wallpaper.CROP_AND_SET_WALLPAPER"
+          Category: "android.intent.category.DEFAULT"
+          Type: "image"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+        e36d806 com.microsoft.launcher/.wallpaper.activity.WallpaperPreviewActivity filter 2d86edd
+          Action: "android.intent.action.ATTACH_DATA"
+          Category: "android.intent.category.DEFAULT"
+          Type: "image"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+
+  Schemes:
+      ms-launcher:
+        abcd97 com.microsoft.launcher/com.microsoft.rewards.activity.RewardsActionsActivity filter 32c8123
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "ms-launcher"
+          Authority: "rewards": -1
+          Path: "PatternMatcher{LITERAL: /internal}"
+        b94bb84 com.microsoft.launcher/com.microsoft.rewards.activity.OfferLandingActivity filter d5dd620
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "ms-launcher"
+          Authority: "rewards": -1
+          Path: "PatternMatcher{LITERAL: /landing}"
+        b8e3f6d com.microsoft.launcher/.contacts.PeopleDeepLinkActivity filter 4f21bd9
+          Action: "android.intent.action.VIEW"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "ms-launcher"
+          Authority: "people": -1
+      mms:
+        c65f02 com.microsoft.launcher/.setting.FakeSms filter 5b54e08
+          Action: "android.intent.action.VIEW"
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SENDTO"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "sms"
+          Scheme: "smsto"
+          Scheme: "mms"
+          Scheme: "mmsto"
+      sms:
+        c65f02 com.microsoft.launcher/.setting.FakeSms filter 5b54e08
+          Action: "android.intent.action.VIEW"
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SENDTO"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "sms"
+          Scheme: "smsto"
+          Scheme: "mms"
+          Scheme: "mmsto"
+      mmsto:
+        c65f02 com.microsoft.launcher/.setting.FakeSms filter 5b54e08
+          Action: "android.intent.action.VIEW"
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SENDTO"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "sms"
+          Scheme: "smsto"
+          Scheme: "mms"
+          Scheme: "mmsto"
+      smsto:
+        c65f02 com.microsoft.launcher/.setting.FakeSms filter 5b54e08
+          Action: "android.intent.action.VIEW"
+          Action: "android.intent.action.SEND"
+          Action: "android.intent.action.SENDTO"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.BROWSABLE"
+          Scheme: "sms"
+          Scheme: "smsto"
+          Scheme: "mms"
+          Scheme: "mmsto"
+
+  Non-Data Actions:
+      com.microsoft.launcher.navigation_settings:
+        f67dd8b com.microsoft.launcher/.setting.NavigationSettingActivity filter 7e9a18f
+          Action: "com.microsoft.launcher.navigation_settings"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.MAIN:
+        a11b845 com.microsoft.launcher/.LauncherActivity filter a22b084
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.DEFAULT"
+        a0eab9a com.microsoft.launcher/com.android.launcher3.DefaultLauncherApp filter ca5906d
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.MONKEY"
+          Category: "android.intent.category.LAUNCHER_APP"
+        3a42ccb com.microsoft.launcher/.Launcher filter 5cde4a2
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.MONKEY"
+          Category: "android.intent.category.LAUNCHER"
+        28f1ca8 com.microsoft.launcher/.SecondaryHomeLauncher filter b9fe533
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.SECONDARY_HOME"
+          Category: "android.intent.category.DEFAULT"
+        39a93c1 com.microsoft.launcher/.defaultlauncher.FakeHome filter 4ab65fa
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+      android.content.pm.action.CONFIRM_PIN_APPWIDGET:
+        8e9bf4e com.microsoft.launcher/com.android.launcher3.dragndrop.AddItemActivity filter e28d9a1
+          Action: "android.content.pm.action.CONFIRM_PIN_SHORTCUT"
+          Action: "android.content.pm.action.CONFIRM_PIN_APPWIDGET"
+      android.intent.action.SET_WALLPAPER:
+        27772be com.microsoft.launcher/.wallpaper.activity.WallpaperCategoryActivity filter f6a3387
+          Action: "android.intent.action.SET_WALLPAPER"
+          Category: "android.intent.category.DEFAULT"
+      android.intent.action.APPLICATION_PREFERENCES:
+        3cede0f com.microsoft.launcher/.setting.ESettingActivity filter 897c669
+          Action: "android.intent.action.APPLICATION_PREFERENCES"
+          Action: "com.microsoft.launcher.setting.ESettingActivity"
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+        5574e9c com.microsoft.launcher/.setting.SettingActivity filter 549a8ee
+          Action: "android.intent.action.APPLICATION_PREFERENCES"
+          Action: "com.microsoft.launcher.setting.SettingActivity"
+          Action: "android.intent.action.CREATE_SHORTCUT"
+          Category: "android.intent.category.DEFAULT"
+      com.microsoft.launcher.navigation_news_category:
+        799b5c9 com.microsoft.launcher/.setting.NewsCategoryActivity filter f68c7ab
+          Action: "com.microsoft.launcher.navigation_news_category"
+          Category: "android.intent.category.DEFAULT"
+      com.microsoft.launcher.navigation_edit:
+        b5e546d com.microsoft.launcher/.setting.NavigationSettingCardFeedActivity filter 14d8c1c
+          Action: "com.microsoft.launcher.navigation_edit"
+          Category: "android.intent.category.DEFAULT"
+      com.microsoft.launcher.navigation_news:
+        e3158a2 com.microsoft.launcher/.setting.NavigationSettingNewsActivity filter 85d6025
+          Action: "com.microsoft.launcher.navigation_news"
+          Category: "android.intent.category.DEFAULT"
+      com.microsoft.launcher.wallpaper.activity.SwitchWallpaperActivity:
+        82df735 com.microsoft.launcher/.wallpaper.activity.SwitchWallpaperActivity filter 3dcba52
+          Action: "com.microsoft.launcher.wallpaper.activity.SwitchWallpaperActivity"
+          Action: "android.intent.action.CREATE_SHORTCUT"
+      com.microsoft.launcher.setting.ESettingActivity:
+        3cede0f com.microsoft.launcher/.setting.ESettingActivity filter 897c669
+          Action: "android.intent.action.APPLICATION_PREFERENCES"
+          Action: "com.microsoft.launcher.setting.ESettingActivity"
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.android.settings.action.IA_SETTINGS:
+        3cede0f com.microsoft.launcher/.setting.ESettingActivity filter 897c669
+          Action: "android.intent.action.APPLICATION_PREFERENCES"
+          Action: "com.microsoft.launcher.setting.ESettingActivity"
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.microsoft.launcher.setting.SettingActivity:
+        5574e9c com.microsoft.launcher/.setting.SettingActivity filter 549a8ee
+          Action: "android.intent.action.APPLICATION_PREFERENCES"
+          Action: "com.microsoft.launcher.setting.SettingActivity"
+          Action: "android.intent.action.CREATE_SHORTCUT"
+          Category: "android.intent.category.DEFAULT"
+      android.content.pm.action.CONFIRM_PIN_SHORTCUT:
+        8e9bf4e com.microsoft.launcher/com.android.launcher3.dragndrop.AddItemActivity filter e28d9a1
+          Action: "android.content.pm.action.CONFIRM_PIN_SHORTCUT"
+          Action: "android.content.pm.action.CONFIRM_PIN_APPWIDGET"
+      android.intent.action.CREATE_SHORTCUT:
+        93d1a5c com.microsoft.launcher/.allapps.AllAppsShortcutActivity filter 35c50f0
+          Action: "android.intent.action.CREATE_SHORTCUT"
+        5574e9c com.microsoft.launcher/.setting.SettingActivity filter 549a8ee
+          Action: "android.intent.action.APPLICATION_PREFERENCES"
+          Action: "com.microsoft.launcher.setting.SettingActivity"
+          Action: "android.intent.action.CREATE_SHORTCUT"
+          Category: "android.intent.category.DEFAULT"
+        c347165 com.microsoft.launcher/.weather.WeatherActivityWithShortcut filter d39e7c6
+          Action: "android.intent.action.CREATE_SHORTCUT"
+        82df735 com.microsoft.launcher/.wallpaper.activity.SwitchWallpaperActivity filter 3dcba52
+          Action: "com.microsoft.launcher.wallpaper.activity.SwitchWallpaperActivity"
+          Action: "android.intent.action.CREATE_SHORTCUT"
+
+  MIME Typed Actions:
+      android.service.wallpaper.CROP_AND_SET_WALLPAPER:
+        e36d806 com.microsoft.launcher/.wallpaper.activity.WallpaperPreviewActivity filter d5542b4
+          Action: "android.service.wallpaper.CROP_AND_SET_WALLPAPER"
+          Category: "android.intent.category.DEFAULT"
+          Type: "image"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+      android.intent.action.PROCESS_TEXT:
+        7ac9dad com.microsoft.launcher/com.microsoft.bing.ProcessTextSearch filter 268299e
+          Action: "android.intent.action.PROCESS_TEXT"
+          Category: "android.intent.category.DEFAULT"
+          Type: "text/plain"
+      android.intent.action.ATTACH_DATA:
+        e36d806 com.microsoft.launcher/.wallpaper.activity.WallpaperPreviewActivity filter 2d86edd
+          Action: "android.intent.action.ATTACH_DATA"
+          Category: "android.intent.category.DEFAULT"
+          Type: "image"
+          mPriority=0, mOrder=0, mHasPartialTypes=true
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.microsoft.launcher.MSPAI_INTENT:
+        703ff29 com.microsoft.launcher/com.android.launcher3.provider.PAIBroadcastReceiver filter 920d5a7
+          Action: "com.microsoft.launcher.MSPAI_INTENT"
+      com.microsoft.skype.teams.OnActiveCallStart:
+        a3e0499 com.microsoft.launcher/.weather.widget.TeamsActiveCallWidgetProvider filter c2eacf9
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.microsoft.skype.teams.OnActiveCallStart"
+          Action: "com.microsoft.skype.teams.OnActiveCallStop"
+      com.microsoft.skype.teams.OnActiveCallStop:
+        a3e0499 com.microsoft.launcher/.weather.widget.TeamsActiveCallWidgetProvider filter c2eacf9
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.microsoft.skype.teams.OnActiveCallStart"
+          Action: "com.microsoft.skype.teams.OnActiveCallStop"
+      android.intent.action.BATTERY_OKAY:
+        da83a2f com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 9241fb5
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.ACTION_POWER_DISCONNECTED:
+        e475d6e com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter a04fec
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      android.intent.action.MANAGED_PROFILE_UNAVAILABLE:
+        4fc8514 com.microsoft.launcher/.connected.CrossProfileAvailabilityReceiver filter f7b2543
+          Action: "android.intent.action.MANAGED_PROFILE_AVAILABLE"
+          Action: "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
+          Action: "android.content.pm.action.CAN_INTERACT_ACROSS_PROFILES_CHANGED"
+      android.intent.action.DEVICE_STORAGE_LOW:
+        dd55b44 com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter 108d64a
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        83c27f8 com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy filter 949f9bb
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.intent.action.MANAGED_PROFILE_AVAILABLE:
+        4fc8514 com.microsoft.launcher/.connected.CrossProfileAvailabilityReceiver filter f7b2543
+          Action: "android.intent.action.MANAGED_PROFILE_AVAILABLE"
+          Action: "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
+          Action: "android.content.pm.action.CAN_INTERACT_ACROSS_PROFILES_CHANGED"
+      android.intent.action.DEVICE_STORAGE_OK:
+        dd55b44 com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy filter 108d64a
+          Action: "android.intent.action.DEVICE_STORAGE_LOW"
+          Action: "android.intent.action.DEVICE_STORAGE_OK"
+      android.app.action.DEVICE_ADMIN_ENABLED:
+        ccf3afb com.microsoft.launcher/.receiver.LockScreenAdmin filter 19b77c0
+          Action: "android.app.action.DEVICE_ADMIN_ENABLED"
+      com.android.vending.INSTALL_REFERRER:
+        405d32e com.microsoft.launcher/com.microsoft.bing.partnercodelib.api.InstallListener filter a29b43e
+          Action: "com.android.vending.INSTALL_REFERRER"
+      com.microsoft.mmx.reporting.ACTION_JOIN:
+        2a363de com.microsoft.launcher/com.microsoft.mmx.reporting.SharedStateManager filter ea0d29f
+          Action: "com.microsoft.mmx.reporting.ACTION_JOIN"
+          Action: "com.microsoft.mmx.reporting.ACTION_VOTE"
+      com.microsoft.mmx.reporting.ACTION_VOTE:
+        2a363de com.microsoft.launcher/com.microsoft.mmx.reporting.SharedStateManager filter ea0d29f
+          Action: "com.microsoft.mmx.reporting.ACTION_JOIN"
+          Action: "com.microsoft.mmx.reporting.ACTION_VOTE"
+      android.content.pm.action.CAN_INTERACT_ACROSS_PROFILES_CHANGED:
+        8946ae9 com.microsoft.launcher/.enterprise.receiver.CrossProfileBroadcastReceiver filter aacdaf2
+          Action: "android.content.pm.action.CAN_INTERACT_ACROSS_PROFILES_CHANGED"
+        4fc8514 com.microsoft.launcher/.connected.CrossProfileAvailabilityReceiver filter f7b2543
+          Action: "android.intent.action.MANAGED_PROFILE_AVAILABLE"
+          Action: "android.intent.action.MANAGED_PROFILE_UNAVAILABLE"
+          Action: "android.content.pm.action.CAN_INTERACT_ACROSS_PROFILES_CHANGED"
+      android.intent.action.BATTERY_LOW:
+        da83a2f com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy filter 9241fb5
+          Action: "android.intent.action.BATTERY_OKAY"
+          Action: "android.intent.action.BATTERY_LOW"
+      android.intent.action.TIMEZONE_CHANGED:
+        8ebcead com.microsoft.launcher/androidx.work.impl.background.systemalarm.RescheduleReceiver filter 387ed8
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+      android.intent.action.TIME_SET:
+        8ebcead com.microsoft.launcher/androidx.work.impl.background.systemalarm.RescheduleReceiver filter 387ed8
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+      com.android.launcher.action.INSTALL_SHORTCUT:
+        1376751 com.microsoft.launcher/com.android.launcher3.InstallShortcutReceiver filter a3e0a54
+          Action: "com.microsoft.launcher.action.INSTALL_SHORTCUT"
+          Action: "com.android.launcher.action.INSTALL_SHORTCUT"
+      android.intent.action.BOOT_COMPLETED:
+        8ebcead com.microsoft.launcher/androidx.work.impl.background.systemalarm.RescheduleReceiver filter 387ed8
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.intent.action.TIME_SET"
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+      android.appwidget.action.APPWIDGET_HOST_RESTORED:
+        5ec6f61 com.microsoft.launcher/com.android.launcher3.AppWidgetsRestoredReceiver filter 4882dfd
+          Action: "android.appwidget.action.APPWIDGET_HOST_RESTORED"
+      android.intent.action.ACTION_POWER_CONNECTED:
+        e475d6e com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy filter a04fec
+          Action: "android.intent.action.ACTION_POWER_CONNECTED"
+          Action: "android.intent.action.ACTION_POWER_DISCONNECTED"
+      android.intent.action.DOWNLOAD_COMPLETE:
+        74eeb0d com.microsoft.launcher/com.microsoft.intune.mam.client.service.MAMBackgroundReceiver filter b947697
+          Action: "android.intent.action.DOWNLOAD_COMPLETE"
+      android.appwidget.action.APPWIDGET_UPDATE:
+        a3e0499 com.microsoft.launcher/.weather.widget.TeamsActiveCallWidgetProvider filter c2eacf9
+          Action: "android.appwidget.action.APPWIDGET_UPDATE"
+          Action: "com.microsoft.skype.teams.OnActiveCallStart"
+          Action: "com.microsoft.skype.teams.OnActiveCallStop"
+      androidx.work.diagnostics.REQUEST_DIAGNOSTICS:
+        404770b com.microsoft.launcher/androidx.work.impl.diagnostics.DiagnosticsReceiver filter c060d16
+          Action: "androidx.work.diagnostics.REQUEST_DIAGNOSTICS"
+      com.microsoft.launcher.action.INSTALL_SHORTCUT:
+        1376751 com.microsoft.launcher/com.android.launcher3.InstallShortcutReceiver filter a3e0a54
+          Action: "com.microsoft.launcher.action.INSTALL_SHORTCUT"
+          Action: "com.android.launcher.action.INSTALL_SHORTCUT"
+      androidx.work.impl.background.systemalarm.UpdateProxies:
+        bb0b863 com.microsoft.launcher/androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver filter 1c40231
+          Action: "androidx.work.impl.background.systemalarm.UpdateProxies"
+
+Service Resolver Table:
+  Non-Data Actions:
+      android.service.notification.NotificationListenerService:
+        355c44b com.microsoft.launcher/com.android.launcher3.notification.NotificationListenerProxy filter 36387cb permission android.permission.BIND_NOTIFICATION_LISTENER_SERVICE
+          Action: "android.service.notification.NotificationListenerService"
+      android.accessibilityservice.AccessibilityService:
+        64b62fc com.microsoft.launcher/.accessibility.LauncherAccessibilityService filter bd4e6c1 permission android.permission.BIND_ACCESSIBILITY_SERVICE
+          Action: "android.accessibilityservice.AccessibilityService"
+          mPriority=1000, mOrder=0, mHasPartialTypes=false
+      com.microsoft.launcher.navigation.subpagemodule:
+        a193871 com.microsoft.launcher/.sapphire.SapphireSubPageModule filter 6c2dba8
+          Action: "com.microsoft.launcher.navigation.subpagemodule"
+      com.microsoft.tokenshare.TokenSharingService:
+        62c1078 com.microsoft.launcher/com.microsoft.tokenshare.TokenSharingService filter 23b3e66
+          Action: "com.microsoft.tokenshare.TokenSharingService"
+      PluginCardService:
+        adbecb7 com.microsoft.launcher/.plugincard.PluginCardService filter c16929a
+          Action: "PluginCardService"
+
+Provider Resolver Table:
+  Non-Data Actions:
+      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+        6b373c6 com.microsoft.launcher/com.microsoft.bsearchsdk.provider.LauncherSettingsProvider filter 73cdb45
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+
+Permissions:
+  Permission [com.microsoft.launcher.permission.SETTINGS_ACCESS] (fd76ff0):
+    sourcePackage=com.microsoft.launcher
+    uid=10178 gids=null type=0 prot=signature|privileged
+    perm=Permission{675f969 com.microsoft.launcher.permission.SETTINGS_ACCESS}
+    packageSetting=PackageSetting{26f5fee com.microsoft.launcher/10178}
+
+Permissions:
+  Permission [com.microsoft.launcher.permission.READ_SETTINGS] (cfa14d7):
+    sourcePackage=com.microsoft.launcher
+    uid=10178 gids=null type=0 prot=signature|privileged
+    perm=Permission{e1e91c4 com.microsoft.launcher.permission.READ_SETTINGS}
+    packageSetting=PackageSetting{26f5fee com.microsoft.launcher/10178}
+
+Permissions:
+  Permission [com.microsoft.launcher.permission.WRITE_SETTINGS] (292bd33):
+    sourcePackage=com.microsoft.launcher
+    uid=10178 gids=null type=0 prot=signature|privileged
+    perm=Permission{69248f0 com.microsoft.launcher.permission.WRITE_SETTINGS}
+    packageSetting=PackageSetting{26f5fee com.microsoft.launcher/10178}
+
+Registered ContentProviders:
+  com.microsoft.launcher/com.android.launcher3.graphics.GridOptionsProvider:
+    Provider{5b5ad42 com.microsoft.launcher/com.android.launcher3.graphics.GridOptionsProvider}
+  com.microsoft.launcher/com.android.launcher3.testing.TestInformationProvider:
+    Provider{d8d36c1 com.microsoft.launcher/com.android.launcher3.testing.TestInformationProvider}
+  com.microsoft.launcher/.LauncherProviderCompat:
+    Provider{d16c19b com.microsoft.launcher/.LauncherProviderCompat}
+  com.microsoft.launcher/androidx.lifecycle.ProcessLifecycleOwnerInitializer:
+    Provider{5c3f10e com.microsoft.launcher/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+  com.microsoft.launcher/androidx.core.content.FileProvider:
+    Provider{cecdb07 com.microsoft.launcher/androidx.core.content.FileProvider}
+  com.microsoft.launcher/com.microsoft.bsearchsdk.provider.LauncherSettingsProvider:
+    Provider{6b373c6 com.microsoft.launcher/com.microsoft.bsearchsdk.provider.LauncherSettingsProvider}
+
+ContentProvider Authorities:
+  [com.microsoft.launcher.TestInfo]:
+    Provider{d8d36c1 com.microsoft.launcher/com.android.launcher3.testing.TestInformationProvider}
+      applicationInfo=ApplicationInfo{4d3c737 com.microsoft.launcher}
+  [com.microsoft.launcher.provider]:
+    Provider{cecdb07 com.microsoft.launcher/androidx.core.content.FileProvider}
+      applicationInfo=ApplicationInfo{4d3c737 com.microsoft.launcher}
+  [com.microsoft.launcher.lifecycle-process]:
+    Provider{5c3f10e com.microsoft.launcher/androidx.lifecycle.ProcessLifecycleOwnerInitializer}
+      applicationInfo=ApplicationInfo{4d3c737 com.microsoft.launcher}
+  [com.microsoft.launcher]:
+    Provider{6b373c6 com.microsoft.launcher/com.microsoft.bsearchsdk.provider.LauncherSettingsProvider}
+      applicationInfo=ApplicationInfo{4d3c737 com.microsoft.launcher}
+  [com.microsoft.launcher.settings]:
+    Provider{d16c19b com.microsoft.launcher/.LauncherProviderCompat}
+      applicationInfo=ApplicationInfo{4d3c737 com.microsoft.launcher}
+  [com.microsoft.launcher.grid_control]:
+    Provider{5b5ad42 com.microsoft.launcher/com.android.launcher3.graphics.GridOptionsProvider}
+      applicationInfo=ApplicationInfo{4d3c737 com.microsoft.launcher}
+
+Key Set Manager:
+  [com.microsoft.launcher]
+      Signing KeySets: 13
+
+Packages:
+  Package [com.microsoft.launcher] (26f5fee):
+    userId=10178
+    pkg=Package{8b6b1ce com.microsoft.launcher}
+    codePath=/data/app/com.microsoft.launcher-bTT5nKLHn89n_d_gJojj-Q==
+    resourcePath=/data/app/com.microsoft.launcher-bTT5nKLHn89n_d_gJojj-Q==
+    legacyNativeLibraryDir=/data/app/com.microsoft.launcher-bTT5nKLHn89n_d_gJojj-Q==/lib
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    versionCode=1122680 minSdk=22 targetSdk=31
+    versionName=6.230703.0.1122680
+    splits=[base]
+    apkSigningVersion=2
+    applicationInfo=ApplicationInfo{4d3c737 com.microsoft.launcher}
+    flags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION LARGE_HEAP ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE BACKUP_IN_FOREGROUND PARTIALLY_DIRECT_BOOT_AWARE ]
+    dataDir=/data/user/0/com.microsoft.launcher
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesOptionalLibraries:
+      org.apache.http.legacy
+      com.microsoft.device-private
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.boot.jar
+    timeStamp=2025-12-07 15:09:40
+    firstInstallTime=2025-12-07 15:09:41
+    lastUpdateTime=2025-12-07 15:09:41
+    signatures=PackageSignatures{34aa8ef version:2, signatures:[267a8c2d], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION LARGE_HEAP ]
+    declared permissions:
+      com.microsoft.launcher.permission.SETTINGS_ACCESS: prot=signature|privileged, INSTALLED
+      com.android.launcher.permission.INSTALL_SHORTCUT: prot=dangerous
+      com.microsoft.launcher.permission.READ_SETTINGS: prot=signature|privileged, INSTALLED
+      com.microsoft.launcher.permission.WRITE_SETTINGS: prot=signature|privileged, INSTALLED
+      android.permission.READ_CONTACTS: prot=normal
+      android.permission.CAMERA: prot=normal
+    requested permissions:
+      android.permission.FOREGROUND_SERVICE
+      com.android.launcher.permission.READ_SETTINGS
+      com.android.launcher2.permission.READ_SETTINGS
+      com.android.launcher3.permission.READ_SETTINGS
+      com.anddoes.launcher.permission.READ_SETTINGS
+      com.yandex.launcher.permission.READ_SETTINGS
+      com.htc.launcher.permission.READ_SETTINGS
+      com.google.android.launcher.permission.READ_SETTINGS
+      com.cyanogenmod.trebuchet.permission.READ_SETTINGS
+      com.teslacoilsw.launcher.permission.READ_SETTINGS
+      com.android.launcher.permission.WRITE_SETTINGS
+      com.google.android.apps.nexuslauncher.permission.READ_SETTINGS
+      com.lge.launcher3.permission.READ_SETTINGS
+      com.actionlauncher.playstore.permission.READ_SETTINGS
+      com.samsung.android.launcher.permission.READ_SETTINGS
+      net.oneplus.launcher.permission.READ_SETTINGS
+      android.permission.READ_PHONE_STATE
+      android.permission.RECEIVE_USER_PRESENT
+      android.permission.QUERY_ALL_PACKAGES
+      android.permission.MANAGE_EXTERNAL_STORAGE
+      com.android.calendar.huawei.permission.CALENDAR_RECESS
+      com.android.launcher.permission.INSTALL_SHORTCUT
+      android.permission.EXPAND_STATUS_BAR
+      android.permission.CALL_PHONE
+      android.permission.SET_WALLPAPER
+      android.permission.SET_WALLPAPER_HINTS
+      android.permission.BIND_APPWIDGET
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.REQUEST_DELETE_PACKAGES
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.WAKE_LOCK
+      com.microsoft.launcher.config.READCONFIG
+      android.permission.READ_DEVICE_CONFIG
+      com.microsoft.launcher.permission.READ_SETTINGS
+      com.microsoft.launcher.permission.WRITE_SETTINGS
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_NETWORK_STATE
+      com.android.alarm.permission.SET_ALARM
+      com.sec.android.app.clockpackage.permission.READ_ALARM
+      android.permission.SCHEDULE_EXACT_ALARM
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.VIBRATE
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.INTERNET
+      android.permission.READ_CONTACTS
+      android.permission.READ_SEARCH_INDEXABLES
+      android.permission.CAMERA
+      android.permission.FLASHLIGHT
+      com.android.browser.permission.READ_HISTORY_BOOKMARKS
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.WRITE_SETTINGS
+      android.permission.BLUETOOTH
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.RECORD_AUDIO
+      android.permission.MODIFY_AUDIO_SETTINGS
+      android.permission.READ_CALENDAR
+      android.permission.WRITE_CALENDAR
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+      android.permission.CHANGE_NETWORK_STATE
+      com.google.android.c2dm.permission.RECEIVE
+      android.permission.RECEIVE_BOOT_COMPLETED
+      com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+      android.permission.GET_ACCOUNTS
+      com.sony.mobile.permission.SYSTEM_UI_VISIBILITY_EXTENSION
+      android.permission.USE_CREDENTIALS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.NFC
+    install permissions:
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      com.google.android.c2dm.permission.RECEIVE: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      com.microsoft.launcher.permission.READ_SETTINGS: granted=true
+      android.permission.NFC: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.FOREGROUND_SERVICE: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      android.permission.EXPAND_STATUS_BAR: granted=true
+      android.permission.BLUETOOTH: granted=true
+      com.android.alarm.permission.SET_ALARM: granted=true
+      com.microsoft.launcher.permission.WRITE_SETTINGS: granted=true
+      android.permission.INTERNET: granted=true
+      com.android.browser.permission.READ_HISTORY_BOOKMARKS: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.FLASHLIGHT: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.SET_WALLPAPER: granted=true
+      android.permission.REQUEST_DELETE_PACKAGES: granted=true
+      android.permission.SET_WALLPAPER_HINTS: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.android.launcher.permission.INSTALL_SHORTCUT: granted=true
+      android.permission.WAKE_LOCK: granted=true
+    User 0: ceDataInode=876715 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[3002, 3003, 3001]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true
+        android.permission.READ_EXTERNAL_STORAGE: granted=true
+        android.permission.READ_CONTACTS: granted=false, flags=[ USER_SET ]
+      disabledComponents:
+        com.microsoft.launcher.weather.WeatherActivityWithShortcut
+        com.microsoft.launcher.setting.ESettingActivity
+      enabledComponents:
+        com.microsoft.launcher.connected.EnterpriseCrossProfileConnectedService
+        com.microsoft.launcher.connected.ConnectedHoldingActivity
+        androidx.work.impl.background.systemalarm.RescheduleReceiver
+        androidx.work.impl.background.systemjob.SystemJobService
+
+Package Changes:
+  Sequence number=10
+  User 0:
+    seq=4, package=com.google.android.gms
+    seq=9, package=com.microsoft.launcher
+
+
+Dexopt state:
+  [com.microsoft.launcher]
+    path: /data/app/com.microsoft.launcher-bTT5nKLHn89n_d_gJojj-Q==/base.apk
+      arm64: [status=speed-profile] [reason=install]
+
+
+Compiler stats:
+  [com.microsoft.launcher]
+     base.apk - 7922

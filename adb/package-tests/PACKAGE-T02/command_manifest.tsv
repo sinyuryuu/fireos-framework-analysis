@@ -1,0 +1,18 @@
+label	status	started_utc	finished_utc	command	output
+before_package	0	2026-08-03T03:38:55Z	2026-08-03T03:38:55Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.microsoft.launcher'	adb/package-tests/PACKAGE-T02/before_package.txt
+before_disabled_packages	0	2026-08-03T03:38:55Z	2026-08-03T03:38:55Z	adb -s 'G001LT0511550CFT' 'shell' 'pm' 'list' 'packages' '-d'	adb/package-tests/PACKAGE-T02/before_disabled_packages.txt
+before_home_resolve	0	2026-08-03T03:38:55Z	2026-08-03T03:38:55Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME' '--user' '0'	adb/package-tests/PACKAGE-T02/before_home_resolve.txt
+before_activity	0	2026-08-03T03:38:55Z	2026-08-03T03:38:55Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/package-tests/PACKAGE-T02/before_activity.txt
+before_window	0	2026-08-03T03:38:55Z	2026-08-03T03:38:55Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/package-tests/PACKAGE-T02/before_window.txt
+disable_user	0	2026-08-03T03:38:55Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'pm' 'disable-user' '--user' '0' 'com.microsoft.launcher'	adb/package-tests/PACKAGE-T02/disable_user.txt
+after_disable_package	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.microsoft.launcher'	adb/package-tests/PACKAGE-T02/after_disable_package.txt
+after_disable_disabled_packages	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'pm' 'list' 'packages' '-d'	adb/package-tests/PACKAGE-T02/after_disable_disabled_packages.txt
+after_disable_home_resolve	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME' '--user' '0'	adb/package-tests/PACKAGE-T02/after_disable_home_resolve.txt
+after_disable_activity	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/package-tests/PACKAGE-T02/after_disable_activity.txt
+after_disable_window	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/package-tests/PACKAGE-T02/after_disable_window.txt
+restore_default_state	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'pm' 'default-state' '--user' '0' 'com.microsoft.launcher'	adb/package-tests/PACKAGE-T02/restore_default_state.txt
+final_package	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'package' 'com.microsoft.launcher'	adb/package-tests/PACKAGE-T02/final_package.txt
+final_disabled_packages	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'pm' 'list' 'packages' '-d'	adb/package-tests/PACKAGE-T02/final_disabled_packages.txt
+final_home_resolve	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'cmd' 'package' 'resolve-activity' '--brief' '-a' 'android.intent.action.MAIN' '-c' 'android.intent.category.HOME' '--user' '0'	adb/package-tests/PACKAGE-T02/final_home_resolve.txt
+final_activity	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/package-tests/PACKAGE-T02/final_activity.txt
+final_window	0	2026-08-03T03:38:56Z	2026-08-03T03:38:56Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/package-tests/PACKAGE-T02/final_window.txt

@@ -1,0 +1,84 @@
+Fire OS 7.3.3.0 / Android 9 Phase-1 Home Flow
+==============================================
+
+Evidence status:
+  Confirmed = directly observed in VDEX/config/runtime output
+  Strong evidence = two or more independent evidence classes agree
+  Hypothesis = branch or device state not yet exercised
+
+ADB keyevent path (tested)
+--------------------------
+adb shell input keyevent 3 [HOME-T01]
+  -> input/policy dispatch
+  -> com.android.server.policy.PhoneWindowManager.handleShortPressOnHome()
+       [services/disassembly.log:977415-977448]
+  -> com.amazon.android.keypolicymanager.KeyPolicyManager.handleShortPressOnHome()
+       [Amazon hook; callback result was not separately logged]
+  -> com.amazon.policy.keypolicymanager.TabletKeyPolicyManager.handleShortPressOnHome()
+       -> getTopActivity()
+       -> IAmazonActivityManager.checkKillAppGoingIntoBg()
+       -> HomeEventHandler.handleCustomHome()
+            [CUSTOM_HOME receiver/permission branch; not observed consuming HOME-T01]
+  -> if false: PhoneWindowManager.launchHomeFromHotKey()
+  -> PhoneWindowManager.startDockOrHome()
+       [services/disassembly.log:988383-988465]
+  -> VendorPhoneWindowManagerCallback.callCustomDockOrHome()
+       [custom branch exists; direct Fire launch not observed]
+  -> PhoneWindowManager.startActivityAsUser(mHomeIntent, CURRENT)
+  -> ActivityManager / ActivityStackSupervisor
+  -> PackageManagerService.resolveIntentInternal()
+       [services/disassembly.log:951258-951309]
+  -> PackageManagerService.chooseBestActivity()
+       [services/disassembly.log:934336-934420]
+  -> com.amazon.firelauncher/.Launcher (priority 50)
+       [HOME-T01/logcat_full.txt:2747]
+
+Explicit HOME intent path (tested)
+----------------------------------
+adb shell am start -a android.intent.action.MAIN -c android.intent.category.HOME
+  -> ActivityManager start request
+  -> PackageManager HOME resolution
+  -> com.amazon.firelauncher/.Launcher
+       [HOME-T02/logcat_full.txt:2925]
+
+Preferred-home probe (tested)
+-----------------------------
+cmd package set-home-activity com.microsoft.launcher/.Launcher
+  -> PackageManagerService.setHomeActivity()
+       [services/disassembly.log:966912-966955]
+  -> replacePreferredActivity(HOME_FILTER, ...)
+  -> preferred record for Microsoft Launcher is written
+  -> chooseBestActivity compares priority 50 vs 0
+  -> Fire Launcher remains selected
+       [HOME-DEFAULT-T01 and HOME-PREF-T01]
+
+Disable path (tested)
+---------------------
+pm disable-user --user 0 com.amazon.firelauncher
+  -> PackageManagerService.setEnabledSetting()
+       [services/disassembly.log:953377-953546]
+  -> ProtectedPackages.isPackageStateProtected()
+  -> VendorProtectedPackagesCallback.callShouldProtectPackage()
+  -> com.amazon.android.service.pm.ControlProtectedPackagesCallback.shouldProtectPackage()
+       [fosservices/disassembly.log:96950-97049]
+  -> system app + deny-list + Binder UID 2000
+  -> SecurityException: Cannot disable a protected package
+       [PACKAGE-T01/disable_user.txt:1-14]
+
+Post-reboot verification (tested)
+---------------------------------
+reboot [REBOOT-T02]
+  -> wait for ADB reconnect
+  -> wait for PackageManager service
+  -> cmd package resolve-activity --brief -a MAIN -c HOME
+  -> com.amazon.firelauncher/.Launcher, priority 50
+       [REBOOT-T02/after_home_resolve.txt:1-2]
+
+Open branches / not yet tested
+------------------------------
+Physical hardware Home button
+  -> [Hypothesis: same key policy path]
+Special keyguard/user/foreground mode
+  -> [Hypothesis: Amazon callback may return true]
+Exact OTA and second Fire OS build
+  -> [Pending; current device-pulled artifacts are not OTA evidence]

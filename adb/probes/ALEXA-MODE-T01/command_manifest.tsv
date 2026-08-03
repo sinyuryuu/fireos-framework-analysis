@@ -1,0 +1,6 @@
+label	status	started_utc	finished_utc	command	output
+get_state	0	2026-08-03T03:48:40Z	2026-08-03T03:48:40Z	adb -s 'G001LT0511550CFT' 'get-state'	adb/probes/ALEXA-MODE-T01/get_state.txt
+service_list	0	2026-08-03T03:48:40Z	2026-08-03T03:48:40Z	adb -s 'G001LT0511550CFT' 'shell' 'service' 'list'	adb/probes/ALEXA-MODE-T01/service_list.txt
+dumpsys_alexa_modeswitch	0	2026-08-03T03:48:40Z	2026-08-03T03:48:40Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'alexa_modeswitch'	adb/probes/ALEXA-MODE-T01/dumpsys_alexa_modeswitch.txt
+secure_mss_mode	0	2026-08-03T03:48:40Z	2026-08-03T03:48:41Z	adb -s 'G001LT0511550CFT' 'shell' 'settings' 'get' 'secure' 'mss_mode'	adb/probes/ALEXA-MODE-T01/secure_mss_mode.txt
+service_call_get_mode	10	2026-08-03T03:48:41Z	2026-08-03T03:48:41Z	adb -s 'G001LT0511550CFT' 'shell' 'service' 'call' 'alexa_modeswitch' '2'	adb/probes/ALEXA-MODE-T01/service_call_get_mode.txt

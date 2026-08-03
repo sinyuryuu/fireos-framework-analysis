@@ -1,0 +1,17 @@
+label	status	started_utc	finished_utc	command	output
+before_activity	0	2026-08-03T04:22:30Z	2026-08-03T04:22:31Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/settings-tests/SETTINGS-T02/before_activity.txt
+before_window	0	2026-08-03T04:22:31Z	2026-08-03T04:22:31Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/settings-tests/SETTINGS-T02/before_window.txt
+wake_screen	0	2026-08-03T04:22:31Z	2026-08-03T04:22:31Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'keyevent' '224'	adb/settings-tests/SETTINGS-T02/wake_screen.txt
+dismiss_keyguard	0	2026-08-03T04:22:33Z	2026-08-03T04:22:34Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'swipe' '600' '1800' '600' '400' '300'	adb/settings-tests/SETTINGS-T02/dismiss_keyguard.txt
+after_keyguard_dismiss_activity	0	2026-08-03T04:22:36Z	2026-08-03T04:22:36Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/settings-tests/SETTINGS-T02/after_keyguard_dismiss_activity.txt
+after_keyguard_dismiss_window	0	2026-08-03T04:22:36Z	2026-08-03T04:22:36Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/settings-tests/SETTINGS-T02/after_keyguard_dismiss_window.txt
+logcat_clear	0	2026-08-03T04:22:36Z	2026-08-03T04:22:36Z	adb -s 'G001LT0511550CFT' 'logcat' '-c'	adb/settings-tests/SETTINGS-T02/logcat_clear.txt
+open_fragment	0	2026-08-03T04:22:36Z	2026-08-03T04:22:36Z	adb -s 'G001LT0511550CFT' 'shell' 'am' 'start' '-n' 'com.android.settings/.Settings$AdvancedAppsActivity' '--es' ':settings:show_fragment' 'com.android.settings.applications.defaultapps.DefaultHomePicker' '--ez' ':settings:show_fragment_as_subsetting' 'true'	adb/settings-tests/SETTINGS-T02/open_fragment.txt
+after_fragment_activity	0	2026-08-03T04:22:42Z	2026-08-03T04:22:42Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/settings-tests/SETTINGS-T02/after_fragment_activity.txt
+after_fragment_window	0	2026-08-03T04:22:42Z	2026-08-03T04:22:42Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/settings-tests/SETTINGS-T02/after_fragment_window.txt
+fragment_ui_dump	0	2026-08-03T04:22:42Z	2026-08-03T04:22:43Z	adb -s 'G001LT0511550CFT' 'shell' 'uiautomator' 'dump' '/sdcard/codex-settings-picker-SETTINGS-T02.xml'	adb/settings-tests/SETTINGS-T02/fragment_ui_dump.txt
+fragment_ui_readback	0	2026-08-03T04:22:44Z	2026-08-03T04:22:44Z	adb -s 'G001LT0511550CFT' 'shell' 'cat' '/sdcard/codex-settings-picker-SETTINGS-T02.xml'	adb/settings-tests/SETTINGS-T02/fragment_ui.xml
+fragment_ui_cleanup	0	2026-08-03T04:22:44Z	2026-08-03T04:22:44Z	adb -s 'G001LT0511550CFT' 'shell' 'rm' '/sdcard/codex-settings-picker-SETTINGS-T02.xml'	adb/settings-tests/SETTINGS-T02/fragment_ui_cleanup.txt
+restore_home	0	2026-08-03T04:22:44Z	2026-08-03T04:22:44Z	adb -s 'G001LT0511550CFT' 'shell' 'input' 'keyevent' '3'	adb/settings-tests/SETTINGS-T02/restore_home.txt
+after_restore_activity	0	2026-08-03T04:22:47Z	2026-08-03T04:22:47Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'activity' 'activities'	adb/settings-tests/SETTINGS-T02/after_restore_activity.txt
+after_restore_window	0	2026-08-03T04:22:47Z	2026-08-03T04:22:47Z	adb -s 'G001LT0511550CFT' 'shell' 'dumpsys' 'window' 'windows'	adb/settings-tests/SETTINGS-T02/after_restore_window.txt
