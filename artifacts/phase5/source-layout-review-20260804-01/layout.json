@@ -1,0 +1,119 @@
+{
+  "calculation": {
+    "fields": [
+      {
+        "alignment": 8,
+        "guard": null,
+        "included": true,
+        "kind": "rb_node",
+        "name": "tree_entry",
+        "offset": 0,
+        "offset_hex": "0x0",
+        "size": 24,
+        "size_hex": "0x18"
+      },
+      {
+        "alignment": 8,
+        "guard": null,
+        "included": true,
+        "kind": "rb_node",
+        "name": "pi_tree_entry",
+        "offset": 24,
+        "offset_hex": "0x18",
+        "size": 24,
+        "size_hex": "0x18"
+      },
+      {
+        "alignment": 8,
+        "guard": null,
+        "included": true,
+        "kind": "pointer",
+        "name": "task",
+        "offset": 48,
+        "offset_hex": "0x30",
+        "size": 8,
+        "size_hex": "0x8"
+      },
+      {
+        "alignment": 8,
+        "guard": null,
+        "included": true,
+        "kind": "pointer",
+        "name": "lock",
+        "offset": 56,
+        "offset_hex": "0x38",
+        "size": 8,
+        "size_hex": "0x8"
+      },
+      {
+        "guard": "CONFIG_DEBUG_RT_MUTEXES",
+        "included": false,
+        "name": "ip",
+        "reason": "guard is not enabled in supplied config"
+      },
+      {
+        "guard": "CONFIG_DEBUG_RT_MUTEXES",
+        "included": false,
+        "name": "deadlock_task_pid",
+        "reason": "guard is not enabled in supplied config"
+      },
+      {
+        "guard": "CONFIG_DEBUG_RT_MUTEXES",
+        "included": false,
+        "name": "deadlock_lock",
+        "reason": "guard is not enabled in supplied config"
+      },
+      {
+        "alignment": 4,
+        "guard": null,
+        "included": true,
+        "kind": "int",
+        "name": "prio",
+        "offset": 64,
+        "offset_hex": "0x40",
+        "size": 4,
+        "size_hex": "0x4"
+      }
+    ],
+    "max_alignment": 8,
+    "object": "struct rt_mutex_waiter",
+    "sizeof": 72,
+    "sizeof_hex": "0x48",
+    "source_level_only": true
+  },
+  "input": {
+    "abi": "AArch64 LP64",
+    "config_observations": {
+      "CONFIG_ARM64": true,
+      "CONFIG_ARM64_4K_PAGES": true,
+      "CONFIG_ARM64_VA_BITS_39": true,
+      "CONFIG_DEBUG_RT_MUTEXES": false,
+      "CONFIG_FUTEX": true,
+      "CONFIG_KALLSYMS": true,
+      "CONFIG_KALLSYMS_ALL": false,
+      "CONFIG_RANDOMIZE_BASE": true,
+      "CONFIG_RT_MUTEXES": true
+    },
+    "config_sha256": "9fae0dc507c20842b68f8d0c26b8db8fe7d86c7459acb29cfa5b622e2666cbc9",
+    "pointer_size": 8
+  },
+  "interpretation": "These are source/ABI layout facts for the pinned v4.4 declaration. They are not runtime kernel addresses and are not sufficient to construct or execute an exploit.",
+  "not_calculated": [
+    "task_struct.pi_blocked_on offset",
+    "kernel symbol virtual addresses",
+    "KASLR slide",
+    "physical-map or CPU-entry-area addresses",
+    "compiler-generated gadget addresses",
+    "an exploit target header"
+  ],
+  "schema_id": "linux-v4.4-rtmutex-waiter-layout",
+  "source": {
+    "file": "kernel/locking/rtmutex_common.h",
+    "project": "Linux stable",
+    "source_lines": "25-36 in the pinned v4.4.146 source snapshot",
+    "source_sha256": "ee7fcb3d8edb06312606073f02435da8e6bb1d60b53604733a218c75c48ec51c",
+    "struct": "struct rt_mutex_waiter",
+    "tag": "v4.4.146",
+    "url": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/kernel/locking/rtmutex_common.h?h=v4.4.146"
+  }
+}

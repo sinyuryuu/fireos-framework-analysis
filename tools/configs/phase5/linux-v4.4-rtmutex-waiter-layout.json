@@ -1,0 +1,36 @@
+{
+  "schema_id": "linux-v4.4-rtmutex-waiter-layout",
+  "source": {
+    "project": "Linux stable",
+    "tag": "v4.4.146",
+    "file": "kernel/locking/rtmutex_common.h",
+    "url": "https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/tree/kernel/locking/rtmutex_common.h?h=v4.4.146",
+    "source_sha256": "ee7fcb3d8edb06312606073f02435da8e6bb1d60b53604733a218c75c48ec51c",
+    "struct": "struct rt_mutex_waiter",
+    "source_lines": "25-36 in the pinned v4.4.146 source snapshot"
+  },
+  "layout": {
+    "alignment": "pointer",
+    "fields": [
+      {"name": "tree_entry", "kind": "rb_node"},
+      {"name": "pi_tree_entry", "kind": "rb_node"},
+      {"name": "task", "kind": "pointer"},
+      {"name": "lock", "kind": "pointer"},
+      {"name": "ip", "kind": "pointer", "guard": "CONFIG_DEBUG_RT_MUTEXES"},
+      {"name": "deadlock_task_pid", "kind": "pointer", "guard": "CONFIG_DEBUG_RT_MUTEXES"},
+      {"name": "deadlock_lock", "kind": "pointer", "guard": "CONFIG_DEBUG_RT_MUTEXES"},
+      {"name": "prio", "kind": "int"}
+    ]
+  },
+  "scope": {
+    "source_level_only": true,
+    "does_not_calculate": [
+      "task_struct.pi_blocked_on offset",
+      "kernel symbol virtual addresses",
+      "KASLR slide",
+      "physical-map or CPU-entry-area addresses",
+      "compiler-generated gadget addresses",
+      "an exploit target header"
+    ]
+  }
+}

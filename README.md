@@ -723,3 +723,21 @@ rows `P5K-SRC-001` through `P5K-SAFETY-001` are in
 `--dry-run`. Exact PS7330 boot/vmlinux acquisition and any exploit execution
 remain separate Level 3 operations requiring a new operation-specific report
 and approval.
+
+### Phase 5L — source-derived kernel layout calculation
+
+Phase 5L validates the narrower claim that public kernel source can calculate
+useful offset information. Using the captured PS7330 arm64 config and a pinned
+Linux v4.4.146 `struct rt_mutex_waiter` schema, the host-only calculator derives
+the compile-time member layout (`task=0x30`, `lock=0x38`, `prio=0x40`,
+`sizeof=0x48`) for the non-debug configuration. It does not calculate
+`task_struct.pi_blocked_on`, symbol addresses, KASLR, physical-map addresses,
+gadget locations, or an exploit target header.
+
+The report is `findings/phase-5l-source-offset-calculation.md`; the reproducible
+tool is `tools/scripts/calculate_phase5_rtmutex_source_layout.py`; the pinned
+schema is `tools/configs/phase5/linux-v4.4-rtmutex-waiter-layout.json`; and the
+hashed generated output is under
+`artifacts/phase5/source-layout-review-20260804-01/`. No device mutation or
+kernel exploit execution occurred. Boot/LK extraction and exploit execution
+remain separate Level 3 operations.
