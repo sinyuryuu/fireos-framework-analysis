@@ -1,0 +1,13 @@
+factor,AOSP location,third-party control,shell control,system-only aspect,HOME effect,reversible,test decision,evidence
+priority,PMS.adjustPriority; mResolvePrioritySorter,manifest only; positive third-party value capped,no safe shell API,yes for privileged/system,direct,yes,do not repeat priority matrix,P3A/P4A
+preferredOrder,mResolvePrioritySorter,not exposed by ordinary APK manifest,no justified shell control,system/package parser,tie ranking,yes,static only,P4B-RANK-002
+match,sorter + findPreferredActivity,"filter shape controls match, but HOME baseline match is already exact",no direct safe shell control,no,candidate eligibility and preferred match,yes,alias/filter APK only,P4A-METHOD-003
+isDefault,sorter / query matching,DEFAULT category can affect query result,no direct shell control,no,top-field tie gate,yes,alias/filter APK,P4B-RANK-004
+system/privileged,sorter and adjustPriority,not legally obtainable by sideloaded APK,no,yes,priority retention and tie order,n/a,static only,P3A-PRIORITY-001
+persistent preferred,findPersistentPreferredActivityLP,not writable by ordinary shell in observed public path,DevicePolicy/provisioning risk,owner/system path,can override if exact candidate,yes in theory,static; no DPM,P4A-METHOD-002
+ordinary preferred,findPreferredActivity,shell can write via set-home-activity,yes,no,only tie path,yes,already tested; no repeat,P3C-PREF-001
+last chosen,setLastChosenActivity/getLastChosenActivity,"chooser history, not HOME priority winner",command availability only,no,HOME likely bypassed by top-field difference,yes,static only,P4B-RANK-008
+enabled state,query filters / PM state,test package only,yes for test APK,no,candidate inclusion,yes,alias experiment,P4B-RANK-009
+direct boot,query flags and ActivityInfo,manifest attribute,no,no,pre-unlock candidate availability,yes,alias experiment,P4B-RANK-010
+instant/domain verification,chooseBestActivity fallback,not applicable to local HOME APK,no safe control,system-managed,post-preferred fallback,yes,static only,P4A-METHOD-001
+package visibility/user,queryIntentActivitiesInternal,user/profile/context dependent,read-only/user-scoped,system policy,candidate set,yes,read-only,P4B-RANK-012

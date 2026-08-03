@@ -294,3 +294,44 @@ Phase 3C outputs:
 No Root, Fire Launcher disable/hide/suspend/uninstall, Fire data clear,
 partition write, framework injection, Device Owner setup, or crash-loop
 fallback test was performed in Phase 3C.
+
+## Phase 4: core hypothesis validation and reversible controls
+
+Phase 4 starts from public commit `b3d85d7`/Phase 3C. It does not repeat the
+five-APK priority matrix or ordinary `set-home-activity` persistence test.
+The AOSP Android 9 model and Fire method comparison are generated offline:
+
+```sh
+python3 tools/scripts/model_aosp9_home_resolution.py --scenario fire-vs-p0 --pretty
+python3 -m unittest tests/test_aosp9_home_resolution.py
+python3 tools/scripts/generate_phase4_reports.py --force
+```
+
+The model implements the Android 9 top-field gate: when the leading HOME
+candidates differ in `priority`, `preferredOrder`, or `isDefault`,
+`chooseBestActivity()` returns the first result before ordinary preferred
+lookup. This reproduces the Phase 3C Fire-versus-p0 observation. The Fire OS
+artifact also has an Amazon pre-PM resolve callback and a resolver-index filter
+callback; their current HOME return values remain unresolved.
+
+The one live Phase 4B candidate-composition run is
+`adb/phase4/PHASE4-ALIAS-T04`. It installs one multi-activity/alias APK,
+captures candidates, explicitly starts its components, observes implicit HOME
+and Home key, then removes the APK. It never calls `set-home-activity` or
+mutates Fire Launcher. The raw evidence and rollback diff are preserved with a
+SHA-256 manifest. The result remained Fire and the test package was absent
+after rollback.
+
+The source-only user-consented Accessibility approximation is documented under
+`tools/phase4-accessibility/` and is driven by
+`tools/scripts/run_phase4_accessibility_experiment.sh`. The live T03 run
+required manual Settings consent, recorded 30 explicit redirect attempts, and
+observed 0/30 resumed/focused handoffs; Fire remained the resumed activity.
+It is therefore **已排除** as a reliable Home-key workaround for this
+implementation/build, not a true HOME replacement. The service was manually
+disabled and both test APKs were removed; the verified rollback is under
+`adb/phase4/PHASE4-ACCESSIBILITY-T03/`.
+
+Device Owner/provisioning, Fire package mutation, unknown Binder calls, core
+overlay changes, and deliberate HOME crash/fallback tests are explicitly
+rejected in `findings/phase-4-risk-register.md`.

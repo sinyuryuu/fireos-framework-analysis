@@ -1,0 +1,9 @@
+method,AOSP r1,AOSP r61,Fire OS,classification,observation,evidence
+chooseBestActivity,6149-6227,6150-6226,3120-3180,AOSP_STANDARD,same top-field gate; Fire decompiler adds throws artifact,P4A-METHOD-001
+findPersistentPreferredActivityLP,6247-6302,6247-6302,3197-3252,AOSP_STANDARD,persistent record returns only when exact component is in query,P4A-METHOD-002
+findPreferredActivity,6306-6475,6306-6475,3288-~3500,AOSP_STANDARD,same visible match/mAlways/exact-component structure; Java output is mangled,P4A-METHOD-003
+queryIntentActivitiesInternal,6565-6635+,6565-6635+,3724-3729 hole,UNKNOWN,Fire JADX has an unsupported/decompiler gap; do not infer equality,P4A-METHOD-004
+adjustPriority,12575-12630+,12575-12630+,8166-8244,AOSP_STANDARD,same privileged/non-privileged cap and system-package matching shape,P4A-METHOD-005
+ActivityIntentResolver.addActivity,AOSP no vendor hook,AOSP no vendor hook,8246-8262,AMAZON_ADDITION,callFilterComponentIntent can omit an intent filter before resolver indexing,P4A-METHOD-006
+ActivityStackSupervisor.resolveIntent,standard PM-internal call,standard PM-internal call,745-772,AMAZON_ADDITION,vendor callback may return non-null before PM; selected implementation did not prove a Fire result,P4A-METHOD-007
+Fire package literal in core chooser,none,none,no literal in selected PMS chooser,NOT_FOUND,"absence is bounded to inspected source, not proof of global absence",P4A-METHOD-008

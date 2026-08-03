@@ -1,0 +1,13 @@
+# Phase 4 host/tool inventory — 2026-08-03
+tool	version	path/source	purpose
+python3	3.x (see host)	PATH	AOSP model and report generation
+OpenJDK	17.0.20	Homebrew /opt/homebrew/opt/openjdk@17	javac, jar, keytool, d8 runtime
+aapt2	2.19-11948202	Android SDK build-tools/35.0.0	manifest/resource packaging
+d8	8.6.2-dev (abaab469b5ebd4dd2bb91ba0ed6f45277faae4ca)	Android SDK build-tools/35.0.0	DEX generation
+zipalign	SDK build-tools/35.0.0	Android SDK	APK alignment
+apksigner	0.9	Android SDK build-tools/35.0.0	local test APK signing/verification
+adb	Android platform-tools (device command output preserved)	PATH	controlled device experiments
+shasum	macOS system tool	PATH	SHA-256 manifests
+git	workspace tool	PATH	public commit/push
+Gradle	NOT_USED	N/A	raw SDK build is intentional
+Android Gradle Plugin	NOT_USED	N/A	raw SDK build is intentional

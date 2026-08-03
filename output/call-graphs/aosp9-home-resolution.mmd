@@ -1,0 +1,12 @@
+flowchart TD
+  Q[HOME intent] --> QIA[queryIntentActivitiesInternal]
+  QIA --> SORT[mResolvePrioritySorter]
+  SORT --> CBA[chooseBestActivity]
+  CBA -->|N=1| ONE[return query[0]]
+  CBA -->|top priority/preferredOrder/isDefault differ| TOP[return query[0]]
+  CBA -->|top fields tie| PPA[findPersistentPreferredActivityLP]
+  PPA -->|exact target in query| PP[return persistent preferred]
+  PPA -->|no match| PA[findPreferredActivity]
+  PA -->|match + mAlways + set valid| ORD[return ordinary preferred]
+  PA -->|otherwise| RES[instant app / ResolverActivity fallback]
+  ADJ[adjustPriority] -. registration-time cap .-> SORT

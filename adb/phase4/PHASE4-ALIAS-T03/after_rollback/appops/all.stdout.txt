@@ -1,0 +1,1491 @@
+Current AppOps Service state:
+  Settings:
+    top_state_settle_time=+30s0ms
+    fg_service_state_settle_time=+10s0ms
+    bg_state_settle_time=+1s0ms
+
+  Profile owners:
+    User #0: u0a58
+
+  Op mode watchers:
+    Op COARSE_LOCATION:
+      #0: ModeCallback{73396a7 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    Op SYSTEM_ALERT_WINDOW:
+      #0: ModeCallback{74c6ea9 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    Op PLAY_AUDIO:
+      #0: ModeCallback{27eed74 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+      #1: ModeCallback{2936a30 watchinguid=-1 flags=0x0 from uid=u0a35 pid=1842}
+      #2: ModeCallback{796b395 watchinguid=-1 flags=0x0 from uid=u0a36 pid=1150}
+      #3: ModeCallback{e2e7a90 watchinguid=-1 flags=0x0 from uid=u0a36 pid=1150}
+    Op TOAST_WINDOW:
+      #0: ModeCallback{74c6ea9 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    Op GET_ACCOUNTS:
+      #0: ModeCallback{71fd046 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    Op RUN_IN_BACKGROUND:
+      #0: ModeCallback{b5ef8b0 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    Op RUN_ANY_IN_BACKGROUND:
+      #0: ModeCallback{dde441a watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+  Package mode watchers:
+    Pkg amazon.speech.sim:
+      #0: ModeCallback{2936a30 watchinguid=-1 flags=0x0 from uid=u0a35 pid=1842}
+    Pkg com.android.systemui:
+      #0: ModeCallback{796b395 watchinguid=-1 flags=0x0 from uid=u0a36 pid=1150}
+      #1: ModeCallback{e2e7a90 watchinguid=-1 flags=0x0 from uid=u0a36 pid=1150}
+  All op mode watchers:
+    7662c5: ModeCallback{dde441a watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    1603153: ModeCallback{e2e7a90 watchinguid=-1 flags=0x0 from uid=u0a36 pid=1150}
+    6cb1421: ModeCallback{71fd046 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    d557230: ModeCallback{74c6ea9 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    d58d147: ModeCallback{27eed74 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    e6953f3: ModeCallback{b5ef8b0 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+    e73474c: ModeCallback{796b395 watchinguid=-1 flags=0x0 from uid=u0a36 pid=1150}
+    fca9b73: ModeCallback{2936a30 watchinguid=-1 flags=0x0 from uid=u0a35 pid=1842}
+    fcc6366: ModeCallback{73396a7 watchinguid=-1 flags=0x0 from uid=1000 pid=831}
+  All op active watchers:
+    2cd2aef ->
+        [SYSTEM_ALERT_WINDOW, CAMERA, RECORD_AUDIO]
+        ActiveCallback{f59f357 watchinguid=-1 from uid=u0a36 pid=1150}
+  Clients:
+    android.os.Binder@31dc800:
+      ClientState{mAppToken=android.os.Binder@31dc800, pid=831}
+      Started ops:
+        uid=1000 pkg=android op=MONITOR_LOCATION
+        uid=10036 pkg=com.android.systemui op=SYSTEM_ALERT_WINDOW
+        uid=10036 pkg=com.android.systemui op=MONITOR_LOCATION
+
+  Uid 1000:
+    state=pers 
+    startNesting=1
+    Package com.amazon.platform.fdrw:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 14:26:28.449 (-2h25m45s544ms)
+    Package amazon.fireos:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 09:20:46.628 (-7h31m27s365ms)
+      GET_USAGE_STATS (default): 
+          Reject: pers  = 2026-03-26 23:43:10.017 (-129d17h9m3s976ms)
+    Package com.amazon.device.logmanager:
+      RUN_IN_BACKGROUND (allow): 
+          Access: pers  = 2026-08-03 16:13:51.305 (-38m22s688ms)
+    Package com.amazon.accessorynotifier:
+      RUN_IN_BACKGROUND (allow): 
+          Access: pers  = 2026-08-03 16:13:52.826 (-38m21s167ms)
+    Package com.amazon.android.marketplace:
+      WRITE_SETTINGS (default): 
+          Reject: pers  = 2025-12-06 20:49:21.625 (-239d20h2m52s368ms)
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-04-06 07:13:25.558 (-119d9h38m48s435ms)
+    Package com.amazon.storagemanager:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 16:13:37.895 (-38m36s98ms)
+      GET_USAGE_STATS (default): 
+          Reject: pers  = 2026-08-03 07:45:44.987 (-9h6m29s6ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: pers  = 2026-08-03 07:45:41.642 (-9h6m32s351ms)
+    Package android:
+      COARSE_LOCATION (allow): 
+      FINE_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2026-08-03 16:13:42.326 (-38m31s667ms)
+      READ_CALENDAR (allow): 
+          Access: pers  = 2026-08-03 16:13:48.515 (-38m25s478ms)
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 14:29:54.943 (-2h22m19s50ms)
+      AUDIO_MEDIA_VOLUME (allow): 
+          Access: pers  = 2026-08-01 21:11:23.169 (-1d19h40m50s824ms)
+      WAKE_LOCK (allow): 
+          Access: pers  = 2026-08-03 16:52:10.471 (-3s522ms)
+                  fg    = 2026-04-11 03:58:41.049 (-114d12h53m32s944ms)
+          duration=+24ms
+      MONITOR_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2026-08-03 16:13:42.317 (-38m31s676ms)
+                  fg    = 2026-04-11 03:58:41.049 (-114d12h53m32s944ms)
+          Running start at: +38m31s370ms
+          startNesting=1
+      GET_USAGE_STATS (default): 
+          Reject: pers  = 2026-08-03 16:52:06.694 (-7s299ms)
+      TURN_ON_SCREEN (allow): 
+          Access: pers  = 2026-07-10 22:35:34.059 (-23d18h16m39s934ms)
+    Package com.android.providers.settings:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2025-12-06 20:11:38.894 (-239d20h40m35s99ms)
+    Package com.android.keychain:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2025-12-07 15:30:49.435 (-239d1h21m24s558ms)
+    Package com.amazon.device.sale.service:
+      RUN_IN_BACKGROUND (allow): 
+          Access: pers  = 2026-08-03 16:14:05.671 (-38m8s322ms)
+    Package com.android.settings:
+      WRITE_SETTINGS (default): 
+          Reject: pers  = 2026-08-01 21:54:35.634 (-1d18h57m38s359ms)
+      GET_USAGE_STATS (default): 
+          Reject: pers  = 2026-08-03 12:07:40.636 (-4h44m33s357ms)
+      TOAST_WINDOW (allow): 
+          Access: pers  = 2025-12-07 16:06:55.266 (-239d0h45m18s727ms)
+          duration=+4s550ms
+    Package android.amazon.perm:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2025-12-06 19:11:18.089 (-239d21h40m55s904ms)
+    Package com.android.wallpaperbackup:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 14:32:08.417 (-2h20m5s576ms)
+    Package com.android.location.fused:
+      COARSE_LOCATION (allow): 
+      FINE_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2025-12-06 18:57:45.955 (-239d21h54m28s38ms)
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 14:35:13.887 (-2h17m0s106ms)
+      MONITOR_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2025-12-06 19:03:04.992 (-239d21h49m9s1ms)
+          duration=+5m20s391ms
+    Package com.here.odnp.service:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 15:54:11.972 (-58m2s21ms)
+    Package com.amazon.settings:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 07:45:33.063 (-9h6m40s930ms)
+      TOAST_WINDOW (allow): 
+          Access: pers  = 2026-07-10 21:04:18.363 (-23d19h47m55s630ms)
+          duration=+5s388ms
+    Package com.amazon.shpm:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 09:19:52.283 (-7h32m21s710ms)
+    Package com.amazon.fireos.cirruscloud:
+      RECORD_AUDIO (allow): 
+          Access: pers  = 2026-08-03 14:33:40.524 (-2h18m33s469ms)
+  Uid 1002:
+    state=cch  
+    Package com.android.bluetooth:
+      WAKE_LOCK (allow): 
+          Access: pers  = 2025-12-06 18:56:41.294 (-239d21h55m32s699ms)
+                  bg    = 2025-12-06 18:56:41.291 (-239d21h55m32s702ms)
+          duration=+10ms
+      GET_USAGE_STATS (default): 
+          Reject: pers  = 2025-12-06 18:56:24.496 (-239d21h55m49s497ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: pers  = 2025-12-06 18:56:28.924 (-239d21h55m45s69ms)
+                  cch   = 2025-12-06 18:56:23.700 (-239d21h55m50s293ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: pers  = 2025-12-06 18:56:28.924 (-239d21h55m45s69ms)
+                  cch   = 2025-12-06 18:56:23.700 (-239d21h55m50s293ms)
+  Uid 1041:
+    state=cch  
+    Package audioserver:
+      WAKE_LOCK (allow): 
+          Access: cch   = 2026-08-03 16:51:31.806 (-42s187ms)
+          duration=+2s888ms
+      GET_USAGE_STATS (default): 
+          Reject: cch   = 2026-08-03 16:13:38.716 (-38m35s277ms)
+  Uid 1068:
+    state=pers 
+    Package com.android.se:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.435 (-38m30s558ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.435 (-38m30s558ms)
+  Uid 2000:
+    state=cch  
+    Package com.android.shell:
+      AUDIO_RING_VOLUME (allow): 
+          Access: cch   = 2025-12-07 15:02:29.916 (-239d1h49m44s77ms)
+  Uid u0a5:
+    state=cch  
+    Package com.ivona.orchestrator:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:13.286 (-239d0h46m0s707ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:13.286 (-239d0h46m0s707ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2025-12-06 19:02:54.041 (-239d21h49m19s952ms)
+                  cch   = 2025-12-06 19:02:51.359 (-239d21h49m22s634ms)
+  Uid u0a6:
+    state=cch  
+    Package com.amazon.dp.fbcontacts:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.403 (-38m17s590ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.403 (-38m17s590ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: cch   = 2026-08-03 16:13:56.402 (-38m17s591ms)
+  Uid u0a7:
+    state=fg   
+    Package com.amazon.client.metrics:
+      WAKE_LOCK (allow): 
+          Access: fgsvc = 2026-08-03 16:14:08.155 (-38m5s838ms)
+                  fg    = 2026-08-03 16:20:24.304 (-31m49s689ms)
+          duration=+1s99ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.352 (-38m31s641ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.352 (-38m31s641ms)
+  Uid u0a9:
+    state=cch  
+    Package com.amazon.diode:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-03-26 23:25:18.707 (-129d17h26m55s286ms)
+                  cch   = 2026-08-03 16:13:56.028 (-38m17s965ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-03-26 23:25:18.707 (-129d17h26m55s286ms)
+                  cch   = 2026-08-03 16:13:56.028 (-38m17s965ms)
+  Uid u0a10:
+    state=cch  
+    Package com.android.calendar:
+      READ_CALENDAR (allow): 
+          Access: fgsvc = 2025-12-06 20:49:26.009 (-239d20h2m47s984ms)
+      WAKE_LOCK (allow): 
+          Access: fgsvc = 2025-12-06 20:49:26.036 (-239d20h2m47s957ms)
+                  bg    = 2025-12-06 20:49:25.869 (-239d20h2m48s124ms)
+          duration=+170ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:49:25.745 (-239d20h2m48s248ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:49:25.745 (-239d20h2m48s248ms)
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2025-12-06 20:49:26.032 (-239d20h2m47s961ms)
+                  bg    = 2025-12-06 20:49:25.869 (-239d20h2m48s124ms)
+          duration=+165ms
+  Uid u0a11:
+    state=cch  
+    Package com.amazon.smartgenie:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 19:11:40.804 (-239d21h40m33s189ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 19:11:40.804 (-239d21h40m33s189ms)
+  Uid u0a12:
+    state=cch  
+    Package com.amazon.alta.h2clientservice:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:54.161 (-38m19s832ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:54.161 (-38m19s832ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: fgsvc = 2025-12-06 19:02:47.171 (-239d21h49m26s822ms)
+                  bg    = 2026-08-03 16:13:54.245 (-38m19s748ms)
+                  cch   = 2026-08-03 16:13:54.161 (-38m19s832ms)
+  Uid u0a14:
+    state=bg   
+    pendingState=cch  
+    pendingStateCommitTime=-2s391ms
+    Package com.android.providers.downloads:
+      GET_USAGE_STATS (default): 
+          Reject: top   = 2026-08-01 21:55:08.398 (-1d18h57m5s595ms)
+                  fgsvc = 2025-12-06 19:01:44.065 (-239d21h50m29s928ms)
+                  fg    = 2026-07-04 18:17:59.924 (-29d22h34m14s69ms)
+                  bg    = 2025-12-06 19:19:01.930 (-239d21h33m12s63ms)
+                  cch   = 2026-07-04 18:17:59.821 (-29d22h34m14s172ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-03-26 23:25:19.606 (-129d17h26m54s387ms)
+  Uid u0a17:
+    state=cch  
+    Package com.amazon.settings.systemupdates:
+      WRITE_SETTINGS (deny): 
+      RUN_IN_BACKGROUND (ignore): 
+          Access: pers  = 2025-12-06 20:28:12.940 (-239d20h24m1s53ms)
+          Reject: pers  = 2025-12-07 15:31:18.302 (-239d1h20m55s691ms)
+      RUN_ANY_IN_BACKGROUND (ignore): 
+    Package com.amazon.device.software.ota:
+      WRITE_SETTINGS (deny): 
+      RUN_IN_BACKGROUND (ignore): 
+          Access: pers  = 2025-12-06 19:13:14.869 (-239d21h38m59s124ms)
+                  top   = 2025-12-06 18:57:46.627 (-239d21h54m27s366ms)
+                  bg    = 2025-12-06 19:02:43.263 (-239d21h49m30s730ms)
+                  cch   = 2025-12-07 14:57:45.934 (-239d1h54m28s59ms)
+          Reject: fg    = 2026-08-03 16:13:50.813 (-38m23s180ms)
+                  bg    = 2026-07-10 20:57:44.297 (-23d19h54m29s696ms)
+                  cch   = 2026-08-03 09:20:57.412 (-7h31m16s581ms)
+      RUN_ANY_IN_BACKGROUND (ignore): 
+    Package com.amazon.device.software.ota.override:
+      WRITE_SETTINGS (deny): 
+      RUN_IN_BACKGROUND (ignore): 
+          Access: pers  = 2025-12-07 14:58:00.518 (-239d1h54m13s475ms)
+                  top   = 2025-12-06 18:57:43.106 (-239d21h54m30s887ms)
+                  cch   = 2025-12-06 20:28:01.111 (-239d20h24m12s882ms)
+          Reject: pers  = 2026-08-03 16:14:05.886 (-38m8s107ms)
+                  cch   = 2026-04-04 05:30:06.572 (-121d11h22m7s421ms)
+      RUN_ANY_IN_BACKGROUND (ignore): 
+  Uid u0a18:
+    state=cch  
+    Package com.android.packageinstaller:
+      TOAST_WINDOW (allow): 
+          Access: top   = 2025-12-07 16:04:39.093 (-239d0h47m34s900ms)
+                  bg    = 2025-12-07 16:04:38.568 (-239d0h47m35s425ms)
+                  cch   = 2025-12-07 16:04:38.568 (-239d0h47m35s425ms)
+          duration=+4s27ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:59.018 (-38m14s975ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:59.018 (-38m14s975ms)
+  Uid u0a21:
+    state=cch  
+    Package com.android.camera2:
+      RUN_IN_BACKGROUND (allow): 
+          Access: cch   = 2025-12-06 18:57:52.220 (-239d21h54m21s773ms)
+  Uid u0a23:
+    state=cch  
+    Package com.amazon.kindle.otter.oobe:
+      WRITE_SETTINGS (default): 
+          Reject: top   = 2025-12-07 16:06:13.193 (-239d0h46m0s800ms)
+      AUDIO_RING_VOLUME (allow): 
+          Access: pers  = 2025-12-07 15:30:56.704 (-239d1h21m17s289ms)
+                  top   = 2025-12-07 15:31:02.971 (-239d1h21m11s22ms)
+      AUDIO_MEDIA_VOLUME (allow): 
+          Access: top   = 2025-12-06 19:02:57.584 (-239d21h49m16s409ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:17:46.564 (-1d18h34m27s429ms)
+                  bg    = 2025-12-07 15:30:50.054 (-239d1h21m23s939ms)
+                  cch   = 2026-08-03 16:13:46.582 (-38m27s411ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:17:46.564 (-1d18h34m27s429ms)
+                  bg    = 2025-12-07 15:30:50.054 (-239d1h21m23s939ms)
+                  cch   = 2026-08-03 16:13:46.582 (-38m27s411ms)
+      CHANGE_WIFI_STATE (allow): 
+          Access: pers  = 2025-12-07 15:30:56.901 (-239d1h21m17s92ms)
+                  top   = 2025-12-06 18:56:54.502 (-239d21h55m19s491ms)
+  Uid u0a24:
+    state=cch  
+    Package com.amazon.device.backup:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 15:19:52.099 (-239d1h32m21s894ms)
+                  fg    = 2026-08-03 16:13:48.192 (-38m25s801ms)
+                  bg    = 2025-12-06 20:28:38.687 (-239d20h23m35s306ms)
+                  cch   = 2026-08-03 16:13:47.136 (-38m26s857ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 15:19:52.099 (-239d1h32m21s894ms)
+                  fg    = 2026-08-03 16:13:48.192 (-38m25s801ms)
+                  bg    = 2025-12-06 20:28:38.687 (-239d20h23m35s306ms)
+                  cch   = 2026-08-03 16:13:47.136 (-38m26s857ms)
+  Uid u0a26:
+    state=top  
+    Package com.amazon.kindle.unifiedSearch:
+      WAKE_LOCK (allow): 
+          Access: top   = 2025-12-07 15:33:36.716 (-239d1h18m37s277ms)
+          duration=+249ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:48.935 (-38m25s58ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:48.935 (-38m25s58ms)
+  Uid u0a27:
+    state=bg   
+    pendingState=cch  
+    pendingStateCommitTime=-2s387ms
+    Package com.amazon.sync.service:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:51:29.784 (-44s209ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:51:29.784 (-44s209ms)
+  Uid u0a29:
+    state=cch  
+    Package com.amazon.advertisingidsettings:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 19:38:01.380 (-239d21h14m12s613ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 19:38:01.380 (-239d21h14m12s613ms)
+  Uid u0a33:
+    state=cch  
+    Package com.android.providers.userdictionary:
+      READ_CONTACTS (allow): 
+          Access: bg    = 2026-08-03 07:45:46.545 (-9h6m27s448ms)
+                  cch   = 2026-08-03 07:46:04.740 (-9h6m9s253ms)
+      READ_CALL_LOG (allow): 
+          Access: bg    = 2026-08-03 07:45:45.551 (-9h6m28s442ms)
+      WRITE_CALL_LOG (allow): 
+          Access: bg    = 2026-08-03 07:45:45.562 (-9h6m28s431ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 07:45:45.221 (-9h6m28s772ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 07:45:45.221 (-9h6m28s772ms)
+    Package com.android.providers.contacts:
+      READ_CONTACTS (allow): 
+          Access: top   = 2025-12-07 16:06:15.530 (-239d0h45m58s463ms)
+                  fg    = 2026-08-01 22:24:45.121 (-1d18h27m28s872ms)
+                  bg    = 2026-04-10 02:42:06.445 (-115d14h10m7s548ms)
+                  cch   = 2026-08-03 16:14:13.381 (-38m0s612ms)
+      READ_CALL_LOG (allow): 
+          Access: fg    = 2026-08-01 22:24:44.862 (-1d18h27m29s131ms)
+                  bg    = 2026-04-06 09:48:41.204 (-119d7h3m32s789ms)
+                  cch   = 2026-08-03 16:13:56.809 (-38m17s184ms)
+      WRITE_CALL_LOG (allow): 
+          Access: fg    = 2026-08-01 22:24:44.874 (-1d18h27m29s119ms)
+                  bg    = 2026-04-06 09:48:41.216 (-119d7h3m32s777ms)
+                  cch   = 2026-08-03 16:13:56.825 (-38m17s168ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.674 (-38m17s319ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.674 (-38m17s319ms)
+  Uid u0a34:
+    state=cch  
+    Package com.amazon.wallpaper:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: fg    = 2025-12-07 15:26:45.548 (-239d1h25m28s445ms)
+                  cch   = 2026-08-03 16:13:57.455 (-38m16s538ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:57.455 (-38m16s538ms)
+  Uid u0a35:
+    state=pers 
+    Package com.amazon.media.session.monitor:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 15:30:56.412 (-239d1h21m17s581ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 15:30:56.412 (-239d1h21m17s581ms)
+    Package amazon.speech.sim:
+      COARSE_LOCATION (allow): 
+          Access: pers  = 2025-12-06 18:56:54.398 (-239d21h55m19s595ms)
+      FINE_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2026-08-03 16:13:49.240 (-38m24s753ms)
+      WIFI_SCAN (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2025-12-06 18:56:54.398 (-239d21h55m19s595ms)
+      AUDIO_MASTER_VOLUME (allow): 
+          Access: pers  = 2026-08-03 16:13:51.744 (-38m22s249ms)
+      AUDIO_MEDIA_VOLUME (allow): 
+          Access: pers  = 2025-12-06 18:56:32.976 (-239d21h55m41s17ms)
+      MONITOR_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2025-12-06 19:03:04.995 (-239d21h49m8s998ms)
+          duration=+5m20s367ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.402 (-38m30s591ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.402 (-38m30s591ms)
+  Uid u0a36:
+    state=pers 
+    startNesting=2
+    Package com.android.systemui:
+      COARSE_LOCATION (allow): 
+      FINE_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2025-12-06 18:57:45.958 (-239d21h54m28s35ms)
+      READ_CONTACTS (allow): 
+          Access: pers  = 2025-12-07 15:26:32.626 (-239d1h25m41s367ms)
+      SYSTEM_ALERT_WINDOW (default): 
+          Access: pers  = 2026-08-03 16:13:46.634 (-38m27s359ms)
+          Running start at: +38m27s53ms
+          startNesting=1
+      TAKE_AUDIO_FOCUS (allow): 
+          Access: pers  = 2026-08-03 16:14:07.412 (-38m6s581ms)
+                  fg    = 2026-04-10 08:40:05.030 (-115d8h12m8s963ms)
+      WAKE_LOCK (allow): 
+          Access: pers  = 2026-08-03 16:14:07.933 (-38m6s60ms)
+                  fg    = 2026-07-10 21:46:57.341 (-23d19h5m16s652ms)
+          duration=+543ms
+      MONITOR_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: pers  = 2026-08-03 16:13:51.303 (-38m22s690ms)
+                  fg    = 2026-07-10 22:35:34.079 (-23d18h16m39s914ms)
+          Running start at: +38m22s690ms
+          startNesting=1
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: pers  = 2026-08-03 16:51:28.404 (-45s589ms)
+  Uid u0a38:
+    state=cch  
+    Package com.android.statementservice:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-07-10 21:07:34.808 (-23d19h44m39s185ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-07-10 21:07:34.808 (-23d19h44m39s185ms)
+  Uid u0a39:
+    state=cch  
+    Package com.amazon.ods.kindleconnect:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 18:56:29.338 (-239d21h55m44s655ms)
+                  cch   = 2025-12-07 14:57:33.460 (-239d1h54m40s533ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 18:56:29.338 (-239d21h55m44s655ms)
+                  cch   = 2025-12-07 14:57:33.460 (-239d1h54m40s533ms)
+  Uid u0a41:
+    state=bg   
+    Package com.amazon.platform:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:47.778 (-38m26s215ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:47.778 (-38m26s215ms)
+  Uid u0a43:
+    state=pers 
+    Package com.amazon.imp:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:40.693 (-38m33s300ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:40.693 (-38m33s300ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: pers  = 2026-08-03 16:13:56.705 (-38m17s288ms)
+  Uid u0a44:
+    state=cch  
+    Package com.amazon.alexa.multimodal.gemini:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 18:56:27.719 (-239d21h55m46s274ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 18:56:27.719 (-239d21h55m46s274ms)
+  Uid u0a46:
+    state=cch  
+    Package com.amazon.ags.app:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:49:57.677 (-239d20h2m16s316ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:49:57.677 (-239d20h2m16s316ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2025-12-06 20:49:24.990 (-239d20h2m49s3ms)
+                  cch   = 2025-12-06 20:49:23.334 (-239d20h2m50s659ms)
+  Uid u0a51:
+    state=cch  
+    Package com.android.providers.calendar:
+      READ_CALENDAR (allow): 
+          Access: fgsvc = 2025-12-06 20:49:26.009 (-239d20h2m47s984ms)
+                  fg    = 2026-08-03 16:13:48.515 (-38m25s478ms)
+                  cch   = 2025-12-06 18:56:58.710 (-239d21h55m15s283ms)
+      WAKE_LOCK (allow): 
+          Access: fgsvc = 2026-08-03 16:14:07.300 (-38m6s693ms)
+                  bg    = 2026-08-03 16:14:07.273 (-38m6s720ms)
+                  cch   = 2026-08-03 16:13:59.244 (-38m14s749ms)
+          duration=+33ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: fgsvc = 2025-12-06 18:57:52.939 (-239d21h54m21s54ms)
+                  cch   = 2026-08-03 16:13:48.139 (-38m25s854ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: fgsvc = 2025-12-06 18:57:52.939 (-239d21h54m21s54ms)
+                  cch   = 2026-08-03 16:13:48.139 (-38m25s854ms)
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2026-08-03 16:14:07.301 (-38m6s692ms)
+                  bg    = 2026-08-03 16:14:07.273 (-38m6s720ms)
+          duration=+32ms
+  Uid u0a52:
+    state=cch  
+    Package com.amazon.kindle:
+      VIBRATE (allow): 
+          Access: fgsvc = 2025-12-06 20:49:24.598 (-239d20h2m49s395ms)
+          duration=+952ms
+      WAKE_LOCK (allow): 
+          Access: fgsvc = 2025-12-06 20:49:32.800 (-239d20h2m41s193ms)
+                  bg    = 2025-12-06 20:49:22.963 (-239d20h2m51s30ms)
+                  cch   = 2025-12-06 19:17:08.559 (-239d21h35m5s434ms)
+          duration=+10s171ms
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2025-12-06 20:49:22.963 (-239d20h2m51s30ms)
+                  bg    = 2025-12-06 20:49:22.963 (-239d20h2m51s30ms)
+          duration=+53s618ms
+  Uid u0a55:
+    state=cch  
+    Package com.amazon.comms.kids:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-08-03 16:14:26.274 (-37m47s719ms)
+                  cch   = 2026-08-03 16:14:25.668 (-37m48s325ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-08-03 16:14:26.274 (-37m47s719ms)
+                  cch   = 2026-08-03 16:14:25.668 (-37m48s325ms)
+  Uid u0a58:
+    state=cch  
+    Package com.amazon.parentalcontrols:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:23:57.150 (-28m16s843ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:23:57.150 (-28m16s843ms)
+  Uid u0a59:
+    state=fg   
+    Package android.ext.services:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:41.094 (-38m32s899ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:41.094 (-38m32s899ms)
+  Uid u0a61:
+    state=cch  
+    Package com.amazon.tv.ottssocompanionapp:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:14:05.681 (-38m8s312ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:14:05.681 (-38m8s312ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: cch   = 2026-08-03 16:14:05.680 (-38m8s313ms)
+  Uid u0a62:
+    state=cch  
+    Package com.amazon.kindle.starsight:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: fgsvc = 2026-08-03 16:14:07.205 (-38m6s788ms)
+                  cch   = 2026-08-03 16:13:56.718 (-38m17s275ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: fgsvc = 2026-08-03 16:14:07.205 (-38m6s788ms)
+                  cch   = 2026-08-03 16:13:56.718 (-38m17s275ms)
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2026-08-03 16:14:07.559 (-38m6s434ms)
+                  bg    = 2026-08-03 16:14:07.176 (-38m6s817ms)
+          duration=+402ms
+  Uid u0a63:
+    state=cch  
+    Package com.android.deskclock:
+      WAKE_LOCK (allow): 
+          Access: bg    = 2025-12-07 14:58:00.757 (-239d1h54m13s236ms)
+          duration=+18ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 14:57:57.363 (-239d1h54m16s630ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 14:57:57.363 (-239d1h54m16s630ms)
+  Uid u0a66:
+    state=cch  
+    Package com.amazon.logan:
+      GET_USAGE_STATS (default): 
+          Reject: bg    = 2026-08-03 16:13:52.942 (-38m21s51ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 16:05:51.158 (-239d0h46m22s835ms)
+                  bg    = 2026-08-03 16:13:52.112 (-38m21s881ms)
+                  cch   = 2026-08-03 16:13:51.974 (-38m22s19ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 16:05:51.158 (-239d0h46m22s835ms)
+                  bg    = 2026-08-03 16:13:52.112 (-38m21s881ms)
+                  cch   = 2026-08-03 16:13:51.974 (-38m22s19ms)
+      BIND_ACCESSIBILITY_SERVICE (allow): 
+          Access: bg    = 2026-04-04 14:22:41.586 (-121d2h29m32s407ms)
+                  cch   = 2026-08-03 16:52:10.458 (-3s535ms)
+  Uid u0a67:
+    state=cch  
+    Package com.amazon.pm:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:57.066 (-38m16s927ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:57.066 (-38m16s927ms)
+  Uid u0a68:
+    state=cch  
+    Package com.amazon.geo.client.maps:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-07 15:00:28.735 (-239d1h51m45s258ms)
+                  cch   = 2025-12-07 15:00:28.638 (-239d1h51m45s355ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-07 15:00:28.735 (-239d1h51m45s258ms)
+                  cch   = 2025-12-07 15:00:28.638 (-239d1h51m45s355ms)
+  Uid u0a69:
+    state=cch  
+    Package com.amazon.wifilocker:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:14:05.166 (-38m8s827ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:14:05.166 (-38m8s827ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2026-08-03 16:14:05.533 (-38m8s460ms)
+                  cch   = 2026-08-03 16:14:05.165 (-38m8s828ms)
+  Uid u0a70:
+    state=fgsvc
+    pendingState=cch  
+    pendingStateCommitTime=+3s635ms
+    Package com.amazon.appverification:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:14:42.682 (-37m31s311ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:14:42.682 (-37m31s311ms)
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2026-08-03 16:52:07.617 (-6s376ms)
+                  bg    = 2026-08-03 16:14:42.795 (-37m31s198ms)
+                  cch   = 2026-08-03 16:52:07.513 (-6s480ms)
+          duration=+113ms
+  Uid u0a71:
+    state=cch  
+    Package com.amazon.device.messaging:
+      WAKE_LOCK (allow): 
+          Access: top   = 2026-08-03 07:45:53.782 (-9h6m20s211ms)
+                  fgsvc = 2025-12-06 19:02:54.252 (-239d21h49m19s741ms)
+                  fg    = 2026-08-03 07:45:53.798 (-9h6m20s195ms)
+                  bg    = 2026-08-03 16:13:55.722 (-38m18s271ms)
+                  cch   = 2025-12-06 20:49:28.614 (-239d20h2m45s379ms)
+          duration=+38ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.572 (-38m31s421ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.572 (-38m31s421ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: fgsvc = 2025-12-06 19:02:53.483 (-239d21h49m20s510ms)
+                  bg    = 2025-12-06 19:03:18.083 (-239d21h48m55s910ms)
+                  cch   = 2025-12-06 19:03:16.354 (-239d21h48m57s639ms)
+  Uid u0a74:
+    state=bg   
+    Package com.amazon.kindle.kso:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:38.859 (-38m35s134ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:38.859 (-38m35s134ms)
+  Uid u0a75:
+    state=fg   
+    Package com.android.launcher3:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.485 (-38m30s508ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.485 (-38m30s508ms)
+  Uid u0a76:
+    state=bg   
+    pendingState=cch  
+    pendingStateCommitTime=+336ms
+    Package com.amazon.venezia:
+      COARSE_LOCATION (allow): 
+      FINE_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: top   = 2026-08-03 16:51:34.922 (-39s71ms)
+                  fg    = 2026-08-01 19:13:25.980 (-1d21h38m48s13ms)
+                  bg    = 2026-08-03 16:13:55.782 (-38m18s211ms)
+      GET_USAGE_STATS (default): 
+          Reject: top   = 2026-08-03 16:51:31.388 (-42s605ms)
+                  bg    = 2026-08-03 16:52:10.848 (-3s145ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-03 16:51:30.322 (-43s671ms)
+                  fg    = 2026-08-03 16:13:51.895 (-38m22s98ms)
+                  bg    = 2026-08-03 16:13:57.468 (-38m16s525ms)
+                  cch   = 2026-08-03 16:51:29.369 (-44s624ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-03 16:51:30.322 (-43s671ms)
+                  fg    = 2026-08-03 16:13:51.895 (-38m22s98ms)
+                  bg    = 2026-08-03 16:13:57.468 (-38m16s525ms)
+                  cch   = 2026-08-03 16:51:29.369 (-44s624ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: fg    = 2025-12-06 19:02:50.004 (-239d21h49m23s989ms)
+                  bg    = 2025-12-06 19:03:06.441 (-239d21h49m7s552ms)
+                  cch   = 2025-12-06 18:57:51.709 (-239d21h54m22s284ms)
+  Uid u0a77:
+    state=cch  
+    Package com.amazon.csapp:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-07-04 21:19:44.035 (-29d19h32m29s958ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-07-04 21:19:44.035 (-29d19h32m29s958ms)
+  Uid u0a78:
+    state=cch  
+    Package com.amazon.windowshop:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 19:02:47.227 (-239d21h49m26s766ms)
+                  cch   = 2025-12-06 19:02:46.705 (-239d21h49m27s288ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 19:02:47.227 (-239d21h49m26s766ms)
+                  cch   = 2025-12-06 19:02:46.705 (-239d21h49m27s288ms)
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2025-12-06 19:02:48.724 (-239d21h49m25s269ms)
+                  bg    = 2025-12-06 19:02:48.093 (-239d21h49m25s900ms)
+          duration=+643ms
+  Uid u0a79:
+    state=cch  
+    Package com.amazon.weather:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 15:03:07.304 (-239d1h49m6s689ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 15:03:07.304 (-239d1h49m6s689ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: cch   = 2025-12-06 18:56:38.195 (-239d21h55m35s798ms)
+  Uid u0a80:
+    state=cch  
+    Package com.amazon.redstone:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:14.155 (-239d0h45m59s838ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:14.155 (-239d0h45m59s838ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2025-12-06 19:02:54.125 (-239d21h49m19s868ms)
+                  cch   = 2025-12-07 16:06:14.155 (-239d0h45m59s838ms)
+  Uid u0a85:
+    state=cch  
+    Package com.android.providers.media:
+      WRITE_SETTINGS (default): 
+          Reject: bg    = 2025-12-06 18:57:55.287 (-239d21h54m18s706ms)
+      WAKE_LOCK (allow): 
+          Access: bg    = 2026-08-03 16:13:59.522 (-38m14s471ms)
+          duration=+105ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:16:58.037 (-1d18h35m15s956ms)
+                  fg    = 2025-12-06 18:56:29.428 (-239d21h55m44s565ms)
+                  bg    = 2026-08-03 16:14:04.551 (-38m9s442ms)
+                  cch   = 2026-08-03 10:17:12.169 (-6h35m1s824ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-03-26 23:25:19.494 (-129d17h26m54s499ms)
+                  cch   = 2026-03-26 23:25:19.606 (-129d17h26m54s387ms)
+  Uid u0a87:
+    state=cch  
+    Package com.amazon.cloud9:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 20:49:29.845 (-239d20h2m44s148ms)
+                  cch   = 2025-12-06 20:49:24.664 (-239d20h2m49s329ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 20:49:29.845 (-239d20h2m44s148ms)
+                  cch   = 2025-12-06 20:49:24.664 (-239d20h2m49s329ms)
+  Uid u0a90:
+    state=cch  
+    Package com.amazon.dcpms.fos.service:
+      GET_USAGE_STATS (default): 
+          Reject: bg    = 2026-08-03 16:13:55.578 (-38m18s415ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:51:28.648 (-45s345ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:51:28.648 (-45s345ms)
+  Uid u0a91:
+    state=cch  
+    Package com.android.managedprovisioning:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:58.474 (-38m15s519ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:58.474 (-38m15s519ms)
+  Uid u0a92:
+    state=cch  
+    Package com.android.onetimeinitializer:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:58.958 (-38m15s35ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:58.958 (-38m15s35ms)
+  Uid u0a96:
+    state=cch  
+    Package com.amazon.webapp:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:49:22.967 (-239d20h2m51s26ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:49:22.967 (-239d20h2m51s26ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2025-12-06 18:56:34.056 (-239d21h55m39s937ms)
+                  cch   = 2025-12-06 20:49:22.966 (-239d20h2m51s27ms)
+  Uid u0a97:
+    state=cch  
+    Package com.amazon.kindle.otter.oobe.forced.ota:
+      WRITE_SETTINGS (deny): 
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 18:57:00.854 (-239d21h55m13s139ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 18:57:00.854 (-239d21h55m13s139ms)
+      RUN_IN_BACKGROUND (ignore): 
+      RUN_ANY_IN_BACKGROUND (ignore): 
+  Uid u0a98:
+    state=bg   
+    Package com.fireos.arcus.proxy:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.351 (-38m31s642ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.351 (-38m31s642ms)
+  Uid u0a99:
+    state=cch  
+  Uid u0a100:
+    state=cch  
+    Package com.amazon.cloud9.contentservice:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 07:45:40.422 (-9h6m33s571ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 07:45:40.422 (-9h6m33s571ms)
+  Uid u0a102:
+    state=cch  
+    Package com.amazon.dp.contacts:
+      WRITE_CONTACTS (allow): 
+          Access: bg    = 2025-12-06 19:03:04.779 (-239d21h49m9s214ms)
+                  cch   = 2026-08-03 16:51:31.391 (-42s602ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:37:29.693 (-239d20h14m44s300ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 20:37:29.693 (-239d20h14m44s300ms)
+  Uid u0a103:
+    state=cch  
+    Package com.ivona.tts.oem:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 16:06:19.978 (-239d0h45m54s15ms)
+                  fgsvc = 2025-12-06 19:02:54.111 (-239d21h49m19s882ms)
+                  fg    = 2026-08-01 22:18:34.973 (-1d18h33m39s20ms)
+                  bg    = 2025-12-06 20:49:23.639 (-239d20h2m50s354ms)
+                  cch   = 2026-08-01 22:18:34.598 (-1d18h33m39s395ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 16:06:19.978 (-239d0h45m54s15ms)
+                  fgsvc = 2025-12-06 19:02:54.111 (-239d21h49m19s882ms)
+                  fg    = 2026-08-01 22:18:34.973 (-1d18h33m39s20ms)
+                  bg    = 2025-12-06 20:49:23.639 (-239d20h2m50s354ms)
+                  cch   = 2026-08-01 22:18:34.598 (-1d18h33m39s395ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: fgsvc = 2025-12-06 19:02:54.110 (-239d21h49m19s883ms)
+  Uid u0a104:
+    state=cch  
+    Package com.amazon.sync.provider.ipc:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:51.971 (-38m22s22ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:51.971 (-38m22s22ms)
+  Uid u0a105:
+    state=cch  
+    Package com.amazon.device.crashmanager:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-03-27 19:05:36.221 (-128d21h46m37s772ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-03-27 19:05:36.221 (-128d21h46m37s772ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: cch   = 2025-12-06 18:57:46.310 (-239d21h54m27s683ms)
+  Uid u0a107:
+    state=bg   
+    pendingState=cch  
+    pendingStateCommitTime=-2s453ms
+    Package com.android.documentsui:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:51:31.088 (-42s905ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:51:31.088 (-42s905ms)
+  Uid u0a108:
+    state=pers 
+    Package com.dolby.daxservice:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.429 (-38m30s564ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.429 (-38m30s564ms)
+  Uid u0a110:
+    state=cch  
+    Package com.amazon.mp3:
+      WAKE_LOCK (allow): 
+          Access: fg    = 2025-12-06 18:56:29.241 (-239d21h55m44s752ms)
+                  bg    = 2025-12-07 14:57:35.741 (-239d1h54m38s252ms)
+          duration=+2ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-06 20:50:11.324 (-239d20h2m2s669ms)
+                  fg    = 2025-12-06 18:56:30.766 (-239d21h55m43s227ms)
+                  bg    = 2025-12-07 14:57:43.100 (-239d1h54m30s893ms)
+                  cch   = 2025-12-07 14:57:34.293 (-239d1h54m39s700ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-06 20:50:11.324 (-239d20h2m2s669ms)
+                  fg    = 2025-12-06 18:56:30.766 (-239d21h55m43s227ms)
+                  bg    = 2025-12-07 14:57:43.100 (-239d1h54m30s893ms)
+                  cch   = 2025-12-07 14:57:34.293 (-239d1h54m39s700ms)
+  Uid u0a111:
+    state=cch  
+    Package com.amazon.securitysyncclient:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-08-03 16:19:55.038 (-32m18s955ms)
+                  cch   = 2026-08-03 16:19:54.911 (-32m19s82ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2026-08-03 16:19:55.038 (-32m18s955ms)
+                  cch   = 2026-08-03 16:19:54.911 (-32m19s82ms)
+  Uid u0a112:
+    state=cch  
+    Package com.amazon.frameworksettings:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:05:47.619 (-239d0h46m26s374ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:05:47.619 (-239d0h46m26s374ms)
+  Uid u0a113:
+    state=cch  
+    Package com.amazon.photos:
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2025-12-07 15:03:17.945 (-239d1h48m56s48ms)
+                  bg    = 2025-12-07 15:03:22.881 (-239d1h48m51s112ms)
+                  cch   = 2025-12-07 15:03:22.881 (-239d1h48m51s112ms)
+          duration=+29m23s352ms
+  Uid u0a115:
+    state=cch  
+    Package com.amazon.kindle.rdmdeviceadmin:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:28:57.290 (-23m16s703ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:28:57.290 (-23m16s703ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2026-08-03 16:28:57.567 (-23m16s426ms)
+                  cch   = 2026-08-03 16:28:57.288 (-23m16s705ms)
+  Uid u0a116:
+    state=cch  
+    Package com.goodreads.kindle:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 19:03:04.695 (-239d21h49m9s298ms)
+                  cch   = 2025-12-06 19:03:04.371 (-239d21h49m9s622ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 19:03:04.695 (-239d21h49m9s298ms)
+                  cch   = 2025-12-06 19:03:04.371 (-239d21h49m9s622ms)
+  Uid u0a118:
+    state=cch  
+    Package com.amazon.dpcclient:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.484 (-38m17s509ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.484 (-38m17s509ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2025-12-06 19:03:17.611 (-239d21h48m56s382ms)
+                  cch   = 2025-12-06 19:03:04.990 (-239d21h49m9s3ms)
+  Uid u0a120:
+    state=top  
+    Package com.amazon.firelauncher:
+      TAKE_AUDIO_FOCUS (allow): 
+          Access: top   = 2025-12-06 19:11:35.445 (-239d21h40m38s548ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 15:31:03.787 (-239d1h21m10s206ms)
+                  bg    = 2026-08-03 09:20:53.467 (-7h31m20s526ms)
+                  cch   = 2026-08-03 16:13:48.558 (-38m25s435ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 15:31:03.787 (-239d1h21m10s206ms)
+                  bg    = 2026-08-03 09:20:53.467 (-7h31m20s526ms)
+                  cch   = 2026-08-03 16:13:48.558 (-38m25s435ms)
+      REQUEST_DELETE_PACKAGES (allow): 
+          Access: top   = 2025-12-07 16:04:33.720 (-239d0h47m40s273ms)
+  Uid u0a121:
+    state=cch  
+    Package com.amazon.cardinal:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:13.389 (-239d0h46m0s604ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:13.389 (-239d0h46m0s604ms)
+      START_FOREGROUND (allow): 
+          Access: fgsvc = 2025-12-07 16:06:18.692 (-239d0h45m55s301ms)
+                  bg    = 2025-12-07 16:06:13.666 (-239d0h46m0s327ms)
+          duration=+5s30ms
+  Uid u0a122:
+    state=cch  
+    Package com.android.contacts:
+      READ_CONTACTS (allow): 
+          Access: bg    = 2025-12-07 14:57:58.162 (-239d1h54m15s831ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 14:57:56.999 (-239d1h54m16s994ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 14:57:56.999 (-239d1h54m16s994ms)
+  Uid u0a123:
+    state=cch  
+    Package com.audible.application.kindle:
+      WAKE_LOCK (allow): 
+          Access: bg    = 2025-12-07 14:58:05.269 (-239d1h54m8s724ms)
+                  cch   = 2025-12-06 20:49:28.435 (-239d20h2m45s558ms)
+          duration=+1s416ms
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2025-12-06 18:57:43.400 (-239d21h54m30s593ms)
+                  cch   = 2025-12-06 19:03:01.043 (-239d21h49m12s950ms)
+  Uid u0a125:
+    state=cch  
+    Package com.amazon.identity.auth.device.authorization:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:50.409 (-38m23s584ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:50.409 (-38m23s584ms)
+  Uid u0a126:
+    state=bg   
+    Package com.amazon.whisperlink.activityview.android:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:57.530 (-38m16s463ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:57.530 (-38m16s463ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2026-08-03 16:51:28.626 (-45s367ms)
+                  cch   = 2026-08-03 16:13:57.530 (-38m16s463ms)
+    Package com.amazon.whisperlink.core.android:
+      WAKE_LOCK (allow): 
+          Access: bg    = 2026-07-10 21:46:57.681 (-23d19h5m16s312ms)
+          duration=+6ms
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2026-08-03 16:52:10.415 (-3s578ms)
+  Uid u0a128:
+    state=cch  
+    Package com.amazon.tahoe:
+      WAKE_LOCK (allow): 
+          Access: bg    = 2025-12-07 14:57:56.382 (-239d1h54m17s611ms)
+          duration=+5ms
+  Uid u0a129:
+    state=cch  
+    Package com.android.vpndialogs:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 20:34:02.268 (-1d20h18m11s725ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 20:34:02.268 (-1d20h18m11s725ms)
+  Uid u0a132:
+    state=bg   
+    pendingState=cch  
+    pendingStateCommitTime=-2s384ms
+    Package com.amazon.adep:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:53.367 (-38m20s626ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:53.367 (-38m20s626ms)
+  Uid u0a133:
+    state=cch  
+    Package amazon.speech.davs.davcservice:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:52.117 (-38m21s876ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:52.117 (-38m21s876ms)
+  Uid u0a134:
+    state=cch  
+    Package com.amazon.switchaccess.root:
+      BIND_ACCESSIBILITY_SERVICE (allow): 
+          Access: cch   = 2026-08-03 16:52:10.537 (-3s456ms)
+  Uid u0a135:
+    state=pers 
+    Package com.amazon.tcomm:
+      WAKE_LOCK (allow): 
+          Access: pers  = 2026-08-03 16:52:08.821 (-5s172ms)
+          duration=+305ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.434 (-38m30s559ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.434 (-38m30s559ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: pers  = 2025-12-06 19:01:55.017 (-239d21h50m18s976ms)
+  Uid u0a136:
+    state=fg   
+    Package com.android.defcontainer:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: fg    = 2026-08-03 16:52:10.393 (-3s600ms)
+                  bg    = 2026-08-03 16:51:30.967 (-43s26ms)
+                  cch   = 2026-08-03 16:48:35.323 (-3m38s670ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: fg    = 2026-08-03 16:52:10.393 (-3s600ms)
+                  bg    = 2026-08-03 16:51:30.967 (-43s26ms)
+                  cch   = 2026-08-03 16:48:35.323 (-3m38s670ms)
+  Uid u0a138:
+    state=cch  
+    Package com.amazon.providers.contentsupport:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:14.029 (-239d0h45m59s964ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 16:06:14.029 (-239d0h45m59s964ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: bg    = 2025-12-06 19:02:52.918 (-239d21h49m21s75ms)
+                  cch   = 2025-12-07 16:06:14.029 (-239d0h45m59s964ms)
+  Uid u0a140:
+    state=cch  
+    Package com.android.email:
+      READ_CONTACTS (allow): 
+          Access: bg    = 2025-12-06 19:02:54.642 (-239d21h49m19s351ms)
+                  cch   = 2025-12-06 20:28:03.609 (-239d20h24m10s384ms)
+      WRITE_CONTACTS (allow): 
+          Access: bg    = 2025-12-06 19:02:54.742 (-239d21h49m19s251ms)
+                  cch   = 2025-12-07 15:00:37.222 (-239d1h51m36s771ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 20:37:29.822 (-239d20h14m44s171ms)
+                  cch   = 2025-12-06 20:37:29.500 (-239d20h14m44s493ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: bg    = 2025-12-06 20:37:29.822 (-239d20h14m44s171ms)
+                  cch   = 2025-12-06 20:37:29.500 (-239d20h14m44s493ms)
+  Uid u0a142:
+    state=cch  
+    Package com.amazon.legalsettings:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 21:55:15.379 (-1d18h56m58s614ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 21:55:15.380 (-1d18h56m58s613ms)
+  Uid u0a146:
+    state=cch  
+    Package com.android.printspooler:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.905 (-38m30s88ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:43.905 (-38m30s88ms)
+  Uid u0a150:
+    state=cch  
+    Package com.amazon.wirelessmetrics.service:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.352 (-38m31s641ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:42.352 (-38m31s641ms)
+  Uid u0a157:
+    state=cch  
+    Package com.amazon.hybridadidservice:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.623 (-38m17s370ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:56.623 (-38m17s370ms)
+  Uid u0a158:
+    state=cch  
+    Package com.android.quicksearchbox:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 22:17:11.287 (-1d18h35m2s706ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 22:17:11.287 (-1d18h35m2s706ms)
+  Uid u0a162:
+    state=cch  
+    Package com.amazon.webview.chromium:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 21:55:16.379 (-1d18h56m57s614ms)
+                  fgsvc = 2025-12-06 18:58:39.395 (-239d21h53m34s598ms)
+                  bg    = 2025-12-07 14:58:05.426 (-239d1h54m8s567ms)
+                  cch   = 2026-08-01 22:25:28.860 (-1d18h26m45s133ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 21:55:16.379 (-1d18h56m57s614ms)
+                  fgsvc = 2025-12-06 18:58:39.395 (-239d21h53m34s598ms)
+                  bg    = 2025-12-07 14:58:05.426 (-239d1h54m8s567ms)
+                  cch   = 2026-08-01 22:25:28.860 (-1d18h26m45s133ms)
+  Uid u0a164:
+    state=cch  
+    Package com.amazon.device.metrics:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:55.664 (-38m18s329ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-03 16:13:55.664 (-38m18s329ms)
+      RUN_IN_BACKGROUND (allow): 
+          Access: cch   = 2026-08-03 16:13:55.663 (-38m18s330ms)
+  Uid u0a167:
+    state=cch  
+    Package com.android.music:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: fg    = 2025-12-06 18:56:29.428 (-239d21h55m44s565ms)
+                  cch   = 2025-12-06 18:56:28.991 (-239d21h55m45s2ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 18:56:28.991 (-239d21h55m45s2ms)
+  Uid u0a168:
+    state=cch  
+    Package jp.co.omronsoft.iwnnime.languagepack.zhtw_az:
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 19:00:40.782 (-239d21h51m33s211ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-06 19:00:40.782 (-239d21h51m33s211ms)
+  Uid u0a171:
+    state=cch  
+    Package jp.co.omronsoft.iwnnime.mlaz:
+      TOAST_WINDOW (allow): 
+          Access: top   = 2025-12-06 19:01:16.165 (-239d21h50m57s828ms)
+          duration=+2s457ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 14:57:36.858 (-239d1h54m37s135ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2025-12-07 14:57:36.858 (-239d1h54m37s135ms)
+  Uid u0a174:
+    state=cch  
+    Package com.amazon.speakscreen:
+      BIND_ACCESSIBILITY_SERVICE (allow): 
+          Access: cch   = 2026-08-03 16:52:10.502 (-3s491ms)
+  Uid u0a175:
+    state=cch  
+    Package org.mozilla.firefox:
+      READ_CLIPBOARD (allow): 
+          Access: top   = 2026-08-03 10:36:20.203 (-6h15m53s790ms)
+                  cch   = 2026-08-03 10:30:42.076 (-6h21m31s917ms)
+      WAKE_LOCK (allow): 
+          Access: top   = 2026-08-01 22:15:21.940 (-1d18h36m52s53ms)
+                  bg    = 2026-08-03 16:14:03.752 (-38m10s241ms)
+          duration=+2ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-03 10:33:48.889 (-6h18m25s104ms)
+                  bg    = 2026-08-03 16:14:04.551 (-38m9s442ms)
+                  cch   = 2026-08-03 16:14:03.534 (-38m10s459ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-03 10:33:48.889 (-6h18m25s104ms)
+                  bg    = 2026-08-03 16:14:04.535 (-38m9s458ms)
+                  cch   = 2026-08-03 16:14:03.534 (-38m10s459ms)
+      REQUEST_INSTALL_PACKAGES (allow): 
+          Access: top   = 2026-08-01 20:40:35.282 (-1d20h11m38s711ms)
+      START_FOREGROUND (allow): 
+          Access: top   = 2026-08-01 20:40:29.266 (-1d20h11m44s727ms)
+          duration=+14s223ms
+  Uid u0a176:
+    state=cch  
+    Package moe.zhs.caffeine:
+      WRITE_SETTINGS (allow): 
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-07-04 21:16:27.030 (-29d19h35m46s963ms)
+                  cch   = 2026-07-04 21:15:36.377 (-29d19h36m37s616ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-07-04 21:16:27.030 (-29d19h35m46s963ms)
+                  cch   = 2026-07-04 21:15:36.377 (-29d19h36m37s616ms)
+  Uid u0a177:
+    state=cch  
+    Package com.aurora.store:
+      WAKE_LOCK (allow): 
+          Access: top   = 2026-07-10 21:07:27.533 (-23d19h44m46s460ms)
+          duration=+18s251ms
+      TOAST_WINDOW (allow): 
+          Access: top   = 2026-08-01 20:37:31.118 (-1d20h14m42s875ms)
+          duration=+2s545ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 15:12:54.117 (-239d1h39m19s876ms)
+                  bg    = 2026-08-03 16:47:02.190 (-5m11s803ms)
+                  cch   = 2026-08-03 16:47:01.935 (-5m12s58ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2025-12-07 15:12:54.117 (-239d1h39m19s876ms)
+                  bg    = 2026-08-03 16:47:02.190 (-5m11s803ms)
+                  cch   = 2026-08-03 16:47:01.935 (-5m12s58ms)
+      REQUEST_INSTALL_PACKAGES (allow): 
+          Access: top   = 2026-07-10 21:07:27.912 (-23d19h44m46s81ms)
+      START_FOREGROUND (allow): 
+          Access: top   = 2026-07-10 21:07:43.805 (-23d19h44m30s188ms)
+                  bg    = 2026-07-10 21:57:52.817 (-23d18h54m21s176ms)
+                  cch   = 2026-07-10 21:57:52.817 (-23d18h54m21s176ms)
+          duration=+1h28m37s494ms
+  Uid u0a178:
+    state=cch  
+    Package com.microsoft.launcher:
+      COARSE_LOCATION (allow): 
+      FINE_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: top   = 2026-08-01 22:17:58.790 (-1d18h34m15s203ms)
+                  bg    = 2026-08-03 12:40:37.675 (-4h11m36s318ms)
+                  cch   = 2026-08-03 13:44:37.736 (-3h7m36s257ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:16:58.037 (-1d18h35m15s956ms)
+                  bg    = 2026-08-03 16:45:56.234 (-6m17s759ms)
+                  cch   = 2026-08-03 16:45:55.931 (-6m18s62ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:16:57.074 (-1d18h35m16s919ms)
+                  bg    = 2026-08-03 16:45:56.234 (-6m17s759ms)
+                  cch   = 2026-08-03 16:45:55.931 (-6m18s62ms)
+      BIND_ACCESSIBILITY_SERVICE (allow): 
+          Access: bg    = 2026-04-04 14:22:41.569 (-121d2h29m32s424ms)
+                  cch   = 2026-08-03 16:52:10.401 (-3s592ms)
+  Uid u0a179:
+    state=bg   
+    Package com.google.android.gms:
+      COARSE_LOCATION (allow): 
+          Access: top   = 2025-12-07 15:14:19.251 (-239d1h37m54s742ms)
+                  fgsvc = 2026-08-01 19:13:47.032 (-1d21h38m26s961ms)
+                  fg    = 2026-08-03 16:14:12.445 (-38m1s548ms)
+                  bg    = 2026-08-03 16:14:13.645 (-38m0s348ms)
+      FINE_LOCATION (allow / switch COARSE_LOCATION=allow): 
+          Access: top   = 2025-12-07 15:14:18.955 (-239d1h37m55s38ms)
+                  fgsvc = 2026-08-01 19:13:44.806 (-1d21h38m29s187ms)
+                  fg    = 2026-08-03 16:14:11.921 (-38m2s72ms)
+                  bg    = 2026-04-10 02:42:06.210 (-115d14h10m7s783ms)
+      READ_CONTACTS (allow): 
+          Access: top   = 2026-08-01 22:24:45.121 (-1d18h27m28s872ms)
+                  fgsvc = 2026-08-01 19:13:54.042 (-1d21h38m19s951ms)
+                  fg    = 2026-08-03 16:14:12.051 (-38m1s942ms)
+                  bg    = 2026-08-03 16:51:28.873 (-45s120ms)
+                  cch   = 2025-12-07 15:13:05.660 (-239d1h39m8s333ms)
+      WRITE_SETTINGS (default): 
+          Reject: top   = 2025-12-07 15:13:42.091 (-239d1h38m31s902ms)
+                  fgsvc = 2026-08-01 19:13:44.962 (-1d21h38m29s31ms)
+                  fg    = 2026-08-03 16:14:12.437 (-38m1s556ms)
+      WAKE_LOCK (allow): 
+          Access: top   = 2025-12-07 15:23:27.907 (-239d1h28m46s86ms)
+                  fgsvc = 2026-08-01 19:13:47.276 (-1d21h38m26s717ms)
+                  fg    = 2026-08-03 16:14:11.749 (-38m2s244ms)
+                  bg    = 2026-08-03 16:14:21.211 (-37m52s782ms)
+          duration=+9s897ms
+      GET_USAGE_STATS (default): 
+          Reject: top   = 2026-08-01 22:18:31.865 (-1d18h33m42s128ms)
+                  fgsvc = 2026-08-01 19:13:44.957 (-1d21h38m29s36ms)
+                  fg    = 2026-08-03 10:30:17.435 (-6h21m56s558ms)
+                  bg    = 2026-08-03 16:52:07.795 (-6s198ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:24:41.117 (-1d18h27m32s876ms)
+                  fgsvc = 2026-08-01 19:13:44.426 (-1d21h38m29s567ms)
+                  fg    = 2026-08-01 21:54:16.787 (-1d18h57m57s206ms)
+                  bg    = 2026-08-03 16:14:00.091 (-38m13s902ms)
+                  cch   = 2026-08-03 16:13:43.078 (-38m30s915ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:24:41.117 (-1d18h27m32s876ms)
+                  fgsvc = 2026-08-01 19:13:44.426 (-1d21h38m29s567ms)
+                  fg    = 2026-08-01 21:54:16.787 (-1d18h57m57s206ms)
+                  bg    = 2026-08-03 16:14:00.091 (-38m13s902ms)
+                  cch   = 2026-08-03 16:13:43.078 (-38m30s915ms)
+    Package com.google.android.gsf:
+      READ_CONTACTS (allow): 
+          Access: top   = 2026-07-04 18:23:17.210 (-29d22h28m56s783ms)
+                  fg    = 2026-08-01 21:38:15.829 (-1d19h13m58s164ms)
+                  bg    = 2026-08-03 16:13:59.973 (-38m14s20ms)
+                  cch   = 2025-12-07 15:13:05.664 (-239d1h39m8s329ms)
+      GET_USAGE_STATS (default): 
+          Reject: top   = 2026-08-01 22:24:36.777 (-1d18h27m37s216ms)
+                  fgsvc = 2026-08-01 19:13:45.936 (-1d21h38m28s57ms)
+                  fg    = 2026-08-01 21:54:17.847 (-1d18h57m56s146ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-07-04 18:23:17.121 (-29d22h28m56s872ms)
+                  fgsvc = 2026-08-01 19:13:55.906 (-1d21h38m18s87ms)
+                  fg    = 2026-08-01 21:38:15.433 (-1d19h13m58s560ms)
+                  bg    = 2026-08-03 16:13:59.854 (-38m14s139ms)
+                  cch   = 2025-12-07 15:13:30.498 (-239d1h38m43s495ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-07-04 18:23:17.121 (-29d22h28m56s872ms)
+                  fgsvc = 2026-08-01 19:13:55.906 (-1d21h38m18s87ms)
+                  fg    = 2026-08-01 21:38:15.433 (-1d19h13m58s560ms)
+                  bg    = 2026-08-03 16:13:59.854 (-38m14s139ms)
+                  cch   = 2025-12-07 15:13:30.498 (-239d1h38m43s495ms)
+    Package com.google.android.gsf.login:
+      READ_CONTACTS (allow): 
+          Access: cch   = 2025-12-07 15:11:59.370 (-239d1h40m14s623ms)
+      GET_ACCOUNTS (allow): 
+          Access: top   = 2026-07-04 18:23:17.212 (-29d22h28m56s781ms)
+                  fgsvc = 2026-08-01 19:13:45.201 (-1d21h38m28s792ms)
+                  fg    = 2026-08-03 16:14:12.049 (-38m1s944ms)
+                  bg    = 2026-08-03 16:13:59.975 (-38m14s18ms)
+                  cch   = 2025-12-07 15:13:05.657 (-239d1h39m8s336ms)
+  Uid u0a180:
+    state=bg   
+    pendingState=cch  
+    pendingStateCommitTime=-2s435ms
+    Package com.android.vending:
+      READ_CONTACTS (allow): 
+          Access: top   = 2026-08-01 20:39:16.334 (-1d20h12m57s659ms)
+                  fgsvc = 2026-08-01 19:13:52.901 (-1d21h38m21s92ms)
+                  fg    = 2026-08-01 21:38:14.936 (-1d19h13m59s57ms)
+                  bg    = 2026-08-03 16:51:31.391 (-42s602ms)
+                  cch   = 2025-12-07 15:15:42.305 (-239d1h36m31s688ms)
+      WAKE_LOCK (allow): 
+          Access: top   = 2025-12-07 15:13:32.937 (-239d1h38m41s56ms)
+                  fg    = 2025-12-07 15:18:36.433 (-239d1h33m37s560ms)
+          duration=+1ms
+      GET_USAGE_STATS (default): 
+          Reject: top   = 2026-03-27 17:54:13.121 (-128d22h58m0s872ms)
+                  fgsvc = 2026-08-01 19:13:56.364 (-1d21h38m17s629ms)
+                  fg    = 2026-07-10 21:02:14.900 (-23d19h49m59s93ms)
+                  bg    = 2026-08-03 15:23:23.942 (-1h28m50s51ms)
+                  cch   = 2026-07-10 21:02:15.175 (-23d19h49m58s818ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 20:39:15.809 (-1d20h12m58s184ms)
+                  fgsvc = 2026-08-01 19:13:57.935 (-1d21h38m16s58ms)
+                  fg    = 2026-07-04 18:29:24.618 (-29d22h22m49s375ms)
+                  bg    = 2026-08-03 16:51:31.249 (-42s744ms)
+                  cch   = 2026-08-03 16:13:59.432 (-38m14s561ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 20:39:15.809 (-1d20h12m58s184ms)
+                  fgsvc = 2026-08-01 19:13:57.935 (-1d21h38m16s58ms)
+                  fg    = 2026-07-04 18:29:24.618 (-29d22h22m49s375ms)
+                  bg    = 2026-08-03 16:51:31.249 (-42s744ms)
+                  cch   = 2026-08-03 16:13:59.432 (-38m14s561ms)
+      START_FOREGROUND (allow): 
+          Access: top   = 2025-12-07 15:13:55.882 (-239d1h38m18s111ms)
+                  fgsvc = 2026-08-01 19:13:53.334 (-1d21h38m20s659ms)
+                  bg    = 2026-08-01 19:13:32.958 (-1d21h38m41s35ms)
+          duration=+20s384ms
+  Uid u0a181:
+    state=bg   
+    Package com.google.android.inputmethod.latin:
+      RECORD_AUDIO (allow): 
+          Access: top   = 2026-08-01 22:25:25.169 (-1d18h26m48s824ms)
+          duration=+81ms
+      TAKE_AUDIO_FOCUS (allow): 
+          Access: top   = 2026-08-01 22:25:24.947 (-1d18h26m49s46ms)
+      WAKE_LOCK (allow): 
+          Access: fgsvc = 2026-07-04 18:23:42.168 (-29d22h28m31s825ms)
+          duration=+3s216ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-03-27 17:54:32.759 (-128d22h57m41s234ms)
+                  bg    = 2026-08-03 16:13:43.497 (-38m30s496ms)
+                  cch   = 2026-08-03 16:13:38.690 (-38m35s303ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-03-27 17:54:32.759 (-128d22h57m41s234ms)
+                  bg    = 2026-08-03 16:13:43.497 (-38m30s496ms)
+                  cch   = 2026-08-03 16:13:38.690 (-38m35s303ms)
+      START_FOREGROUND (allow): 
+          Access: top   = 2025-12-07 15:21:15.210 (-239d1h30m58s783ms)
+                  fgsvc = 2026-07-04 18:23:42.166 (-29d22h28m31s827ms)
+                  fg    = 2026-07-04 18:23:38.929 (-29d22h28m35s64ms)
+                  bg    = 2025-12-07 15:26:36.875 (-239d1h25m37s118ms)
+                  cch   = 2025-12-07 15:21:16.997 (-239d1h30m56s996ms)
+          duration=+3s241ms
+  Uid u0a182:
+    state=cch  
+    Package com.google.android.youtube:
+      RECORD_AUDIO (allow): 
+          Access: top   = 2026-08-01 22:25:02.802 (-1d18h27m11s191ms)
+          duration=+3s339ms
+      TAKE_AUDIO_FOCUS (allow): 
+          Access: top   = 2026-08-01 22:18:40.465 (-1d18h33m33s528ms)
+      AUDIO_MEDIA_VOLUME (allow): 
+          Access: top   = 2026-08-01 22:26:02.930 (-1d18h26m11s63ms)
+      WAKE_LOCK (allow): 
+          Access: top   = 2025-12-07 15:23:44.937 (-239d1h28m29s56ms)
+                  bg    = 2026-08-01 19:13:34.894 (-1d21h38m39s99ms)
+                  cch   = 2026-08-01 19:13:34.893 (-1d21h38m39s100ms)
+          duration=+123ms
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:19:02.544 (-1d18h33m11s449ms)
+                  bg    = 2026-08-03 16:14:03.260 (-38m10s733ms)
+                  cch   = 2026-08-03 16:14:04.779 (-38m9s214ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:19:02.544 (-1d18h33m11s449ms)
+                  bg    = 2026-08-03 16:14:03.260 (-38m10s733ms)
+                  cch   = 2026-08-03 16:14:04.779 (-38m9s214ms)
+  Uid u0a183:
+    state=cch  
+    Package com.zerotier.one:
+      CAMERA (allow): 
+          Access: top   = 2026-08-01 20:33:47.911 (-1d20h18m26s82ms)
+          duration=+1m37s638ms
+      TOAST_WINDOW (allow): 
+          Access: top   = 2026-08-01 20:34:49.025 (-1d20h17m24s968ms)
+          duration=+2s521ms
+      ACTIVATE_VPN (allow): 
+          Access: top   = 2026-08-01 20:34:46.419 (-1d20h17m27s574ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 20:32:05.393 (-1d20h20m8s600ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: cch   = 2026-08-01 20:32:05.393 (-1d20h20m8s600ms)
+  Uid u0a184:
+    state=cch  
+    Package com.microsoft.rdc.android:
+      READ_CLIPBOARD (allow): 
+          Access: top   = 2026-08-01 20:54:50.857 (-1d19h57m23s136ms)
+      READ_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:15:11.872 (-1d18h37m2s121ms)
+                  fgsvc = 2026-08-01 21:38:04.751 (-1d19h14m9s242ms)
+                  cch   = 2026-08-01 22:00:23.026 (-1d18h51m50s967ms)
+      WRITE_EXTERNAL_STORAGE (allow): 
+          Access: top   = 2026-08-01 22:15:11.872 (-1d18h37m2s121ms)
+                  fgsvc = 2026-08-01 21:38:04.751 (-1d19h14m9s242ms)
+                  cch   = 2026-08-01 22:00:23.026 (-1d18h51m50s967ms)
+      START_FOREGROUND (allow): 
+          Access: top   = 2026-08-01 22:15:19.765 (-1d18h36m54s228ms)
+                  fgsvc = 2026-08-01 22:15:19.765 (-1d18h36m54s228ms)
+          duration=+14m57s674ms
+

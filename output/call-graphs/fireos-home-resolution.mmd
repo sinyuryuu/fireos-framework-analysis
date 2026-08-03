@@ -1,0 +1,12 @@
+flowchart TD
+  HK[Home key / explicit HOME] --> ASS[ActivityStackSupervisor.resolveIntent]
+  ASS --> VRES{VendorActivityStackSupervisorCallback.callResolveIntent}
+  VRES -->|non-null: not proven| VRETURN[callback result]
+  VRES -->|null| PMI[PackageManagerInternal.resolveIntent]
+  PMI --> QIA[queryIntentActivitiesInternal]
+  QIA --> VFILTER{VendorPackageManagerCallback.callFilterComponentIntent at addActivity}
+  VFILTER -->|false| INDEX[resolver index contains filter]
+  VFILTER -->|true: callback return not observed| DROP[filter omitted]
+  INDEX --> CBA[chooseBestActivity]
+  CBA -->|priority 50 vs priority 0| FIRE[Fire Launcher]
+  CBA -->|tie only| PREF[persistent / ordinary preferred lookup]

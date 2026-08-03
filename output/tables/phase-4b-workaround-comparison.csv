@@ -1,0 +1,7 @@
+candidate,true_HOME,authorization,latency,flash,battery,reboot,rollback,status,evidence
+ordinary set-home-activity,No,shell,none,none,none,record persists but ineffective,restore preferred + uninstall test APK,已排除,P3C-PREF-001
+priority elevation by sideload,No,none,none,none,none,not applicable,uninstall APK,已排除,P3A-PRIORITY-001
+Accessibility foreground redirect (tested T03),No,explicit user Accessibility enable,target not resumed,Fire remained foreground,待測量,not tested,disable service + uninstall,已排除 for this implementation (0/30),P4B-ACCESS-001
+UsageStats observer redirect,No,usage access,待測量,可能,可能,待驗證,revoke access + uninstall,Potentially viable,P4B-WA-004
+Quick Settings/notification explicit entry,No,user action,user-driven,none,low,likely,remove tile/notification + uninstall,Viable as shortcut only,P4B-WA-005
+Device Owner / persistent kiosk,Policy HOME possible,provisioning,n/a,n/a,high risk,not accepted,may require factory reset,因風險拒絕測試,P4B-RISK-001

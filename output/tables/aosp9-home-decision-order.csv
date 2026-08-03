@@ -1,0 +1,8 @@
+order,decision,AOSP reference,Fire reference,meaning,confidence
+1,query result size,PMS.chooseBestActivity():6149-6155,PMS.chooseBestActivity():3120-3125,zero/one candidate returns without preferred lookup,已證實
+2,sort result set,ActivityIntentResolver / mResolvePrioritySorter,PackageManagerService.java:~385,"priority, preferredOrder, isDefault, match, system, package",高可信推論
+3,top-field comparison,PMS.chooseBestActivity():6165-6170,PMS.chooseBestActivity():3133-3135,different priority/preferredOrder/isDefault returns query[0],已證實
+4,persistent preferred,PMS.findPersistentPreferredActivityLP():6247-6302,PMS.findPersistentPreferredActivityLP():3197-3252,exact target must be present in current query,已證實
+5,ordinary preferred,PMS.findPreferredActivity():6306-6465,PMS.findPreferredActivity():3288-~3500,only reached after top-field tie; match and set validation apply,已證實 / decompiler caveat
+6,instant/resolver fallback,PMS.chooseBestActivity():6179-6223,PMS.chooseBestActivity():3135-3173,fallback only after no preferred result,已證實
+7,priority normalization,PMS.adjustPriority():12575-12596,PMS.adjustPriority():8166-8175,non-privileged positive priority is capped to zero,已證實
