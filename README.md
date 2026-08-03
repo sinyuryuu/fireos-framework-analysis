@@ -1035,3 +1035,41 @@ Phase 5W outputs:
 No device state changed. No exploit, native trigger, malformed ioctl,
 Bluetooth/HCI input, IMS/ATCI command, preloader/BROM/DA handshake, fastboot,
 remount, reboot, image write or partition operation was performed in Phase 5W.
+
+### Phase 5X — Android implementation and MTK route-surface recheck
+
+Phase 5X adds a new read-only exact-device capture and a host-only compatibility
+matrix for the Android implementation boundaries raised by the current CVE
+discussion. The capture confirms the device remains `KFTRWI/trona`, MT8183,
+Android 9/API 28, PS7330.4104N, shell UID 2000, and HOME
+`com.amazon.firelauncher/.Launcher` at priority 50.
+
+The new runtime surface review observes kernel AEE worker threads but no
+userspace AEE process/package/service/init endpoint; `/dev/sspm` is recorded only
+as metadata and is never opened; and the Android 9 runtime has no observed APEX
+property, APEX directories/packages, or `apexservice`. This does not prove the
+inaccessible binaries are absent or patched; it establishes that none of these
+routes is a shell-reachable, exact-device root path in the captured normal
+runtime.
+
+The public review also pins the current KoCleo `mtk-easy-su` and LauncherHijack
+heads. Neither provides a new exact PS7330 implementation. LauncherHijack's
+documented default-launcher corruption route remains explicitly risk-rejected.
+`CVE-2025-20765` is retained as an MT8183/AEE external-scope candidate, not as an
+executable root claim. GhostLock remains `CVE-2026-43499`; `CVE-2026-43503` is a
+separate networking issue, and `CVE-2026-3499` is not used as a GhostLock alias.
+
+Phase 5X outputs:
+
+- `tools/scripts/capture_phase5x_route_surface.sh`
+- `tools/scripts/analyze_phase5x_public_routes.py`
+- `adb/phase5/PHASE5X-ROUTE-SURFACE-20260804-03/`
+- `artifacts/phase5/public-route-review-20260804-01/`
+- `findings/phase-5x-android-implementation-and-route-review.md`
+- `findings/phase-5x-evidence-index.md`
+- `output/tables/phase5x-candidate-matrix.csv`
+
+No package, setting, HOME, process, node, partition, bootloader or firmware
+state changed in Phase 5X. No AEE/ATF/APEX/futex/network trigger, exploit,
+root payload, BROM/DA, fastboot, remount, reboot or partition operation was
+performed.
