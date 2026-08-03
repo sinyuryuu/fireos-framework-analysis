@@ -25,10 +25,14 @@ manifest is `adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-01/sha256sums.txt`.
 | P5-OTA-003 | `artifacts/phase5/PS7331-preloader-review/strings-selected.txt`, `sha256sums.txt` | offline derived output | PS7331 preloader strings include RPMB anti-rollback, DA authentication, `daa_enabled`, and `preloader_trona.bin` | Authentication/rollback are real risk boundaries in the adjacent artifact, not a usable bypass | Confirmed (artifact-scoped) |
 | P5-WEB-003 | [Amazon Fire Tablet Software Updates](https://digprjsurvey.amazon.co.uk/csad/help/node/G2JXLC4L34GX73TE) | web review 2026-08-03 | Current 11th-generation Fire HD 10 row publishes Fire OS 7.3.3.1 | Current public page does not provide an exact PS7330.4104N package | Confirmed (page-scoped) |
 | P5-WEB-004 | `findings/phase-5-public-method-compatibility.md` and linked public sources | web/source review 2026-08-03 | No reviewed public method has an exact KFTRWI/PS7330 MTK loader or reproducible bootloader unlock path | Public methods remain historical leads, not execution authorization | Strong evidence |
-| P5-STATUS-001 | `findings/phase-5-level3-approval-report.md` | current phase | No bootloader, exploit, unlock, remount, write, or flash operation executed | Level 3 boundary remains intact | Confirmed |
+| P5-STATUS-001 | `findings/phase-5-level3-approval-report.md` | current phase | Approved bootloader transition and read-only fastboot queries executed; no exploit, unlock, remount, write, or flash operation executed | Low-level write/exploit boundary remains intact | Confirmed |
+| P5-BOOT-001 | `adb/phase5/PHASE5-BOOTLOADER-TRANSITION-20260803-01/commands.txt`, `result.md`, `sha256sums.txt` | `PHASE5-BOOTLOADER-TRANSITION-20260803-01`, 2026-08-03 | Explicitly approved `adb reboot bootloader` completed; device enumerated as fastboot | Device reached an observable fastboot state without a write command | Confirmed |
+| P5-FASTBOOT-001 | `adb/phase5/PHASE5-FASTBOOT-GETVAR-20260803-01/product.txt`, `sha256sums.txt` | `PHASE5-FASTBOOT-GETVAR-20260803-01`, 2026-08-03T10:35:58Z | `getvar product` returned `trona` | Bootloader product identity matches the Android-side device codename | Confirmed |
+| P5-FASTBOOT-002 | `adb/phase5/PHASE5-FASTBOOT-GETVAR-20260803-01/unlocked.txt`, `secure.txt`, `all.txt`, `result.md` | same | Three queries were rejected with `the command you input is restricted on locked hw` | Requested unlock/secure/all values are not exposed by this locked interface; literal values remain unknown | Confirmed (response); Unknown (values) |
 
 ## Evidence handling
 
-The raw baseline files are immutable evidence for this phase. Any future
-bootloader or low-level collection must use a new test ID and new directory;
-the prior SHA-256 manifest must not be overwritten.
+The raw baseline files are immutable evidence for this phase. The transition
+and fastboot query evidence are also immutable, each under a separate test ID.
+Any future bootloader or low-level collection must use a new test ID and new
+directory; prior SHA-256 manifests must not be overwritten.

@@ -106,10 +106,16 @@ PS7331 preloader/loader is compatible with PS7330.
   MT8183 tablet running the PS7330.4104N build listed above.
 - **已證實：** normal shell access exposes partition names and package paths,
   but not enough boot-chain state to select a safe low-level loader.
+- **已證實：** the explicitly approved transition entered fastboot and the
+  bootloader reported `product: trona`.
+- **已證實：** the bootloader rejected `getvar unlocked`, `getvar secure`, and
+  `getvar all` with `the command you input is restricted on locked hw`.
 - **待驗證：** the exact preloader revision, DA/SLA/DAA policy, BROM hardware
   identifier, and recovery procedure for this device.
-- **因風險拒絕測試：** bootloader transition, BROM/Preloader protocol probes,
-  exploit payloads, unlock attempts, and all partition writes.
+- **因風險拒絕測試：** BROM/Preloader protocol probes, exploit payloads,
+  unlock attempts, and all partition writes. The bootloader transition and the
+  four read-only `getvar` queries were executed only after explicit approval;
+  their raw evidence is in `adb/phase5/PHASE5-FASTBOOT-GETVAR-20260803-01/`.
 
 See `findings/phase-5-evidence-index.md` for evidence IDs and the complete
 file/command mapping. No Level 3 operation has been executed.

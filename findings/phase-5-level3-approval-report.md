@@ -2,8 +2,15 @@
 
 ## Current status
 
-No Level 3 operation has been executed. The device remains in normal Android
-mode, ADB state `device`, with the baseline hash manifest verified.
+The explicitly approved Candidate A transition and Candidate B read-only
+fastboot queries have now been executed. The device is currently enumerated in
+fastboot as `G001LT0511550CFT`. No unlock, exploit, OEM, erase, format,
+upload/download, set-active, remount, partition write, or flash operation has
+been executed. The raw records and manifests are in:
+
+`adb/phase5/PHASE5-BOOTLOADER-TRANSITION-20260803-01/`
+
+`adb/phase5/PHASE5-FASTBOOT-GETVAR-20260803-01/`
 
 A broad instruction to continue or accept a brick is not treated as approval
 for a specific low-level operation. Each operation below needs its own explicit
@@ -66,8 +73,8 @@ The current workspace does not contain a device-specific recovery guarantee.
 all current user data. No backup has been claimed sufficient for factory or
 partition recovery.
 
-**Approval required:** explicit approval for Candidate A exactly, including
-read-only `getvar` commands only.
+**Approval required:** Candidate A has been approved and executed. Any future
+transition must use a new test ID.
 
 ## Candidate B — read-only fastboot variables after an approved transition
 
@@ -131,7 +138,8 @@ declared recovery images.
 
 **Approval status:** rejected for now. It requires a new exact compatibility
 package, a vetted tool review, and a device-specific recovery plan before any
-approval can be meaningful.
+approval can be meaningful. The fastboot `locked hw` responses do not establish
+that a BROM exploit or loader is compatible.
 
 ## Candidate D — unlock, exploit, DA upload, or partition write
 
