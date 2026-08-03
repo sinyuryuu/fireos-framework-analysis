@@ -608,6 +608,13 @@ device-node metadata, and IRQ metadata. It confirmed the installed kernel's
 payload mismatch to a high-confidence inference, while the compiled driver
 identity and CVE status remain unverified.
 
+The next possible low-level discriminator is documented, but not executed, in
+`findings/phase-5h-cmdq-ioctl-compat-level3-report.md`. It proposes one
+`count=0` ioctl #7 call to distinguish v2 from v3 without a non-zero DMA
+allocation. This is a new Level 3 operation and requires approval naming
+`CMDQ-IOCTL-V3-COMPAT-T01` plus the exact probe binary/hash; the earlier T03
+approval does not cover it.
+
 No new device mutation or exploit execution was performed. A v3-aware payload,
 standalone CMDQ ioctl probe, kernel-memory primitive, BROM/DA action, or boot
 chain write is outside the prior approval and remains a new Level 3 task.
