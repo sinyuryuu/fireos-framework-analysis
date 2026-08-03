@@ -568,5 +568,14 @@ on PS7330, not proof that CVE-2020-0069 is absent from the kernel; any further
 exploit variation requires a new exact Level 3 approval.
 
 The direct-test report is `findings/phase-5e-mtk-su-t03-result.md`, and the
-new evidence rows are `P5E-CMDQ-007` through `P5E-CMDQ-010` in
+new evidence rows are `P5E-CMDQ-007` through `P5E-CMDQ-012` in
 `findings/phase-5-evidence-index.md`.
+
+The host-only static mapping of the direct error is in
+`findings/phase-5e-mtk-su-t03-static-init.md`. It identifies `Failed critical
+init step 3` as the payload's failed `CMDQ_IOCTL_ALLOC_WRITE_ADDRESS`
+initialization branch (`0x40087807`), while keeping the exact driver errno and
+kernel CVE status explicitly unknown. Reproduce the analysis with
+`tools/scripts/analyze_mtk_su64_init_failure.py`; it never executes the payload
+or invokes ADB. Derived disassembly, strings, JSON findings, and hashes are in
+`artifacts/phase5/mtk-su64-static-init-analysis-20260803/`.

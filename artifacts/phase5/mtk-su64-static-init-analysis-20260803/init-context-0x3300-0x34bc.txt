@@ -1,0 +1,111 @@
+    3300:      	str	x21, [sp, #-0x30]!
+    3304:      	stp	x20, x19, [sp, #0x10]
+    3308:      	stp	x29, x30, [sp, #0x20]
+    330c:      	add	x29, sp, #0x20
+    3310:      	mov	x20, x0
+    3314:      	mov	w0, #0x228              // =552
+    3318:      	bl	0x1420 <malloc@plt>
+    331c:      	cbz	x0, 0x3348 <.text+0x1ce8>
+    3320:      	mov	w2, #0x228              // =552
+    3324:      	mov	w1, wzr
+    3328:      	mov	x19, x0
+    332c:      	bl	0x1550 <memset@plt>
+    3330:      	mov	x0, x19
+    3334:      	mov	w1, wzr
+    3338:      	bl	0x2e54 <.text+0x17f4>
+    333c:      	cbz	w0, 0x3350 <.text+0x1cf0>
+    3340:      	mov	x0, x19
+    3344:      	bl	0x1650 <free@plt>
+    3348:      	mov	w21, #-0x1              // =-1
+    334c:      	b	0x34ac <.text+0x1e4c>
+    3350:      	mov	w0, #0x8040             // =32832
+    3354:      	movi	v0.2d, #0000000000000000
+    3358:      	movk	w0, #0x1, lsl #16
+    335c:      	stur	q0, [x19, #0xe8]
+    3360:      	stur	q0, [x19, #0xd8]
+    3364:      	stur	q0, [x19, #0xc8]
+    3368:      	stur	q0, [x19, #0xb8]
+    336c:      	stur	q0, [x19, #0xa8]
+    3370:      	stur	q0, [x19, #0x98]
+    3374:      	stur	q0, [x19, #0x88]
+    3378:      	stur	q0, [x19, #0x78]
+    337c:      	stur	q0, [x19, #0x68]
+    3380:      	stur	q0, [x19, #0x58]
+    3384:      	stur	q0, [x19, #0x48]
+    3388:      	stur	q0, [x19, #0x38]
+    338c:      	stur	q0, [x19, #0x28]
+    3390:      	stur	q0, [x19, #0x18]
+    3394:      	stur	q0, [x19, #0x8]
+    3398:      	str	xzr, [x19, #0x210]
+    339c:      	bl	0x1420 <malloc@plt>
+    33a0:      	str	x0, [x19, #0x18]
+    33a4:      	cbz	x0, 0x3448 <.text+0x1de8>
+    33a8:      	orr	w0, wzr, #0x3000
+    33ac:      	bl	0x1420 <malloc@plt>
+    33b0:      	mov	x21, x0
+    33b4:      	str	x0, [x19, #0x50]
+    33b8:      	orr	w0, wzr, #0x3000
+    33bc:      	bl	0x1420 <malloc@plt>
+    33c0:      	str	x0, [x19, #0x58]
+    33c4:      	cbz	x21, 0x3468 <.text+0x1e08>
+    33c8:      	cbz	x0, 0x3468 <.text+0x1e08>
+    33cc:      	orr	w8, wzr, #0x3000
+    33d0:      	orr	w1, wzr, #0x3000
+    33d4:      	mov	x0, x19
+    33d8:      	str	x8, [x19, #0x210]
+    33dc:      	bl	0x2f80 <.text+0x1920>
+    33e0:      	cbz	w0, 0x34c0 <.text+0x1e60>
+    33e4:      	mov	w21, w0
+    33e8:      	mov	x0, x19
+    33ec:      	bl	0x3098 <.text+0x1a38>
+    33f0:      	cbz	w0, 0x34f4 <.text+0x1e94>
+    33f4:      	adrp	x8, 0x1e000
+    33f8:      	ldr	x8, [x8, #0xfc0]
+    33fc:      	ldr	w8, [x8]
+    3400:      	cmp	w8, #0x1
+    3404:      	b.lt	0x343c <.text+0x1ddc>
+    3408:      	ldrb	w8, [x19, #0x21d]
+    340c:      	ldr	w3, [x19, #0x218]
+    3410:      	adrp	x9, 0xb000 <zcfree+0x590>
+    3414:      	adrp	x10, 0xb000 <zcfree+0x590>
+    3418:      	mov	w2, w0
+    341c:      	add	x9, x9, #0x379
+    3420:      	add	x10, x10, #0x93d
+    3424:      	cmp	w8, #0x0
+    3428:      	adrp	x0, 0xb000 <zcfree+0x590>
+    342c:      	csel	x4, x10, x9, eq
+    3430:      	add	x0, x0, #0x353
+    3434:      	mov	w1, w21
+    3438:      	bl	0x1360 <printf@plt>
+    343c:      	mov	w21, wzr
+    3440:      	str	x19, [x20]
+    3444:      	b	0x34ac <.text+0x1e4c>
+    3448:      	adrp	x8, 0x1e000
+    344c:      	ldr	x8, [x8, #0xfe0]
+    3450:      	adrp	x0, 0xb000 <zcfree+0x590>
+    3454:      	add	x0, x0, #0x34b
+    3458:      	orr	w1, wzr, #0x7
+    345c:      	add	x3, x8, #0x130
+    3460:      	orr	w2, wzr, #0x1
+    3464:      	bl	0x15a0 <fwrite@plt>
+    3468:      	bl	0x13b0 <__errno@plt>
+    346c:      	ldr	w20, [x0]
+    3470:      	orr	w21, wzr, #0xfffffffe
+    3474:      	ldr	w0, [x19]
+    3478:      	cmp	w0, #0x1
+    347c:      	b.lt	0x349c <.text+0x1e3c>
+    3480:      	ldr	w8, [x19, #0x220]
+    3484:      	cmp	w8, #0x1
+    3488:      	b.lt	0x3498 <.text+0x1e38>
+    348c:      	mov	w0, w8
+    3490:      	bl	0x1640 <close@plt>
+    3494:      	ldr	w0, [x19]
+    3498:      	bl	0x1640 <close@plt>
+    349c:      	mov	x0, x19
+    34a0:      	bl	0x1650 <free@plt>
+    34a4:      	bl	0x13b0 <__errno@plt>
+    34a8:      	str	w20, [x0]
+    34ac:      	ldp	x29, x30, [sp, #0x20]
+    34b0:      	ldp	x20, x19, [sp, #0x10]
+    34b4:      	mov	w0, w21
+    34b8:      	ldr	x21, [sp], #0x30

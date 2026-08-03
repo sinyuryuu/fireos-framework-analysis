@@ -112,3 +112,19 @@ consistent, but they are still evidence about this payload and build—not a
 general proof about every MTK exploit. Repeating this binary with alternate
 flags, feeding additional commands, or trying another kernel-memory primitive
 would be a new Level 3 operation requiring a separate exact approval.
+
+## Host-only static follow-up
+
+The direct error was subsequently mapped without another device operation. The
+reproducible script is `tools/scripts/analyze_mtk_su64_init_failure.py`, and
+the derived evidence is under
+`artifacts/phase5/mtk-su64-static-init-analysis-20260803/`.
+
+The wrapper calls `0x3300` at `0x17d8`; the `-3` branch at `0x34c8` is reached
+when the helper at `0x2f80` returns zero after an `ioctl` using request
+`0x40087807`. That request encoding matches the public MediaTek
+`CMDQ_IOCTL_ALLOC_WRITE_ADDRESS` definition. The cleanup path uses request
+`0x40087808`, the corresponding free operation. This is **Strong evidence**
+that `Failed critical init step 3` means the archived payload's CMDQ
+write-address/DMA allocation initialization failed. The exact driver errno and
+the presence or absence of CVE-2020-0069 remain **Unknown**.

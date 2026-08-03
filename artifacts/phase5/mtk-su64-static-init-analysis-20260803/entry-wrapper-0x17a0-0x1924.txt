@@ -1,0 +1,97 @@
+    17a0:      	sub	sp, sp, #0x50
+    17a4:      	str	x23, [sp, #0x10]
+    17a8:      	stp	x22, x21, [sp, #0x20]
+    17ac:      	stp	x20, x19, [sp, #0x30]
+    17b0:      	stp	x29, x30, [sp, #0x40]
+    17b4:      	add	x29, sp, #0x40
+    17b8:      	mrs	x23, TPIDR_EL0
+    17bc:      	ldr	x8, [x23, #0x28]
+    17c0:      	mov	x19, x1
+    17c4:      	mov	w21, w0
+    17c8:      	mov	x0, sp
+    17cc:      	orr	w1, wzr, #0x1
+    17d0:      	mov	x20, x2
+    17d4:      	str	x8, [sp, #0x8]
+    17d8:      	bl	0x3300 <.text+0x1ca0>
+    17dc:      	tbnz	w0, #0x1f, 0x180c <.text+0x1ac>
+    17e0:      	cbz	w21, 0x1874 <.text+0x214>
+    17e4:      	cmp	w21, #0x1
+    17e8:      	b.eq	0x1860 <.text+0x200>
+    17ec:      	cmp	w21, #0x3
+    17f0:      	b.ne	0x1884 <.text+0x224>
+    17f4:      	adrp	x8, 0x1e000
+    17f8:      	ldr	x0, [sp]
+    17fc:      	ldr	x8, [x8, #0xfe0]
+    1800:      	add	x1, x8, #0x98
+    1804:      	bl	0x7778 <.text+0x6118>
+    1808:      	b	0x1884 <.text+0x224>
+    180c:      	adrp	x19, 0x1e000
+    1810:      	ldr	x19, [x19, #0xfe0]
+    1814:      	adrp	x1, 0xb000 <zcfree+0x590>
+    1818:      	mov	w22, w0
+    181c:      	neg	w2, w0
+    1820:      	add	x0, x19, #0x130
+    1824:      	add	x1, x1, #0xdd
+    1828:      	bl	0x14c0 <fprintf@plt>
+    182c:      	cmn	w22, #0x4
+    1830:      	b.eq	0x1894 <.text+0x234>
+    1834:      	cmn	w22, #0x1
+    1838:      	b.ne	0x18f4 <.text+0x294>
+    183c:      	bl	0x13b0 <__errno@plt>
+    1840:      	ldr	w8, [x0]
+    1844:      	cmp	w8, #0x1
+    1848:      	b.eq	0x18c0 <.text+0x260>
+    184c:      	cmp	w8, #0x2
+    1850:      	b.ne	0x18f4 <.text+0x294>
+    1854:      	adrp	x0, 0xb000 <zcfree+0x590>
+    1858:      	add	x0, x0, #0xfb
+    185c:      	b	0x18ec <.text+0x28c>
+    1860:      	ldr	x0, [sp]
+    1864:      	mov	w1, wzr
+    1868:      	mov	x2, x19
+    186c:      	bl	0x7008 <.text+0x59a8>
+    1870:      	b	0x1884 <.text+0x224>
+    1874:      	ldr	x0, [sp]
+    1878:      	ldp	x1, x2, [x20]
+    187c:      	ldr	x3, [x20, #0x10]
+    1880:      	bl	0x16d8 <.text+0x78>
+    1884:      	ldr	x0, [sp]
+    1888:      	bl	0x354c <.text+0x1eec>
+    188c:      	mov	w0, wzr
+    1890:      	b	0x18f8 <.text+0x298>
+    1894:      	bl	0x13b0 <__errno@plt>
+    1898:      	ldr	w8, [x0]
+    189c:      	cmp	w8, #0xe
+    18a0:      	b.eq	0x18cc <.text+0x26c>
+    18a4:      	cmp	w8, #0x16
+    18a8:      	b.eq	0x18d8 <.text+0x278>
+    18ac:      	cmp	w8, #0x19
+    18b0:      	b.ne	0x18e4 <.text+0x284>
+    18b4:      	adrp	x0, 0xb000 <zcfree+0x590>
+    18b8:      	add	x0, x0, #0x16a
+    18bc:      	b	0x18ec <.text+0x28c>
+    18c0:      	adrp	x0, 0xb000 <zcfree+0x590>
+    18c4:      	add	x0, x0, #0x112
+    18c8:      	b	0x18ec <.text+0x28c>
+    18cc:      	adrp	x0, 0xb000 <zcfree+0x590>
+    18d0:      	add	x0, x0, #0x147
+    18d4:      	b	0x18ec <.text+0x28c>
+    18d8:      	adrp	x0, 0xb000 <zcfree+0x590>
+    18dc:      	add	x0, x0, #0x18c
+    18e0:      	b	0x18ec <.text+0x28c>
+    18e4:      	adrp	x0, 0xb000 <zcfree+0x590>
+    18e8:      	add	x0, x0, #0x1a9
+    18ec:      	add	x1, x19, #0x130
+    18f0:      	bl	0x15f0 <fputs@plt>
+    18f4:      	mov	w0, #-0x1               // =-1
+    18f8:      	ldr	x8, [x23, #0x28]
+    18fc:      	ldr	x9, [sp, #0x8]
+    1900:      	cmp	x8, x9
+    1904:      	b.ne	0x1920 <.text+0x2c0>
+    1908:      	ldp	x29, x30, [sp, #0x40]
+    190c:      	ldp	x20, x19, [sp, #0x30]
+    1910:      	ldp	x22, x21, [sp, #0x20]
+    1914:      	ldr	x23, [sp, #0x10]
+    1918:      	add	sp, sp, #0x50
+    191c:      	ret
+    1920:      	bl	0x1460 <__stack_chk_fail@plt>

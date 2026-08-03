@@ -1,0 +1,61 @@
+{
+  "entry_wrapper": {
+    "call_site": "0x17d8: bl 0x3300",
+    "failure_test": "0x17dc: tbnz w0, #0x1f, 0x180c",
+    "reported_message": "0x1818 loads rodata offset 0xb0dd; 0x181c saves w0; 0x181c/0x1820 negates w0 for %d",
+    "observed_mapping": "reported step 3 corresponds to helper return -3"
+  },
+  "context_initializer": {
+    "allocator": "0x33d8 calls 0x2f80 with w1=0x3000",
+    "failure_branch": "0x33e0 cbz w0, 0x34c0",
+    "failure_return": "0x34c8 sets w21=-3, then frees the context buffers",
+    "interpretation": "the critical step 3 is the allocator helper returning zero, not a later credential/SELinux diagnostic branch"
+  },
+  "allocator_helper": {
+    "syscall": "0x2fd0 sets syscall number 29 (ioctl)",
+    "file_descriptor": "loaded from context offset 0x00",
+    "argument": "context offset 0x208",
+    "request": {
+      "request": "0x40087807",
+      "direction_bits": 1,
+      "direction": "write",
+      "size": 8,
+      "magic": "0x78",
+      "number": 7
+    },
+    "input_count": "0x2fac shifts caller w1=0x3000 right by two and stores 0x0c00 in context offset 0x208",
+    "fallback": "on EINVAL and a request at least 0x1000, retries the same request with 0x400",
+    "return_semantics": "successful ioctl path returns the requested size; failed allocation path returns zero"
+  },
+  "cleanup": {
+    "request": {
+      "request": "0x40087808",
+      "direction_bits": 1,
+      "direction": "write",
+      "size": 8,
+      "magic": "0x78",
+      "number": 8
+    },
+    "call_sites": [
+      "0x3508",
+      "0x3564"
+    ],
+    "interpretation": "the cleanup path uses the CMDQ free-write-address request"
+  },
+  "classification": {
+    "confirmed": [
+      "T03 emitted Failed critical init step 3 and exit code 1",
+      "the static wrapper maps step 3 to the -3 return branch at 0x34c0",
+      "the branch reaches an ioctl request with magic x and number 7",
+      "the request encoding matches CMDQ_IOCTL_ALLOC_WRITE_ADDRESS in the public MediaTek header"
+    ],
+    "strong_evidence": [
+      "the archived payload's initialization failure is a CMDQ write-address allocation failure"
+    ],
+    "unknown": [
+      "the exact errno returned by the PS7330 driver was not emitted by the payload",
+      "whether the running kernel still contains CVE-2020-0069",
+      "whether a different payload would be compatible with this exact CMDQ implementation"
+    ]
+  }
+}

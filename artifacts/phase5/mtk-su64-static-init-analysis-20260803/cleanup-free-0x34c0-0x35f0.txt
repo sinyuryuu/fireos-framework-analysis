@@ -1,0 +1,76 @@
+    34c0:      	bl	0x13b0 <__errno@plt>
+    34c4:      	ldr	w20, [x0]
+    34c8:      	orr	w21, wzr, #0xfffffffd
+    34cc:      	ldr	x0, [x19, #0x50]
+    34d0:      	cbz	x0, 0x34d8 <.text+0x1e78>
+    34d4:      	bl	0x1650 <free@plt>
+    34d8:      	ldr	x0, [x19, #0x58]
+    34dc:      	cbz	x0, 0x34e4 <.text+0x1e84>
+    34e0:      	bl	0x1650 <free@plt>
+    34e4:      	ldr	x0, [x19, #0x18]
+    34e8:      	cbz	x0, 0x3474 <.text+0x1e14>
+    34ec:      	bl	0x1650 <free@plt>
+    34f0:      	b	0x3474 <.text+0x1e14>
+    34f4:      	bl	0x13b0 <__errno@plt>
+    34f8:      	adrp	x21, 0x1f000
+    34fc:      	ldr	w20, [x0]
+    3500:      	ldr	w8, [x21, #0x88]
+    3504:      	ldr	w1, [x19]
+    3508:      	mov	w2, #0x7808             // =30728
+    350c:      	add	x3, x19, #0x208
+    3510:      	mov	w0, #0x1d               // =29
+    3514:      	movk	w2, #0x4008, lsl #16
+    3518:      	cbz	w8, 0x3534 <.text+0x1ed4>
+    351c:      	bl	0x1390 <syscall@plt>
+    3520:      	cbnz	w0, 0x3538 <.text+0x1ed8>
+    3524:      	ldr	w8, [x21, #0x88]
+    3528:      	sub	w8, w8, #0x1
+    352c:      	str	w8, [x21, #0x88]
+    3530:      	b	0x3538 <.text+0x1ed8>
+    3534:      	bl	0x7ca8 <.text+0x6648>
+    3538:      	orr	w21, wzr, #0xfffffffc
+    353c:      	str	wzr, [x19, #0x20c]
+    3540:      	ldr	x0, [x19, #0x50]
+    3544:      	cbnz	x0, 0x34d4 <.text+0x1e74>
+    3548:      	b	0x34d8 <.text+0x1e78>
+    354c:      	stp	x20, x19, [sp, #-0x20]!
+    3550:      	stp	x29, x30, [sp, #0x10]
+    3554:      	add	x29, sp, #0x10
+    3558:      	adrp	x20, 0x1f000
+    355c:      	ldr	w8, [x20, #0x88]
+    3560:      	ldr	w1, [x0]
+    3564:      	mov	w2, #0x7808             // =30728
+    3568:      	mov	x19, x0
+    356c:      	add	x3, x0, #0x208
+    3570:      	mov	w0, #0x1d               // =29
+    3574:      	movk	w2, #0x4008, lsl #16
+    3578:      	cbz	w8, 0x3594 <.text+0x1f34>
+    357c:      	bl	0x1390 <syscall@plt>
+    3580:      	cbnz	w0, 0x3598 <.text+0x1f38>
+    3584:      	ldr	w8, [x20, #0x88]
+    3588:      	sub	w8, w8, #0x1
+    358c:      	str	w8, [x20, #0x88]
+    3590:      	b	0x3598 <.text+0x1f38>
+    3594:      	bl	0x7ca8 <.text+0x6648>
+    3598:      	ldr	x0, [x19, #0x50]
+    359c:      	str	wzr, [x19, #0x20c]
+    35a0:      	cbz	x0, 0x35a8 <.text+0x1f48>
+    35a4:      	bl	0x1650 <free@plt>
+    35a8:      	ldr	x0, [x19, #0x58]
+    35ac:      	cbz	x0, 0x35b4 <.text+0x1f54>
+    35b0:      	bl	0x1650 <free@plt>
+    35b4:      	ldr	x0, [x19, #0x18]
+    35b8:      	cbz	x0, 0x35c0 <.text+0x1f60>
+    35bc:      	bl	0x1650 <free@plt>
+    35c0:      	ldr	w0, [x19]
+    35c4:      	cmp	w0, #0x1
+    35c8:      	b.lt	0x35e8 <.text+0x1f88>
+    35cc:      	ldr	w8, [x19, #0x220]
+    35d0:      	cmp	w8, #0x1
+    35d4:      	b.lt	0x35e4 <.text+0x1f84>
+    35d8:      	mov	w0, w8
+    35dc:      	bl	0x1640 <close@plt>
+    35e0:      	ldr	w0, [x19]
+    35e4:      	bl	0x1640 <close@plt>
+    35e8:      	ldp	x29, x30, [sp, #0x10]
+    35ec:      	mov	x0, x19

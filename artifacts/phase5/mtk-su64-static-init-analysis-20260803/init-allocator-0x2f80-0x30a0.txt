@@ -1,0 +1,72 @@
+    2f80:      	stp	x22, x21, [sp, #-0x30]!
+    2f84:      	stp	x20, x19, [sp, #0x10]
+    2f88:      	stp	x29, x30, [sp, #0x20]
+    2f8c:      	add	x29, sp, #0x20
+    2f90:      	ldr	w8, [x0, #0x20c]
+    2f94:      	cbz	w8, 0x2fac <.text+0x194c>
+    2f98:      	mov	w0, wzr
+    2f9c:      	ldp	x29, x30, [sp, #0x20]
+    2fa0:      	ldp	x20, x19, [sp, #0x10]
+    2fa4:      	ldp	x22, x21, [sp], #0x30
+    2fa8:      	ret
+    2fac:      	lsr	w8, w1, #2
+    2fb0:      	str	w8, [x0, #0x208]
+    2fb4:      	adrp	x22, 0x1f000
+    2fb8:      	mov	w21, w1
+    2fbc:      	ldr	w8, [x22, #0x88]
+    2fc0:      	ldr	w1, [x0]
+    2fc4:      	add	x20, x0, #0x208
+    2fc8:      	mov	w2, #0x7807             // =30727
+    2fcc:      	mov	x19, x0
+    2fd0:      	mov	w0, #0x1d               // =29
+    2fd4:      	movk	w2, #0x4008, lsl #16
+    2fd8:      	mov	x3, x20
+    2fdc:      	cbz	w8, 0x2ff8 <.text+0x1998>
+    2fe0:      	bl	0x1390 <syscall@plt>
+    2fe4:      	cbnz	w0, 0x3000 <.text+0x19a0>
+    2fe8:      	ldr	w8, [x22, #0x88]
+    2fec:      	sub	w8, w8, #0x1
+    2ff0:      	str	w8, [x22, #0x88]
+    2ff4:      	b	0x305c <.text+0x19fc>
+    2ff8:      	bl	0x7ca8 <.text+0x6648>
+    2ffc:      	cbz	w0, 0x305c <.text+0x19fc>
+    3000:      	bl	0x13b0 <__errno@plt>
+    3004:      	mov	x8, x0
+    3008:      	cmp	w21, #0x1, lsl #12      // =0x1000
+    300c:      	mov	w0, wzr
+    3010:      	b.lo	0x2f9c <.text+0x193c>
+    3014:      	ldr	w8, [x8]
+    3018:      	cmp	w8, #0x16
+    301c:      	b.ne	0x2f9c <.text+0x193c>
+    3020:      	orr	w8, wzr, #0x400
+    3024:      	str	w8, [x19, #0x208]
+    3028:      	ldr	w8, [x22, #0x88]
+    302c:      	ldr	w1, [x19]
+    3030:      	mov	w2, #0x7807             // =30727
+    3034:      	mov	w0, #0x1d               // =29
+    3038:      	movk	w2, #0x4008, lsl #16
+    303c:      	mov	x3, x20
+    3040:      	cbz	w8, 0x3078 <.text+0x1a18>
+    3044:      	bl	0x1390 <syscall@plt>
+    3048:      	cbnz	w0, 0x2f98 <.text+0x1938>
+    304c:      	ldr	w8, [x22, #0x88]
+    3050:      	sub	w8, w8, #0x1
+    3054:      	str	w8, [x22, #0x88]
+    3058:      	b	0x3080 <.text+0x1a20>
+    305c:      	ldr	x9, [x19, #0x210]
+    3060:      	mov	w8, w21
+    3064:      	cmp	x9, x8
+    3068:      	b.ls	0x3070 <.text+0x1a10>
+    306c:      	str	x8, [x19, #0x210]
+    3070:      	mov	w0, w21
+    3074:      	b	0x2f9c <.text+0x193c>
+    3078:      	bl	0x7ca8 <.text+0x6648>
+    307c:      	cbnz	w0, 0x2f98 <.text+0x1938>
+    3080:      	ldr	x8, [x19, #0x210]
+    3084:      	orr	w0, wzr, #0x1000
+    3088:      	cmp	x8, #0x1, lsl #12       // =0x1000
+    308c:      	b.ls	0x2f9c <.text+0x193c>
+    3090:      	str	x0, [x19, #0x210]
+    3094:      	b	0x2f9c <.text+0x193c>
+    3098:      	stp	d9, d8, [sp, #-0x30]!
+    309c:      	str	x19, [sp, #0x10]
