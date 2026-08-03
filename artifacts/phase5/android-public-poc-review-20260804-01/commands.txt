@@ -1,0 +1,9 @@
+# Read-only public metadata review. No repository was executed or built.
+
+curl -fsSL 'https://api.github.com/search/repositories?q=CVE-2026-43499&per_page=30'
+curl -fsSL 'https://api.github.com/repos/<owner>/<repo>/commits/<branch>'
+curl -fsSL 'https://raw.githubusercontent.com/<owner>/<repo>/<branch>/README.md' | shasum -a 256
+curl -fsSL 'https://api.github.com/repos/<owner>/<repo>/git/trees/<branch>?recursive=1'
+
+# Review scope: repository metadata, README text, tree paths, and target
+# declarations only. No APK/native artifact was installed or run.

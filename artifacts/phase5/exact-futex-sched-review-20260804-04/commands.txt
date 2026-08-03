@@ -1,0 +1,23 @@
+# Host-only commands used for this evidence bundle.
+# No ADB, fastboot, exploit, compiler, linker, ioctl, BROM, DA, or partition
+# operation was run.
+
+python3 tools/scripts/analyze_phase5_exact_futex_sched.py \
+  --exact-futex /tmp/phase5-rtmutex-tail2.2CGarO/member-extract/members/futex.c.74a1d689a70c.txt \
+  --reference-futex /tmp/phase5-exact-futex-review-20260804/futex-v4.4.146.c \
+  --exact-sched /tmp/phase5-sched-extract-b-20260804/members/sched.h.16ccf69f54db.txt \
+  --reference-sched /tmp/phase5-exact-futex-review-20260804/sched.h-v4.4.146 \
+  --exact-kconfig /tmp/phase5-kconfig-extract-20260804/members/Kconfig.152aab841f36.txt \
+  --runtime-config adb/phase5/PHASE5F-CMDQ-RUNTIME-20260803-02/kernel_config.stdout.txt \
+  --defconfig artifacts/phase5/exact-kernel-source-review-20260804-01/members/mt8183_defconfig.e1495a4e51db.txt \
+  --output-dir artifacts/phase5/exact-futex-sched-review-20260804-04
+
+python3 tools/scripts/analyze_phase5_exact_futex_sched.py --dry-run \
+  --exact-futex /tmp/phase5-rtmutex-tail2.2CGarO/member-extract/members/futex.c.74a1d689a70c.txt \
+  --reference-futex /tmp/phase5-exact-futex-review-20260804/futex-v4.4.146.c \
+  --exact-sched /tmp/phase5-sched-extract-b-20260804/members/sched.h.16ccf69f54db.txt \
+  --reference-sched /tmp/phase5-exact-futex-review-20260804/sched.h-v4.4.146 \
+  --exact-kconfig /tmp/phase5-kconfig-extract-20260804/members/Kconfig.152aab841f36.txt \
+  --runtime-config adb/phase5/PHASE5F-CMDQ-RUNTIME-20260803-02/kernel_config.stdout.txt \
+  --defconfig artifacts/phase5/exact-kernel-source-review-20260804-01/members/mt8183_defconfig.e1495a4e51db.txt \
+  --output-dir /tmp/phase5-exact-futex-sched-dry-run

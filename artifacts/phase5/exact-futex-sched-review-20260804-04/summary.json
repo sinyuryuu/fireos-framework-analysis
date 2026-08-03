@@ -1,0 +1,56 @@
+{
+  "scope": "host-only exact-source analysis; no device operation, compilation, exploit or payload",
+  "futex": {
+    "exact_input": "/tmp/phase5-rtmutex-tail2.2CGarO/member-extract/members/futex.c.74a1d689a70c.txt",
+    "reference_input": "/tmp/phase5-exact-futex-review-20260804/futex-v4.4.146.c",
+    "exact_normalized_lines": 3341,
+    "reference_normalized_lines": 3337,
+    "exact_normalized_sha256": "e4ff0f8cfc46d023f66b3e842e275ee9eb6725ac6902942e235af32d8f0a2ab5",
+    "reference_normalized_sha256": "8a920516884f29a1e4e13ccfcd292e0307e4f0868ab9c520d4fff2b8c2751720",
+    "unified_diff_lines": 27,
+    "unified_diff_hunks": 3,
+    "identical": false,
+    "scope": "source comparison only; no device or executable code"
+  },
+  "sched": {
+    "exact_input": "/tmp/phase5-sched-extract-b-20260804/members/sched.h.16ccf69f54db.txt",
+    "reference_input": "/tmp/phase5-exact-futex-review-20260804/sched.h-v4.4.146",
+    "exact_normalized_lines": 3798,
+    "reference_normalized_lines": 3224,
+    "exact_normalized_sha256": "fd3eb1c3dd015bf897dfe2b8d3b832b2c1f70b09c18e3d8b2a26391319121d9d",
+    "reference_normalized_sha256": "5c53697385a13578dea01c79c7a0ea6834740a4236e4828a2d8404d4dbddc00c",
+    "unified_diff_lines": 966,
+    "unified_diff_hunks": 48,
+    "identical": false,
+    "scope": "source comparison only; no device or executable code",
+    "task_struct_source_line": 1685,
+    "pi_blocked_on_source_line": 1945,
+    "vendor_markers": {
+      "CONFIG_SCHED_WALT": 1489,
+      "CONFIG_CPU_FREQ_TIMES": 1852,
+      "CONFIG_SWAP": 1874,
+      "CONFIG_THREAD_INFO_IN_TASK": 1686
+    }
+  },
+  "kconfig": {
+    "exact_source_sha256": "80b895f9bbad97978823720c357f89e8835d6c0e48336c906c7d8693de3b2957",
+    "contains_literal_CONFIG_FUTEX_PI": false
+  },
+  "runtime_config": {
+    "CONFIG_ARM64": "y",
+    "CONFIG_ARM64_4K_PAGES": "y",
+    "CONFIG_ARM64_VA_BITS_39": "y",
+    "CONFIG_PREEMPT": "y",
+    "CONFIG_RANDOMIZE_BASE": "y",
+    "CONFIG_THREAD_INFO_IN_TASK": "y",
+    "CONFIG_SCHED_WALT": "y",
+    "CONFIG_FUTEX": "y",
+    "CONFIG_FUTEX_PI": "NOT_FOUND",
+    "CONFIG_RT_MUTEXES": "y",
+    "CONFIG_DEBUG_RT_MUTEXES": "n",
+    "CONFIG_ION": "y",
+    "CONFIG_MTK_ION": "y",
+    "CONFIG_MTK_CMDQ": "y",
+    "CONFIG_MTK_ENABLE_GENIEZONE": "n"
+  }
+}

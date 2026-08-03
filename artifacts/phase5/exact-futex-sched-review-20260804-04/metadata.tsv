@@ -1,0 +1,28 @@
+field	value
+analysis_id	PHASE5O-EXACT-FUTEX-SCHED-20260804-04
+device_model	KFTRWI
+device_product	trona
+device_soc	MediaTek MT8183
+device_build	Amazon/trona/trona:9/PS7330.4104N/0030099376128:user/amz-p,release-keys
+device_kernel	4.4.146+ arm64
+amazon_source_archive	Fire_HD10-7.3.3.0-20240730.tar.bz2
+amazon_source_archive_etag	c14e143433d91648afe4634c30a35320
+exact_futex_source	/tmp/phase5-rtmutex-tail2.2CGarO/member-extract/members/futex.c.74a1d689a70c.txt
+exact_futex_sha256	e4ff0f8cfc46d023f66b3e842e275ee9eb6725ac6902942e235af32d8f0a2ab5
+reference_futex_source	/tmp/phase5-exact-futex-review-20260804/futex-v4.4.146.c
+reference_futex_sha256	8a920516884f29a1e4e13ccfcd292e0307e4f0868ab9c520d4fff2b8c2751720
+exact_sched_source	/tmp/phase5-sched-extract-b-20260804/members/sched.h.16ccf69f54db.txt
+exact_sched_sha256	fd3eb1c3dd015bf897dfe2b8d3b832b2c1f70b09c18e3d8b2a26391319121d9d
+reference_sched_source	/tmp/phase5-exact-futex-review-20260804/sched.h-v4.4.146
+reference_sched_sha256	5c53697385a13578dea01c79c7a0ea6834740a4236e4828a2d8404d4dbddc00c
+exact_kconfig_source	/tmp/phase5-kconfig-extract-20260804/members/Kconfig.152aab841f36.txt
+exact_kconfig_sha256	80b895f9bbad97978823720c357f89e8835d6c0e48336c906c7d8693de3b2957
+runtime_config	adb/phase5/PHASE5F-CMDQ-RUNTIME-20260803-02/kernel_config.stdout.txt
+defconfig	artifacts/phase5/exact-kernel-source-review-20260804-01/members/mt8183_defconfig.e1495a4e51db.txt
+futex_diff_hunks	3
+futex_diff_lines	27
+sched_diff_hunks	48
+sched_diff_lines	966
+task_struct_source_line	1685
+pi_blocked_on_source_line	1945
+operation_scope	host-only source/config comparison; no device state change

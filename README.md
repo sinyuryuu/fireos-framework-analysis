@@ -813,3 +813,34 @@ New outputs:
 
 No device mutation, exploit compilation/execution, root, BROM/DA, fastboot,
 bootloader, remount, or partition operation was performed in Phase 5N.
+
+### Phase 5O — exact futex/scheduler comparison and public Android implementations
+
+Phase 5O compared the full recovered Amazon `kernel/mediatek/4.4/kernel/futex.c`
+and `include/linux/sched.h` members with pinned Linux stable v4.4.146 snapshots.
+The exact `futex.c` differs in only three MTK FPSGO timer-hook hunks; no change
+was observed in the PI requeue/proxy code. The exact `sched.h` is materially
+different because Android/MTK/WALT fields affect `task_struct`; the source line
+for `pi_blocked_on` is recorded, but its compiled offset is not inferred from an
+upstream-only model. The exact Kconfig uses `CONFIG_FUTEX` selecting
+`RT_MUTEXES`; no literal `CONFIG_FUTEX_PI` symbol is present in this old tree,
+which is not evidence that PI operations are disabled.
+
+The public Android review found detector-only, generic target-generator, and
+device-specific native ports. The closest methodology is a MediaTek Android 12
+5.10 port, not a KFTRWI/trona/MT8183 profile. No reviewed public project was
+compiled or installed. Public source can calculate source/ABI layout, but it
+does not by itself produce a signed-PS7330 runtime exploit target.
+
+Phase 5O outputs:
+
+- `findings/phase-5o-exact-futex-sched-review.md`
+- `findings/phase-5o-android-public-poc-review.md`
+- `findings/phase-5o-evidence-index.md`
+- `artifacts/phase5/exact-futex-sched-review-20260804-04/`
+- `artifacts/phase5/android-public-poc-review-20260804-01/`
+- `tools/scripts/analyze_phase5_exact_futex_sched.py`
+
+This phase was host-only. No device state changed; no root exploit, kernel
+trigger, ioctl, bootloader/BROM/DA, fastboot, remount, or partition operation
+was performed.

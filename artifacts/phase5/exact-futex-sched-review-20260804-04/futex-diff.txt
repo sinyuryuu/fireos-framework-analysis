@@ -1,0 +1,27 @@
+--- /tmp/phase5-exact-futex-review-20260804/futex-v4.4.146.c
++++ /tmp/phase5-rtmutex-tail2.2CGarO/member-extract/members/futex.c.74a1d689a70c.txt
+@@ -67,6 +67,8 @@
+ #include <linux/fault-inject.h>
+␠
+ #include <asm/futex.h>
++
++#include <mt-plat/fpsgo_common.h>
+␠
+ #include "locking/rtmutex_common.h"
+␠
+@@ -2429,6 +2431,7 @@
+ \t\thrtimer_init_sleeper(to, current);
+ \t\thrtimer_set_expires_range_ns(&to->timer, *abs_time,
+ \t\t\t\t\t     current->timer_slack_ns);
++\t\txgf_igather_timer(&to->timer, 1);
+ \t}
+␠
+ retry:
+@@ -2475,6 +2478,7 @@
+␠
+ out:
+ \tif (to) {
++\t\txgf_igather_timer(&to->timer, to->task ? -1 : 0);
+ \t\thrtimer_cancel(&to->timer);
+ \t\tdestroy_hrtimer_on_stack(&to->timer);
+ \t}
