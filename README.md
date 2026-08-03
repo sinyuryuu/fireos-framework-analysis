@@ -426,8 +426,9 @@ verified.
 ### `mtk-easy-su` audit
 
 The public `KoCleo/mtk-easy-su` repository was reviewed at pinned commit
-`8c6871ac7c15b8e98a47e25c35ab93b87e260475`; no APK or LFS executable was
-downloaded or run. Its source extracts `mtk-su`/Magisk assets and runs a
+`8c6871ac7c15b8e98a47e25c35ab93b87e260475`. A staged, non-root APK test was
+subsequently completed and rolled back; the exploit control and LFS payload
+were not run. Its source extracts `mtk-su`/Magisk assets and runs a
 data-partition shell script, but its own warning treats post-March-2020
 firmware as potentially blocked and its tested-device table has no KFTRWI,
 trona, or MT8183 entry. The device is PS7330 with a 2024-02 patch, enforcing
@@ -437,8 +438,9 @@ lead rather than a supported root path.
 Audit artifacts and the explicit Level 3 rejection are in:
 
 - `findings/phase-5-mtk-easy-su-review.md`
+- `findings/phase-5-mtk-easy-su-apk-test.md`
 - `artifacts/phase5/mtk-easy-su-audit-20260803/`
-- `findings/phase-5-evidence-index.md` (`P5-WEB-007`, `P5-WEB-008`)
+- `findings/phase-5-evidence-index.md` (`P5-WEB-007`, `P5-WEB-008`, `P5-APK-001`–`P5-APK-003`)
 
 The user-provided HackMD vulnerability index was also triaged against the
 device's exact hardware and kernel. Qualcomm-only chains, listed OPlus/fenrir
@@ -447,3 +449,7 @@ or kernel prerequisites; no exploit code was run. The evidence is in
 `artifacts/phase5/hackmd-vulnerability-review-20260803/` and the proposed
 `mtk-easy-su` APK operation is explicitly gated by
 `findings/phase-5-mtk-easy-su-level3-approval.md`.
+The exact staged APK record is in `adb/phase5/MTK-EASY-SU-APK-T01/`, with
+read-only pre/post snapshots under the corresponding `-PRE` and `-POST`
+directories. The local APK binary remains ignored; its release digest and
+static inspection outputs are publishable.

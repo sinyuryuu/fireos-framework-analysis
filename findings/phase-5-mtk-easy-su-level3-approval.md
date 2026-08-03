@@ -1,11 +1,11 @@
-# Level 3 report — proposed `mtk-easy-su` APK execution
+# Level 3 report — proposed `mtk-easy-su` root action and staged APK operation
 
 ## Operation
 
-Download, verify, install, and launch the public release
-`mtk-easy-su-v2.2.1-KoModed2.apk` from the pinned GitHub release
-`V2.1.1-Optimized1`; then manually activate its root-test control and observe
-whether it obtains temporary root on `G001LT0511550CFT`.
+The staged, non-root subset downloaded, verified, installed, launched, and
+uninstalled the public release `mtk-easy-su-v2.2.1-KoModed2.apk` from the
+pinned GitHub release `V2.1.1-Optimized1`. The separate root-test control was
+not activated and remains a Level 3 operation.
 
 ## Purpose
 
@@ -18,16 +18,22 @@ The protected-package gate rejects shell mutations before state change, and
 the HOME resolver remains dominated by the privileged Fire candidate. A root
 caller would be a materially different authority boundary.
 
-## Exact staged commands proposed
+## Exact staged commands executed
 
-These are a proposal only; none has been executed:
+The normal release URL first returned HTTP 500. The exact GitHub release asset
+API endpoint was then used:
 
 ```text
-curl -fL --output artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk \
-  https://github.com/KoCleo/mtk-easy-su/releases/download/V2.1.1-Optimized1/mtk-easy-su-v2.2.1-KoModed2.apk
+curl -fL --retry 2 --retry-delay 1 \
+  -H 'Accept: application/octet-stream' \
+  -H 'X-GitHub-Api-Version: 2022-11-28' \
+  --output artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk \
+  https://api.github.com/repos/KoCleo/mtk-easy-su/releases/assets/313709550
 shasum -a 256 artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
+unzip -t artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
 adb -s G001LT0511550CFT install --user 0 artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
-adb -s G001LT0511550CFT shell am start -n juniojsv.mtk.easy.su/.MainActivity
+adb -s G001LT0511550CFT shell am start -W --user 0 -n juniojsv.mtk.easy.su/.MainActivity
+adb -s G001LT0511550CFT uninstall juniojsv.mtk.easy.su
 ```
 
 The expected release digest is
@@ -89,5 +95,8 @@ separate firmware/recovery evidence.
 
 ## Current decision
 
-**因風險拒絕測試，等待對上述精確 staged operation 及其不完整 rollback
-風險的明確核准。** No APK has been downloaded, installed, or executed.
+**Staged operation completed and rolled back.** The APK was not used to seek
+root. The root button, payload execution, `su` invocation, and any persistent
+system change remain **因風險拒絕測試** pending a separate exact approval and
+a defensible recovery path. See
+`findings/phase-5-mtk-easy-su-apk-test.md` for the executed evidence.

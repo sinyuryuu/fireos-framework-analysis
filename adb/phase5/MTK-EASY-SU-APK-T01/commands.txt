@@ -1,0 +1,44 @@
+Test ID: MTK-EASY-SU-APK-T01
+Serial: G001LT0511550CFT
+
+Host verification:
+shasum -a 256 artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
+unzip -t artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
+
+Read-only pre-state:
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT logcat -d -b all -v threadtime
+adb -s G001LT0511550CFT shell pm list packages juniojsv.mtk.easy.su
+tools/scripts/capture_mutation_snapshot.sh --serial G001LT0511550CFT --test-id MTK-EASY-SU-APK-T01-PRE --output adb/phase5/MTK-EASY-SU-APK-T01-PRE
+
+Approved mutation:
+adb -s G001LT0511550CFT install --user 0 artifacts/phase5/mtk-easy-su-audit-20260803/mtk-easy-su-v2.2.1-KoModed2.apk
+
+Read-only post-install checks:
+adb -s G001LT0511550CFT shell pm path juniojsv.mtk.easy.su
+adb -s G001LT0511550CFT shell pm list packages -U juniojsv.mtk.easy.su
+adb -s G001LT0511550CFT shell dumpsys package juniojsv.mtk.easy.su
+adb -s G001LT0511550CFT shell appops get juniojsv.mtk.easy.su
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME --user 0
+adb -s G001LT0511550CFT shell dumpsys package preferred-activities
+
+Approved launch:
+adb -s G001LT0511550CFT logcat -c
+adb -s G001LT0511550CFT shell am start -W --user 0 -n juniojsv.mtk.easy.su/.MainActivity
+adb -s G001LT0511550CFT logcat -d -b all -v threadtime
+adb -s G001LT0511550CFT shell dumpsys activity activities
+adb -s G001LT0511550CFT shell dumpsys window windows
+
+Approved rollback:
+adb -s G001LT0511550CFT uninstall juniojsv.mtk.easy.su
+
+Read-only post-rollback checks:
+adb -s G001LT0511550CFT shell pm list packages juniojsv.mtk.easy.su
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME --user 0
+adb -s G001LT0511550CFT shell dumpsys activity activities
+adb -s G001LT0511550CFT shell dumpsys window windows
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+adb -s G001LT0511550CFT shell getprop ro.boot.verifiedbootstate
+adb -s G001LT0511550CFT shell getprop ro.boot.flash.locked
+adb -s G001LT0511550CFT shell getenforce
+tools/scripts/capture_mutation_snapshot.sh --serial G001LT0511550CFT --test-id MTK-EASY-SU-APK-T01-POST --output adb/phase5/MTK-EASY-SU-APK-T01-POST
