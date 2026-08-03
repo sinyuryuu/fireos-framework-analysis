@@ -1,0 +1,14 @@
+flowchart LR
+  RI[PackageManagerService.resolveIntent] --> RII[resolveIntentInternal]
+  RII --> QIA[queryIntentActivitiesInternal]
+  QIA --> CBA[chooseBestActivity]
+  CBA -->|different priority| BEST[return stronger candidate]
+  CBA -->|tie| FP[findPersistentPreferredActivityLP]
+  FP --> FO[findPreferredActivity]
+  BEST --> FIRE[Fire priority 50]
+  FO --> FIRE
+  AS[ActivityStackSupervisor.resolveIntent] --> VAC[Vendor callback array]
+  VAC -->|non-null| VENDOR[Vendor ResolveInfo]
+  VAC -->|null| PMI[PackageManagerInternal.resolveIntent]
+  PMI --> RI
+  PWP[PhoneWindowManager.startDockOrHome] --> AS

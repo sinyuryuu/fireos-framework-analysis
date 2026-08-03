@@ -1,0 +1,287 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        78700db com.amazon.device.software.ota/.dx.OtaDashboardActivity filter d9836bc
+          Action: "android.intent.action.MAIN"
+          Category: "com.amazon.device.category.DEBUG"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.amazon.intent.SYNC:
+        cbce2 com.amazon.device.software.ota/.OTASyncReceiver filter c292724
+          Action: "com.amazon.intent.SYNC"
+      com.amazon.android.service.ota.PingPongOTASystemService.action.OTA_INSTALL_SUCCESS:
+        4f4c315 com.amazon.device.software.ota/.receiver.PingPongOsInstallStatusReceiver filter 99fd2af
+          Action: "com.amazon.android.service.ota.PingPongOTASystemService.action.OTA_INSTALL_SUCCESS"
+      com.amazon.android.service.ota.PingPongOTASystemService.action.OTA_INSTALL_FAILURE:
+        4f4c315 com.amazon.device.software.ota/.receiver.PingPongOsInstallStatusReceiver filter 1636a8e
+          Action: "com.amazon.android.service.ota.PingPongOTASystemService.action.OTA_INSTALL_FAILURE"
+      com.amazon.dcp.ota.action.DEFERRED_OS_INSTALL:
+        d29fd3d com.amazon.device.software.ota/.OTADeferredOSInstallReceiver filter f10cc42
+          Action: "com.amazon.dcp.ota.action.DEFERRED_OS_INSTALL"
+      android.intent.action.BOOT_COMPLETED:
+        51333d7 com.amazon.device.software.ota/.OTABootReceiver filter a623b7
+          Action: "android.intent.action.BOOT_COMPLETED"
+          mPriority=999, mOrder=0, mHasPartialTypes=false
+      com.amazon.identity.auth.account.added.on.device:
+        c9f394c com.amazon.device.software.ota/.AccountAddedReceiver filter 1f0a89
+          Action: "com.amazon.identity.auth.account.added.on.device"
+      com.amazon.dcp.messaging.topic.OTA.CheckForUpdates:
+        8bd95 com.amazon.device.software.ota/.S2DMReceiver filter 2639190
+          Action: "com.amazon.dcp.messaging.topic.OTA.CheckForUpdates"
+      com.amazon.device.software.ota.service.CHECK_FOR_UPDATES:
+        26220e6 com.amazon.device.software.ota/.OTACheckForUpdatesReceiver filter 56f4453
+          Action: "com.amazon.device.software.ota.service.CHECK_FOR_UPDATES"
+      android.intent.action.MY_PACKAGE_REPLACED:
+        af31dc3 com.amazon.device.software.ota/.OTAReplacedReceiver filter 14ad28d
+          Action: "android.intent.action.MY_PACKAGE_REPLACED"
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.amazon.dcp.ota.action.CONTROLLER:
+        1968004 com.amazon.device.software.ota/.OtaService filter 20bbab6 permission com.amazon.dcp.ota.permission.CONTROLLER
+          Action: "com.amazon.dcp.ota.action.CONTROLLER"
+
+Permissions:
+  Permission [com.amazon.dcp.ota.permission.SUSPEND_RESUME_OS_INSTALLATION] (c5b9475):
+    sourcePackage=com.amazon.device.software.ota
+    uid=10017 gids=null type=0 prot=signature|privileged
+    perm=Permission{1b80c0a com.amazon.dcp.ota.permission.SUSPEND_RESUME_OS_INSTALLATION}
+    packageSetting=PackageSetting{dac7657 com.amazon.device.software.ota/10017}
+
+Permissions:
+  Permission [com.amazon.dcp.ota.permission.BLOCK_UNBLOCK_APP] (77dfc06):
+    sourcePackage=com.amazon.device.software.ota
+    uid=10017 gids=null type=0 prot=signature|privileged
+    perm=Permission{61252c7 com.amazon.dcp.ota.permission.BLOCK_UNBLOCK_APP}
+    packageSetting=PackageSetting{dac7657 com.amazon.device.software.ota/10017}
+
+Key Set Manager:
+  [com.amazon.device.software.ota]
+      Signing KeySets: 2
+
+Packages:
+  Package [com.amazon.device.software.ota] (dac7657):
+    userId=10017
+    sharedUser=SharedUserSetting{bfeeb0a com.amazon.device.software.ota/10017}
+    pkg=Package{16c217a com.amazon.device.software.ota}
+    codePath=/system/priv-app/DeviceSoftwareOTA
+    resourcePath=/system/priv-app/DeviceSoftwareOTA
+    legacyNativeLibraryDir=/system/priv-app/DeviceSoftwareOTA/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=6360610 minSdk=22 targetSdk=22
+    versionName=6.0.202217.0_6360610
+    splits=[base]
+    apkSigningVersion=1
+    applicationInfo=ApplicationInfo{b999d2b com.amazon.device.software.ota}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVILEGED ]
+    dataDir=/data/user/0/com.amazon.device.software.ota
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      org.apache.http.legacy
+      com.fireos.sdk.minerva
+      com.fireos.sdk.metrics
+      com.fireos.sdk.messaging
+      com.amazon.identity.auth.device
+    usesOptionalLibraries:
+      com.amazon.dcp.contracts
+      com.amazon.device.settings.sdk.internal.library
+      retaildemoapi
+      com.amazon.readynow.api
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.boot.jar
+      /system/priv-app/MinervaApi/MinervaApi.apk
+      /system/priv-app/MetricsApi/MetricsApi.apk
+      /system/priv-app/DeviceMessagingAndroidInternalSDK/DeviceMessagingAndroidInternalSDK.apk
+      /system/framework/com.amazon.identity.auth.device.jar
+      /system/priv-app/DeviceSoftwareOTAContracts/DeviceSoftwareOTAContracts.apk
+      /system/priv-app/DeviceClientPlatformContractsFramework/DeviceClientPlatformContractsFramework.apk
+      /system/framework/retaildemoapi.jar
+      /system/framework/com.amazon.readynow.api.jar
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{88d3588 version:1, signatures:[e627f73a], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    declared permissions:
+      com.amazon.dcp.ota.permission.CONTROLLER: prot=signature|privileged
+      com.amazon.dcp.ota.permission.MONITOR_OTA_UPDATES: prot=signature|privileged
+      com.amazon.dcp.ota.permission.BLOCK_UNBLOCK_APP: prot=signature|privileged, INSTALLED
+      com.amazon.dcp.ota.permission.SUSPEND_RESUME_OS_INSTALLATION: prot=signature|privileged, INSTALLED
+    requested permissions:
+      com.amazon.dcp.ota.permission.BLOCK_UNBLOCK_APP
+      com.amazon.dcp.ota.permission.SUSPEND_RESUME_OS_INSTALLATION
+      com.amazon.tv.csg.permission.DNW_STATE_SERVICE_ACCESS
+      android.permission.WRITE_MEDIA_STORAGE
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.INTERACT_ACROSS_USERS
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS
+      com.amazon.identity.permission.GENERIC_IPC
+      android.permission.INTERNET
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.WRITE_SETTINGS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.WAKE_LOCK
+      android.permission.ACCESS_CACHE_FILESYSTEM
+      android.permission.DELETE_CACHE_FILES
+      android.permission.MODIFY_AUDIO_SETTINGS
+      android.permission.DELETE_PACKAGES
+      android.permission.REBOOT
+      android.permission.ACCESS_DOWNLOAD_MANAGER
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED
+      android.permission.CRYPT_KEEPER
+      android.permission.RECOVERY
+      android.permission.BLUETOOTH
+      com.amazon.dcp.ota.permission.CONTROLLER
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER
+      android.permission.CLEAR_APP_CACHE
+      android.permission.GET_PACKAGE_SIZE
+      com.amazon.readynowcore.permission.READYNOW
+      com.amazon.dcp.messaging.permission.HANDLE_DEVICE_MESSAGE
+      com.amazon.identity.permission.MULTIPLE_PROFILE_AWARE
+      amazon.permission.COLLECT_METRICS
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION
+      com.lab126.downloads.DOWNLOAD_SVC_CLIENT_CONNECT
+      android.permission.INSTALL_SELF_UPDATES
+      android.permission.INSTALL_PACKAGE_UPDATES
+      android.permission.INSTALL_PACKAGES
+      com.amazon.permission.OTA_INSTALL_STATUS_LISTENER
+      android.permission.ALLOCATE_AGGRESSIVE
+      com.amazon.tv.systeminfo.permission.CAN_QUERY_WIFI_ACCESS_POINT
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.READ_EXTERNAL_STORAGE
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+    install permissions:
+      android.permission.ACCESS_CACHE_FILESYSTEM: granted=true
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.RECOVERY: granted=true
+      com.amazon.dcp.ota.permission.QUERY_PENDING_UPDATES: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      com.amazon.permission.OTA_INSTALL_STATUS_LISTENER: granted=true
+      com.amazon.dcp.messaging.permission.HANDLE_DEVICE_MESSAGE: granted=true
+      com.lab126.downloads.DOWNLOAD_SVC_CLIENT_CONNECT: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      com.amazon.readynowcore.permission.READYNOW: granted=true
+      com.amazon.dcp.ota.permission.SUSPEND_RESUME_OS_INSTALLATION: granted=true
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      com.amazon.dcp.ota.permission.CONTROLLER: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER: granted=true
+      android.permission.BLUETOOTH: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.READ_EXTERNAL_STORAGE: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_DEVICE_AND_USER_DATA: granted=true
+      android.permission.ALLOCATE_AGGRESSIVE: granted=true
+      com.amazon.dcp.settings.permission.READ_SETTINGS: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      com.amazon.identity.permission.MULTIPLE_PROFILE_AWARE: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      android.permission.INSTALL_PACKAGE_UPDATES: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.DELETE_CACHE_FILES: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.INSTALL_SELF_UPDATES: granted=true
+      android.permission.REBOOT: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      android.permission.CLEAR_APP_CACHE: granted=true
+      android.permission.WRITE_EXTERNAL_STORAGE: granted=true
+      com.amazon.dcp.ota.permission.BLOCK_UNBLOCK_APP: granted=true
+      android.permission.CRYPT_KEEPER: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: ceDataInode=852428 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+
+Shared users:
+  SharedUser [com.amazon.device.software.ota] (bfeeb0a):
+    userId=10017
+    install permissions:
+      android.permission.ACCESS_CACHE_FILESYSTEM: granted=true
+      android.permission.DOWNLOAD_WITHOUT_NOTIFICATION: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.RECOVERY: granted=true
+      com.amazon.dcp.ota.permission.QUERY_PENDING_UPDATES: granted=true
+      android.permission.MODIFY_AUDIO_SETTINGS: granted=true
+      com.amazon.permission.OTA_INSTALL_STATUS_LISTENER: granted=true
+      com.amazon.dcp.messaging.permission.HANDLE_DEVICE_MESSAGE: granted=true
+      com.lab126.downloads.DOWNLOAD_SVC_CLIENT_CONNECT: granted=true
+      android.permission.INSTALL_PACKAGES: granted=true
+      com.amazon.readynowcore.permission.READYNOW: granted=true
+      com.amazon.dcp.ota.permission.SUSPEND_RESUME_OS_INSTALLATION: granted=true
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      com.amazon.dcp.ota.permission.CONTROLLER: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER: granted=true
+      android.permission.BLUETOOTH: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      android.permission.INTERNET: granted=true
+      android.permission.READ_EXTERNAL_STORAGE: granted=true
+      android.permission.GET_PACKAGE_SIZE: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_DEVICE_AND_USER_DATA: granted=true
+      android.permission.ALLOCATE_AGGRESSIVE: granted=true
+      com.amazon.dcp.settings.permission.READ_SETTINGS: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      com.amazon.identity.permission.MULTIPLE_PROFILE_AWARE: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER: granted=true
+      android.permission.INSTALL_PACKAGE_UPDATES: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.DELETE_CACHE_FILES: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.INSTALL_SELF_UPDATES: granted=true
+      android.permission.REBOOT: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      android.permission.CLEAR_APP_CACHE: granted=true
+      android.permission.WRITE_EXTERNAL_STORAGE: granted=true
+      com.amazon.dcp.ota.permission.BLOCK_UNBLOCK_APP: granted=true
+      android.permission.CRYPT_KEEPER: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      android.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+      android.permission.DELETE_PACKAGES: granted=true
+    User 0: 
+      gids=[2001, 3002, 1023, 1015, 3003]
+      runtime permissions:
+
+Package Changes:
+  Sequence number=5
+  User 0:
+    seq=0, package=org.fireosresearch.home.p100
+    seq=4, package=com.google.android.gms
+
+
+Dexopt state:
+  [com.amazon.device.software.ota]
+    path: /system/priv-app/DeviceSoftwareOTA/DeviceSoftwareOTA.apk
+      arm64: [status=verify] [reason=boot]
+      used by other apps: [com.amazon.settings.systemupdates]
+
+
+Compiler stats:
+  [com.amazon.device.software.ota]
+     DeviceSoftwareOTA.apk - 229

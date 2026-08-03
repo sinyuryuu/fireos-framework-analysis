@@ -1,0 +1,418 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      com.amazon.settings.CURFEW_PC_AUTH_ACTIVITY:
+        922abd9 com.amazon.parentalcontrols/.activity.CurfewPcAuthActivity filter b78b6c9
+          Action: "com.amazon.settings.CURFEW_PC_AUTH_ACTIVITY"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.parentalcontrols.VALIDATE_ADULT_USER:
+        a8b21e1 com.amazon.parentalcontrols/.password.ParentalPasswordAuthAdultUser filter 9bdfffc
+          Action: "com.amazon.parentalcontrols.VALIDATE_ADULT_USER"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.settings.PARENTAL_SETTINGS:
+        df3b333 com.amazon.parentalcontrols/.gen7.ParentalControlsMainActivityGen7 filter 385f8ef
+          Action: "com.amazon.settings.PARENTAL_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.settings.CHECK_PARENTAL_PASSWORD:
+        ee18318 com.amazon.parentalcontrols/.ParentalPasswordAuthentication filter b38693
+          Action: "com.amazon.settings.CHECK_PARENTAL_PASSWORD"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.settings.CREATE_PARENTAL_PASSWORD_FS:
+        b1bf9ee com.amazon.parentalcontrols/.password.ParentalPasswordFullScreenActivity filter 43facda
+          Action: "com.amazon.settings.CREATE_PARENTAL_PASSWORD_FS"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.kindle.admin.ACTION_VIEW:
+        4cd1708 com.amazon.parentalcontrols/.activity.PcDialogActivity filter 28d41ce
+          Action: "com.amazon.kindle.admin.ACTION_VIEW"
+          Category: "android.intent.category.DEFAULT"
+      com.android.settings.action.IA_SETTINGS:
+        ee18318 com.amazon.parentalcontrols/.ParentalPasswordAuthentication filter 82346d0
+          Action: "com.android.settings.action.IA_SETTINGS"
+          mPriority=5, mOrder=0, mHasPartialTypes=false
+      com.amazon.settings.CREATE_PARENTAL_PASSWORD:
+        1a6a59d com.amazon.parentalcontrols/.password.ParentalPassword filter 2ccf685
+          Action: "com.amazon.settings.CREATE_PARENTAL_PASSWORD"
+          Category: "android.intent.category.DEFAULT"
+
+Receiver Resolver Table:
+  Schemes:
+      package:
+        453e832 com.amazon.parentalcontrols/.receivers.PackageChangesReceiver filter f66e9f6
+          Action: "android.intent.action.PACKAGE_ADDED"
+          Scheme: "package"
+
+  Non-Data Actions:
+      com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.app.action.DEVICE_ADMIN_ENABLED:
+        b41c337 com.amazon.parentalcontrols/.receivers.ParentalAdminReceiver filter c6218b8
+          Action: "android.app.action.DEVICE_ADMIN_ENABLED"
+      com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.intent.action.LOCALE_CHANGED:
+        a338b8f com.amazon.parentalcontrols/.receivers.ParentalLocaleChangedReceiver filter fba0bcc
+          Action: "android.intent.action.LOCALE_CHANGED"
+      com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.ParentalControls.IAP_TURN_ON:
+        1f6ea7c com.amazon.parentalcontrols/.receivers.ParentalIAPBroadcastReceiver filter f9cc691
+          Action: "com.amazon.ParentalControls.IAP_TURN_ON"
+      com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.intent.action.TIMEZONE_CHANGED:
+        a51fec3 com.amazon.parentalcontrols/.receivers.TimezoneChangeReceiver filter 45ec1f7
+          Action: "android.intent.action.TIMEZONE_CHANGED"
+      android.intent.action.BOOT_COMPLETED:
+        4cc888d com.amazon.parentalcontrols/.receivers.ParentalBootBroadcastReceiver filter 81e91ff
+          Action: "android.intent.action.BOOT_COMPLETED"
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      android.content.action.REQUEST_PERMISSION:
+        9fed4ec com.amazon.parentalcontrols/.receivers.ParentalControlsRestrictionProvider filter 77c0864
+          Action: "android.content.action.REQUEST_PERMISSION"
+      com.amazon.ParentalControls.ALARM:
+        52d84c6 com.amazon.parentalcontrols/.receivers.AlarmReceiver filter d975e15
+          Action: "com.amazon.ParentalControls.ALARM"
+      com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.dcp.sso.broadcast.CORPFMHasChanged:
+        7139898 com.amazon.parentalcontrols/.receivers.ParentalCORChangeReceiver filter 8d44f1b
+          Action: "com.amazon.dcp.sso.broadcast.CORPFMHasChanged"
+      com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC:
+        8d109b0 com.amazon.parentalcontrols/.receivers.ConfigurationSyncReceiver filter a0faf82
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_ACTION_RETRY_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_ACTION_RETRY_SYNC"
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.kindle.devicecontrols.WHISPERCAST_ACTIVATED:
+        6dc527d com.amazon.parentalcontrols/.receivers.ParentalControlsDeactivateReceiver filter bb63acd
+          Action: "com.amazon.kindle.devicecontrols.WHISPERCAST_ACTIVATED"
+      com.amazon.dcp.sso.action.account.removed:
+        6ffa51d com.amazon.parentalcontrols/.receivers.ParentalAccountsReceiver filter 15ba52a
+          Action: "com.amazon.dcp.sso.action.account.removed"
+          mPriority=1000, mOrder=0, mHasPartialTypes=false
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.amazon.parentalcontrols.arcus.action.LAUNCHER_SYNC_CONFIG:
+        b9ef875 com.amazon.parentalcontrols/.services.ConfigurationSyncService filter 3d3551e permission android.permission.BIND_JOB_SERVICE
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_SYNC_CONFIG"
+      com.amazon.parentalcontrols.arcus.action.MAYDAY_SYNC_CONFIG:
+        b9ef875 com.amazon.parentalcontrols/.services.ConfigurationSyncService filter 3d3551e permission android.permission.BIND_JOB_SERVICE
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_SYNC_CONFIG"
+      com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_SYNC_CONFIG:
+        b9ef875 com.amazon.parentalcontrols/.services.ConfigurationSyncService filter 3d3551e permission android.permission.BIND_JOB_SERVICE
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_SYNC_CONFIG"
+      com.amazon.parentalcontrols.arcus.action.PC_SYNC_CONFIG:
+        b9ef875 com.amazon.parentalcontrols/.services.ConfigurationSyncService filter 3d3551e permission android.permission.BIND_JOB_SERVICE
+          Action: "com.amazon.parentalcontrols.arcus.action.PC_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.MAYDAY_SYNC_CONFIG"
+          Action: "com.amazon.parentalcontrols.arcus.action.LAUNCHER_APPS_SYNC_CONFIG"
+
+Provider Resolver Table:
+  Non-Data Actions:
+      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+        be90124 com.amazon.parentalcontrols/.CustomContentProvider filter 4a8c559
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+
+Permissions:
+  Permission [com.amazon.settings.PARENT_MONITORING] (108fd0d):
+    sourcePackage=com.amazon.parentalcontrols
+    uid=10058 gids=null type=0 prot=signature|privileged
+    perm=Permission{2fbe4c2 com.amazon.settings.PARENT_MONITORING}
+    packageSetting=PackageSetting{4ffb2d3 com.amazon.parentalcontrols/10058}
+
+Registered ContentProviders:
+  com.amazon.parentalcontrols/.CustomContentProvider:
+    Provider{be90124 com.amazon.parentalcontrols/.CustomContentProvider}
+  com.amazon.parentalcontrols/.map.ParentalControlsMapProvider:
+    Provider{c94929c com.amazon.parentalcontrols/.map.ParentalControlsMapProvider}
+
+ContentProvider Authorities:
+  [com.amazon.identity.auth.device.MapInfoProvider.ParentalControls]:
+    Provider{c94929c com.amazon.parentalcontrols/.map.ParentalControlsMapProvider}
+      applicationInfo=ApplicationInfo{eae2815 com.amazon.parentalcontrols}
+  [com.amazon.parentalcontrols]:
+    Provider{be90124 com.amazon.parentalcontrols/.CustomContentProvider}
+      applicationInfo=ApplicationInfo{eae2815 com.amazon.parentalcontrols}
+
+Key Set Manager:
+  [com.amazon.parentalcontrols]
+      Signing KeySets: 2
+
+Packages:
+  Package [com.amazon.parentalcontrols] (4ffb2d3):
+    userId=10058
+    pkg=Package{1f21a38 com.amazon.parentalcontrols}
+    codePath=/system/priv-app/com.amazon.parentalcontrols
+    resourcePath=/system/priv-app/com.amazon.parentalcontrols
+    legacyNativeLibraryDir=/system/priv-app/com.amazon.parentalcontrols/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=20096010 minSdk=21 targetSdk=27
+    versionName=3.0.200706.0_20096010
+    splits=[base]
+    apkSigningVersion=1
+    applicationInfo=ApplicationInfo{eae2815 com.amazon.parentalcontrols}
+    flags=[ SYSTEM HAS_CODE ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION PRIVILEGED ]
+    dataDir=/data/user/0/com.amazon.parentalcontrols
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      org.apache.http.legacy
+      com.fireos.sdk.minerva
+      com.fireos.sdk.mapclientlib
+      com.fireos.sdk.messaging
+      com.fireos.sdk.usearchmanager
+      com.fireos.sdk.h2shared
+      com.fireos.sdk.h2contracts
+      com.amazon.device.settings.sdk.internal
+      retaildemoapi
+    usesOptionalLibraries:
+      com.amazon.asp
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.boot.jar
+      /system/priv-app/MinervaApi/MinervaApi.apk
+      /system/framework/com.amazon.identity.auth.device.jar
+      /system/priv-app/DeviceMessagingAndroidInternalSDK/DeviceMessagingAndroidInternalSDK.apk
+      /system/framework/com.amazon.device.search.jar
+      /system/framework/com.amazon.h2shared.jar
+      /system/framework/com.amazon.h2contracts.jar
+      /system/priv-app/RemoteSettingsInternalSDK/RemoteSettingsInternalSDK.apk
+      /system/framework/retaildemoapi.jar
+      /system/framework/aspclient.jar
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{7626a11 version:1, signatures:[e627f73a], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION ]
+    declared permissions:
+      com.amazon.permission.ParentalControl: prot=signature|privileged
+      com.amazon.settings.PARENT_MONITORING: prot=signature|privileged, INSTALLED
+    requested permissions:
+      com.amazon.dcp.sso.permission.MANAGE_DEVICE_AND_USER_DATA
+      com.amazon.dcp.settings.permission.READ_SETTINGS
+      android.permission.WRITE_SETTINGS
+      android.permission.GET_ACCOUNTS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.MASTER_CLEAR
+      com.amazon.phone.permission.WAN_STATE_CONTROL
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.ACCESS_WIFI_STATE
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM
+      com.amazon.dcp.sso.permission.account.changed
+      com.amazon.identity.permission.MULTIPLE_PROFILE_AWARE
+      android.permission.DISABLE_KEYGUARD
+      com.amazon.settings.PARENT_MONITORING
+      android.permission.GET_INTENT_SENDER_INTENT
+      amazon.permission.COLLECT_METRICS
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION
+      amazon.permission.SHARED_STORAGE_WRITE
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.GET_TASKS
+      android.permission.MANAGE_USERS
+      android.permission.MANAGE_DEVICE_ADMINS
+      com.amazon.alta.h2clientservice.permission.BIND_SERVICE
+      com.amazon.dcp.messaging.permission.QUEUE_MESSAGE
+      com.amazon.permission.ENABLE_KEYGUARD_FLAGS
+      android.permission.INTERNET
+      android.permission.USE_CREDENTIALS
+      android.permission.AUTHENTICATE_ACCOUNTS
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER
+      com.amazon.identity.permission.GENERIC_IPC
+      com.amazon.identity.auth.device.perm.AUTH_SDK
+      android.permission.CONTROL_KEYGUARD
+      android.permission.WAKE_LOCK
+      android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS
+      amazon.aosp.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER
+      com.amazon.kindle.otter.oobe.OOBE_PERMISSION
+      amazon.speech.permission.SEND_DATA_TO_ALEXA
+      com.amazon.permission.ASP_PERMISSION
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.PACKAGE_USAGE_STATS
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+    install permissions:
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      amazon.permission.SHARED_STORAGE_WRITE: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.MASTER_CLEAR: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM: granted=true
+      com.amazon.settings.PARENT_MONITORING: granted=true
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER: granted=true
+      com.amazon.kindle.otter.oobe.OOBE_PERMISSION: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_DEVICE_AND_USER_DATA: granted=true
+      com.amazon.dcp.settings.permission.READ_SETTINGS: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      amazon.speech.permission.SEND_DATA_TO_ALEXA: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      com.amazon.identity.permission.MULTIPLE_PROFILE_AWARE: granted=true
+      com.amazon.dcp.sso.permission.account.changed: granted=true
+      com.amazon.permission.ENABLE_KEYGUARD_FLAGS: granted=true
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      com.amazon.identity.auth.device.perm.AUTH_SDK: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      com.amazon.permission.ASP_PERMISSION: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      android.permission.MANAGE_DEVICE_ADMINS: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      amazon.aosp.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS: granted=true
+      com.amazon.alta.h2clientservice.permission.BIND_SERVICE: granted=true
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: granted=true
+      com.amazon.dcp.messaging.permission.QUEUE_MESSAGE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+    User 0: ceDataInode=860208 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[5901, 3003]
+      runtime permissions:
+
+Package Changes:
+  Sequence number=5
+  User 0:
+    seq=0, package=org.fireosresearch.home.p100
+    seq=4, package=com.google.android.gms
+
+
+Dexopt state:
+  [com.amazon.parentalcontrols]
+    path: /system/priv-app/com.amazon.parentalcontrols/com.amazon.parentalcontrols.apk
+      arm64: [status=speed-profile] [reason=bg-dexopt]
+
+
+Compiler stats:
+  [com.amazon.parentalcontrols]
+     com.amazon.parentalcontrols.apk - 2189

@@ -1,0 +1,448 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        ac705ea com.amazon.device.messaging/.TodoQueueActivity filter 1036251
+          Action: "android.intent.action.MAIN"
+          Category: "com.amazon.device.category.DEBUG"
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.amazon.dcp.messaging.response.callback:
+        ac3990a com.amazon.device.messaging/.TodoV1ResponseHandlerService$TodoV1HandledReceiver filter db67c63
+          Action: "com.amazon.dcp.messaging.response.callback"
+      com.amazon.device.messaging.intent.UNSUBSCRIPTION:
+        84aae96 com.amazon.device.messaging/.ADMMessageHandler$Receiver filter 8b9cdde
+          Action: "com.amazon.device.messaging.intent.REGISTRATION"
+          Action: "com.amazon.device.messaging.intent.RECEIVE"
+          Action: "com.amazon.device.messaging.intent.SUBSCRIPTION"
+          Action: "com.amazon.device.messaging.intent.UNSUBSCRIPTION"
+          Category: "com.amazon.device.messaging"
+      com.amazon.device.messaging.intent.REGISTER:
+        fb1f5e8 com.amazon.device.messaging/.PrivateADMRegistrationService$ADMRegistrationReceiver filter 7309a92
+          Action: "com.amazon.device.messaging.intent.REGISTER"
+          Action: "com.amazon.device.messaging.intent.UNREGISTER"
+      com.amazon.intent.SYNC:
+        e33a1ad com.amazon.device.messaging/.GlobalSyncReceiver filter dfee1
+          Action: "com.amazon.intent.SYNC"
+      android.net.conn.CONNECTIVITY_CHANGE:
+        f7728e com.amazon.device.messaging/.MessageProcessingSchedulerService$MessageProcessingSchedulerReceiver filter 14efac7
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+          Action: "com.amazon.dcp.messaging.MessageProcessingScheduler.TRY_PROCESS_MESSAGES"
+        6173aaf com.amazon.device.messaging/.receiver.ConfigurationSyncReceiver filter 65128c
+          Action: "com.amazon.device.messaging.remoteconfig.action.ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.device.messaging.remoteconfig.action.ACTION_RETRY_SYNC"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.device.messaging.remoteconfig.action.ACTION_RETRY_SYNC:
+        6173aaf com.amazon.device.messaging/.receiver.ConfigurationSyncReceiver filter 65128c
+          Action: "com.amazon.device.messaging.remoteconfig.action.ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.device.messaging.remoteconfig.action.ACTION_RETRY_SYNC"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.dcp.framework.action.STAY_ALIVE:
+        aa25c75 com.amazon.device.messaging/.MessageProcessingSchedulerService$PersistenceReceiver filter ca44406
+          Action: "com.amazon.dcp.framework.action.STAY_ALIVE"
+      com.amazon.device.messaging.intent.REGISTRATION:
+        84aae96 com.amazon.device.messaging/.ADMMessageHandler$Receiver filter 8b9cdde
+          Action: "com.amazon.device.messaging.intent.REGISTRATION"
+          Action: "com.amazon.device.messaging.intent.RECEIVE"
+          Action: "com.amazon.device.messaging.intent.SUBSCRIPTION"
+          Action: "com.amazon.device.messaging.intent.UNSUBSCRIPTION"
+          Category: "com.amazon.device.messaging"
+      com.amazon.dcp.tph.action.TPH_PHONE_HOME:
+        f1ecf0a com.amazon.device.messaging/.TodoService$PhoneHomeReceiver filter 82b5060
+          Action: "com.amazon.dcp.tph.action.TPH_PHONE_HOME"
+          Action: "com.amazon.dcp.tph.action.TPHClientInfoProvider"
+      com.amazon.dcp.messaging.topic.amazon.messaging.tph:
+        8693237 com.amazon.device.messaging/.push.RedirectedPhoneHomeMessagesDispatcher$Receiver filter bf398f4
+          Action: "com.amazon.dcp.messaging.topic.amazon.messaging.tph"
+      com.amazon.dcp.messaging.MessageProcessingScheduler.TRY_PROCESS_MESSAGES:
+        f7728e com.amazon.device.messaging/.MessageProcessingSchedulerService$MessageProcessingSchedulerReceiver filter 14efac7
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+          Action: "com.amazon.dcp.messaging.MessageProcessingScheduler.TRY_PROCESS_MESSAGES"
+      android.intent.action.BOOT_COMPLETED:
+        f7728e com.amazon.device.messaging/.MessageProcessingSchedulerService$MessageProcessingSchedulerReceiver filter 14efac7
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+          Action: "com.amazon.dcp.messaging.MessageProcessingScheduler.TRY_PROCESS_MESSAGES"
+        958ad71 com.amazon.device.messaging/.LifecycleEventService$LifecycleEventReceiver filter f10e9ea
+          Action: "android.intent.action.BOOT_COMPLETED"
+        6007756 com.amazon.device.messaging/.EspressoShotBootService$EspressoShotBootReceiver filter 896cb78
+          Action: "android.intent.action.BOOT_COMPLETED"
+      com.amazon.device.messaging.intent.SUBSCRIBE:
+        2024b9f com.amazon.device.messaging/.PrivateADMSubscriptionService$ADMSubscriptionReceiver filter 67514db
+          Action: "com.amazon.device.messaging.intent.SUBSCRIBE"
+          Action: "com.amazon.device.messaging.intent.UNSUBSCRIBE"
+      com.amazon.device.environment.action.SWITCH_STAGE:
+        62cd584 com.amazon.device.messaging/.receiver.StageSwitchReceiver filter af7bdd5
+          Action: "com.amazon.device.environment.action.SWITCH_STAGE"
+      com.amazon.device.messaging.intent.SUBSCRIPTION:
+        84aae96 com.amazon.device.messaging/.ADMMessageHandler$Receiver filter 8b9cdde
+          Action: "com.amazon.device.messaging.intent.REGISTRATION"
+          Action: "com.amazon.device.messaging.intent.RECEIVE"
+          Action: "com.amazon.device.messaging.intent.SUBSCRIPTION"
+          Action: "com.amazon.device.messaging.intent.UNSUBSCRIPTION"
+          Category: "com.amazon.device.messaging"
+      com.amazon.device.messaging.intent.RECEIVE:
+        84aae96 com.amazon.device.messaging/.ADMMessageHandler$Receiver filter 8b9cdde
+          Action: "com.amazon.device.messaging.intent.REGISTRATION"
+          Action: "com.amazon.device.messaging.intent.RECEIVE"
+          Action: "com.amazon.device.messaging.intent.SUBSCRIPTION"
+          Action: "com.amazon.device.messaging.intent.UNSUBSCRIPTION"
+          Category: "com.amazon.device.messaging"
+      amazon.communication.action.HANDLE_TCOMM_MESSAGE:
+        af3b34e com.amazon.device.messaging/.push.TCommMessageListenerService$TCommMessageReceiver filter aa81d
+          Action: "amazon.communication.action.HANDLE_TCOMM_MESSAGE"
+      com.amazon.device.messaging.remoteconfig.action.ACTION_PERIODIC_SYNC:
+        6173aaf com.amazon.device.messaging/.receiver.ConfigurationSyncReceiver filter 65128c
+          Action: "com.amazon.device.messaging.remoteconfig.action.ACTION_PERIODIC_SYNC"
+          Action: "com.amazon.device.messaging.remoteconfig.action.ACTION_RETRY_SYNC"
+          Action: "android.net.conn.CONNECTIVITY_CHANGE"
+      com.amazon.device.messaging.broadcast.CHECKING_TODO:
+        88bd4ed com.amazon.device.messaging/.ADMMessageHandler$CheckingTodoReceiver filter b8a7bbf
+          Action: "com.amazon.device.messaging.broadcast.CHECKING_TODO"
+      com.amazon.dcp.tph.action.TPHClientInfoProvider:
+        f1ecf0a com.amazon.device.messaging/.TodoService$PhoneHomeReceiver filter 82b5060
+          Action: "com.amazon.dcp.tph.action.TPH_PHONE_HOME"
+          Action: "com.amazon.dcp.tph.action.TPHClientInfoProvider"
+      com.amazon.device.messaging.intent.UNREGISTER:
+        fb1f5e8 com.amazon.device.messaging/.PrivateADMRegistrationService$ADMRegistrationReceiver filter 7309a92
+          Action: "com.amazon.device.messaging.intent.REGISTER"
+          Action: "com.amazon.device.messaging.intent.UNREGISTER"
+      com.amazon.device.messaging.intent.UNSUBSCRIBE:
+        2024b9f com.amazon.device.messaging/.PrivateADMSubscriptionService$ADMSubscriptionReceiver filter 67514db
+          Action: "com.amazon.device.messaging.intent.SUBSCRIBE"
+          Action: "com.amazon.device.messaging.intent.UNSUBSCRIBE"
+      com.amazon.dcp.messaging.topic.amazon.messaging.v1.check:
+        235038c com.amazon.device.messaging/.TodoService$CheckTodoV1Handler filter 72ea919
+          Action: "com.amazon.dcp.messaging.topic.amazon.messaging.v1.check"
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.amazon.device.messaging.ACTION_FETCH_TODOV2:
+        1a43e20 com.amazon.device.messaging/.TodoService filter b5eb165 permission com.amazon.dcp.messaging.permission.INITIATE_HANDLE_DEVICE_MESSAGE
+          Action: "com.amazon.device.messaging.ACTION_FETCH_TODO"
+          Action: "com.amazon.device.messaging.ACTION_FETCH_TODOV2"
+      com.amazon.dcp.messaging.action.StartDispatchService:
+        8f42b98 com.amazon.device.messaging/.MessageDispatcherService filter f51c0cf
+          Action: "com.amazon.dcp.messaging.action.StartDispatchService"
+      com.amazon.dcp.messaging.action.REFRESH_SCHEDULER:
+        c4b9ba5 com.amazon.device.messaging/.MessageProcessingSchedulerService filter c089073
+          Action: "com.amazon.dcp.messaging.action.SETUP_SCHEDULER"
+          Action: "com.amazon.dcp.messaging.action.REFRESH_SCHEDULER"
+          Action: "com.amazon.dcp.messaging.action.CONNECTIVITY_CHANGE"
+      com.amazon.dcp.messaging.action.FLUSH_MESSAGES:
+        e575f88 com.amazon.device.messaging/.OdotService filter 58d34e2 permission com.amazon.dcp.messaging.permission.QUEUE_MESSAGE
+          Action: "com.amazon.dcp.messaging.action.QUEUE_MESSAGE"
+          Action: "com.amazon.dcp.messaging.action.FLUSH_MESSAGES"
+          Action: "com.amazon.dcp.messaging.action.SCHEDULE_FLUSH"
+      com.amazon.device.messaging.remoteconfig.action.SYNC_CONFIG:
+        bd001fc com.amazon.device.messaging/.service.ConfigurationSyncService filter a7c7e3a
+          Action: "com.amazon.device.messaging.remoteconfig.action.SYNC_CONFIG"
+      com.amazon.dcp.messaging.action.QUEUE_MESSAGE:
+        e575f88 com.amazon.device.messaging/.OdotService filter 58d34e2 permission com.amazon.dcp.messaging.permission.QUEUE_MESSAGE
+          Action: "com.amazon.dcp.messaging.action.QUEUE_MESSAGE"
+          Action: "com.amazon.dcp.messaging.action.FLUSH_MESSAGES"
+          Action: "com.amazon.dcp.messaging.action.SCHEDULE_FLUSH"
+      com.amazon.device.messaging.intent.REGISTER:
+        76c2e5c com.amazon.device.messaging/.ADMRegistrationService filter b4dbd2e permission com.amazon.device.messaging.permission.RECEIVE
+          Action: "com.amazon.device.messaging.intent.REGISTER"
+          Action: "com.amazon.device.messaging.intent.UNREGISTER"
+          mPriority=2147483647, mOrder=0, mHasPartialTypes=false
+      com.amazon.device.messaging.CloudMessagingService:
+        445eeb6 com.amazon.device.messaging/.CloudMessagingService filter 539aeb permission com.amazon.device.messaging.permission.CLOUD_MESSAGING
+          Action: "com.amazon.device.messaging.CloudMessagingService"
+      com.amazon.dcp.messaging.topic.V1.SET.SPHS:
+        e1e0e89 com.amazon.device.messaging/.SPHService filter 90a83a9
+          Action: "com.amazon.dcp.messaging.topic.V1.SET.SPHS"
+          Action: "com.amazon.dcp.messaging.topic.V1.DOWNLOAD.SPHS"
+          Action: "com.amazon.dcp.messaging.action.HANDLE_SPH_SCHEDULE"
+          Action: "com.amaozn.dcp.messaging.action.HANDLE_SPH_PHONE_HOME"
+          Action: "com.amazon.messaging.action.HANDLE_PERIODIC_CHECK"
+      com.amazon.dcp.messaging.action.HANDLE_SPH_SCHEDULE:
+        e1e0e89 com.amazon.device.messaging/.SPHService filter 90a83a9
+          Action: "com.amazon.dcp.messaging.topic.V1.SET.SPHS"
+          Action: "com.amazon.dcp.messaging.topic.V1.DOWNLOAD.SPHS"
+          Action: "com.amazon.dcp.messaging.action.HANDLE_SPH_SCHEDULE"
+          Action: "com.amaozn.dcp.messaging.action.HANDLE_SPH_PHONE_HOME"
+          Action: "com.amazon.messaging.action.HANDLE_PERIODIC_CHECK"
+      com.amazon.dcp.messaging.action.REMOVE_TODO_V1_ITEM:
+        d5d23d com.amazon.device.messaging/.TodoV1ResponseHandlerService filter da85a5c
+          Action: "com.amazon.dcp.messaging.action.REMOVE_TODO_V1_ITEM"
+      com.amazon.dcp.messaging.action.CONNECTIVITY_CHANGE:
+        c4b9ba5 com.amazon.device.messaging/.MessageProcessingSchedulerService filter c089073
+          Action: "com.amazon.dcp.messaging.action.SETUP_SCHEDULER"
+          Action: "com.amazon.dcp.messaging.action.REFRESH_SCHEDULER"
+          Action: "com.amazon.dcp.messaging.action.CONNECTIVITY_CHANGE"
+      com.amazon.device.messaging.MessagingConnectivityService:
+        5840589 com.amazon.device.messaging/.MessagingConnectivityService filter 98ec048
+          Action: "com.amazon.device.messaging.MessagingConnectivityService"
+      com.amazon.dcp.messaging.topic.amazon.messaging.tph:
+        faeba1c com.amazon.device.messaging/.push.RedirectedPhoneHomeMessagesDispatcher filter 79abb30
+          Action: "com.amazon.dcp.messaging.topic.amazon.messaging.tph"
+      com.amaozn.dcp.messaging.action.HANDLE_SPH_PHONE_HOME:
+        e1e0e89 com.amazon.device.messaging/.SPHService filter 90a83a9
+          Action: "com.amazon.dcp.messaging.topic.V1.SET.SPHS"
+          Action: "com.amazon.dcp.messaging.topic.V1.DOWNLOAD.SPHS"
+          Action: "com.amazon.dcp.messaging.action.HANDLE_SPH_SCHEDULE"
+          Action: "com.amaozn.dcp.messaging.action.HANDLE_SPH_PHONE_HOME"
+          Action: "com.amazon.messaging.action.HANDLE_PERIODIC_CHECK"
+      com.amazon.dcp.messaging.topic.V1.DOWNLOAD.SPHS:
+        e1e0e89 com.amazon.device.messaging/.SPHService filter 90a83a9
+          Action: "com.amazon.dcp.messaging.topic.V1.SET.SPHS"
+          Action: "com.amazon.dcp.messaging.topic.V1.DOWNLOAD.SPHS"
+          Action: "com.amazon.dcp.messaging.action.HANDLE_SPH_SCHEDULE"
+          Action: "com.amaozn.dcp.messaging.action.HANDLE_SPH_PHONE_HOME"
+          Action: "com.amazon.messaging.action.HANDLE_PERIODIC_CHECK"
+      com.amazon.dcp.messaging.action.SCHEDULE_FLUSH:
+        e575f88 com.amazon.device.messaging/.OdotService filter 58d34e2 permission com.amazon.dcp.messaging.permission.QUEUE_MESSAGE
+          Action: "com.amazon.dcp.messaging.action.QUEUE_MESSAGE"
+          Action: "com.amazon.dcp.messaging.action.FLUSH_MESSAGES"
+          Action: "com.amazon.dcp.messaging.action.SCHEDULE_FLUSH"
+      com.amazon.device.messaging.ACTION_FETCH_TODO:
+        1a43e20 com.amazon.device.messaging/.TodoService filter b5eb165 permission com.amazon.dcp.messaging.permission.INITIATE_HANDLE_DEVICE_MESSAGE
+          Action: "com.amazon.device.messaging.ACTION_FETCH_TODO"
+          Action: "com.amazon.device.messaging.ACTION_FETCH_TODOV2"
+      com.amazon.device.messaging.intent.UNREGISTER:
+        76c2e5c com.amazon.device.messaging/.ADMRegistrationService filter b4dbd2e permission com.amazon.device.messaging.permission.RECEIVE
+          Action: "com.amazon.device.messaging.intent.REGISTER"
+          Action: "com.amazon.device.messaging.intent.UNREGISTER"
+          mPriority=2147483647, mOrder=0, mHasPartialTypes=false
+      com.amazon.dcp.messaging.action.SETUP_SCHEDULER:
+        c4b9ba5 com.amazon.device.messaging/.MessageProcessingSchedulerService filter c089073
+          Action: "com.amazon.dcp.messaging.action.SETUP_SCHEDULER"
+          Action: "com.amazon.dcp.messaging.action.REFRESH_SCHEDULER"
+          Action: "com.amazon.dcp.messaging.action.CONNECTIVITY_CHANGE"
+      com.amazon.messaging.action.HANDLE_PERIODIC_CHECK:
+        e1e0e89 com.amazon.device.messaging/.SPHService filter 90a83a9
+          Action: "com.amazon.dcp.messaging.topic.V1.SET.SPHS"
+          Action: "com.amazon.dcp.messaging.topic.V1.DOWNLOAD.SPHS"
+          Action: "com.amazon.dcp.messaging.action.HANDLE_SPH_SCHEDULE"
+          Action: "com.amaozn.dcp.messaging.action.HANDLE_SPH_PHONE_HOME"
+          Action: "com.amazon.messaging.action.HANDLE_PERIODIC_CHECK"
+
+Permissions:
+  Permission [com.amazon.device.environment.permission.SWITCH_STAGE] (d3a7d13):
+    sourcePackage=com.amazon.device.messaging
+    uid=10071 gids=null type=0 prot=signature|privileged
+    perm=Permission{3b53b50 com.amazon.device.environment.permission.SWITCH_STAGE}
+    packageSetting=PackageSetting{c1cd149 com.amazon.device.messaging/10071}
+
+Permissions:
+  Permission [com.amazon.device.messaging.permission.CLOUD_MESSAGING] (979dae):
+    sourcePackage=com.amazon.device.messaging
+    uid=10071 gids=null type=0 prot=signature|privileged
+    perm=Permission{52d574f com.amazon.device.messaging.permission.CLOUD_MESSAGING}
+    packageSetting=PackageSetting{c1cd149 com.amazon.device.messaging/10071}
+
+Registered ContentProviders:
+  com.amazon.device.messaging/.MessagingComponentDebugStateProvider:
+    Provider{7182603 com.amazon.device.messaging/.MessagingComponentDebugStateProvider}
+  com.amazon.device.messaging/.ADMRegistrationProvider:
+    Provider{bc937c2 com.amazon.device.messaging/.ADMRegistrationProvider}
+  com.amazon.device.messaging/.PriorityMessageThrottlingProvider:
+    Provider{4220392 com.amazon.device.messaging/.PriorityMessageThrottlingProvider}
+  com.amazon.device.messaging/.test.ADMEnqueuerProvider:
+    Provider{97d73a8 com.amazon.device.messaging/.test.ADMEnqueuerProvider}
+  com.amazon.device.messaging/.MessageDispatcherService$MessageDispatcherProvider:
+    Provider{42adac8 com.amazon.device.messaging/.MessageDispatcherService$MessageDispatcherProvider}
+
+ContentProvider Authorities:
+  [com.amazon.device.messaging.registrations]:
+    Provider{bc937c2 com.amazon.device.messaging/.ADMRegistrationProvider}
+      applicationInfo=ApplicationInfo{afac546 com.amazon.device.messaging}
+  [com.amazon.device.messaging.priority.throttling]:
+    Provider{4220392 com.amazon.device.messaging/.PriorityMessageThrottlingProvider}
+      applicationInfo=ApplicationInfo{afac546 com.amazon.device.messaging}
+  [com.amazon.device.messaging.enqueuer]:
+    Provider{97d73a8 com.amazon.device.messaging/.test.ADMEnqueuerProvider}
+      applicationInfo=ApplicationInfo{afac546 com.amazon.device.messaging}
+  [com.amazon.dcp.messaging.dispatcher.internal.v2]:
+    Provider{42adac8 com.amazon.device.messaging/.MessageDispatcherService$MessageDispatcherProvider}
+      applicationInfo=ApplicationInfo{afac546 com.amazon.device.messaging}
+  [com.amazon.device.messaging.ComponentState.v2]:
+    Provider{7182603 com.amazon.device.messaging/.MessagingComponentDebugStateProvider}
+      applicationInfo=ApplicationInfo{afac546 com.amazon.device.messaging}
+
+Key Set Manager:
+  [com.amazon.device.messaging]
+      Signing KeySets: 2
+
+Packages:
+  Package [com.amazon.device.messaging] (c1cd149):
+    userId=10071
+    pkg=Package{6bbaf13 com.amazon.device.messaging}
+    codePath=/system/priv-app/DeviceMessagingAndroid
+    resourcePath=/system/priv-app/DeviceMessagingAndroid
+    legacyNativeLibraryDir=/system/priv-app/DeviceMessagingAndroid/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=2381710 minSdk=22 targetSdk=28
+    versionName=6.2.1052.0-fosJackson19_2381710
+    splits=[base]
+    apkSigningVersion=1
+    applicationInfo=ApplicationInfo{afac546 com.amazon.device.messaging}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION DIRECT_BOOT_AWARE PARTIALLY_DIRECT_BOOT_AWARE PRIVILEGED ]
+    dataDir=/data/user/0/com.amazon.device.messaging
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      com.fireos.sdk.messaging
+      com.fireos.sdk.adm
+      com.fireos.sdk.mapclientlib
+      com.fireos.sdk.tcomm
+      com.fireos.sdk.ota_contracts
+      com.fireos.sdk.minerva
+      com.fireos.sdk.jackson
+    usesOptionalLibraries:
+      com.fireos.sdk.metrics
+      org.apache.http.legacy
+      com.amazon.dp.logger
+    usesLibraryFiles:
+      /system/priv-app/DeviceMessagingAndroidInternalSDK/DeviceMessagingAndroidInternalSDK.apk
+      /system/priv-app/DeviceMessagingAndroidSDK/DeviceMessagingAndroidSDK.apk
+      /system/framework/com.amazon.identity.auth.device.jar
+      /system/priv-app/com.amazon.communication/com.amazon.communication.apk
+      /system/priv-app/DeviceSoftwareOTAContracts/DeviceSoftwareOTAContracts.apk
+      /system/priv-app/MinervaApi/MinervaApi.apk
+      /system/priv-app/amazon.jackson-19/amazon.jackson-19.apk
+      /system/priv-app/MetricsApi/MetricsApi.apk
+      /system/framework/org.apache.http.legacy.boot.jar
+      /system/priv-app/com.amazon.dp.logger/com.amazon.dp.logger.apk
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{8f38550 version:1, signatures:[e627f73a], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    declared permissions:
+      com.amazon.dcp.messaging.permission.QUEUE_MESSAGE: prot=signature|privileged
+      com.amazon.dcp.messaging.permission.INITIATE_DEVICE_MESSAGING: prot=signature|privileged
+      com.amazon.dcp.messaging.permission.HANDLE_DEVICE_MESSAGE: prot=signature|privileged
+      com.amazon.dcp.messaging.permission.INITIATE_HANDLE_DEVICE_MESSAGE: prot=signature|privileged
+      com.amazon.device.messaging.permission.MODIFY_REGISTRATIONS: prot=signature
+      com.amazon.device.messaging.permission.SEND: prot=signature
+      com.amazon.device.messaging.permission.RECEIVE: prot=normal
+      com.amazon.device.messaging.permission.MONITOR_MESSAGE_CHECKING: prot=signature|privileged
+      com.amazon.device.messaging.permission.CLOUD_MESSAGING: prot=signature|privileged, INSTALLED
+      com.amazon.device.messaging.permission.RECEIVE_ADM_MESSAGE: prot=signature
+      com.amazon.device.environment.permission.SWITCH_STAGE: prot=signature|privileged, INSTALLED
+    requested permissions:
+      com.amazon.device.messaging.permission.MODIFY_REGISTRATIONS
+      com.amazon.device.messaging.permission.RECEIVE_ADM_MESSAGE
+      com.google.android.c2dm.permission.SEND
+      android.permission.RECEIVE_BOOT_COMPLETED
+      com.amazon.permission.ESPRESSO_SHOT_PERMISSION
+      android.permission.INTERNET
+      android.permission.ACCESS_WIFI_STATE
+      com.amazon.dcp.ota.permission.QUERY_PENDING_UPDATES
+      android.permission.WAKE_LOCK
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.MANAGE_USERS
+      com.amazon.dcp.messaging.permission.QUEUE_MESSAGE
+      com.amazon.dcp.messaging.permission.INITIATE_HANDLE_DEVICE_MESSAGE
+      com.amazon.dcp.messaging.permission.INITIATE_DEVICE_MESSAGING
+      com.amazon.dcp.messaging.permission.HANDLE_DEVICE_MESSAGE
+      com.amazon.device.messaging.permission.SEND
+      com.amazon.device.messaging.permission.RECEIVE
+      com.amazon.permission.AMAZON_WIFI_MANAGER
+      amazon.permission.USE_TCOMM
+      com.amazon.identity.auth.device.perm.CREDENTIAL_MANAGER_SDK
+      com.amazon.dcp.permission.USE_PERSISTENCE_HELPER
+      android.permission.GET_ACCOUNTS
+      android.permission.USE_CREDENTIALS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.AUTHENTICATE_ACCOUNTS
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS
+      com.amazon.dcp.sso.permission.account.changed
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER
+      com.amazon.identity.permission.GENERIC_IPC
+      com.amazon.identity.auth.device.perm.AUTH_SDK
+      amazon.permission.COLLECT_METRICS
+      com.amazon.device.environment.permission.SWITCH_STAGE
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST
+      android.permission.PACKAGE_USAGE_STATS
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.CHANGE_WIFI_MULTICAST_STATE
+      android.permission.KILL_BACKGROUND_PROCESSES
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+    install permissions:
+      com.amazon.dcp.ota.permission.QUERY_PENDING_UPDATES: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.amazon.device.environment.permission.SWITCH_STAGE: granted=true
+      com.amazon.dcp.messaging.permission.HANDLE_DEVICE_MESSAGE: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      com.amazon.device.messaging.permission.MODIFY_REGISTRATIONS: granted=true
+      com.amazon.permission.AMAZON_WIFI_MANAGER: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM: granted=true
+      android.permission.CHANGE_WIFI_MULTICAST_STATE: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      com.amazon.device.messaging.permission.RECEIVE: granted=true
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED: granted=true
+      com.google.android.c2dm.permission.SEND: granted=true
+      com.amazon.device.messaging.permission.SEND: granted=true
+      android.permission.PACKAGE_USAGE_STATS: granted=true
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      com.amazon.dcp.sso.permission.account.changed: granted=true
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      com.amazon.identity.auth.device.perm.AUTH_SDK: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.KILL_BACKGROUND_PROCESSES: granted=true
+      com.amazon.dcp.messaging.permission.INITIATE_DEVICE_MESSAGING: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      com.amazon.permission.ESPRESSO_SHOT_PERMISSION: granted=true
+      com.amazon.identity.auth.device.perm.CREDENTIAL_MANAGER_SDK: granted=true
+      com.amazon.dcp.messaging.permission.INITIATE_HANDLE_DEVICE_MESSAGE: granted=true
+      com.amazon.dcp.permission.USE_PERSISTENCE_HELPER: granted=true
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: granted=true
+      com.amazon.dcp.messaging.permission.QUEUE_MESSAGE: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+      amazon.permission.USE_TCOMM: granted=true
+      com.amazon.device.messaging.permission.RECEIVE_ADM_MESSAGE: granted=true
+    User 0: ceDataInode=852362 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[3003]
+      runtime permissions:
+        android.permission.GET_ACCOUNTS: granted=true
+      disabledComponents:
+        com.amazon.device.messaging.EspressoShotBootService$EspressoShotBootReceiver
+
+Package Changes:
+  Sequence number=5
+  User 0:
+    seq=0, package=org.fireosresearch.home.p100
+    seq=4, package=com.google.android.gms
+
+
+Dexopt state:
+  [com.amazon.device.messaging]
+    path: /system/priv-app/DeviceMessagingAndroid/DeviceMessagingAndroid.apk
+      arm64: [status=verify] [reason=boot]
+
+
+Compiler stats:
+  [com.amazon.device.messaging]
+     DeviceMessagingAndroid.apk - 643

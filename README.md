@@ -185,3 +185,46 @@ Phase 2 located the protected-package gate and separated the AOSP base behavior 
 - `set-home-activity` can write a preferred record but did not change the effective HOME result in the preserved PS7330.4104N test.
 
 See `findings/phase-2-report.md`, `findings/evidence-index-phase2.md`, and `PUBLIC_REPOSITORY_SCOPE.md` for the evidence boundary of the public copy.
+
+## Phase 3B: HOME selection control layer
+
+Phase 3B is based on public commit `64a52ee` and does not repeat the Phase 3A
+priority, `set-home-activity`, or five-APK experiments. The canonical device
+baseline is `adb/phase3b/PHASE3B-BASELINE-20260803-02`; the clean path samples
+are `HOME-PATH-EXPLICIT-02` and `HOME-PATH-KEYEVENT-02`. The earlier parallel
+pilot samples remain archived but are not treated as independent evidence.
+`PHASE3B-BASELINE-20260803-01` is also retained as a superseded pilot; all
+conclusions use `-02`.
+
+The Phase 3B tool inventory is recorded in `tools/tool_versions.phase3b.txt`.
+Generate the Phase 3B derived reports offline:
+
+```sh
+python3 tools/scripts/analyze_phase3b.py --root . --force
+```
+
+The generator does not invoke ADB or write to a device. It produces:
+
+- `findings/phase-3b-report.md`
+- `findings/phase-3b-evidence-index.md`
+- `findings/home-resolution-call-path.md`
+- `findings/phase-3b-home-resolver-method-analysis.md`
+- `findings/fire-launcher-privilege-matrix.csv` (machine-readable copy under `output/tables/`)
+- `findings/aosp-vs-fireos-home-diff.md`
+- `findings/framework-static-analysis.md`
+- `findings/overlay-and-config-analysis.md`
+- `findings/preferred-record-decision-tree.md`
+- `output/call-graphs/home-resolution-phase3b.mmd`
+- `output/call-graphs/home-resolver-method-flow-phase3b.mmd`
+
+The Phase 3B result is intentionally bounded: Fire's effective priority 50
+beats the priority-0 Microsoft candidate through an AOSP-shaped resolver
+decision, while Amazon adds real ActivityStackSupervisor and Home-key callback
+boundaries. The preserved data does not prove that a callback returns Fire, that
+a persistent preferred HOME record is active, or that a background watchdog
+rewrites the preferred record.
+
+Phase 3B device collection is read-only except for clearing logcat buffers and
+bringing the foreground to HOME for path observation. It does not disable Fire
+Launcher, clear its data, modify settings/overlays/partitions, reboot, root, or
+flash the device.

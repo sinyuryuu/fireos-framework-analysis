@@ -9,6 +9,12 @@ The local workspace is approximately 11 GB. GitHub’s normal Git transport reje
 - pulled APK/JAR/ODEX/VDEX/Dex/native binaries;
 - generated multi-megabyte method/class indexes and redundant diff tables.
 
+The Phase 3B public commit additionally includes the preserved raw command
+outputs and logcat under `adb/phase3b/`, the canonical device snapshots under
+`device/baseline/PHASE3B-*`, and the artifact pull manifests under
+`firmware/manifests/PHASE3B-*`. Pulled APK/JAR/VDEX bytes remain ignored; only
+their hashes and source manifests are public.
+
 No GitHub token, private key, or local credential is part of the repository. Public files retain the research package names, device-derived observations, report paths, and evidence hashes needed to audit the analysis. Excluded artifacts remain in the local workspace and are referenced by reports where their hashes are available.
 
 The public repository is not a replacement for the immutable local evidence archive. Raw evidence should be distributed only after reviewing device identifiers, licensing, and applicable firmware/APK redistribution terms.

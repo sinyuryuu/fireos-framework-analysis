@@ -1,0 +1,583 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      com.android.settings.action.EXTRA_SETTINGS:
+        7d2f1e com.android.systemui/.tuner.TunerActivity filter 49b8b31
+          Action: "com.android.settings.action.EXTRA_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+      com.android.systemui.recents.TOGGLE_RECENTS:
+        2caca2c com.android.systemui/.recents.RecentsActivity filter 65a797
+          Action: "com.android.systemui.recents.TOGGLE_RECENTS"
+      android.intent.action.MAIN:
+        c74067 com.android.systemui/.DessertCase filter feca96d
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.DEFAULT"
+        11ffe14 com.android.systemui/.egg.MLandActivity filter ab189a2
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.DEFAULT"
+        18176bd com.android.systemui/.Somnambulator filter ffcfdf0
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.DESK_DOCK"
+      com.android.intent.action.SHOW_BRIGHTNESS_DIALOG:
+        3e45e7c com.android.systemui/.settings.BrightnessDialog filter bb76f69
+          Action: "com.android.intent.action.SHOW_BRIGHTNESS_DIALOG"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.VOICE"
+      com.android.settings.action.DEMO_MODE:
+        5a3fa81 com.android.systemui/.DemoMode filter 3896216
+          Action: "com.android.settings.action.DEMO_MODE"
+          Category: "android.intent.category.DEFAULT"
+      android.settings.FOREGROUND_SERVICES_SETTINGS:
+        cce1a80 com.android.systemui/.ForegroundServicesDialog filter 5429dee
+          Action: "android.settings.FOREGROUND_SERVICES_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=1, mOrder=0, mHasPartialTypes=false
+      com.android.intent.action.REQUEST_SLICE_PERMISSION:
+        1ce6e23 com.android.systemui/.SlicePermissionActivity filter a228d84
+          Action: "com.android.intent.action.REQUEST_SLICE_PERMISSION"
+      android.app.action.CONFIRM_DEVICE_CREDENTIAL_WITH_USER:
+        1b31c74 com.android.systemui/.keyguard.WorkLockActivity filter ad32633
+          Action: "android.app.action.CONFIRM_DEVICE_CREDENTIAL_WITH_USER"
+          Category: "android.intent.category.DEFAULT"
+
+Receiver Resolver Table:
+  Schemes:
+      package:
+        f371dc9 com.android.systemui/.SysuiRestartReceiver filter 66518b5
+          Action: "com.android.systemui.action.RESTART"
+          Scheme: "package"
+
+  Non-Data Actions:
+      com.android.intent.action.DISMISS_KEYBOARD_SHORTCUTS:
+        b0508f3 com.android.systemui/.statusbar.KeyboardShortcutsReceiver filter ba1abb
+          Action: "com.android.intent.action.DISMISS_KEYBOARD_SHORTCUTS"
+          Action: "com.android.intent.action.SHOW_KEYBOARD_SHORTCUTS"
+      com.android.systemui.screenshot.SHOW_ERROR:
+        89681b8 com.android.systemui/.screenshot.ScreenshotServiceErrorReceiver filter d58cec
+          Action: "com.android.systemui.screenshot.SHOW_ERROR"
+      com.android.intent.action.SHOW_KEYBOARD_SHORTCUTS:
+        b0508f3 com.android.systemui/.statusbar.KeyboardShortcutsReceiver filter ba1abb
+          Action: "com.android.intent.action.DISMISS_KEYBOARD_SHORTCUTS"
+          Action: "com.android.intent.action.SHOW_KEYBOARD_SHORTCUTS"
+      android.intent.action.BOOT_COMPLETED:
+        9ae2765 com.android.systemui/com.amazon.systemui.bootup.AmazonBootUpReceiver filter b048bd8
+          Action: "android.intent.action.BOOT_COMPLETED"
+          Category: "android.intent.category.DEFAULT"
+      com.android.systemui.action.CLEAR_TUNER:
+        d5d3704 com.android.systemui/.tuner.TunerService$ClearReceiver filter 790db4a
+          Action: "com.android.systemui.action.CLEAR_TUNER"
+
+Service Resolver Table:
+  Non-Data Actions:
+      android.service.dreams.DreamService:
+        f7c62f9 com.android.systemui/.DessertCaseDream filter 7a0e39f permission android.permission.BIND_DREAM_SERVICE
+          Action: "android.service.dreams.DreamService"
+          Category: "android.intent.category.DEFAULT"
+
+Permissions:
+  Permission [android.permission.systemui.IDENTITY] (f53f913):
+    sourcePackage=com.android.systemui
+    uid=10036 gids=null type=0 prot=signature
+    perm=Permission{4570750 android.permission.systemui.IDENTITY}
+    packageSetting=PackageSetting{934bb6b com.android.systemui/10036}
+
+Permissions:
+  Permission [com.android.systemui.permission.SELF] (21cbd67):
+    sourcePackage=com.android.systemui
+    uid=10036 gids=null type=0 prot=signature
+    perm=Permission{c9c3714 com.android.systemui.permission.SELF}
+    packageSetting=PackageSetting{934bb6b com.android.systemui/10036}
+
+Permissions:
+  Permission [com.android.systemui.permission.PLUGIN] (413202e):
+    sourcePackage=com.android.systemui
+    uid=10036 gids=null type=0 prot=signature
+    perm=Permission{186e7cf com.android.systemui.permission.PLUGIN}
+    packageSetting=PackageSetting{934bb6b com.android.systemui/10036}
+
+Registered ContentProviders:
+  com.android.systemui/.keyguard.KeyguardSliceProvider:
+    Provider{c52f5f0 com.android.systemui/.keyguard.KeyguardSliceProvider}
+  com.android.systemui/android.support.v4.content.FileProvider:
+    Provider{cbcb764 com.android.systemui/android.support.v4.content.FileProvider}
+
+ContentProvider Authorities:
+  [com.android.systemui.fileprovider]:
+    Provider{cbcb764 com.android.systemui/android.support.v4.content.FileProvider}
+      applicationInfo=ApplicationInfo{9666565 com.android.systemui}
+  [com.android.systemui.keyguard]:
+    Provider{c52f5f0 com.android.systemui/.keyguard.KeyguardSliceProvider}
+      applicationInfo=ApplicationInfo{9666565 com.android.systemui}
+
+Key Set Manager:
+  [com.android.systemui]
+      Signing KeySets: 1
+
+Packages:
+  Package [com.android.systemui] (934bb6b):
+    userId=10036
+    sharedUser=SharedUserSetting{53786f android.uid.systemui/10036}
+    pkg=Package{716497c com.android.systemui}
+    codePath=/system/priv-app/TabletSystemUI
+    resourcePath=/system/priv-app/TabletSystemUI
+    legacyNativeLibraryDir=/system/priv-app/TabletSystemUI/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=28 minSdk=28 targetSdk=28
+    versionName=9
+    splits=[base]
+    apkSigningVersion=3
+    applicationInfo=ApplicationInfo{9666565 com.android.systemui}
+    flags=[ SYSTEM HAS_CODE PERSISTENT ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION DEFAULT_TO_DEVICE_PROTECTED_STORAGE DIRECT_BOOT_AWARE PRIVILEGED ]
+    dataDir=/data/user_de/0/com.android.systemui
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      com.fireos.sdk.h2contracts
+      com.fireos.sdk.h2shared
+      com.fireos.sdk.metrics
+      com.fireos.sdk.retaildemo
+      com.fireos.sdk.mapclientlib
+      com.fireos.sdk.usearchmanager
+    usesLibraryFiles:
+      /system/framework/com.amazon.h2contracts.jar
+      /system/framework/com.amazon.h2shared.jar
+      /system/priv-app/MetricsApi/MetricsApi.apk
+      /system/framework/retaildemoapi.jar
+      /system/framework/com.amazon.identity.auth.device.jar
+      /system/framework/com.amazon.device.search.jar
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{c94205 version:3, signatures:[abe86ff5], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE PERSISTENT ]
+    declared permissions:
+      android.permission.systemui.IDENTITY: prot=signature, INSTALLED
+      com.android.systemui.permission.SELF: prot=signature, INSTALLED
+      com.android.systemui.permission.PLUGIN: prot=signature, INSTALLED
+    requested permissions:
+      android.permission.GET_TASKS
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.WRITE_MEDIA_STORAGE
+      android.permission.WAKE_LOCK
+      android.permission.INJECT_EVENTS
+      android.permission.DUMP
+      android.permission.WRITE_SETTINGS
+      android.permission.STATUS_BAR_SERVICE
+      android.permission.STATUS_BAR
+      android.permission.EXPAND_STATUS_BAR
+      android.permission.REMOTE_AUDIO_PLAYBACK
+      android.permission.MANAGE_USERS
+      android.permission.READ_PROFILE
+      android.permission.READ_CONTACTS
+      android.permission.CONFIGURE_WIFI_DISPLAY
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.GET_APP_OPS_STATS
+      android.permission.USE_RESERVED_DISK
+      android.permission.BLUETOOTH
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.BLUETOOTH_PRIVILEGED
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.OVERRIDE_WIFI_CONFIG
+      android.permission.MANAGE_NETWORK_POLICY
+      android.permission.CONNECTIVITY_INTERNAL
+      android.permission.NETWORK_SETTINGS
+      android.permission.TETHER_PRIVILEGED
+      android.permission.READ_NETWORK_USAGE_HISTORY
+      android.permission.REQUEST_NETWORK_SCORES
+      android.permission.CONTROL_VPN
+      android.permission.PEERS_MAC_ADDRESS
+      android.permission.MANAGE_USB
+      android.permission.CONTROL_DISPLAY_BRIGHTNESS
+      android.permission.DEVICE_POWER
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+      android.permission.MASTER_CLEAR
+      android.permission.VIBRATE
+      android.permission.REAL_GET_TASKS
+      android.permission.GET_DETAILED_TASKS
+      android.permission.REORDER_TASKS
+      android.permission.REMOVE_TASKS
+      android.permission.STOP_APP_SWITCHES
+      android.permission.SET_SCREEN_COMPATIBILITY
+      android.permission.START_ANY_ACTIVITY
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.GET_TOP_ACTIVITY_INFO
+      android.permission.MANAGE_ACTIVITY_STACKS
+      android.permission.START_TASKS_FROM_RECENTS
+      android.permission.GET_INTENT_SENDER_INTENT
+      android.permission.INTERNAL_SYSTEM_WINDOW
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.READ_FRAME_BUFFER
+      android.permission.MANAGE_APP_TOKENS
+      android.permission.REGISTER_WINDOW_MANAGER_LISTENERS
+      android.permission.SET_ORIENTATION
+      android.permission.DISABLE_KEYGUARD
+      android.permission.READ_DREAM_STATE
+      android.permission.WRITE_DREAM_STATE
+      com.android.alarm.permission.SET_ALARM
+      android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS
+      android.permission.CONTROL_KEYGUARD
+      android.permission.MODIFY_PHONE_STATE
+      android.permission.GET_ACCOUNTS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.BIND_DEVICE_ADMIN
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE
+      android.permission.MEDIA_CONTENT_CONTROL
+      android.permission.ACCESS_KEYGUARD_SECURE_STORAGE
+      android.permission.TRUST_LISTENER
+      android.permission.USE_FINGERPRINT
+      android.permission.RESET_FINGERPRINT_LOCKOUT
+      android.permission.MANAGE_SLICE_PERMISSIONS
+      com.amazon.permission.RESET_PASSWORD
+      android.permission.SET_WALLPAPER
+      android.permission.BIND_APPWIDGET
+      android.permission.CAMERA
+      android.permission.MANAGE_MEDIA_PROJECTION
+      android.permission.ACCESS_VOICE_INTERACTION_SERVICE
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST
+      android.permission.TABLET_MODE
+      com.android.systemui.permission.SELF
+      android.permission.BIND_QUICK_SETTINGS_TILE
+      android.permission.UPDATE_APP_OPS_STATS
+      android.permission.BATTERY_STATS
+      android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS
+      android.permission.RECEIVE_MEDIA_RESOURCE_USAGE
+      android.permission.MANAGE_NOTIFICATIONS
+      android.permission.ACCESS_VR_MANAGER
+      android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME
+      android.permission.RESET_SHORTCUT_MANAGER_THROTTLING
+      android.permission.MODIFY_THEME_OVERLAY
+      android.permission.MODIFY_ACCESSIBILITY_DATA
+      android.permission.CHANGE_ACCESSIBILITY_VOLUME
+      android.permission.BIND_RESOLVER_RANKER_SERVICE
+      android.permission.ACCESS_INSTANT_APPS
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS
+      android.permission.CHANGE_OVERLAY_PACKAGES
+      android.permission.WATCH_APPOPS
+      android.car.permission.CONTROL_CAR_CLIMATE
+      android.car.permission.CAR_CONTROL_AUDIO_VOLUME
+      android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS
+      android.permission.SET_WALLPAPER_COMPONENT
+      android.permission.BIND_WALLPAPER
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS
+      com.amazon.dcp.sso.permission.MANAGE_DEVICE_AND_USER_DATA
+      com.amazon.dcp.sso.permission.EXPIRE_ACCESS_TOKEN
+      com.amazon.dcp.sso.permission.MULTIPLE_PROFILE_AWARE
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM
+      com.amazon.identity.permission.GENERIC_IPC
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER
+      com.amazon.identity.auth.device.perm.AUTH_SDK
+      amazon.permission.COLLECT_METRICS
+      com.amazon.dcp.sso.permission.account.changed
+      com.amazon.permission.READ_MARKETPLACE
+      com.amazon.permission.RECEIVE_MOONLIGHT_UPDATES
+      com.amazon.permission.LOCK_SCREEN_SERVICE
+      com.amazon.alta.h2clientservice.permission.BIND_SERVICE
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER
+      amazon.speech.permission.CONNECT_WITH_SIM
+      android.permission.ACCESS_FINE_LOCATION
+      com.amazon.alexa.permission.MODE_SWITCH
+      amazon.speech.permission.QUERY_TRUSTED_WIFI
+      com.amazon.gloria.smarthome.permission.CAN_LAUNCH_SMARTHOME
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION
+      com.amazon.logan.permission.USE_ACCESSIBILITY_SERVICES
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.REMOTE_AUDIO_PLAYBACK: granted=true
+      android.permission.REGISTER_WINDOW_MANAGER_LISTENERS: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.CONTROL_KEYGUARD: granted=true
+      android.permission.CONFIGURE_WIFI_DISPLAY: granted=true
+      android.permission.TABLET_MODE: granted=true
+      android.permission.BIND_DEVICE_ADMIN: granted=true
+      android.permission.GET_APP_OPS_STATS: granted=true
+      com.amazon.permission.RECEIVE_MOONLIGHT_UPDATES: granted=true
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION: granted=true
+      android.permission.USE_RESERVED_DISK: granted=true
+      com.amazon.alexa.permission.MODE_SWITCH: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      android.permission.START_TASKS_FROM_RECENTS: granted=true
+      android.permission.GET_TOP_ACTIVITY_INFO: granted=true
+      amazon.speech.permission.QUERY_TRUSTED_WIFI: granted=true
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE: granted=true
+      android.permission.BIND_QUICK_SETTINGS_TILE: granted=true
+      android.permission.INTERNAL_SYSTEM_WINDOW: granted=true
+      android.permission.NETWORK_SETTINGS: granted=true
+      android.permission.CHANGE_OVERLAY_PACKAGES: granted=true
+      android.permission.BIND_WALLPAPER: granted=true
+      android.permission.START_ANY_ACTIVITY: granted=true
+      android.permission.MANAGE_APP_TOKENS: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.MASTER_CLEAR: granted=true
+      amazon.speech.permission.CONNECT_WITH_SIM: granted=true
+      android.permission.RESET_SHORTCUT_MANAGER_THROTTLING: granted=true
+      android.permission.RESET_FINGERPRINT_LOCKOUT: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.amazon.permission.RESET_PASSWORD: granted=true
+      android.permission.PEERS_MAC_ADDRESS: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM: granted=true
+      android.permission.DEVICE_POWER: granted=true
+      android.permission.REMOVE_TASKS: granted=true
+      android.permission.EXPAND_STATUS_BAR: granted=true
+      android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS: granted=true
+      android.permission.READ_PROFILE: granted=true
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER: granted=true
+      android.permission.BLUETOOTH: granted=true
+      com.android.alarm.permission.SET_ALARM: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      android.permission.WATCH_APPOPS: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.BIND_RESOLVER_RANKER_SERVICE: granted=true
+      com.amazon.dcp.sso.permission.EXPIRE_ACCESS_TOKEN: granted=true
+      android.permission.REORDER_TASKS: granted=true
+      android.permission.GET_INTENT_SENDER_INTENT: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.CONTROL_VPN: granted=true
+      android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS: granted=true
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED: granted=true
+      android.permission.ACCESS_INSTANT_APPS: granted=true
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS: granted=true
+      android.permission.MODIFY_THEME_OVERLAY: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_DEVICE_AND_USER_DATA: granted=true
+      android.permission.TRUST_LISTENER: granted=true
+      android.permission.MANAGE_USB: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.CHANGE_ACCESSIBILITY_VOLUME: granted=true
+      android.permission.BIND_APPWIDGET: granted=true
+      android.permission.STOP_APP_SWITCHES: granted=true
+      android.permission.RECEIVE_MEDIA_RESOURCE_USAGE: granted=true
+      android.permission.BATTERY_STATS: granted=true
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS: granted=true
+      android.permission.TETHER_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.amazon.permission.READ_MARKETPLACE: granted=true
+      android.permission.STATUS_BAR_SERVICE: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.BLUETOOTH_PRIVILEGED: granted=true
+      com.amazon.dcp.sso.permission.account.changed: granted=true
+      android.permission.CONTROL_DISPLAY_BRIGHTNESS: granted=true
+      android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME: granted=true
+      android.permission.ACCESS_KEYGUARD_SECURE_STORAGE: granted=true
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.SET_ORIENTATION: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.SET_WALLPAPER_COMPONENT: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      com.amazon.identity.auth.device.perm.AUTH_SDK: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.SET_WALLPAPER: granted=true
+      android.permission.READ_DREAM_STATE: granted=true
+      android.permission.READ_NETWORK_USAGE_HISTORY: granted=true
+      android.permission.USE_FINGERPRINT: granted=true
+      android.permission.REQUEST_NETWORK_SCORES: granted=true
+      android.permission.ACCESS_VOICE_INTERACTION_SERVICE: granted=true
+      com.amazon.permission.LOCK_SCREEN_SERVICE: granted=true
+      android.permission.WRITE_DREAM_STATE: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      android.permission.MANAGE_NETWORK_POLICY: granted=true
+      android.permission.MANAGE_NOTIFICATIONS: granted=true
+      com.android.systemui.permission.SELF: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      android.permission.MANAGE_MEDIA_PROJECTION: granted=true
+      android.permission.OVERRIDE_WIFI_CONFIG: granted=true
+      android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.MODIFY_ACCESSIBILITY_DATA: granted=true
+      android.permission.MANAGE_ACTIVITY_STACKS: granted=true
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST: granted=true
+      android.permission.MANAGE_SLICE_PERMISSIONS: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.GET_DETAILED_TASKS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.amazon.alta.h2clientservice.permission.BIND_SERVICE: granted=true
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: granted=true
+      android.permission.MODIFY_PHONE_STATE: granted=true
+      android.permission.ACCESS_VR_MANAGER: granted=true
+      android.permission.STATUS_BAR: granted=true
+      android.permission.READ_FRAME_BUFFER: granted=true
+      android.permission.DUMP: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      com.amazon.logan.permission.USE_ACCESSIBILITY_SERVICES: granted=true
+      android.permission.INJECT_EVENTS: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+      com.amazon.gloria.smarthome.permission.CAN_LAUNCH_SMARTHOME: granted=true
+      android.permission.UPDATE_APP_OPS_STATS: granted=true
+      android.permission.SET_SCREEN_COMPATIBILITY: granted=true
+      android.permission.MEDIA_CONTENT_CONTROL: granted=true
+    User 0: ceDataInode=852087 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      disabledComponents:
+        com.android.systemui.tuner.TunerActivity
+
+Shared users:
+  SharedUser [android.uid.systemui] (53786f):
+    userId=10036
+    install permissions:
+      android.permission.REAL_GET_TASKS: granted=true
+      android.permission.REMOTE_AUDIO_PLAYBACK: granted=true
+      android.permission.REGISTER_WINDOW_MANAGER_LISTENERS: granted=true
+      android.permission.WRITE_SETTINGS: granted=true
+      android.permission.CONTROL_KEYGUARD: granted=true
+      android.permission.CONFIGURE_WIFI_DISPLAY: granted=true
+      android.permission.TABLET_MODE: granted=true
+      android.permission.BIND_DEVICE_ADMIN: granted=true
+      android.permission.GET_APP_OPS_STATS: granted=true
+      com.amazon.permission.RECEIVE_MOONLIGHT_UPDATES: granted=true
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION: granted=true
+      android.permission.USE_RESERVED_DISK: granted=true
+      com.amazon.alexa.permission.MODE_SWITCH: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      android.permission.START_TASKS_FROM_RECENTS: granted=true
+      android.permission.GET_TOP_ACTIVITY_INFO: granted=true
+      amazon.speech.permission.QUERY_TRUSTED_WIFI: granted=true
+      android.permission.CHANGE_COMPONENT_ENABLED_STATE: granted=true
+      android.permission.BIND_QUICK_SETTINGS_TILE: granted=true
+      android.permission.INTERNAL_SYSTEM_WINDOW: granted=true
+      android.permission.NETWORK_SETTINGS: granted=true
+      android.permission.CHANGE_OVERLAY_PACKAGES: granted=true
+      android.permission.BIND_WALLPAPER: granted=true
+      android.permission.START_ANY_ACTIVITY: granted=true
+      android.permission.MANAGE_APP_TOKENS: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      android.permission.MASTER_CLEAR: granted=true
+      amazon.speech.permission.CONNECT_WITH_SIM: granted=true
+      android.permission.RESET_SHORTCUT_MANAGER_THROTTLING: granted=true
+      android.permission.RESET_FINGERPRINT_LOCKOUT: granted=true
+      android.permission.RECEIVE_BOOT_COMPLETED: granted=true
+      com.amazon.permission.RESET_PASSWORD: granted=true
+      android.permission.PEERS_MAC_ADDRESS: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM: granted=true
+      android.permission.DEVICE_POWER: granted=true
+      android.permission.REMOVE_TASKS: granted=true
+      android.permission.EXPAND_STATUS_BAR: granted=true
+      android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS: granted=true
+      android.permission.READ_PROFILE: granted=true
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER: granted=true
+      android.permission.BLUETOOTH: granted=true
+      com.android.alarm.permission.SET_ALARM: granted=true
+      android.permission.WRITE_MEDIA_STORAGE: granted=true
+      android.permission.WATCH_APPOPS: granted=true
+      android.permission.GET_TASKS: granted=true
+      android.permission.BIND_RESOLVER_RANKER_SERVICE: granted=true
+      com.amazon.dcp.sso.permission.EXPIRE_ACCESS_TOKEN: granted=true
+      android.permission.REORDER_TASKS: granted=true
+      android.permission.GET_INTENT_SENDER_INTENT: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      android.permission.CONTROL_VPN: granted=true
+      android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS: granted=true
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED: granted=true
+      android.permission.ACCESS_INSTANT_APPS: granted=true
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS: granted=true
+      android.permission.MODIFY_THEME_OVERLAY: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_DEVICE_AND_USER_DATA: granted=true
+      android.permission.TRUST_LISTENER: granted=true
+      android.permission.MANAGE_USB: granted=true
+      android.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.CHANGE_ACCESSIBILITY_VOLUME: granted=true
+      android.permission.BIND_APPWIDGET: granted=true
+      android.permission.STOP_APP_SWITCHES: granted=true
+      android.permission.RECEIVE_MEDIA_RESOURCE_USAGE: granted=true
+      android.permission.BATTERY_STATS: granted=true
+      android.permission.MOUNT_UNMOUNT_FILESYSTEMS: granted=true
+      android.permission.TETHER_PRIVILEGED: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.amazon.permission.READ_MARKETPLACE: granted=true
+      android.permission.STATUS_BAR_SERVICE: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.BLUETOOTH_PRIVILEGED: granted=true
+      com.amazon.dcp.sso.permission.account.changed: granted=true
+      android.permission.CONTROL_DISPLAY_BRIGHTNESS: granted=true
+      android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME: granted=true
+      android.permission.ACCESS_KEYGUARD_SECURE_STORAGE: granted=true
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      android.permission.SET_ORIENTATION: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.SET_WALLPAPER_COMPONENT: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      com.amazon.identity.auth.device.perm.AUTH_SDK: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      android.permission.SET_WALLPAPER: granted=true
+      android.permission.READ_DREAM_STATE: granted=true
+      android.permission.READ_NETWORK_USAGE_HISTORY: granted=true
+      android.permission.USE_FINGERPRINT: granted=true
+      android.permission.REQUEST_NETWORK_SCORES: granted=true
+      android.permission.ACCESS_VOICE_INTERACTION_SERVICE: granted=true
+      com.amazon.permission.LOCK_SCREEN_SERVICE: granted=true
+      android.permission.WRITE_DREAM_STATE: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      android.permission.MANAGE_NETWORK_POLICY: granted=true
+      android.permission.MANAGE_NOTIFICATIONS: granted=true
+      com.android.systemui.permission.SELF: granted=true
+      android.permission.CONNECTIVITY_INTERNAL: granted=true
+      android.permission.MANAGE_MEDIA_PROJECTION: granted=true
+      android.permission.OVERRIDE_WIFI_CONFIG: granted=true
+      android.permission.HIDE_NON_SYSTEM_OVERLAY_WINDOWS: granted=true
+      android.permission.VIBRATE: granted=true
+      android.permission.MODIFY_ACCESSIBILITY_DATA: granted=true
+      android.permission.MANAGE_ACTIVITY_STACKS: granted=true
+      android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST: granted=true
+      android.permission.MANAGE_SLICE_PERMISSIONS: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.GET_DETAILED_TASKS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      com.amazon.alta.h2clientservice.permission.BIND_SERVICE: granted=true
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: granted=true
+      android.permission.MODIFY_PHONE_STATE: granted=true
+      android.permission.ACCESS_VR_MANAGER: granted=true
+      android.permission.STATUS_BAR: granted=true
+      android.permission.READ_FRAME_BUFFER: granted=true
+      android.permission.DUMP: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      com.amazon.logan.permission.USE_ACCESSIBILITY_SERVICES: granted=true
+      android.permission.INJECT_EVENTS: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+      com.amazon.gloria.smarthome.permission.CAN_LAUNCH_SMARTHOME: granted=true
+      android.permission.UPDATE_APP_OPS_STATS: granted=true
+      android.permission.SET_SCREEN_COMPATIBILITY: granted=true
+      android.permission.MEDIA_CONTENT_CONTROL: granted=true
+    User 0: 
+      gids=[1065, 3002, 1023, 1015, 3001, 3006]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_EXTERNAL_STORAGE: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.ACCESS_COARSE_LOCATION: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.CAMERA: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.WRITE_EXTERNAL_STORAGE: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_CONTACTS: granted=true, flags=[ SYSTEM_FIXED GRANTED_BY_DEFAULT ]
+
+Package Changes:
+  Sequence number=5
+  User 0:
+    seq=0, package=org.fireosresearch.home.p100
+    seq=4, package=com.google.android.gms
+
+
+Dexopt state:
+  [com.android.systemui]
+    path: /system/priv-app/TabletSystemUI/TabletSystemUI.apk
+      arm64: [status=speed] [reason=prebuilt]
+
+
+Compiler stats:
+  [com.android.systemui]
+    (No recorded stats)

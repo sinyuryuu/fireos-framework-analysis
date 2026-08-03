@@ -1,0 +1,10 @@
+adb -s 'G001LT0511550CFT' devices -l
+adb -s 'G001LT0511550CFT' shell logcat -c
+adb -s 'G001LT0511550CFT' shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME --user 0
+adb -s 'G001LT0511550CFT' shell cmd package query-activities -a android.intent.action.MAIN -c android.intent.category.HOME --user 0
+adb -s 'G001LT0511550CFT' shell dumpsys package preferred-activities
+adb -s 'G001LT0511550CFT' shell dumpsys activity activities
+adb -s 'G001LT0511550CFT' shell dumpsys activity recents
+adb -s 'G001LT0511550CFT' shell dumpsys window windows
+adb -s 'G001LT0511550CFT' shell am start -a android.intent.action.MAIN -c android.intent.category.HOME
+adb -s 'G001LT0511550CFT' shell input keyevent 3

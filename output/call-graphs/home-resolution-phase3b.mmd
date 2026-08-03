@@ -1,0 +1,18 @@
+flowchart TD
+  HK[Home key] --> PWP[PhoneWindowManager.handleShortPressOnHome]
+  PWP --> KPM[Amazon TabletKeyPolicyManager]
+  KPM -->|custom event handled| CUS[Permissioned custom-home broadcast]
+  KPM -->|not handled| LHF[launchHomeFromHotKey]
+  LHF --> SDH[startDockOrHome]
+  SDH --> VPC[VendorPhoneWindowManager callbacks]
+  SDH --> HI[framework mHomeIntent MAIN+HOME]
+  HI --> ASS[ActivityStackSupervisor.resolveIntent]
+  ASS --> VAC[VendorActivityStackSupervisorCallback]
+  VAC -->|non-null would short-circuit| VRES[Vendor ResolveInfo]
+  VAC -->|null in fallback path| PMI[PackageManagerInternal.resolveIntent]
+  PMI --> QIA[queryIntentActivitiesInternal]
+  QIA --> CBA[chooseBestActivity]
+  CBA -->|priority 50| FIRE[com.amazon.firelauncher/.Launcher]
+  CBA -->|priority 0 preferred record cannot outrank 50| MS[Microsoft Launcher]
+  FIRE --> START[ActivityManager START explicit component]
+  MS -. not selected .-> START
