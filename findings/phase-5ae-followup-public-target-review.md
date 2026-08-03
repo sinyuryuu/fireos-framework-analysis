@@ -82,6 +82,24 @@ temporary-root 路線，或重跑 generic Linux PoC。
 **判定：已排除：** Qualcomm/Xiaomi chain 作為 KFTRWI/PS7330 的 Android root
 implementation。它可作漏洞分類參考，但不是本機測試候選。
 
+## `Mujeebb/mtkclient-1` boot-chain workflow
+
+另外核對到的公開 fork `b30d65c706fdda93dcb44674aeb0ff796b27b2bc` 的 README 將
+```
+python mtk r boot,vbmeta ...
+python mtk w boot,vbmeta ...
+python mtk da seccfg unlock
+```
+列為一般 MTK workflow，並以「Android 9–12」作廣泛描述；它沒有列出
+KFTRWI/trona/PS7330 的 preloader、DA、SLA/DAA、SBC 或 rollback 相容性。這些命令
+跨越 BROM/DA、boot image、vbmeta、seccfg 或分割區寫入邊界，不能因為 SoC 名稱相同
+就直接執行。
+
+**判定：因風險拒絕測試：** 這是 boot-chain 工具能力證據，不是 exact Amazon
+target proof。若未來取得完全匹配且合法的 PS7330 recovery image、preloader/DA
+及完整 rollback/restore plan，仍需另立 Level 3 操作報告；本輪不呼叫其 read/write/
+unlock/flash 路徑。
+
 ## 現場狀態
 
 - ADB：`device`。
@@ -107,3 +125,4 @@ implementation。它可作漏洞分類參考，但不是本機測試候選。
 - [GhostLock catalog](https://mallory.ai/vulnerabilities/CVE-2026-43499)
 - [JFrog：DirtyClone](https://research.jfrog.com/post/dissecting-and-exploiting-linux-lpe-variant-dirtyclone-cve-2026-43503/)
 - [研究者提供的 HackMD](https://hackmd.io/@lokey0905/rk-hQSzibl)
+- [Mujeebb/mtkclient-1 fixed README](https://github.com/Mujeebb/mtkclient-1/tree/b30d65c706fdda93dcb44674aeb0ff796b27b2bc)

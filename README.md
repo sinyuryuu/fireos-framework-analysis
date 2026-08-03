@@ -1292,3 +1292,11 @@ Phase 5AE follow-up outputs:
 
 No third-party APK/native payload, BROM/DA operation, boot image, partition
 write, or kernel trigger was executed.
+
+The same follow-up reviewed the fixed public `Mujeebb/mtkclient-1` revision
+`b30d65c706fdda93dcb44674aeb0ff796b27b2bc`. Its README documents broad MTK
+BROM/DA boot/vbmeta write and `seccfg unlock` workflows, but no exact
+KFTRWI/trona/PS7330 profile. Those routes remain rejected without matching
+preloader/DA/recovery/rollback evidence.
+
+- artifacts/phase5/public-mtkclient-followup-20260804-01/
