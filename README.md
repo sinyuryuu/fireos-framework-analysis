@@ -609,11 +609,16 @@ payload mismatch to a high-confidence inference, while the compiled driver
 identity and CVE status remain unverified.
 
 The next possible low-level discriminator is documented, but not executed, in
-`findings/phase-5h-cmdq-ioctl-compat-level3-report.md`. It proposes one
-`count=0` ioctl #7 call to distinguish v2 from v3 without a non-zero DMA
-allocation. This is a new Level 3 operation and requires approval naming
-`CMDQ-IOCTL-V3-COMPAT-T01` plus the exact probe binary/hash; the earlier T03
-approval does not cover it.
+`findings/phase-5h-cmdq-ioctl-compat-level3-report.md`. A host-only AArch64
+probe is prepared at
+`artifacts/phase5/cmdq-compat-probe-build-20260803-03/cmdq_compat_probe` with
+SHA-256
+`e0077240040bce55099b8b1b28d9d10723357ef3d3b9640282bd6f6bef2f11fb`. It
+proposes one `count=0` ioctl #7 call to distinguish v2 from v3 without a
+non-zero DMA allocation. This is a new Level 3 operation and requires approval
+naming `CMDQ-IOCTL-V3-COMPAT-T01` plus that exact binary/hash; the earlier T03
+approval does not cover it. The build script never invokes the binary or any
+device transport.
 
 No new device mutation or exploit execution was performed. A v3-aware payload,
 standalone CMDQ ioctl probe, kernel-memory primitive, BROM/DA action, or boot

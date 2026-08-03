@@ -1,0 +1,419 @@
+
+artifacts/phase5/cmdq-compat-probe-build-20260803-03/cmdq_compat_probe:	file format elf64-littleaarch64
+
+Disassembly of section .text:
+
+0000000000210000 <_start>:
+  210000:      	sub	sp, sp, #0x70
+  210004:      	adrp	x2, 0x200000
+  210008:      	add	x2, x2, #0x170
+  21000c:      	mov	w0, #0x38               // =56
+  210010:      	mov	x1, #-0x64              // =-100
+  210014:      	mov	x3, xzr
+  210018:      	mov	x4, xzr
+  21001c:      	stp	x29, x30, [sp, #0x40]
+  210020:      	add	x29, sp, #0x40
+  210024:      	stp	x22, x21, [sp, #0x50]
+  210028:      	stp	x20, x19, [sp, #0x60]
+  21002c:      	bl	0x210650 <raw_syscall4>
+  210030:      	adrp	x8, 0x200000
+  210034:      	mov	x19, x0
+  210038:      	adrp	x20, 0x220000 <output>
+  21003c:      	add	x20, x20, #0x0
+  210040:      	ldr	d0, [x8, #0x160]
+  210044:      	mov	w8, #0x3d               // =61
+  210048:      	strb	w8, [x20, #0x8]
+  21004c:      	str	d0, [x20]
+  210050:      	tbnz	x0, #0x3f, 0x2100ac <_start+0xac>
+  210054:      	cbz	x19, 0x21010c <_start+0x10c>
+  210058:      	mov	x8, #-0x3333333333333334 // =-3689348814741910324
+  21005c:      	mov	x9, xzr
+  210060:      	mov	w10, #0xa               // =10
+  210064:      	movk	x8, #0xcccd
+  210068:      	add	x11, sp, #0x20
+  21006c:      	mov	x12, x19
+  210070:      	umulh	x13, x12, x8
+  210074:      	cmp	x12, #0xa
+  210078:      	lsr	x13, x13, #3
+  21007c:      	msub	w14, w13, w10, w12
+  210080:      	orr	w12, w14, #0x30
+  210084:      	strb	w12, [x11, x9]
+  210088:      	add	x9, x9, #0x1
+  21008c:      	mov	x12, x13
+  210090:      	b.hs	0x210070 <_start+0x70>
+  210094:      	cbz	x9, 0x210120 <_start+0x120>
+  210098:      	cmp	x9, #0x20
+  21009c:      	b.hs	0x210130 <_start+0x130>
+  2100a0:      	mov	w8, #0x9                // =9
+  2100a4:      	mov	x10, x9
+  2100a8:      	b	0x210188 <_start+0x188>
+  2100ac:      	adrp	x8, 0x220000 <output>
+  2100b0:      	mov	w10, #0x2d              // =45
+  2100b4:      	mov	x9, xzr
+  2100b8:      	strb	w10, [x8, #0x9]
+  2100bc:      	mov	x8, #-0x3333333333333334 // =-3689348814741910324
+  2100c0:      	neg	x11, x19
+  2100c4:      	movk	x8, #0xcccd
+  2100c8:      	mov	w10, #0xa               // =10
+  2100cc:      	add	x12, sp, #0x20
+  2100d0:      	umulh	x13, x11, x8
+  2100d4:      	cmp	x11, #0xa
+  2100d8:      	lsr	x13, x13, #3
+  2100dc:      	msub	w14, w13, w10, w11
+  2100e0:      	orr	w11, w14, #0x30
+  2100e4:      	strb	w11, [x12, x9]
+  2100e8:      	add	x9, x9, #0x1
+  2100ec:      	mov	x11, x13
+  2100f0:      	b.hs	0x2100d0 <_start+0xd0>
+  2100f4:      	cbz	x9, 0x210128 <_start+0x128>
+  2100f8:      	cmp	x9, #0x20
+  2100fc:      	b.hs	0x2101b0 <_start+0x1b0>
+  210100:      	mov	w8, #0xa                // =10
+  210104:      	mov	x10, x9
+  210108:      	b	0x210208 <_start+0x208>
+  21010c:      	adrp	x8, 0x220000 <output>
+  210110:      	mov	w9, #0x30               // =48
+  210114:      	strb	w9, [x8, #0x9]
+  210118:      	mov	w8, #0xa                // =10
+  21011c:      	b	0x21022c <_start+0x22c>
+  210120:      	mov	w8, #0x9                // =9
+  210124:      	b	0x21022c <_start+0x22c>
+  210128:      	mov	w8, #0xa                // =10
+  21012c:      	b	0x21022c <_start+0x22c>
+  210130:      	add	x8, sp, #0x20
+  210134:      	and	x11, x9, #0xffffffffffffffe0
+  210138:      	mov	w12, #0x9               // =9
+  21013c:      	add	x13, x8, x9
+  210140:      	and	x10, x9, #0x1f
+  210144:      	orr	x8, x11, x12
+  210148:      	sub	x12, x13, #0x10
+  21014c:      	adrp	x13, 0x220000 <output>
+  210150:      	add	x13, x13, #0x19
+  210154:      	mov	x14, x11
+  210158:      	ldp	q1, q0, [x12, #-0x10]
+  21015c:      	subs	x14, x14, #0x20
+  210160:      	sub	x12, x12, #0x20
+  210164:      	rev64	v0.16b, v0.16b
+  210168:      	rev64	v1.16b, v1.16b
+  21016c:      	ext	v0.16b, v0.16b, v0.16b, #0x8
+  210170:      	ext	v1.16b, v1.16b, v1.16b, #0x8
+  210174:      	stp	q0, q1, [x13, #-0x10]
+  210178:      	add	x13, x13, #0x20
+  21017c:      	b.ne	0x210158 <_start+0x158>
+  210180:      	cmp	x9, x11
+  210184:      	b.eq	0x21022c <_start+0x22c>
+  210188:      	add	x9, sp, #0x20
+  21018c:      	mov	x11, x8
+  210190:      	sub	x9, x9, #0x1
+  210194:      	ldrb	w12, [x9, x10]
+  210198:      	add	x8, x11, #0x1
+  21019c:      	subs	x10, x10, #0x1
+  2101a0:      	strb	w12, [x20, x11]
+  2101a4:      	mov	x11, x8
+  2101a8:      	b.ne	0x210194 <_start+0x194>
+  2101ac:      	b	0x21022c <_start+0x22c>
+  2101b0:      	add	x8, sp, #0x20
+  2101b4:      	and	x11, x9, #0xffffffffffffffe0
+  2101b8:      	mov	w12, #0xa               // =10
+  2101bc:      	add	x13, x8, x9
+  2101c0:      	and	x10, x9, #0x1f
+  2101c4:      	orr	x8, x11, x12
+  2101c8:      	sub	x12, x13, #0x10
+  2101cc:      	adrp	x13, 0x220000 <output>
+  2101d0:      	add	x13, x13, #0x1a
+  2101d4:      	mov	x14, x11
+  2101d8:      	ldp	q1, q0, [x12, #-0x10]
+  2101dc:      	subs	x14, x14, #0x20
+  2101e0:      	sub	x12, x12, #0x20
+  2101e4:      	rev64	v0.16b, v0.16b
+  2101e8:      	rev64	v1.16b, v1.16b
+  2101ec:      	ext	v0.16b, v0.16b, v0.16b, #0x8
+  2101f0:      	ext	v1.16b, v1.16b, v1.16b, #0x8
+  2101f4:      	stp	q0, q1, [x13, #-0x10]
+  2101f8:      	add	x13, x13, #0x20
+  2101fc:      	b.ne	0x2101d8 <_start+0x1d8>
+  210200:      	cmp	x9, x11
+  210204:      	b.eq	0x21022c <_start+0x22c>
+  210208:      	add	x9, sp, #0x20
+  21020c:      	mov	x11, x8
+  210210:      	sub	x9, x9, #0x1
+  210214:      	ldrb	w12, [x9, x10]
+  210218:      	add	x8, x11, #0x1
+  21021c:      	subs	x10, x10, #0x1
+  210220:      	strb	w12, [x20, x11]
+  210224:      	mov	x11, x8
+  210228:      	b.ne	0x210214 <_start+0x214>
+  21022c:      	adrp	x9, 0x200000
+  210230:      	add	x22, x8, #0x4
+  210234:      	adrp	x21, 0x200000
+  210238:      	add	x21, x21, #0x17e
+  21023c:      	ldr	d0, [x9, #0x168]
+  210240:      	str	s0, [x20, x8]
+  210244:      	str	q0, [sp]
+  210248:      	cbz	x19, 0x210314 <_start+0x314>
+  21024c:      	mov	x9, xzr
+  210250:      	add	x10, sp, #0x20
+  210254:      	mov	x11, x19
+  210258:      	and	x12, x11, #0xf
+  21025c:      	lsr	x13, x11, #4
+  210260:      	cmp	x11, #0xf
+  210264:      	ldrb	w11, [x21, x12]
+  210268:      	strb	w11, [x10, x9]
+  21026c:      	add	x9, x9, #0x1
+  210270:      	mov	x11, x13
+  210274:      	b.hi	0x210258 <_start+0x258>
+  210278:      	sub	x10, x9, #0x1
+  21027c:      	cmp	x10, #0x1f
+  210280:      	add	x10, sp, #0x20
+  210284:      	b.lo	0x2102dc <_start+0x2dc>
+  210288:      	add	x13, x10, x9
+  21028c:      	and	x12, x9, #0x7fffffffffffffe0
+  210290:      	add	x14, x8, x20
+  210294:      	and	x11, x9, #0x1f
+  210298:      	sub	x8, x13, #0x10
+  21029c:      	add	x22, x22, x12
+  2102a0:      	add	x13, x14, #0x14
+  2102a4:      	and	x14, x9, #0xffffffffffffffe0
+  2102a8:      	ldp	q1, q0, [x8, #-0x10]
+  2102ac:      	subs	x14, x14, #0x20
+  2102b0:      	sub	x8, x8, #0x20
+  2102b4:      	rev64	v0.16b, v0.16b
+  2102b8:      	rev64	v1.16b, v1.16b
+  2102bc:      	ext	v0.16b, v0.16b, v0.16b, #0x8
+  2102c0:      	ext	v1.16b, v1.16b, v1.16b, #0x8
+  2102c4:      	stp	q0, q1, [x13, #-0x10]
+  2102c8:      	add	x13, x13, #0x20
+  2102cc:      	b.ne	0x2102a8 <_start+0x2a8>
+  2102d0:      	cmp	x9, x12
+  2102d4:      	b.eq	0x2102f4 <_start+0x2f4>
+  2102d8:      	mov	x9, x11
+  2102dc:      	sub	x8, x10, #0x1
+  2102e0:      	ldrb	w10, [x8, x9]
+  2102e4:      	subs	x9, x9, #0x1
+  2102e8:      	strb	w10, [x20, x22]
+  2102ec:      	add	x22, x22, #0x1
+  2102f0:      	b.ne	0x2102e0 <_start+0x2e0>
+  2102f4:      	sub	x8, x22, #0x1
+  2102f8:      	mov	w9, #0x29               // =41
+  2102fc:      	strb	w9, [x20, x22]
+  210300:      	add	x8, x8, x20
+  210304:      	mov	w9, #0xa                // =10
+  210308:      	strb	w9, [x8, #0x2]
+  21030c:      	tbz	x19, #0x3f, 0x210328 <_start+0x328>
+  210310:      	b	0x210608 <_start+0x608>
+  210314:      	mov	w9, #0x30               // =48
+  210318:      	strb	w9, [x20, x22]
+  21031c:      	add	x22, x8, #0x5
+  210320:      	mov	w8, #0xa29              // =2601
+  210324:      	strh	w8, [x20, x22]
+  210328:      	mov	w2, #0x7807             // =30727
+  21032c:      	add	x3, sp, #0x18
+  210330:      	mov	w0, #0x1d               // =29
+  210334:      	mov	x1, x19
+  210338:      	movk	w2, #0x4008, lsl #16
+  21033c:      	mov	x4, xzr
+  210340:      	str	xzr, [sp, #0x18]
+  210344:      	bl	0x210650 <raw_syscall4>
+  210348:      	adrp	x8, 0x200000
+  21034c:      	mov	w9, #0x3d74             // =15732
+  210350:      	ldr	d0, [x8, #0x158]
+  210354:      	add	x8, x22, x20
+  210358:      	strh	w9, [x8, #0xa]
+  21035c:      	stur	d0, [x8, #0x2]
+  210360:      	add	x8, x22, #0xc
+  210364:      	tbnz	x0, #0x3f, 0x210434 <_start+0x434>
+  210368:      	cbz	x0, 0x210508 <_start+0x508>
+  21036c:      	mov	x10, #-0x3333333333333334 // =-3689348814741910324
+  210370:      	mov	x9, xzr
+  210374:      	mov	w11, #0xa               // =10
+  210378:      	movk	x10, #0xcccd
+  21037c:      	add	x12, sp, #0x20
+  210380:      	mov	x13, x0
+  210384:      	umulh	x14, x13, x10
+  210388:      	cmp	x13, #0xa
+  21038c:      	lsr	x14, x14, #3
+  210390:      	msub	w15, w14, w11, w13
+  210394:      	orr	w13, w15, #0x30
+  210398:      	strb	w13, [x12, x9]
+  21039c:      	add	x9, x9, #0x1
+  2103a0:      	mov	x13, x14
+  2103a4:      	b.hs	0x210384 <_start+0x384>
+  2103a8:      	cbz	x9, 0x210518 <_start+0x518>
+  2103ac:      	cmp	x9, #0x20
+  2103b0:      	b.lo	0x21040c <_start+0x40c>
+  2103b4:      	add	x11, sp, #0x20
+  2103b8:      	and	x10, x9, #0xffffffffffffffe0
+  2103bc:      	add	x13, x22, x20
+  2103c0:      	add	x12, x11, x9
+  2103c4:      	and	x11, x9, #0x1f
+  2103c8:      	add	x8, x8, x10
+  2103cc:      	sub	x12, x12, #0x10
+  2103d0:      	add	x13, x13, #0x1c
+  2103d4:      	mov	x14, x10
+  2103d8:      	ldp	q1, q0, [x12, #-0x10]
+  2103dc:      	subs	x14, x14, #0x20
+  2103e0:      	sub	x12, x12, #0x20
+  2103e4:      	rev64	v0.16b, v0.16b
+  2103e8:      	rev64	v1.16b, v1.16b
+  2103ec:      	ext	v0.16b, v0.16b, v0.16b, #0x8
+  2103f0:      	ext	v1.16b, v1.16b, v1.16b, #0x8
+  2103f4:      	stp	q0, q1, [x13, #-0x10]
+  2103f8:      	add	x13, x13, #0x20
+  2103fc:      	b.ne	0x2103d8 <_start+0x3d8>
+  210400:      	cmp	x9, x10
+  210404:      	mov	x9, x11
+  210408:      	b.eq	0x210518 <_start+0x518>
+  21040c:      	add	x10, sp, #0x20
+  210410:      	mov	x11, x8
+  210414:      	sub	x10, x10, #0x1
+  210418:      	ldrb	w12, [x10, x9]
+  21041c:      	add	x8, x11, #0x1
+  210420:      	subs	x9, x9, #0x1
+  210424:      	strb	w12, [x20, x11]
+  210428:      	mov	x11, x8
+  21042c:      	b.ne	0x210418 <_start+0x418>
+  210430:      	b	0x210518 <_start+0x518>
+  210434:      	mov	w10, #0x2d              // =45
+  210438:      	strb	w10, [x20, x8]
+  21043c:      	mov	x8, #-0x3333333333333334 // =-3689348814741910324
+  210440:      	mov	x9, xzr
+  210444:      	neg	x12, x0
+  210448:      	movk	x8, #0xcccd
+  21044c:      	mov	w10, #0xa               // =10
+  210450:      	add	x11, sp, #0x20
+  210454:      	umulh	x13, x12, x8
+  210458:      	cmp	x12, #0xa
+  21045c:      	lsr	x13, x13, #3
+  210460:      	msub	w14, w13, w10, w12
+  210464:      	orr	w12, w14, #0x30
+  210468:      	strb	w12, [x11, x9]
+  21046c:      	add	x9, x9, #0x1
+  210470:      	mov	x12, x13
+  210474:      	b.hs	0x210454 <_start+0x454>
+  210478:      	add	x8, x22, #0xd
+  21047c:      	cbz	x9, 0x210518 <_start+0x518>
+  210480:      	cmp	x9, #0x20
+  210484:      	b.lo	0x2104e0 <_start+0x4e0>
+  210488:      	add	x11, sp, #0x20
+  21048c:      	and	x10, x9, #0xffffffffffffffe0
+  210490:      	add	x13, x22, x20
+  210494:      	add	x12, x11, x9
+  210498:      	and	x11, x9, #0x1f
+  21049c:      	add	x8, x8, x10
+  2104a0:      	sub	x12, x12, #0x10
+  2104a4:      	add	x13, x13, #0x1d
+  2104a8:      	mov	x14, x10
+  2104ac:      	ldp	q1, q0, [x12, #-0x10]
+  2104b0:      	subs	x14, x14, #0x20
+  2104b4:      	sub	x12, x12, #0x20
+  2104b8:      	rev64	v0.16b, v0.16b
+  2104bc:      	rev64	v1.16b, v1.16b
+  2104c0:      	ext	v0.16b, v0.16b, v0.16b, #0x8
+  2104c4:      	ext	v1.16b, v1.16b, v1.16b, #0x8
+  2104c8:      	stp	q0, q1, [x13, #-0x10]
+  2104cc:      	add	x13, x13, #0x20
+  2104d0:      	b.ne	0x2104ac <_start+0x4ac>
+  2104d4:      	cmp	x9, x10
+  2104d8:      	mov	x9, x11
+  2104dc:      	b.eq	0x210518 <_start+0x518>
+  2104e0:      	add	x10, sp, #0x20
+  2104e4:      	mov	x11, x8
+  2104e8:      	sub	x10, x10, #0x1
+  2104ec:      	ldrb	w12, [x10, x9]
+  2104f0:      	add	x8, x11, #0x1
+  2104f4:      	subs	x9, x9, #0x1
+  2104f8:      	strb	w12, [x20, x11]
+  2104fc:      	mov	x11, x8
+  210500:      	b.ne	0x2104ec <_start+0x4ec>
+  210504:      	b	0x210518 <_start+0x518>
+  210508:      	add	x9, x22, #0xd
+  21050c:      	mov	w10, #0x30              // =48
+  210510:      	strb	w10, [x20, x8]
+  210514:      	mov	x8, x9
+  210518:      	add	x9, x8, #0x4
+  21051c:      	ldr	q0, [sp]
+  210520:      	str	s0, [x20, x8]
+  210524:      	cbz	x0, 0x2105d8 <_start+0x5d8>
+  210528:      	mov	x10, xzr
+  21052c:      	add	x11, sp, #0x20
+  210530:      	and	x12, x0, #0xf
+  210534:      	lsr	x13, x0, #4
+  210538:      	cmp	x0, #0xf
+  21053c:      	ldrb	w12, [x21, x12]
+  210540:      	strb	w12, [x11, x10]
+  210544:      	add	x10, x10, #0x1
+  210548:      	mov	x0, x13
+  21054c:      	b.hi	0x210530 <_start+0x530>
+  210550:      	sub	x11, x10, #0x1
+  210554:      	cmp	x11, #0x1f
+  210558:      	add	x11, sp, #0x20
+  21055c:      	b.lo	0x2105b4 <_start+0x5b4>
+  210560:      	add	x14, x11, x10
+  210564:      	and	x13, x10, #0x7fffffffffffffe0
+  210568:      	add	x15, x8, x20
+  21056c:      	and	x12, x10, #0x1f
+  210570:      	sub	x8, x14, #0x10
+  210574:      	add	x9, x9, x13
+  210578:      	add	x14, x15, #0x14
+  21057c:      	and	x15, x10, #0xffffffffffffffe0
+  210580:      	ldp	q1, q0, [x8, #-0x10]
+  210584:      	subs	x15, x15, #0x20
+  210588:      	sub	x8, x8, #0x20
+  21058c:      	rev64	v0.16b, v0.16b
+  210590:      	rev64	v1.16b, v1.16b
+  210594:      	ext	v0.16b, v0.16b, v0.16b, #0x8
+  210598:      	ext	v1.16b, v1.16b, v1.16b, #0x8
+  21059c:      	stp	q0, q1, [x14, #-0x10]
+  2105a0:      	add	x14, x14, #0x20
+  2105a4:      	b.ne	0x210580 <_start+0x580>
+  2105a8:      	cmp	x10, x13
+  2105ac:      	mov	x10, x12
+  2105b0:      	b.eq	0x2105e8 <_start+0x5e8>
+  2105b4:      	sub	x8, x11, #0x1
+  2105b8:      	mov	x11, x9
+  2105bc:      	ldrb	w12, [x8, x10]
+  2105c0:      	add	x9, x11, #0x1
+  2105c4:      	subs	x10, x10, #0x1
+  2105c8:      	strb	w12, [x20, x11]
+  2105cc:      	mov	x11, x9
+  2105d0:      	b.ne	0x2105bc <_start+0x5bc>
+  2105d4:      	b	0x2105e8 <_start+0x5e8>
+  2105d8:      	add	x8, x8, #0x5
+  2105dc:      	mov	w10, #0x30              // =48
+  2105e0:      	strb	w10, [x20, x9]
+  2105e4:      	mov	x9, x8
+  2105e8:      	mov	w0, #0x39               // =57
+  2105ec:      	mov	x1, x19
+  2105f0:      	mov	x2, xzr
+  2105f4:      	mov	x3, xzr
+  2105f8:      	mov	x4, xzr
+  2105fc:      	mov	w8, #0xa29              // =2601
+  210600:      	strh	w8, [x20, x9]
+  210604:      	bl	0x210650 <raw_syscall4>
+  210608:      	mov	x8, xzr
+  21060c:      	ldrb	w9, [x20, x8]
+  210610:      	add	x8, x8, #0x1
+  210614:      	cbnz	w9, 0x21060c <_start+0x60c>
+  210618:      	sub	x3, x8, #0x1
+  21061c:      	adrp	x2, 0x220000 <output>
+  210620:      	add	x2, x2, #0x0
+  210624:      	mov	w0, #0x40               // =64
+  210628:      	mov	w1, #0x1                // =1
+  21062c:      	mov	x4, xzr
+  210630:      	bl	0x210650 <raw_syscall4>
+  210634:      	mov	w0, #0x5d               // =93
+  210638:      	mov	x1, xzr
+  21063c:      	mov	x2, xzr
+  210640:      	mov	x3, xzr
+  210644:      	mov	x4, xzr
+  210648:      	bl	0x210650 <raw_syscall4>
+  21064c:      	b	0x21064c <_start+0x64c>
+
+0000000000210650 <raw_syscall4>:
+  210650:      	mov	x8, x0
+  210654:      	mov	x0, x1
+  210658:      	mov	x1, x2
+  21065c:      	mov	x2, x3
+  210660:      	mov	x3, x4
+  210664:      	svc	#0
+  210668:      	ret
