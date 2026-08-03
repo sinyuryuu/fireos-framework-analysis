@@ -1,0 +1,385 @@
+TASK 10120:com.amazon.firelauncher id=2 userId=0
+  ACTIVITY com.amazon.firelauncher/.Launcher f7a5258 pid=1919
+    Local Activity 5653290 State:
+      mResumed=false mStopped=true mFinished=false
+      mChangingConfigurations=false
+      mCurrentConfig={1.0 ?mcc?mnc [ja_JP] ldltr sw800dp w800dp h1208dp 240dpi xlrg port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1200, 1848) mAppBounds=Rect(0, 0 - 1200, 1848) mWindowingMode=fullscreen mActivityType=home} s.6}
+      mLoadersStarted=true
+      Active Fragments in e4fae55:
+        #0: ReportFragment{9c9506a #0 androidx.lifecycle.LifecycleDispatcher.report_fragment_tag}
+          mFragmentId=#0 mContainerId=#0 mTag=androidx.lifecycle.LifecycleDispatcher.report_fragment_tag
+          mState=3 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
+          mAdded=true mRemoving=false mFromLayout=false mInLayout=false
+          mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+          mRetainInstance=false mRetaining=false mUserVisibleHint=true
+          mFragmentManager=FragmentManager{e4fae55 in HostCallbacks{d33b95b}}
+          mHost=android.app.Activity$HostCallbacks@d33b95b
+          Child FragmentManager{8e1d5f8 in ReportFragment{9c9506a}}:
+            FragmentManager misc state:
+              mHost=android.app.Activity$HostCallbacks@d33b95b
+              mContainer=android.app.Fragment$1@d29dad1
+              mParent=ReportFragment{9c9506a #0 androidx.lifecycle.LifecycleDispatcher.report_fragment_tag}
+              mCurState=3 mStateSaved=true mDestroyed=false
+      Added Fragments:
+        #0: ReportFragment{9c9506a #0 androidx.lifecycle.LifecycleDispatcher.report_fragment_tag}
+      FragmentManager misc state:
+        mHost=android.app.Activity$HostCallbacks@d33b95b
+        mContainer=android.app.Activity$HostCallbacks@d33b95b
+        mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false      mIsAmbientMode=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=29853 (1097826 ms ago)
+    View Hierarchy:
+      DecorView@e44088a[Launcher]
+        android.widget.FrameLayout{24ddefb V.E...... ......I. 0,0-0,0}
+          android.widget.FrameLayout{63a9b18 V.E...... ......I. 0,0-0,0 #1020002 android:id/content}
+            com.amazon.firelauncher.appsgrid.ui.drag.DragLayer{ec58971 V.E...... ......I. 0,0-0,0 #7f090336 app:id/magazine_container}
+              android.widget.FrameLayout{8622356 V.E...... ......I. 0,0-0,0 #7f0900ee app:id/background_parent}
+                android.widget.ImageView{3116fd7 V.ED..... ......ID 0,0-0,0 #7f090125 app:id/channel_background}
+              com.amazon.firelauncher.view.EnhancedViewPager{5ca50c4 VFED..... ......I. 0,0-0,0 #7f090379 app:id/pager}
+                com.amazon.firelauncher.appsgrid.ui.ScrollableMainView{7584bad V.E...... ......I. 0,0-0,0}
+                  com.amazon.firelauncher.appsgrid.ui.GradientScrimFrameLayout{c751ee2 V.E...... ......I. 0,0-0,0}
+                    com.amazon.firelauncher.appsgrid.ui.GridView{2133273 VFED..... ......I. 0,0-0,0 #7f09027a app:id/favorites_page}
+                    android.widget.ImageView{37db530 V.ED..... ......ID 0,0-0,0 #7f0902ad app:id/header_background}
+                    android.widget.ImageView{cdaf5a9 V.ED..... ......ID 0,0-0,0 #7f0902b2 app:id/header_shadow}
+                android.widget.FrameLayout{9ca472e V.E...... ......I. 0,0-0,0}
+                  androidx.fragment.app.FragmentContainerView{86482cf V.E...... ......I. 0,0-0,0 #7f09029a app:id/fragment_container}
+                  android.view.ViewStub{dc0f45c G.E...... ......I. 0,0-0,0 #7f090198 app:id/dali_fragment_stub}
+                com.amazon.firelauncher.view.ScrollObservableContainer{c44365 V.E...... ......I. 0,0-0,0}
+                  com.amazon.firelauncher.view.ChannelBackgroundView{537a83a V.ED..... ......I. 0,0-0,0 #7f0900ef app:id/background_view}
+                  com.amazon.firelauncher.view.ScrollingLinearRecyclerView{4647f3c VFED..... ......I. 0,0-0,0 #7f09039e app:id/recycler}
+                  android.widget.ImageView{4d07ceb V.ED..... ......ID 0,0-0,0 #7f0902ad app:id/header_background}
+                  android.widget.ImageView{b96fa48 V.ED..... ......ID 0,0-0,0 #7f0902b2 app:id/header_shadow}
+                  android.widget.LinearLayout{b3ab0e1 G.E...... ......I. 0,0-0,0 #7f0903a2 app:id/register_tab}
+                    android.view.View{8e80e06 V.ED..... ......ID 0,0-0,0 #7f09047f app:id/top_divider}
+                  android.widget.LinearLayout{db7fcc7 G.E...... ......I. 0,0-0,0 #7f090332 app:id/loading_view}
+                    android.widget.FrameLayout{f4572f4 GFE...C.. ......ID 0,0-0,0 #7f090334 app:id/loading_view_pablo}
+                      android.widget.LinearLayout{6507a1d V.E...... ......I. 0,0-0,0}
+                        android.widget.ImageView{4e70492 V.ED..... ......ID 0,0-0,0 #7f090325 app:id/loading_background}
+                        android.widget.ImageView{4ad9e63 V.ED..... ......ID 0,0-0,0 #7f090325 app:id/loading_background}
+                        android.widget.ImageView{7c0ca60 V.ED..... ......ID 0,0-0,0 #7f090325 app:id/loading_background}
+                        android.widget.ImageView{ff9b19 V.ED..... ......ID 0,0-0,0 #7f090325 app:id/loading_background}
+                        android.widget.ImageView{c6cd7de V.ED..... ......ID 0,0-0,0 #7f090325 app:id/loading_background}
+                      android.widget.LinearLayout{7d1bdbf V.E...... ......I. 0,0-0,0}
+                        android.widget.TextView{cd82c8c V.ED..... ......ID 0,0-0,0 #7f090331 app:id/loading_text_pablo}
+                        com.amazon.firelauncher.view.LoadingDotsView{5e5cfd5 V.E...... ......I. 0,0-0,0 #7f09032c app:id/loading_dots}
+                          android.widget.ImageView{bea93ea V.ED..... ......ID 0,0-0,0 #7f0901b0 app:id/dot1}
+                          android.widget.ImageView{cee76db V.ED..... ......ID 0,0-0,0 #7f0901b1 app:id/dot2}
+                          android.widget.ImageView{2218578 V.ED..... ......ID 0,0-0,0 #7f0901b2 app:id/dot3}
+                    android.widget.LinearLayout{1c09451 V.E...... ......I. 0,0-0,0 #7f090333 app:id/loading_view_magazine}
+                      android.widget.ProgressBar{3d604b6 V.ED..... ......ID 0,0-0,0}
+                      android.widget.TextView{253a5b7 V.ED..... ......ID 0,0-0,0 #7f090330 app:id/loading_text}
+                  android.view.View{ca58124 G.ED..... ......ID 0,0-0,0 #7f0903ef app:id/status_bar_underlay}
+              android.widget.FrameLayout{5a9248d V.E...... ......I. 0,0-0,0 #7f0902af app:id/header_container}
+                android.widget.FrameLayout{435b642 V.E...... ......I. 0,0-0,0 #7f090342 app:id/menu_bar_container}
+                  amazon.fluid.widget.ViewPagerTabBar{172e653 V.E...... ......I. 0,0-0,0 #7f090423 app:id/tab_container}
+                    amazon.fluid.widget.ViewPagerTabHorizontalScrollView{74b8b90 VFED..... ......ID 0,0-0,0 #7f090261 app:id/f_tab_horizontal_scroll_view}
+                      amazon.fluid.widget.ViewPagerTabStrip{1107c89 V.ED..... ......I. 0,0-0,0 #7f090262 app:id/f_tab_strip}
+                        com.amazon.firelauncher.view.NavTabView{1f58c88 VFE...C.. ......I. 0,0-0,0}
+                          android.widget.TextView{4ecf48e V.ED..... ......ID 0,0-0,0 #7f090051 app:id/active}
+                          android.widget.TextView{f3b94af V.ED..... ......ID 0,0-0,0 #7f0902f5 app:id/inactive}
+                        com.amazon.firelauncher.view.NavTabView{205d0bc VFE...C.. ..S...I. 0,0-0,0}
+                          android.widget.TextView{f7b5845 V.ED..... ..S...ID 0,0-0,0 #7f090051 app:id/active}
+                          android.widget.TextView{6c7cb9a V.ED..... ..S...ID 0,0-0,0 #7f0902f5 app:id/inactive}
+                        com.amazon.firelauncher.view.NavTabView{636cccb VFE...C.. ......I. 0,0-0,0}
+                          android.widget.TextView{7bd3ca8 V.ED..... ......ID 0,0-0,0 #7f090051 app:id/active}
+                          android.widget.TextView{5fe33c1 V.ED..... ......ID 0,0-0,0 #7f0902f5 app:id/inactive}
+                com.amazon.firelauncher.view.SearchWidgetHostLayout{9470766 V.E...... ......I. 0,0-0,0 #7f0903ba app:id/search_bar_widget}
+                  com.amazon.firelauncher.search.SearchAppWidgetHostView{6636aa7 V.E...... R.....I. 0,0-0,0}
+                    android.widget.LinearLayout{fca1eb9 VFE...C.. ......I. 0,0-0,0 #7f09027f app:id/remote_widget_view}
+                      android.widget.ImageView{a81a2fe VFED..C.. ......ID 0,0-0,0 #7f0903e6 app:id/widget_icon_view}
+                      android.widget.TextView{74ffa5f V.ED..C.. ......I. 0,0-0,0 #7f0903e7 app:id/widget_text_view}
+                      android.widget.ImageView{fd0bcac G.ED..... ......I. 0,0-0,0 #7f0903e4 app:id/widget_festive_icon}
+                      android.widget.ImageView{e64ed75 GFED..C.. ......I. 0,0-0,0 #7f0903e8 app:id/widget_voice_icon_view}
+              android.widget.ImageView{86e0981 V.ED..... ......I. 0,0-0,0}
+              android.widget.ImageView{8858a26 V.ED..... ......I. 0,0-0,0}
+              android.widget.ImageView{579667 V.ED..... ......I. 0,0-0,0}
+              android.widget.FrameLayout{fc89c14 GFE...... ......I. 0,0-0,0 #7f09028b app:id/folder_view}
+                android.widget.LinearLayout{370bcbd VFE...C.. ......I. 0,0-0,0}
+                  android.widget.LinearLayout{7b022b2 V.E...... ......I. 0,0-0,0}
+                    android.widget.EditText{83d3203 VFED..CL. ......ID 0,0-0,0 #7f09028a app:id/folder_title}
+                    android.widget.ImageView{89d6580 VFED..C.. ......I. 0,0-0,0 #7f09028c app:id/folder_view_cancel_image}
+                  android.view.View{f167b9 V.ED..... ......I. 0,0-0,0 #7f09047b app:id/title_underline}
+                  android.widget.FrameLayout{679b7fe V.E...... ......I. 0,0-0,0 #7f09028b app:id/folder_view}
+                    com.amazon.firelauncher.appsgrid.ui.FolderView{456eb5f VFED..... ......I. 0,0-0,0 #7f090288 app:id/folder_grid}
+                    com.amazon.firecard.view.widget.PageIndicator{f3359ac V.E...... ......I. 0,0-0,0 #7f090289 app:id/folder_page_indicator}
+              android.widget.Button{537c675 GFED..C.. ......I. 0,0-0,0 #7f0901c4 app:id/edit_done_button}
+          android.view.ViewStub{ab5560a G.E...... ......I. 0,0-0,0 #10201ad android:id/action_mode_bar_stub}
+    Looper (main, tid 2) {a240936}
+      Message 0: { when=+41m37s302ms callback=com.amazon.firecard.deviceagent.provider.CardProvider$5 target=android.os.Handler isAsync=false }
+      (Total messages: 1, polling=false, quitting=false)
+    Autofill Compat Mode: false
+    AutofillManager:
+      sessionId: -2147483648
+      state: UNKNOWN
+      context: com.amazon.firelauncher.Launcher@5653290
+      client: com.amazon.firelauncher.Launcher@5653290
+      enabled: false
+      hasService: true
+      hasCallback: false
+      onInvisibleCalled false
+      last autofilled data: null
+      tracked views: null
+      fillable ids: null
+      entered ids: null
+      save trigger id: null
+      save on finish(): false
+      compat mode enabled: false
+      debug: false verbose: false
+    ResourcesManager:
+      total apks: 13
+      resources: 9
+      resource impls: 9
+    Local FragmentActivity 5653290 State:
+      mCreated=true mResumed=false mStopped=true    Active Fragments:    DeliveriesAppsGrid{4caf89f} (1e192f05-6ed4-4908-9be0-999cc07b5fe7) id=0x7f090379 F_C.PageAdapter:DELIVERIES}
+        mFragmentId=#7f090379 mContainerId=#7f090379 mTag=F_C.PageAdapter:DELIVERIES
+        mState=2 mWho=1e192f05-6ed4-4908-9be0-999cc07b5fe7 mBackStackNesting=0
+        mAdded=true mRemoving=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=true
+        mRetainInstance=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{528de7b in HostCallbacks{a5a59a4}}}
+        mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+        mArguments=Bundle[{F_C.AppsGrid.THEME_OVERRIDE=2131689492}]
+        mContainer=com.amazon.firelauncher.view.EnhancedViewPager{5ca50c4 VFED..... ......I. 0,0-0,0 #7f090379 app:id/pager}
+        mView=com.amazon.firelauncher.appsgrid.ui.ScrollableMainView{7584bad V.E...... ......I. 0,0-0,0}
+        Child FragmentManager{4526498 in DeliveriesAppsGrid{4caf89f}}}:
+          Back Stack Index: 0
+          FragmentManager misc state:
+            mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+            mContainer=androidx.fragment.app.Fragment$4@74b54f1
+            mParent=DeliveriesAppsGrid{4caf89f} (1e192f05-6ed4-4908-9be0-999cc07b5fe7) id=0x7f090379 F_C.PageAdapter:DELIVERIES}
+            mCurState=2 mStateSaved=false mStopped=false mDestroyed=false
+    LibraryFragment{a563b0c} (c7a78bbd-a76d-4a98-a511-4e42cf305de1) id=0x7f090379 F_C.PageAdapter:LIBRARY}
+        mFragmentId=#7f090379 mContainerId=#7f090379 mTag=F_C.PageAdapter:LIBRARY
+        mState=2 mWho=c7a78bbd-a76d-4a98-a511-4e42cf305de1 mBackStackNesting=0
+        mAdded=true mRemoving=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{528de7b in HostCallbacks{a5a59a4}}}
+        mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+        mArguments=Bundle[{F_C.CardListFragment.TARGET_ID=LIBRARY, orientation=1, F_C.CardListFragment.THEME_OVERRIDE=-1, F_C.LibraryFragment.IS_PABLO_LIBRARY=true}]
+        mContainer=com.amazon.firelauncher.view.EnhancedViewPager{5ca50c4 VFED..... ......I. 0,0-0,0 #7f090379 app:id/pager}
+        mView=com.amazon.firelauncher.view.ScrollObservableContainer{c44365 V.E...... ......I. 0,0-0,0}
+        Child FragmentManager{25ac8d6 in LibraryFragment{a563b0c}}}:
+          Back Stack Index: 0
+          FragmentManager misc state:
+            mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+            mContainer=androidx.fragment.app.Fragment$4@55ce757
+            mParent=LibraryFragment{a563b0c} (c7a78bbd-a76d-4a98-a511-4e42cf305de1) id=0x7f090379 F_C.PageAdapter:LIBRARY}
+            mCurState=2 mStateSaved=false mStopped=false mDestroyed=false
+    DaliForYouFragment{40ab0b4} (d07badd0-d0bf-47f6-8f7c-4513c8ea78d1) id=0x7f090379 F_C.PageAdapter:FOR_YOU_DALI}
+        mFragmentId=#7f090379 mContainerId=#7f090379 mTag=F_C.PageAdapter:FOR_YOU_DALI
+        mState=2 mWho=d07badd0-d0bf-47f6-8f7c-4513c8ea78d1 mBackStackNesting=0
+        mAdded=true mRemoving=false mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+        mRetainInstance=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{528de7b in HostCallbacks{a5a59a4}}}
+        mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+        mContainer=com.amazon.firelauncher.view.EnhancedViewPager{5ca50c4 VFED..... ......I. 0,0-0,0 #7f090379 app:id/pager}
+        mView=android.widget.FrameLayout{9ca472e V.E...... ......I. 0,0-0,0}
+        Child FragmentManager{b553244 in DaliForYouFragment{40ab0b4}}}:
+          Back Stack Index: 0
+          FragmentManager misc state:
+            mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+            mContainer=androidx.fragment.app.Fragment$4@d2f4f2d
+            mParent=DaliForYouFragment{40ab0b4} (d07badd0-d0bf-47f6-8f7c-4513c8ea78d1) id=0x7f090379 F_C.PageAdapter:FOR_YOU_DALI}
+            mCurState=2 mStateSaved=false mStopped=false mDestroyed=false
+    Added Fragments:
+      #0: DeliveriesAppsGrid{4caf89f} (1e192f05-6ed4-4908-9be0-999cc07b5fe7) id=0x7f090379 F_C.PageAdapter:DELIVERIES}
+      #1: DaliForYouFragment{40ab0b4} (d07badd0-d0bf-47f6-8f7c-4513c8ea78d1) id=0x7f090379 F_C.PageAdapter:FOR_YOU_DALI}
+      #2: LibraryFragment{a563b0c} (c7a78bbd-a76d-4a98-a511-4e42cf305de1) id=0x7f090379 F_C.PageAdapter:LIBRARY}
+    Back Stack Index: 0
+    FragmentManager misc state:
+      mHost=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+      mContainer=androidx.fragment.app.FragmentActivity$HostCallbacks@a5a59a4
+      mCurState=2 mStateSaved=true mStopped=true mDestroyed=false
+      mNeedMenuInvalidate=true
+
+TASK 1000:com.android.settings.root id=28 userId=0
+  ACTIVITY com.android.settings/.Settings fbf1205 pid=6551
+    Local Activity 89da05f State:
+      mResumed=false mStopped=true mFinished=false
+      mChangingConfigurations=false
+      mCurrentConfig={1.0 ?mcc?mnc [ja_JP] ldltr sw800dp w800dp h1208dp 240dpi xlrg port finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1200, 1848) mAppBounds=Rect(0, 0 - 1200, 1848) mWindowingMode=fullscreen mActivityType=standard} s.6}
+      mLoadersStarted=true
+      Active Fragments in 39ae48:
+        #0: DashboardSummary{f5954e1 #0 id=0x7f0a028d}
+          mFragmentId=#7f0a028d mContainerId=#7f0a028d mTag=null
+          mState=3 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
+          mAdded=true mRemoving=false mFromLayout=false mInLayout=false
+          mHidden=false mDetached=false mMenuVisible=true mHasMenu=false
+          mRetainInstance=false mRetaining=false mUserVisibleHint=true
+          mFragmentManager=FragmentManager{39ae48 in HostCallbacks{7ebe206}}
+          mHost=android.app.Activity$HostCallbacks@7ebe206
+          mSavedViewState={2131362034=android.support.v7.widget.RecyclerView$SavedState@4f140c7}
+          mContainer=android.widget.FrameLayout{d5f66f4 V.E...... ......ID 0,96-1200,1884 #7f0a028d app:id/main_content}
+          mView=com.android.settings.dashboard.conditional.FocusRecyclerView{7b55e1d VFED.V... ......ID 0,0-1200,1788 #7f0a00f2 app:id/dashboard_container}
+          Child FragmentManager{2541892 in DashboardSummary{f5954e1}}:
+            FragmentManager misc state:
+              mHost=android.app.Activity$HostCallbacks@7ebe206
+              mContainer=android.app.Fragment$1@372263
+              mParent=DashboardSummary{f5954e1 #0 id=0x7f0a028d}
+              mCurState=3 mStateSaved=true mDestroyed=false
+      Added Fragments:
+        #0: DashboardSummary{f5954e1 #0 id=0x7f0a028d}
+      FragmentManager misc state:
+        mHost=android.app.Activity$HostCallbacks@7ebe206
+        mContainer=android.app.Activity$HostCallbacks@7ebe206
+        mCurState=3 mStateSaved=true mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false      mIsAmbientMode=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=1120488 (7200 ms ago)
+    View Hierarchy:
+      DecorView@f85fe60[Settings]
+        android.widget.FrameLayout{dcebf19 V.E...... ......ID 0,0-1200,1920}
+          android.widget.FrameLayout{5972bde V.E...... ......ID 0,36-1200,1920 #1020002 android:id/content}
+            android.widget.LinearLayout{c6f81bf V.E...... ......ID 0,0-1200,1884 #7f0a00df app:id/content_parent}
+              android.widget.Toolbar{dbca08c G.E...... ......ID 0,0-0,0 #7f0a000f app:id/action_bar}
+                android.widget.ImageButton{a8333d5 VFED..... ......I. 0,0-0,0}
+              android.widget.FrameLayout{f6627ea V.E...... ......ID 0,0-1200,0 #7f0a00dd app:id/content_header_container}
+              android.widget.FrameLayout{7a47adb V.E...... ......ID 0,0-1200,1884 #7f0a00dc app:id/content_frame}
+                android.widget.LinearLayout{ed93978 V.E...... ......ID 0,0-1200,1884}
+                  android.widget.FrameLayout{cd03851 V.E...... ......ID 0,0-1200,96 #7f0a0376 app:id/search_bar_container}
+                    android.support.v7.widget.CardView{576d8b6 V.E...... ......ID 12,12-1188,84 #7f0a0375 app:id/search_bar}
+                      android.widget.Toolbar{c65e9b7 VFE...C.. ......ID 0,0-1176,72 #7f0a0371 app:id/search_action_bar}
+                        android.widget.LinearLayout{f247524 V.E...... ......ID 24,18-1140,54}
+                          android.widget.ImageView{c0f088d V.ED..... ......ID 0,0-36,36 #7f0a0228 app:id/icon_toolbar_left}
+                          android.widget.TextView{10fca42 V.ED..... ......ID 84,2-132,33 #7f0a0372 app:id/search_action_bar_title}
+                        android.widget.ActionMenuView{4656a53 V.E...... ......ID 1158,0-1158,72}
+                  android.widget.FrameLayout{d5f66f4 V.E...... ......ID 0,96-1200,1884 #7f0a028d app:id/main_content}
+                    com.android.settings.dashboard.conditional.FocusRecyclerView{7b55e1d VFED.V... ......ID 0,0-1200,1788 #7f0a00f2 app:id/dashboard_container}
+                      android.widget.LinearLayout{4c5bf90 VFE...C.. ......ID 0,0-1200,64}
+                        android.widget.RelativeLayout{1f0a089 V.E...... ......ID 0,0-1200,64}
+                          android.widget.FrameLayout{754488e V.E...... ......ID 24,14-84,50 #102003e android:id/icon_frame}
+                            android.widget.ImageView{8d258af V.ED..... ......ID 0,0-36,36 #1020006 android:id/icon}
+                          android.widget.ImageView{eef44bc V.ED..... ......ID 1140,14-1176,50 #7f0a0153 app:id/expand_indicator}
+                          android.widget.TextView{839bc45 V.ED..... ......ID 1116,18-1116,46 #1020010 android:id/summary}
+                          android.widget.TextView{a505f9a V.ED..... ......ID 84,18-1104,46 #1020016 android:id/title}
+                          android.widget.LinearLayout{c75d0cb I.E...... ......I. 84,14-1104,50 #7f0a0031 app:id/additional_icons}
+                      android.widget.LinearLayout{bc9f0a8 VFE...C.. ......ID 0,64-1200,173 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{63ed7c1 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{ec4db66 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{b8eaea7 V.ED..... ......ID 0,0-168,31 #1020016 android:id/title}
+                          android.widget.TextView{1216f54 V.ED..... ......ID 0,34-306,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{a202efd VFE...C.. ......ID 0,173-1200,282 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{2b347f2 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{d6d8e43 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{3d02cc0 V.ED..... ......ID 0,0-143,31 #1020016 android:id/title}
+                          android.widget.TextView{9c5bdf9 V.ED..... ......ID 0,34-218,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{a9f13e VFE...C.. ......ID 0,282-1200,391 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{3d0cb9f V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{9eb54ec V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{79b40b5 V.ED..... ......ID 0,0-144,31 #1020016 android:id/title}
+                          android.widget.TextView{bcfe34a V.ED..... ......ID 0,34-294,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{40082bb VFE...C.. ......ID 0,391-1200,500 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{3aed3d8 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{70c3331 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{b0ea16 V.ED..... ......ID 0,0-120,31 #1020016 android:id/title}
+                          android.widget.TextView{5aa8f97 V.ED..... ......ID 0,34-56,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{7295584 VFE...C.. ......ID 0,500-1200,609 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{cbfd16d V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{6c991a2 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{37e8e33 V.ED..... ......ID 0,0-60,31 #1020016 android:id/title}
+                          android.widget.TextView{aa845f0 V.ED..... ......ID 0,34-837,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{6951769 VFE...C.. ......ID 0,609-1200,718 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{ed325ee V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{989da8f V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{9e3d11c V.ED..... ......ID 0,0-142,31 #1020016 android:id/title}
+                          android.widget.TextView{75ec125 V.ED..... ......ID 0,34-502,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{9cfb2fa VFE...C.. ......ID 0,718-1200,827 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{d5390ab V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{1eae308 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{25f4aa1 V.ED..... ......ID 0,0-96,31 #1020016 android:id/title}
+                          android.widget.TextView{4d604c6 V.ED..... ......ID 0,34-210,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{bb88c87 VFE...C.. ......ID 0,827-1200,936 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{fcf27b4 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{284efdd V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{59da752 V.ED..... ......ID 0,0-120,31 #1020016 android:id/title}
+                          android.widget.TextView{8876a23 V.ED..... ......ID 0,34-168,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{e110b20 VFE...C.. ......ID 0,936-1200,1045 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{965acd9 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{3cae69e V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{bdc857f V.ED..... ......ID 0,0-311,31 #1020016 android:id/title}
+                          android.widget.TextView{ccbb94c V.ED..... ......ID 0,34-376,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{1fb3d95 VFE...C.. ......ID 0,1045-1200,1154 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{afaceaa V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{93dfa9b V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{a11e38 V.ED..... ......ID 0,0-168,31 #1020016 android:id/title}
+                          android.widget.TextView{31f1e11 V.ED..... ......ID 0,34-182,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{18f2b76 VFE...C.. ......ID 0,1154-1200,1263 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{c77a577 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{465e5e4 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{dc68a4d V.ED..... ......ID 0,0-408,31 #1020016 android:id/title}
+                          android.widget.TextView{3a8902 V.ED..... ......ID 0,34-336,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{8372213 VFE...C.. ......ID 0,1263-1200,1372 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{98d7c50 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{2fe7e49 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{64c334e V.ED..... ......ID 0,0-264,31 #1020016 android:id/title}
+                          android.widget.TextView{267cc6f V.ED..... ......ID 0,34-461,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{3560d7c VFE...C.. ......ID 0,1372-1200,1481 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{da7b605 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{6bc365a V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{a4ec08b V.ED..... ......ID 0,0-144,31 #1020016 android:id/title}
+                          android.widget.TextView{8b48568 V.ED..... ......ID 0,34-210,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{bf2ad81 VFE...C.. ......ID 0,1481-1200,1590 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{9f75e26 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{466da67 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{9009014 V.ED..... ......ID 0,0-168,31 #1020016 android:id/title}
+                          android.widget.TextView{49ba0bd V.ED..... ......ID 0,34-398,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{6b36b2 VFE...C.. ......ID 0,1590-1200,1699 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{7fcb603 V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{f609980 V.E...... ......ID 120,24-1164,85}
+                          android.widget.TextView{3e68bb9 V.ED..... ......ID 0,0-72,31 #1020016 android:id/title}
+                          android.widget.TextView{1d20bfe V.ED..... ......ID 0,34-496,61 #1020010 android:id/summary}
+                      android.widget.LinearLayout{a8aaf5f VFE...C.. ......ID 0,1699-1200,1807 #7f0a00f3 app:id/dashboard_tile}
+                        android.widget.ImageView{f5cdac V.ED..... ......ID 36,36-72,72 #1020006 android:id/icon}
+                        android.widget.LinearLayout{c5b2a75 V.E...... ......ID 120,38-1164,69}
+                          android.widget.TextView{53eea0a V.ED..... ......ID 0,0-72,31 #1020016 android:id/title}
+                          android.widget.TextView{4d4e27b G.ED..... ......ID 0,0-0,0 #1020010 android:id/summary}
+          android.view.ViewStub{1c81898 G.E...... ......I. 0,0-0,0 #10201ad android:id/action_mode_bar_stub}
+        android.view.View{740f8f1 V.ED..... ......ID 0,0-1200,36 #102002f android:id/statusBarBackground}
+    Looper (main, tid 2) {de99cd6}
+      Message 0: { when=+2s12ms what=132 target=android.app.ActivityThread$H isAsync=false }
+      (Total messages: 1, polling=false, quitting=false)
+    Autofill Compat Mode: false
+    AutofillManager:
+      sessionId: -2147483648
+      state: UNKNOWN
+      context: com.android.settings.Settings@89da05f
+      client: com.android.settings.Settings@89da05f
+      enabled: false
+      hasService: true
+      hasCallback: false
+      onInvisibleCalled false
+      last autofilled data: null
+      tracked views: null
+      fillable ids: null
+      entered ids: null
+      save trigger id: null
+      save on finish(): false
+      compat mode enabled: false
+      debug: false verbose: false
+    ResourcesManager:
+      total apks: 13
+      resources: 11
+      resource impls: 11

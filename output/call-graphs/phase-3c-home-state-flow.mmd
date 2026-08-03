@@ -1,0 +1,11 @@
+flowchart TD
+  B[Phase 3C baseline] --> S[set-home-activity p0]
+  S --> R[ordinary preferred XML p0 mAlways true]
+  R --> Q[HOME candidate query]
+  Q --> C[chooseBestActivity]
+  C -->|Fire effective priority 50| F[Fire Launcher]
+  C -->|p0 effective priority 0| P[p0 record stored but not selected]
+  F --> H[Home key explicit HOME reboot foreground]
+  P -. persists across reboot .-> R
+  H --> RB[restore Fire preferred]
+  RB --> U[uninstall p0]

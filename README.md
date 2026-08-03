@@ -228,3 +228,69 @@ Phase 3B device collection is read-only except for clearing logcat buffers and
 bringing the foreground to HOME for path observation. It does not disable Fire
 Launcher, clear its data, modify settings/overlays/partitions, reboot, root, or
 flash the device.
+
+## Phase 3C: HOME selection state mutation experiments
+
+Phase 3C builds on the Phase 3B public evidence and does not repeat the Phase
+3A priority APK matrix. It adds an explicit, plan-driven state snapshot and
+rollback workflow:
+
+```sh
+tools/scripts/capture_phase3c_state.sh \
+  --serial G001LT0511550CFT \
+  --test-id PHASE3C-BASELINE-YYYYMMDD-01 \
+  --output adb/phase3c/PHASE3C-BASELINE-YYYYMMDD-01
+
+tools/scripts/run_phase3c_preferred_experiment.sh \
+  --serial G001LT0511550CFT \
+  --test-id PHASE3C-PREFERRED-P0-XX \
+  --apk tools/test-launcher/dist/20260803-jdk26/org.fireosresearch.home.p0.apk \
+  --output adb/phase3c/PHASE3C-PREFERRED-P0-XX \
+  --lock-unlock --reboot --approve-state-change
+```
+
+The mutation runner accepts only the p0 research launcher, writes only an
+ordinary preferred HOME record, and restores Fire Launcher as the preferred
+component before removing the test package. `restore_phase3c_state.sh` uses an
+explicit plan rather than replaying all settings; it rejects Fire Launcher
+package/component state changes. `compare_phase3c_state.py` compares saved
+snapshots without contacting the device, and `analyze_phase3c.py` generates
+the derived reports and matrices offline.
+
+The canonical Phase 3C baseline is
+`adb/phase3c/PHASE3C-BASELINE-20260803-02`; the corrected controlled experiment
+is `adb/phase3c/PHASE3C-PREFERRED-P0-02`. `PHASE3C-PREFERRED-P0-01` is retained
+as a harness-error record and is not causal evidence. Raw outputs and
+supplemental final SHA-256 manifests are preserved under `adb/phase3c/`.
+`PHASE3C-PREFERRED-P0-03` is a same-scope repeat made only to add event-level
+logcat capture; it has the same restored result and is included as
+`P3C-LOGCAT-001`.
+
+Observed result: the p0 package could be installed and an exact
+MAIN+HOME+DEFAULT `mAlways=true` preferred record survived one reboot, but
+resolver, Home key, explicit HOME, lock/unlock, and foreground state remained
+with `com.amazon.firelauncher/.Launcher`. The record was then restored to Fire
+Launcher and p0 was removed. HOME role output and `device_config` were
+unavailable on this build; no related mutable overlay or shell-writable setting
+was justified for mutation. This is evidence that the ordinary preferred
+record is writable but ineffective against the observed priority-50 Fire
+candidate, not proof of a unique Amazon resolver patch.
+
+Phase 3C outputs:
+
+- `findings/phase-3c-report.md` and `findings/phase-3c-evidence-index.md`
+- `findings/phase-3c-settings-key-analysis.md`
+- `findings/phase-3c-preferred-activity-analysis.md`
+- `findings/phase-3c-home-callback-analysis.md`
+- `findings/phase-3c-overlay-analysis.md`
+- `findings/phase-3c-fallback-analysis.md`
+- `findings/phase-3c-workaround-classification.md`
+- `findings/phase-3c-risk-register.md`
+- `findings/phase-3c-settings-key-inventory.csv`
+- `output/tables/phase-3c-settings-matrix.csv`
+- `output/tables/phase-3c-experiment-matrix.csv`
+- `output/call-graphs/phase-3c-home-state-flow.mmd`
+
+No Root, Fire Launcher disable/hide/suspend/uninstall, Fire data clear,
+partition write, framework injection, Device Owner setup, or crash-loop
+fallback test was performed in Phase 3C.
