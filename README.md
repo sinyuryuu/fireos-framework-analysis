@@ -697,3 +697,29 @@ No Bluetooth enable/start/stop, HCI/AT command, private Binder call, vendor
 binary execution, exploit payload, alternate CMDQ ioctl, root, BROM/DA,
 remount, or boot-chain operation was performed. The one-shot CMDQ approval is
 consumed and does not authorize any of these follow-ups.
+
+### Phase 5K — public kernel source and GhostLock offset applicability
+
+The public IonStack/GhostLock article and pinned public source were reviewed
+against the exact device's `Linux 4.4.146+` / MT8183 identity. The CVE
+identifier was corrected: GhostLock is `CVE-2026-43499`, not
+`CVE-2026-3499`; `CVE-2026-43503` is a separate `sk_buff` issue. The upstream
+4.4.146 source snapshot contains the pre-fix `current->pi_blocked_on` pattern,
+while later stable source clears `waiter_task->pi_blocked_on` on the proxy path.
+That is strong upstream-source evidence, not proof that Amazon's PS7330 binary
+is unpatched or exploitable.
+
+The public `auto_extract_offsets` tool was pinned and reviewed. It supports
+GKI/Android 6.6 and 6.12 layouts and has no validated KFTRWI/trona/MT8183
+4.4.146 profile, so it was not run against the version-mismatched PS7331 boot
+image. The public NebuSec GhostLock source likewise contains Pixel/Android 17
+GKI target profiles, not this tablet. No exploit, trigger, crash reproducer,
+alternate ioctl, BROM/DA action, or boot-chain operation was executed.
+
+The report is `findings/phase-5k-public-kernel-cve-offset-review.md`; evidence
+rows `P5K-SRC-001` through `P5K-SAFETY-001` are in
+`findings/phase-5-evidence-index.md`. The host-only source path collector is
+`tools/scripts/inspect_phase5_exact_source_cve_paths.sh` and supports
+`--dry-run`. Exact PS7330 boot/vmlinux acquisition and any exploit execution
+remain separate Level 3 operations requiring a new operation-specific report
+and approval.

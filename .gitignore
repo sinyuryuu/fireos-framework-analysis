@@ -61,3 +61,26 @@ tools/phase4-accessibility/dist/
 # hash, command records, and stdout/stderr, not the executable itself.
 adb/phase5/MTK-SU-CMDQ-T03/host/mtk-su64
 adb/phase5/MTK-SU-CMDQ-T03/sha256sums.txt
+
+# Phase 5K host-only public-source working copies and large bounded samples.
+# Reports, evidence rows, and the reproducible collector remain publishable;
+# third-party exploit source and multi-gigabyte archive slices stay local.
+# Keep only small provenance metadata for public-source review. The checked-out
+# third-party source and exploit files remain local-only.
+artifacts/phase5/public-source-review/CyberMeowfia/
+artifacts/phase5/public-source-review/CyberMeowfia/*
+artifacts/phase5/public-source-review/auto_extract_offsets/auto_extract_offsets.py
+artifacts/phase5/public-source-review/auto_extract_offsets/*.py
+artifacts/phase5/public-source-review/auto_extract_offsets/Makefile
+artifacts/phase5/public-source-review/auto_extract_offsets/README*
+artifacts/phase5/public-source-review/auto_extract_offsets/extract_offsets.yml
+artifacts/phase5/public-source-review/linux-rtmutex/*.c
+artifacts/phase5/exact-source-sampling-*/
+artifacts/phase5/exact-source-cve-paths-*/
+
+# Preserve small provenance files from the ignored CyberMeowfia checkout.
+!artifacts/phase5/public-source-review/CyberMeowfia/
+!artifacts/phase5/public-source-review/CyberMeowfia/commit.json
+!artifacts/phase5/public-source-review/CyberMeowfia/tree.json
+!artifacts/phase5/public-source-review/CyberMeowfia/tree-selected.tsv
+!artifacts/phase5/public-source-review/CyberMeowfia/sha256sums.txt
