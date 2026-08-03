@@ -1,0 +1,19 @@
+flowchart TD
+    A[Unprivileged Android process] --> B[ordinary futex/thread syscalls]
+    B --> C[FUTEX_WAIT_REQUEUE_PI]
+    C --> D[FUTEX_CMP_REQUEUE_PI]
+    D --> E[rt_mutex_start_proxy_lock]
+    E --> F[-EDEADLK rollback]
+    F --> G[remove_waiter]
+    G --> H[old source: current->pi_blocked_on]
+    H --> I[waiter task retains dangling stack pointer]
+    I -.-> J[GhostLock UAF / later PI chain walk]
+    J -.-> K[public exploit stages: target-specific layout and addresses]
+    K -.-> L[root stage]
+
+    M[Amazon PS7330 source] --> N[rtmutex.c matches v4.4.146]
+    N -.-> G
+    O[Exact signed boot image] --> P{ADB shell readable?}
+    P -->|No: Permission denied| Q[Runtime binary/backport unknown]
+    P -->|Yes| R[host-only provenance analysis]
+    Q -.-> K

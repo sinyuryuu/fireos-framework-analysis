@@ -1507,3 +1507,34 @@ output, and performs no device I/O, Binder invocation, native-library loading,
 Bluetooth activation, crafted input, kernel trigger, or root operation. GhostLock
 remains a separate Linux futex/PI-rtmutex kernel path; the Bluetooth Android map
 does not establish a relation to that kernel CVE or a shell-to-root primitive.
+
+### Phase 5AN — GhostLock exact target gate and boot metadata
+
+Phase 5AN preserves a new read-only exact-device capture and separates source-level
+applicability from executable exploit compatibility. The Fire HD 10 is
+`KFTRWI/trona/MT8183`, running the signed `PS7330.4104N` build and Linux
+`4.4.146+`. The matching Amazon kernel source retains the old futex PI/rtmutex
+`remove_waiter()` pattern, and the live read-only config exposes `FUTEX`,
+`RT_MUTEXES`, and `PREEMPT`; this is a source/config candidate, not proof of a
+runtime root path.
+
+The shell-visible boot symlink resolves to `mmcblk0p16`, but an exact boot pull is
+denied with `Permission denied`. The only locally available boot image is a
+PS7331 image and is explicitly marked `VERSION_MISMATCH`; it is not used as an
+exploit, recovery, or flashing input. Public GhostLock target headers reviewed in
+the pinned source snapshot target Pixel/Android 17 builds, not this Amazon device.
+
+No futex race, reproducer, root/ROP stage, kernel memory write, BROM/DA action,
+bootloader operation, partition read/write, or device-state mutation was performed.
+
+Phase 5AN outputs:
+
+- `tools/scripts/capture_phase5an_boot_metadata.sh`
+- `findings/phase-5an-ghostlock-exact-target-review.md`
+- `findings/phase-5an-evidence-index.md`
+- `output/call-graphs/phase5an-ghostlock-source-to-target.mmd`
+- `adb/phase5/PHASE5AN-BOOT-READONLY-20260804-02/`
+
+The collector requires an explicit serial, refuses an existing output directory,
+supports `--dry-run`, records command results and SHA-256 values, and only attempts
+the optional read-only boot pull to document the permission boundary.
