@@ -1,0 +1,21 @@
+Timestamp: 2026-08-03 Asia/Taipei (recorded during Phase 5 low-level transition)
+Device serial: G001LT0511550CFT
+
+Command 1:
+adb -s G001LT0511550CFT get-state
+Purpose: preflight state check
+Observed result: device
+
+Command 2:
+adb -s G001LT0511550CFT reboot bootloader
+Purpose: enter bootloader for the explicitly approved transition
+Observed result: exit code 0
+
+Command 3:
+/opt/homebrew/bin/fastboot devices
+Purpose: read-only enumeration after the transition
+Observed result: G001LT0511550CFT fastboot
+
+Not executed:
+fastboot getvar, fastboot reboot, unlock, flashing, erase, format, OEM, upload,
+download, set_active, or any partition write.
