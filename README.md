@@ -980,3 +980,28 @@ Phase 5U outputs:
 - `findings/phase-5u-android-cve-applicability.md`
 - `findings/phase-5u-ghostlock-level3-report.md`
 - `findings/phase-5u-evidence-index.md`
+
+### Phase 5V — MT8183/Android 9 Bluetooth CVE and implementation review
+
+Phase 5V reviews the exact PS7330 `com.android.bluetooth` APK/ODEX/VDEX and
+Amazon GATT extension against the official MediaTek and Android February 2022
+bulletins. The published scope includes MT8183/Android 9 for Bluetooth
+CVE-2022-20025 through CVE-2022-20028 and related 20041–20046 issues. The
+device is now on the 2024-02-01 patch level, so a patched exact binary is a
+high-confidence inference but not a binary-level confirmation because the
+Amazon vendor patch mapping is not public in the preserved artifacts.
+
+The recorded GitHub search found no exact Android repository for the four
+searched CVEs and no `KFTRWI/trona/PS7330` implementation. The exact runtime
+snapshot had Bluetooth disabled and the service disconnected. No Bluetooth
+activation, HCI/AT input, private Binder call, vendor binary, exploit, kernel,
+boot-chain or partition operation was performed.
+
+Phase 5V outputs:
+
+- `tools/scripts/analyze_phase5v_bluetooth_cves.py`
+- `artifacts/phase5/bluetooth-cve-screen-20260804-01/`
+- `findings/phase-5v-bluetooth-cve-review.md`
+- `findings/phase-5v-bluetooth-evidence-index.md`
+- `findings/phase-5v-bluetooth-level3-report.md`
+- `output/tables/phase5v-bluetooth-cve-matrix.csv`
