@@ -518,3 +518,28 @@ results are under `artifacts/phase5/exact-source-search-20260803/tail-sample-*`.
 The repeatable host-only collector is
 `tools/scripts/inspect_phase5_exact_source_tail.sh`. This does not change the
 device and does not create a flashable image.
+
+### Phase 5D — Amazon LK unlock surface and public-route review
+
+After the failed `mtk-easy-su` root-control test, a host-only review pinned
+`lkpatcher`, `pwnage24mtk`, and `fenrir` and compared them with the adjacent
+PS7331 bootloader artifacts. The PS7331 LK contains Amazon-specific strings
+for `amzn_verify_unlock`, temporary unlock code/certificate handling,
+`flash:tucert`, `getvar:unlock_status`, and a reboot-count-limited temporary
+unlock state. This is a real artifact-scoped bootloader surface, not a public
+unlock credential or an ADB setting.
+
+The public `lkpatcher` default needles matched the adjacent LK zero times;
+`pwnage24mtk` did not find a CERT1/CERT2 target in the available LK/preloader
+pair; and `fenrir` has no `trona`/`KFTRWI`/MT8183 device profile. A bounded read
+of the installed PS7330 LK through the Android shell returned `Permission
+denied`, so the exact installed LK cannot currently be matched without a
+privileged or low-level route. The IDME HAL is listed by `lshal`, but no shell
+`idme` command or `dumpsys idme` service is available.
+
+The review is under
+`findings/phase-5d-amazon-unlock-surface.md` and
+`artifacts/phase5/public-lk-route-review-20260803/`. No BROM, DA, certificate,
+unlock, `seccfg`, reboot, erase, or partition operation was executed. A future
+Amazon certificate test needs a separate exact Level 3 report with a matched
+PS7330 LK, signed credential, protocol, and recovery plan.

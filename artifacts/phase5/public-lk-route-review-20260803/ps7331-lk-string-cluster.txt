@@ -1,0 +1,36 @@
+Input: firmware/extracted/PS7331/images/lk.img
+SHA-256: 1f52e5700058df32ffceeed3fb46d7867f8cc3463286f8177cf17dfcf80de495
+Size: 617232 bytes (raw file; embedded lk payload dsize 616720 bytes)
+Command: strings -a -t x .../lk.img | rg -i 'unlock|tucert|seccfg|rpmb|secure|fastboot'
+
+Offset  String
+0x04b254  amzn_verify_unlock
+0x04b284  amzn_get_temp_unlock_idme_code
+0x04b356  t_unlock_code
+0x04b364  amzn_get_temp_unlock_current_code
+0x04b388  amzn_get_temp_unlock_idme_data
+0x04b3a8  amzn_get_temp_unlock_idme_cert
+0x04b3c8  amzn_verify_temp_unlock_code
+0x04b435  Device is temporarily unlocked, %d reboots remaining
+0x04e883  flash:unlock
+0x04e890  flash:tucert
+0x04ec67  unlock signature verify failed, do nothing!
+0x05c696  unlocked
+0x05c86d  androidboot.unlocked_kernel=%s
+0x07a426  getvar:unlock_code
+0x07a439  getvar:unlock_status
+0x07c66b  the command you input is restricted on locked hw
+0x07c722  sbc_enabled
+0x07c72e  daa_enabled
+0x07c73a  rpmb_state
+0x0837eb  seccfg
+0x0837f7  SECCFG
+0x086417  Vunlock_code
+0x086557  Vunlock_version
+0x086577  Vt_unlock_code
+0x086597  Vt_unlock_cert
+
+Interpretation: these are strings and symbol-like names in the adjacent PS7331
+LK. They establish that the bootloader contains an Amazon-specific unlock and
+temporary-unlock code path, but not that the installed PS7330 build exposes it
+to ADB or accepts an arbitrary certificate.

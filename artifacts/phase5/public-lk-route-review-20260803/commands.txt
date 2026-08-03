@@ -1,0 +1,22 @@
+Collection date: 2026-08-03
+
+Host-only source retrieval and audit:
+  git clone --depth 1 https://github.com/R0rt1z2/lkpatcher.git /tmp/lkpatcher-phase5c
+  git clone --depth 1 https://github.com/kasnria001/pwnage24mtk.git /tmp/pwnage24mtk-phase5c
+  git clone --depth 1 https://github.com/R0rt1z2/fenrir.git /tmp/fenrir-phase5c
+  git rev-parse HEAD on each clone
+  sha256sum of the source files listed in source-metadata.tsv
+  strings -a -t x firmware/extracted/PS7331/images/lk.img
+  python3 parse-part-img.py --dump firmware/extracted/PS7331/images/lk.img
+  python3 verify_mtk_image.py --all firmware/extracted/PS7331/images/lk.img
+  python3 parse-part-img.py --dump firmware/extracted/PS7331/images/preloader.img
+  offline byte-count of lkpatcher DEFAULT_PATCHES needles in PS7331 lk.img
+
+Read-only device collection:
+  adb -s G001LT0511550CFT exec-out dd if=/dev/block/platform/bootdevice/by-name/lk bs=4096 count=1
+  adb -s G001LT0511550CFT shell lshal
+  adb -s G001LT0511550CFT shell getprop
+  adb -s G001LT0511550CFT shell service list
+
+No root, BROM, DA, fastboot, unlock, certificate, reboot, write, erase,
+remount, seccfg, or partition operation was executed in this review.

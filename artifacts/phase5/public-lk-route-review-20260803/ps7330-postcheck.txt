@@ -1,0 +1,20 @@
+Host timestamp (UTC): 2026-08-03T12:56:23Z
+Device serial: G001LT0511550CFT
+
+$ adb -s G001LT0511550CFT get-state
+device
+
+$ adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+Amazon/trona/trona:9/PS7330.4104N/0030099376128:user/amz-p,release-keys
+
+$ adb -s G001LT0511550CFT shell getenforce
+Enforcing
+
+$ adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME
+priority=50 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=true
+com.amazon.firelauncher/.Launcher
+
+$ adb -s G001LT0511550CFT shell pm path com.amazon.firelauncher
+package:/system/priv-app/com.amazon.firelauncher/com.amazon.firelauncher.apk
+
+Interpretation: the bounded LK read attempt did not alter the Android-visible device state.

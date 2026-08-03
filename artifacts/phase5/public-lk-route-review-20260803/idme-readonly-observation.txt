@@ -1,0 +1,15 @@
+Test ID: PS7330-IDME-READONLY-T01
+Timestamp: 2026-08-03
+Serial: G001LT0511550CFT
+
+Read-only observations:
+  lshal lists fireos.hardware.idme@1.1::IIdme/default; the live entry shows
+  PID 384, while the shell-readable interface table reports N/A for the
+  fetchable columns.
+  dumpsys idme -> Can't find service: idme
+  shell command lookup -> /system/bin/sh: idme: not found
+  service list contains no Android service named idme.
+
+Interpretation: an IDME HAL is present in the device's vendor service
+inventory, but no shell-visible IDME command or Android dumpsys endpoint was
+identified. No Binder transaction was guessed or invoked.

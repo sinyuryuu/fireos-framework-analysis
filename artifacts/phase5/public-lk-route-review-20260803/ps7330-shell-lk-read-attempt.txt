@@ -1,0 +1,13 @@
+Test ID: PS7330-LK-READ-SHELL-T01
+Timestamp: 2026-08-03T12:50:18Z
+Serial: G001LT0511550CFT
+Command:
+  adb -s G001LT0511550CFT exec-out dd if=/dev/block/platform/bootdevice/by-name/lk bs=4096 count=1
+Purpose: attempt a bounded read of the installed LK block without root and
+without writing to the device.
+Observed output:
+  dd: /dev/block/platform/bootdevice/by-name/lk: Permission denied
+Output capture SHA-256: 3327186119a069775560720bd3ec6f84b90a69cb629dbc91995ec64314ce024c
+Result: the Android shell cannot read the exact PS7330 LK block through this
+device node. No device file was created and no block was written.
+Confidence: Confirmed for the tested shell context.

@@ -1,0 +1,20 @@
+Input 1: firmware/extracted/PS7331/images/lk.img
+SHA-256: 1f52e5700058df32ffceeed3fb46d7867f8cc3463286f8177cf17dfcf80de495
+Command: python3 parse-part-img.py --dump firmware/extracted/PS7331/images/lk.img
+Result:
+  offset=0x0, image_name=lk, dsize=616720, img_type=0
+  total: 0 sub-image(s)
+
+Command: python3 verify_mtk_image.py --all firmware/extracted/PS7331/images/lk.img
+Result: error: no signed target with following CERT1/CERT2 found
+
+Input 2: firmware/extracted/PS7331/images/preloader.img
+SHA-256: 25d8d377d059ec3d5117aa4e749f4f54ef1bfbe8153ae51b309bf20d30eed904
+Command: python3 parse-part-img.py --dump firmware/extracted/PS7331/images/preloader.img
+Result: error: header magic error at offset 0x0: 0x434d4d45 != 0x58881688
+
+Interpretation: the public pwnage24mtk part_hdr/CERT1/CERT2 parser did not
+identify an embedded signed target in the adjacent LK artifact, and the
+adjacent preloader begins with EMMC_BOOT rather than the parser's part header.
+This is a format/packaging mismatch or an incomplete input, not evidence that
+the Amazon boot chain lacks authentication.
