@@ -1,0 +1,10 @@
+# Host-only reproduction command; no adb/device operation
+python3 tools/scripts/analyze_phase5w_android_implementations.py \
++  --device-report findings/phase-5t-ota-metadata-review.md \
++  --ims-report findings/phase-5i-ims-atci-triage.md \
++  --preloader-report findings/phase-5-mtk-compatibility-review.md \
++  --preloader firmware/extracted/PS7331/images/preloader.img \
++  --lk firmware/extracted/PS7331/images/lk.img \
++  --output artifacts/phase5/android-implementation-preloader-review-20260804-02
+
+This command reads preserved reports and local adjacent-version images only.

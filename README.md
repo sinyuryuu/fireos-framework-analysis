@@ -1005,3 +1005,33 @@ Phase 5V outputs:
 - `findings/phase-5v-bluetooth-evidence-index.md`
 - `findings/phase-5v-bluetooth-level3-report.md`
 - `output/tables/phase5v-bluetooth-cve-matrix.csv`
+
+### Phase 5W — Android implementation and preloader applicability review
+
+Phase 5W maps the public Android implementation boundary for the current CVE
+families. GhostLock is a Linux futex/rtmutex issue reached through a native
+syscall; CVE-2022-20053/20054 split between the AOSP IMS binding contract and
+MediaTek's vendor IMS/ATCI layer; CVE-2022-20055/20056 are preloader USB issues
+before Android userspace; and the CMDQ/ION cases are Android native ABI to
+vendor-driver paths. The mapping does not turn any public Android test or
+adjacent boot image into a Fire HD 10 root payload.
+
+The only boot-chain files available locally are PS7331 images and are marked
+`VERSION_MISMATCH` against the installed PS7330. Their host-only strings show
+authentication, anti-rollback, USB download and Amazon unlock-related markers,
+but no live preloader/BROM/DA interaction was performed. The existing IMS/ATCI
+snapshot remains the boundary: no property write, daemon start, socket use or
+AT command was attempted.
+
+Phase 5W outputs:
+
+- `tools/scripts/analyze_phase5w_android_implementations.py`
+- `artifacts/phase5/android-implementation-preloader-review-20260804-02/`
+- `findings/phase-5w-android-implementation-review.md`
+- `findings/phase-5w-evidence-index.md`
+- `findings/phase-5w-preloader-level3-report.md`
+- `output/tables/phase5w-android-implementation-matrix.csv`
+
+No device state changed. No exploit, native trigger, malformed ioctl,
+Bluetooth/HCI input, IMS/ATCI command, preloader/BROM/DA handshake, fastboot,
+remount, reboot, image write or partition operation was performed in Phase 5W.
