@@ -1,0 +1,4 @@
+shasum -a 256 firmware/extracted/PS7331/images/preloader.img
+file firmware/extracted/PS7331/images/preloader.img
+xxd -l 256 -g 1 firmware/extracted/PS7331/images/preloader.img
+strings -a -n 6 firmware/extracted/PS7331/images/preloader.img | rg -i 'MTK_BLOADER|preloader_|PL Build|build date|DA_INFO|daa_enabled|anti.?rollback|secure|auth|trona|8183|8168|chip|hwcode|hw ver|sw ver|DA validation|LK DA'

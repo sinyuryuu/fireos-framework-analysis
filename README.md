@@ -385,3 +385,12 @@ followed only by read-only fastboot `getvar` queries. The complete operation,
 risk, rollback limitations, stop conditions, and approval wording are in
 `findings/phase-5-level3-approval-report.md`. It is not an approval and has not
 been run. Tool versions are recorded in `tools/phase5-tool-versions.txt`.
+
+The adjacent OTA's boot-chain boundary is additionally documented in
+`findings/phase-5-exact-ota-and-boot-chain-evidence.md`. Its updater script
+contains writes for preloader, LK, boot, TEE, SPMFW, SSPM and VPU partitions;
+its preloader strings include RPMB anti-rollback and DA authentication paths.
+The offline reproduction script is
+`tools/scripts/inspect_phase5_boot_chain_artifact.sh`, with derived output in
+`artifacts/phase5/PS7331-preloader-review/`. These are PS7331 artifact-scoped
+observations and do not authorize use on the installed PS7330 build.
