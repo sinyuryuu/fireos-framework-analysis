@@ -1,0 +1,12 @@
+# Host-only commands used or intended for reproduction
+git ls-remote https://github.com/BaronKiko/LauncherHijack.git refs/heads/master
+curl -L --fail --silent --show-error <fixed raw source URL> | nl -ba | sed -n '<range>p'
+python3 tools/scripts/analyze_phase5ab_android_implementation.py --source <source> --output <output>
+tools/phase4-accessibility/build_redirect.sh --output <output> --dry-run
+
+# Not run in this review
+# adb install
+# settings put secure enabled_accessibility_services
+# pm disable / pm suspend / pm clear
+# adb reboot
+# root payload / ioctl / fastboot / partition write

@@ -1159,3 +1159,42 @@ The only remaining safe research value is offline comparison against a
 verifiable exact PS7330 signed kernel/boot artifact. Without that artifact,
 there is no evidence for a new exact Android root implementation or a safe
 payload adaptation; no equivalent public payload should be rerun.
+
+### Phase 5AB — Android PendingIntent implementation review
+
+Phase 5AB adds the Android implementation detail that was missing from the
+earlier foreground-redirect comparison. The fixed LauncherHijack source uses
+an Accessibility/event observer and then constructs an explicit
+ACTION_MAIN + CATEGORY_LAUNCHER intent. Its HomePress implementation dispatches
+that intent through the public Android 9-compatible
+PendingIntent.getActivity(...).send() API. This is a foreground redirect, not
+a HOME resolver mutation and not a privileged PackageManager operation.
+
+The local Phase 4 redirect harness now has a separate source-level
+PendingIntent variant. It retains the manual Accessibility consent, visible
+toggle, Fire-package filter, cooldown, loop guard and explicit research target;
+it deliberately has no overlay, device-admin, network permission or private
+Binder call. The historical T03 APK and its 0/30 direct-start result remain
+preserved and are not overwritten.
+
+Phase 5AB outputs:
+
+- tools/scripts/analyze_phase5ab_android_implementation.py
+- tools/phase4-accessibility/src/org/fireosresearch/phase4/redirect/LauncherRedirectService.java
+- findings/phase-5ab-launcherhijack-pendingintent-review.md
+- findings/phase-5ab-evidence-index.md
+- artifacts/phase5/launcherhijack-pendingintent-review-20260804-01/
+- output/tables/phase5ab-android-implementation-matrix.csv
+
+The source variant has passed static token validation and dry-run checks, but
+has not been installed or enabled on the device. Java compilation was not
+available in the current host shell because no Java runtime is currently
+configured; this is recorded as a host tooling limitation, not a device
+result. No ADB command, Accessibility enable, APK installation, root payload,
+ioctl, reboot, fastboot or partition operation was performed in Phase 5AB.
+
+The result is therefore: LauncherHijack's Android implementation is confirmed
+as a public event-observation plus explicit-Activity/PendingIntent technique;
+the new local PendingIntent variant is a 待驗證 approximation, and there is
+still no evidence of a true, persistent, no-Root HOME replacement or a new
+exact PS7330 Android root implementation.

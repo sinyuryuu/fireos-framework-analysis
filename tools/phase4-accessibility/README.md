@@ -8,7 +8,10 @@ The service observes only `TYPE_WINDOW_STATE_CHANGED` events whose package is
 `com.amazon.firelauncher`. It does not read window text, input content, the
 view tree, passwords, or notifications. It has an explicit in-app enable
 toggle, a cooldown and loop guard, and starts only the explicitly named Phase
-4 test activity. Remove the APK or disable the service to roll back.
+4 test activity. The current source uses the public Android 9-compatible
+`PendingIntent.getActivity(...).send()` launch boundary; the historical T03
+APK used direct `startActivity()` and remains preserved as historical evidence.
+Remove the APK or disable the service to roll back.
 
 No network permission, device-admin declaration, background service, overlay,
 or private Binder call is present. The project intentionally does not ship an
@@ -38,10 +41,12 @@ tools/scripts/run_phase4_accessibility_experiment.sh --phase measure \
   'CONFIRM MANUAL ACCESSIBILITY CONSENT FOR PHASE4-ACCESSIBILITY-T03'
 ```
 
-The measured result was 0/30 foreground handoffs. Logcat recorded explicit
-redirect attempts, but the target remained task history/last-paused while
-`com.amazon.firelauncher/.Launcher` remained resumed. This implementation is
-not a reliable workaround on this build.
+The historical measured result was 0/30 foreground handoffs. Logcat recorded
+explicit direct-start attempts, but the target remained task history/last-paused
+while `com.amazon.firelauncher/.Launcher` remained resumed. The current
+PendingIntent source variant has not been installed or measured; it must not be
+described as a working workaround until a separately identified, manually
+consented run produces before/after evidence.
 
 Required manual sequence for a future run:
 
