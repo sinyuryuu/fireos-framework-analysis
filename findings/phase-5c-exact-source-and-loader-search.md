@@ -97,6 +97,25 @@ Reproduction:
 
 The script has a dry-run mode and only uses host-side HTTP, bzip2, and tar.
 
+### Bounded tail sample
+
+To reduce the remaining uncertainty without retaining the full archive, a
+138,816,416-byte range from the archive tail was sampled with
+`bzip2recover`. The recovered blocks contain the MT8183 kernel build tree,
+including the MT8183 defconfigs and the `mt8183.dts` device tree. They also
+contain thousands of paths under `kernel/mediatek/mt8183/4.4_emc/`.
+
+The exact `kernel/` paths matching `u-boot`/`uboot` in this sample are generic
+AVR32 reference paths. No exact MTK `preloader` or `lk` source path was found
+in the sampled material. This is a partial-range observation, not a complete
+archive inventory and not a signed boot-chain artifact.
+
+The sample range SHA-256 is
+`706f8e7284cc70b30cf0dc62e8d97a8d4b5bbc49062af157f659b06f59d865e7`.
+The method and compact results are under
+`artifacts/phase5/exact-source-search-20260803/tail-sample-*`; the reusable
+collector is `tools/scripts/inspect_phase5_exact_source_tail.sh`.
+
 ## Relationship to the available OTA
 
 The complete local OTA remains PS7331.4463N, not the installed
@@ -117,9 +136,10 @@ PS7330 and do not authorize applying it.
 - **高可信推論：** the source archive is useful for build-context and kernel
   comparison, but it does not provide the signed boot-chain inputs needed for
   a safe BROM or bootloader operation.
-- **待驗證：** whether the undownloaded tail of the source archive contains a
-  buildable MT8183 kernel tree, exact defconfig, or U-Boot source relevant to
-  the PL/LK descriptors.
+- **已證實（範圍限定）：** the sampled tail contains an MT8183 kernel tree,
+  two MT8183 defconfig paths, and the MT8183 device-tree path.
+- **待驗證：** whether other, unsampled archive ranges contain a buildable
+  U-Boot source or any boot-chain source relevant to the PL/LK descriptors.
 - **待驗證：** exact PS7330 preloader binary, BROM hardware ID, DA/SLA/DAA
   policy, and a complete signed recovery set.
 - **因風險拒絕測試：** PS7331 image use, generic MTK payloads, DA upload,
@@ -136,4 +156,3 @@ Raw and derived files are under:
 
 - artifacts/phase5/exact-source-search-20260803/
 - adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-02/
-

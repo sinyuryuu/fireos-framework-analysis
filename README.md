@@ -508,3 +508,13 @@ sequence contains PS7319, PS7321–PS7324, PS7326–PS7329 and PS7331; no PS7330
 URL was recovered. This is a search boundary, not proof that Amazon never
 published a PS7330 package. No new BROM, DA, payload, unlock, write, erase or
 partition operation was executed.
+
+A bounded tail sample of that exact-version source archive recovered the
+MT8183 kernel tree, including `mt8183_defconfig`,
+`mt8183_debug_defconfig`, and `mt8183.dts`. The sample did not yield an exact
+MTK preloader or LK source path; the only exact `kernel/` u-boot paths were
+generic AVR32 references. The range hash, commands, limits, and compact
+results are under `artifacts/phase5/exact-source-search-20260803/tail-sample-*`.
+The repeatable host-only collector is
+`tools/scripts/inspect_phase5_exact_source_tail.sh`. This does not change the
+device and does not create a flashable image.

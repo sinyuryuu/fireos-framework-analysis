@@ -1,0 +1,6 @@
+source_url='https://fireos-tablet-src.s3.amazonaws.com/7OU0BzzYt2YlM3MKwchLwgyUHM/Fire_HD10-7.3.3.0-20240730.tar.bz2'
+curl --fail --retry 2 --max-time 300 --range 2450000000-2588816415 "$source_url" -o source-tail.range
+bzip2recover source-tail.range
+for recovered in rec*; do strings -n 4 "$recovered"; done | sort -u > strings.sorted.txt
+rg -i '^kernel/mediatek/mt8183/' strings.sorted.txt | sort -u > mt8183-source-paths.txt
+rg -i '(^|/)(preloader|lk|u-boot|uboot|bootrom|bootloader)(/|\.|$)|PS7330|MTK_BLOADER|daa_enabled|download agent' strings.sorted.txt | sort -u > boot-chain-source-matches.txt
