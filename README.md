@@ -1272,3 +1272,23 @@ The APK was built locally with OpenJDK 17, Android platform API 35 and Build
 Tools 35.0.0; its v3 signature and SHA-256 are recorded in the report. The
 service is never enabled by ADB. No root payload, kernel trigger, ioctl,
 reboot, fastboot or partition operation was performed.
+
+### Phase 5AE follow-up — exact-target public-source recheck
+
+The current `KoCleo/mtk-easy-su` `master` still resolves to
+`8c6871ac7c15b8e98a47e25c35ab93b87e260475`, the same revision already audited
+and tested unsuccessfully on the exact PS7330 device. No new
+KFTRWI/trona/MT8183 payload or profile was found. The supplied HackMD examples
+are Qualcomm/Xiaomi-specific, while GhostLock is a target-specific kernel
+futex/rtmutex implementation and DirtyClone is a separate Linux networking
+bug; neither has an exact PS7330 Android implementation in the reviewed
+sources.
+
+Phase 5AE follow-up outputs:
+
+- findings/phase-5ae-followup-public-target-review.md
+- output/tables/phase5ae-public-target-matrix.csv
+- artifacts/phase5/public-target-followup-20260804-01/
+
+No third-party APK/native payload, BROM/DA operation, boot image, partition
+write, or kernel trigger was executed.

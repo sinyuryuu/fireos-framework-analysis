@@ -1,0 +1,5 @@
+git ls-remote https://github.com/KoCleo/mtk-easy-su.git HEAD refs/heads/master refs/heads/main
+curl -fsSL https://api.github.com/repos/KoCleo/mtk-easy-su/releases/latest
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell dumpsys accessibility
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME --user 0

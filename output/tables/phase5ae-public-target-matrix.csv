@@ -1,0 +1,6 @@
+candidate,layer,public_revision_or_source,exact_soc,exact_android,exact_kernel,exact_build,live_action,decision,evidence
+KoCleo/mtk-easy-su,Android wrapper + LFS mtk-su,8c6871ac7c15b8e98a47e25c35ab93b87e260475,not listed,legacy Android/MTK devices,not exact,not exact,not repeated,disproved for new route,findings/phase-5aa-android-implementation-review.md
+CVE-2026-43499 GhostLock,Linux futex/rtmutex kernel,upstream fix 3bfdc63936dd,source family overlap,Android implementation target-specific,Fire 4.4 source overlap,PS7330 binary status unknown,no native trigger,source-only applicability,findings/phase-5u-android-cve-applicability.md
+CVE-2026-43503 DirtyClone,Linux networking skb,public analysis,config family incomplete,not Android 9 exact,not exact,not PS7330 PoC,no network trigger,not applicable candidate,findings/phase-5u-android-cve-applicability.md
+HackMD Qualcomm/Xiaomi chain,Qualcomm ABL/Adreno/Xiaomi service,document review,not MT8183,not Fire OS 7,not applicable,not exact,no live command,disproved for KFTRWI,findings/phase-5ae-followup-public-target-review.md
+Phase 5AE Android redirect,Accessibility + PendingIntent,b5c82c8,MT8183,Android 9,not kernel exploit,PS7330,manual consent pending,foreground approximation only,findings/phase-5ae-keyevent-pendingintent-review.md
