@@ -1,0 +1,13 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/Makefile */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 14-21 */
+   14	# common driver code for CMDQ
+   15	ifneq (,$(filter $(CONFIG_MTK_PLATFORM), "mt6757" "mt8167" "kiboplus"))
+   16		obj-y += v2/
+   17	else
+   18		obj-y += v3/
+   19	endif
+   20	
+   21	# EOF
+/* END source lines 14-21 */

@@ -1,0 +1,223 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v2/cmdq_core.c */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 8360-8454 */
+ 8360	int cmdqCoreAllocWriteAddress(uint32_t count, dma_addr_t *paStart)
+ 8361	{
+ 8362		unsigned long flagsWriteAddr = 0L;
+ 8363		struct WriteAddrStruct *pWriteAddr = NULL;
+ 8364		int status = 0;
+ 8365	
+ 8366		CMDQ_VERBOSE("ALLOC: line %d\n", __LINE__);
+ 8367	
+ 8368		do {
+ 8369			if (paStart == NULL) {
+ 8370				CMDQ_ERR("invalid output argument\n");
+ 8371				status = -EINVAL;
+ 8372				break;
+ 8373			}
+ 8374			*paStart = 0;
+ 8375	
+ 8376			if (!count || count > CMDQ_MAX_WRITE_ADDR_COUNT) {
+ 8377				CMDQ_ERR("invalid alloc write addr count:%u max:%u\n",
+ 8378					count, (u32)CMDQ_MAX_WRITE_ADDR_COUNT);
+ 8379				status = -EINVAL;
+ 8380				break;
+ 8381			}
+ 8382	
+ 8383			CMDQ_VERBOSE("ALLOC: line %d\n", __LINE__);
+ 8384	
+ 8385			pWriteAddr = kzalloc(sizeof(struct WriteAddrStruct), GFP_KERNEL);
+ 8386			if (pWriteAddr == NULL) {
+ 8387				CMDQ_ERR("failed to alloc WriteAddrStruct\n");
+ 8388				status = -ENOMEM;
+ 8389				break;
+ 8390			}
+ 8391			memset(pWriteAddr, 0, sizeof(struct WriteAddrStruct));
+ 8392	
+ 8393			CMDQ_VERBOSE("ALLOC: line %d\n", __LINE__);
+ 8394	
+ 8395			pWriteAddr->count = count;
+ 8396			pWriteAddr->va =
+ 8397			    cmdq_core_alloc_hw_buffer(cmdq_dev_get(),
+ 8398						      count * sizeof(uint32_t), &(pWriteAddr->pa),
+ 8399						      GFP_KERNEL);
+ 8400			if (current)
+ 8401				pWriteAddr->user = current->pid;
+ 8402	
+ 8403			CMDQ_VERBOSE("ALLOC: line %d\n", __LINE__);
+ 8404	
+ 8405			if (pWriteAddr->va == NULL) {
+ 8406				CMDQ_ERR("failed to alloc write buffer\n");
+ 8407				status = -ENOMEM;
+ 8408				break;
+ 8409			}
+ 8410	
+ 8411			CMDQ_VERBOSE("ALLOC: line %d\n", __LINE__);
+ 8412	
+ 8413			/* clear buffer content */
+ 8414			do {
+ 8415				uint32_t *pInt = (uint32_t *) pWriteAddr->va;
+ 8416				int i = 0;
+ 8417	
+ 8418				for (i = 0; i < count; ++i) {
+ 8419					*(pInt + i) = 0xcdcdabab;
+ 8420					/* make sure instructions are really in DRAM */
+ 8421					mb();
+ 8422					/* make sure instructions are really in DRAM */
+ 8423					smp_mb();
+ 8424				}
+ 8425			} while (0);
+ 8426	
+ 8427			/* assign output pa */
+ 8428			*paStart = pWriteAddr->pa;
+ 8429	
+ 8430			spin_lock_irqsave(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8431			list_add_tail(&(pWriteAddr->list_node), &gCmdqContext.writeAddrList);
+ 8432			spin_unlock_irqrestore(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8433	
+ 8434			status = 0;
+ 8435	
+ 8436		} while (0);
+ 8437	
+ 8438		if (status != 0) {
+ 8439			/* release resources */
+ 8440			if (pWriteAddr && pWriteAddr->va) {
+ 8441				cmdq_core_free_hw_buffer(cmdq_dev_get(),
+ 8442							 sizeof(uint32_t) * pWriteAddr->count,
+ 8443							 pWriteAddr->va, pWriteAddr->pa);
+ 8444				memset(pWriteAddr, 0, sizeof(struct WriteAddrStruct));
+ 8445			}
+ 8446	
+ 8447			kfree(pWriteAddr);
+ 8448			pWriteAddr = NULL;
+ 8449		}
+ 8450	
+ 8451		CMDQ_VERBOSE("ALLOC: line %d\n", __LINE__);
+ 8452	
+ 8453		return status;
+ 8454	}
+/* END source lines 8360-8454 */
+
+/* BEGIN source lines 8456-8487 */
+ 8456	uint32_t cmdqCoreReadWriteAddress(dma_addr_t pa)
+ 8457	{
+ 8458		struct list_head *p = NULL;
+ 8459		struct WriteAddrStruct *pWriteAddr = NULL;
+ 8460		int32_t offset = 0;
+ 8461		uint32_t value = 0;
+ 8462		unsigned long flagsWriteAddr = 0L;
+ 8463	
+ 8464		/* search for the entry */
+ 8465		spin_lock_irqsave(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8466		list_for_each(p, &gCmdqContext.writeAddrList) {
+ 8467			pWriteAddr = list_entry(p, struct WriteAddrStruct, list_node);
+ 8468			if (pWriteAddr == NULL)
+ 8469				continue;
+ 8470	
+ 8471			offset = pa - pWriteAddr->pa;
+ 8472	
+ 8473			if (offset >= 0 && (offset / sizeof(uint32_t)) < pWriteAddr->count) {
+ 8474				CMDQ_VERBOSE
+ 8475				    ("cmdqCoreReadWriteAddress() input:%pa, got offset=%d va=%p pa_start=%pa\n",
+ 8476				     &pa, offset, (pWriteAddr->va + offset), &(pWriteAddr->pa));
+ 8477				value = *((uint32_t *)(pWriteAddr->va + offset));
+ 8478				CMDQ_VERBOSE
+ 8479				    ("cmdqCoreReadWriteAddress() found offset=%d va=%p value=0x%08x\n",
+ 8480				     offset, (pWriteAddr->va + offset), value);
+ 8481				break;
+ 8482			}
+ 8483		}
+ 8484		spin_unlock_irqrestore(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8485	
+ 8486		return value;
+ 8487	}
+/* END source lines 8456-8487 */
+
+/* BEGIN source lines 8489-8573 */
+ 8489	uint32_t cmdqCoreWriteWriteAddress(dma_addr_t pa, uint32_t value)
+ 8490	{
+ 8491		struct list_head *p = NULL;
+ 8492		struct WriteAddrStruct *pWriteAddr = NULL;
+ 8493		int32_t offset = 0;
+ 8494		unsigned long flagsWriteAddr = 0L;
+ 8495		char longMsg[CMDQ_LONGSTRING_MAX];
+ 8496		uint32_t msgOffset;
+ 8497		int32_t msgMAXSize;
+ 8498	
+ 8499		/* search for the entry */
+ 8500		spin_lock_irqsave(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8501		list_for_each(p, &gCmdqContext.writeAddrList) {
+ 8502			pWriteAddr = list_entry(p, struct WriteAddrStruct, list_node);
+ 8503			if (pWriteAddr == NULL)
+ 8504				continue;
+ 8505	
+ 8506			offset = pa - pWriteAddr->pa;
+ 8507	
+ 8508			/* note it is 64 bit length for uint32_t variable in 64 bit kernel */
+ 8509			/* use sizeof(u_log) to check valid offset range */
+ 8510			if (offset >= 0 && (offset / sizeof(unsigned long)) < pWriteAddr->count) {
+ 8511				cmdq_core_longstring_init(longMsg, &msgOffset, &msgMAXSize);
+ 8512				cmdqCoreLongString(false, longMsg, &msgOffset, &msgMAXSize,
+ 8513						   "cmdqCoreWriteWriteAddress() input:0x%pa,", &pa);
+ 8514				cmdqCoreLongString(false, longMsg, &msgOffset, &msgMAXSize,
+ 8515						   " got offset=%d va=%p pa_start=0x%pa, value=0x%08x\n",
+ 8516						   offset, (pWriteAddr->va + offset),
+ 8517						   &pWriteAddr->pa, value);
+ 8518				if (msgOffset > 0) {
+ 8519					/* print message */
+ 8520					CMDQ_VERBOSE("%s", longMsg);
+ 8521				}
+ 8522	
+ 8523				*((uint32_t *)(pWriteAddr->va + offset)) = value;
+ 8524				break;
+ 8525			}
+ 8526		}
+ 8527		spin_unlock_irqrestore(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8528	
+ 8529		return value;
+ 8530	}
+ 8531	
+ 8532	
+ 8533	int cmdqCoreFreeWriteAddress(dma_addr_t paStart)
+ 8534	{
+ 8535		struct list_head *p, *n = NULL;
+ 8536		struct WriteAddrStruct *pWriteAddr = NULL;
+ 8537		bool foundEntry;
+ 8538		unsigned long flagsWriteAddr = 0L;
+ 8539	
+ 8540		foundEntry = false;
+ 8541	
+ 8542		/* search for the entry */
+ 8543		spin_lock_irqsave(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8544		list_for_each_safe(p, n, &gCmdqContext.writeAddrList) {
+ 8545			pWriteAddr = list_entry(p, struct WriteAddrStruct, list_node);
+ 8546			if (pWriteAddr && pWriteAddr->pa == paStart) {
+ 8547				list_del(&(pWriteAddr->list_node));
+ 8548				foundEntry = true;
+ 8549				break;
+ 8550			}
+ 8551		}
+ 8552		spin_unlock_irqrestore(&gCmdqWriteAddrLock, flagsWriteAddr);
+ 8553	
+ 8554		/* when list is not empty, we always get a entry even we don't found a valid entry */
+ 8555		/* use foundEntry to confirm search result */
+ 8556		if (foundEntry == false) {
+ 8557			CMDQ_ERR("cmdqCoreFreeWriteAddress() no matching entry, paStart:%pa\n", &paStart);
+ 8558			return -EINVAL;
+ 8559		}
+ 8560	
+ 8561		/* release resources */
+ 8562		if (pWriteAddr->va) {
+ 8563			cmdq_core_free_hw_buffer(cmdq_dev_get(),
+ 8564						 sizeof(uint32_t) * pWriteAddr->count,
+ 8565						 pWriteAddr->va, pWriteAddr->pa);
+ 8566			memset(pWriteAddr, 0xda, sizeof(struct WriteAddrStruct));
+ 8567		}
+ 8568	
+ 8569		kfree(pWriteAddr);
+ 8570		pWriteAddr = NULL;
+ 8571	
+ 8572		return 0;
+ 8573	}
+/* END source lines 8489-8573 */

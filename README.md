@@ -579,3 +579,26 @@ kernel CVE status explicitly unknown. Reproduce the analysis with
 `tools/scripts/analyze_mtk_su64_init_failure.py`; it never executes the payload
 or invokes ADB. Derived disassembly, strings, JSON findings, and hashes are in
 `artifacts/phase5/mtk-su64-static-init-analysis-20260803/`.
+
+### Phase 5F — exact CMDQ source follow-up
+
+The host-only follow-up extracted compact, line-numbered members from the
+official Fire HD 10 7.3.3.0 source archive. The exact `mt8183_defconfig`
+selects CMDQ, the top-level CMDQ Makefile selects `v3/` for mt8183, and the
+retained v3 dispatcher has no `CMDQ_IOCTL_ALLOC_WRITE_ADDRESS` (#7) case; it
+returns `-ENOIOCTLCMD` for unknown requests. The archived T03 payload requests
+that v2 operation and fails at its step-3 initialization branch. This is the
+leading source-scoped explanation, not proof of the installed kernel's exact
+compiled driver or of CVE-2020-0069 status.
+
+The public compact evidence, hashes, and bounded-range metadata are under:
+
+- `findings/phase-5f-exact-cmdq-source-followup.md`
+- `artifacts/phase5/exact-source-search-20260803/cmdq-source-members-20260803-v5/`
+- `artifacts/phase5/exact-source-search-20260803/cmdq-range-2450m-2535m-summary.md`
+- `tools/scripts/scan_phase5_exact_source_cmdq.sh`
+- `tools/scripts/extract_phase5_source_members.py`
+
+No new device mutation or exploit execution was performed. A v3-aware payload,
+standalone CMDQ ioctl probe, kernel-memory primitive, BROM/DA action, or boot
+chain write is outside the prior approval and remains a new Level 3 task.

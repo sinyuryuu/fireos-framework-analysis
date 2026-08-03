@@ -1,0 +1,91 @@
+/* source member: kernel/mediatek/4.4/drivers/misc/mediatek/cmdq/v3/cmdq_driver.c */
+/* line numbers are from the recovered source member */
+
+/* BEGIN source lines 663-706 */
+  663	static long cmdq_ioctl(struct file *pFile, unsigned int code, unsigned long param)
+  664	{
+  665		int32_t status = 0;
+  666	
+  667		switch (code) {
+  668		case CMDQ_IOCTL_QUERY_USAGE:
+  669			status = cmdq_driver_ioctl_query_usage(pFile, param);
+  670			break;
+  671		case CMDQ_IOCTL_QUERY_CAP_BITS:
+  672			status = cmdq_driver_ioctl_query_cap_bits(param);
+  673			break;
+  674		case CMDQ_IOCTL_QUERY_DTS:
+  675			status = cmdq_driver_ioctl_query_dts(param);
+  676			break;
+  677		case CMDQ_IOCTL_NOTIFY_ENGINE:
+  678			status = cmdq_driver_ioctl_notify_engine(param);
+  679			break;
+  680		case CMDQ_IOCTL_ASYNC_EXEC:
+  681			CMDQ_MSG("ioctl CMDQ_IOCTL_ASYNC_EXEC\n");
+  682			status = mdp_ioctl_async_exec(pFile, param);
+  683			break;
+  684		case CMDQ_IOCTL_ASYNC_WAIT:
+  685			CMDQ_MSG("ioctl CMDQ_IOCTL_ASYNC_WAIT\n");
+  686			status = mdp_ioctl_async_wait(param);
+  687			break;
+  688		case CMDQ_IOCTL_ALLOC_READBACK_SLOTS:
+  689			CMDQ_MSG("ioctl CMDQ_IOCTL_ALLOC_READBACK_SLOTS\n");
+  690			status = mdp_ioctl_alloc_readback_slots(pFile, param);
+  691			break;
+  692		case CMDQ_IOCTL_FREE_READBACK_SLOTS:
+  693			CMDQ_MSG("ioctl CMDQ_IOCTL_FREE_READBACK_SLOTS\n");
+  694			status = mdp_ioctl_free_readback_slots(pFile, param);
+  695			break;
+  696		case CMDQ_IOCTL_READ_READBACK_SLOTS:
+  697			CMDQ_MSG("ioctl CMDQ_IOCTL_READ_READBACK_SLOTS\n");
+  698			status = mdp_ioctl_read_readback_slots(param);
+  699			break;
+  700		default:
+  701			CMDQ_ERR("unrecognized ioctl 0x%08x\n", code);
+  702			return -ENOIOCTLCMD;
+  703		}
+  704	
+  705		return status;
+  706	}
+/* END source lines 663-706 */
+
+/* BEGIN source lines 708-746 */
+  708	#ifdef CONFIG_COMPAT
+  709	static long cmdq_ioctl_compat(struct file *pFile, unsigned int code, unsigned long param)
+  710	{
+  711		switch (code) {
+  712		case CMDQ_IOCTL_QUERY_USAGE:
+  713		case CMDQ_IOCTL_QUERY_CAP_BITS:
+  714		case CMDQ_IOCTL_QUERY_DTS:
+  715		case CMDQ_IOCTL_NOTIFY_ENGINE:
+  716		case CMDQ_IOCTL_ASYNC_EXEC:
+  717		case CMDQ_IOCTL_ASYNC_WAIT:
+  718		case CMDQ_IOCTL_ALLOC_READBACK_SLOTS:
+  719		case CMDQ_IOCTL_FREE_READBACK_SLOTS:
+  720		case CMDQ_IOCTL_READ_READBACK_SLOTS:
+  721			/* All ioctl structures should be the same size in 32-bit and 64-bit linux. */
+  722			return cmdq_ioctl(pFile, code, param);
+  723		case CMDQ_IOCTL_LOCK_MUTEX:
+  724		case CMDQ_IOCTL_UNLOCK_MUTEX:
+  725			CMDQ_ERR("[COMPAT]deprecated ioctl 0x%08x\n", code);
+  726			return -ENOIOCTLCMD;
+  727		default:
+  728			CMDQ_ERR("[COMPAT]unrecognized ioctl 0x%08x\n", code);
+  729			return -ENOIOCTLCMD;
+  730		}
+  731	
+  732		CMDQ_ERR("[COMPAT]unrecognized ioctl 0x%08x\n", code);
+  733		return -ENOIOCTLCMD;
+  734	}
+  735	#endif
+  736	
+  737	
+  738	static const struct file_operations cmdqOP = {
+  739		.owner = THIS_MODULE,
+  740		.open = cmdq_open,
+  741		.release = cmdq_release,
+  742		.unlocked_ioctl = cmdq_ioctl,
+  743	#ifdef CONFIG_COMPAT
+  744		.compat_ioctl = cmdq_ioctl_compat,
+  745	#endif
+  746	};
+/* END source lines 708-746 */

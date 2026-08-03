@@ -97,3 +97,28 @@ proves or disproves CVE-2020-0069 in the PS7330 kernel.
 - [MediaTek CMDQ driver header](https://android.googlesource.com/kernel/mediatek/+/android-mtk-3.18/drivers/misc/mediatek/cmdq/v2/cmdq_driver.h)
 - [Quarkslab CVE-2020-0069 analysis](https://blog.quarkslab.com/cve-2020-0069-autopsy-of-the-most-stable-mediatek-rootkit.html)
 
+## Exact Fire-source follow-up
+
+The host-only exact-version source follow-up is documented in
+`findings/phase-5f-exact-cmdq-source-followup.md`. It refines, but does not
+replace, the earlier interpretation.
+
+The retained Fire HD 10 7.3.3.0 source excerpts show:
+
+- `mt8183_defconfig` selects `CONFIG_MTK_PLATFORM="mt8183"`,
+  `CONFIG_MTK_CMDQ=y`, and `CONFIG_MTK_CMDQ_TAB=y`;
+- the CMDQ top-level Makefile selects `v3/` for platforms outside its v2
+  allow-list, which excludes `mt8183`;
+- v3 `cmdq_ioctl()` has no `CMDQ_IOCTL_ALLOC_WRITE_ADDRESS` case and returns
+  `-ENOIOCTLCMD` in its default branch;
+- v2, by contrast, handles ioctl number 7 and implements the write-address
+  allocation path.
+
+This is **Strong evidence, source-scoped** that the archived payload's v2
+expectation is incompatible with the exact Fire-source MT8183 v3 dispatcher,
+and is the leading explanation for the immediate step-3 failure. It remains
+**Unknown** whether the installed PS7330 kernel was built from that exact
+source revision or whether a vendor variant changes the dispatcher. The
+source also contains a v2 write-address bounds pattern resembling the
+historical CVE, but that is not proof of a vulnerability in the running
+kernel. No new device operation was used for this follow-up.

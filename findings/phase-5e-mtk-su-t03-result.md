@@ -128,3 +128,14 @@ when the helper at `0x2f80` returns zero after an `ioctl` using request
 that `Failed critical init step 3` means the archived payload's CMDQ
 write-address/DMA allocation initialization failed. The exact driver errno and
 the presence or absence of CVE-2020-0069 remain **Unknown**.
+
+## Exact-source refinement
+
+The subsequent host-only exact Fire HD 10 7.3.3.0 source comparison is in
+`findings/phase-5f-exact-cmdq-source-followup.md`. It shows that the exact
+MT8183 source configuration selects CMDQ v3, while the v3 dispatcher does not
+implement the v2 `CMDQ_IOCTL_ALLOC_WRITE_ADDRESS` request used by this
+payload. This is **Strong evidence, source-scoped** for a v2/v3 interface
+mismatch as the leading explanation of step 3. It does not prove the
+installed PS7330 kernel's compiled driver or the current CVE status; no new
+device operation was performed.
