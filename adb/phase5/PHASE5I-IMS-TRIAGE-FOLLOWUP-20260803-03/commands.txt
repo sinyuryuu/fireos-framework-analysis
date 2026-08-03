@@ -1,0 +1,8 @@
+adb -s G001LT0511550CFT shell ls -lZ /vendor/bin/atcid /vendor/bin/audiocmdservice_atci /vendor/bin/permission_check /vendor/bin/ccci_fsd /vendor/bin/ccci_mdinit /vendor/bin/ccci_rpcd
+adb -s G001LT0511550CFT shell getprop persist.vendor.service.atci.autostart
+adb -s G001LT0511550CFT shell getprop persist.vendor.service.atci.atm_mode
+adb -s G001LT0511550CFT shell getprop vendor.mtk.atci.boot_completed
+adb -s G001LT0511550CFT shell sha256sum /vendor/bin/atcid /vendor/bin/audiocmdservice_atci /vendor/bin/permission_check /vendor/bin/ccci_fsd /vendor/bin/ccci_mdinit /vendor/bin/ccci_rpcd
+adb -s G001LT0511550CFT shell strings /vendor/bin/atcid
+adb -s G001LT0511550CFT shell strings /vendor/bin/audiocmdservice_atci
+adb -s G001LT0511550CFT shell service list

@@ -1,0 +1,7 @@
+adb -s G001LT0511550CFT shell pm list packages -f
+adb -s G001LT0511550CFT shell ls -la /vendor/bin/hw
+adb -s G001LT0511550CFT shell find /vendor/etc -type f
+adb -s G001LT0511550CFT shell find /system/etc -type f
+adb -s G001LT0511550CFT shell dumpsys telephony.registry
+adb -s G001LT0511550CFT shell dumpsys phone
+adb -s G001LT0511550CFT shell dumpsys isms

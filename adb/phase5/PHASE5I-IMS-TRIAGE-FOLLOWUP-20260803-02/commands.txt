@@ -1,0 +1,6 @@
+adb -s G001LT0511550CFT shell cat /vendor/etc/init/atcid.rc
+adb -s G001LT0511550CFT shell cat /vendor/etc/init/audiocmdservice_atci.rc
+adb -s G001LT0511550CFT shell cat /vendor/etc/init/hw/init.modem.rc
+adb -s G001LT0511550CFT shell cat /vendor/etc/init/hw/meta_init.modem.rc
+adb -s G001LT0511550CFT shell find /vendor/bin /vendor/bin/hw /system/bin /system/vendor/bin -maxdepth 1 -type f
+adb -s G001LT0511550CFT shell ps -A -o USER,PID,PPID,NAME,ARGS

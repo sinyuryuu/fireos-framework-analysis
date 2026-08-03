@@ -1,0 +1,15 @@
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell id
+adb -s G001LT0511550CFT shell getprop
+adb -s G001LT0511550CFT shell getenforce
+adb -s G001LT0511550CFT shell service list
+adb -s G001LT0511550CFT shell dumpsys -l
+adb -s G001LT0511550CFT shell pm list packages -f
+adb -s G001LT0511550CFT shell pm list permissions -g
+adb -s G001LT0511550CFT shell ps -A -o USER,PID,PPID,NAME,ARGS
+adb -s G001LT0511550CFT shell ls -la /vendor/bin
+adb -s G001LT0511550CFT shell ls -la /vendor/lib64
+adb -s G001LT0511550CFT shell dumpsys package
+adb -s G001LT0511550CFT shell dumpsys activity services
+adb -s G001LT0511550CFT shell dumpsys device_policy
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME

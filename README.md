@@ -626,3 +626,38 @@ No exploit, v3-aware payload, kernel-memory primitive, BROM/DA action, or
 boot-chain write was performed. The one bounded CMDQ compatibility probe is
 the separately recorded P5H-CMDQ-003 run; any follow-up ioctl or lower-level
 operation remains a new Level 3 task.
+
+### Phase 5I — MT8183 IMS / ATCI applicability triage
+
+Phase 5I added a read-only runtime triage for the public MediaTek IMS findings
+that list MT8183 and Android 9 software families. The exact device remained
+`Amazon/trona/trona:9/PS7330.4104N/0030099376128:user/amz-p,release-keys`,
+SELinux Enforcing, green verified boot, and ADB `device` throughout.
+
+The normal runtime enumeration found no `ims` or `atcid` Binder service, IMS
+package, or IMS/ATCI process. It found `imms` (MMS) and
+`telephony.registry`. Shell-readable vendor init files define
+`atcid-daemon-u` and `audio-daemon` as disabled/oneshot services; `atcid` is
+conditionally started only by explicit `persist.vendor.service.atci.*`
+property triggers. Shell attempts to hash or pull the relevant vendor
+executables were denied by the device's visibility boundary. These results do
+not establish whether the vendor binaries are patched or vulnerable.
+
+Raw, independently hashed evidence is under:
+
+- `adb/phase5/PHASE5I-IMS-TRIAGE-20260803-01/`
+- `adb/phase5/PHASE5I-IMS-TRIAGE-FOLLOWUP-20260803-01/`
+- `adb/phase5/PHASE5I-IMS-TRIAGE-FOLLOWUP-20260803-02/`
+- `adb/phase5/PHASE5I-IMS-TRIAGE-FOLLOWUP-20260803-04/`
+
+The reproducible collector is
+`tools/scripts/capture_phase5i_ims_triage.sh`; use `--dry-run` for host-only
+validation. The interpretation and explicit safety boundary are in
+`findings/phase-5i-ims-atci-triage.md`, with evidence rows `P5I-IMS-001`–
+`P5I-IMS-005` and `P5I-WEB-001` in `findings/phase-5-evidence-index.md`.
+
+No ATCI property was written, no vendor daemon was started, no AT command or
+unknown Binder transaction was sent, and no new exploit or boot-chain action
+was performed. Any such follow-up requires a new exact risk report and
+authorization; the consumed `CMDQ-IOCTL-V3-COMPAT-T01` approval does not
+extend to IMS/ATCI.
