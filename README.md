@@ -1226,3 +1226,20 @@ Phase 5AC outputs:
 No mtkclient BROM/payload/crash/preloader/DA/seccfg/read/write/erase command,
 kernel trigger, ioctl, fastboot, boot image, partition or bootloader write
 was performed. The exact mtk-su payload was not rerun.
+
+### Phase 5AD — Historical mtk-su target screen
+
+Phase 5AD rechecked historical Fire rooting material against the exact device.
+The public tutorial demonstrates Fire HD 10 2017 / Fire OS 5.6.4.0 and marks
+Fire HD 10 2019 / Fire OS 7.3.1.0 as untested; it does not provide a 2021
+KFTRWI/PS7330 target. The fixed KoCleo payload has already failed at exact
+PS7330 step 3, so historical instructions are not rerun.
+
+Phase 5AD outputs:
+
+- artifacts/phase5/public-target-screen-20260804-01/
+- findings/phase-5ad-historical-mtk-su-target-screen.md
+- findings/phase-5ad-evidence-index.md
+
+No new payload, BROM, DA, device-node, fastboot or partition operation was
+performed.
