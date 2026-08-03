@@ -1,0 +1,7 @@
+Inputs:
+artifacts/phase5/phase5j-bluetooth-static-analysis-20260803/focus-classes/com_android_bluetooth_gatt_GattService.txt
+artifacts/phase5/phase5j-bluetooth-static-analysis-20260803/focus-classes/com_android_bluetooth_gatt_FosGattService.txt
+artifacts/phase5/phase5j-bluetooth-static-analysis-20260803/focus-classes/com_android_bluetooth_amznbtpolicymgr_AmazonBtPolicyManagerAdapter.txt
+Command:
+python3 tools/scripts/analyze_phase5am_bluetooth_boundaries.py --gatt .../GattService.txt --fos-gatt .../FosGattService.txt --btpm .../AmazonBtPolicyManagerAdapter.txt --output boundary-index.csv
+Scope: host-only parsing; no device I/O, Binder invocation, library loading, or PoC execution.

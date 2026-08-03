@@ -1,0 +1,18 @@
+flowchart TD
+    A[Bluetooth caller / system API] -->|Binder| B[com.android.bluetooth UID 1002]
+    B --> C[GattService / BluetoothGattBinder]
+    C --> D{Permission checks}
+    D -->|BLUETOOTH| E[GATT operation]
+    D -->|ADMIN / PRIVILEGED where required| E
+    B --> F[FosGattService]
+    F --> G[FosBluetoothGattBinder]
+    F -->|guarded override then invoke-super| C
+    F --> H[AmazonBtPolicyManagerAdapter]
+    H --> I[private native btpmLe* methods]
+    I --> J[JNI / libbluetooth / BTPM vendor boundary]
+    J --> K[MediaTek Bluetooth HAL/controller]
+    J -->|callbacks| H
+    H -->|onBtpm*Callback| F
+
+    L[CVE-2022-20025..20028 etc.] -.->|public scope only; no exact symbol map| J
+    M[DEX method #20025 etc.] -.->|method-pool index, not CVE ID| C

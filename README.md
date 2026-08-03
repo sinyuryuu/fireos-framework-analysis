@@ -1483,3 +1483,27 @@ Phase 5AL outputs:
 The collector supports `--dry-run` and does not open a device node, call
 ioctl, send AT/modem traffic, trigger a kernel race, reboot, or write any
 partition.
+
+### Phase 5AM — Android Bluetooth implementation boundary and CVE index correction
+
+Phase 5AM adds a host-only parser over the exact Bluetooth VDEX focus artifacts. It
+records the Android `GattService` Binder/permission boundary, Amazon
+`FosGattService` and extended binder, and the private native
+`AmazonBtPolicyManagerAdapter` BTPM boundary. It also explicitly distinguishes DEX
+method-pool indices such as `#20025` from CVE identifiers such as
+`CVE-2022-20025`; the former are not evidence of the latter.
+
+Phase 5AM outputs:
+
+- `tools/scripts/analyze_phase5am_bluetooth_boundaries.py`
+- `findings/phase-5am-bluetooth-implementation-boundary.md`
+- `findings/phase-5am-evidence-index.md`
+- `output/tables/phase5am-bluetooth-boundaries.csv`
+- `output/call-graphs/phase5am-bluetooth-implementation.mmd`
+- `artifacts/phase5/phase5am-bluetooth-implementation-20260804-02/`
+
+The analyzer is host-only, supports `--dry-run`, refuses to overwrite an existing
+output, and performs no device I/O, Binder invocation, native-library loading,
+Bluetooth activation, crafted input, kernel trigger, or root operation. GhostLock
+remains a separate Linux futex/PI-rtmutex kernel path; the Bluetooth Android map
+does not establish a relation to that kernel CVE or a shell-to-root primitive.
