@@ -60,6 +60,8 @@ COMMAND_NAMES=(
   services
   init_paths
   node_metadata
+  aee_nodes
+  aee_access
   apex_property
   apex_paths
   apex_help
@@ -111,6 +113,8 @@ run_capture packages "${ADB[@]}" shell pm list packages
 run_capture services "${ADB[@]}" shell service list
 run_capture init_paths "${ADB[@]}" shell find /vendor/etc/init /system/etc/init -maxdepth 1 -type f
 run_capture node_metadata "${ADB[@]}" shell ls -lZ /dev/sspm /dev/block/by-name/spmfw /sys/class/misc/sspm
+run_capture aee_nodes "${ADB[@]}" shell ls -lZ /dev/aed0 /dev/aed1 /dev/atf_log /sys/class/misc/aed0 /sys/class/misc/aed1
+run_capture aee_access "${ADB[@]}" shell 'for node in /dev/aed0 /dev/aed1 /dev/atf_log; do if test -r "$node"; then r=1; else r=0; fi; if test -w "$node"; then w=1; else w=0; fi; printf "%s read=%s write=%s\n" "$node" "$r" "$w"; done'
 run_capture apex_property "${ADB[@]}" shell getprop ro.apex.updatable
 run_capture apex_paths "${ADB[@]}" shell ls -ld /system/apex /vendor/apex /product/apex
 run_capture apex_help "${ADB[@]}" shell cmd apexservice --help

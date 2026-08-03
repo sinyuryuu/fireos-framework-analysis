@@ -1073,3 +1073,25 @@ No package, setting, HOME, process, node, partition, bootloader or firmware
 state changed in Phase 5X. No AEE/ATF/APEX/futex/network trigger, exploit,
 root payload, BROM/DA, fastboot, remount, reboot or partition operation was
 performed.
+
+### Phase 5Y — AEE device-node follow-up
+
+An earlier read-only `/dev` snapshot contained `aed0` and `aed1`, so Phase 5Y
+corrects the scope of the Phase 5X AEE statement. The exact PS7330 runtime has
+`/dev/aed0` and `/dev/aed1` with `root:root` mode `0600` and SELinux type
+`aed_device`, plus root-only `/dev/atf_log`. Shell `test -r` and `test -w`
+returned zero for all three nodes. No node was opened; no AEE daemon, package,
+service, or init endpoint was observed.
+
+Phase 5Y outputs:
+
+- `adb/phase5/PHASE5X-ROUTE-SURFACE-20260804-06/`
+- `findings/phase-5y-aee-device-node-followup.md`
+- `findings/phase-5y-evidence-index.md`
+- `output/tables/phase5x-aee-node-matrix.csv`
+- `artifacts/phase5/public-route-review-20260804-03/`
+
+The finding narrows the AEE route to a root-only vendor device interface; it
+does not create a shell-readable root primitive. AEE `open`/`read`/`write`/
+`ioctl`, crash/race triggering, permission changes, SELinux changes, boot-chain
+operations and partition writes remain out of scope.

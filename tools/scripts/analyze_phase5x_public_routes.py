@@ -47,6 +47,8 @@ def main() -> int:
         "services.stdout.txt",
         "init_paths.stdout.txt",
         "node_metadata.stdout.txt",
+        "aee_nodes.stdout.txt",
+        "aee_access.stdout.txt",
         "apex_property.stdout.txt",
         "apex_paths.stdout.txt",
         "apex_help.stderr.txt",
@@ -72,6 +74,8 @@ def main() -> int:
     services = read_text(args.runtime_dir / "services.stdout.txt")
     init_paths = read_text(args.runtime_dir / "init_paths.stdout.txt")
     node_metadata = read_text(args.runtime_dir / "node_metadata.stdout.txt")
+    aee_nodes = read_text(args.runtime_dir / "aee_nodes.stdout.txt")
+    aee_access = read_text(args.runtime_dir / "aee_access.stdout.txt")
     apex_property = read_text(args.runtime_dir / "apex_property.stdout.txt").strip()
     apex_paths = read_text(args.runtime_dir / "apex_paths.stdout.txt")
     apex_help = read_text(args.runtime_dir / "apex_help.stderr.txt")
@@ -94,7 +98,8 @@ def main() -> int:
     )
     route_runtime = (
         f"HOME={home}; kernel_aee_threads={len(kernel_aee_threads)}; "
-        f"userspace_aee_lines={len(userspace_aee)}; apex_packages={len(apex_package_lines)}; "
+        f"userspace_aee_lines={len(userspace_aee)}; aee_node_lines={len(aee_nodes.splitlines())}; "
+        f"aee_access={aee_access.strip() or 'EMPTY'}; apex_packages={len(apex_package_lines)}; "
         f"apex_property={apex_property or 'EMPTY'}"
     )
 
@@ -105,7 +110,7 @@ def main() -> int:
             "Official MTK bulletin: MT8183; Android software version not listed",
             "SoC matches; exact Android/PS7330 daemon version unknown",
             "Unknown; daemon/service path, not shell UID",
-            "Kernel AEE worker threads observed; no userspace AEE process, package, service, or init path observed",
+            "Kernel AEE worker threads and root-only /dev/aed0,/dev/aed1 metadata observed; shell access check is read=0/write=0; no userspace AEE process, package, service, or init path observed",
             "Read-only process/package/service/init capture",
             "No shell-reachable AEE daemon observed; no trigger attempted",
             "Strong evidence, scope/runtime only",
@@ -234,6 +239,7 @@ def main() -> int:
         f"- Runtime summary: `{route_runtime}`\n"
         f"- AEE kernel-thread observations: {len(kernel_aee_threads)}\n"
         f"- AEE userspace candidate lines: {len(userspace_aee)}\n"
+        f"- AEE node metadata lines: {len(aee_nodes.splitlines())}\n"
         f"- APEX package lines: {len(apex_package_lines)}\n"
         f"- APEX property: `{apex_property or 'EMPTY'}`\n"
         f"- APEX path output: `{apex_paths.strip() or 'EMPTY'}`\n"
