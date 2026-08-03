@@ -543,3 +543,20 @@ The review is under
 unlock, `seccfg`, reboot, erase, or partition operation was executed. A future
 Amazon certificate test needs a separate exact Level 3 report with a matched
 PS7330 LK, signed credential, protocol, and recovery plan.
+
+### Phase 5E — CVE-2020-0069 / MTK-CMDQ surface review
+
+The exact PS7330 device exposes `/dev/mtk_cmdq` with the
+`mtk_cmdq_device` SELinux label; the shell's read-permission check passes but
+its write-permission check fails. No open or ioctl was attempted. This is a
+driver-surface observation, not proof that the historical
+CVE-2020-0069 ioctl flaw remains present. The device is on a 2024-02-01 patch
+with a 4.4.146+ kernel, and the archived `mtk-su64` binary contains generic
+unsupported-firmware strings without an exact PS7330/trona marker.
+
+The read-only collector is
+`tools/scripts/capture_phase5e_cmdq_surface.sh`; evidence is under
+`artifacts/phase5/cve-2020-0069-surface-20260803/`, and the analysis is in
+`findings/phase-5e-cve-2020-0069-surface.md`. A bare direct `mtk-su64` test is
+tracked as `MTK-SU-CMDQ-T03`, but remains a separate Level 3 kernel-memory
+exploit proposal and has not been executed.
