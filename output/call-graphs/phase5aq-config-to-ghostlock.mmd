@@ -1,0 +1,10 @@
+flowchart TD
+    A[PS7331 boot.Image] --> B[IKCFG_ST / IKCFG_ED]
+    B --> C[PS7331 embedded config]
+    D[PS7330 device /proc/config.gz] --> E[PS7330 live config]
+    C --> F{Focus config comparison}
+    E --> F
+    F -->|all equal| G[FUTEX + RT_MUTEXES + PREEMPT + ARM64/VA39 + hardening same]
+    F -->|3 non-focus differences| H[netfilter accounting / conntrack timestamp / MTK WPA3]
+    G -.-> I[Source code patch status still unknown]
+    I -.-> J[No live GhostLock payload]

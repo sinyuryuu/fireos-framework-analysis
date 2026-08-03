@@ -1581,3 +1581,24 @@ Phase 5AP outputs:
 - `findings/phase-5ap-evidence-index.md`
 - `output/tables/phase5ap-kernel-symbol-surface.csv`
 - `adb/phase5/PHASE5AP-KERNEL-SYMBOL-20260804-01/`
+
+### Phase 5AQ — PS7331/PS7330 embedded kernel-config comparison
+
+Phase 5AQ extracted the embedded IKCONFIG from the PS7331 ARM64 Image and
+captured the exact PS7330 `/proc/config.gz` with a corrected `adb exec-out`
+command. Across 3,705 keys, only three differences were found, all unrelated
+to GhostLock: netfilter accounting, conntrack timestamps, and MTK WPA3 support.
+The futex/rtmutex, preemption, ARM64 VA39, KALLSYMS, KASLR, SELinux, seccomp and
+other focus gates are identical. This confirms a common config family, but does
+not prove that the PS7331 `rtmutex.c` code was not privately backported.
+
+Phase 5AQ outputs:
+
+- `tools/scripts/extract_embedded_kernel_config.py`
+- `tools/scripts/capture_phase5aq_device_config.sh`
+- `tools/scripts/compare_kernel_configs.py`
+- `findings/phase-5aq-ps7331-ps7330-config-comparison.md`
+- `findings/phase-5aq-evidence-index.md`
+- `output/tables/phase5aq-config-diff.csv`
+- `output/call-graphs/phase5aq-config-to-ghostlock.mmd`
+- `adb/phase5/PHASE5AQ-DEVICE-CONFIG-20260804-02/`
