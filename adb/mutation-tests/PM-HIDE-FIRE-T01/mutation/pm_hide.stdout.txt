@@ -1,0 +1,12 @@
+Security exception: Neither user 2000 nor current process has android.permission.MANAGE_USERS.
+
+java.lang.SecurityException: Neither user 2000 nor current process has android.permission.MANAGE_USERS.
+\tat android.app.ContextImpl.enforce(ContextImpl.java:1861)
+\tat android.app.ContextImpl.enforceCallingOrSelfPermission(ContextImpl.java:1889)
+\tat com.android.server.pm.PackageManagerService.setApplicationHiddenSettingAsUser(PackageManagerService.java:14100)
+\tat com.android.server.pm.PackageManagerShellCommand.runSetHiddenSetting(PackageManagerShellCommand.java:1644)
+\tat com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:216)
+\tat android.os.ShellCommand.exec(ShellCommand.java:103)
+\tat android.os.Binder.onTransact(Binder.java:532)
+\tat android.content.pm.IPackageManager$Stub.onTransact(IPackageManager.java:2796)
+\tat android.os.Binder.execTransact(Binder.java:634)

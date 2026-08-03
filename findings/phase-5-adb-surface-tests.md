@@ -58,3 +58,39 @@ needed because the mutation was rejected before state change:
 ```text
 adb -s G001LT0511550CFT shell pm unsuspend --user 0 com.amazon.firelauncher
 ```
+
+## PM-HIDE-FIRE-T01
+
+The second previously untested shell route was:
+
+```text
+adb -s G001LT0511550CFT shell pm hide --user 0 com.amazon.firelauncher
+```
+
+It returned exit code 255 before changing state:
+
+```text
+Neither user 2000 nor current process has android.permission.MANAGE_USERS.
+```
+
+The relevant stack is:
+
+```text
+PackageManagerService.setApplicationHiddenSettingAsUser(PackageManagerService.java:14100)
+PackageManagerShellCommand.runSetHiddenSetting(PackageManagerShellCommand.java:1644)
+```
+
+After the rejected call, `hidden=false`, the resolver remained
+`com.amazon.firelauncher/.Launcher`, and Fire remained the resumed/focused
+activity. The complete before/after records are under
+`adb/mutation-tests/PM-HIDE-FIRE-T01/` and
+`adb/mutation-tests/PM-HIDE-FIRE-T01-after/`.
+
+Classification:
+
+- **已證實：** shell UID 2000 lacks `MANAGE_USERS` for this hidden-state API.
+- **已證實：** the request failed before a Fire-specific hidden/protected
+  package decision.
+- **已排除：** `pm hide` as a shell-level HOME bypass on this build.
+- **未知：** behavior from a privileged/device-policy caller; that is outside
+  current ADB authority.
