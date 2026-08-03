@@ -46,6 +46,31 @@ For each future Level 2 mutation, the mutation-specific runner must add the exac
 
 No reboot was needed to establish the current preferred-state result. A reboot remains a permitted Level 2 operation only after a complete pre-state snapshot and a test-specific restore plan. It was not run in this Phase 2 pass.
 
+## 6. Phase 3A priority experiment status
+
+The Phase 3A mutation runner and per-test restore framework are implemented in
+`tools/scripts/run_home_priority_experiment.sh`. A read-only pre-snapshot was
+captured at `adb/mutation-tests/HOME-PRIORITY-PRE/` and verified with its local
+SHA-256 manifest. Five APK variants were built with the local SDK/OpenJDK 26
+toolchain and tested one at a time.
+
+P49, P50, P51, and P100 completed install, ordinary preferred-home write,
+explicit HOME, Home key, lock/wake, reboot, post-reboot Home, Fire restore,
+and uninstall. P0 was interrupted after reboot during the first runner
+attempt; its raw evidence was retained and its generated restore sequence
+completed successfully. All final resolver checks returned
+`com.amazon.firelauncher/.Launcher`, and no test APK remained installed.
+
+The APK manifest declarations 49/50/51/100 were preserved, but all ordinary
+sideloaded candidates were reported by PackageManager at effective priority 0.
+The matching AOSP/Fire `adjustPriority()` path explains this as the standard
+non-privileged priority cap. The preferred record could be written with
+`mAlways=true`, including across reboot, but it did not become effective HOME.
+
+`cmd package clear-package-preferred-activities` is unavailable on this build;
+the exact `Unknown command` output is preserved. Restoration used supported
+Fire `set-home-activity` followed by test-package uninstall.
+
 ## 5. Stop conditions
 
 The following conditions stop further mutation work:

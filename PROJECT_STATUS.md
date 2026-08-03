@@ -158,3 +158,38 @@ No new Level 3 operation was executed. No new component-disable test was run bec
 - Resolve the exact live `alexa_modeswitch` mode/service visibility if a safe system-server-facing observation becomes available.
 - Inspect the remaining Amazon callback implementations and native components for explicit component launches and policy overrides.
 - Evaluate non-root workarounds only after the mechanism report is stable.
+
+## Phase 3A status
+
+Phase 3A resolver static analysis and experiment infrastructure are now
+implemented and executed for the normal ADB-installable app condition. The
+static pass confirms the Fire VDEX priority comparison path, the AOSP-standard
+non-privileged priority cap in `ActivityIntentResolver.adjustPriority()`, and
+documents an Amazon ActivityStackSupervisor vendor callback boundary.
+
+The read-only pre-snapshot `HOME-PRIORITY-PRE` is complete and hash-verified.
+Five priority variants were built with local OpenJDK 26 and the pinned SDK
+tools. P49/P50/P51/P100 completed the reversible mutation sequence; P0 was
+interrupted after reboot and then recovered from its preserved restore script.
+All final checks returned Fire Launcher, all research APKs were uninstalled,
+and no Fire Launcher state/data or system partition was modified.
+
+Runtime conclusion: declared APK priorities 49/50/51/100 are normalized to
+effective priority 0 for non-privileged sideloaded apps, while privileged Fire
+Launcher retains effective priority 50. Ordinary preferred records can be
+written (`mAlways=true`) but do not override the effective Fire result.
+
+Phase 3A outputs:
+
+- `findings/home-resolver-method-analysis.md`
+- `diff/reports/home-resolver-aosp-fireos-diff.md`
+- `findings/home-priority-experiment.md`
+- `findings/phase-3a-report.md`
+- `tools/test-launcher/`
+- `tools/scripts/run_home_priority_experiment.sh`
+- `adb/mutation-tests/HOME-PRIORITY-PRE/`
+- `adb/mutation-tests/HOME-PRIORITY-P0/`
+- `adb/mutation-tests/HOME-PRIORITY-P49/`
+- `adb/mutation-tests/HOME-PRIORITY-P50/`
+- `adb/mutation-tests/HOME-PRIORITY-P51/`
+- `adb/mutation-tests/HOME-PRIORITY-P100/`

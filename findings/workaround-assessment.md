@@ -26,7 +26,7 @@ This does not prove that every Fire OS 7 build behaves identically. It is a resu
 
 1. Standard Android 9 ranking, combined with the Fire manifest priority 50, may be sufficient to explain the result.
 2. Fire OS may modify resolver selection or preferred-activity handling in a path not yet isolated from the VDEX.
-3. An Amazon service may rewrite or reassert HOME after the mutation; the current test did not include reboot persistence or a long watchdog observation.
+3. An Amazon service may rewrite or reassert HOME after the mutation; Phase 3A included reboot persistence but did not perform a long watchdog observation.
 4. A permitted API with different semantics (suspend/hide/policy) might have a different boundary, but testing it against core Fire packages requires a verified recovery path and is not justified by the current evidence.
 
 ## Recommended next lowest-risk work
@@ -37,3 +37,22 @@ This does not prove that every Fire OS 7 build behaves identically. It is a resu
 - Exact-build offline inspection of the deny-list source if an authorized artifact becomes available.
 
 No route in this document should be described as a true launcher replacement unless the resolver, Home key, and reboot-persistence tests all pass.
+
+## Phase 3A priority experiment
+
+The controlled priority variants were built and executed. All normal
+sideloaded variants (declared 0/49/50/51/100) were reported by PackageManager
+at effective priority 0, while Fire retained effective priority 50. The
+matching AOSP/Fire `adjustPriority()` method confirms the standard
+non-privileged priority cap.
+
+Classification:
+
+- `Disproved`: a normal ADB-installed priority-51 or priority-100 APK is a
+  true HOME replacement on this build.
+- `Strong evidence`: ordinary preferred writes and reboot persistence do not
+  change the effective HOME while Fire remains the privileged priority-50
+  candidate.
+- `Unknown`: a privileged/system-signed third-party HOME activity with an
+  effective priority above 50; this is outside the no-Root test boundary.
+- `Confirmed`: every tested variant restored to Fire and was uninstalled.

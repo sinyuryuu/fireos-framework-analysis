@@ -239,3 +239,15 @@ If exact deny-list content becomes impossible to obtain from matching OTA artifa
 | Preferred-activities baseline | `a680bc14902b1d7af9e219418dbfe5cc18ce01c28a39d22b498eb85fb290eece` |
 | AOSP r61 PackageManagerService | `bb8d33fbb976c3463d932f65a679dafb2d541845b2989b63d07060d0db8ef179` |
 | AOSP r61 ProtectedPackages | `fb64ec70c224f527890a28385eb163129a4f235fb8818cd42d31c69ec7cf4508` |
+
+## Phase 3A continuation
+
+The resolver-specific static analysis and completed priority experiment are
+documented in `findings/phase-3a-report.md`. The static pass confirms the
+priority comparison before ordinary preferred lookup, the AOSP-standard
+non-privileged priority cap in `adjustPriority()`, and the separate Amazon
+ActivityStackSupervisor vendor callback. The five APK variants were built and
+tested; ordinary candidates were normalized to effective priority 0, ordinary
+preferred writes did not replace Fire, and all test states were restored.
+Evidence IDs are `P3A-STATIC-001` through `P3A-POST-001` in
+`findings/evidence-index-phase2.md`.

@@ -9,6 +9,7 @@
 | Existing direct Microsoft Launcher start | Manual component start | Microsoft can be foreground manually | Confirmed |
 | Microsoft in foreground, then ADB keyevent | `HOME-PREF-T17` | Fire Launcher foreground | Strong evidence |
 | Microsoft target via `set-home-activity`, then explicit HOME | Existing controlled tests | Fire Launcher foreground | Strong evidence |
+| Phase 3A research APK explicit HOME and `input keyevent 3` | `adb/mutation-tests/HOME-PRIORITY-P49/` through `P100/` | Fire resolver/foreground after each route; final state restored | Strong evidence |
 | Physical hardware Home button | Not captured in the preserved tests | Unknown | Hypothesis |
 
 The component-disable tests are not a separate successful Home-key route: their disable requests were rejected before state mutation. Evidence: `P2-STATE-001`, `P2-STATE-002`.

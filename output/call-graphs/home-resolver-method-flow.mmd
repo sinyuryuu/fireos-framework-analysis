@@ -1,0 +1,25 @@
+flowchart TD
+    I[Package scan / ActivityIntentResolver.addActivity] --> AP[adjustPriority]
+    AP -->|non-privileged app and priority > 0| CAP[set effective priority to 0]
+    AP -->|privileged system app| KEEP[retain declared priority]
+    CAP --> Q[resolveIntentInternal
+queryIntentActivitiesInternal]
+    KEEP --> Q
+    Q --> C[chooseBestActivity]
+    C -->|one candidate| R[return candidate]
+    C -->|priority/preferredOrder/isDefault differ| R0[return query[0]]
+    C -->|ranking fields tie| P[findPreferredActivity]
+    P --> PP[findPersistentPreferredActivityLP]
+    PP -->|matching persistent preferred| RP[return persistent preferred]
+    PP -->|none| OP[ordinary PreferredIntentResolver]
+    OP -->|matching candidate and match quality| RO[return ordinary preferred]
+    OP -->|none| RES[ResolverActivity or no result]
+    AS[ActivityStackSupervisor.resolveIntent] --> VC[VendorActivityStackSupervisorCallback.callResolveIntent]
+    VC -->|non-null callback result| VR[return vendor result]
+    VC -->|null| PMI[PackageManagerInternal.resolveIntent]
+    PMI --> Q
+    R0 --> H[HOME result]
+    RP --> H
+    RO --> H
+    VR --> H
+    RES --> H
