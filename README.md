@@ -1353,3 +1353,26 @@ Phase 5AG outputs:
 - `output/tables/phase5ag-android-implementation-matrix.csv`
 - `artifacts/phase5/launcherhijack-and-mtk-bulletin-followup-20260804-01/source-manifest.csv`
 - `tools/scripts/validate_phase5ag_review.py`
+
+### Phase 5AH — HackMD/MTK route and exact KFTRWI public-target recheck
+
+Phase 5AH rechecked the supplied HackMD list, the pinned `mtk-easy-su` and
+`mtkclient` sources, and public searches for `KFTRWI/trona/MT8183/PS7330`.
+The HackMD entries are Qualcomm/Xiaomi-specific and do not provide an Amazon
+MTK implementation. No verified exact PS7330 root, bootloader-unlock, or
+custom-ROM implementation was found in the reviewed public sources. Existing
+`mtk-easy-su` runtime evidence remains a no-confirmed-root result.
+
+Phase 5AH outputs:
+
+- `findings/phase-5ah-public-target-recheck.md`
+- `findings/phase-5ah-evidence-index.md`
+- `output/tables/phase5ah-public-route-matrix.csv`
+- `adb/phase5/PHASE5AH-DEVICE-READONLY-20260804-01/`
+- `artifacts/phase5/public-target-recheck-20260804-01/source-manifest.csv`
+- `tools/scripts/capture_phase5ah_device_readonly.sh`
+- `tools/scripts/validate_phase5ah_public_routes.py`
+
+No Qualcomm command, unknown APK/native payload, BROM/DA handshake, fastboot
+write, bootloader unlock, partition write, or destructive device operation was
+performed in this phase.
