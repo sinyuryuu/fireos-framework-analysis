@@ -1,0 +1,852 @@
+
+adb/phase5/PHASE5M-MTK-LIBS-20260804-01/files/libion_mtk.so:	file format elf64-littleaarch64
+
+Disassembly of section .plt:
+
+0000000000000a80 <.plt>:
+     a80: a9bf7bf0     	stp	x16, x30, [sp, #-0x10]!
+     a84: f00000f0     	adrp	x16, 0x1f000
+     a88: f947c611     	ldr	x17, [x16, #0xf88]
+     a8c: 913e2210     	add	x16, x16, #0xf88
+     a90: d61f0220     	br	x17
+     a94: d503201f     	nop
+     a98: d503201f     	nop
+     a9c: d503201f     	nop
+
+0000000000000aa0 <__cxa_finalize@plt>:
+     aa0: f00000f0     	adrp	x16, 0x1f000
+     aa4: f947ca11     	ldr	x17, [x16, #0xf90]
+     aa8: 913e4210     	add	x16, x16, #0xf90
+     aac: d61f0220     	br	x17
+
+0000000000000ab0 <__register_atfork@plt>:
+     ab0: f00000f0     	adrp	x16, 0x1f000
+     ab4: f947ce11     	ldr	x17, [x16, #0xf98]
+     ab8: 913e6210     	add	x16, x16, #0xf98
+     abc: d61f0220     	br	x17
+
+0000000000000ac0 <ion_open@plt>:
+     ac0: f00000f0     	adrp	x16, 0x1f000
+     ac4: f947d211     	ldr	x17, [x16, #0xfa0]
+     ac8: 913e8210     	add	x16, x16, #0xfa0
+     acc: d61f0220     	br	x17
+
+0000000000000ad0 <strncpy@plt>:
+     ad0: f00000f0     	adrp	x16, 0x1f000
+     ad4: f947d611     	ldr	x17, [x16, #0xfa8]
+     ad8: 913ea210     	add	x16, x16, #0xfa8
+     adc: d61f0220     	br	x17
+
+0000000000000ae0 <ioctl@plt>:
+     ae0: f00000f0     	adrp	x16, 0x1f000
+     ae4: f947da11     	ldr	x17, [x16, #0xfb0]
+     ae8: 913ec210     	add	x16, x16, #0xfb0
+     aec: d61f0220     	br	x17
+
+0000000000000af0 <__errno@plt>:
+     af0: f00000f0     	adrp	x16, 0x1f000
+     af4: f947de11     	ldr	x17, [x16, #0xfb8]
+     af8: 913ee210     	add	x16, x16, #0xfb8
+     afc: d61f0220     	br	x17
+
+0000000000000b00 <strerror@plt>:
+     b00: f00000f0     	adrp	x16, 0x1f000
+     b04: f947e211     	ldr	x17, [x16, #0xfc0]
+     b08: 913f0210     	add	x16, x16, #0xfc0
+     b0c: d61f0220     	br	x17
+
+0000000000000b10 <__android_log_print@plt>:
+     b10: f00000f0     	adrp	x16, 0x1f000
+     b14: f947e611     	ldr	x17, [x16, #0xfc8]
+     b18: 913f2210     	add	x16, x16, #0xfc8
+     b1c: d61f0220     	br	x17
+
+0000000000000b20 <dumping_callstack@plt>:
+     b20: f00000f0     	adrp	x16, 0x1f000
+     b24: f947ea11     	ldr	x17, [x16, #0xfd0]
+     b28: 913f4210     	add	x16, x16, #0xfd0
+     b2c: d61f0220     	br	x17
+
+0000000000000b30 <__stack_chk_fail@plt>:
+     b30: f00000f0     	adrp	x16, 0x1f000
+     b34: f947ee11     	ldr	x17, [x16, #0xfd8]
+     b38: 913f6210     	add	x16, x16, #0xfd8
+     b3c: d61f0220     	br	x17
+
+0000000000000b40 <ion_alloc@plt>:
+     b40: f00000f0     	adrp	x16, 0x1f000
+     b44: f947f211     	ldr	x17, [x16, #0xfe0]
+     b48: 913f8210     	add	x16, x16, #0xfe0
+     b4c: d61f0220     	br	x17
+
+0000000000000b50 <mmap@plt>:
+     b50: f00000f0     	adrp	x16, 0x1f000
+     b54: f947f611     	ldr	x17, [x16, #0xfe8]
+     b58: 913fa210     	add	x16, x16, #0xfe8
+     b5c: d61f0220     	br	x17
+
+0000000000000b60 <munmap@plt>:
+     b60: f00000f0     	adrp	x16, 0x1f000
+     b64: f947fa11     	ldr	x17, [x16, #0xff0]
+     b68: 913fc210     	add	x16, x16, #0xff0
+     b6c: d61f0220     	br	x17
+
+0000000000000b70 <close@plt>:
+     b70: f00000f0     	adrp	x16, 0x1f000
+     b74: f947fe11     	ldr	x17, [x16, #0xff8]
+     b78: 913fe210     	add	x16, x16, #0xff8
+     b7c: d61f0220     	br	x17
+
+Disassembly of section .text:
+
+0000000000000b80 <.text>:
+     b80: 90000100     	adrp	x0, 0x20000
+     b84: 91000000     	add	x0, x0, #0x0
+     b88: 17ffffc6     	b	0xaa0 <__cxa_finalize@plt>
+     b8c: 00000000     	udf	#0x0
+     b90: 90000103     	adrp	x3, 0x20000
+     b94: 91000063     	add	x3, x3, #0x0
+     b98: 17ffffc6     	b	0xab0 <__register_atfork@plt>
+     b9c: 00000000     	udf	#0x0
+
+0000000000000ba0 <mt_ion_open>:
+     ba0: d10343ff     	sub	sp, sp, #0xd0
+     ba4: f9004bf7     	str	x23, [sp, #0x90]
+     ba8: a90a57f6     	stp	x22, x21, [sp, #0xa0]
+     bac: a90b4ff4     	stp	x20, x19, [sp, #0xb0]
+     bb0: a90c7bfd     	stp	x29, x30, [sp, #0xc0]
+     bb4: 910303fd     	add	x29, sp, #0xc0
+     bb8: d53bd057     	mrs	x23, TPIDR_EL0
+     bbc: aa0003f4     	mov	x20, x0
+     bc0: f94016e8     	ldr	x8, [x23, #0x28]
+     bc4: f81c83a8     	stur	x8, [x29, #-0x38]
+     bc8: 97ffffbe     	bl	0xac0 <ion_open@plt>
+     bcc: 2a0003f3     	mov	w19, w0
+     bd0: 37f80593     	tbnz	w19, #0x1f, 0xc80 <mt_ion_open+0xe0>
+     bd4: 910043f5     	add	x21, sp, #0x10
+     bd8: 321e03e8     	orr	w8, wzr, #0x4
+     bdc: 910022a0     	add	x0, x21, #0x8
+     be0: 528005e2     	mov	w2, #0x2f               // =47
+     be4: aa1403e1     	mov	x1, x20
+     be8: b90013e8     	str	w8, [sp, #0x10]
+     bec: 97ffffb9     	bl	0xad0 <strncpy@plt>
+     bf0: 528920d4     	mov	w20, #0x4906            // =18694
+     bf4: b90003ff     	str	wzr, [sp]
+     bf8: 72b80214     	movk	w20, #0xc010, lsl #16
+     bfc: f90007f5     	str	x21, [sp, #0x8]
+     c00: 910003e2     	mov	x2, sp
+     c04: 2a1303e0     	mov	w0, w19
+     c08: 2a1403e1     	mov	w1, w20
+     c0c: 97ffffb5     	bl	0xae0 <ioctl@plt>
+     c10: 2a0003f5     	mov	w21, w0
+     c14: 36f802b5     	tbz	w21, #0x1f, 0xc68 <mt_ion_open+0xc8>
+     c18: 97ffffb6     	bl	0xaf0 <__errno@plt>
+     c1c: aa0003f6     	mov	x22, x0
+     c20: b94002c0     	ldr	w0, [x22]
+     c24: 97ffffb7     	bl	0xb00 <strerror@plt>
+     c28: b0000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+     c2c: b0000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+     c30: aa0003e5     	mov	x5, x0
+     c34: 911b0021     	add	x1, x1, #0x6c0
+     c38: 911f3c42     	add	x2, x2, #0x7cf
+     c3c: 321f07e0     	orr	w0, wzr, #0x6
+     c40: 2a1403e3     	mov	w3, w20
+     c44: 2a1503e4     	mov	w4, w21
+     c48: 97ffffb2     	bl	0xb10 <__android_log_print@plt>
+     c4c: b0000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+     c50: 911ff000     	add	x0, x0, #0x7fc
+     c54: 2a1303e1     	mov	w1, w19
+     c58: 2a1f03e2     	mov	w2, wzr
+     c5c: 97ffffb1     	bl	0xb20 <dumping_callstack@plt>
+     c60: b94002c8     	ldr	w8, [x22]
+     c64: 4b0803f5     	neg	w21, w8
+     c68: 34000195     	cbz	w21, 0xc98 <mt_ion_open+0xf8>
+     c6c: b0000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+     c70: b0000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+     c74: 911b0021     	add	x1, x1, #0x6c0
+     c78: 91203442     	add	x2, x2, #0x80d
+     c7c: 14000005     	b	0xc90 <mt_ion_open+0xf0>
+     c80: b0000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+     c84: b0000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+     c88: 911b0021     	add	x1, x1, #0x6c0
+     c8c: 911b1042     	add	x2, x2, #0x6c4
+     c90: 321f07e0     	orr	w0, wzr, #0x6
+     c94: 97ffff9f     	bl	0xb10 <__android_log_print@plt>
+     c98: f94016e8     	ldr	x8, [x23, #0x28]
+     c9c: f85c83a9     	ldur	x9, [x29, #-0x38]
+     ca0: eb09011f     	cmp	x8, x9
+     ca4: 54000101     	b.ne	0xcc4 <mt_ion_open+0x124>
+     ca8: 2a1303e0     	mov	w0, w19
+     cac: f9404bf7     	ldr	x23, [sp, #0x90]
+     cb0: a94c7bfd     	ldp	x29, x30, [sp, #0xc0]
+     cb4: a94b4ff4     	ldp	x20, x19, [sp, #0xb0]
+     cb8: a94a57f6     	ldp	x22, x21, [sp, #0xa0]
+     cbc: 910343ff     	add	sp, sp, #0xd0
+     cc0: d65f03c0     	ret
+     cc4: 97ffff9b     	bl	0xb30 <__stack_chk_fail@plt>
+
+0000000000000cc8 <ion_alloc_mm>:
+     cc8: aa0403e8     	mov	x8, x4
+     ccc: 2a0303e9     	mov	w9, w3
+     cd0: 321603e3     	orr	w3, wzr, #0x400
+     cd4: 2a0903e4     	mov	w4, w9
+     cd8: aa0803e5     	mov	x5, x8
+     cdc: 17ffff99     	b	0xb40 <ion_alloc@plt>
+
+0000000000000ce0 <ion_alloc_camera>:
+     ce0: aa0403e8     	mov	x8, x4
+     ce4: 2a0303e9     	mov	w9, w3
+     ce8: 321403e3     	orr	w3, wzr, #0x1000
+     cec: 2a0903e4     	mov	w4, w9
+     cf0: aa0803e5     	mov	x5, x8
+     cf4: 17ffff93     	b	0xb40 <ion_alloc@plt>
+
+0000000000000cf8 <ion_alloc_syscontig>:
+     cf8: aa0403e8     	mov	x8, x4
+     cfc: 2a0303e9     	mov	w9, w3
+     d00: 321f03e3     	orr	w3, wzr, #0x2
+     d04: 2a0903e4     	mov	w4, w9
+     d08: aa0803e5     	mov	x5, x8
+     d0c: 17ffff8d     	b	0xb40 <ion_alloc@plt>
+
+0000000000000d10 <ion_alloc_camera_pool>:
+     d10: d10303ff     	sub	sp, sp, #0xc0
+     d14: f9003bf9     	str	x25, [sp, #0x70]
+     d18: a9085ff8     	stp	x24, x23, [sp, #0x80]
+     d1c: a90957f6     	stp	x22, x21, [sp, #0x90]
+     d20: a90a4ff4     	stp	x20, x19, [sp, #0xa0]
+     d24: a90b7bfd     	stp	x29, x30, [sp, #0xb0]
+     d28: 9102c3fd     	add	x29, sp, #0xb0
+     d2c: d53bd059     	mrs	x25, TPIDR_EL0
+     d30: 528920d7     	mov	w23, #0x4906            // =18694
+     d34: f9401728     	ldr	x8, [x25, #0x28]
+     d38: 72b80217     	movk	w23, #0xc010, lsl #16
+     d3c: 2a0503f4     	mov	w20, w5
+     d40: 320003e9     	orr	w9, wzr, #0x1
+     d44: aa0403f3     	mov	x19, x4
+     d48: f81b83a8     	stur	x8, [x29, #-0x48]
+     d4c: 321403e8     	orr	w8, wzr, #0x1000
+     d50: a9020be1     	stp	x1, x2, [sp, #0x20]
+     d54: 910023e2     	add	x2, sp, #0x8
+     d58: 2a1703e1     	mov	w1, w23
+     d5c: b9001bf4     	str	w20, [sp, #0x18]
+     d60: 29060fe8     	stp	w8, w3, [sp, #0x30]
+     d64: 910063e8     	add	x8, sp, #0x18
+     d68: 2a0003f5     	mov	w21, w0
+     d6c: b9000be9     	str	w9, [sp, #0x8]
+     d70: f9000be8     	str	x8, [sp, #0x10]
+     d74: 97ffff5b     	bl	0xae0 <ioctl@plt>
+     d78: 2a0003f6     	mov	w22, w0
+     d7c: 37f801b6     	tbnz	w22, #0x1f, 0xdb0 <ion_alloc_camera_pool+0xa0>
+     d80: 34000436     	cbz	w22, 0xe04 <ion_alloc_camera_pool+0xf4>
+     d84: b0000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+     d88: b0000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+     d8c: 911b0021     	add	x1, x1, #0x6c0
+     d90: 911b5842     	add	x2, x2, #0x6d6
+     d94: 321f07e0     	orr	w0, wzr, #0x6
+     d98: 2a1503e3     	mov	w3, w21
+     d9c: 97ffff5d     	bl	0xb10 <__android_log_print@plt>
+     da0: 97ffff54     	bl	0xaf0 <__errno@plt>
+     da4: b9400008     	ldr	w8, [x0]
+     da8: 4b0803e0     	neg	w0, w8
+     dac: 1400001d     	b	0xe20 <ion_alloc_camera_pool+0x110>
+     db0: 97ffff50     	bl	0xaf0 <__errno@plt>
+     db4: aa0003f8     	mov	x24, x0
+     db8: b9400300     	ldr	w0, [x24]
+     dbc: 97ffff51     	bl	0xb00 <strerror@plt>
+     dc0: b0000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+     dc4: b0000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+     dc8: aa0003e5     	mov	x5, x0
+     dcc: 911b0021     	add	x1, x1, #0x6c0
+     dd0: 911f3c42     	add	x2, x2, #0x7cf
+     dd4: 321f07e0     	orr	w0, wzr, #0x6
+     dd8: 2a1703e3     	mov	w3, w23
+     ddc: 2a1603e4     	mov	w4, w22
+     de0: 97ffff4c     	bl	0xb10 <__android_log_print@plt>
+     de4: b0000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+     de8: 911ff000     	add	x0, x0, #0x7fc
+     dec: 2a1503e1     	mov	w1, w21
+     df0: 2a1f03e2     	mov	w2, wzr
+     df4: 97ffff4b     	bl	0xb20 <dumping_callstack@plt>
+     df8: b9400308     	ldr	w8, [x24]
+     dfc: 4b0803f6     	neg	w22, w8
+     e00: 35fffc36     	cbnz	w22, 0xd84 <ion_alloc_camera_pool+0x74>
+     e04: 2a1f03e0     	mov	w0, wzr
+     e08: b40000d3     	cbz	x19, 0xe20 <ion_alloc_camera_pool+0x110>
+     e0c: 71001e9f     	cmp	w20, #0x7
+     e10: 54000081     	b.ne	0xe20 <ion_alloc_camera_pool+0x110>
+     e14: b9403be8     	ldr	w8, [sp, #0x38]
+     e18: 2a1f03e0     	mov	w0, wzr
+     e1c: b9000268     	str	w8, [x19]
+     e20: f9401728     	ldr	x8, [x25, #0x28]
+     e24: f85b83a9     	ldur	x9, [x29, #-0x48]
+     e28: eb09011f     	cmp	x8, x9
+     e2c: 54000101     	b.ne	0xe4c <ion_alloc_camera_pool+0x13c>
+     e30: a94b7bfd     	ldp	x29, x30, [sp, #0xb0]
+     e34: a94a4ff4     	ldp	x20, x19, [sp, #0xa0]
+     e38: a94957f6     	ldp	x22, x21, [sp, #0x90]
+     e3c: a9485ff8     	ldp	x24, x23, [sp, #0x80]
+     e40: f9403bf9     	ldr	x25, [sp, #0x70]
+     e44: 910303ff     	add	sp, sp, #0xc0
+     e48: d65f03c0     	ret
+     e4c: 97ffff39     	bl	0xb30 <__stack_chk_fail@plt>
+
+0000000000000e50 <ion_custom_ioctl>:
+     e50: d10183ff     	sub	sp, sp, #0x60
+     e54: f90013f7     	str	x23, [sp, #0x20]
+     e58: a90357f6     	stp	x22, x21, [sp, #0x30]
+     e5c: a9044ff4     	stp	x20, x19, [sp, #0x40]
+     e60: a9057bfd     	stp	x29, x30, [sp, #0x50]
+     e64: 910143fd     	add	x29, sp, #0x50
+     e68: d53bd057     	mrs	x23, TPIDR_EL0
+     e6c: 528920d5     	mov	w21, #0x4906            // =18694
+     e70: f94016e8     	ldr	x8, [x23, #0x28]
+     e74: 72b80215     	movk	w21, #0xc010, lsl #16
+     e78: 2a0003f3     	mov	w19, w0
+     e7c: f9000fe8     	str	x8, [sp, #0x18]
+     e80: b9000be1     	str	w1, [sp, #0x8]
+     e84: 2a1503e1     	mov	w1, w21
+     e88: f9000be2     	str	x2, [sp, #0x10]
+     e8c: 910023e2     	add	x2, sp, #0x8
+     e90: 97ffff14     	bl	0xae0 <ioctl@plt>
+     e94: 2a0003f4     	mov	w20, w0
+     e98: 36f802b4     	tbz	w20, #0x1f, 0xeec <ion_custom_ioctl+0x9c>
+     e9c: 97ffff15     	bl	0xaf0 <__errno@plt>
+     ea0: aa0003f6     	mov	x22, x0
+     ea4: b94002c0     	ldr	w0, [x22]
+     ea8: 97ffff16     	bl	0xb00 <strerror@plt>
+     eac: b0000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+     eb0: b0000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+     eb4: aa0003e5     	mov	x5, x0
+     eb8: 911b0021     	add	x1, x1, #0x6c0
+     ebc: 911f3c42     	add	x2, x2, #0x7cf
+     ec0: 321f07e0     	orr	w0, wzr, #0x6
+     ec4: 2a1503e3     	mov	w3, w21
+     ec8: 2a1403e4     	mov	w4, w20
+     ecc: 97ffff11     	bl	0xb10 <__android_log_print@plt>
+     ed0: b0000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+     ed4: 911ff000     	add	x0, x0, #0x7fc
+     ed8: 2a1303e1     	mov	w1, w19
+     edc: 2a1f03e2     	mov	w2, wzr
+     ee0: 97ffff10     	bl	0xb20 <dumping_callstack@plt>
+     ee4: b94002c8     	ldr	w8, [x22]
+     ee8: 4b0803f4     	neg	w20, w8
+     eec: f94016e8     	ldr	x8, [x23, #0x28]
+     ef0: f9400fe9     	ldr	x9, [sp, #0x18]
+     ef4: eb09011f     	cmp	x8, x9
+     ef8: 54000101     	b.ne	0xf18 <ion_custom_ioctl+0xc8>
+     efc: 2a1403e0     	mov	w0, w20
+     f00: f94013f7     	ldr	x23, [sp, #0x20]
+     f04: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+     f08: a9444ff4     	ldp	x20, x19, [sp, #0x40]
+     f0c: a94357f6     	ldp	x22, x21, [sp, #0x30]
+     f10: 910183ff     	add	sp, sp, #0x60
+     f14: d65f03c0     	ret
+     f18: 97ffff06     	bl	0xb30 <__stack_chk_fail@plt>
+     f1c: 00000000     	udf	#0x0
+
+0000000000000f20 <ion_mmap>:
+     f20: d101c3ff     	sub	sp, sp, #0x70
+     f24: f90013f9     	str	x25, [sp, #0x20]
+     f28: a9035ff8     	stp	x24, x23, [sp, #0x30]
+     f2c: a90457f6     	stp	x22, x21, [sp, #0x40]
+     f30: a9054ff4     	stp	x20, x19, [sp, #0x50]
+     f34: a9067bfd     	stp	x29, x30, [sp, #0x60]
+     f38: 910183fd     	add	x29, sp, #0x60
+     f3c: 2a0503f3     	mov	w19, w5
+     f40: 2a0403f4     	mov	w20, w4
+     f44: 2a0303f5     	mov	w21, w3
+     f48: aa0203f6     	mov	x22, x2
+     f4c: aa0103f7     	mov	x23, x1
+     f50: 2a0003f8     	mov	w24, w0
+     f54: aa1703e0     	mov	x0, x23
+     f58: aa1603e1     	mov	x1, x22
+     f5c: 2a1503e2     	mov	w2, w21
+     f60: 2a1403e3     	mov	w3, w20
+     f64: 2a1303e4     	mov	w4, w19
+     f68: aa0603e5     	mov	x5, x6
+     f6c: 97fffef9     	bl	0xb50 <mmap@plt>
+     f70: aa0003f9     	mov	x25, x0
+     f74: b100073f     	cmn	x25, #0x1
+     f78: 54000261     	b.ne	0xfc4 <ion_mmap+0xa4>
+     f7c: 97fffedd     	bl	0xaf0 <__errno@plt>
+     f80: b9400000     	ldr	w0, [x0]
+     f84: 97fffedf     	bl	0xb00 <strerror@plt>
+     f88: b0000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+     f8c: b90003f3     	str	w19, [sp]
+     f90: b0000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+     f94: aa0003e8     	mov	x8, x0
+     f98: 92800009     	mov	x9, #-0x1               // =-1
+     f9c: 911b0021     	add	x1, x1, #0x6c0
+     fa0: 911bf042     	add	x2, x2, #0x6fc
+     fa4: 321f07e0     	orr	w0, wzr, #0x6
+     fa8: a900a3e9     	stp	x9, x8, [sp, #0x8]
+     fac: 2a1803e3     	mov	w3, w24
+     fb0: aa1703e4     	mov	x4, x23
+     fb4: aa1603e5     	mov	x5, x22
+     fb8: 2a1503e6     	mov	w6, w21
+     fbc: 2a1403e7     	mov	w7, w20
+     fc0: 97fffed4     	bl	0xb10 <__android_log_print@plt>
+     fc4: aa1903e0     	mov	x0, x25
+     fc8: f94013f9     	ldr	x25, [sp, #0x20]
+     fcc: a9467bfd     	ldp	x29, x30, [sp, #0x60]
+     fd0: a9454ff4     	ldp	x20, x19, [sp, #0x50]
+     fd4: a94457f6     	ldp	x22, x21, [sp, #0x40]
+     fd8: a9435ff8     	ldp	x24, x23, [sp, #0x30]
+     fdc: 9101c3ff     	add	sp, sp, #0x70
+     fe0: d65f03c0     	ret
+     fe4: 00000000     	udf	#0x0
+
+0000000000000fe8 <ion_munmap>:
+     fe8: a9bd57f6     	stp	x22, x21, [sp, #-0x30]!
+     fec: a9014ff4     	stp	x20, x19, [sp, #0x10]
+     ff0: a9027bfd     	stp	x29, x30, [sp, #0x20]
+     ff4: 910083fd     	add	x29, sp, #0x20
+     ff8: aa0203f3     	mov	x19, x2
+     ffc: aa0103f5     	mov	x21, x1
+    1000: 2a0003f6     	mov	w22, w0
+    1004: aa1503e0     	mov	x0, x21
+    1008: aa1303e1     	mov	x1, x19
+    100c: 97fffed5     	bl	0xb60 <munmap@plt>
+    1010: 2a0003f4     	mov	w20, w0
+    1014: 36f801f4     	tbz	w20, #0x1f, 0x1050 <ion_munmap+0x68>
+    1018: 97fffeb6     	bl	0xaf0 <__errno@plt>
+    101c: b9400000     	ldr	w0, [x0]
+    1020: 97fffeb8     	bl	0xb00 <strerror@plt>
+    1024: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    1028: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    102c: aa0003e7     	mov	x7, x0
+    1030: 911b0021     	add	x1, x1, #0x6c0
+    1034: 911d7442     	add	x2, x2, #0x75d
+    1038: 321f07e0     	orr	w0, wzr, #0x6
+    103c: 2a1603e3     	mov	w3, w22
+    1040: aa1503e4     	mov	x4, x21
+    1044: aa1303e5     	mov	x5, x19
+    1048: 2a1403e6     	mov	w6, w20
+    104c: 97fffeb1     	bl	0xb10 <__android_log_print@plt>
+    1050: 2a1403e0     	mov	w0, w20
+    1054: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+    1058: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+    105c: a8c357f6     	ldp	x22, x21, [sp], #0x30
+    1060: d65f03c0     	ret
+    1064: 00000000     	udf	#0x0
+
+0000000000001068 <ion_share_close>:
+    1068: f81d0ff5     	str	x21, [sp, #-0x30]!
+    106c: a9014ff4     	stp	x20, x19, [sp, #0x10]
+    1070: a9027bfd     	stp	x29, x30, [sp, #0x20]
+    1074: 910083fd     	add	x29, sp, #0x20
+    1078: 2a0103f4     	mov	w20, w1
+    107c: 2a0003f5     	mov	w21, w0
+    1080: 2a1403e0     	mov	w0, w20
+    1084: 97fffebb     	bl	0xb70 <close@plt>
+    1088: 2a0003f3     	mov	w19, w0
+    108c: 36f801d3     	tbz	w19, #0x1f, 0x10c4 <ion_share_close+0x5c>
+    1090: 97fffe98     	bl	0xaf0 <__errno@plt>
+    1094: b9400000     	ldr	w0, [x0]
+    1098: 97fffe9a     	bl	0xb00 <strerror@plt>
+    109c: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    10a0: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    10a4: aa0003e6     	mov	x6, x0
+    10a8: 911b0021     	add	x1, x1, #0x6c0
+    10ac: 911e6042     	add	x2, x2, #0x798
+    10b0: 321f07e0     	orr	w0, wzr, #0x6
+    10b4: 2a1503e3     	mov	w3, w21
+    10b8: 2a1403e4     	mov	w4, w20
+    10bc: 2a1303e5     	mov	w5, w19
+    10c0: 97fffe94     	bl	0xb10 <__android_log_print@plt>
+    10c4: 2a1303e0     	mov	w0, w19
+    10c8: a9427bfd     	ldp	x29, x30, [sp, #0x20]
+    10cc: a9414ff4     	ldp	x20, x19, [sp, #0x10]
+    10d0: f84307f5     	ldr	x21, [sp], #0x30
+    10d4: d65f03c0     	ret
+
+00000000000010d8 <ion_cache_sync_flush_range>:
+    10d8: d10343ff     	sub	sp, sp, #0xd0
+    10dc: f9004bf7     	str	x23, [sp, #0x90]
+    10e0: a90a57f6     	stp	x22, x21, [sp, #0xa0]
+    10e4: a90b4ff4     	stp	x20, x19, [sp, #0xb0]
+    10e8: a90c7bfd     	stp	x29, x30, [sp, #0xc0]
+    10ec: 910303fd     	add	x29, sp, #0xc0
+    10f0: d53bd057     	mrs	x23, TPIDR_EL0
+    10f4: 528920d5     	mov	w21, #0x4906            // =18694
+    10f8: f94016e8     	ldr	x8, [x23, #0x28]
+    10fc: 72b80215     	movk	w21, #0xc010, lsl #16
+    1100: 528000a9     	mov	w9, #0x5                // =5
+    1104: 321f07ea     	orr	w10, wzr, #0x6
+    1108: 910003e2     	mov	x2, sp
+    110c: f81c83a8     	stur	x8, [x29, #-0x38]
+    1110: 910043e8     	add	x8, sp, #0x10
+    1114: 2a1503e1     	mov	w1, w21
+    1118: b90013e9     	str	w9, [sp, #0x10]
+    111c: 2a0003f3     	mov	w19, w0
+    1120: b9002fea     	str	w10, [sp, #0x2c]
+    1124: b90003ff     	str	wzr, [sp]
+    1128: f90007e8     	str	x8, [sp, #0x8]
+    112c: 97fffe6d     	bl	0xae0 <ioctl@plt>
+    1130: 2a0003f4     	mov	w20, w0
+    1134: 37f800d4     	tbnz	w20, #0x1f, 0x114c <ion_cache_sync_flush_range+0x74>
+    1138: 34000354     	cbz	w20, 0x11a0 <ion_cache_sync_flush_range+0xc8>
+    113c: 97fffe6d     	bl	0xaf0 <__errno@plt>
+    1140: b9400008     	ldr	w8, [x0]
+    1144: 4b0803e0     	neg	w0, w8
+    1148: 14000017     	b	0x11a4 <ion_cache_sync_flush_range+0xcc>
+    114c: 97fffe69     	bl	0xaf0 <__errno@plt>
+    1150: aa0003f6     	mov	x22, x0
+    1154: b94002c0     	ldr	w0, [x22]
+    1158: 97fffe6a     	bl	0xb00 <strerror@plt>
+    115c: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    1160: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    1164: aa0003e5     	mov	x5, x0
+    1168: 911b0021     	add	x1, x1, #0x6c0
+    116c: 911f3c42     	add	x2, x2, #0x7cf
+    1170: 321f07e0     	orr	w0, wzr, #0x6
+    1174: 2a1503e3     	mov	w3, w21
+    1178: 2a1403e4     	mov	w4, w20
+    117c: 97fffe65     	bl	0xb10 <__android_log_print@plt>
+    1180: 90000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+    1184: 911ff000     	add	x0, x0, #0x7fc
+    1188: 2a1303e1     	mov	w1, w19
+    118c: 2a1f03e2     	mov	w2, wzr
+    1190: 97fffe64     	bl	0xb20 <dumping_callstack@plt>
+    1194: b94002c8     	ldr	w8, [x22]
+    1198: 4b0803f4     	neg	w20, w8
+    119c: 35fffd14     	cbnz	w20, 0x113c <ion_cache_sync_flush_range+0x64>
+    11a0: 2a1f03e0     	mov	w0, wzr
+    11a4: f94016e8     	ldr	x8, [x23, #0x28]
+    11a8: f85c83a9     	ldur	x9, [x29, #-0x38]
+    11ac: eb09011f     	cmp	x8, x9
+    11b0: 540000e1     	b.ne	0x11cc <ion_cache_sync_flush_range+0xf4>
+    11b4: a94c7bfd     	ldp	x29, x30, [sp, #0xc0]
+    11b8: a94b4ff4     	ldp	x20, x19, [sp, #0xb0]
+    11bc: a94a57f6     	ldp	x22, x21, [sp, #0xa0]
+    11c0: f9404bf7     	ldr	x23, [sp, #0x90]
+    11c4: 910343ff     	add	sp, sp, #0xd0
+    11c8: d65f03c0     	ret
+    11cc: 97fffe59     	bl	0xb30 <__stack_chk_fail@plt>
+
+00000000000011d0 <ion_cache_sync_flush_range_va>:
+    11d0: d10343ff     	sub	sp, sp, #0xd0
+    11d4: f9004bf7     	str	x23, [sp, #0x90]
+    11d8: a90a57f6     	stp	x22, x21, [sp, #0xa0]
+    11dc: a90b4ff4     	stp	x20, x19, [sp, #0xb0]
+    11e0: a90c7bfd     	stp	x29, x30, [sp, #0xc0]
+    11e4: 910303fd     	add	x29, sp, #0xc0
+    11e8: d53bd057     	mrs	x23, TPIDR_EL0
+    11ec: 528000a9     	mov	w9, #0x5                // =5
+    11f0: f94016e8     	ldr	x8, [x23, #0x28]
+    11f4: 528920d5     	mov	w21, #0x4906            // =18694
+    11f8: 72b80215     	movk	w21, #0xc010, lsl #16
+    11fc: 2a0003f3     	mov	w19, w0
+    1200: f81c83a8     	stur	x8, [x29, #-0x38]
+    1204: 910043e8     	add	x8, sp, #0x10
+    1208: f90013e1     	str	x1, [sp, #0x20]
+    120c: 2a1503e1     	mov	w1, w21
+    1210: 290527e2     	stp	w2, w9, [sp, #0x28]
+    1214: 910003e2     	mov	x2, sp
+    1218: b90013e9     	str	w9, [sp, #0x10]
+    121c: b90003ff     	str	wzr, [sp]
+    1220: f90007e8     	str	x8, [sp, #0x8]
+    1224: 97fffe2f     	bl	0xae0 <ioctl@plt>
+    1228: 2a0003f4     	mov	w20, w0
+    122c: 37f800d4     	tbnz	w20, #0x1f, 0x1244 <ion_cache_sync_flush_range_va+0x74>
+    1230: 34000354     	cbz	w20, 0x1298 <ion_cache_sync_flush_range_va+0xc8>
+    1234: 97fffe2f     	bl	0xaf0 <__errno@plt>
+    1238: b9400008     	ldr	w8, [x0]
+    123c: 4b0803e0     	neg	w0, w8
+    1240: 14000017     	b	0x129c <ion_cache_sync_flush_range_va+0xcc>
+    1244: 97fffe2b     	bl	0xaf0 <__errno@plt>
+    1248: aa0003f6     	mov	x22, x0
+    124c: b94002c0     	ldr	w0, [x22]
+    1250: 97fffe2c     	bl	0xb00 <strerror@plt>
+    1254: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    1258: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    125c: aa0003e5     	mov	x5, x0
+    1260: 911b0021     	add	x1, x1, #0x6c0
+    1264: 911f3c42     	add	x2, x2, #0x7cf
+    1268: 321f07e0     	orr	w0, wzr, #0x6
+    126c: 2a1503e3     	mov	w3, w21
+    1270: 2a1403e4     	mov	w4, w20
+    1274: 97fffe27     	bl	0xb10 <__android_log_print@plt>
+    1278: 90000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+    127c: 911ff000     	add	x0, x0, #0x7fc
+    1280: 2a1303e1     	mov	w1, w19
+    1284: 2a1f03e2     	mov	w2, wzr
+    1288: 97fffe26     	bl	0xb20 <dumping_callstack@plt>
+    128c: b94002c8     	ldr	w8, [x22]
+    1290: 4b0803f4     	neg	w20, w8
+    1294: 35fffd14     	cbnz	w20, 0x1234 <ion_cache_sync_flush_range_va+0x64>
+    1298: 2a1f03e0     	mov	w0, wzr
+    129c: f94016e8     	ldr	x8, [x23, #0x28]
+    12a0: f85c83a9     	ldur	x9, [x29, #-0x38]
+    12a4: eb09011f     	cmp	x8, x9
+    12a8: 540000e1     	b.ne	0x12c4 <ion_cache_sync_flush_range_va+0xf4>
+    12ac: a94c7bfd     	ldp	x29, x30, [sp, #0xc0]
+    12b0: a94b4ff4     	ldp	x20, x19, [sp, #0xb0]
+    12b4: a94a57f6     	ldp	x22, x21, [sp, #0xa0]
+    12b8: f9404bf7     	ldr	x23, [sp, #0x90]
+    12bc: 910343ff     	add	sp, sp, #0xd0
+    12c0: d65f03c0     	ret
+    12c4: 97fffe1b     	bl	0xb30 <__stack_chk_fail@plt>
+
+00000000000012c8 <ion_dma_map_area>:
+    12c8: d10343ff     	sub	sp, sp, #0xd0
+    12cc: f9004bf7     	str	x23, [sp, #0x90]
+    12d0: a90a57f6     	stp	x22, x21, [sp, #0xa0]
+    12d4: a90b4ff4     	stp	x20, x19, [sp, #0xb0]
+    12d8: a90c7bfd     	stp	x29, x30, [sp, #0xc0]
+    12dc: 910303fd     	add	x29, sp, #0xc0
+    12e0: d53bd057     	mrs	x23, TPIDR_EL0
+    12e4: 528920d5     	mov	w21, #0x4906            // =18694
+    12e8: f94016e8     	ldr	x8, [x23, #0x28]
+    12ec: 72b80215     	movk	w21, #0xc010, lsl #16
+    12f0: 528000a9     	mov	w9, #0x5                // =5
+    12f4: 2a0003f3     	mov	w19, w0
+    12f8: f81c83a8     	stur	x8, [x29, #-0x38]
+    12fc: 910043e8     	add	x8, sp, #0x10
+    1300: b9001be1     	str	w1, [sp, #0x18]
+    1304: 2a1503e1     	mov	w1, w21
+    1308: 29058bff     	stp	wzr, w2, [sp, #0x2c]
+    130c: 910003e2     	mov	x2, sp
+    1310: b90013e9     	str	w9, [sp, #0x10]
+    1314: b90003ff     	str	wzr, [sp]
+    1318: f90007e8     	str	x8, [sp, #0x8]
+    131c: 97fffdf1     	bl	0xae0 <ioctl@plt>
+    1320: 2a0003f4     	mov	w20, w0
+    1324: 37f800d4     	tbnz	w20, #0x1f, 0x133c <ion_dma_map_area+0x74>
+    1328: 34000354     	cbz	w20, 0x1390 <ion_dma_map_area+0xc8>
+    132c: 97fffdf1     	bl	0xaf0 <__errno@plt>
+    1330: b9400008     	ldr	w8, [x0]
+    1334: 4b0803e0     	neg	w0, w8
+    1338: 14000017     	b	0x1394 <ion_dma_map_area+0xcc>
+    133c: 97fffded     	bl	0xaf0 <__errno@plt>
+    1340: aa0003f6     	mov	x22, x0
+    1344: b94002c0     	ldr	w0, [x22]
+    1348: 97fffdee     	bl	0xb00 <strerror@plt>
+    134c: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    1350: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    1354: aa0003e5     	mov	x5, x0
+    1358: 911b0021     	add	x1, x1, #0x6c0
+    135c: 911f3c42     	add	x2, x2, #0x7cf
+    1360: 321f07e0     	orr	w0, wzr, #0x6
+    1364: 2a1503e3     	mov	w3, w21
+    1368: 2a1403e4     	mov	w4, w20
+    136c: 97fffde9     	bl	0xb10 <__android_log_print@plt>
+    1370: 90000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+    1374: 911ff000     	add	x0, x0, #0x7fc
+    1378: 2a1303e1     	mov	w1, w19
+    137c: 2a1f03e2     	mov	w2, wzr
+    1380: 97fffde8     	bl	0xb20 <dumping_callstack@plt>
+    1384: b94002c8     	ldr	w8, [x22]
+    1388: 4b0803f4     	neg	w20, w8
+    138c: 35fffd14     	cbnz	w20, 0x132c <ion_dma_map_area+0x64>
+    1390: 2a1f03e0     	mov	w0, wzr
+    1394: f94016e8     	ldr	x8, [x23, #0x28]
+    1398: f85c83a9     	ldur	x9, [x29, #-0x38]
+    139c: eb09011f     	cmp	x8, x9
+    13a0: 540000e1     	b.ne	0x13bc <ion_dma_map_area+0xf4>
+    13a4: a94c7bfd     	ldp	x29, x30, [sp, #0xc0]
+    13a8: a94b4ff4     	ldp	x20, x19, [sp, #0xb0]
+    13ac: a94a57f6     	ldp	x22, x21, [sp, #0xa0]
+    13b0: f9404bf7     	ldr	x23, [sp, #0x90]
+    13b4: 910343ff     	add	sp, sp, #0xd0
+    13b8: d65f03c0     	ret
+    13bc: 97fffddd     	bl	0xb30 <__stack_chk_fail@plt>
+
+00000000000013c0 <ion_dma_unmap_area>:
+    13c0: d10343ff     	sub	sp, sp, #0xd0
+    13c4: f9004bf7     	str	x23, [sp, #0x90]
+    13c8: a90a57f6     	stp	x22, x21, [sp, #0xa0]
+    13cc: a90b4ff4     	stp	x20, x19, [sp, #0xb0]
+    13d0: a90c7bfd     	stp	x29, x30, [sp, #0xc0]
+    13d4: 910303fd     	add	x29, sp, #0xc0
+    13d8: d53bd057     	mrs	x23, TPIDR_EL0
+    13dc: 528000a9     	mov	w9, #0x5                // =5
+    13e0: f94016e8     	ldr	x8, [x23, #0x28]
+    13e4: 528920d5     	mov	w21, #0x4906            // =18694
+    13e8: 72b80215     	movk	w21, #0xc010, lsl #16
+    13ec: 2a0003f3     	mov	w19, w0
+    13f0: f81c83a8     	stur	x8, [x29, #-0x38]
+    13f4: 320003e8     	orr	w8, wzr, #0x1
+    13f8: b90013e9     	str	w9, [sp, #0x10]
+    13fc: 910043e9     	add	x9, sp, #0x10
+    1400: b9001be1     	str	w1, [sp, #0x18]
+    1404: 2a1503e1     	mov	w1, w21
+    1408: 29058be8     	stp	w8, w2, [sp, #0x2c]
+    140c: 910003e2     	mov	x2, sp
+    1410: b90003ff     	str	wzr, [sp]
+    1414: f90007e9     	str	x9, [sp, #0x8]
+    1418: 97fffdb2     	bl	0xae0 <ioctl@plt>
+    141c: 2a0003f4     	mov	w20, w0
+    1420: 37f800d4     	tbnz	w20, #0x1f, 0x1438 <ion_dma_unmap_area+0x78>
+    1424: 34000354     	cbz	w20, 0x148c <ion_dma_unmap_area+0xcc>
+    1428: 97fffdb2     	bl	0xaf0 <__errno@plt>
+    142c: b9400008     	ldr	w8, [x0]
+    1430: 4b0803e0     	neg	w0, w8
+    1434: 14000017     	b	0x1490 <ion_dma_unmap_area+0xd0>
+    1438: 97fffdae     	bl	0xaf0 <__errno@plt>
+    143c: aa0003f6     	mov	x22, x0
+    1440: b94002c0     	ldr	w0, [x22]
+    1444: 97fffdaf     	bl	0xb00 <strerror@plt>
+    1448: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    144c: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    1450: aa0003e5     	mov	x5, x0
+    1454: 911b0021     	add	x1, x1, #0x6c0
+    1458: 911f3c42     	add	x2, x2, #0x7cf
+    145c: 321f07e0     	orr	w0, wzr, #0x6
+    1460: 2a1503e3     	mov	w3, w21
+    1464: 2a1403e4     	mov	w4, w20
+    1468: 97fffdaa     	bl	0xb10 <__android_log_print@plt>
+    146c: 90000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+    1470: 911ff000     	add	x0, x0, #0x7fc
+    1474: 2a1303e1     	mov	w1, w19
+    1478: 2a1f03e2     	mov	w2, wzr
+    147c: 97fffda9     	bl	0xb20 <dumping_callstack@plt>
+    1480: b94002c8     	ldr	w8, [x22]
+    1484: 4b0803f4     	neg	w20, w8
+    1488: 35fffd14     	cbnz	w20, 0x1428 <ion_dma_unmap_area+0x68>
+    148c: 2a1f03e0     	mov	w0, wzr
+    1490: f94016e8     	ldr	x8, [x23, #0x28]
+    1494: f85c83a9     	ldur	x9, [x29, #-0x38]
+    1498: eb09011f     	cmp	x8, x9
+    149c: 540000e1     	b.ne	0x14b8 <ion_dma_unmap_area+0xf8>
+    14a0: a94c7bfd     	ldp	x29, x30, [sp, #0xc0]
+    14a4: a94b4ff4     	ldp	x20, x19, [sp, #0xb0]
+    14a8: a94a57f6     	ldp	x22, x21, [sp, #0xa0]
+    14ac: f9404bf7     	ldr	x23, [sp, #0x90]
+    14b0: 910343ff     	add	sp, sp, #0xd0
+    14b4: d65f03c0     	ret
+    14b8: 97fffd9e     	bl	0xb30 <__stack_chk_fail@plt>
+    14bc: 00000000     	udf	#0x0
+
+00000000000014c0 <ion_dma_map_area_va>:
+    14c0: d10343ff     	sub	sp, sp, #0xd0
+    14c4: f9004bf7     	str	x23, [sp, #0x90]
+    14c8: a90a57f6     	stp	x22, x21, [sp, #0xa0]
+    14cc: a90b4ff4     	stp	x20, x19, [sp, #0xb0]
+    14d0: a90c7bfd     	stp	x29, x30, [sp, #0xc0]
+    14d4: 910303fd     	add	x29, sp, #0xc0
+    14d8: d53bd057     	mrs	x23, TPIDR_EL0
+    14dc: 528920d5     	mov	w21, #0x4906            // =18694
+    14e0: f94016e8     	ldr	x8, [x23, #0x28]
+    14e4: 72b80215     	movk	w21, #0xc010, lsl #16
+    14e8: 528000a9     	mov	w9, #0x5                // =5
+    14ec: 2a0003f3     	mov	w19, w0
+    14f0: f81c83a8     	stur	x8, [x29, #-0x38]
+    14f4: 321f03e8     	orr	w8, wzr, #0x2
+    14f8: f90013e1     	str	x1, [sp, #0x20]
+    14fc: 2a1503e1     	mov	w1, w21
+    1500: b90013e9     	str	w9, [sp, #0x10]
+    1504: 290523e2     	stp	w2, w8, [sp, #0x28]
+    1508: 910043e8     	add	x8, sp, #0x10
+    150c: 910003e2     	mov	x2, sp
+    1510: b90033e3     	str	w3, [sp, #0x30]
+    1514: b90003ff     	str	wzr, [sp]
+    1518: f90007e8     	str	x8, [sp, #0x8]
+    151c: 97fffd71     	bl	0xae0 <ioctl@plt>
+    1520: 2a0003f4     	mov	w20, w0
+    1524: 37f800d4     	tbnz	w20, #0x1f, 0x153c <ion_dma_map_area_va+0x7c>
+    1528: 34000354     	cbz	w20, 0x1590 <ion_dma_map_area_va+0xd0>
+    152c: 97fffd71     	bl	0xaf0 <__errno@plt>
+    1530: b9400008     	ldr	w8, [x0]
+    1534: 4b0803e0     	neg	w0, w8
+    1538: 14000017     	b	0x1594 <ion_dma_map_area_va+0xd4>
+    153c: 97fffd6d     	bl	0xaf0 <__errno@plt>
+    1540: aa0003f6     	mov	x22, x0
+    1544: b94002c0     	ldr	w0, [x22]
+    1548: 97fffd6e     	bl	0xb00 <strerror@plt>
+    154c: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    1550: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    1554: aa0003e5     	mov	x5, x0
+    1558: 911b0021     	add	x1, x1, #0x6c0
+    155c: 911f3c42     	add	x2, x2, #0x7cf
+    1560: 321f07e0     	orr	w0, wzr, #0x6
+    1564: 2a1503e3     	mov	w3, w21
+    1568: 2a1403e4     	mov	w4, w20
+    156c: 97fffd69     	bl	0xb10 <__android_log_print@plt>
+    1570: 90000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+    1574: 911ff000     	add	x0, x0, #0x7fc
+    1578: 2a1303e1     	mov	w1, w19
+    157c: 2a1f03e2     	mov	w2, wzr
+    1580: 97fffd68     	bl	0xb20 <dumping_callstack@plt>
+    1584: b94002c8     	ldr	w8, [x22]
+    1588: 4b0803f4     	neg	w20, w8
+    158c: 35fffd14     	cbnz	w20, 0x152c <ion_dma_map_area_va+0x6c>
+    1590: 2a1f03e0     	mov	w0, wzr
+    1594: f94016e8     	ldr	x8, [x23, #0x28]
+    1598: f85c83a9     	ldur	x9, [x29, #-0x38]
+    159c: eb09011f     	cmp	x8, x9
+    15a0: 540000e1     	b.ne	0x15bc <ion_dma_map_area_va+0xfc>
+    15a4: a94c7bfd     	ldp	x29, x30, [sp, #0xc0]
+    15a8: a94b4ff4     	ldp	x20, x19, [sp, #0xb0]
+    15ac: a94a57f6     	ldp	x22, x21, [sp, #0xa0]
+    15b0: f9404bf7     	ldr	x23, [sp, #0x90]
+    15b4: 910343ff     	add	sp, sp, #0xd0
+    15b8: d65f03c0     	ret
+    15bc: 97fffd5d     	bl	0xb30 <__stack_chk_fail@plt>
+
+00000000000015c0 <ion_dma_unmap_area_va>:
+    15c0: d10343ff     	sub	sp, sp, #0xd0
+    15c4: f9004bf7     	str	x23, [sp, #0x90]
+    15c8: a90a57f6     	stp	x22, x21, [sp, #0xa0]
+    15cc: a90b4ff4     	stp	x20, x19, [sp, #0xb0]
+    15d0: a90c7bfd     	stp	x29, x30, [sp, #0xc0]
+    15d4: 910303fd     	add	x29, sp, #0xc0
+    15d8: d53bd057     	mrs	x23, TPIDR_EL0
+    15dc: 528920d5     	mov	w21, #0x4906            // =18694
+    15e0: f94016e8     	ldr	x8, [x23, #0x28]
+    15e4: 72b80215     	movk	w21, #0xc010, lsl #16
+    15e8: 528000a9     	mov	w9, #0x5                // =5
+    15ec: 2a0003f3     	mov	w19, w0
+    15f0: f81c83a8     	stur	x8, [x29, #-0x38]
+    15f4: 320007e8     	orr	w8, wzr, #0x3
+    15f8: f90013e1     	str	x1, [sp, #0x20]
+    15fc: 2a1503e1     	mov	w1, w21
+    1600: b90013e9     	str	w9, [sp, #0x10]
+    1604: 290523e2     	stp	w2, w8, [sp, #0x28]
+    1608: 910043e8     	add	x8, sp, #0x10
+    160c: 910003e2     	mov	x2, sp
+    1610: b90033e3     	str	w3, [sp, #0x30]
+    1614: b90003ff     	str	wzr, [sp]
+    1618: f90007e8     	str	x8, [sp, #0x8]
+    161c: 97fffd31     	bl	0xae0 <ioctl@plt>
+    1620: 2a0003f4     	mov	w20, w0
+    1624: 37f800d4     	tbnz	w20, #0x1f, 0x163c <ion_dma_unmap_area_va+0x7c>
+    1628: 34000354     	cbz	w20, 0x1690 <ion_dma_unmap_area_va+0xd0>
+    162c: 97fffd31     	bl	0xaf0 <__errno@plt>
+    1630: b9400008     	ldr	w8, [x0]
+    1634: 4b0803e0     	neg	w0, w8
+    1638: 14000017     	b	0x1694 <ion_dma_unmap_area_va+0xd4>
+    163c: 97fffd2d     	bl	0xaf0 <__errno@plt>
+    1640: aa0003f6     	mov	x22, x0
+    1644: b94002c0     	ldr	w0, [x22]
+    1648: 97fffd2e     	bl	0xb00 <strerror@plt>
+    164c: 90000001     	adrp	x1, 0x1000 <ion_munmap+0x18>
+    1650: 90000002     	adrp	x2, 0x1000 <ion_munmap+0x18>
+    1654: aa0003e5     	mov	x5, x0
+    1658: 911b0021     	add	x1, x1, #0x6c0
+    165c: 911f3c42     	add	x2, x2, #0x7cf
+    1660: 321f07e0     	orr	w0, wzr, #0x6
+    1664: 2a1503e3     	mov	w3, w21
+    1668: 2a1403e4     	mov	w4, w20
+    166c: 97fffd29     	bl	0xb10 <__android_log_print@plt>
+    1670: 90000000     	adrp	x0, 0x1000 <ion_munmap+0x18>
+    1674: 911ff000     	add	x0, x0, #0x7fc
+    1678: 2a1303e1     	mov	w1, w19
+    167c: 2a1f03e2     	mov	w2, wzr
+    1680: 97fffd28     	bl	0xb20 <dumping_callstack@plt>
+    1684: b94002c8     	ldr	w8, [x22]
+    1688: 4b0803f4     	neg	w20, w8
+    168c: 35fffd14     	cbnz	w20, 0x162c <ion_dma_unmap_area_va+0x6c>
+    1690: 2a1f03e0     	mov	w0, wzr
+    1694: f94016e8     	ldr	x8, [x23, #0x28]
+    1698: f85c83a9     	ldur	x9, [x29, #-0x38]
+    169c: eb09011f     	cmp	x8, x9
+    16a0: 540000e1     	b.ne	0x16bc <ion_dma_unmap_area_va+0xfc>
+    16a4: a94c7bfd     	ldp	x29, x30, [sp, #0xc0]
+    16a8: a94b4ff4     	ldp	x20, x19, [sp, #0xb0]
+    16ac: a94a57f6     	ldp	x22, x21, [sp, #0xa0]
+    16b0: f9404bf7     	ldr	x23, [sp, #0x90]
+    16b4: 910343ff     	add	sp, sp, #0xd0
+    16b8: d65f03c0     	ret
+    16bc: 97fffd1d     	bl	0xb30 <__stack_chk_fail@plt>

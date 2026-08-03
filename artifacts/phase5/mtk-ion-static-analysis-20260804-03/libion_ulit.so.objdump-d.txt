@@ -1,0 +1,144 @@
+
+adb/phase5/PHASE5M-MTK-LIBS-20260804-01/files/libion_ulit.so:	file format elf64-littleaarch64
+
+Disassembly of section .plt:
+
+0000000000000660 <.plt>:
+     660: a9bf7bf0     	stp	x16, x30, [sp, #-0x10]!
+     664: f00000f0     	adrp	x16, 0x1f000
+     668: f947da11     	ldr	x17, [x16, #0xfb0]
+     66c: 913ec210     	add	x16, x16, #0xfb0
+     670: d61f0220     	br	x17
+     674: d503201f     	nop
+     678: d503201f     	nop
+     67c: d503201f     	nop
+
+0000000000000680 <__cxa_finalize@plt>:
+     680: f00000f0     	adrp	x16, 0x1f000
+     684: f947de11     	ldr	x17, [x16, #0xfb8]
+     688: 913ee210     	add	x16, x16, #0xfb8
+     68c: d61f0220     	br	x17
+
+0000000000000690 <__register_atfork@plt>:
+     690: f00000f0     	adrp	x16, 0x1f000
+     694: f947e211     	ldr	x17, [x16, #0xfc0]
+     698: 913f0210     	add	x16, x16, #0xfc0
+     69c: d61f0220     	br	x17
+
+00000000000006a0 <UnwindCurThreadBT@plt>:
+     6a0: f00000f0     	adrp	x16, 0x1f000
+     6a4: f947e611     	ldr	x17, [x16, #0xfc8]
+     6a8: 913f2210     	add	x16, x16, #0xfc8
+     6ac: d61f0220     	br	x17
+
+00000000000006b0 <__write_chk@plt>:
+     6b0: f00000f0     	adrp	x16, 0x1f000
+     6b4: f947ea11     	ldr	x17, [x16, #0xfd0]
+     6b8: 913f4210     	add	x16, x16, #0xfd0
+     6bc: d61f0220     	br	x17
+
+00000000000006c0 <_ZdlPv@plt>:
+     6c0: f00000f0     	adrp	x16, 0x1f000
+     6c4: f947ee11     	ldr	x17, [x16, #0xfd8]
+     6c8: 913f6210     	add	x16, x16, #0xfd8
+     6cc: d61f0220     	br	x17
+
+00000000000006d0 <getprogname@plt>:
+     6d0: f00000f0     	adrp	x16, 0x1f000
+     6d4: f947f211     	ldr	x17, [x16, #0xfe0]
+     6d8: 913f8210     	add	x16, x16, #0xfe0
+     6dc: d61f0220     	br	x17
+
+00000000000006e0 <__android_log_print@plt>:
+     6e0: f00000f0     	adrp	x16, 0x1f000
+     6e4: f947f611     	ldr	x17, [x16, #0xfe8]
+     6e8: 913fa210     	add	x16, x16, #0xfe8
+     6ec: d61f0220     	br	x17
+
+00000000000006f0 <write@plt>:
+     6f0: f00000f0     	adrp	x16, 0x1f000
+     6f4: f947fa11     	ldr	x17, [x16, #0xff0]
+     6f8: 913fc210     	add	x16, x16, #0xff0
+     6fc: d61f0220     	br	x17
+
+0000000000000700 <__stack_chk_fail@plt>:
+     700: f00000f0     	adrp	x16, 0x1f000
+     704: f947fe11     	ldr	x17, [x16, #0xff8]
+     708: 913fe210     	add	x16, x16, #0xff8
+     70c: d61f0220     	br	x17
+
+Disassembly of section .text:
+
+0000000000000710 <.text>:
+     710: 90000100     	adrp	x0, 0x20000
+     714: 91000000     	add	x0, x0, #0x0
+     718: 17ffffda     	b	0x680 <__cxa_finalize@plt>
+     71c: 00000000     	udf	#0x0
+     720: 90000103     	adrp	x3, 0x20000
+     724: 91000063     	add	x3, x3, #0x0
+     728: 17ffffda     	b	0x690 <__register_atfork@plt>
+     72c: 00000000     	udf	#0x0
+
+0000000000000730 <dumping_callstack>:
+     730: d10183ff     	sub	sp, sp, #0x60
+     734: f90013f7     	str	x23, [sp, #0x20]
+     738: a90357f6     	stp	x22, x21, [sp, #0x30]
+     73c: a9044ff4     	stp	x20, x19, [sp, #0x40]
+     740: a9057bfd     	stp	x29, x30, [sp, #0x50]
+     744: 910143fd     	add	x29, sp, #0x50
+     748: d53bd056     	mrs	x22, TPIDR_EL0
+     74c: aa0003f5     	mov	x21, x0
+     750: f94016c8     	ldr	x8, [x22, #0x28]
+     754: 910003e0     	mov	x0, sp
+     758: 2a0203f3     	mov	w19, w2
+     75c: 2a0103f4     	mov	w20, w1
+     760: 910003f7     	mov	x23, sp
+     764: f9000fe8     	str	x8, [sp, #0x18]
+     768: a9007fff     	stp	xzr, xzr, [sp]
+     76c: f9000bff     	str	xzr, [sp, #0x10]
+     770: 97ffffcc     	bl	0x6a0 <UnwindCurThreadBT@plt>
+     774: 3100069f     	cmn	w20, #0x1
+     778: 540001c0     	b.eq	0x7b0 <dumping_callstack+0x80>
+     77c: 394003e8     	ldrb	w8, [sp]
+     780: b24002e9     	orr	x9, x23, #0x1
+     784: a940abec     	ldp	x12, x10, [sp, #0x8]
+     788: 528002eb     	mov	w11, #0x17              // =23
+     78c: 2a1403e0     	mov	w0, w20
+     790: 7200011f     	tst	w8, #0x1
+     794: d341fd0d     	lsr	x13, x8, #1
+     798: da9f0163     	csinv	x3, x11, xzr, eq
+     79c: 9a8a0121     	csel	x1, x9, x10, eq
+     7a0: 9a8c01a2     	csel	x2, x13, x12, eq
+     7a4: b100047f     	cmn	x3, #0x1
+     7a8: 54000360     	b.eq	0x814 <dumping_callstack+0xe4>
+     7ac: 97ffffc1     	bl	0x6b0 <__write_chk@plt>
+     7b0: 394003e8     	ldrb	w8, [sp]
+     7b4: 36000068     	tbz	w8, #0x0, 0x7c0 <dumping_callstack+0x90>
+     7b8: f9400be0     	ldr	x0, [sp, #0x10]
+     7bc: 97ffffc1     	bl	0x6c0 <_ZdlPv@plt>
+     7c0: 97ffffc4     	bl	0x6d0 <getprogname@plt>
+     7c4: 90000001     	adrp	x1, 0x0
+     7c8: 90000002     	adrp	x2, 0x0
+     7cc: aa0003e3     	mov	x3, x0
+     7d0: 9120a021     	add	x1, x1, #0x828
+     7d4: 9120bc42     	add	x2, x2, #0x82f
+     7d8: 321f07e0     	orr	w0, wzr, #0x6
+     7dc: aa1503e4     	mov	x4, x21
+     7e0: 2a1403e5     	mov	w5, w20
+     7e4: 2a1303e6     	mov	w6, w19
+     7e8: 97ffffbe     	bl	0x6e0 <__android_log_print@plt>
+     7ec: f94016c8     	ldr	x8, [x22, #0x28]
+     7f0: f9400fe9     	ldr	x9, [sp, #0x18]
+     7f4: eb09011f     	cmp	x8, x9
+     7f8: 54000161     	b.ne	0x824 <dumping_callstack+0xf4>
+     7fc: a9457bfd     	ldp	x29, x30, [sp, #0x50]
+     800: a9444ff4     	ldp	x20, x19, [sp, #0x40]
+     804: a94357f6     	ldp	x22, x21, [sp, #0x30]
+     808: f94013f7     	ldr	x23, [sp, #0x20]
+     80c: 910183ff     	add	sp, sp, #0x60
+     810: d65f03c0     	ret
+     814: 97ffffb7     	bl	0x6f0 <write@plt>
+     818: 394003e8     	ldrb	w8, [sp]
+     81c: 3707fce8     	tbnz	w8, #0x0, 0x7b8 <dumping_callstack+0x88>
+     820: 17ffffe8     	b	0x7c0 <dumping_callstack+0x90>
+     824: 97ffffb7     	bl	0x700 <__stack_chk_fail@plt>

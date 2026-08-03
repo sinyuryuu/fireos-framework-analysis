@@ -1,0 +1,17 @@
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell id
+adb -s G001LT0511550CFT shell getprop
+adb -s G001LT0511550CFT shell getenforce
+adb -s G001LT0511550CFT shell service list
+adb -s G001LT0511550CFT shell ps -A -o USER,PID,PPID,NAME,ARGS
+adb -s G001LT0511550CFT shell ls -laZ /dev
+adb -s G001LT0511550CFT shell find /dev -maxdepth 1 -type c -ls
+adb -s G001LT0511550CFT shell ls -laZ /sys/class/misc
+adb -s G001LT0511550CFT shell ls -laZ /sys/class/uio
+adb -s G001LT0511550CFT shell ls -laZ /sys/class/video4linux
+adb -s G001LT0511550CFT shell ls -laZ /sys/class/bluetooth
+adb -s G001LT0511550CFT shell find /vendor/etc/init /system/etc/init -maxdepth 2 -type f
+adb -s G001LT0511550CFT shell find /vendor/bin /system/bin /system/xbin -maxdepth 2 -type f
+adb -s G001LT0511550CFT shell find /vendor/lib /vendor/lib64 /system/lib /system/lib64 -maxdepth 3 -type f
+adb -s G001LT0511550CFT shell ls -laZ /vendor/lib/modules
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME

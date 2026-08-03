@@ -741,3 +741,41 @@ hashed generated output is under
 `artifacts/phase5/source-layout-review-20260804-01/`. No device mutation or
 kernel exploit execution occurred. Boot/LK extraction and exploit execution
 remain separate Level 3 operations.
+
+### Phase 5M — MTK surface and public-source ABI review
+
+Phase 5M adds a read-only MT8183 surface inventory and a host-only static review
+of the exact device's pulled ION userspace libraries. The current baseline is
+the locked, green-verified-boot `KFTRWI` / `trona` / `PS7330.4104N` Android 9
+device with a `4.4.146+` arm64 kernel and `2024-02-01` security patch.
+
+The read-only snapshot lists `/dev/ion` and `/dev/mtk_cmdq`; it does not open
+either node. It does not show `/dev/sramrom` or `/dev/geniezone` in the bounded
+filtered `/dev` listing. Bluetooth is OFF and reports `Bluetooth Service not
+connected`; no HCI traffic or exploit test was run.
+
+The host-only analyzer
+`tools/scripts/analyze_phase5m_ion_userspace_static.py` disassembles already
+pulled AArch64 libraries with host `objdump`/`nm`/`strings` only. It recovers
+the `0xc0104906` ION custom ioctl shape from `libion_mtk.so`, which matches the
+public Android `ION_IOC_CUSTOM` UAPI. This is ABI/attack-surface evidence, not
+proof of shell access or a vulnerability. Raw shared objects remain local-only;
+remote hashes, metadata and derived disassembly are retained.
+
+Phase 5M outputs:
+
+- `findings/phase-5m-mtk-surface-and-candidate-review.md`
+- `findings/phase-5m-evidence-index.md`
+- `output/tables/phase-5m-mtk-cve-matrix.csv`
+- `adb/phase5/PHASE5M-RECON-20260804-01/`
+- `adb/phase5/PHASE5M-MTK-SURFACE-20260804-01/`
+- `adb/phase5/PHASE5M-BT-SURFACE-20260804-01/`
+- `adb/phase5/PHASE5M-MTK-LIBS-20260804-01/` (metadata/hashes public; `.so` inputs local-only)
+- `artifacts/phase5/mtk-ion-static-analysis-20260804-03/`
+
+The earlier CMDQ/`mtk-su` route remains excluded for the tested payload/path;
+GhostLock/CVE-2026-43499, CVE-2026-43503, SRAMROM/GenieZone and Bluetooth CVEs
+remain source/applicability hypotheses only. No new ioctl, kernel trigger,
+Bluetooth activation, root, BROM/DA, fastboot, remount, partition operation or
+boot-chain action was performed. Any such follow-up needs its own exact
+operation-specific Level 3 report and approval.
