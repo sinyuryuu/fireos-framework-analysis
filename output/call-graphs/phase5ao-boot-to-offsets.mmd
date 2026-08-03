@@ -1,0 +1,15 @@
+flowchart TD
+    A[PS7331 boot.img] --> B[Android header]
+    B --> C[kernel field offset 0x800]
+    C --> D[gzip ARM64 Image]
+    D --> E[Linux 4.4.146+ banner / MT8183 strings]
+    D --> F[kallsyms markers]
+    D -.-> G[No guaranteed C type / DWARF layout]
+    H[Exact PS7331 source + config + ABI] -.-> I[struct field layout candidate]
+    G -.-> I
+    J[Runtime boot + KASLR/physmap evidence] -.-> K[Runtime addresses]
+    I -.-> L[Exact exploit profile]
+    K -.-> L
+    L -.-> M[Live root payload]
+    N[Current installed PS7330] --> O[VERSION_MISMATCH]
+    O -.-> M

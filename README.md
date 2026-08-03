@@ -1538,3 +1538,29 @@ Phase 5AN outputs:
 The collector requires an explicit serial, refuses an existing output directory,
 supports `--dry-run`, records command results and SHA-256 values, and only attempts
 the optional read-only boot pull to document the permission boundary.
+
+### Phase 5AO — PS7331 boot image and GhostLock offset capability
+
+Phase 5AO parsed the locally preserved PS7331 `boot.img` entirely on the host. The
+image is a `trona`/MT8183 Android boot image with a 2048-byte page, kernel field
+offset `0x800`, gzip-compressed ARM64 Linux `4.4.146+`, a 2025-05-03 kernel banner,
+and embedded MT8183/Amazon build strings. It is useful for offline provenance and
+partial symbol inspection, but it is not the installed PS7330 kernel.
+
+The review distinguishes image offsets and selected symbol markers from C type
+layout, runtime KASLR/physmap addresses, and exploit gadget/credential targets.
+The public GhostLock fix is later than this build, so an unbackported old source
+pattern is plausible; Amazon backports cannot be ruled out without exact PS7331
+source or comparable patch evidence.
+
+Phase 5AO outputs:
+
+- `tools/scripts/inspect_android_boot_image.py`
+- `findings/phase-5ao-ps7331-boot-analysis.md`
+- `findings/phase-5ao-evidence-index.md`
+- `output/tables/phase5ao-offset-capability.csv`
+- `output/call-graphs/phase5ao-boot-to-offsets.mmd`
+- `artifacts/phase5/ps7331-boot-image-inspection-20260804-01/boot-image-metadata.json`
+
+No PS7331 image was flashed, no partition was written, and no GhostLock race or
+root payload was run.

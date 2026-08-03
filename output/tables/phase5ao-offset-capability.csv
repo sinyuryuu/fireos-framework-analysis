@@ -1,0 +1,9 @@
+category,ps7331_boot_image_result,exactness,notes,evidence
+android_boot_header,available,confirmed,"kernel_offset=0x800; page_size=2048; kernel_addr=0x40080000",P5AO-001
+compressed_kernel_hash,available,confirmed,"a608a5f99c155dc8e8b12b308528cbd17175b47199985d017613f9e2fbb1edba",P5AO-002
+decompressed_image_hash,available,confirmed,"10638df8d43c83e0799bfe071ef29a8069ad909b320536cff6b58ee5e1efea7d",P5AO-003
+global_kallsyms_markers,partially_available,confirmed,"markers and selected global names are present; no type layout inferred",P5AO-003
+rt_mutex_waiter_field_layout,not_proven,unknown,"requires exact PS7331 source/config/compiler or debug type data",P5AO-005
+task_struct_pi_blocked_on_offset,unavailable,unknown,"not recoverable from current metadata alone",P5AO-006
+runtime_kaslr_physmap_cea,unavailable,unknown,"runtime-only addresses",P5AO-006
+live_root_payload,not_run,risk-rejected,"no exact target profile; no futex race or kernel write",P5AO-007
