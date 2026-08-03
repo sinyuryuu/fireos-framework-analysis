@@ -158,18 +158,23 @@ image will be executed in this phase.
 
 1. Continue offline analysis of the existing Fire OS VDEX/ODEX, FOS init XML,
    and PS7331 mismatch artifacts.
-2. Acquire an official, exact PS7330 package and its published checksums, but
+2. Review the pinned public MTKClient `0x6771`/`mt6771` source lead and compare
+   it against an exact Amazon `trona` PS7330 preloader; do not execute it.
+3. Acquire an official, exact PS7330 package and its published checksums, but
    do not flash it.
-3. If the researcher explicitly wants bootloader metadata, approve Candidate A
-   and B only, separately and read-only.
+4. If the researcher explicitly wants to return to Android, approve the exact
+   `fastboot -s G001LT0511550CFT reboot` command.
 
 ## Decision request
 
-The next actionable approval, if desired, is:
+Candidate A and Candidate B have now been executed and are documented under
+separate test IDs. Any subsequent device transition or MTK operation still
+requires its own exact approval and compatibility review. The next reversible
+device command would be:
 
-> I explicitly approve Candidate A (`adb -s G001LT0511550CFT reboot bootloader`)
-> followed only by Candidate B's read-only `fastboot getvar` queries, with no
-> unlock, OEM, erase, format, upload, download, set-active, or flash command.
+```text
+fastboot -s G001LT0511550CFT reboot
+```
 
-Without that exact approval, the project remains in the read-only state
-documented by the Phase 5 baseline.
+No MTK BROM probe, payload, DA upload, unlock, OEM, erase, format, set-active,
+or flash command is currently approved or scheduled.

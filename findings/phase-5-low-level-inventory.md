@@ -112,6 +112,9 @@ PS7331 preloader/loader is compatible with PS7330.
   `getvar all` with `the command you input is restricted on locked hw`.
 - **待驗證：** the exact preloader revision, DA/SLA/DAA policy, BROM hardware
   identifier, and recovery procedure for this device.
+- **高可信推論：** a pinned public MTKClient source provides a meaningful
+  MT8183-family lead (`0x6771`/`mt6771_payload.bin`), but its shared SoC alias
+  and non-Amazon preloader filenames do not establish PS7330 compatibility.
 - **因風險拒絕測試：** BROM/Preloader protocol probes, exploit payloads,
   unlock attempts, and all partition writes. The bootloader transition and the
   four read-only `getvar` queries were executed only after explicit approval;

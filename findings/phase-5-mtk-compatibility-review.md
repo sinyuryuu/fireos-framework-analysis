@@ -42,13 +42,30 @@ procedure.
 
 ## Public tool compatibility
 
-The checked public `mtkclient` BROM configuration snapshot contains an
-`MT8168/MT6357` entry, including a comment that the device is patched against
-the relevant payload. It does not contain an `MT8183` entry in the inspected
-configuration. MT8168 is not MT8183; the entry must not be treated as support
-for this tablet. Absence from one configuration file is not a proof that no
-research tool could ever support the chipset, but it is enough to reject
-blind execution.
+A re-check pinned the public `mtkclient` source at commit
+`0542a8729993000661e2325e838217ee754d1632`. Its BROM configuration does contain
+a merged entry at source lines 1491-1495:
+
+```text
+dacode=0x6771
+name="MT6771/MT8385/MT8183/MT8666"
+damode=DAmodes.XFLASH
+loader="mt6771_payload.bin"
+```
+
+The repository also contains `mt6771_payload.bin` (612 bytes; Git blob SHA
+`70fa67c93df1c1b6fb9cc563a8825c86b0c9a0ec`), `src/stage1/targets/mt6771.h`,
+and preloader files named `preloader_asus8183_adol_p030.bin` and
+`preloader_fih_mt6771_64.bin`. This upgrades the result from “no public
+MT8183 label” to “a public generic MT8183 alias and payload family exists.”
+
+It still does not establish exact support for Amazon `trona`/PS7330: the
+configuration groups multiple SoCs under a shared `mt6771` payload, the
+preloader filenames are for other vendor/device families, and no Amazon
+`trona` PS7330 preloader, DA, authentication state, or recovery set has been
+matched. The source also contains both BROM/preloader paths and write-capable
+operations, so simply installing or invoking it would not be a read-only
+experiment.
 
 The public tool documentation also warns that newer devices may require a
 valid DA and that DAA/SLA/remote-auth conditions can block generic operation.
@@ -75,8 +92,10 @@ written to the device.
 - **高可信推論：** those rows cannot be promoted to exact exploit support for
   this locked PS7330 Android 9 tablet because the affected software family,
   patch level, preloader revision, and auth state are not matched.
-- **已證實：** the checked public mtkclient configuration has no exact MT8183
-  configuration entry; the available MT8168 entry is a different SoC.
+- **已證實：** the pinned public mtkclient source has a merged MT8183 alias
+  under the `0x6771`/`mt6771_payload.bin` configuration.
+- **已證實：** the public source contains vendor-specific 8183/6771
+  preloader files, but none is identified as Amazon `trona` PS7330.
 - **待驗證：** exact BROM ID, preloader build, DA/SLA/DAA state, and a complete
   signed recovery set for PS7330.
 - **因風險拒絕測試：** BROM payloads, DA upload, seccfg/lock-state changes,

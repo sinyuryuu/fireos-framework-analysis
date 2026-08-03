@@ -1,0 +1,8 @@
+git ls-remote https://github.com/bkerler/mtkclient.git refs/heads/main
+curl -fsSL https://raw.githubusercontent.com/bkerler/mtkclient/0542a8729993000661e2325e838217ee754d1632/mtkclient/config/brom_config.py
+curl -fsSL https://api.github.com/repos/bkerler/mtkclient/contents/mtkclient/payloads/mt6771_payload.bin?ref=main
+curl -fsSL https://raw.githubusercontent.com/bkerler/mtkclient/0542a8729993000661e2325e838217ee754d1632/src/stage1/targets/mt6771.h
+curl -fsSL https://api.github.com/repos/bkerler/mtkclient/git/trees/0542a8729993000661e2325e838217ee754d1632?recursive=1
+
+All commands were host-side source retrieval/inspection only. No mtkclient
+binary, payload, preloader, DA, USB BROM handshake, or device command was run.
