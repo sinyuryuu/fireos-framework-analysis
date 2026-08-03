@@ -379,12 +379,15 @@ are marked `VERSION_MISMATCH` and must not be flashed. No exploit, DA upload,
 seccfg change, bootloader unlock, fastboot write, or partition operation was
 executed.
 
-The only next candidate documented for possible approval is a two-stage,
-read-only metadata check: an explicitly approved `adb reboot bootloader`,
-followed only by read-only fastboot `getvar` queries. The complete operation,
-risk, rollback limitations, stop conditions, and approval wording are in
-`findings/phase-5-level3-approval-report.md`. It is not an approval and has not
-been run. Tool versions are recorded in `tools/phase5-tool-versions.txt`.
+The two-stage metadata check was subsequently executed under separate explicit
+approval: `adb reboot bootloader`, read-only `fastboot getvar product`, the
+locked-hardware rejection responses for other getvars, and
+`fastboot reboot`. The device returned to Android with the same fingerprint,
+green verified boot, and `flash.locked=1`. No unlock, write, erase, payload,
+DA, or flash command was run. Raw evidence is under
+`adb/phase5/PHASE5-BOOTLOADER-TRANSITION-20260803-01/`,
+`PHASE5-FASTBOOT-GETVAR-20260803-01/`, and
+`PHASE5-FASTBOOT-REBOOT-20260803-01/`.
 
 The adjacent OTA's boot-chain boundary is additionally documented in
 `findings/phase-5-exact-ota-and-boot-chain-evidence.md`. Its updater script
@@ -399,3 +402,40 @@ The public-method compatibility review is in
 `findings/phase-5-public-method-compatibility.md`; it separates exact-device
 evidence from historical Fire Toolbox/LauncherHijack reports and generic MTK
 tool capability.
+
+### Additional ADB package-state routes
+
+Three distinct user-0 routes were tested once each, without repeating the
+previous component-disable experiment:
+
+- `pm suspend --user 0 com.amazon.firelauncher` was blocked by missing
+  `SUSPEND_APPS`.
+- `pm hide --user 0 com.amazon.firelauncher` was blocked by missing
+  `MANAGE_USERS`.
+- `pm uninstall --user 0 com.amazon.firelauncher` returned
+  `DELETE_FAILED_INTERNAL_ERROR` and logged an explicit protected-package
+  deletion warning.
+
+All three left Fire Launcher, HOME, foreground focus, and ADB intact. Evidence
+is in `findings/phase-5-adb-surface-tests.md`,
+`adb/mutation-tests/PM-SUSPEND-FIRE-T01/`,
+`PM-HIDE-FIRE-T01/`, and `PM-UNINSTALL-FIRE-T01/`. The uninstall route's
+idempotent `pm install-existing --user 0 com.amazon.firelauncher` rollback was
+verified.
+
+### `mtk-easy-su` audit
+
+The public `KoCleo/mtk-easy-su` repository was reviewed at pinned commit
+`8c6871ac7c15b8e98a47e25c35ab93b87e260475`; no APK or LFS executable was
+downloaded or run. Its source extracts `mtk-su`/Magisk assets and runs a
+data-partition shell script, but its own warning treats post-March-2020
+firmware as potentially blocked and its tested-device table has no KFTRWI,
+trona, or MT8183 entry. The device is PS7330 with a 2024-02 patch, enforcing
+SELinux, locked boot state, and green verified boot. This remains a historical
+lead rather than a supported root path.
+
+Audit artifacts and the explicit Level 3 rejection are in:
+
+- `findings/phase-5-mtk-easy-su-review.md`
+- `artifacts/phase5/mtk-easy-su-audit-20260803/`
+- `findings/phase-5-evidence-index.md` (`P5-WEB-007`, `P5-WEB-008`)
