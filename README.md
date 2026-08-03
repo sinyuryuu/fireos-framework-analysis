@@ -394,3 +394,8 @@ The offline reproduction script is
 `tools/scripts/inspect_phase5_boot_chain_artifact.sh`, with derived output in
 `artifacts/phase5/PS7331-preloader-review/`. These are PS7331 artifact-scoped
 observations and do not authorize use on the installed PS7330 build.
+
+The public-method compatibility review is in
+`findings/phase-5-public-method-compatibility.md`; it separates exact-device
+evidence from historical Fire Toolbox/LauncherHijack reports and generic MTK
+tool capability.
