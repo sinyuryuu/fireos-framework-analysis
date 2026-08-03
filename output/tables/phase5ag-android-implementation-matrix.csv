@@ -1,0 +1,7 @@
+"implementation","entry","Android layer","changes HOME resolver","exact KFTRWI/PS7330","observed_or_source_result","classification"
+"LauncherHijack HomePress","Accessibility event or key watcher","App + AccessibilityService + PendingIntent","no; explicit ACTION_MAIN/CATEGORY_LAUNCHER component","no","historical source implementation; local direct-start T03 was 0/30","foreground redirect only"
+"Phase 4 PendingIntent variant","manually enabled Accessibility + visible toggle","App + AccessibilityService + PendingIntent","no","not measured","source/build evidence only","待驗證"
+"GhostLock ports","native syscall","Linux kernel futex/rtmutex","no","no exact profile","device/build-specific Android target profiles","因風險拒絕測試"
+"DirtyClone Linux PoC","networking primitives","Linux kernel net/skbuff/XFRM/ESP","no","no","Linux C reproducer; exact Android prerequisites absent in existing capture","已排除目前 route"
+"mtk-easy-su","sideloaded wrapper + bundled executable","Android app wrapper plus MTK kernel/boot path","no","no; fixed payload failed exact PS7330","wrapper cannot repair target mismatch","已排除目前 route"
+"Historical corrupted-default-launcher route","unknown APK/package state mutation","PackageManager/user preferred state","possibly, but unsafe and undocumented for target","no","public documentation warns per-user recovery problem","因風險拒絕測試"

@@ -1329,3 +1329,27 @@ Phase 5AF outputs:
 No third-party exploit code was downloaded, compiled, installed or executed.
 No device node, block device, kernel trigger, root payload, BROM/DA, fastboot,
 boot image or partition operation was performed.
+
+### Phase 5AG — Android implementation and MT8183/PS7330 public-source follow-up
+
+Phase 5AG reviewed the fixed LauncherHijack Android implementation and separated
+foreground redirect from formal HOME resolver replacement. The source uses
+Accessibility/event observation, an explicit `ACTION_MAIN` plus
+`CATEGORY_LAUNCHER` component, and `PendingIntent.getActivity().send()`; it does
+not write the HOME resolver. Its historical default-launcher corruption route
+was not tested because the public documentation warns of per-user recovery risk.
+
+The phase also rechecked the supplied CVE identifiers and official MediaTek
+bulletin scope against the exact `KFTRWI/trona/MT8183/PS7330.4104N` device. No
+reviewed public implementation matches Android 9, this build, and a shell-to-root
+entry. No third-party payload was downloaded or executed, and no device state was
+changed.
+
+Phase 5AG outputs:
+
+- `findings/phase-5ag-launcherhijack-and-mtk-bulletin-followup.md`
+- `findings/phase-5ag-evidence-index.md`
+- `output/tables/phase5ag-mtk-bulletin-matrix.csv`
+- `output/tables/phase5ag-android-implementation-matrix.csv`
+- `artifacts/phase5/launcherhijack-and-mtk-bulletin-followup-20260804-01/source-manifest.csv`
+- `tools/scripts/validate_phase5ag_review.py`
