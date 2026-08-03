@@ -963,3 +963,20 @@ Phase 5T outputs:
 - `adb/phase5/PHASE5T-OTA-METADATA-20260804-01/`
 - `findings/phase-5t-ota-metadata-review.md`
 - `findings/phase-5t-evidence-index.md`
+
+### Phase 5U — Android CVE applicability and GhostLock Level 3 boundary
+
+Phase 5U records a host-only comparison of the official GhostLock fix with the
+Fire 4.4 source and a defconfig gate for CVE-2026-43503. The Fire source/config
+family is a source-level GhostLock candidate, but no signed-kernel layout or
+exact Android payload is available. The documented packet-duplication/nft path
+for CVE-2026-43503 is unset in the captured MT8183 defconfig. No exploit or
+kernel trigger was executed.
+
+Phase 5U outputs:
+
+- `tools/scripts/analyze_phase5u_cve_surfaces.py`
+- `artifacts/phase5/cve-2026-43499-43503-review-20260804-02/`
+- `findings/phase-5u-android-cve-applicability.md`
+- `findings/phase-5u-ghostlock-level3-report.md`
+- `findings/phase-5u-evidence-index.md`
