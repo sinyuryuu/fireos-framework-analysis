@@ -929,3 +929,22 @@ Phase 5R outputs:
 - `findings/phase-5r-mtk-root-route-review.md`
 - `findings/phase-5r-evidence-index.md`
 - `artifacts/phase5/mtk-easy-su-current-review-20260804-01/`
+
+### Phase 5S — MTK CVE candidate screen
+
+Phase 5S screened newer MediaTek preloader information and GitHub repository
+searches for MT8183-related candidates. The November 2025 MediaTek bulletin's
+`CVE-2025-20730` affected-chipset list does not include MT8183, and the public
+advisory requires high privileges. Searches for public repositories matching
+`CVE-2021-0904`, `CVE-2021-0676`, `CVE-2022-21767 Android`, and `MT8183 exploit`
+returned no repository results in the recorded query scope.
+
+This is a candidate screen, not proof that the signed PS7330 build is free of
+all vulnerabilities. No new kernel trigger, Bluetooth/HCI input, device-node
+ioctl, preloader/LK operation, BROM/DA operation, or partition write was
+performed.
+
+Phase 5S outputs:
+
+- `findings/phase-5s-mtk-cve-candidate-screen.md`
+- `findings/phase-5s-evidence-index.md`
