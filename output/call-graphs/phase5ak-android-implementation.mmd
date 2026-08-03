@@ -1,0 +1,12 @@
+flowchart TD
+    A[Researcher enables Accessibility in Android Settings] --> B[AccessibilityManagerService]
+    B --> C[LauncherRedirectService.onKeyEvent]
+    B --> D[LauncherRedirectService.onAccessibilityEvent]
+    C --> E{KEYCODE_HOME and visible toggle?}
+    D --> F{TYPE_WINDOW_STATE_CHANGED and Fire package?}
+    E -->|yes| G[dispatchRedirect]
+    F -->|yes| G
+    G --> H[Explicit ACTION_MAIN + CATEGORY_LAUNCHER]
+    H --> I[PendingIntent.getActivity(...).send()]
+    I --> J[org.fireosresearch.phase4.alias/.HomeActivity]
+    K[PackageManager HOME resolver] -. not mutated .-> L[com.amazon.firelauncher/.Launcher priority 50]

@@ -1428,3 +1428,33 @@ Phase 5AJ outputs:
 
 The validator is host-only and supports `--dry-run`; it never connects to the
 device, downloads source, compiles a payload or executes a binary.
+
+### Phase 5AK — Android implementation state and safe redirect boundary
+
+Phase 5AK captured the current installed Android redirect artifacts and device state
+without changing Settings or package state. The APK implementation is limited to a
+manually enabled `AccessibilityService`: it can observe `KEYCODE_HOME` and Fire
+Launcher window-state events, then send an explicit research `CATEGORY_LAUNCHER`
+activity through `PendingIntent`. It does not call the HOME resolver, write a
+preferred activity, or mutate Fire Launcher. The capture found Accessibility
+`services:{}` and HOME still resolving to `com.amazon.firelauncher/.Launcher` at
+effective priority 50, so no redirect success rate is claimed.
+
+The Android/CVE review also keeps GhostLock (`CVE-2026-43499`) at the native
+syscall/kernel boundary and DirtyClone (`CVE-2026-43503`) at its separate Linux
+networking boundary. No third-party root/CVE source or binary was downloaded,
+compiled, installed, or executed.
+
+Phase 5AK outputs:
+
+- `tools/scripts/capture_phase5ak_android_implementation_state.sh`
+- `findings/phase-5ak-android-implementation-and-state-review.md`
+- `findings/phase-5ak-evidence-index.md`
+- `output/tables/phase5ak-android-implementation-matrix.csv`
+- `output/call-graphs/phase5ak-android-implementation.mmd`
+- `adb/phase5/PHASE5AK-ANDROID-IMPLEMENTATION-STATE-20260804-01/`
+- `artifacts/phase5/phase5ak-android-implementation-review-20260804-01/`
+
+The next measurement requires the researcher to enable the service in Android
+Settings and turn on the visible app toggle. The shell collector intentionally
+does not automate that consent.

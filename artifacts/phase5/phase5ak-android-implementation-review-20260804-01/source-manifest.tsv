@@ -1,0 +1,11 @@
+kind	item	sha256_or_status	note
+local-source	tools/phase4-accessibility/src/org/fireosresearch/phase4/redirect/LauncherRedirectService.java	37ff8777f38c0a1f2c70adc4a28bc55cfb3cb9b4f07cb9052edb0846ddbc32a0	Reviewed offline; no network or device execution
+local-manifest	tools/phase4-accessibility/config/AndroidManifest.xml	see build record	Accessibility service declaration only
+local-config	tools/phase4-accessibility/res/xml/accessibility_service_config.xml	see build record	No window content retrieval; key-event filter requested
+device-apk	org.fireosresearch.phase4.redirect/base.apk	e6a5536d11ff6be5de557d751817af7de69d841f7cd0d03e028d5da2537b013a	Read-only remote sha256sum; key-event + PendingIntent variant
+device-apk	org.fireosresearch.phase4.alias/base.apk	ac87bf9fde1ea1d501ef2ff5ce4ebe5e062952432f990384a64cbe49f77aa68a	Read-only remote sha256sum; research target Activity
+public-doc	Android AccessibilityService API	https://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html	Official API reference
+public-doc	Android PendingIntent API	https://developer.android.com/reference/android/app/PendingIntent.html	Official API reference
+public-doc	GhostLock Android research index	https://www.mallory.ai/vulnerabilities/CVE-2026-43499	Public target summary; no code downloaded
+public-doc	LauncherHijack fixed source	https://github.com/BaronKiko/LauncherHijack/tree/f79aee3ddd10c053d6d7c55d6f2fc29436001537	Prior fixed-revision source review
+security	third-party exploit source/binary	NOT_DOWNLOADED	No root/CVE payload was downloaded, compiled, installed, or executed
