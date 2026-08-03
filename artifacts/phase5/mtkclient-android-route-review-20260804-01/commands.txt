@@ -1,0 +1,16 @@
+# Host-only/public-source commands
+git ls-remote https://github.com/bkerler/mtkclient.git refs/heads/main
+git ls-remote https://github.com/KoCleo/mtk-easy-su.git refs/heads/master
+curl -L --fail --silent --show-error <fixed brom_config.py URL> | rg -n -i '8183|MT8183|dacode'
+curl -L --fail --silent --show-error <fixed README-USAGE.md URL> | rg -n 'BROM|Root the phone|Write flash|Erase flash'
+python3 tools/scripts/analyze_phase5ac_mtkclient_compat.py --dry-run ...
+
+# Device-side safe preparation already performed
+tools/scripts/run_phase4_accessibility_experiment.sh --phase prepare ...
+
+# Deliberately not run
+# mtk.py --preloader / payload / crash / brute / stage / plstage
+# mtk.py da seccfg unlock
+# mtk.py w / e / wf / wl
+# fastboot unlock / flash
+# preloader, LK, boot, vbmeta or partition writes

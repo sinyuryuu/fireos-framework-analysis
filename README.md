@@ -1186,15 +1186,43 @@ Phase 5AB outputs:
 - artifacts/phase5/launcherhijack-pendingintent-review-20260804-01/
 - output/tables/phase5ab-android-implementation-matrix.csv
 
-The source variant has passed static token validation and dry-run checks, but
-has not been installed or enabled on the device. Java compilation was not
-available in the current host shell because no Java runtime is currently
-configured; this is recorded as a host tooling limitation, not a device
-result. No ADB command, Accessibility enable, APK installation, root payload,
-ioctl, reboot, fastboot or partition operation was performed in Phase 5AB.
+The source variant passed static token validation and dry-run checks. It was
+later compiled with the host's OpenJDK 17 and installed only as a preparation
+run in Phase 5AC; Accessibility was not enabled. The direct measurement is
+still pending manual consent. No root payload, ioctl, reboot, fastboot or
+partition operation was performed.
 
 The result is therefore: LauncherHijack's Android implementation is confirmed
 as a public event-observation plus explicit-Activity/PendingIntent technique;
 the new local PendingIntent variant is a 待驗證 approximation, and there is
 still no evidence of a true, persistent, no-Root HOME replacement or a new
 exact PS7330 Android root implementation.
+
+### Phase 5AC — MTKClient compatibility and safe Android preparation
+
+Phase 5AC fixed the current public mtkclient revision and reviewed its
+MediaTek BROM configuration offline. MT8183 appears in a shared
+MT6771/MT8385/MT8183/MT8666 profile with dacode 0x6771; there is no independent
+0x8183 key in the inspected source. This is a source-level compatibility lead,
+not proof that Amazon's trona preloader, DA, SLA/DAA, SBC, rollback or seccfg
+chain is supported.
+
+The phase also built the PendingIntent variant with OpenJDK 17, verified the
+APK signature, captured a complete before snapshot, and installed only the
+two research APKs. The Accessibility service list remained empty and the HOME
+resolver remained com.amazon.firelauncher/.Launcher. The researcher must
+manually enable the service in Settings before measurement; ADB never writes
+the Accessibility setting.
+
+Phase 5AC outputs:
+
+- tools/scripts/analyze_phase5ac_mtkclient_compat.py
+- artifacts/phase5/mtkclient-android-route-review-20260804-01/
+- findings/phase-5ac-mtkclient-and-android-route-review.md
+- findings/phase-5ac-evidence-index.md
+- output/tables/phase5ac-mtkclient-android-route-matrix.csv
+- adb/phase5/PHASE5AB-PENDINGINTENT-T01/
+
+No mtkclient BROM/payload/crash/preloader/DA/seccfg/read/write/erase command,
+kernel trigger, ioctl, fastboot, boot image, partition or bootloader write
+was performed. The exact mtk-su payload was not rerun.
