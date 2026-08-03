@@ -1300,3 +1300,32 @@ KFTRWI/trona/PS7330 profile. Those routes remain rejected without matching
 preloader/DA/recovery/rollback evidence.
 
 - artifacts/phase5/public-mtkclient-followup-20260804-01/
+
+### Phase 5AF — Android CVE implementation and public PoC exact-target review
+
+Phase 5AF separated the user-supplied CVE identifiers and mapped the public
+implementations to Android layers. `CVE-2026-3499` is a WordPress CSRF record,
+not GhostLock. GhostLock (`CVE-2026-43499`) is a native futex/rtmutex kernel
+path; DirtyClone (`CVE-2026-43503`) is a separate Linux `net/skbuff` /
+XFRM/ESP path. Public Android GhostLock projects are device/build-specific,
+and public DirtyClone repositories are Linux C research reproducers; none has
+an exact KFTRWI/trona/MT8183/PS7330 profile.
+
+The new read-only capture found no visible user-namespace sysctl, no
+`xt_TEE`/ESP/XFRM module surface, and no `/proc/net/xfrm_stat` endpoint. The
+captured exact MT8183 defconfig also lacks the principal DirtyClone
+duplicate/TEE options. `/dev/ion` metadata is visible to shell, but no ION node
+was opened and no ioctl was called. AEE/ATF/SPM nodes remain shell-inaccessible.
+
+Phase 5AF outputs:
+
+- tools/scripts/capture_phase5af_android_cve_surface.sh
+- adb/phase5/PHASE5AF-ANDROID-CVE-SURFACE-20260804-02/
+- findings/phase-5af-android-cve-and-poc-review.md
+- findings/phase-5af-evidence-index.md
+- output/tables/phase5af-android-cve-poc-matrix.csv
+- artifacts/phase5/android-cve-poc-review-20260804-01/
+
+No third-party exploit code was downloaded, compiled, installed or executed.
+No device node, block device, kernel trigger, root payload, BROM/DA, fastboot,
+boot image or partition operation was performed.
