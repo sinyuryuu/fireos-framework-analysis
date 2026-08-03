@@ -1376,3 +1376,23 @@ Phase 5AH outputs:
 No Qualcomm command, unknown APK/native payload, BROM/DA handshake, fastboot
 write, bootloader unlock, partition write, or destructive device operation was
 performed in this phase.
+
+### Phase 5AI — PS7330 exact boot/preloader artifact search
+
+Phase 5AI checked whether a complete, verifiable `PS7330.4104N` boot/preloader/
+DA/recovery set is available. The workspace still contains only the adjacent
+PS7331 full OTA; the Amazon public update page currently exposes the 11th-gen
+Fire OS 7.3.3.1 update row but no PS7330 filename in the reviewed page. The
+PS7331 images remain `VERSION_MISMATCH` and were not used as recovery or live
+inputs.
+
+Phase 5AI outputs:
+
+- `findings/phase-5ai-exact-ps7330-artifact-search.md`
+- `findings/phase-5ai-evidence-index.md`
+- `output/tables/phase5ai-artifact-search.csv`
+- `artifacts/phase5/exact-ps7330-artifact-search-20260804-01/source-manifest.csv`
+- `tools/scripts/validate_phase5ai_artifact_search.py`
+
+No OTA sideload, BROM/DA handshake, fastboot write, bootloader unlock, seccfg
+operation, partition write, or unknown payload execution was performed.
