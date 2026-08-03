@@ -1,0 +1,6 @@
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell mkdir -p /data/local/tmp/MTK-SU-CMDQ-T03
+adb -s G001LT0511550CFT push host/mtk-su64 /data/local/tmp/MTK-SU-CMDQ-T03/mtk-su64
+adb -s G001LT0511550CFT shell chmod 700 /data/local/tmp/MTK-SU-CMDQ-T03/mtk-su64
+adb -s G001LT0511550CFT shell 'cd /data/local/tmp/MTK-SU-CMDQ-T03 && ./mtk-su64 -v' < id/getenforce/cat_proc_version/exit
+adb -s G001LT0511550CFT shell rm -rf /data/local/tmp/MTK-SU-CMDQ-T03

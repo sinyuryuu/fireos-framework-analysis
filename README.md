@@ -557,6 +557,16 @@ unsupported-firmware strings without an exact PS7330/trona marker.
 The read-only collector is
 `tools/scripts/capture_phase5e_cmdq_surface.sh`; evidence is under
 `artifacts/phase5/cve-2020-0069-surface-20260803/`, and the analysis is in
-`findings/phase-5e-cve-2020-0069-surface.md`. A bare direct `mtk-su64` test is
-tracked as `MTK-SU-CMDQ-T03`, but remains a separate Level 3 kernel-memory
-exploit proposal and has not been executed.
+`findings/phase-5e-cve-2020-0069-surface.md`. The exact operation
+`MTK-SU-CMDQ-T03` was later approved and executed once through
+`tools/scripts/run_mtk_su_cmdq_t03.sh`. The verified payload exited with
+`Failed critical init step 3`, produced no root marker, and left the device in
+the same ADB/SELinux/HOME state. Its temporary directory was removed and the
+before/after evidence manifest is under
+`adb/phase5/MTK-SU-CMDQ-T03/`. This is evidence against that archived payload
+on PS7330, not proof that CVE-2020-0069 is absent from the kernel; any further
+exploit variation requires a new exact Level 3 approval.
+
+The direct-test report is `findings/phase-5e-mtk-su-t03-result.md`, and the
+new evidence rows are `P5E-CMDQ-007` through `P5E-CMDQ-010` in
+`findings/phase-5-evidence-index.md`.
