@@ -948,3 +948,18 @@ Phase 5S outputs:
 
 - `findings/phase-5s-mtk-cve-candidate-screen.md`
 - `findings/phase-5s-evidence-index.md`
+
+### Phase 5T — PS7330 OTA/boot metadata capture
+
+Phase 5T adds a new serial-gated, read-only collector for OTA and boot-chain
+metadata. It confirms `trona_fireos_ship_7330`, PS7330/4104, the MediaTek branch,
+and the Android-exported preloader/LK descriptors. Shell cannot list `/cache`,
+`/data/ota`, or `/data/ota_package`, and no exact PS7330 payload was exposed;
+the collector did not attempt a block-device read or update operation.
+
+Phase 5T outputs:
+
+- `tools/scripts/capture_phase5t_ota_metadata.sh`
+- `adb/phase5/PHASE5T-OTA-METADATA-20260804-01/`
+- `findings/phase-5t-ota-metadata-review.md`
+- `findings/phase-5t-evidence-index.md`
