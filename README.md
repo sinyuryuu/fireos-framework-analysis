@@ -1396,3 +1396,35 @@ Phase 5AI outputs:
 
 No OTA sideload, BROM/DA handshake, fastboot write, bootloader unlock, seccfg
 operation, partition write, or unknown payload execution was performed.
+
+### Phase 5AJ — MT8183/Android 9 CVE and public Android implementation review
+
+Phase 5AJ maps the user-supplied CVEs to their real Android/Linux layers and
+keeps exact-target evidence separate from public affected-scope records.
+`CVE-2026-3499` is a WordPress CSRF record, GhostLock is
+`CVE-2026-43499` in Linux futex/rtmutex, and `CVE-2026-43503` is a separate
+Linux skb/XFRM/ESP path. The exact MT8183 defconfig lacks the documented
+DirtyClone packet-duplication/TEE entry symbols. MediaTek Bluetooth
+`CVE-2022-20025..20028` and `CVE-2022-21767..21768` have historical MT8183/
+Android 9 scope, but the exact PS7330 vendor vulnerable/fixed binary mapping is
+not public.
+
+The Android implementation review confirms the AOSP `GattService` Binder,
+permission and JNI boundary, and the exact Fire `FosGattService`,
+`FosBluetoothGattBinder` and `AmazonBtPolicyManagerAdapter` extension. It does
+not establish a shell-to-root primitive. Bounded public-source searches found
+no exact `KFTRWI/trona/MT8183/PS7330` Android root implementation. No exploit,
+Bluetooth activation, crafted input, kernel trigger, device-node operation,
+BROM/DA, fastboot or partition operation was performed.
+
+Phase 5AJ outputs:
+
+- `findings/phase-5aj-mtk-android9-cve-poc-review.md`
+- `findings/phase-5aj-evidence-index.md`
+- `output/tables/phase5aj-cve-poc-matrix.csv`
+- `output/call-graphs/phase5aj-android-cve-implementation.mmd`
+- `artifacts/phase5/phase5aj-mtk-android9-cve-poc-review-20260804-01/`
+- `tools/scripts/validate_phase5aj_cve_poc_review.py`
+
+The validator is host-only and supports `--dry-run`; it never connects to the
+device, downloads source, compiles a payload or executes a binary.
