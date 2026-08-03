@@ -1679,6 +1679,24 @@ Phase 5AU outputs:
 - `findings/phase-5au-evidence-index.md`
 - `artifacts/phase5/ota-apk-static-review-20260804-01/`
 
+### Phase 5AV — GhostLock upstream-fix boundary
+
+Phase 5AV pins the upstream GhostLock fix and follow-up:
+3bfdc63936dd changes remove_waiter() to operate on waiter->task, and
+40a25d59e85b3 handles the subsequent not-enqueued waiter regression.
+The exact Amazon 7.3.3.0 rtmutex source member remains normalized-byte-identical
+to stable v4.4.146 and shows the pre-fix current-based semantics. Runtime config
+confirms futex/rtmutex support, but the exact signed PS7330 boot/vmlinux and
+compiled offsets remain unavailable to shell.
+
+No GhostLock reproducer, exploit binary, ioctl, BROM/DA, fastboot or partition
+operation was run. Public Android/MTK ports remain target-mismatched.
+
+Phase 5AV outputs:
+
+- `findings/phase-5av-ghostlock-upstream-fix-review.md`
+- `output/tables/phase5av-ghostlock-evidence.csv`
+
 The raw device capture remains local-only because it contains device-specific
 identifiers. The capture script requires an explicit serial, refuses to
 overwrite an output directory, supports --dry-run, and records SHA-256 hashes.

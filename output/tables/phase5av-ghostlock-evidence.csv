@@ -1,0 +1,11 @@
+evidence_id,scope,observation,confidence,source
+P5AV-SRC-001,Amazon public source,rtmutex.c normalized SHA equals stable v4.4.146 and contains pre-fix current-based remove_waiter,Confirmed source scope,artifacts/phase5/exact-kernel-source-review-20260804-02/rtmutex-comparison.json
+P5AV-SRC-002,Amazon public source,futex.c contains FUTEX_WAIT_REQUEUE_PI FUTEX_CMP_REQUEUE_PI and proxy-lock paths,Confirmed source scope,findings/phase-5n-exact-source-ghostlock-review.md
+P5AV-PATCH-001,upstream,3bfdc63936dd changes remove_waiter from current to waiter->task,Confirmed external source,https://www.spinics.net/lists/kernel/msg6163230.html
+P5AV-PATCH-002,upstream,40a25d59e85b3 adds waiter-not-enqueued guard and ret less-than-zero condition,Confirmed external source,https://patchew.org/linux/20260507112913.1019537-1-dave@stgolabs.net/
+P5AV-DEV-001,exact runtime,PS7330.4104N Android 9 AArch64 kernel 4.4.146 plus,Confirmed,adb/phase5/PHASE5P-FUTEX-GATES-20260804-01
+P5AV-DEV-002,exact runtime,CONFIG_FUTEX y CONFIG_RT_MUTEXES y CONFIG_PREEMPT y CONFIG_RANDOMIZE_BASE y,Confirmed captured-config scope,adb/phase5/PHASE5P-FUTEX-GATES-20260804-01 and prior exact config capture
+P5AV-DEV-003,exact runtime,shell UID 2000 SELinux Enforcing and sensitive symbol/KASLR views denied,Confirmed visibility scope,adb/phase5/PHASE5P-FUTEX-GATES-20260804-01
+P5AV-BIN-001,signed binary,exact PS7330 boot/vmlinux/remove_waiter disassembly unavailable,Confirmed evidence gap,findings/phase-5ar-ps7331-compiled-rtmutex-review.md
+P5AV-POC-001,public Android ports,no exact KFTRWI trona MT8183 PS7330 profile,Confirmed bounded public-source scope,findings/phase-5o-exact-futex-sched-review.md
+P5AV-SAFE-001,live testing,No GhostLock race exploit ioctl bootloader or partition write performed,Confirmed,findings/phase-5u-ghostlock-level3-report.md
