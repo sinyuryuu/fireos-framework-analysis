@@ -1697,6 +1697,20 @@ Phase 5AV outputs:
 - `findings/phase-5av-ghostlock-upstream-fix-review.md`
 - `output/tables/phase5av-ghostlock-evidence.csv`
 
+### Phase 5AX — PS7330 boot/LK/recovery read-only boundary
+
+A new exact-device read-only probe can enumerate the boot, LK and recovery
+symlinks, but blockdev and dd are denied by the Android shell/SELinux boundary.
+The target remains PS7330.4104N, green verified boot, flash locked and normal
+Fire Launcher foreground. No block data, root payload, ioctl or boot operation
+was performed.
+
+Phase 5AX outputs:
+
+- `tools/scripts/capture_phase5ax_boot_readonly.sh`
+- `findings/phase-5ax-boot-readonly-boundary.md`
+- `output/tables/phase5ax-boot-readonly.csv`
+
 The raw device capture remains local-only because it contains device-specific
 identifiers. The capture script requires an explicit serial, refuses to
 overwrite an output directory, supports --dry-run, and records SHA-256 hashes.

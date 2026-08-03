@@ -1,0 +1,7 @@
+evidence_id,partition,metadata_target,read_command,observed_result,confidence
+P5AX-BOOT-001,boot,/dev/block/mmcblk0p16,blockdev and dd 4KiB,Permission denied,Confirmed
+P5AX-LK-001,lk,/dev/block/mmcblk0p5,blockdev and dd 4KiB,Permission denied,Confirmed
+P5AX-REC-001,recovery,/dev/block/mmcblk0p17,blockdev and dd 4KiB,Permission denied,Confirmed
+P5AX-CTX-001,device,PS7330.4104N and shell UID 2000,read-only getprop id getenforce uname,Exact target context preserved,Confirmed
+P5AX-STATE-001,foreground,com.amazon.firelauncher/.Launcher,read-only activity dump after capture,Fire Launcher remained foreground,Confirmed
+P5AX-SAFE-001,operation,none,read-only metadata and header probes only,No device mutation,Confirmed
