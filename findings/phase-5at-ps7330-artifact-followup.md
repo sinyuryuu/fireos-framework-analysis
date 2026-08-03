@@ -13,6 +13,9 @@
 3. FTVDB 的公開 11 代 firmware history 列出 PS7331、PS7329 及更早版本，
    沒有 PS7330 record；這與既有 workspace inventory 一致，但只是公開資料
    的 bounded absence。
+   FTVDB 公開的 raw `com.amazon.trona.android.os.json` 也只含 PS7319、
+   PS7321–PS7329 與 PS7331；其 snapshot SHA-256 為
+   `7d80beaf572ee585449da48121b190b30cee7f92b1a69d3011b61d2668e6632a`。
 4. 使用者提供的 source-notice 備份頁列出 11 代的
    `Fire_HD10-7.3.3.0-20240730.tar.bz2`，因此 7.3.3.0 source 是目前裝置的
    exact source family；它不是 signed boot image 或 loader。
@@ -46,6 +49,8 @@
 
 詳細來源與 HTTP metadata：
 [`artifacts/phase5/ps7330-artifact-followup-20260804-01/metadata.md`](../artifacts/phase5/ps7330-artifact-followup-20260804-01/metadata.md)
+
+FTVDB raw database：[com.amazon.trona.android.os.json](https://raw.githubusercontent.com/FTVDB/FTVDB/main/database/firmware/com.amazon.trona.android.os.json)
 
 本結果與既有資料互相補強：
 
