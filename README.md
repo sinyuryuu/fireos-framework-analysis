@@ -1636,3 +1636,24 @@ The analyzer supports `--dry-run`, refuses to overwrite an existing output,
 uses only host `nm`/`objdump`, and omits absolute addresses, branch targets,
 gadget data and exploit offsets. No device state changed; no futex race, native
 payload, ioctl, bootloader action, partition operation or image write was run.
+
+### Phase 5AT — PS7330 exact artifact follow-up
+
+Phase 5AT followed the exact `PS7330.4104N` artifact gap through the official
+Amazon update endpoint and public firmware metadata. The current official 11th-
+generation entry redirects to the adjacent `PS7331.4463N` OTA. The public 11th-
+generation firmware history reviewed here lists PS7331, PS7329 and earlier
+builds, but no PS7330 record. The source-notice archive still provides the exact
+7.3.3.0 source family used by Phase 5N; source availability is not the same as
+a signed boot/Image or boot-chain recovery set.
+
+Phase 5AT does not claim that PS7330 never existed publicly. It records a
+bounded, reproducible search result and keeps the exact signed-binary question
+open. No partial OTA response was treated as an artifact, and no device state
+changed.
+
+Phase 5AT outputs:
+
+- `findings/phase-5at-ps7330-artifact-followup.md`
+- `findings/phase-5at-evidence-index.md`
+- `artifacts/phase5/ps7330-artifact-followup-20260804-01/metadata.md`
