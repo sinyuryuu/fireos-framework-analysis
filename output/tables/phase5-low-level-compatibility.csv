@@ -1,0 +1,8 @@
+area,current_evidence,device_match,write_or_mutation_required,recovery_known,classification,next_minimum_step
+Android shell baseline,"KFTRWI/trona PS7330.4104N MT8183; green VB; flash.locked=1; RPMB=2",exact,no,yes,CONFIRMED,"none; preserve baseline"
+Fastboot identity,"host fastboot 37.0.0; fastboot devices empty in Android mode",unknown,no,partial,REQUIRES_APPROVAL,"approved bootloader transition then read-only getvar"
+MTK BROM identity,"no BROM ID or preloader revision from shell",unknown,unknown,no,REJECTED_FOR_RISK,"obtain exact device-specific recovery/tool package"
+MTK preloader bulletin relevance,"historical MT8183 preloader rows; bulletin software families Android 10/11/12",partial,no,unknown,STRONG_EVIDENCE_NOT_COMPATIBILITY,"match exact PS7330 preloader and patch level"
+Public mtkclient config,"checked snapshot contains MT8168/MT6357, no MT8183 entry",not established,no,unknown,UNKNOWN,"do not run; audit an exact supported tool if one is found"
+PS7331 preloader/LK,"hashes available but firmware is PS7331 while device is PS7330",mismatch,yes,no,VERSION_MISMATCH,"do not flash or call recovery set"
+Unlock/flash,"locked production build; no exact images or rollback plan",not established,yes,no,REJECTED_FOR_RISK,"no execution in Phase 5"

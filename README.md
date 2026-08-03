@@ -335,3 +335,53 @@ disabled and both test APKs were removed; the verified rollback is under
 Device Owner/provisioning, Fire package mutation, unknown Binder calls, core
 overlay changes, and deliberate HOME crash/fallback tests are explicitly
 rejected in `findings/phase-4-risk-register.md`.
+
+## Phase 5: low-level and MTK compatibility boundary
+
+Phase 5 records a read-only low-level inventory for the exact device and
+separates it from any bootloader or MTK operation. The canonical baseline is
+`adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-01`; its per-command output,
+errors, metadata, summary, and SHA-256 manifest are preserved. The collection
+script is:
+
+```sh
+tools/scripts/capture_phase5_low_level_baseline.sh \
+  --serial G001LT0511550CFT \
+  --test-id PHASE5-LOWLEVEL-BASELINE-20260803-01 \
+  --output adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-01
+```
+
+The script is observational only. It does not reboot, enter bootloader mode,
+unlock, remount, invoke an exploit, or write Android state or a partition. It
+also supports `--dry-run` and refuses to overwrite an existing evidence
+directory.
+
+The device baseline is `KFTRWI/trona`, MT8183, Fire OS 7.0 / Android 9,
+PS7330.4104N, security patch 2024-02-01, `flash.locked=1`, verified boot
+`green`, unlocked kernel `false`, RPMB state `2`, and SELinux enforcing. Fire
+Launcher is a privileged system APK at
+`/system/priv-app/com.amazon.firelauncher/`.
+
+The reports distinguish the Amazon PackageManager deny-list callback from the
+LauncherHijackPreventer task-visibility callbacks. They also document the
+literal Fire references in the special KFT/child-user path without treating
+that path as proof of the normal User 0 HOME resolver cause:
+
+- `findings/phase-5-low-level-inventory.md`
+- `findings/phase-5-amazon-hijack-preventer-analysis.md`
+- `findings/phase-5-mtk-compatibility-review.md`
+- `findings/phase-5-evidence-index.md`
+- `output/tables/phase5-low-level-compatibility.csv`
+
+The exact bootloader/MTK compatibility evidence is incomplete. The repository
+contains PS7331 preloader/LK artifacts, while the device is PS7330; those files
+are marked `VERSION_MISMATCH` and must not be flashed. No exploit, DA upload,
+seccfg change, bootloader unlock, fastboot write, or partition operation was
+executed.
+
+The only next candidate documented for possible approval is a two-stage,
+read-only metadata check: an explicitly approved `adb reboot bootloader`,
+followed only by read-only fastboot `getvar` queries. The complete operation,
+risk, rollback limitations, stop conditions, and approval wording are in
+`findings/phase-5-level3-approval-report.md`. It is not an approval and has not
+been run. Tool versions are recorded in `tools/phase5-tool-versions.txt`.
