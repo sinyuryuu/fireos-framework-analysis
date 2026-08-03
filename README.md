@@ -339,10 +339,11 @@ rejected in `findings/phase-4-risk-register.md`.
 ## Phase 5: low-level and MTK compatibility boundary
 
 Phase 5 records a read-only low-level inventory for the exact device and
-separates it from any bootloader or MTK operation. The canonical baseline is
-`adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-01`; its per-command output,
-errors, metadata, summary, and SHA-256 manifest are preserved. The collection
-script is:
+separates it from any bootloader or MTK operation. The canonical baselines are
+`adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-01` and the post-root-test
+recheck `adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-02`; their per-command
+output, errors, metadata, summaries, and SHA-256 manifests are preserved. The
+collection script is:
 
 ```sh
 tools/scripts/capture_phase5_low_level_baseline.sh \
@@ -468,3 +469,22 @@ assets. The resulting hashes and selected static review are under
 `artifacts/phase5/mtk-easy-su-audit-20260803/payload-inspection-20260803/`
 and summarized in `findings/phase-5-mtk-easy-su-payload-analysis.md`. A
 further device-side retry would require a new exact Level 3 scope.
+
+### Phase 5B — failed root boundary and MTK next route
+
+The failed Root-control result and the new shell-readable preloader/LK
+identity properties are summarized in
+`findings/phase-5b-root-failure-and-route-matrix.md`. The device exposes
+`ro.boot.pl_build_desc=d1a4a4b-20231011_072631` and
+`ro.boot.lk_build_desc=79172a1-20231008_072039`, but no matching PS7330
+preloader, DA/auth state, or recovery set has been found. The bootreason
+`wdt_by_pass_pwk` is unchanged from the earlier baseline and is retained as
+metadata only.
+
+The public `amonet` chain targets Fire HD 8 (2018)/KFKAWI, not this
+KFTRWI/trona tablet. The public MTKClient MT8183 alias remains a generic
+compatibility lead; its documented root/unlock paths include boot/vbmeta writes,
+seccfg changes, and userdata/metadata erasure. No BROM probe, DA upload,
+payload, unlock, erase, or partition write was executed. The proposed boundary
+is documented in `findings/phase-5b-brom-identification-level3-report.md` and
+is not approval-ready.

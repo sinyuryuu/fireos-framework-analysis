@@ -7,9 +7,13 @@ running normally. It does not enter the bootloader, invoke a MediaTek exploit,
 unlock the bootloader, remount a partition, write a partition, or change an
 Android setting.
 
-The canonical collection is:
+The canonical collections are:
 
 `adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-01/`
+
+and the post-root-test read-only recheck:
+
+`adb/phase5/PHASE5-LOWLEVEL-BASELINE-20260803-02/`
 
 Its command list, per-command stdout/stderr/exit code, metadata, summary, and
 SHA-256 manifest are retained. The collection script is
@@ -35,10 +39,19 @@ output directory.
 | RPMB state | `2` | `boot/rpmb_state.stdout.txt` |
 | SELinux | `enforcing` | `device/getenforce.stdout.txt` |
 | Boot mode | `normal` | `boot/mode.stdout.txt` |
+| Preloader build descriptor | `d1a4a4b-20231011_072631` | `device/getprop.stdout.txt` |
+| Preloader version | `0x010b` | `device/getprop.stdout.txt` |
+| LK build descriptor | `79172a1-20231008_072039` | `device/getprop.stdout.txt` |
+| LK version | `0x010a` | `device/getprop.stdout.txt` |
+| Boot reason | `wdt_by_pass_pwk` | `boot/bootreason.stdout.txt` |
 
 The device serial used for this collection is `G001LT0511550CFT`. The serial
 and exact build are retained in `metadata.tsv`; any future collection must use
 an explicit serial and a new test ID.
+
+The second collection recorded the same bootreason and the same Android
+identity. The bootreason is retained as metadata only; it is not treated as
+evidence of Root, a boot-chain mutation, or a vulnerability.
 
 ## Read-only storage observations
 

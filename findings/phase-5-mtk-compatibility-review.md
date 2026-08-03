@@ -8,6 +8,12 @@ is MT8183, but chipset name alone does not identify the preloader revision,
 boot-ROM security state, Download Agent policy, Amazon signing requirements,
 or a recoverable image set.
 
+The post-test read-only baseline now records the Android-exported preloader
+descriptor `d1a4a4b-20231011_072631` (`ro.boot.pl_version=0x010b`) and LK
+descriptor `79172a1-20231008_072039` (`ro.boot.lk_version=0x010a`). These are
+useful identity constraints, but they are not the binary loader or a recovery
+image. They do not change the compatibility decision below.
+
 No low-level operation was executed.
 
 ## Current device facts
@@ -97,10 +103,16 @@ written to the device.
 - **已證實：** the public source contains vendor-specific 8183/6771
   preloader files, but none is identified as Amazon `trona` PS7330.
 - **待驗證：** exact BROM ID, preloader build, DA/SLA/DAA state, and a complete
-  signed recovery set for PS7330.
+  signed recovery set for PS7330. The Android-side preloader/LK descriptors
+  are known, but the corresponding image files are not available.
 - **因風險拒絕測試：** BROM payloads, DA upload, seccfg/lock-state changes,
   preloader/LK writes, exploit attempts, and any image flashing.
 
 The lower-risk next step, if separately approved, is a bootloader transition
 followed only by read-only fastboot `getvar` queries. That step is documented,
 but not executed, in `findings/phase-5-level3-approval-report.md`.
+
+The failed Root-control and current next-route decision are documented in
+`findings/phase-5b-root-failure-and-route-matrix.md`; the BROM identification
+boundary is explicitly not approval-ready in
+`findings/phase-5b-brom-identification-level3-report.md`.
