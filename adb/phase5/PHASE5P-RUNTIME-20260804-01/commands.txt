@@ -1,0 +1,38 @@
+adb -s G001LT0511550CFT devices -l
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell id
+adb -s G001LT0511550CFT shell getprop
+adb -s G001LT0511550CFT shell getenforce
+adb -s G001LT0511550CFT shell uname -a
+adb -s G001LT0511550CFT shell cat /proc/version
+adb -s G001LT0511550CFT shell cat /proc/cmdline
+adb -s G001LT0511550CFT shell cat /proc/bootconfig
+adb -s G001LT0511550CFT shell cat /proc/partitions
+adb -s G001LT0511550CFT shell ls -la /dev/block/by-name
+adb -s G001LT0511550CFT shell mount
+adb -s G001LT0511550CFT shell cat /proc/mounts
+adb -s G001LT0511550CFT shell getprop ro.product.model
+adb -s G001LT0511550CFT shell getprop ro.product.device
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+adb -s G001LT0511550CFT shell getprop ro.build.version.incremental
+adb -s G001LT0511550CFT shell getprop ro.build.version.security_patch
+adb -s G001LT0511550CFT shell getprop ro.build.version.fireos
+adb -s G001LT0511550CFT shell getprop ro.board.platform
+adb -s G001LT0511550CFT shell getprop ro.boot.hardware
+adb -s G001LT0511550CFT shell getprop ro.boot.flash.locked
+adb -s G001LT0511550CFT shell getprop ro.boot.verifiedbootstate
+adb -s G001LT0511550CFT shell getprop ro.boot.unlocked_kernel
+adb -s G001LT0511550CFT shell getprop ro.boot.rpmb_state
+adb -s G001LT0511550CFT shell getprop ro.boot.selinux
+adb -s G001LT0511550CFT shell getprop ro.boot.mode
+adb -s G001LT0511550CFT shell getprop ro.boot.bootreason
+adb -s G001LT0511550CFT shell getprop ro.bootloader
+adb -s G001LT0511550CFT shell pm path com.amazon.firelauncher
+adb -s G001LT0511550CFT shell dumpsys package com.amazon.firelauncher
+adb -s G001LT0511550CFT shell ps -A -o USER,PID,PPID,NAME,ARGS
+adb -s G001LT0511550CFT shell ls -la /system/etc/init
+adb -s G001LT0511550CFT shell ls -la /vendor/etc/init
+adb -s G001LT0511550CFT shell ls -la /system/etc/fosinit
+adb -s G001LT0511550CFT shell ls -la /vendor/etc/fosinit
+fastboot --version
+fastboot devices

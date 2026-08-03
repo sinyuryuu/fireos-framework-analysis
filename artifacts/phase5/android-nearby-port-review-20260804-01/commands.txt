@@ -1,0 +1,16 @@
+# Host-only metadata/source review. No exploit source was compiled or run.
+
+curl -fsSL https://api.github.com/repos/NothingFumo/ghostlock-aresin/commits/main
+curl -fsSL https://api.github.com/repos/NothingFumo/ghostlock-aresin/contents
+curl -fsSL https://raw.githubusercontent.com/NothingFumo/ghostlock-aresin/1895a89c52dc7d7355f14babe5009c2932dcdb6a/README.md | shasum -a 256
+curl -fsSL https://raw.githubusercontent.com/NothingFumo/ghostlock-aresin/1895a89c52dc7d7355f14babe5009c2932dcdb6a/EXTRACTED_OFFSETS.md | shasum -a 256
+curl -fsSL https://raw.githubusercontent.com/NothingFumo/ghostlock-aresin/1895a89c52dc7d7355f14babe5009c2932dcdb6a/target.h | shasum -a 256
+curl -fsSL https://raw.githubusercontent.com/NothingFumo/ghostlock-aresin/1895a89c52dc7d7355f14babe5009c2932dcdb6a/PROGRESS.md | shasum -a 256
+shasum -a 256 /tmp/phase5-aresin-review-20260804/rtmutex_common-v4.4.146.h
+shasum -a 256 /tmp/phase5-aresin-review-20260804/rtmutex_common-v4.14.186.h
+sed -n '/struct rt_mutex_waiter/,/};/p' /tmp/phase5-aresin-review-20260804/rtmutex_common-v4.4.146.h
+sed -n '/struct rt_mutex_waiter/,/};/p' /tmp/phase5-aresin-review-20260804/rtmutex_common-v4.14.186.h
+
+# The NVD records were reviewed in the browser on 2026-08-04:
+# https://nvd.nist.gov/vuln/detail/CVE-2026-43499
+# https://nvd.nist.gov/vuln/detail/CVE-2026-43503

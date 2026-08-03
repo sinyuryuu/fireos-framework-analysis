@@ -1,0 +1,11 @@
+field	v4.4.146	v4.14.186	interpretation
+tree_entry	struct rb_node @ 0x00	struct rb_node @ 0x00	common source layout prefix
+pi_tree_entry	struct rb_node @ 0x18	struct rb_node @ 0x18	common source layout prefix
+task	pointer @ 0x30	pointer @ 0x30	common source layout prefix; does not imply task_struct offsets
+lock	pointer @ 0x38	pointer @ 0x38	common source layout prefix
+prio	int @ 0x40	int @ 0x40	common source layout prefix
+deadline	absent after prio	 u64 @ 0x48	version-specific field difference
+non_debug_size	0x48	0x50	v4.14 target profile must not be copied to v4.4
+task_struct_offsets	vendor-specific and not derived here	MT6893 target-specific in public port	not transferable
+kernel_addresses	Fire signed binary values unavailable to shell	public aresin profile values only	no cross-device address reuse
+runtime_validation	not performed	public README reports expected panic/reboot path	unsafe to treat as proof of root

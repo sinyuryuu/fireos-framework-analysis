@@ -844,3 +844,39 @@ Phase 5O outputs:
 This phase was host-only. No device state changed; no root exploit, kernel
 trigger, ioctl, bootloader/BROM/DA, fastboot, remount, or partition operation
 was performed.
+
+### Phase 5P — nearest Android old-kernel port and read-only runtime gates
+
+Phase 5P adds a pinned review of the closest public Android implementation,
+`NothingFumo/ghostlock-aresin`, at commit
+`1895a89c52dc7d7355f14babe5009c2932dcdb6a`. That project targets a POCO F3 GT
+(MT6893 / Android 13 / Linux 4.14.186), not this Fire HD 10
+(MT8183 / Android 9 / Linux 4.4.146). Its device-specific target profile and
+boot/vmlinux workflow are retained as methodology evidence only.
+
+The pinned v4.4.146 and v4.14.186 headers show a common `rt_mutex_waiter`
+prefix but a version-specific `deadline` field and size difference. The public
+aresin README also contains an internal warning inconsistency about `plist_node`
+versus the `rb_node` layout shown by its target header; the pinned headers are
+the source of truth for this comparison.
+
+The device gate capture is read-only. It records shell UID 2000, SELinux
+enforcing, no effective capabilities, restricted `/proc/kallsyms`/sysctl
+visibility, and the existing runtime config. It never opens `/dev/ion` or
+`/dev/mtk_cmdq`, triggers futex PI, changes a sysctl, reboots, or writes device
+state.
+
+Phase 5P outputs:
+
+- `findings/phase-5p-android-nearby-port-review.md`
+- `findings/phase-5p-evidence-index.md`
+- `artifacts/phase5/android-nearby-port-review-20260804-01/`
+- `adb/phase5/PHASE5P-FUTEX-GATES-20260804-01/`
+- `adb/phase5/PHASE5P-RUNTIME-20260804-01/`
+- `tools/scripts/capture_phase5p_futex_gates.sh`
+
+GhostLock remains **CVE-2026-43499**; CVE-2026-43503 is an unrelated Linux
+networking issue. No Android exploit, APK, native payload, root attempt,
+kernel panic trigger, bootloader, fastboot, remount, or partition operation was
+performed in Phase 5P. A live device-specific trigger would require a separate
+operation-specific Level 3 report and approval.
