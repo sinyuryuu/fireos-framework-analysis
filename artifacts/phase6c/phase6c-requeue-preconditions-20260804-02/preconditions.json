@@ -1,0 +1,63 @@
+{
+  "abstract_states": [
+    {
+      "classification": "not_a_proxy_runtime_test",
+      "identity_mismatch_observable": false,
+      "no_waiter_branch": true,
+      "proxy_call_reached": false,
+      "required_context": "one caller context; no pre-existing matching WAIT_REQUEUE_PI waiter",
+      "state": "single_context_no_waiter",
+      "stateful_side_effect_possible": true
+    },
+    {
+      "classification": "stateful_and_risk_bounded_out",
+      "identity_mismatch_observable": true,
+      "no_waiter_branch": false,
+      "proxy_call_reached": true,
+      "required_context": "pre-existing matching requeue waiter plus a requeue caller",
+      "state": "paired_waiter_proxy_candidate",
+      "stateful_side_effect_possible": true
+    }
+  ],
+  "conclusion": "A single-context no-waiter call can only classify the no-waiter branch; it cannot observe waiter->task versus current. The proxy identity question requires a pre-existing matching waiter and is therefore a stateful runtime experiment, not a harmless switch probe.",
+  "generated_at_utc": "2026-08-04T13:21:23.183000+00:00",
+  "inputs": {
+    "futex": {
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96"
+    },
+    "rtmutex": {
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde"
+    }
+  },
+  "landmarks": {
+    "current_cleanup": 1089,
+    "distinct_uaddr_check": 1775,
+    "early_deadlock": 972,
+    "no_waiter_return": 1716,
+    "nr_wake_one_check": 1794,
+    "paired_waiter_check": 1932,
+    "pi_state_refill": 1782,
+    "proxy_call": 1963,
+    "proxy_precondition": 1849,
+    "proxy_ret_cleanup": 1971,
+    "proxy_wrapper_cleanup": 1683,
+    "proxy_wrapper_start": 1656,
+    "requeue_key_check": 1950,
+    "stored_task_argument": 1965,
+    "task_pi_blocked_on": 986,
+    "top_waiter_lookup": 1713,
+    "waiter_task_assignment": 977
+  },
+  "safety": {
+    "device_contacted": false,
+    "futex_triggered": false,
+    "host_only": true,
+    "kernel_memory_accessed": false,
+    "payload_or_address_generated": false,
+    "race_scheduled": false,
+    "thread_created": false
+  },
+  "schema": "phase6c-requeue-preconditions-v1"
+}

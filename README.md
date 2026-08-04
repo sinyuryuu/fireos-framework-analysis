@@ -3075,3 +3075,19 @@ Outputs:
 
 The analyzer is host-only, refuses to overwrite outputs, and supports
 `--dry-run`.
+
+## Phase 6C requeue-PI precondition model
+
+The exact source was modeled into two abstract states. A single-context call
+without a matching waiter reaches the `top_waiter == NULL` return and cannot
+observe `waiter->task != current`; a paired waiter/proxy context can reach the
+proxy call but is stateful and is outside the stock-device safety boundary.
+PI-state preparation can occur before the no-waiter return, so even that path is
+not a strictly read-only probe.
+
+Outputs:
+
+- `tools/scripts/model_phase6c_requeue_preconditions.py`
+- `findings/phase-6c-requeue-precondition-model.md`
+- `findings/phase-6c-requeue-precondition-evidence-index.md`
+- `artifacts/phase6c/phase6c-requeue-preconditions-20260804-02/`
