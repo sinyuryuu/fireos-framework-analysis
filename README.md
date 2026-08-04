@@ -2305,3 +2305,27 @@ Phase 5BZ outputs:
 - `output/tables/phase5bz-ps7331-binary-evidence.csv`
 - `output/tables/phase5bz-ps7331-config-observations.csv`
 - `output/call-graphs/phase5bz-ps7331-fix-boundary.mmd`
+
+## Phase 5CA status
+
+Phase 5CA maps the public CVE-2026-53163 follow-up patch onto the exact PS7331
+4.4 source. The upstream semantic requirements are independent: skip
+`remove_waiter()` for an unqueued waiter, and use a negative-only return check in
+the proxy wrapper. PS7331 has neither shape in the inspected source: it returns
+`-EDEADLK` at line 973 before assigning `waiter->task` at line 977, and retains
+`if (unlikely(ret))` at line 1683. The futex PI requeue path reaches the proxy
+call at lines 1963–1965.
+
+This is a source-level patch applicability result only. It does not establish a
+live crash, kernel control, temporary root, or privilege transition. No device
+I/O or image mutation was performed.
+
+Phase 5CA outputs:
+
+- `findings/phase-5ca-ps7331-followup-patch-mapping.md`
+- `findings/phase-5ca-evidence-index.md`
+- `tools/scripts/analyze_phase5ca_ps7331_followup_patch.py`
+- `tests/test_phase5ca_ps7331_followup_patch.py`
+- `artifacts/phase5/phase5ca-ps7331-followup-patch-mapping-20260804-01/`
+- `output/tables/phase5ca-followup-patch-mapping.csv`
+- `output/call-graphs/phase5ca-ghostlock-fix-chain.mmd`

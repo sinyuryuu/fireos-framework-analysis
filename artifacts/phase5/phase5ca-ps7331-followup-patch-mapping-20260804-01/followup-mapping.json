@@ -1,0 +1,117 @@
+{
+  "classification": "PS7331_REQUIRES_PRIMARY_FIX_AND_FOLLOWUP_GUARD_REVIEW",
+  "device_execution": false,
+  "followup_guard_present": false,
+  "futex_path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+  "futex_requeue_path": {
+    "pi_operations": [
+      {
+        "line": 1926,
+        "text": "* FUTEX_WAIT_REQEUE_PI and FUTEX_CMP_REQUEUE_PI should always"
+      },
+      {
+        "line": 3229,
+        "text": "if (cmd != FUTEX_WAIT_BITSET && cmd != FUTEX_WAIT_REQUEUE_PI)"
+      },
+      {
+        "line": 3237,
+        "text": "case FUTEX_WAIT_REQUEUE_PI:"
+      },
+      {
+        "line": 3238,
+        "text": "case FUTEX_CMP_REQUEUE_PI:"
+      },
+      {
+        "line": 3264,
+        "text": "case FUTEX_WAIT_REQUEUE_PI:"
+      },
+      {
+        "line": 3268,
+        "text": "case FUTEX_CMP_REQUEUE_PI:"
+      },
+      {
+        "line": 3286,
+        "text": "cmd == FUTEX_WAIT_REQUEUE_PI)) {"
+      },
+      {
+        "line": 3304,
+        "text": "cmd == FUTEX_CMP_REQUEUE_PI || cmd == FUTEX_WAKE_OP)"
+      }
+    ],
+    "proxy_calls": [
+      {
+        "line": 1963,
+        "text": "ret = rt_mutex_start_proxy_lock(&pi_state->pi_mutex,"
+      }
+    ]
+  },
+  "futex_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+  "primary_fix_present": false,
+  "remove_waiter": {
+    "current_cleanup": [
+      {
+        "line": 1089,
+        "text": "current->pi_blocked_on = NULL;"
+      }
+    ],
+    "followup_null_guard": [],
+    "span": [
+      1079,
+      1129
+    ],
+    "waiter_task_references": []
+  },
+  "root_or_privilege_gain_proven": false,
+  "rt_mutex_start_proxy_lock": {
+    "broad_return_guard": [
+      {
+        "line": 1683,
+        "text": "if (unlikely(ret))"
+      }
+    ],
+    "negative_return_guard": [],
+    "remove_waiter_calls": [
+      {
+        "line": 1684,
+        "text": "remove_waiter(lock, waiter);"
+      }
+    ],
+    "span": [
+      1656,
+      1691
+    ]
+  },
+  "rtmutex_path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+  "rtmutex_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+  "runtime_exploitability_proven": false,
+  "scope": "PS7331 exact 4.4 source; host-only semantic mapping",
+  "task_blocks_on_rt_mutex": {
+    "early_deadlock_before_assignment": [
+      {
+        "line": 973,
+        "text": "return -EDEADLK;"
+      }
+    ],
+    "early_deadlock_returns": [
+      {
+        "line": 973,
+        "text": "return -EDEADLK;"
+      }
+    ],
+    "span": [
+      952,
+      1032
+    ],
+    "waiter_assignment": [
+      {
+        "line": 977,
+        "text": "waiter->task = task;"
+      }
+    ]
+  },
+  "upstream_followup_patch_shape": {
+    "remove_waiter_null_waiter_task_guard": true,
+    "source": "https://patchew.org/linux/20260507112913.1019537-1-dave%40stgolabs.net/",
+    "wrapper_negative_return_check": true
+  }
+}

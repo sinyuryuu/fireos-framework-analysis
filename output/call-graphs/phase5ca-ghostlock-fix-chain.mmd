@@ -1,0 +1,16 @@
+flowchart TD
+    A[FUTEX_CMP_REQUEUE_PI] --> B[futex_requeue]
+    B --> C[rt_mutex_start_proxy_lock]
+    C --> D[task_blocks_on_rt_mutex]
+    D -->|early -EDEADLK| E[before waiter task assignment]
+    C -->|broad ret check| F[remove_waiter]
+    F --> G[current-task cleanup in PS7331]
+    U[upstream follow-up] --> H[skip when waiter task is not enqueued]
+    U --> I[cleanup only when ret < 0]
+    E --> J[PS7331 follow-up review point]
+    F --> J
+    H --> K[not observed in PS7331 exact source]
+    I --> K
+    J --> L[static applicability only]
+    K --> L
+    L --> M[No live exploit/root conclusion]

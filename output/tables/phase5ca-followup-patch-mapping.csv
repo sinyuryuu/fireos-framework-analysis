@@ -1,0 +1,5 @@
+area,upstream_followup_semantic,ps7331_observation,location,result,confidence
+remove_waiter,guard when waiter task is not enqueued,current-task cleanup and no null waiter guard,rtmutex.c:1089,missing from source,Confirmed
+proxy_wrapper,cleanup only when ret < 0,if (unlikely(ret)),rtmutex.c:1683,missing from source,Confirmed
+deadlock_order,avoid cleanup before waiter assignment,-EDEADLK before waiter->task assignment,rtmutex.c:973/977,review point present,Confirmed
+android_entry,FUTEX_CMP_REQUEUE_PI reaches proxy lock,rt_mutex_start_proxy_lock call,futex.c:1963-1965,source path present,Confirmed
