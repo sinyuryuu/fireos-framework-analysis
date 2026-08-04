@@ -1,0 +1,23 @@
+Phase 5BS host-only commands
+
+python3 -B tools/scripts/check_phase5_ghostlock_source_semantics.py --dry-run \
+  --source artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c \
+  --output artifacts/phase5/phase5bs-ps7331-source-semantic-recheck-20260804-01/ps7331.json
+
+python3 -B tools/scripts/check_phase5_ghostlock_source_semantics.py \
+  --source artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c \
+  --output artifacts/phase5/phase5bs-ps7331-source-semantic-recheck-20260804-01/ps7331.json
+
+python3 -B tools/scripts/check_phase5_ghostlock_source_semantics.py \
+  --source artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c \
+  --output artifacts/phase5/phase5bs-ps7331-source-semantic-recheck-20260804-01/fixed-reference.json
+
+python3 -B tools/scripts/verify_phase5bs_ps7331_ghostlock_evidence.py \
+  --boot-image firmware/extracted/PS7331/boot.img \
+  --source-result artifacts/phase5/phase5bs-ps7331-source-semantic-recheck-20260804-01/ps7331.json \
+  --image-patterns artifacts/phase5/ps7331-rtmutex-static-review-20260804-01/instruction-patterns.csv \
+  --semantic-comparison artifacts/phase5/ps7331-source-binary-semantic-20260804-01/semantic-comparison.json \
+  --output artifacts/phase5/phase5bs-ps7331-evidence-verification-20260804-01
+
+No command above runs source, ELF, Image, exploit, ADB, fastboot, OTA, or
+device I/O.

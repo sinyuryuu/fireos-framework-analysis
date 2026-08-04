@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "boot_hash_matches_ps7331": true,
+    "comparison_safety_no_execution": true,
+    "comparison_verdict_pre_fix": true,
+    "image_has_current_task_cleanup": true,
+    "image_has_current_task_source": true,
+    "image_proxy_calls_remove_waiter": true,
+    "source_has_proxy_remove_waiter": true,
+    "source_is_pre_fix": true
+  },
+  "inputs": {
+    "boot_image_sha256": "cf12e5619d635ecf7927784a4ed15a254a96c1642d1db9e4ca6734b192d6fa1b",
+    "image_patterns_sha256": "0ee3da7513051f2fa32b221918c6e671bc78b2a8e192fa0ab7ad65cc6e53475d",
+    "semantic_comparison_sha256": "c1b9e09cdc058f07776de2615491c38f4890cfbd5f2e526f02fd6a1a0d8156c3",
+    "source_result_sha256": "3a02f57d3aeb548948666d7feda4e9121cdc3dff67998f637db6257e67225ba2"
+  },
+  "scope": "verification of preserved host-only evidence; no code execution or device I/O",
+  "verdict": {
+    "address_or_offset_output": false,
+    "payload_or_reproducer": false,
+    "ps7331_source_and_inspected_image_are_pre_fix_consistent": true,
+    "root_or_privilege_gain_proven": false,
+    "runtime_exploitability_proven": false
+  }
+}

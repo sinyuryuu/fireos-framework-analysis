@@ -529,6 +529,23 @@ Phase 5BR outputs:
 - `findings/phase-5br-evidence-index.md`
 - `artifacts/phase5/phase5br-exact-artifact-search-20260804-01/`
 
+## Phase 5BS status
+
+Phase 5BS is PS7331-only. It rechecked the exact `mt8183/4.4` source and
+verified the preserved PS7331 boot-image hash, sanitized Image markers, source
+classification, fixed-reference classification, and prior source-to-Image
+comparison. All checks pass and remain pre-fix-consistent for GhostLock. This
+does not prove runtime exploitability or root. No ELF/Image execution, ADB,
+fastboot, OTA, exploit, or device operation was performed.
+
+Phase 5BS outputs:
+
+- `findings/phase-5bs-ps7331-ghostlock-verdict.md`
+- `findings/phase-5bs-evidence-index.md`
+- `tools/scripts/verify_phase5bs_ps7331_ghostlock_evidence.py`
+- `artifacts/phase5/phase5bs-ps7331-source-semantic-recheck-20260804-01/`
+- `artifacts/phase5/phase5bs-ps7331-evidence-verification-20260804-01/`
+
 ## Phase 5BN status
 
 Phase 5BN independently rechecked the GhostLock `remove_waiter()` markers and
