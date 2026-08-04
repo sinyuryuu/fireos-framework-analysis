@@ -1,0 +1,10 @@
+evidence_id,domain,observation,result,confidence
+P5CY-001,device,PS7331.4463N MT8183 Linux 4.4.146+ exact runtime,build identity bound,Confirmed
+P5CY-002,kernel-config,CONFIG_FUTEX CONFIG_RT_MUTEXES CONFIG_TRACEPOINTS CONFIG_EVENT_TRACING CONFIG_TRACING enabled,feature scope only,Confirmed
+P5CY-003,kernel-config,CONFIG_FUNCTION_TRACER CONFIG_KPROBES CONFIG_DEBUG_INFO CONFIG_KALLSYMS_ALL unavailable,limited direct instrumentation surface,Confirmed
+P5CY-004,observation-surface,no futex tracepoint directory; kallsyms denied; kcore/kmem absent; perf_event_paranoid=3,no safe waiter identity trace from shell,Confirmed
+P5CY-005,process-policy,system_server/SystemUI/Microsoft/OTA Seccomp=2; adbd UID=2000 CapEff=0,adbd is not root; app policy boundary visible,Confirmed
+P5CY-006,logcat,futex/rtmutex/requeue/seccomp/SIG filter empty,no runtime event observed; absence not proven,Unobserved
+P5CY-007,home-state,OOBE resolver and phase4 alias foreground with user_setup_complete=0,exclude from GhostLock runtime inference,Confirmed
+P5CY-008,foreground,explicit Fire Launcher start made it resumed/focused,foreground-only reversible recovery,Confirmed
+P5CY-D1,ghostlock-runtime,no waiter->task != current same-execution observation,D1-R remains open,Unobserved

@@ -1163,3 +1163,32 @@ Outputs:
 - `output/call-graphs/phase5cw-upstream-fix-chain.mmd`
 - `tools/scripts/compare_phase5cw_upstream_followup.py`
 - `tests/test_phase5cw_upstream_followup.py`
+
+## Phase 5CY status
+
+Phase 5CY records a read-only PS7331 runtime observation boundary. The exact
+device is PS7331/MT8183/Linux 4.4.146+ with enforcing SELinux and green
+verified boot. The captured kernel config enables futex, rtmutex and generic
+trace infrastructure, but no futex tracepoint is exposed to shell;
+`/proc/kallsyms` is denied, `/proc/kcore` and `/dev/kmem` are absent, and
+`perf_event_paranoid=3`. `system_server`, SystemUI, Microsoft Launcher and OTA
+report Seccomp 2; `adbd` remains UID 2000 with zero effective capabilities.
+
+The read-only HOME capture found OOBE/test residue (`user_setup_complete=0`,
+OOBE resolver and Phase 4 alias foreground). Fire Launcher was explicitly
+started to restore only the foreground, and the post-capture confirms it is
+resumed/focused while the resolver state was not modified.
+
+This provides stronger evidence for the stock observation boundary, not a
+GhostLock dynamic mismatch. No futex/race trigger, trace enable, kernel memory,
+root payload, reboot, package/settings mutation or partition operation was
+performed.
+
+Outputs:
+
+- `findings/phase-5cy-ps7331-runtime-observation-boundary.md`
+- `findings/phase-5cy-evidence-index.md`
+- `output/tables/phase5cy-runtime-boundary.csv`
+- `tools/scripts/capture_phase5cy_runtime_boundary.sh`
+- `tools/scripts/capture_phase5cy_home_boundary.sh`
+- local raw captures under `adb/phase5/PHASE5CY-*`

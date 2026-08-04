@@ -2687,3 +2687,29 @@ Outputs:
 - `output/call-graphs/phase5cw-upstream-fix-chain.mmd`
 - `tools/scripts/compare_phase5cw_upstream_followup.py`
 - `tests/test_phase5cw_upstream_followup.py`
+
+## Phase 5CY status
+
+Phase 5CY captures the current PS7331 runtime observation boundary without
+calling futex or enabling tracing. The kernel config includes futex, rtmutex
+and generic trace infrastructure, but the device exposes no futex tracepoint to
+shell; `/proc/kallsyms` is denied, `/proc/kcore` and `/dev/kmem` are absent, and
+the captured process policies do not provide a root-capable shell. The bounded
+logcat filter had no futex/rtmutex/requeue/seccomp signal.
+
+The read-only HOME snapshot also found an OOBE/test residue (`user_setup_complete=0`,
+OOBE resolver and Phase 4 alias foreground). Fire Launcher was explicitly
+started to restore the foreground only; no package, settings, data or
+partition state was changed. This state is excluded from GhostLock inference.
+
+No stock runtime `waiter->task != current`, cleanup residue, memory effect or
+root was observed.
+
+Outputs:
+
+- `findings/phase-5cy-ps7331-runtime-observation-boundary.md`
+- `findings/phase-5cy-evidence-index.md`
+- `output/tables/phase5cy-runtime-boundary.csv`
+- `tools/scripts/capture_phase5cy_runtime_boundary.sh`
+- `tools/scripts/capture_phase5cy_home_boundary.sh`
+- local raw captures under `adb/phase5/PHASE5CY-*`
