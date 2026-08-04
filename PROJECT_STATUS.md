@@ -915,3 +915,17 @@ instrumentation, futex trigger, memory access, or root payload was executed.
 Output:
 
 - `findings/phase-5cl-identity-mismatch-validation-gate.md`
+
+## Phase 5CM status
+
+Phase 5CM captures `/proc/config.gz` and tracing mount/visibility state on the
+actual PS7331 runtime. FUTEX, RT_MUTEX, seccomp, SELinux, debugfs, and kallsyms
+config entries are present; ordinary shell enumeration of debugfs/tracefs is
+denied. The capture is read-only and does not trigger futex, enable tracing,
+open device nodes, invoke ioctl, or mutate the device.
+
+Outputs:
+
+- `findings/phase-5cm-ps7331-config-and-tracing-boundary.md`
+- `tools/scripts/capture_phase5cm_config_gates.sh`
+- `adb/phase5/PS7331-CONFIG-GATES-20260804-01/` (raw local evidence)

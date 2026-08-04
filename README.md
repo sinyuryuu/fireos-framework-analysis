@@ -2442,3 +2442,15 @@ D1 evidence and no futex trigger or kernel instrumentation was installed.
 Output:
 
 - `findings/phase-5cl-identity-mismatch-validation-gate.md`
+
+## Phase 5CM status
+
+Phase 5CM confirms the PS7331 runtime kernel config exposes FUTEX, RT_MUTEX,
+seccomp, SELinux, debugfs, and kallsyms support, while ordinary shell access to
+debugfs/tracefs remains denied. This is a feature/visibility boundary only; no
+futex trigger, tracing write, device-node open, ioctl, or root operation was
+performed.
+
+Output:
+
+- `findings/phase-5cm-ps7331-config-and-tracing-boundary.md`
