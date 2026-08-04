@@ -2992,3 +2992,29 @@ runtime.
 Any instrumented kernel, QEMU/KASAN experiment, requeue-PI trigger, race
 reproducer, panic test, or privilege-transition payload must be separately
 labelled `LAB_ONLY` and must not be copied to or run on the stock tablet.
+
+## Phase 6C runtime boundary snapshot
+
+`PHASE6C-BOUNDARY-RO-20260804-05` is a fresh, selected-serial, read-only
+snapshot of the PS7331 tablet. It preserves the complete command outputs and
+per-file SHA-256 manifest under
+`adb/phase6c/PHASE6C-BOUNDARY-RO-20260804-05/`. Reproduce it with:
+
+```sh
+tools/scripts/capture_phase6c_runtime_boundary.sh \
+  --serial G001LT0511550CFT \
+  --output adb/phase6c/PHASE6C-BOUNDARY-RO-YYYYMMDD-NN
+```
+
+The script refuses to overwrite an existing directory and supports
+`--dry-run`. It does not clear logcat, launch activities, send input, change
+settings or package state, enable tracing, open device nodes, reboot, invoke
+futex, or read/write kernel memory. The resulting evidence is summarized in
+`findings/phase-6c-runtime-boundary.md` and
+`findings/phase-6c-runtime-boundary-evidence-index.md`.
+
+The snapshot captured `user_setup_complete=0` and a resolver result of the
+OOBE Home activity at priority 100, while the current foreground was a
+Microsoft Launcher task and Fire Launcher remained in the task/window state.
+This is a context-change observation, not new GhostLock or Amazon callback
+proof; no requeue-PI operation was attempted.
