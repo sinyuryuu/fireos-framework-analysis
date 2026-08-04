@@ -474,6 +474,7 @@ Phase 5BO outputs:
 - `tools/scripts/extract_phase5_ps7330_nested_members.py`
 - `artifacts/phase5/ps7330-full-source-members-20260804-01/`
 - `artifacts/phase5/phase5bo-exact-build-source-marker-20260804-01/`
+- `adb/phase5/PHASE5BO-DEVICE-POSTCHECK-20260804-01/`
 
 ## Phase 5BN status
 

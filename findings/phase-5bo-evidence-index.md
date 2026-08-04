@@ -9,6 +9,6 @@
 | `P5BO-CROSS-001` | exact PS7330 vs PS7331 comparison | `artifacts/phase5/phase5bo-exact-build-source-marker-20260804-01/summary.json` | Both pre-fix; fixed reference waiter-task | Confirmed, host-only |
 | `P5BO-CONFIG-001` | exact `trona_defconfig` | `artifacts/phase5/ps7330-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/arch/arm64/configs/trona_defconfig` | build path/config identity | Confirmed, source config scope |
 | `P5BO-BOOT-001` | exact-device read-only probe | `adb/phase5/PHASE5AN-BOOT-READONLY-20260804-02/boot_pull.stderr.txt` | Signed PS7330 boot read denied | Confirmed, access scope |
+| `P5BO-DEVICE-001` | exact-device read-only post-check | `adb/phase5/PHASE5BO-DEVICE-POSTCHECK-20260804-01/` | PS7330 fingerprint, HOME resolver, green verified boot, SELinux Enforcing, ADB device | Confirmed, runtime scope |
 
 This index does not prove signed-binary equivalence, runtime offsets, or root.
-

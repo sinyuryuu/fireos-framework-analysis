@@ -29,6 +29,8 @@
 6. Exact build-selected PS7330 與 fixed reference 的 machine-readable marker
    比對結果為：PS7330 `PRE_FIX_CURRENT_TASK_CLEANUP`，fixed reference
    `FIXED_WAITER_TASK_CLEANUP`。
+7. 完整 source-path comparison table 已保存於
+   [`output/tables/phase5bo-source-path-comparison.csv`](../output/tables/phase5bo-source-path-comparison.csv)。
 
 ### 高可信推論
 
@@ -70,6 +72,8 @@ fastboot、OTA、boot image、分割區或任何裝置狀態修改。
 | `P5BO-FUTEX-001` | extracted `kernel/mediatek/mt8183/4.4/kernel/futex.c` | PI requeue and proxy-lock call path present | Confirmed, source scope |
 | `P5BO-CROSS-001` | `artifacts/phase5/phase5bo-exact-build-source-marker-20260804-01/summary.json` | Exact PS7330 and PS7331 source classification identical | Confirmed, host-only comparison |
 | `P5BO-CONFIG-001` | extracted `.../arch/arm64/configs/trona_defconfig` | `CONFIG_PREEMPT=y`, `CONFIG_RANDOMIZE_BASE=y`, `CONFIG_MTK_CMDQ=y`, `CONFIG_ION=y`, `CONFIG_MTK_ION=y` | Confirmed, source config scope |
+| `P5BO-DIFF-001` | `output/tables/phase5bo-source-path-comparison.csv` | Exact PS7330／PS7331 build-selected `rtmutex.c` and `futex.c` byte-identical | Confirmed, host-only diff |
+| `P5BO-DEVICE-001` | `adb/phase5/PHASE5BO-DEVICE-POSTCHECK-20260804-01/` | Device remains PS7330, ADB `device`, green verified boot, enforcing SELinux, HOME Fire Launcher | Confirmed, read-only post-check |
 
 ## Upgrade decision
 
@@ -93,4 +97,3 @@ python3 tools/scripts/extract_phase5_ps7330_nested_members.py \\
 
 The extractor is host-only, allow-listed, refuses output overwrite, and does
 not execute extracted source.
-
