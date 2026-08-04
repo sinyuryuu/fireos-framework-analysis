@@ -3037,3 +3037,22 @@ Outputs:
 The real-device single-thread requeue-PI Step 4 remains **因風險拒絕測試**:
 the syscall is stateful and reaches the very proxy path under investigation.
 Phase 6A ordinary private PI lock/unlock is not equivalent evidence.
+
+## Phase 6C userspace reachability audit
+
+The preserved Fire/Amazon native ELF set was rescanned offline on 2026-08-04:
+16 ELF files, zero named requeue-PI markers, five ordinary/PI-helper-only
+surfaces, one generic syscall boundary, and ten files without a named futex
+marker. ART's `futex cmp requeue failed for` string is retained as a diagnostic
+marker only; it does not establish the `FUTEX_CMP_REQUEUE_PI` opcode or a proxy
+waiter.
+
+Outputs:
+
+- `findings/phase-6c-userspace-reachability.md`
+- `findings/phase-6c-userspace-reachability-evidence-index.md`
+- `artifacts/phase6c/phase6c-userspace-native-scan-20260804-01/`
+
+This is bounded artifact-scan evidence. Stripped, inline, numeric, indirect,
+unpulled, or generated callers remain **待驗證**; no device-side trigger was
+run.
