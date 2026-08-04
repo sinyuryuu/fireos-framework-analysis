@@ -74,3 +74,17 @@ object，但 host 沒有 ld.lld，無法完成 Android ELF link。因此沒有 p
 完整記錄：
 
 artifacts/phase6a/phase6a-pi-lock-smoke-T01/
+
+## PHASE6A-PI-SMOKE-T02
+
+在同一台 PS7331 上，已驗證的 AArch64 static binary 以 shell UID 2000
+執行一次普通 uncontended PI lock/unlock，exit code 為 0，沒有 timeout
+或 stdout/stderr。測試檔已從 /data/local/tmp 移除，ADB 與 fingerprint
+未改變。
+
+這只確認 ordinary PI futex runtime reachability；沒有執行
+WAIT_REQUEUE_PI、CMP_REQUEUE_PI、proxy waiter、race 或 cleanup branch。
+
+完整 raw evidence：
+
+adb/phase6a/PHASE6A-PI-SMOKE-T02/

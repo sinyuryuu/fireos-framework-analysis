@@ -2915,3 +2915,17 @@ Outputs:
 - tools/scripts/build_phase6a_pi_lock_smoke.sh
 - findings/phase-6a-pi-lock-smoke-test.md
 - local result under artifacts/phase6a/phase6a-pi-lock-smoke-T01/
+
+## Phase 6A PI smoke T02
+
+The exact PS7331 device completed one benign uncontended PI lock/unlock run
+under shell UID 2000 with exit code 0. The temporary binary was removed,
+ADB remained connected, and the build fingerprint was unchanged. This is
+ordinary PI-futex reachability evidence only; it is not requeue-PI or
+GhostLock exploitability evidence.
+
+Outputs:
+
+- findings/phase-6a-pi-lock-smoke-evidence-index.md
+- local raw evidence under adb/phase6a/PHASE6A-PI-SMOKE-T02/
+- local result under artifacts/phase6a/phase6a-pi-lock-smoke-T02/

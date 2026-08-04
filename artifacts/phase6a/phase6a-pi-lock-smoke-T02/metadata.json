@@ -1,0 +1,33 @@
+{
+  "test_id": "PHASE6A-PI-SMOKE-T02",
+  "timestamp_utc": "2026-08-04",
+  "device_serial": "G001LT0511550CFT",
+  "device_state_before": {
+    "adb_state": "device",
+    "fingerprint": "Amazon/trona/trona:9/PS7331.4463N/0031575863040:user/amz-p,release-keys",
+    "uid": "uid=2000(shell) gid=2000(shell) context=u:r:shell:s0",
+    "selinux": "Enforcing"
+  },
+  "source_sha256": "86862c7dd65204d5cea04a589a5ea6f7028ba7524deee8f9f2aa0601f50b5d80",
+  "binary_sha256": "6795a3a6647c63804c6c00041adf402487e46304b5e65b8dbbd00c4f92ddd7da",
+  "ndk_zip_sha256": "e69092f9d2bfa5d1199039980a14eb91c03cc971ab5c6968fc08a8e6b84e7bb7",
+  "command": "adb -s G001LT0511550CFT shell timeout 3s /data/local/tmp/phase6a-pi-lock-smoke-T02",
+  "execution_count": 1,
+  "stdout": "",
+  "stderr": "",
+  "exit_code": 0,
+  "timeout": false,
+  "device_state_after": {
+    "adb_state": "device",
+    "fingerprint_unchanged": true,
+    "remote_test_file_removed": true,
+    "system_state_modified": false
+  },
+  "logcat_marker_observed": false,
+  "requeue_pi_used": false,
+  "race_created": false,
+  "kernel_memory_accessed": false,
+  "credential_modified": false,
+  "root_or_privilege_gain": false,
+  "interpretation": "A shell-domain process completed one uncontended PI lock/unlock pair. This is runtime evidence for ordinary PI futex reachability only; it does not exercise requeue-PI, the proxy waiter path, the cleanup mismatch, or GhostLock exploitability."
+}
