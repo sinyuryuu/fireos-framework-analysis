@@ -1,0 +1,11 @@
+# Phase 5BW evidence index
+
+| Evidence ID | Source | File / method | SHA-256 | Observed result | Interpretation | Confidence |
+|---|---|---|---|---|---|---|
+| PH5BW-E01 | PS7331 official source archive | `artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/.../rtmutex.c`, `remove_waiter()` lines 1079–1129 | `6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde` | Uses `current->pi_blocked_on` and `current` chain argument | Target has pre-fix cleanup shape | Confirmed |
+| PH5BW-E02 | Preserved fixed reference | `artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c`, `remove_waiter()` | `c307ed54156d1f16e82387df7b214445dddf27be8a880f31575f698ca07d880a` | Binds `waiter_task = waiter->task`, clears waiter task, passes waiter task to chain adjustment | Fixed semantic reference | Confirmed |
+| PH5BW-E03 | Public kernel advisory / patch | [NVD CVE-2026-43499](https://nvd.nist.gov/vuln/detail/CVE-2026-43499), [stable patch](https://www.spinics.net/lists/stable/msg940408.html) | Web source; no local source mutation | Fix targets proxy-lock rollback where waiter task differs from current | Public fix semantics | Confirmed |
+| PH5BW-E04 | PS7331 source reachability | selected `futex.c`, `FUTEX_REQUEUE_PI` / `futex_requeue()` / `rt_mutex_start_proxy_lock()` | Preserved in Phase 5BT/BU manifests | Proxy-lock caller path exists in source | Source reachability candidate; not runtime proof | Strong evidence |
+| PH5BW-E05 | PS7331 boot Image static review | `artifacts/phase5/ps7331-rtmutex-static-review-20260804-01/` and Phase 5BS verifier | `c82b1881cd62d4519563727968e25bb946615c344de3c3293a013b3cd2788ea0` | Image markers match current-task cleanup and proxy caller | Inspected Image is pre-fix-consistent | Strong evidence |
+| PH5BW-E06 | Host-only checker | `artifacts/phase5/phase5bw-ghostlock-fix-applicability-20260804-01/comparison.json` | `b1e1b0298d4a2e24707c8934dcb8b731ffb38ff630c82efe881c0ed86ca012bd` | `PS7331_SOURCE_MATCHES_PRE_FIX_SEMANTICS` | Reproducible semantic classification | Confirmed |
+| PH5BW-E07 | Safety boundary | checker and unit tests | `0ce64eb75109b9ed17b2d6529691c93d2f11d87e06da5f2beaab9afe92fceb1e` | No device I/O, compile, address, offset, payload, or exploit generation | Live exploitability/root remains untested | Confirmed |

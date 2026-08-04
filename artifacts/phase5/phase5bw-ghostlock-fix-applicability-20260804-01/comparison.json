@@ -1,0 +1,51 @@
+{
+  "fixed_reference": {
+    "classification": "FIXED_WAITER_TASK_CLEANUP",
+    "current_chain_argument": false,
+    "current_pi_blocked_on_cleanup": false,
+    "path": "artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c",
+    "proxy_error_calls_remove_waiter": false,
+    "proxy_function_lines": [
+      1515,
+      1569
+    ],
+    "remove_waiter_lines": [
+      1517,
+      1569
+    ],
+    "sha256": "c307ed54156d1f16e82387df7b214445dddf27be8a880f31575f698ca07d880a",
+    "waiter_task_binding": true,
+    "waiter_task_chain_argument": true,
+    "waiter_task_direct_cleanup": false,
+    "waiter_task_pi_blocked_on_cleanup": true
+  },
+  "scope": "host-only source semantics; no compilation, device I/O, address, offset, payload, or exploit generation",
+  "target": {
+    "classification": "PRE_FIX_CURRENT_TASK_CLEANUP",
+    "current_chain_argument": true,
+    "current_pi_blocked_on_cleanup": true,
+    "path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+    "proxy_error_calls_remove_waiter": true,
+    "proxy_function_lines": [
+      1644,
+      1691
+    ],
+    "remove_waiter_lines": [
+      1079,
+      1129
+    ],
+    "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+    "waiter_task_binding": false,
+    "waiter_task_chain_argument": false,
+    "waiter_task_direct_cleanup": false,
+    "waiter_task_pi_blocked_on_cleanup": false
+  },
+  "tool": "compare_phase5bw_ghostlock_fix.py",
+  "upstream_fix_semantics": {
+    "target_matches_fixed_shape": false,
+    "target_matches_pre_fix_shape": true,
+    "use_waiter_task_for_pi_lock_and_cleanup": true,
+    "use_waiter_task_for_priority_chain": true
+  },
+  "verdict": "PS7331_SOURCE_MATCHES_PRE_FIX_SEMANTICS"
+}

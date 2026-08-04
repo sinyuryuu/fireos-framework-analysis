@@ -633,3 +633,24 @@ Phase 5BV outputs:
 - `tools/scripts/model_phase5bv_ghostlock_semantics.py`
 - `tests/test_phase5bv_ghostlock_semantics.py`
 - `artifacts/phase5/phase5bv-ghostlock-semantic-model-20260804-01/`
+
+## Phase 5BW status
+
+Phase 5BW cross-checks the PS7331 build-selected source against the public
+GhostLock fix semantics. PS7331 remains pre-fix: `remove_waiter()` uses
+`current->pi_blocked_on` and `current` for priority-chain adjustment, while the
+fixed reference uses `waiter->task`. The reproducible host-only checker reports
+`PS7331_SOURCE_MATCHES_PRE_FIX_SEMANTICS`.
+
+This confirms static source/Image exposure status only. It does not establish a
+live race, memory corruption, kernel control, root, or privilege transition.
+No device I/O, exploit, unknown ioctl, bootloader, or partition operation was
+performed.
+
+Phase 5BW outputs:
+
+- `findings/phase-5bw-ghostlock-fix-applicability.md`
+- `findings/phase-5bw-evidence-index.md`
+- `tools/scripts/compare_phase5bw_ghostlock_fix.py`
+- `tests/test_phase5bw_ghostlock_fix.py`
+- `artifacts/phase5/phase5bw-ghostlock-fix-applicability-20260804-01/`
