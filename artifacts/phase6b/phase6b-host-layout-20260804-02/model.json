@@ -1,0 +1,330 @@
+{
+  "config": {
+    "CONFIG_ARM64_VA_BITS": "39",
+    "CONFIG_CMDLINE": "\"console=tty0 console=ttyMT3,921600n1 root=/dev/ram vmalloc=496M slub_max_order=0 slub_debug=O \"",
+    "CONFIG_DEBUG_INFO": false,
+    "CONFIG_DEBUG_RT_MUTEXES": false,
+    "CONFIG_ION": true,
+    "CONFIG_KASAN": false,
+    "CONFIG_MUTEX_SPIN_ON_OWNER": true,
+    "CONFIG_RANDOMIZE_BASE": true,
+    "CONFIG_SECCOMP": true,
+    "CONFIG_SLUB_CPU_PARTIAL": true,
+    "CONFIG_SLUB_DEBUG": false,
+    "CONFIG_SLUB_STATS": false,
+    "CONFIG_USERFAULTFD": false
+  },
+  "inputs": {
+    "abi": "AArch64 LP64",
+    "config": "artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config",
+    "config_sha256": "eefb8db484f65e196a7bb401ae0165f434f08b13041aef6762917e284d013d04",
+    "kmalloc_min_alignment": 64,
+    "page_size": 4096,
+    "pointer_size": 8,
+    "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4",
+    "source_hashes": {
+      "cache": "5c823045719c7f0d07b4f56ea5d3852ed0ae29b858aabf28d77696a3373d2eb8",
+      "fork": "36765160ee5e6d07a9ba754c4ba5fe026f0dc5b1fa5db91d26b3a2e59aed13c8",
+      "futex": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "ion": "abac518864faed94439d75d204e8c16ea75cf3a74c93ee50e128e0f6928a6d63",
+      "ion_h": "20ca7178e6158b7165d2002581994d56e1734b1051253a428cfc182cd72b7d29",
+      "pipe": "2968e95cf55d392d0e465b4306cc256caec24916651383745e17c78e4e9cbd7d",
+      "pipe_h": "a9d988ca014032b7cd02d7915c089f548ae83e91b924e786dc422c0dcdb7d10d",
+      "rtmutex": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "rtmutex_common": "b3456f9e83a1919e41a88a6638ad1e26ed9966e800c6efc823940df1151919fc",
+      "sched": "7678d8a67c7a2c8a062ac660adb87398c7e319ad32aa8abbdf6dcea85ee70f7b",
+      "slab": "f0ecea06a977de9411d2320b3611e8ae72346c7abf0a54c03f1b479f48a7d284",
+      "slab_common": "5d49c880be1ce1f967a8bb5942a20587c1e8bfe202dff9c6f88300b7fe317358",
+      "slub": "2273f0695c64e8009c0bd6e27a5b782a2a08da5ca608d2b0b03d2bca1b784b56"
+    }
+  },
+  "limitations": [
+    "RANDOMIZE_BASE confirms KASLR is enabled; no runtime slide or kernel address is calculated.",
+    "The modeled cache class does not prove an address, adjacency, reuse, or corruption event.",
+    "The inspected rt_mutex_waiter is stack-resident, so it is not a direct SLUB spray target in this path.",
+    "No identity mismatch, cleanup residue, memory effect, crash, or privilege transition is inferred."
+  ],
+  "objects": {
+    "ion_buffer": {
+      "alignment": 8,
+      "allocation": {
+        "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/drivers/staging/android/ion/ion.c",
+        "line": 117,
+        "needle": "kzalloc(sizeof(struct ion_buffer)",
+        "observation": "ion_buffer_create allocates metadata",
+        "sha256": "abac518864faed94439d75d204e8c16ea75cf3a74c93ee50e128e0f6928a6d63"
+      },
+      "cache": "kmalloc-256",
+      "fields": [
+        {
+          "name": "ref",
+          "offset": 0,
+          "size": 4
+        },
+        {
+          "name": "node_or_list",
+          "offset": 8,
+          "size": 24
+        },
+        {
+          "name": "dev",
+          "offset": 32,
+          "size": 8
+        },
+        {
+          "name": "heap",
+          "offset": 40,
+          "size": 8
+        },
+        {
+          "name": "flags",
+          "offset": 48,
+          "size": 8
+        },
+        {
+          "name": "private_flags",
+          "offset": 56,
+          "size": 8
+        },
+        {
+          "name": "size",
+          "offset": 64,
+          "size": 8
+        },
+        {
+          "name": "priv_virt_or_phys",
+          "offset": 72,
+          "size": 8
+        },
+        {
+          "name": "lock",
+          "offset": 80,
+          "size": 40
+        },
+        {
+          "name": "kmap_cnt",
+          "offset": 120,
+          "size": 4
+        },
+        {
+          "name": "vaddr",
+          "offset": 128,
+          "size": 8
+        },
+        {
+          "name": "dmap_cnt",
+          "offset": 136,
+          "size": 4
+        },
+        {
+          "name": "sg_table",
+          "offset": 144,
+          "size": 8
+        },
+        {
+          "name": "pages",
+          "offset": 152,
+          "size": 8
+        },
+        {
+          "name": "vmas",
+          "offset": 160,
+          "size": 16
+        },
+        {
+          "name": "handle_count",
+          "offset": 176,
+          "size": 4
+        },
+        {
+          "name": "task_comm[16]",
+          "offset": 180,
+          "size": 16
+        },
+        {
+          "name": "pid",
+          "offset": 196,
+          "size": 4
+        },
+        {
+          "name": "alloc_dbg[48]",
+          "offset": 200,
+          "size": 48
+        }
+      ],
+      "sizeof": 248,
+      "storage": "ION metadata allocated by kzalloc(sizeof(struct ion_buffer))"
+    },
+    "pipe_buffer": {
+      "alignment": 8,
+      "allocation": {
+        "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/fs/pipe.c",
+        "line": 625,
+        "needle": "kzalloc(sizeof(struct pipe_buffer) * pipe_bufs",
+        "observation": "alloc_pipe_info allocates an array",
+        "sha256": "2968e95cf55d392d0e465b4306cc256caec24916651383745e17c78e4e9cbd7d"
+      },
+      "default_array_cache": "kmalloc-1024",
+      "default_array_request": 640,
+      "default_count": 16,
+      "fields": [
+        {
+          "name": "page",
+          "offset": 0,
+          "size": 8
+        },
+        {
+          "name": "offset",
+          "offset": 8,
+          "size": 4
+        },
+        {
+          "name": "len",
+          "offset": 12,
+          "size": 4
+        },
+        {
+          "name": "ops",
+          "offset": 16,
+          "size": 8
+        },
+        {
+          "name": "flags",
+          "offset": 24,
+          "size": 4
+        },
+        {
+          "name": "private",
+          "offset": 32,
+          "size": 8
+        }
+      ],
+      "single_element_cache": "kmalloc-64",
+      "sizeof": 40,
+      "storage": "pipe_buffer array allocated by kzalloc"
+    },
+    "rt_mutex_waiter": {
+      "alignment": 8,
+      "allocation": {
+        "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+        "line": 2844,
+        "needle": "struct rt_mutex_waiter rt_waiter;",
+        "observation": "futex_wait_requeue_pi declares a local waiter",
+        "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96"
+      },
+      "basis": "source declaration plus AArch64 clang record-layout probe",
+      "documentation": {
+        "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex_common.h",
+        "line": 19,
+        "needle": "allocated on the kernel stack",
+        "observation": "rtmutex_common documents stack storage",
+        "sha256": "b3456f9e83a1919e41a88a6638ad1e26ed9966e800c6efc823940df1151919fc"
+      },
+      "fields": [
+        {
+          "name": "tree_entry",
+          "offset": 0,
+          "size": 24
+        },
+        {
+          "name": "pi_tree_entry",
+          "offset": 24,
+          "size": 24
+        },
+        {
+          "name": "task",
+          "offset": 48,
+          "size": 8
+        },
+        {
+          "name": "lock",
+          "offset": 56,
+          "size": 8
+        },
+        {
+          "name": "prio",
+          "offset": 64,
+          "size": 4
+        }
+      ],
+      "kmalloc_cache": "NOT_APPLICABLE",
+      "sizeof": 72,
+      "storage": "blocked task kernel stack; not a kmalloc object"
+    },
+    "task_struct": {
+      "alignment": 16,
+      "allocation": {
+        "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/fork.c",
+        "line": 315,
+        "needle": "kmem_cache_create(\"task_struct\"",
+        "observation": "fork_init creates the dedicated cache",
+        "sha256": "36765160ee5e6d07a9ba754c4ba5fe026f0dc5b1fa5db91d26b3a2e59aed13c8"
+      },
+      "basis": "AArch64 clang record-layout probe using generated PS7331 config",
+      "cache_alignment": 64,
+      "modeled_object_size": 3520,
+      "selected_offsets": {
+        "pi_blocked_on": 2096,
+        "pi_lock": 2068,
+        "pi_waiters": 2080,
+        "pi_waiters_leftmost": 2088
+      },
+      "sizeof": 3488,
+      "slab_order": 0,
+      "storage": "dedicated task_struct kmem_cache"
+    }
+  },
+  "observations": [
+    {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "line": 1089,
+      "needle": "current->pi_blocked_on = NULL;",
+      "observation": "pre-fix cleanup target",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde"
+    },
+    {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "line": 1265,
+      "needle": "if (unlikely(ret))",
+      "observation": "proxy wrapper cleanup branch",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde"
+    },
+    {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "line": 1963,
+      "needle": "rt_mutex_start_proxy_lock(&pi_state->pi_mutex",
+      "observation": "requeue-PI call site",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96"
+    },
+    {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/include/linux/slab.h",
+      "line": 171,
+      "needle": "#define ARCH_KMALLOC_MINALIGN",
+      "observation": "ARM64 kmalloc alignment source",
+      "sha256": "f0ecea06a977de9411d2320b3611e8ae72346c7abf0a54c03f1b479f48a7d284"
+    },
+    {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/mm/slab_common.c",
+      "line": 819,
+      "needle": "static s8 size_index[24]",
+      "observation": "kmalloc size-index table",
+      "sha256": "5d49c880be1ce1f967a8bb5942a20587c1e8bfe202dff9c6f88300b7fe317358"
+    },
+    {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/mm/slub.c",
+      "line": 3729,
+      "needle": "setup_slub_max_order",
+      "observation": "SLUB max-order boot parameter",
+      "sha256": "2273f0695c64e8009c0bd6e27a5b782a2a08da5ca608d2b0b03d2bca1b784b56"
+    }
+  ],
+  "schema": "phase6b-ps7331-layout-v1",
+  "scope": {
+    "device_execution": false,
+    "kaslr_slide": false,
+    "kernel_execution": false,
+    "memory_spray": false,
+    "race_trigger": false,
+    "root_operation": false
+  }
+}

@@ -2929,3 +2929,33 @@ Outputs:
 - findings/phase-6a-pi-lock-smoke-evidence-index.md
 - local raw evidence under adb/phase6a/PHASE6A-PI-SMOKE-T02/
 - local result under artifacts/phase6a/phase6a-pi-lock-smoke-T02/
+
+## Phase 6B host-only layout model
+
+Phase 6B is limited to PS7331 source/config provenance and a host-side AArch64
+record-layout model. It does not execute `FUTEX_CMP_REQUEUE_PI`, create a proxy
+waiter, arrange a race, spray ION/pipe objects, calculate a KASLR slide, read or
+write kernel memory, or attempt privilege escalation. The stock-device runtime
+trigger is recorded as **因風險拒絕測試** in
+`findings/phase-6-step4-runtime-gate.md`.
+
+Reproduce the model offline using the preserved PS7331 source and config:
+
+```sh
+python3 tools/scripts/model_phase6b_ps7331_layout.py \
+  --source-root firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4 \
+  --config artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config \
+  --output artifacts/phase6b/phase6b-host-layout-YYYYMMDD-NN
+```
+
+The script refuses to overwrite an existing output and supports `--dry-run`.
+The public model records `task_struct`, `rt_mutex_waiter`, `pipe_buffer`, and
+`ion_buffer` layout facts with source hashes. In the inspected requeue-PI path,
+`rt_mutex_waiter` is a local kernel-stack object, not a direct kmalloc/SLUB
+waiter object; pipe and ION cache classes are allocator facts, not proof of
+adjacency, reuse, corruption, or exploitability. The generated artifact and
+evidence index are under `artifacts/phase6b/` and `findings/phase-6b-*`.
+
+Any instrumented kernel, QEMU/KASAN experiment, requeue-PI trigger, race
+reproducer, panic test, or privilege-transition payload must be separately
+labelled `LAB_ONLY` and must not be copied to or run on the stock tablet.

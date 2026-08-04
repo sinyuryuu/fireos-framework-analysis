@@ -1,0 +1,13 @@
+flowchart TD
+    U[Userspace futex syscall<br/>runtime not executed] --> D[do_futex]
+    D --> R[FUTEX_CMP_REQUEUE_PI dispatch]
+    R --> F[futex_requeue]
+    F --> P[rt_mutex_start_proxy_lock]
+    P --> E{nonzero return?}
+    E -->|yes| C[remove_waiter]
+    C --> X[PS7331 source writes current->pi_blocked_on]
+    E -->|no| Q[requeue_futex path]
+    W[futex_wait_requeue_pi local rt_waiter] -.-> F
+
+    classDef unconfirmed fill:#fff3cd,stroke:#856404,color:#000;
+    class U,D,R,F,P,E,C,X,Q,W unconfirmed;
