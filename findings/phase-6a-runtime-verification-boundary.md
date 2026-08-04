@@ -64,3 +64,13 @@ Phase 5DD 已將保存的 16 個 Fire ELF 做第一輪 marker/symbol inventory�
 與 policy/source mapping，而不是直接在 stock tablet 上追 race。Phase 5DF
 確認 kernel source 的 dispatch/proxy/cleanup landmarks，但沒有新增
 runtime mismatch、residue 或 root 證據。
+
+## Benign PI smoke-test status
+
+PHASE6A-PI-SMOKE-T01 的 freestanding AArch64 source 可編譯成 relocatable
+object，但 host 沒有 ld.lld，無法完成 Android ELF link。因此沒有 push、
+執行或改變裝置狀態；此測試沒有新增 PI runtime evidence。
+
+完整記錄：
+
+artifacts/phase6a/phase6a-pi-lock-smoke-T01/

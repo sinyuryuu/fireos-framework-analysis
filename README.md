@@ -2902,3 +2902,16 @@ Outputs:
 - `output/tables/phase5de-userspace-futex-summary.csv`
 - `tools/scripts/audit_phase5de_userspace_futex_source.py`
 - local audit under `artifacts/phase5/phase5de-userspace-futex-source-audit-20260804-03/`
+
+## Phase 6A PI smoke status
+
+PHASE6A-PI-SMOKE-T01 的 benign single-thread PI lock/unlock source 可編譯成
+AArch64 relocatable object，但 host 缺少 ld.lld，沒有產生 Android ELF，
+沒有 push 或執行。這不是 runtime mismatch 或 exploitability 結果。
+
+Outputs:
+
+- tools/test-phase6a/pi_lock_smoke.c
+- tools/scripts/build_phase6a_pi_lock_smoke.sh
+- findings/phase-6a-pi-lock-smoke-test.md
+- local result under artifacts/phase6a/phase6a-pi-lock-smoke-T01/
