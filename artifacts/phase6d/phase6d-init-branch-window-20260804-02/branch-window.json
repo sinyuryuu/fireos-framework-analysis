@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-08-04T15:20:03.674484+00:00",
+  "input": {
+    "init_binary": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/root/init",
+    "init_binary_sha256": "e72ed4e90d73b88be341985ebd624725b67d67967d04157317456233e15f31fd"
+  },
+  "markers": [
+    {
+      "id": "rootable_callsite_flag",
+      "pattern": "41ae44:.*orr\\s+w5,\\s*wzr,\\s*#0x1",
+      "present": true
+    },
+    {
+      "id": "standard_callsite_flag",
+      "pattern": "41af78:.*mov\\s+w5,\\s*wzr",
+      "present": true
+    },
+    {
+      "id": "helper_flag_branch",
+      "pattern": "41be48:.*tbnz\\s+w5,\\s*#0x0,\\s*0x41c30c",
+      "present": true
+    },
+    {
+      "id": "rootable_helper_call",
+      "pattern": "41ae5c:.*bl\\s+0x41be00",
+      "present": true
+    },
+    {
+      "id": "standard_helper_call",
+      "pattern": "41af80:.*bl\\s+0x41be00",
+      "present": true
+    },
+    {
+      "id": "alternate_branch_entry",
+      "pattern": "41c30c:\\s+.*bl\\s+0x4ab980",
+      "present": true
+    },
+    {
+      "id": "standard_precompiled_path_entry",
+      "pattern": "41be4c:\\s+.*adrp\\s+x0,\\s*0x59c000",
+      "present": true
+    }
+  ],
+  "observations": [
+    "The rootable and standard path-builder call sites pass different w5 values into the same stripped helper candidate.",
+    "The helper has an instruction-level conditional branch on w5 to 0x41c30c.",
+    "The branch target and the pre-branch block have different call/data-flow shapes; exact high-level policy semantics remain unresolved."
+  ],
+  "range": {
+    "start": "0x41ad00",
+    "stop": "0x41d5c0"
+  },
+  "safety": {
+    "boot_property_changed": false,
+    "device_contacted": false,
+    "elf_executed": false,
+    "host_only": true,
+    "kernel_memory_accessed": false,
+    "policy_loaded": false,
+    "root_payload": false,
+    "verification_bypassed": false
+  },
+  "schema": "phase6d-init-branch-window-v1"
+}

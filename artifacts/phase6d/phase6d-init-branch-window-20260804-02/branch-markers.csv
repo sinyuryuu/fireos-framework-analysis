@@ -1,0 +1,8 @@
+id,pattern,present
+rootable_callsite_flag,"41ae44:.*orr\s+w5,\s*wzr,\s*#0x1",True
+standard_callsite_flag,"41af78:.*mov\s+w5,\s*wzr",True
+helper_flag_branch,"41be48:.*tbnz\s+w5,\s*#0x0,\s*0x41c30c",True
+rootable_helper_call,41ae5c:.*bl\s+0x41be00,True
+standard_helper_call,41af80:.*bl\s+0x41be00,True
+alternate_branch_entry,41c30c:\s+.*bl\s+0x4ab980,True
+standard_precompiled_path_entry,"41be4c:\s+.*adrp\s+x0,\s*0x59c000",True

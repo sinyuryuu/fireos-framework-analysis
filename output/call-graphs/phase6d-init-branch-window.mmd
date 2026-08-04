@@ -1,0 +1,15 @@
+flowchart TD
+  R[rootable path-builder candidate\n0x41ae44 w5=1]
+  S[standard path-builder candidate\n0x41af78 w5=0]
+  H[common helper candidate\n0x41be00]
+  B[conditional branch\n0x41be48 tbnz w5]
+  N[pre-branch block\n0x41be4c]
+  A[alternate branch target\n0x41c30c]
+  U[high-level policy meaning\nUNRESOLVED]
+  R --> H
+  S --> H
+  H --> B
+  B --> N
+  B --> A
+  N --> U
+  A --> U

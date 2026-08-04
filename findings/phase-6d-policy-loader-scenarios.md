@@ -17,7 +17,7 @@ Canonical scenario artifact：
 | S1 userspace 可控屬性 | **待驗證** | Hypothesis | 尚沒有 source-level 或 CFG 證據把 shell／untrusted-writable 的 `persist.*` 或 `/data` 標誌連到 rootable branch。 |
 | S2 boot／kernel cmdline | **高可信推論** | Strong evidence | `/init` 有 `androidboot.selinux`／`permissive` parser candidate，並有 standard/rootable path-builder call sites；裝置為 locked、Enforcing，shell 不能讀 `/proc/cmdline`。 |
 | S3 AVB／signature／fuse | **待驗證** | Hypothesis | `/init` 含 `FsManagerAvbHandle`、`avb_slot_verify`、BoringSSL 與 `SIGNATURE_MISMATCH` markers，但目前沒有 CFG edge 證明它們 guard rootable policy 或讀 eFuse。 |
-| S4 dead code／編譯殘留 | **已排除（純字串殘留）／待驗證（runtime reachability）** | Strong evidence | rootable literals 有 ADRP/ADD code references，並進入 `0x41be00` common-helper candidate 且 call-site `w5=1`；不能再以 strings-only 解釋，但分支是否在 stock boot 被走仍未知。 |
+| S4 dead code／編譯殘留 | **已排除（純字串殘留）／待驗證（runtime reachability）** | Strong evidence | rootable literals 有 ADRP/ADD code references，`0x41ae44` 設定 `w5=1`，並在 `0x41be48` 以 `tbnz` 分到 `0x41c30c`；不能再以 strings-only 解釋，但分支是否在 stock boot 被走仍未知。 |
 
 ## 重要限制
 

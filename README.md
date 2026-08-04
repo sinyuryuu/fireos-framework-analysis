@@ -3355,6 +3355,10 @@ Outputs:
 - `findings/phase-6d-policy-loader-scenarios.md`
 - `findings/phase-6d-policy-loader-scenario-evidence-index.md`
 - `artifacts/phase6d/phase6d-policy-scenarios-20260804-01/`
+- `tools/scripts/analyze_phase6d_init_branch_window.py`
+- `findings/phase-6d-init-branch-window.md`
+- `output/call-graphs/phase6d-init-branch-window.mmd`
+- `artifacts/phase6d/phase6d-init-branch-window-20260804-02/`
 
 The classifier is host-only, refuses to overwrite output, and supports
 `--dry-run`. It does not execute `/init`, inject boot properties, select
