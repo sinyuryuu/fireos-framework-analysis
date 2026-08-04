@@ -1329,6 +1329,19 @@ Outputs:
 
 ## Phase 5DH status
 
+## Phase 5DI status
+
+Phase 5DI added the preserved services.odex and fosservices.odex to the
+native futex surface audit. Both are AArch64 ELF inputs with no visible
+futex/rtmutex/requeue-PI or generic syscall marker. This remains bounded
+negative evidence; runtime and stripped/indirect callers are unresolved.
+
+Outputs:
+
+- findings/phase-5di-additional-odex-futex-surface.md
+- findings/phase-5di-evidence-index.md
+- local inventory under artifacts/phase5/phase5di-additional-odex-futex-surface-20260804-01/
+
 Phase 5DH compared the Emerald reference prerequisites with the exact PS7331
 IKCONFIG and source. FUTEX, RT_MUTEXES, CONFIGFS_FS, SLUB, SECCOMP and
 RANDOMIZE_BASE are enabled; CONFIG_USERFAULTFD is explicitly not set. This
