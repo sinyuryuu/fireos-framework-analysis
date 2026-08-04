@@ -1,0 +1,361 @@
+{
+  "analysis": {
+    "name": "Phase 5BF GhostLock source/config reachability review",
+    "generated_at_utc": "2026-08-04T07:02:43.551948+00:00",
+    "device_io": false,
+    "executed_input": false,
+    "compiled_code": false,
+    "addresses_or_offsets": false,
+    "payload_or_reproducer": false,
+    "scope": "host-only source and configuration evidence; not an exploitability or root result"
+  },
+  "inputs": [
+    {
+      "kind": "target_rtmutex_source",
+      "path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "bytes": 46820
+    },
+    {
+      "kind": "target_futex_source",
+      "path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "bytes": 91823
+    },
+    {
+      "kind": "device_config",
+      "path": "artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config",
+      "sha256": "eefb8db484f65e196a7bb401ae0165f434f08b13041aef6762917e284d013d04",
+      "bytes": 124023
+    },
+    {
+      "kind": "fixed_reference",
+      "path": "artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c",
+      "sha256": "c307ed54156d1f16e82387df7b214445dddf27be8a880f31575f698ca07d880a",
+      "bytes": 50988
+    }
+  ],
+  "target_source": {
+    "line_count": 1753
+  },
+  "futex_source": {
+    "line_count": 3358,
+    "pi_dispatch_lines": [
+      {
+        "line": 1644,
+        "text": "* During futex_requeue, with requeue_pi=1, it is possible to acquire the"
+      },
+      {
+        "line": 1739,
+        "text": "* futex_requeue() - Requeue waiters from uaddr1 to uaddr2"
+      },
+      {
+        "line": 1756,
+        "text": "static int futex_requeue(u32 __user *uaddr1, unsigned int flags,"
+      },
+      {
+        "line": 1926,
+        "text": "* FUTEX_WAIT_REQEUE_PI and FUTEX_CMP_REQUEUE_PI should always"
+      },
+      {
+        "line": 1963,
+        "text": "ret = rt_mutex_start_proxy_lock(&pi_state->pi_mutex,"
+      },
+      {
+        "line": 2809,
+        "text": "* The caller will wait on uaddr and will be requeued by futex_requeue() to"
+      },
+      {
+        "line": 2818,
+        "text": "* 1) wakeup on uaddr2 after an atomic lock acquisition by futex_requeue()"
+      },
+      {
+        "line": 2912,
+        "text": "* we took the hb->lock above, we also know that futex_requeue() has"
+      },
+      {
+        "line": 2915,
+        "text": "* futex_requeue dropped our key1 reference and incremented our key2"
+      },
+      {
+        "line": 3229,
+        "text": "if (cmd != FUTEX_WAIT_BITSET && cmd != FUTEX_WAIT_REQUEUE_PI)"
+      },
+      {
+        "line": 3237,
+        "text": "case FUTEX_WAIT_REQUEUE_PI:"
+      },
+      {
+        "line": 3238,
+        "text": "case FUTEX_CMP_REQUEUE_PI:"
+      },
+      {
+        "line": 3253,
+        "text": "return futex_requeue(uaddr, flags, uaddr2, val, val2, NULL, 0);"
+      },
+      {
+        "line": 3255,
+        "text": "return futex_requeue(uaddr, flags, uaddr2, val, val2, &val3, 0);"
+      },
+      {
+        "line": 3264,
+        "text": "case FUTEX_WAIT_REQUEUE_PI:"
+      },
+      {
+        "line": 3268,
+        "text": "case FUTEX_CMP_REQUEUE_PI:"
+      },
+      {
+        "line": 3269,
+        "text": "return futex_requeue(uaddr, flags, uaddr2, val, val2, &val3, 1);"
+      },
+      {
+        "line": 3286,
+        "text": "cmd == FUTEX_WAIT_REQUEUE_PI)) {"
+      },
+      {
+        "line": 3304,
+        "text": "cmd == FUTEX_CMP_REQUEUE_PI || cmd == FUTEX_WAKE_OP)"
+      }
+    ]
+  },
+  "fixed_reference": {
+    "symbol": "remove_waiter",
+    "span": {
+      "start_line": 1517,
+      "end_line": 1569
+    },
+    "waiter_task_reference": true,
+    "waiter_task_reference_lines": [
+      {
+        "line": 1522,
+        "text": "struct task_struct *waiter_task = waiter->task;"
+      }
+    ],
+    "current_task_cleanup": false,
+    "current_task_cleanup_lines": [],
+    "classification": "WAITER_TASK_CLEANUP_REFERENCE"
+  },
+  "observations": [
+    {
+      "source": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "symbol": "remove_waiter",
+      "span": {
+        "start_line": 1079,
+        "end_line": 1129
+      },
+      "current_task_cleanup": true,
+      "current_task_cleanup_lines": [
+        {
+          "line": 1089,
+          "text": "current->pi_blocked_on = NULL;"
+        }
+      ],
+      "waiter_task_reference": false,
+      "waiter_task_reference_lines": [],
+      "classification": "PRE_FIX_CURRENT_TASK_CLEANUP_PATTERN"
+    },
+    {
+      "source": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "symbol": "rt_mutex_start_proxy_lock",
+      "span": {
+        "start_line": 1656,
+        "end_line": 1691
+      },
+      "remove_waiter_call": true,
+      "remove_waiter_call_lines": [
+        {
+          "line": 1684,
+          "text": "remove_waiter(lock, waiter);"
+        }
+      ],
+      "classification": "PROXY_ERROR_PATH_PRESENT"
+    },
+    {
+      "source": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "symbol": "futex_pi_dispatch_and_requeue",
+      "pi_operation_or_requeue_lines": [
+        {
+          "line": 1644,
+          "text": "* rt_mutex_start_proxy_lock() - Start lock acquisition for another task"
+        },
+        {
+          "line": 1656,
+          "text": "int rt_mutex_start_proxy_lock(struct rt_mutex *lock,"
+        }
+      ],
+      "classification": "PI_REQUEUE_SOURCE_PATH_PRESENT"
+    },
+    {
+      "source": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "symbol": "config_focus",
+      "values": {
+        "CONFIG_FUTEX": {
+          "value": "y",
+          "raw": "CONFIG_FUTEX=y",
+          "line": 169,
+          "present": true
+        },
+        "CONFIG_RT_MUTEXES": {
+          "value": "y",
+          "raw": "CONFIG_RT_MUTEXES=y",
+          "line": 248,
+          "present": true
+        },
+        "CONFIG_FUTEX_PI": {
+          "value": null,
+          "raw": null,
+          "line": null,
+          "present": false
+        },
+        "CONFIG_PREEMPT": {
+          "value": "y",
+          "raw": "CONFIG_PREEMPT=y",
+          "line": 363,
+          "present": true
+        },
+        "CONFIG_RANDOMIZE_BASE": {
+          "value": "y",
+          "raw": "CONFIG_RANDOMIZE_BASE=y",
+          "line": 431,
+          "present": true
+        },
+        "CONFIG_ARM64_4K_PAGES": {
+          "value": "y",
+          "raw": "CONFIG_ARM64_4K_PAGES=y",
+          "line": 350,
+          "present": true
+        },
+        "CONFIG_ARM64_VA_BITS": {
+          "value": "39",
+          "raw": "CONFIG_ARM64_VA_BITS=39",
+          "line": 355,
+          "present": true
+        }
+      },
+      "classification": "CONFIG_CAPTURED"
+    },
+    {
+      "source": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "symbol": "futex.c",
+      "line_count": 3358,
+      "pi_dispatch_lines": [
+        {
+          "line": 1644,
+          "text": "* During futex_requeue, with requeue_pi=1, it is possible to acquire the"
+        },
+        {
+          "line": 1739,
+          "text": "* futex_requeue() - Requeue waiters from uaddr1 to uaddr2"
+        },
+        {
+          "line": 1756,
+          "text": "static int futex_requeue(u32 __user *uaddr1, unsigned int flags,"
+        },
+        {
+          "line": 1926,
+          "text": "* FUTEX_WAIT_REQEUE_PI and FUTEX_CMP_REQUEUE_PI should always"
+        },
+        {
+          "line": 1963,
+          "text": "ret = rt_mutex_start_proxy_lock(&pi_state->pi_mutex,"
+        },
+        {
+          "line": 2809,
+          "text": "* The caller will wait on uaddr and will be requeued by futex_requeue() to"
+        },
+        {
+          "line": 2818,
+          "text": "* 1) wakeup on uaddr2 after an atomic lock acquisition by futex_requeue()"
+        },
+        {
+          "line": 2912,
+          "text": "* we took the hb->lock above, we also know that futex_requeue() has"
+        },
+        {
+          "line": 2915,
+          "text": "* futex_requeue dropped our key1 reference and incremented our key2"
+        },
+        {
+          "line": 3229,
+          "text": "if (cmd != FUTEX_WAIT_BITSET && cmd != FUTEX_WAIT_REQUEUE_PI)"
+        },
+        {
+          "line": 3237,
+          "text": "case FUTEX_WAIT_REQUEUE_PI:"
+        },
+        {
+          "line": 3238,
+          "text": "case FUTEX_CMP_REQUEUE_PI:"
+        },
+        {
+          "line": 3253,
+          "text": "return futex_requeue(uaddr, flags, uaddr2, val, val2, NULL, 0);"
+        },
+        {
+          "line": 3255,
+          "text": "return futex_requeue(uaddr, flags, uaddr2, val, val2, &val3, 0);"
+        },
+        {
+          "line": 3264,
+          "text": "case FUTEX_WAIT_REQUEUE_PI:"
+        },
+        {
+          "line": 3268,
+          "text": "case FUTEX_CMP_REQUEUE_PI:"
+        },
+        {
+          "line": 3269,
+          "text": "return futex_requeue(uaddr, flags, uaddr2, val, val2, &val3, 1);"
+        },
+        {
+          "line": 3286,
+          "text": "cmd == FUTEX_WAIT_REQUEUE_PI)) {"
+        },
+        {
+          "line": 3304,
+          "text": "cmd == FUTEX_CMP_REQUEUE_PI || cmd == FUTEX_WAKE_OP)"
+        }
+      ]
+    },
+    {
+      "source": "artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c",
+      "symbol": "remove_waiter",
+      "span": {
+        "start_line": 1517,
+        "end_line": 1569
+      },
+      "waiter_task_reference": true,
+      "waiter_task_reference_lines": [
+        {
+          "line": 1522,
+          "text": "struct task_struct *waiter_task = waiter->task;"
+        }
+      ],
+      "current_task_cleanup": false,
+      "current_task_cleanup_lines": [],
+      "classification": "WAITER_TASK_CLEANUP_REFERENCE"
+    }
+  ],
+  "classification": {
+    "source_and_config_reachability": "SOURCE_AND_CONFIG_REACHABILITY_CANDIDATE",
+    "exact_signed_binary_proven": false,
+    "runtime_exploitability_proven": false,
+    "root_or_privilege_gain_proven": false,
+    "config_futex_pi_literal": {
+      "value": null,
+      "raw": null,
+      "line": null,
+      "present": false
+    },
+    "config_futex_pi_note": "The old tree's PI operation dispatch is assessed from source. An absent literal CONFIG_FUTEX_PI line is not treated as proof that the PI path is disabled."
+  },
+  "safety": {
+    "no_adb": true,
+    "no_flash": true,
+    "no_bootloader": true,
+    "no_kernel_memory_access": true,
+    "no_exploit_offsets": true,
+    "no_unknown_ioctl": true
+  }
+}

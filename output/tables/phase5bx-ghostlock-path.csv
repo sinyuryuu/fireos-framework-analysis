@@ -1,0 +1,7 @@
+evidence_id,source,location,observed_value,classification
+P5BX-001,futex.c,1959-1965;3237-3269,"FUTEX_*_REQUEUE_PI and rt_mutex_start_proxy_lock(..., this->task)",Confirmed
+P5BX-002,rtmutex.c,1089;1125-1126;1684,"current->pi_blocked_on cleanup; current chain argument; proxy remove_waiter call",PRE_FIX_CURRENT_TASK_CLEANUP
+P5BX-003,kernel.config,169;248;363,"CONFIG_FUTEX=y; CONFIG_RT_MUTEXES=y; CONFIG_PREEMPT=y",Confirmed
+P5BX-004,fixed reference,remove_waiter,"waiter_task = waiter->task; waiter-task cleanup and chain argument",FIXED_REFERENCE
+P5BX-005,host analyzer,phase5bx artifact,"SOURCE_AND_CONFIG_REACHABILITY_CANDIDATE",STATIC_ONLY
+P5BX-006,mtk-easy-su metadata,repo-metadata.tsv,"same mtk-su64 payload as prior run",DUPLICATE_ROUTE

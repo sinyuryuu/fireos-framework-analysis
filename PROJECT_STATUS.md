@@ -654,3 +654,21 @@ Phase 5BW outputs:
 - `tools/scripts/compare_phase5bw_ghostlock_fix.py`
 - `tests/test_phase5bw_ghostlock_fix.py`
 - `artifacts/phase5/phase5bw-ghostlock-fix-applicability-20260804-01/`
+
+## Phase 5BX status
+
+Phase 5BX re-ran the host-only reachability analyzer against the build-selected
+PS7331 source from the complete 7.3.3.1 archive. It confirms the source chain
+`FUTEX_*_REQUEUE_PI` → `futex_requeue()` →
+`rt_mutex_start_proxy_lock(..., this->task)` → `remove_waiter()` and the
+pre-fix `current->pi_blocked_on` cleanup. The classification is
+`SOURCE_AND_CONFIG_REACHABILITY_CANDIDATE`; runtime exploitability and root
+remain unproven.
+
+Phase 5BX outputs:
+
+- `findings/phase-5bx-ps7331-ghostlock-path-audit.md`
+- `findings/phase-5bx-evidence-index.md`
+- `output/tables/phase5bx-ghostlock-path.csv`
+- `output/call-graphs/phase5bx-ghostlock-path.mmd`
+- `artifacts/phase5/phase5bx-ps7331-exact-path-audit-20260804-01/`

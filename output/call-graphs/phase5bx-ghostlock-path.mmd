@@ -1,0 +1,9 @@
+flowchart TD
+    A["futex syscall dispatch\nFUTEX_WAIT_REQUEUE_PI / FUTEX_CMP_REQUEUE_PI\nfutex.c:3237-3269"]
+    B["futex_requeue(requeue_pi=1)\nfutex.c:1756-1989"]
+    C["rt_mutex_start_proxy_lock\nrtmutex.c:1656-1691"]
+    D["proxy error path\nremove_waiter(lock, waiter)\nrtmutex.c:1684"]
+    E["PS7331 pre-fix cleanup\ncurrent->pi_blocked_on = NULL\nrtmutex.c:1089"]
+    F["fixed reference\nwaiter_task = waiter->task"]
+    A --> B --> C --> D --> E
+    D -. "upstream fix changes target task" .-> F
