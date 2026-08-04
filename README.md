@@ -2568,3 +2568,32 @@ Outputs:
 - `output/tables/phase5cq-userspace-reachability.csv`
 - `output/call-graphs/phase5cq-userspace-reachability.mmd`
 - `tools/scripts/audit_phase5cq_userspace_reachability.py`
+
+## Phase 5CS status
+
+Phase 5CS performs a bounded, host-only inventory of already readable Fire
+PS7331 native artifacts. The exact Fire `libart.so` contains the diagnostic
+`futex cmp requeue failed for` and the `ThreadList::SuspendAllInternal` method;
+host disassembly shows that method reaches the libc `syscall` boundary. The
+matching AOSP ART source maps that diagnostic to ordinary `FUTEX_CMP_REQUEUE`,
+not to a demonstrated PI requeue proxy path. This is a new Fire userspace route
+distinction, not GhostLock dynamic validation.
+
+`libandroid_runtime.so` contains seccomp setup references, but the Fire
+app-domain policy is not recovered by this capture. The selected Amazon native
+libraries have no named requeue-PI caller in a bounded strings/symbol scan;
+this remains a negative observation rather than an exhaustive absence claim.
+Vendor listings and access denials are preserved; no native binary was executed.
+
+Phase 5CS does not observe `waiter->task != current`, wrong-target cleanup,
+persistent state damage, a later consumer, controlled memory effect or root.
+No futex trigger, race, ioctl, kernel-memory, payload, boot or partition
+operation was performed.
+
+Outputs:
+
+- `findings/phase-5cs-fire-art-futex-analysis.md`
+- `findings/phase-5cs-evidence-index.md`
+- `output/tables/phase5cs-native-inventory.csv`
+- `output/call-graphs/phase5cs-native-futex-flow.mmd`
+- `tools/scripts/analyze_phase5cs_native_inventory.py`

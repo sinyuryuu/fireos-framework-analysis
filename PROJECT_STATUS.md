@@ -1048,3 +1048,29 @@ Outputs:
 - `output/tables/phase5cq-userspace-reachability.csv`
 - `output/call-graphs/phase5cq-userspace-reachability.mmd`
 - `tools/scripts/audit_phase5cq_userspace_reachability.py`
+
+## Phase 5CS status
+
+Phase 5CS adds a bounded, host-only scan of Fire PS7331 native artifacts that
+were already pulled or listed with read-only ADB. Fire `libart.so` contains the
+ART compare-requeue diagnostic and `ThreadList::SuspendAllInternal`; the
+identified method reaches the libc `syscall` boundary in host disassembly.
+The AOSP ART reference maps the diagnostic to ordinary compare-requeue, not a
+demonstrated requeue-PI proxy operation. `libandroid_runtime.so` contains
+seccomp setup references, but the Fire app policy result is not exposed. The
+selected Amazon libraries do not establish a named requeue-PI caller in a
+bounded scan, which is only a negative observation.
+
+The dynamic GhostLock gates remain open: no stock-runtime observation of
+`waiter->task != current`, `remove_waiter()` execution, persistent residue,
+later consumer, controlled memory effect or root. No native ELF was executed;
+no futex, race, ioctl, device-node, kernel-memory, payload, boot or partition
+operation was performed.
+
+Outputs:
+
+- `findings/phase-5cs-fire-art-futex-analysis.md`
+- `findings/phase-5cs-evidence-index.md`
+- `output/tables/phase5cs-native-inventory.csv`
+- `output/call-graphs/phase5cs-native-futex-flow.mmd`
+- `tools/scripts/analyze_phase5cs_native_inventory.py`

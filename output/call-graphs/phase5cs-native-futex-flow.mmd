@@ -1,0 +1,24 @@
+flowchart TD
+    A[Fire PS7331 libart.so] --> B[ThreadList::SuspendAllInternal]
+    B --> C[ART condition-variable synchronization]
+    C --> D[ordinary compare-requeue marker]
+    D --> E[libart syscall import/call boundary]
+    E --> F[kernel futex entry]
+    F -. not established .-> G[PI requeue / futex_requeue proxy path]
+    G -. no runtime trigger .-> H[rt_mutex_start_proxy_lock]
+    H -. no runtime trigger .-> I[remove_waiter identity check]
+    J[libandroid_runtime.so] --> K[seccomp setup references]
+    K -. policy decision not observed .-> E
+    L[Selected Amazon libs] -. bounded scan .-> M[no named requeue-PI caller established]
+
+## Text fallback
+
+`libart.so` → `ThreadList::SuspendAllInternal` → ART condition-variable
+synchronization → ordinary compare-requeue marker → libc `syscall` boundary →
+kernel futex entry.
+
+The edge from the ordinary futex path to the PI requeue/proxy path is explicitly
+unconfirmed. `libandroid_runtime.so` contains seccomp setup references, but the
+Fire app policy decision is not exposed by this capture. The selected Amazon
+libraries have only a bounded negative scan; they are not proof that no indirect
+caller exists elsewhere.
