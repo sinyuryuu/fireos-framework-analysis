@@ -1238,3 +1238,26 @@ Outputs:
 - `output/tables/phase5cz-selftest-provenance.csv`
 - `tools/scripts/capture_phase5cz_selftest_presence.sh`
 - local raw capture under `adb/phase5/PHASE5CZ-SELFTEST-PRESENCE-20260804-01/`
+
+## Phase 5DB status
+
+Phase 5DB records a fresh exact-target match for the connected tablet. The
+device is `KFTRWI/trona/MT8183` on `PS7331.4463N/0031575863172`, and its
+fingerprint, incremental, product, and security patch all match the official
+PS7331 full OTA metadata. The exact build-selected MT8183 source and preserved
+PS7331 boot Image markers are pre-fix-consistent for the GhostLock current-task
+cleanup semantics.
+
+This is a provenance/static result only. Runtime `waiter->task != current`,
+wrong cleanup residue, a later consumer, a memory effect, and root remain
+unobserved/unproven. No futex trigger, exploit, payload, kernel memory, boot,
+partition, or device-state mutation was performed.
+
+Outputs:
+
+- `findings/phase-5db-ps7331-exact-target-ghostlock-chain.md`
+- `findings/phase-5db-evidence-index.md`
+- `output/tables/phase5db-ghostlock-gates.csv`
+- `tools/scripts/capture_phase5db_exact_ps7331_match.sh`
+- `tools/scripts/verify_phase5db_ps7331_exact_chain.py`
+- local exact-target capture under `adb/phase5/PS7331-EXACT-MATCH-20260804-01/`

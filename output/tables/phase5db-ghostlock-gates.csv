@@ -1,0 +1,11 @@
+gate,evidence,result,classification
+device_ota_identity,P5DB-E01;P5DB-E02,PS7331 device and full OTA metadata match,Confirmed
+exact_mt8183_source,P5DB-E03,source hash and path are exact build-selected MT8183 trona source,Confirmed
+source_pre_fix_semantics,P5DB-E03,current cleanup and proxy error cleanup markers present,Confirmed source scope
+boot_image_provenance,P5DB-E04,PS7331 OTA-derived boot Image retained and hashed,Confirmed artifact scope
+boot_image_pre_fix_markers,P5DB-E05,current-task and proxy cleanup markers present,Confirmed sanitized Image scope
+fire_userspace_requeue_pi_caller,phase5cq;phase5cr,no dedicated caller established,待驗證
+runtime_waiter_task_mismatch,P5DB-E07,not observed,待驗證
+wrong_cleanup_residue,P5DB-E07,not observed,待驗證
+later_consumer_memory_effect,P5DB-E07,not established,待驗證
+temporary_root,P5DB-E06,no privilege gain proof,未證明
