@@ -15,6 +15,10 @@
    priority=50 ... com.amazon.firelauncher/.Launcher
    ```
 
+   Phase 5BB 的新 post-check `PHASE5BB-DEVICE-POSTCHECK-20260804-01` 在
+   `2026-08-04T02:53:55Z` 再次確認 ADB state=`device`、同一 fingerprint、
+   同一 HOME resolver 與 Fire Launcher system/priv-app path。
+
 2. 7.3.3.1 的官方相鄰 OTA／boot artifact 已在主機端保存並核對：
 
    ```text
@@ -202,6 +206,10 @@ The selected extraction returned an expected nonzero status only because the
 requested `mt8183_defconfig` path was absent; the build-selected kernel source
 members were extracted successfully. The missing defconfig is not silently
 treated as a successful extraction.
+
+The final read-only device post-check is preserved in
+`adb/phase5/PHASE5BB-DEVICE-POSTCHECK-20260804-01/`; it contains command,
+exit-code, stdout/stderr and per-file SHA-256 records.
 
 To reproduce the selected-member extraction on a fresh output directory:
 
