@@ -363,3 +363,24 @@ Phase 5BH outputs:
 - `findings/phase-5bh-ps7331-official-ota-source.md`
 - `findings/phase-5bh-evidence-index.md`
 - `artifacts/phase5/ps7331-official-update-source-20260804-01/`
+
+## Phase 5BI status
+
+Phase 5BI performed a host-only recheck of public MTK routes and the PS7331
+upgrade candidate. The pinned KoCleo `mtk-su64` LFS object matches the exact
+payload already tested on the device; that route remains failed at critical
+initialization step 3 and was not repeated. The reviewed public MTK material
+does not provide an exact KFTRWI/trona/MT8183 Android 9 profile.
+
+The official PS7331 OTA remains useful for a general security-update A/B study,
+but the source/Image semantic comparison does not demonstrate a GhostLock fix.
+The package is a full-block update touching system, vendor, boot and additional
+boot-chain/firmware members, so the standalone boot image is not treated as an
+equivalent upgrade. No OTA, reboot, boot-chain operation or device mutation was
+performed; the device remains PS7330.4104N.
+
+Phase 5BI outputs:
+
+- `findings/phase-5bi-mtk-public-route-recheck.md`
+- `findings/phase-5bi-evidence-index.md`
+- `artifacts/phase5/mtk-public-route-recheck-20260804-01/`

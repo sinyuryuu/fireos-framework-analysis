@@ -1938,3 +1938,26 @@ Phase 5BH outputs:
 - `findings/phase-5bh-ps7331-official-ota-source.md`
 - `findings/phase-5bh-evidence-index.md`
 - `artifacts/phase5/ps7331-official-update-source-20260804-01/`
+
+## Phase 5BI status
+
+Phase 5BI rechecked the public MTK routes against the exact KFTRWI/trona/MT8183
+PS7330 evidence and the preserved official PS7331 artifacts. The pinned
+KoCleo `mtk-su64` object is the same payload already tested and failed at the
+critical initialization boundary, so it was not re-executed. The reviewed
+public exploit survey contains vendor-specific MTK boot-chain examples but no
+exact Amazon target profile.
+
+PS7331 remains a valid host-only adjacent-version comparison and a possible
+general security-update A/B candidate. It is not a demonstrated GhostLock fix:
+the preserved source and inspected Image remain consistent with the pre-fix
+rtmutex pattern. The official package is a full-block OTA touching boot-chain
+and firmware members; the standalone `boot.img` is not an equivalent or
+reversible upgrade operation. The device remains PS7330 and no upgrade or
+device mutation was attempted.
+
+Phase 5BI outputs:
+
+- `findings/phase-5bi-mtk-public-route-recheck.md`
+- `findings/phase-5bi-evidence-index.md`
+- `artifacts/phase5/mtk-public-route-recheck-20260804-01/`
