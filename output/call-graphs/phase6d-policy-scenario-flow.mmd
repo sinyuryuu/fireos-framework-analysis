@@ -1,0 +1,15 @@
+flowchart TD
+    A[PS7331 /init stripped ELF<br/>SHA e72ed4...] --> B[0x41ad00<br/>rootable candidate window]
+    A --> C[0x41af80<br/>standard candidate window]
+    B --> D[0x41ae44<br/>w5 = 1]
+    C --> E[0x41af78<br/>w5 = 0]
+    D --> F[0x41be00<br/>common helper candidate]
+    E --> F
+    F --> G[0x41be48<br/>tbnz w5,#0]
+    G -->|branch| H[0x41c30c]
+    G -->|fallthrough| I[0x41be4c]
+    J[0x41bd60<br/>androidboot.selinux/permissive<br/>parser candidate] -. unresolved data/control link .-> F
+    K[AVB/BoringSSL/efuse markers] -. unresolved guard relation .-> B
+    L[AOSP Android 9<br/>StatusFromCmdline / LoadPolicy anchors] -. host-only anchor .-> A
+    M[Retail device snapshot<br/>Enforcing / locked<br/>policy_selected=false] -. observation only .-> A
+    N[No shell/untrusted writable selector proven] -. S1 remains hypothesis .-> B

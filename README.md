@@ -3377,6 +3377,55 @@ The classifier is host-only, refuses to overwrite output, and supports
 `--dry-run`. It does not execute `/init`, inject boot properties, select
 alternate policy, bypass AVB, remount partitions, or create a root payload.
 
+The consolidated scenario review is preserved in:
+
+- `findings/phase-6d-scenario-review.md`
+- `findings/phase-6d-evidence-index.md`
+- `output/call-graphs/phase6d-policy-scenario-flow.mmd`
+
+The current boundary is precise: the pure strings-only dead-code explanation is
+disproved, but stock runtime reachability and the selector's exact data flow are
+not. No temporary-root route is established.
+
+## Phase 6H Framework IPC and system-service audit
+
+`tools/scripts/audit_phase6h_framework_ipc_surface.py` performs a host-only
+inventory over retained VDEX/JADX/manifests and Amazon `fosinit` files. It does
+not invoke Binder, send broadcasts, mutate settings/package state, or stop a
+service. The canonical output is
+`artifacts/phase6h/phase6h-framework-ipc-20260804-01/`.
+
+The audit confirms the Amazon protected-package callback surface and records
+Home-key/vendor callback boundaries. Marker counts and manifest components are
+not treated as exploitability evidence; authorization and reachability remain
+separate review tasks.
+
+Outputs:
+
+- `findings/phase-6h-framework-ipc.md`
+- `artifacts/phase6h/phase6h-framework-ipc-20260804-01/summary.json`
+- `artifacts/phase6h/phase6h-framework-ipc-20260804-01/fosinit-edges.csv`
+- `artifacts/phase6h/phase6h-framework-ipc-20260804-01/ipc-edges.mmd`
+
+## Phase 6I OTA post-install surface audit
+
+`tools/scripts/audit_phase6i_ota_postinstall_surface.py` inventories the
+PS7331 OTA ZIP, preserved updater-script metadata and selected extracted text on
+the host. It never runs `update-binary` and never contacts the device. The
+canonical output is `artifacts/phase6i/phase6i-ota-postinstall-20260804-01/`.
+
+The preserved script names system/vendor and boot-chain block targets, so the
+package is classified as a full update transaction rather than a reversible
+ADB-level policy selector. OTA installation, malformed-package testing,
+symlink/path traversal, recovery and partition writes remain out of scope.
+
+Output:
+
+- `findings/phase-6i-ota-postinstall.md`
+- `artifacts/phase6i/phase6i-ota-postinstall-20260804-01/result.md`
+- `artifacts/phase6i/phase6i-ota-postinstall-20260804-01/ota-findings.csv`
+- `artifacts/phase6i/phase6i-ota-postinstall-20260804-01/sha256sums.txt`
+
 ## Phase 6E selected CVE surface audit
 
 The preserved PS7331 source/config review narrows several unrelated CVE
