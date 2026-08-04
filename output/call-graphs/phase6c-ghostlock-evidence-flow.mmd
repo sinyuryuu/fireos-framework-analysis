@@ -1,0 +1,14 @@
+flowchart TD
+    A[PS7331 GPL source] --> B[requeue-PI dispatch and proxy landmarks]
+    C[embedded kernel config] --> D[core FUTEX/RT_MUTEX/SLUB gates]
+    E[boot image metadata] --> F[PS7331 image provenance]
+    B --> G[static compatibility only]
+    D --> G
+    F --> G
+    H[Phase 6A ordinary PI lock/unlock] --> I[ordinary PI boundary]
+    J[read-only runtime capture] --> K[no requeue/proxy evidence]
+    G --> L[paired waiter/runtime invariant still unknown]
+    I --> L
+    K --> L
+    L -. LAB_ONLY only .-> M[instrumented isolated environment]
+    L -. rejected on stock device .-> N[requeue/race/panic/root payload]

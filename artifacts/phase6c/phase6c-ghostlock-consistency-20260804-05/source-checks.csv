@@ -1,0 +1,12 @@
+check,relative_file,line,status,pattern,file_sha256
+dispatch_cmp_requeue_pi,kernel/futex.c,3238,FOUND,case FUTEX_CMP_REQUEUE_PI:,ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96
+dispatch_to_requeue_pi,kernel/futex.c,3269,FOUND,"return futex_requeue\([^\n]*&val3, 1\);",ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96
+no_waiter_return,kernel/futex.c,1716,FOUND,if \(!top_waiter\),ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96
+proxy_call,kernel/futex.c,1963,FOUND,rt_mutex_start_proxy_lock\(,ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96
+proxy_return_cleanup,kernel/futex.c,1971,FOUND,\} else if \(ret\),ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96
+proxy_wrapper,kernel/locking/rtmutex.c,1656,FOUND,int rt_mutex_start_proxy_lock\(,6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde
+proxy_error_cleanup,kernel/locking/rtmutex.c,1683,FOUND,if \(unlikely\(ret\)\),6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde
+owner_task_early_return,kernel/locking/rtmutex.c,972,FOUND,if \(owner == task\),6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde
+waiter_task_assignment,kernel/locking/rtmutex.c,977,FOUND,waiter->task = task;,6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde
+current_pi_cleanup,kernel/locking/rtmutex.c,1089,FOUND,current->pi_blocked_on = NULL;,6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde
+waiter_stack_comment,kernel/locking/rtmutex_common.h,19,FOUND,kernel stack,b3456f9e83a1919e41a88a6638ad1e26ed9966e800c6efc823940df1151919fc

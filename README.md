@@ -3217,3 +3217,27 @@ The analyzer is host-only, refuses to overwrite an existing output, and
 supports `--dry-run`. It does not contact ADB, load policy, change boot
 properties, trigger futex/race/panic behavior, access kernel memory, or emit a
 root payload.
+
+## Phase 6C GhostLock consistency audit
+
+The exact PS7331 source, extracted kernel config, preserved boot-image metadata,
+and existing runtime reports were joined by a host-only consistency audit. The
+source dispatch/proxy landmarks and core config gates are present, but the
+ordinary PI smoke test did not issue requeue-PI and no proxy identity mismatch,
+cleanup residue, memory effect, or privilege transition has been observed.
+
+The public `ghostlock-emerald` project targets a different device/kernel
+(Poco M6 Pro / MT6789 / Android 16 / 6.12.30), so it is not a drop-in PS7331
+compatibility proof.
+
+Outputs:
+
+- `tools/scripts/audit_phase6c_ghostlock_consistency.py`
+- `findings/phase-6c-ghostlock-consistency-audit.md`
+- `findings/phase-6c-ghostlock-consistency-evidence-index.md`
+- `output/call-graphs/phase6c-ghostlock-evidence-flow.mmd`
+- `artifacts/phase6c/phase6c-ghostlock-consistency-20260804-05/`
+
+The audit is host-only, refuses to overwrite an existing output, and supports
+`--dry-run`. Stock-device requeue-PI, paired waiter, race, panic, heap shaping,
+kernel-memory and root-payload testing remain rejected.

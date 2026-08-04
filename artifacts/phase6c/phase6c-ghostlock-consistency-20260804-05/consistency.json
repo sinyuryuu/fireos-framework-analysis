@@ -1,0 +1,284 @@
+{
+  "config_checks": [
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": true,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_ARM64"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": true,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_MMU"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": true,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_SMP"
+    },
+    {
+      "defconfig_value": true,
+      "embedded_value": true,
+      "enabled_in_defconfig": true,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_PREEMPT"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": true,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_FUTEX"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": true,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_RT_MUTEXES"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": true,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_SLUB"
+    },
+    {
+      "defconfig_value": true,
+      "embedded_value": true,
+      "enabled_in_defconfig": true,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_ION"
+    },
+    {
+      "defconfig_value": true,
+      "embedded_value": true,
+      "enabled_in_defconfig": true,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_MTK_ION"
+    },
+    {
+      "defconfig_value": true,
+      "embedded_value": true,
+      "enabled_in_defconfig": true,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_RANDOMIZE_BASE"
+    },
+    {
+      "defconfig_value": true,
+      "embedded_value": true,
+      "enabled_in_defconfig": true,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_PANIC_ON_OOPS"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": false,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": false,
+      "key": "CONFIG_KASAN"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": false,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": false,
+      "key": "CONFIG_DEBUG_INFO"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": false,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": false,
+      "key": "CONFIG_USERFAULTFD"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": true,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": true,
+      "key": "CONFIG_FTRACE"
+    },
+    {
+      "defconfig_value": "ABSENT",
+      "embedded_value": false,
+      "enabled_in_defconfig": false,
+      "enabled_in_embedded_config": false,
+      "key": "CONFIG_FUNCTION_TRACER"
+    }
+  ],
+  "generated_at_utc": "2026-08-04T14:30:37.131799+00:00",
+  "image_identity": {
+    "boot_metadata_path": "artifacts/phase5/ps7331-boot-image-inspection-20260804-01/boot-image-metadata.json",
+    "boot_metadata_sha256": "32831b97cd2af84897889a69b480c2c2af60dbb3598e444678c41cba3ec7305c",
+    "image_sha256": "cf12e5619d635ecf7927784a4ed15a254a96c1642d1db9e4ca6734b192d6fa1b",
+    "kernel_addr_recorded": "0x40080000",
+    "kernel_compression_signature": "gzip",
+    "kernel_sha256": "a608a5f99c155dc8e8b12b308528cbd17175b47199985d017613f9e2fbb1edba"
+  },
+  "inputs": {
+    "boot_metadata": {
+      "boot_metadata_path": "artifacts/phase5/ps7331-boot-image-inspection-20260804-01/boot-image-metadata.json",
+      "boot_metadata_sha256": "32831b97cd2af84897889a69b480c2c2af60dbb3598e444678c41cba3ec7305c",
+      "image_sha256": "cf12e5619d635ecf7927784a4ed15a254a96c1642d1db9e4ca6734b192d6fa1b",
+      "kernel_addr_recorded": "0x40080000",
+      "kernel_compression_signature": "gzip",
+      "kernel_sha256": "a608a5f99c155dc8e8b12b308528cbd17175b47199985d017613f9e2fbb1edba"
+    },
+    "config": {
+      "path": "artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config",
+      "sha256": "eefb8db484f65e196a7bb401ae0165f434f08b13041aef6762917e284d013d04"
+    },
+    "defconfig": {
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/arch/arm64/configs/trona_defconfig",
+      "sha256": "09ca8dfc3b3b5e139482e3dd9976dae79547077fb750a4cbc778814f85ecaaac"
+    },
+    "phase6a_report": "findings/phase-6a-untrusted-app-pi-smoke-test.md",
+    "runtime_report": "findings/phase-6c-runtime-capture-20260804-01.md",
+    "source_root": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4"
+  },
+  "interpretation": [
+    "Static source/config/image alignment establishes compatibility evidence, not runtime reachability.",
+    "The ordinary PI smoke test does not exercise FUTEX_CMP_REQUEUE_PI or a proxy waiter.",
+    "A paired waiter/race or device-side vulnerable syscall trigger remains outside the no-loss boundary."
+  ],
+  "runtime_observations": {
+    "fingerprint_present": true,
+    "ordinary_pi_only": true,
+    "privilege_transition_observed": false,
+    "proxy_waiter_observed": false,
+    "requeue_return_observed": false,
+    "selinux_enforcing_present": true,
+    "verified_boot_green_present": true
+  },
+  "safety": {
+    "adb_used": false,
+    "device_contacted": false,
+    "futex_triggered": false,
+    "host_only": true,
+    "kernel_built": false,
+    "kernel_executed": false,
+    "kernel_memory_accessed": false,
+    "payload_generated": false,
+    "race_scheduled": false,
+    "threads_created": false
+  },
+  "schema": "phase6c-ghostlock-consistency-v1",
+  "source_checks": [
+    {
+      "check": "dispatch_cmp_requeue_pi",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "file_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "line": 3238,
+      "pattern": "case FUTEX_CMP_REQUEUE_PI:",
+      "relative_file": "kernel/futex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "dispatch_to_requeue_pi",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "file_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "line": 3269,
+      "pattern": "return futex_requeue\\([^\\n]*&val3, 1\\);",
+      "relative_file": "kernel/futex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "no_waiter_return",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "file_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "line": 1716,
+      "pattern": "if \\(!top_waiter\\)",
+      "relative_file": "kernel/futex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "proxy_call",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "file_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "line": 1963,
+      "pattern": "rt_mutex_start_proxy_lock\\(",
+      "relative_file": "kernel/futex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "proxy_return_cleanup",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "file_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "line": 1971,
+      "pattern": "\\} else if \\(ret\\)",
+      "relative_file": "kernel/futex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "proxy_wrapper",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 1656,
+      "pattern": "int rt_mutex_start_proxy_lock\\(",
+      "relative_file": "kernel/locking/rtmutex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "proxy_error_cleanup",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 1683,
+      "pattern": "if \\(unlikely\\(ret\\)\\)",
+      "relative_file": "kernel/locking/rtmutex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "owner_task_early_return",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 972,
+      "pattern": "if \\(owner == task\\)",
+      "relative_file": "kernel/locking/rtmutex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "waiter_task_assignment",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 977,
+      "pattern": "waiter->task = task;",
+      "relative_file": "kernel/locking/rtmutex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "current_pi_cleanup",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 1089,
+      "pattern": "current->pi_blocked_on = NULL;",
+      "relative_file": "kernel/locking/rtmutex.c",
+      "status": "FOUND"
+    },
+    {
+      "check": "waiter_stack_comment",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex_common.h",
+      "file_sha256": "b3456f9e83a1919e41a88a6638ad1e26ed9966e800c6efc823940df1151919fc",
+      "line": 19,
+      "pattern": "kernel stack",
+      "relative_file": "kernel/locking/rtmutex_common.h",
+      "status": "FOUND"
+    }
+  ],
+  "verdicts": {
+    "cleanup_residue": false,
+    "embedded_config_supports_core_futex_path": true,
+    "live_proxy_identity_mismatch": false,
+    "memory_effect": false,
+    "privilege_transition": false,
+    "source_chain_present": true,
+    "source_config_image_provenance_consistent": true,
+    "temporary_root": false
+  }
+}
