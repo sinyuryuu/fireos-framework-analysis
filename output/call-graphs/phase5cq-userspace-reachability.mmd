@@ -1,0 +1,12 @@
+flowchart TD
+    A[Android 9 bionic pthread_cond wait/signal] --> B[generic bionic futex wait/wake helpers]
+    B --> C[ordinary futex kernel operations]
+    C -. not established by AOSP pthread path .-> D[requeue-PI proxy path]
+    U[AOSP UAPI header exposes PI/requeue-PI names] --> N[userspace API surface only]
+    N -. caller not identified .-> D
+    F[Fire PS7331 kernel source/config] --> D
+    D --> E[rt_mutex_start_proxy_lock]
+    E --> G[remove_waiter pre-fix cleanup semantics]
+    G --> H[D1-R/D2 runtime observation]
+    H -. not observed in stock captures .-> I[No live exploit/root claim]
+    P[Fire seccomp/SELinux/native caller] -. exact policy/caller unknown .-> D

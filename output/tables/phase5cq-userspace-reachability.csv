@@ -1,0 +1,10 @@
+evidence_id,layer,subject,observation,confidence,next_safe_check
+P5CQ-001,AOSP userspace,pthread_cond signal/broadcast,uses bionic futex wake helper,Confirmed reference scope,inspect exact Fire libc
+P5CQ-002,AOSP userspace,pthread_cond wait,uses bionic futex wait helper,Confirmed reference scope,inspect exact Fire libc
+P5CQ-003,AOSP UAPI,futex operation definitions,PI and requeue-PI names exposed,Confirmed reference scope,do not infer caller
+P5CQ-004,AOSP syscall declarations,futex wrapper entry,not observed in Android 9 syscall table,Confirmed negative reference observation,inspect private/native callers
+P5CQ-005,AOSP policy,app seccomp files,reference policy boundary only,Confirmed reference scope,obtain Fire-specific policy artifact
+P5CQ-006,Fire PS7331 kernel,proxy dataflow,source/config path present,Confirmed source/config scope,seek non-triggering Fire userspace caller evidence
+P5CQ-007,Fire PS7331 runtime,app-domain policy,not directly observed,Unknown,offline policy review
+P5CQ-008,Fire PS7331 runtime,identity mismatch and cleanup,not observed in stock captures,Unknown,isolated instrumented environment only
+P5CQ-009,Fire artifacts,native requeue-PI caller,not established by bounded search,Negative observation only,expand offline artifact inventory

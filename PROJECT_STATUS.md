@@ -1001,3 +1001,25 @@ Outputs:
 - `output/tables/phase5cp-proxy-context.csv`
 - `output/call-graphs/phase5cp-proxy-context.mmd`
 - `tools/scripts/audit_phase5cp_proxy_context.py`
+
+## Phase 5CQ status
+
+Phase 5CQ audits Android 9 userspace reachability using official AOSP
+references. Android 9 r61 bionic pthread condition variables use ordinary
+futex wait/wake helpers and do not establish a requeue-PI caller. The AOSP UAPI
+header exposes PI/requeue-PI operation names, but the AOSP reference does not
+prove a Fire-specific native caller or policy allowance. Fire PS7331 runtime
+identity mismatch, wrong cleanup target, later consumer, memory effect and
+privilege transition remain unobserved/unproven.
+
+The phase is host-only/read-only. It does not execute futex, create a race,
+build or execute kernel code, access kernel memory, generate an address/payload,
+contact a device node, or perform a root operation.
+
+Outputs:
+
+- `findings/phase-5cq-android9-userspace-reachability.md`
+- `findings/phase-5cq-evidence-index.md`
+- `output/tables/phase5cq-userspace-reachability.csv`
+- `output/call-graphs/phase5cq-userspace-reachability.mmd`
+- `tools/scripts/audit_phase5cq_userspace_reachability.py`
