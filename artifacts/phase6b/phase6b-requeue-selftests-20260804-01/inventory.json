@@ -1,0 +1,194 @@
+{
+  "inputs": [
+    {
+      "creates_rt_thread": true,
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi.c",
+      "futex_cmp_requeue_pi_count": 2,
+      "futex_lock_pi_count": 4,
+      "futex_unlock_pi_count": 4,
+      "futex_wait_requeue_pi_count": 1,
+      "futex_wake_count": 2,
+      "includes_pthread": true,
+      "label": "futex_requeue_pi",
+      "lines": 409,
+      "private_futex_flag": true,
+      "pthread_create_count": 1,
+      "pthread_join_count": 3,
+      "pthread_kill_count": 0,
+      "requeue_lines": [
+        168,
+        172,
+        220,
+        233
+      ],
+      "role_function_lines": {
+        "blocking_child": [],
+        "broadcast_wakerfn": [
+          147
+        ],
+        "signal_wakerfn": [
+          195
+        ],
+        "third_party_blocker": [
+          260
+        ],
+        "waiterfn": [
+          111
+        ]
+      },
+      "sha256": "1ed88169b15385b97643e7621f1582b605eccacef7bba3de90142fc9e6a45cc2"
+    },
+    {
+      "creates_rt_thread": false,
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi_mismatched_ops.c",
+      "futex_cmp_requeue_pi_count": 1,
+      "futex_lock_pi_count": 0,
+      "futex_unlock_pi_count": 0,
+      "futex_wait_requeue_pi_count": 0,
+      "futex_wake_count": 1,
+      "includes_pthread": true,
+      "label": "futex_requeue_pi_mismatched_ops",
+      "lines": 135,
+      "private_futex_flag": true,
+      "pthread_create_count": 1,
+      "pthread_join_count": 1,
+      "pthread_kill_count": 0,
+      "requeue_lines": [
+        12,
+        96,
+        115,
+        119,
+        122
+      ],
+      "role_function_lines": {
+        "blocking_child": [
+          46
+        ],
+        "broadcast_wakerfn": [],
+        "signal_wakerfn": [],
+        "third_party_blocker": [],
+        "waiterfn": []
+      },
+      "sha256": "0862834b8cdfa12f93bf71b8b83b1c8f8dcfb9ae995ff8afc58a30b86047461d"
+    },
+    {
+      "creates_rt_thread": true,
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi_signal_restart.c",
+      "futex_cmp_requeue_pi_count": 1,
+      "futex_lock_pi_count": 1,
+      "futex_unlock_pi_count": 3,
+      "futex_wait_requeue_pi_count": 4,
+      "futex_wake_count": 0,
+      "includes_pthread": true,
+      "label": "futex_requeue_pi_signal_restart",
+      "lines": 223,
+      "private_futex_flag": true,
+      "pthread_create_count": 1,
+      "pthread_join_count": 1,
+      "pthread_kill_count": 2,
+      "requeue_lines": [
+        181,
+        183,
+        195
+      ],
+      "role_function_lines": {
+        "blocking_child": [],
+        "broadcast_wakerfn": [],
+        "signal_wakerfn": [],
+        "third_party_blocker": [],
+        "waiterfn": [
+          95
+        ]
+      },
+      "sha256": "d4a5e6926ca10568d11b6f46003dd3817824496de5d337ecd425dc6d7662a2cd"
+    },
+    {
+      "creates_rt_thread": false,
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/Makefile",
+      "futex_cmp_requeue_pi_count": 0,
+      "futex_lock_pi_count": 0,
+      "futex_unlock_pi_count": 0,
+      "futex_wait_requeue_pi_count": 0,
+      "futex_wake_count": 0,
+      "includes_pthread": false,
+      "label": "functional_Makefile",
+      "lines": 25,
+      "private_futex_flag": false,
+      "pthread_create_count": 0,
+      "pthread_join_count": 0,
+      "pthread_kill_count": 0,
+      "requeue_lines": [],
+      "role_function_lines": {
+        "blocking_child": [],
+        "broadcast_wakerfn": [],
+        "signal_wakerfn": [],
+        "third_party_blocker": [],
+        "waiterfn": []
+      },
+      "sha256": "1a202de8cdd825fa43ebb8e6981a0241385ca93ddb70afeddc6781750222cc3e"
+    },
+    {
+      "creates_rt_thread": false,
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/run.sh",
+      "futex_cmp_requeue_pi_count": 0,
+      "futex_lock_pi_count": 0,
+      "futex_unlock_pi_count": 0,
+      "futex_wait_requeue_pi_count": 0,
+      "futex_wake_count": 0,
+      "includes_pthread": false,
+      "label": "functional_run_sh",
+      "lines": 79,
+      "private_futex_flag": false,
+      "pthread_create_count": 0,
+      "pthread_join_count": 0,
+      "pthread_kill_count": 0,
+      "requeue_lines": [],
+      "role_function_lines": {
+        "blocking_child": [],
+        "broadcast_wakerfn": [],
+        "signal_wakerfn": [],
+        "third_party_blocker": [],
+        "waiterfn": []
+      },
+      "sha256": "344653a8e618e00fd1a33fcc1f5c5f92688c5f84ff36e6c4adddecd7d85caa30"
+    },
+    {
+      "creates_rt_thread": false,
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/Makefile",
+      "futex_cmp_requeue_pi_count": 0,
+      "futex_lock_pi_count": 0,
+      "futex_unlock_pi_count": 0,
+      "futex_wait_requeue_pi_count": 0,
+      "futex_wake_count": 0,
+      "includes_pthread": false,
+      "label": "futex_Makefile",
+      "lines": 29,
+      "private_futex_flag": false,
+      "pthread_create_count": 0,
+      "pthread_join_count": 0,
+      "pthread_kill_count": 0,
+      "requeue_lines": [],
+      "role_function_lines": {
+        "blocking_child": [],
+        "broadcast_wakerfn": [],
+        "signal_wakerfn": [],
+        "third_party_blocker": [],
+        "waiterfn": []
+      },
+      "sha256": "166b2f606a97422c6654402c5f89c12ae2aaddea8b8190f62fda22fcb75e86d5"
+    }
+  ],
+  "interpretation": {
+    "reason": "All requeue-PI functional tests use waiter/waker roles, pthread, or signal coordination.",
+    "single_thread_probe_equivalent": false
+  },
+  "schema": "phase6b-requeue-selftest-inventory-v1",
+  "scope": {
+    "adb": false,
+    "compiled": false,
+    "device_mutation": false,
+    "executed": false,
+    "host_only": true,
+    "installed": false
+  }
+}
