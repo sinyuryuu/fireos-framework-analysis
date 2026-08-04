@@ -1,0 +1,14 @@
+evidence_id,layer,source_location,observation,classification,confidence
+P5CP-001,source,futex.c:231-241,"futex_q stores the waiting task",SOURCE_ROLE,Confirmed
+P5CP-002,source,futex.c:2049-2068,"queue_me binds q->task to waiting current",SOURCE_WAITING_TASK_BINDING,Confirmed
+P5CP-003,source,futex.c:2839-2997,"wait_requeue_pi creates separate rt_mutex_waiter",SOURCE_PROXY_OBJECT,Confirmed
+P5CP-005,source,futex.c:1959-1965,"requeue path calls proxy lock",SOURCE_PROXY_CALLSITE,Confirmed
+P5CP-007,source,futex.c:1965,"stored this->task is passed to proxy API",SOURCE_STORED_TASK,Confirmed
+P5CP-008,source,rtmutex.c:1656-1658,"proxy API accepts explicit task distinct from implicit current",SOURCE_CONTEXT_SEPARATION,Confirmed
+P5CP-011,source,rtmutex.c:975-988,"waiter->task receives explicit task",SOURCE_WAITER_IDENTITY,Confirmed
+P5CP-012,source,rtmutex.c:1683,"non-zero proxy result enters cleanup branch",SOURCE_ERROR_BRANCH,Confirmed
+P5CP-014,source,rtmutex.c:1079-1090,"cleanup clears current->pi_blocked_on",SOURCE_PRE_FIX_CLEANUP,Confirmed
+P5CP-RET-001,source,rtmutex.c:641-645,"deadlock detection can return -EDEADLK after waiter setup",SOURCE_ERROR_PROVENANCE,Confirmed
+P5CP-FIX-001,reference,linux-stable-v6.1.175.c:1515-1530,"fixed reference explicitly documents waiter::task != current and uses waiter task",FIXED_SEMANTICS,Confirmed
+P5CP-RUNTIME-001,runtime,no same-execution trace,"proxy error cleanup was not observed on stock PS7331",DYNAMIC_BOUNDARY,Unobserved
+P5CP-RUNTIME-002,runtime,no post-cleanup trace,"post-cleanup invariant and consumer were not observed",DYNAMIC_BOUNDARY,Unobserved

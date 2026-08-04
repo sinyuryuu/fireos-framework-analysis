@@ -2499,3 +2499,27 @@ Outputs:
 - `output/call-graphs/phase5co-futex-config-resolution.mmd`
 - `tools/scripts/extract_phase5cn_futex_arch_members.py`
 - `tools/scripts/search_phase5cn_source_literals.py`
+
+## Phase 5CP status
+
+Phase 5CP refines the GhostLock identity question. The PS7331 source shows that
+the waiting thread binds `q->task` to its own `current`, while the separate
+requeue caller passes the stored `this->task` into
+`rt_mutex_start_proxy_lock()`. The proxy API has an explicit task parameter,
+but `remove_waiter()` uses the implicit caller `current`. Therefore source-level
+cross-context identity separation is confirmed; it does not require assuming a
+scheduler race merely to make the two task roles distinct.
+
+The remaining gates are narrower and still unobserved: a non-zero proxy error
+return that actually invokes `remove_waiter()`, the post-cleanup task/PI state,
+and any later consumer. The phase is host-only/read-only and performs no futex
+syscall, race, kernel execution, device I/O, address/payload generation or root
+operation.
+
+Outputs:
+
+- `findings/phase-5cp-ps7331-proxy-context-audit.md`
+- `findings/phase-5cp-evidence-index.md`
+- `output/tables/phase5cp-proxy-context.csv`
+- `output/call-graphs/phase5cp-proxy-context.mmd`
+- `tools/scripts/audit_phase5cp_proxy_context.py`

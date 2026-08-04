@@ -1,0 +1,23 @@
+flowchart TD
+    W[Waiting thread\nimplicit current = W] --> Q[queue_me\nq->task = current]
+    W --> RQW[futex_wait_requeue_pi\nq.rt_waiter = &rt_waiter]
+    RQW -. sleeps / hands off .-> Q
+    C[Requeue caller\nimplicit current = C] --> RQ[futex_requeue]
+    Q --> ST[stored this->task = W]
+    RQ --> P[rt_mutex_start_proxy_lock\nexplicit task = W]
+    ST --> P
+    P --> B[task_blocks_on_rt_mutex\nwaiter->task = W]
+    P --> E{ret non-zero?}
+    E -- yes --> X[remove_waiter]
+    X --> BAD[current->pi_blocked_on = NULL\ncurrent = C in cross-context call]
+    B -. identity separation .-> M[waiter->task W != current C]
+    M -. runtime observation missing .-> U[D1-R unknown]
+    E -. source error provenance .-> D[deadlock/chain return path\nsource only]
+    F[Fixed reference] --> GOOD[waiter_task = waiter->task\ncleanup waiter task]
+
+    classDef source fill:#e8f1ff,stroke:#4776a8,color:#102a43;
+    classDef warning fill:#fff4d6,stroke:#b7791f,color:#5f370e;
+    classDef unknown fill:#fde2e2,stroke:#c53030,color:#742a2a;
+    class W,Q,RQW,C,RQ,ST,P,B,E,X,BAD,F,GOOD,D source;
+    class M warning;
+    class U unknown;

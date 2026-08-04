@@ -978,3 +978,26 @@ Outputs:
 - `output/call-graphs/phase5co-futex-config-resolution.mmd`
 - `tools/scripts/extract_phase5cn_futex_arch_members.py`
 - `tools/scripts/search_phase5cn_source_literals.py`
+
+## Phase 5CP status
+
+Phase 5CP confirms the PS7331 source-context distinction behind the identity
+question: `queue_me()` stores the waiting thread in `q->task`, the requeue path
+passes that stored task to the proxy API, and `remove_waiter()` still cleans the
+implicit caller `current`. The fixed reference explicitly documents that
+proxy-lock invocation can have `waiter::task != current` and uses the waiter task
+for cleanup. This is a stronger source/dataflow result than merely observing two
+names in different functions, but it remains source scope.
+
+No stock-device observation shows the proxy error branch executing,
+`remove_waiter()` being called, a post-cleanup invariant violation, a memory
+effect or privilege gain. No futex syscall, race trigger, kernel build or device
+mutation was performed.
+
+Outputs:
+
+- `findings/phase-5cp-ps7331-proxy-context-audit.md`
+- `findings/phase-5cp-evidence-index.md`
+- `output/tables/phase5cp-proxy-context.csv`
+- `output/call-graphs/phase5cp-proxy-context.mmd`
+- `tools/scripts/audit_phase5cp_proxy_context.py`
