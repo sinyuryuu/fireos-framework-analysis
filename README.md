@@ -2017,3 +2017,19 @@ Phase 5BL outputs:
 - `adb/phase5/PHASE5BL-FUTEX-GATES-20260804-01/`
 - `artifacts/phase5/phase5bl-futex-gates-analysis-20260804-01/`
 - `output/tables/phase5bl-runtime-gates.csv`
+
+## Phase 5BM status
+
+Phase 5BM created a host-only provenance ledger for the GhostLock binary
+question. It confirms that exact PS7330 runtime/source evidence exists, but no
+verified exact PS7330 signed boot/vmlinux or complete boot-chain set is present
+in the workspace. The complete local OTA and boot image are PS7331 and remain
+`VERSION_MISMATCH`; the installed PS7330 boot read probe returned
+`Permission denied`. No files were deleted and no device operation was run.
+
+Phase 5BM outputs:
+
+- `findings/phase-5bm-ps7330-artifact-provenance.md`
+- `findings/phase-5bm-evidence-index.md`
+- `tools/scripts/build_phase5bm_artifact_ledger.py`
+- `artifacts/phase5/phase5bm-artifact-ledger-20260804-01/`
