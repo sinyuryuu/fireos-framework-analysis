@@ -1,0 +1,10 @@
+flowchart TD
+    A["task_blocks_on_rt_mutex()\nowner == task\nreturn -EDEADLK\nline 973"]
+    B["waiter->task = task\nline 977"]
+    C["rt_mutex_start_proxy_lock()\nif (unlikely(ret))\nline 1683"]
+    D["remove_waiter(lock, waiter)\nline 1684"]
+    E["PS7331 pre-fix\ncurrent->pi_blocked_on = NULL\nline 1089"]
+    F["Complete-backport review\nprimary waiter-task fix +\nnot-enqueued guard"]
+    A -. "returns before assignment" .-> C
+    B --> C --> D --> E
+    D -. "must be re-audited after primary fix" .-> F

@@ -2259,3 +2259,22 @@ Phase 5BX outputs:
 - `output/tables/phase5bx-ghostlock-path.csv`
 - `output/call-graphs/phase5bx-ghostlock-path.mmd`
 - `artifacts/phase5/phase5bx-ps7331-exact-path-audit-20260804-01/`
+
+## Phase 5BY status
+
+Phase 5BY records the public follow-up fix review for CVE-2026-53163. The
+PS7331 source returns early from `task_blocks_on_rt_mutex()` before assigning
+`waiter->task`, while its proxy wrapper conditionally calls `remove_waiter()`;
+the source is still pre-primary-fix and must not be treated as a complete modern
+fix reference. The host-only checker classifies it as
+`PRE_PRIMARY_FIX_WITH_EARLY_RETURN_GUARD_REVIEW`.
+
+Phase 5BY outputs:
+
+- `findings/phase-5by-ghostlock-fix-chain.md`
+- `findings/phase-5by-evidence-index.md`
+- `output/tables/phase5by-ghostlock-fix-chain.csv`
+- `output/call-graphs/phase5by-ghostlock-fix-chain.mmd`
+- `tools/scripts/analyze_phase5by_ghostlock_fix_chain.py`
+- `tests/test_phase5by_ghostlock_fix_chain.py`
+- `artifacts/phase5/phase5by-ps7331-ghostlock-fix-chain-20260804-02/`

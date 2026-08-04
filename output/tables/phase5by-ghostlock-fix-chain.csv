@@ -1,0 +1,7 @@
+evidence_id,source,location,observed_value,classification
+P5BY-001,rtmutex.c,973,"return -EDEADLK before waiter->task assignment",EARLY_RETURN_GUARD_REVIEW
+P5BY-001,rtmutex.c,977,"waiter->task = task",WAITER_ASSIGNMENT
+P5BY-001,rtmutex.c,1089,"current->pi_blocked_on = NULL",PRE_PRIMARY_FIX
+P5BY-001,rtmutex.c,1683-1684,"if (unlikely(ret)) remove_waiter(lock, waiter)",PROXY_CLEANUP_CALL
+P5BY-002,host analyzer,fix-chain.json,"PRE_PRIMARY_FIX_WITH_EARLY_RETURN_GUARD_REVIEW",STATIC_ONLY
+P5BY-003,NVD,CVE-2026-53163,"follow-up un-enqueued waiter fix",UPSTREAM_FOLLOW_UP

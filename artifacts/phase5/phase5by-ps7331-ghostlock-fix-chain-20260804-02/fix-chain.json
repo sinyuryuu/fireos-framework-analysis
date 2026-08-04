@@ -1,0 +1,66 @@
+{
+  "classification": "PRE_PRIMARY_FIX_WITH_EARLY_RETURN_GUARD_REVIEW",
+  "follow_up_guard_review_needed": true,
+  "path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+  "primary_fix_present": false,
+  "primary_fix_shape": true,
+  "remove_waiter": {
+    "current_cleanup": [
+      {
+        "line": 1089,
+        "text": "current->pi_blocked_on = NULL;"
+      }
+    ],
+    "span": [
+      1079,
+      1129
+    ],
+    "waiter_task_references": []
+  },
+  "root_or_privilege_gain_proven": false,
+  "rt_mutex_start_proxy_lock": {
+    "conditional_remove": [
+      {
+        "line": 1683,
+        "text": "if (unlikely(ret))"
+      }
+    ],
+    "remove_waiter_calls": [
+      {
+        "line": 1684,
+        "text": "remove_waiter(lock, waiter);"
+      }
+    ],
+    "span": [
+      1656,
+      1691
+    ]
+  },
+  "runtime_exploitability_proven": false,
+  "scope": "host-only source control-flow audit; no compilation, device I/O, futex trigger, address, offset, or payload",
+  "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+  "task_blocks_on_rt_mutex": {
+    "early_deadlock_before_waiter_assignment": [
+      {
+        "line": 973,
+        "text": "return -EDEADLK;"
+      }
+    ],
+    "early_deadlock_returns": [
+      {
+        "line": 973,
+        "text": "return -EDEADLK;"
+      }
+    ],
+    "span": [
+      952,
+      1032
+    ],
+    "waiter_assignment": [
+      {
+        "line": 977,
+        "text": "waiter->task = task;"
+      }
+    ]
+  }
+}
