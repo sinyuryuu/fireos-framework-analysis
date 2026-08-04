@@ -83,6 +83,17 @@ remount、SELinux 修改或任何非官方分割區操作。這些步驟會把 s
 與 root-related components。這些資料足以確認它是針對另一個 kernel generation
 與另一個 SoC 的專案，不足以證明 Fire PS7331 的 ABI 或 exploitability。
 
+本次只讀 pinned provenance：
+
+```text
+repository=datfooldive/ghostlock-emerald
+HEAD=ebb355d302629a034d0959e5e579496559e8f84e
+Makefile_API=35
+```
+
+只讀命令為 `git ls-remote ... HEAD` 與對應的 GitHub raw README/Makefile
+metadata；沒有 clone、build、install 或 execute。
+
 本專案保存的 PS7331 exact source 仍顯示：
 
 - build-selected `rtmutex.c`：`artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c`
