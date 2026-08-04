@@ -1,0 +1,3 @@
+evidence_id,source_scope,files,rows,ordinary_direct_futex_calls,pi_calls,requeue_pi_calls,interpretation,confidence
+P5DE-001,"PS7331 non-kernel source roots",2,26,8,0,0,"Only GLib gbitlock/gthread-posix source uses direct __NR_futex with FUTEX_WAIT/FUTEX_WAKE; no PI or requeue-PI call appears","Confirmed source-scan scope"
+P5DE-002,"platform + fireos non-kernel source",2,26,8,0,0,"Kernel trees excluded; all matching rows are ordinary external GLib userspace source","Confirmed bounded scope"

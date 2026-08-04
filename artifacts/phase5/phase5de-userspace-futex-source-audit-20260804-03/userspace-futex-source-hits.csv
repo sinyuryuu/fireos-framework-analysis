@@ -1,0 +1,27 @@
+root,path,line,pattern,class,excerpt
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,56,FUTEX_WAIT,external_userspace_source,* g_futex_wait:
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,64,FUTEX_WAKE,external_userspace_source,"* To unblock, call g_futex_wake() on @address."
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,69,FUTEX_WAKE,external_userspace_source,* waiting process will unblock due to a g_futex_wake() call in a
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,73,FUTEX_WAIT,external_userspace_source,"g_futex_wait (const volatile gint *address,"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,76,__NR_futex,external_userspace_source,"syscall (__NR_futex, address, (gsize) FUTEX_WAIT, (gsize) value, NULL);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,80,FUTEX_WAKE,external_userspace_source,* g_futex_wake:
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,83,FUTEX_WAIT,external_userspace_source,"* Nominally, wakes one thread that is blocked in g_futex_wait() on"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,86,FUTEX_WAIT,external_userspace_source,"* As mentioned in the documention for g_futex_wait(), spurious"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,91,FUTEX_WAKE,external_userspace_source,g_futex_wake (const volatile gint *address)
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,93,__NR_futex,external_userspace_source,"syscall (__NR_futex, address, (gsize) FUTEX_WAKE, (gsize) 1, NULL);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,123,FUTEX_WAIT,external_userspace_source,"g_futex_wait (const volatile gint *address,"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,156,FUTEX_WAKE,external_userspace_source,g_futex_wake (const volatile gint *address)
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,228,FUTEX_WAIT,external_userspace_source,"g_futex_wait (address, v);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,245,FUTEX_WAIT,external_userspace_source,"g_futex_wait (address, v);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,334,FUTEX_WAKE,external_userspace_source,g_futex_wake (address);
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,357,FUTEX_WAIT,external_userspace_source,"* g_futex_wait (g_futex_int_address (address), (guint) value);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,361,FUTEX_WAKE,external_userspace_source,* g_futex_wake (g_futex_int_address (int_address));
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,423,FUTEX_WAIT,external_userspace_source,"g_futex_wait (g_futex_int_address (address), v);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,441,FUTEX_WAIT,external_userspace_source,"g_futex_wait (g_futex_int_address (address), (guint) v);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gbitlock.c,532,FUTEX_WAKE,external_userspace_source,g_futex_wake (g_futex_int_address (address));
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gthread-posix.c,1308,__NR_futex,external_userspace_source,"syscall (__NR_futex, &mutex->i[0], (gsize) FUTEX_WAIT, (gsize) 2, NULL);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gthread-posix.c,1324,__NR_futex,external_userspace_source,"syscall (__NR_futex, &mutex->i[0], (gsize) FUTEX_WAKE, (gsize) 1, NULL);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gthread-posix.c,1390,__NR_futex,external_userspace_source,"syscall (__NR_futex, &cond->i[0], (gsize) FUTEX_WAIT, (gsize) sampled, NULL);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gthread-posix.c,1399,__NR_futex,external_userspace_source,"syscall (__NR_futex, &cond->i[0], (gsize) FUTEX_WAKE, (gsize) 1, NULL);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gthread-posix.c,1407,__NR_futex,external_userspace_source,"syscall (__NR_futex, &cond->i[0], (gsize) FUTEX_WAKE, (gsize) INT_MAX, NULL);"
+firmware/extracted/PS7331-SOURCE-20250617/fireos,fireos/external/glib/glib/gthread-posix.c,1437,__NR_futex,external_userspace_source,"res = syscall (__NR_futex, &cond->i[0], (gsize) FUTEX_WAIT, (gsize) sampled, &span);"

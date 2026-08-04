@@ -1,0 +1,28 @@
+{
+  "generated_at_utc": "2026-08-04T11:16:31.199171+00:00",
+  "input_roots": [
+    "artifacts/phase5/phase5cq-fire-native-20260804-01",
+    "artifacts/phase5/phase5cr-fire-native-20260804-02",
+    "artifacts/phase5/phase5cs-fire-amazon-native-20260804-01"
+  ],
+  "input_files": [],
+  "input_files_seen": 16,
+  "elf_files_scanned": 16,
+  "result_counts": {
+    "no_named_requeue_pi_marker": 10,
+    "ordinary_or_pi_helper_marker_only": 5,
+    "generic_syscall_boundary_only": 1
+  },
+  "named_requeue_pi_files": [],
+  "generic_syscall_boundary_files": [
+    "artifacts/phase5/phase5cs-fire-amazon-native-20260804-01/files/libcutils.so"
+  ],
+  "interpretation": "String and symbol markers do not establish a syscall operation or runtime edge. A named requeue-PI marker would justify focused offline review; a generic syscall import remains non-specific.",
+  "safety": {
+    "elf_executed": false,
+    "device_contacted": false,
+    "futex_triggered": false,
+    "kernel_memory_accessed": false,
+    "payload_or_address_generated": false
+  }
+}

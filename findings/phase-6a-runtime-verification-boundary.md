@@ -58,5 +58,7 @@ kernel addresses、race schedule 或 exploit payload。
 | Cleanup residue/later consumer | 未觀察 |
 | Memory effect/privilege transition | 未證實；因風險拒絕 |
 
-目前最有資訊量且不擴大風險的下一步，是擴充離線 Fire native inventory與
-policy/source mapping，而不是直接在 stock tablet 上追 race。
+Phase 5DD 已將保存的 16 個 Fire ELF 做第一輪 marker/symbol inventory；
+目前仍沒有 named requeue-PI caller。下一個最有資訊量且不擴大風險的步驟
+是擴充未擷取 native component 與 policy/source mapping，而不是直接在
+stock tablet 上追 race。

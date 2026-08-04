@@ -1,0 +1,31 @@
+{
+  "generated_at_utc": "2026-08-04T11:21:15.598658+00:00",
+  "source_roots": [
+    "firmware/extracted/PS7331-SOURCE-20250617/platform",
+    "firmware/extracted/PS7331-SOURCE-20250617/fireos"
+  ],
+  "kernel_trees_excluded": true,
+  "hit_rows": 26,
+  "hit_files": 2,
+  "class_counts": {
+    "external_userspace_source": 26
+  },
+  "pattern_counts": {
+    "FUTEX_WAIT": 10,
+    "FUTEX_WAKE": 8,
+    "__NR_futex": 8
+  },
+  "ordinary_direct_syscall_rows": 8,
+  "pi_rows": 0,
+  "requeue_pi_rows": 0,
+  "requeue_pi_files": [],
+  "interpretation": "Non-kernel source is evidence about build inputs, not proof that the same code shipped or ran on the tablet. Ordinary FUTEX_WAIT/WAKE does not enter the requeue-PI proxy path.",
+  "safety": {
+    "source_executed": false,
+    "kernel_built": false,
+    "device_contacted": false,
+    "futex_triggered": false,
+    "kernel_memory_accessed": false,
+    "payload_or_address_generated": false
+  }
+}

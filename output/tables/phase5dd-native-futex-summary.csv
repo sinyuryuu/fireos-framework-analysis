@@ -1,0 +1,6 @@
+evidence_id,artifact_scope,elf_count,named_requeue_pi_files,ordinary_or_pi_helper_files,generic_syscall_only_files,interpretation,confidence
+P5DD-001,"Fire libc + linker captures",6,0,4,0,"libc/linker expose ordinary futex and PI-lock helper markers; no named requeue-PI marker","Confirmed artifact-scan scope"
+P5DD-002,"Fire ART and Android runtime",2,0,1,0,"ART contains ordinary futex/compare-requeue diagnostic markers and syscall symbol surface; no named PI requeue marker","Confirmed marker scope; semantic mapping remains bounded"
+P5DD-003,"Amazon native selection",5,0,0,0,"Selected Amazon native libraries contain no named futex/requeue/rtmutex marker in this scan","Negative observation only"
+P5DD-004,"Binder/utils/cutils",3,0,0,1,"libcutils exposes a generic syscall boundary only; operation and call edge are unknown","Confirmed bounded symbol scope"
+P5DD-005,"All preserved ELF inputs",16,0,5,1,"No artifact establishes a shipped Fire userspace FUTEX_*_REQUEUE_PI caller","Negative observation only"

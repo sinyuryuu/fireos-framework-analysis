@@ -2804,3 +2804,37 @@ Phase 6A remains a runtime-observation design boundary. A stock-device
 requeue-PI trigger or race is not part of this repository workflow; any
 instrumented emulator/research-kernel result must be labeled `LAB_ONLY` and
 must not be presented as PS7331 stock-runtime evidence.
+
+## Phase 5DD status
+
+Phase 5DD extends the caller audit to all 16 preserved Fire ELF inputs from
+the libc/linker, ART/runtime, Binder/utils and selected Amazon-native captures.
+There are no named `REQUEUE_PI` markers. The remaining markers are ordinary
+futex/PI-lock helpers, ART compare-requeue diagnostics, or a generic `syscall`
+boundary. These are artifact-surface observations, not runtime call proof.
+
+Outputs:
+
+- `findings/phase-5dd-native-futex-surface.md`
+- `findings/phase-5dd-evidence-index.md`
+- `output/tables/phase5dd-native-futex-summary.csv`
+- `tools/scripts/audit_phase5dd_native_futex_surface.py`
+- local inventory under `artifacts/phase5/phase5dd-native-futex-surface-20260804-03/`
+
+## Phase 5DE status
+
+Phase 5DE excludes kernel trees and searches the PS7331 source package for
+userspace futex operations. It finds only GLib ordinary direct
+`syscall(__NR_futex, FUTEX_WAIT/FUTEX_WAKE, ...)` in two external source files;
+there are zero `FUTEX_LOCK_PI`, `FUTEX_UNLOCK_PI` or requeue-PI rows. This is
+source/build-input evidence, not proof that the code shipped or ran on the
+tablet, but it further separates ordinary futex synchronization from the
+GhostLock proxy path.
+
+Outputs:
+
+- `findings/phase-5de-userspace-futex-source.md`
+- `findings/phase-5de-evidence-index.md`
+- `output/tables/phase5de-userspace-futex-summary.csv`
+- `tools/scripts/audit_phase5de_userspace_futex_source.py`
+- local audit under `artifacts/phase5/phase5de-userspace-futex-source-audit-20260804-03/`

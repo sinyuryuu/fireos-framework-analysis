@@ -1290,3 +1290,35 @@ Outputs:
 Phase 6A is currently limited to a safe observation schema and lab-only model.
 It does not authorize a stock-device futex/race trigger; any isolated
 instrumented environment result must be labeled `LAB_ONLY`.
+
+## Phase 5DD status
+
+Phase 5DD extended the native caller audit to 16 preserved Fire ELF inputs.
+No named `FUTEX_*_REQUEUE_PI` marker was found. Five files show ordinary
+futex/PI-helper or ART compare-requeue markers, and one file shows only a
+generic syscall boundary. No result establishes a shipped Fire requeue-PI
+caller or stock runtime execution.
+
+Outputs:
+
+- `findings/phase-5dd-native-futex-surface.md`
+- `findings/phase-5dd-evidence-index.md`
+- `output/tables/phase5dd-native-futex-summary.csv`
+- `tools/scripts/audit_phase5dd_native_futex_surface.py`
+- local inventory under `artifacts/phase5/phase5dd-native-futex-surface-20260804-03/`
+
+## Phase 5DE status
+
+Phase 5DE searched the non-kernel PS7331 source roots. It found 26 rows in two
+external GLib files, including eight direct `syscall(__NR_futex, ...)` rows,
+all using ordinary `FUTEX_WAIT`/`FUTEX_WAKE`. It found zero PI or requeue-PI
+userspace source rows. This strengthens the ordinary-versus-proxy distinction,
+but remains build-input evidence rather than stock runtime proof.
+
+Outputs:
+
+- `findings/phase-5de-userspace-futex-source.md`
+- `findings/phase-5de-evidence-index.md`
+- `output/tables/phase5de-userspace-futex-summary.csv`
+- `tools/scripts/audit_phase5de_userspace_futex_source.py`
+- local audit under `artifacts/phase5/phase5de-userspace-futex-source-audit-20260804-03/`
