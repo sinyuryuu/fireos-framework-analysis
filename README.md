@@ -1815,3 +1815,27 @@ legacy tree is byte-identical to the old v4.4.146 reference but is not the path
 named by the build script. Selected source comparison artifacts are preserved
 locally under `artifacts/phase5/` and are summarized by the Phase 5BB evidence
 index. No source was built and no device state changed.
+
+### Phase 5BC — GhostLock semantic boundary
+
+Phase 5BC adds a deterministic, source-only semantics checker. It confirms that
+the build-selected PS7331 `remove_waiter()` still clears
+`current->pi_blocked_on`, retains the proxy rollback call, and contains no
+`waiter->task` remediation. It also records the absence of an exact
+KFTRWI/trona/MT8183 public Android target in the reviewed route matrix.
+
+The subsequent source provenance check found the exact
+`kernel/mediatek/mt8183/4.4/arch/arm64/configs/trona_defconfig` member in the
+official PS7331 archive. It is recorded as a build input only; the PS7331
+boot-embedded focus config remains equal to the preserved PS7330 runtime focus
+config, and no upgrade was performed.
+
+Phase 5BC outputs:
+
+- `findings/phase-5bc-ghostlock-semantic-boundary.md`
+- `findings/phase-5bc-evidence-index.md`
+- `tools/scripts/check_phase5_ghostlock_source_semantics.py`
+- `tools/scripts/compare_phase5_defconfig_focus.py`
+- `artifacts/phase5/exact-kernel-source-review-7331-trona-defconfig-member-20260804-01/metadata.tsv`
+- `artifacts/phase5/phase5bc-defconfig-focus-20260804-01/`
+- `adb/phase5/PHASE5BC-DEVICE-POSTCHECK-20260804-01/`

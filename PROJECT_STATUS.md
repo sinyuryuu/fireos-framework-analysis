@@ -244,3 +244,25 @@ and legacy `kernel/mediatek/4.4` trees. The build-selected `mt8183/4.4`
 byte-identical to the old v4.4.146 reference but is not the build-script path.
 This strengthens the decision to defer PS7331 as a GhostLock remediation; it
 does not claim that no other PS7331 security changes exist.
+
+## Phase 5BC status
+
+The source-only semantics checker confirms the pre-fix `current->pi_blocked_on`
+pattern in both the PS7331 build-selected `mt8183/4.4` source and the legacy
+tree. The public Android route matrix still has no exact KFTRWI/trona/MT8183
+GhostLock target, and the pinned mtk-su route remains a prior failed result.
+The exact PS7331 build-selected `trona_defconfig` was subsequently extracted
+from the official source archive. It is a partial Kconfig input, not a final
+signed Image; its omissions are not interpreted as disabled symbols. The
+PS7331 boot-embedded focus config remains equal to the preserved PS7330 runtime
+focus config. No live exploit, upgrade, or low-level write was attempted.
+
+Phase 5BC outputs:
+
+- `findings/phase-5bc-ghostlock-semantic-boundary.md`
+- `findings/phase-5bc-evidence-index.md`
+- `tools/scripts/check_phase5_ghostlock_source_semantics.py`
+- `tools/scripts/compare_phase5_defconfig_focus.py`
+- `artifacts/phase5/exact-kernel-source-review-7331-trona-defconfig-member-20260804-01/metadata.tsv`
+- `artifacts/phase5/phase5bc-defconfig-focus-20260804-01/`
+- `adb/phase5/PHASE5BC-DEVICE-POSTCHECK-20260804-01/`
