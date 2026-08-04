@@ -1,0 +1,17 @@
+flowchart TD
+  RB[0x41ae44\norr w5,wzr,#1]
+  RC[0x41ae5c\nbl 0x41be00]
+  SB[0x41af78\nmov w5,wzr]
+  SC[0x41af80\nbl 0x41be00]
+  H[0x41be00\nstripped helper candidate]
+  B[B41bdf4\nterminator 0x41be48\ntbnz w5,#0]
+  A[0x41c30c\nbranch target]
+  P[0x41be4c\nfall-through path]
+  U[High-level policy meaning\nUNRESOLVED]
+  RB --> RC --> H
+  SB --> SC --> H
+  H --> B
+  B --> A
+  B --> P
+  A --> U
+  P --> U

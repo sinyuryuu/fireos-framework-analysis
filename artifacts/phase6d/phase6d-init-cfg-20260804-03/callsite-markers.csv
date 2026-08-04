@@ -1,0 +1,9 @@
+address,instruction,role
+0x41ae44,"orr	w5, wzr, #0x1",known_loader_landmark
+0x41ae5c,bl	0x41be00 <.text+0x1bc00>,known_loader_landmark
+0x41ae5c,bl	0x41be00 <.text+0x1bc00>,call_common_helper_candidate
+0x41af78,"mov	w5, wzr",known_loader_landmark
+0x41af80,bl	0x41be00 <.text+0x1bc00>,known_loader_landmark
+0x41af80,bl	0x41be00 <.text+0x1bc00>,call_common_helper_candidate
+0x41be48,"tbnz	w5, #0x0, 0x41c30c <.text+0x1c10c>",known_loader_landmark
+0x41c30c,bl	0x4ab980 <.text+0xab780>,known_loader_landmark

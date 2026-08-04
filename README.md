@@ -3360,6 +3360,19 @@ Outputs:
 - `output/call-graphs/phase6d-init-branch-window.mmd`
 - `artifacts/phase6d/phase6d-init-branch-window-20260804-02/`
 
+The extended conservative CFG parser produces 423 blocks and 663 explicit
+branch/fall-through edges for the selected loader window. It confirms the
+the `0x41be48` `w5` branch (terminator of conservative block `B41bdf4`) to
+`0x41c30c` and its `0x41be4c` fall-through, while
+keeping the high-level policy meaning unresolved.
+
+Outputs:
+
+- `tools/scripts/recover_phase6d_init_cfg.py`
+- `findings/phase-6d-init-cfg.md`
+- `output/call-graphs/phase6d-init-cfg.mmd`
+- `artifacts/phase6d/phase6d-init-cfg-20260804-03/`
+
 The classifier is host-only, refuses to overwrite output, and supports
 `--dry-run`. It does not execute `/init`, inject boot properties, select
 alternate policy, bypass AVB, remount partitions, or create a root payload.
