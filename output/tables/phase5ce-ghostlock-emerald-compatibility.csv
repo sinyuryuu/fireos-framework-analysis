@@ -1,0 +1,8 @@
+evidence_id,dimension,emerald_profile,fire_ps7331_profile,assessment,confidence
+P5CE-001,device_soc,Poco M6 Pro / MT6789,Fire HD 10 / MT8183,mismatch,Confirmed
+P5CE-001,kernel,Android 16 / 6.12.30,Android 9 / 4.4 family,mismatch,Confirmed
+P5CE-002,build,NDK API 35 AArch64,PS7331 vendor kernel build,mismatch,Confirmed
+P5CE-003,target_metadata,hard-coded build/layout profile,separate Fire boot/source artifacts,no shared profile,Strong evidence
+P5CE-004,device_offsets,Emerald kernel-version entry,Fire profile not present,not portable,Strong evidence
+P5CE-002,root_stage,root/user-mode-helper/physical-RW-related modules,not validated on Fire,unproven on Fire,Confirmed public-source scope
+P5CE-007,execution,not run,not run,safety boundary maintained,Confirmed

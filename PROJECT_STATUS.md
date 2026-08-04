@@ -800,3 +800,19 @@ Phase 5CD outputs:
 - `artifacts/phase5/phase5cd-ps7331-cleanup-consumers-20260804-01/`
 - `output/tables/phase5cd-cleanup-consumers.csv`
 - `output/call-graphs/phase5cd-cleanup-consumers.mmd`
+
+## Phase 5CE status
+
+Phase 5CE reviews the public `ghostlock-emerald` repository as a target-profile
+reference only. Its README/Makefile/source metadata target Poco M6 Pro/MT6789,
+Android 16 and kernel 6.12.30, with hard-coded build/layout data and root/
+physical-RW-related components. Fire PS7331 is Android 9/MT8183/4.4-family and
+has no shared target profile. The Emerald binary was not cloned, built, installed
+or executed.
+
+Phase 5CE outputs:
+
+- `findings/phase-5ce-ghostlock-emerald-compatibility.md`
+- `findings/phase-5ce-evidence-index.md`
+- `output/tables/phase5ce-ghostlock-emerald-compatibility.csv`
+- `artifacts/phase5/phase5ce-ghostlock-emerald-compatibility-20260804-01/`
