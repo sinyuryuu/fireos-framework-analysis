@@ -3193,3 +3193,27 @@ The selected-device read-only boundary capture is retained locally at
 `findings/phase-6c-runtime-capture-20260804-01.md`. Its HOME/setup-state
 observation is snapshot-scoped and is not treated as GhostLock runtime or root
 evidence.
+
+## Phase 6C `/init` policy-loader static audit
+
+The preserved PS7331 `/init` was disassembled on the host without executing
+the ELF. An ADRP/ADD mapping confirms code-level references to both
+`rootable_*` and standard SELinux policy paths. The two path-building regions
+call a common stripped helper with different flag values, and a separate
+function compares `androidboot.selinux` with `permissive`. This is provenance
+evidence for a policy-loader decision surface, not evidence that the rootable
+variant is active or that shell can change it.
+
+Outputs:
+
+- `tools/scripts/analyze_phase6c_init_policy_loader.py`
+- `findings/phase-6c-init-policy-loader-analysis.md`
+- `findings/phase-6c-init-policy-loader-evidence-index.md`
+- `findings/phase-6b-6c-follow-up.md`
+- `output/call-graphs/phase6c-policy-loader.mmd`
+- `artifacts/phase6c/phase6c-init-policy-loader-audit-20260804-02/`
+
+The analyzer is host-only, refuses to overwrite an existing output, and
+supports `--dry-run`. It does not contact ADB, load policy, change boot
+properties, trigger futex/race/panic behavior, access kernel memory, or emit a
+root payload.

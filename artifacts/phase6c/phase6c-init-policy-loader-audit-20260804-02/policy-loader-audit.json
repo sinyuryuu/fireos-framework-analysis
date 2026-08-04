@@ -1,0 +1,239 @@
+{
+  "code_references": [
+    {
+      "add_address": "0x41ad8c",
+      "adrp_address": "0x41ad80",
+      "marker": "/vendor/etc/selinux/rootable_plat_pub_versioned.cil",
+      "register": "x1",
+      "target_vma": "0x588607"
+    },
+    {
+      "add_address": "0x41adb4",
+      "adrp_address": "0x41adac",
+      "marker": "/vendor/etc/selinux/rootable_vendor_sepolicy.cil",
+      "register": "x9",
+      "target_vma": "0x58863b"
+    },
+    {
+      "add_address": "0x41ade8",
+      "adrp_address": "0x41ade0",
+      "marker": "/odm/etc/selinux/rootable_odm_sepolicy.cil",
+      "register": "x8",
+      "target_vma": "0x58866c"
+    },
+    {
+      "add_address": "0x41ae1c",
+      "adrp_address": "0x41ae14",
+      "marker": "rootable_fireos_sepolicy.cil",
+      "register": "x9",
+      "target_vma": "0x588697"
+    },
+    {
+      "add_address": "0x41ae54",
+      "adrp_address": "0x41ae50",
+      "marker": "/system/etc/selinux/rootable_plat_sepolicy.cil",
+      "register": "x0",
+      "target_vma": "0x5885d8"
+    },
+    {
+      "add_address": "0x41aeb0",
+      "adrp_address": "0x41aea8",
+      "marker": "/vendor/etc/selinux/plat_pub_versioned.cil",
+      "register": "x8",
+      "target_vma": "0x5886b4"
+    },
+    {
+      "add_address": "0x41aee4",
+      "adrp_address": "0x41aedc",
+      "marker": "/vendor/etc/selinux/vendor_sepolicy.cil",
+      "register": "x8",
+      "target_vma": "0x5886df"
+    },
+    {
+      "add_address": "0x41af20",
+      "adrp_address": "0x41af18",
+      "marker": "/odm/etc/selinux/odm_sepolicy.cil",
+      "register": "x9",
+      "target_vma": "0x588707"
+    },
+    {
+      "add_address": "0x41af44",
+      "adrp_address": "0x41af40",
+      "marker": "fireos_sepolicy.cil",
+      "register": "x8",
+      "target_vma": "0x588729"
+    },
+    {
+      "add_address": "0x41bf08",
+      "adrp_address": "0x41bf00",
+      "marker": "/system/etc/selinux/plat_and_mapping_sepolicy.cil.sha256",
+      "register": "x0",
+      "target_vma": "0x5888a0"
+    }
+  ],
+  "generated_at_utc": "2026-08-04T14:20:59.028072+00:00",
+  "input": {
+    "elf_execution": false,
+    "objdump": "objdump",
+    "path": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/root/init",
+    "sha256": "e72ed4e90d73b88be341985ebd624725b67d67967d04157317456233e15f31fd"
+  },
+  "limits": [
+    "A code reference proves only that the stripped /init contains a path-building or loader reference.",
+    "The audit cannot identify the active policy variant on a stock boot.",
+    "The audit cannot infer the exact high-level meaning of stripped helper calls or w5."
+  ],
+  "program_headers": [
+    {
+      "align_power": 16,
+      "filesz": 1947516,
+      "flags": "r-x",
+      "memsz": 1947516,
+      "offset": 0,
+      "paddr": 4194304,
+      "vaddr": 4194304
+    },
+    {
+      "align_power": 16,
+      "filesz": 44136,
+      "flags": "rw-",
+      "memsz": 79596,
+      "offset": 1991408,
+      "paddr": 6251248,
+      "vaddr": 6251248
+    }
+  ],
+  "safety": {
+    "boot_property_changed": false,
+    "device_contacted": false,
+    "elf_executed": false,
+    "exploit_or_root_payload": false,
+    "host_only": true,
+    "kernel_memory_accessed": false,
+    "selinux_policy_loaded": false
+  },
+  "schema": "phase6c-init-policy-loader-audit-v1",
+  "static_landmarks": [
+    {
+      "address": "0x4041fc",
+      "classification": "static_call_site_only",
+      "observation": "direct call to 0x41b748, followed by direct call to 0x41ad00"
+    },
+    {
+      "address": "0x41ad00",
+      "classification": "rootable_path_builder_candidate",
+      "observation": "builds several policy-path records and calls 0x41be00 with w5=1"
+    },
+    {
+      "address": "0x41af80",
+      "classification": "standard_path_builder_candidate",
+      "observation": "calls 0x41be00 with w5=0 after standard policy-path setup"
+    },
+    {
+      "address": "0x41bd60",
+      "classification": "boot_property_parser_candidate",
+      "observation": "compares a 19-byte key against androidboot.selinux and a 10-byte value against permissive, then writes zero to a field on success"
+    },
+    {
+      "address": "0x41be48",
+      "classification": "unresolved_branch",
+      "observation": "branches on w5 before the policy-loader body; exact semantic meaning of the flag is unresolved in stripped code"
+    }
+  ],
+  "string_markers": [
+    {
+      "file_offset": "0x1885d8",
+      "load_segment": 0,
+      "marker": "/system/etc/selinux/rootable_plat_sepolicy.cil",
+      "vma": "0x5885d8"
+    },
+    {
+      "file_offset": "0x188607",
+      "load_segment": 0,
+      "marker": "/vendor/etc/selinux/rootable_plat_pub_versioned.cil",
+      "vma": "0x588607"
+    },
+    {
+      "file_offset": "0x18863b",
+      "load_segment": 0,
+      "marker": "/vendor/etc/selinux/rootable_vendor_sepolicy.cil",
+      "vma": "0x58863b"
+    },
+    {
+      "file_offset": "0x18866c",
+      "load_segment": 0,
+      "marker": "/odm/etc/selinux/rootable_odm_sepolicy.cil",
+      "vma": "0x58866c"
+    },
+    {
+      "file_offset": "0x188697",
+      "load_segment": 0,
+      "marker": "rootable_fireos_sepolicy.cil",
+      "vma": "0x588697"
+    },
+    {
+      "file_offset": "0x1886b4",
+      "load_segment": 0,
+      "marker": "/vendor/etc/selinux/plat_pub_versioned.cil",
+      "vma": "0x5886b4"
+    },
+    {
+      "file_offset": "0x1886df",
+      "load_segment": 0,
+      "marker": "/vendor/etc/selinux/vendor_sepolicy.cil",
+      "vma": "0x5886df"
+    },
+    {
+      "file_offset": "0x188707",
+      "load_segment": 0,
+      "marker": "/odm/etc/selinux/odm_sepolicy.cil",
+      "vma": "0x588707"
+    },
+    {
+      "file_offset": "0x188729",
+      "load_segment": 0,
+      "marker": "fireos_sepolicy.cil",
+      "vma": "0x588729"
+    },
+    {
+      "file_offset": "0x1888a0",
+      "load_segment": 0,
+      "marker": "/system/etc/selinux/plat_and_mapping_sepolicy.cil.sha256",
+      "vma": "0x5888a0"
+    },
+    {
+      "file_offset": "0x1888e8",
+      "load_segment": 0,
+      "marker": "/system/etc/selinux/plat_and_mapping_sepolicy.cil.sha256",
+      "vma": "0x5888e8"
+    },
+    {
+      "file_offset": "0x18894a",
+      "load_segment": 0,
+      "marker": "fireos_precompiled_sepolicy.plat_and_mapping.sha256",
+      "vma": "0x58894a"
+    }
+  ],
+  "windows": [
+    {
+      "label": "caller_4041f0",
+      "start": "0x4041f0",
+      "stop": "0x404220"
+    },
+    {
+      "label": "policy_path_builder_41ad00",
+      "start": "0x41ad00",
+      "stop": "0x41b0a0"
+    },
+    {
+      "label": "selinux_property_compare_41bd60",
+      "start": "0x41bd60",
+      "stop": "0x41be00"
+    },
+    {
+      "label": "policy_loader_41be00",
+      "start": "0x41be00",
+      "stop": "0x41bf30"
+    }
+  ]
+}

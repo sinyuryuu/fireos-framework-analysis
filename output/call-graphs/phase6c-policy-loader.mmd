@@ -1,0 +1,8 @@
+flowchart TD
+    A[0x4041fc caller] --> B[0x41b748 unresolved helper]
+    A --> C[0x41ad00 rootable path-builder candidate]
+    C -->|w5=1| E[0x41be00 common policy-loader candidate]
+    D[0x41af80 standard path-builder candidate] -->|w5=0| E
+    F[0x41bd60 androidboot.selinux/permissive comparison candidate] --> G[branch/field semantics unresolved]
+    E --> H[active policy variant unresolved]
+    H -. not established .-> I[stock runtime policy identity]
