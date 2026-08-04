@@ -2713,3 +2713,47 @@ Outputs:
 - `tools/scripts/capture_phase5cy_runtime_boundary.sh`
 - `tools/scripts/capture_phase5cy_home_boundary.sh`
 - local raw captures under `adb/phase5/PHASE5CY-*`
+
+## Phase 5DA status
+
+Phase 5DA fully extracts the official `Fire_HD10-7.3.3.1-20250617.tar.bz2`
+source archive locally without executing its contents or touching the tablet.
+The outer archive SHA-256 is
+`02ffafddb97999ebcc4419dda28cab9ea6ddacf7123b1301a073a3809c762aea`.
+Its primary `platform.tar` and `fireos.tar` members are extracted into
+separate local directories. The platform build recipe explicitly selects
+`kernel/mediatek/mt8183/4.4`, `trona_defconfig`, and `arm64`; the source tree
+contains the four trona DTBs and the exact MT8183 futex/rtmutex files used by
+the preceding static review.
+
+The local index covers 173,535 files and hashes 1,094 focus files. The public
+repository keeps the indexing script, report, evidence index, and summary
+table; the multi-gigabyte extracted source remains local and is reproducible
+from the preserved archive. The package does not provide Fire Launcher Java
+source or a complete `frameworks/`/system-server source tree, so those
+conclusions still require the APK/JAR artifacts and AOSP comparison.
+
+Outputs:
+
+- `findings/phase-5da-ps7331-source-tree-index.md`
+- `findings/phase-5da-evidence-index.md`
+- `output/tables/phase5da-source-tree-summary.csv`
+- `tools/scripts/index_phase5da_source_tree.py`
+- local index under `artifacts/phase5/phase5da-ps7331-source-tree-index-20260804-01/`
+
+## Phase 5CZ status
+
+Phase 5CZ records the provenance boundary for the futex selftests. The PS7331
+source contains requeue-PI selftests and its kernel Makefile describes a
+root-run workflow after building, installing, and booting a kernel. A bounded
+read-only search of standard device paths found no matching selftest binary;
+no selftest was copied, built, or executed. This does not establish or deny a
+GhostLock runtime identity mismatch.
+
+Outputs:
+
+- `findings/phase-5cz-selftest-provenance.md`
+- `findings/phase-5cz-evidence-index.md`
+- `output/tables/phase5cz-selftest-provenance.csv`
+- `tools/scripts/capture_phase5cz_selftest_presence.sh`
+- local raw capture under `adb/phase5/PHASE5CZ-SELFTEST-PRESENCE-20260804-01/`

@@ -1192,3 +1192,49 @@ Outputs:
 - `tools/scripts/capture_phase5cy_runtime_boundary.sh`
 - `tools/scripts/capture_phase5cy_home_boundary.sh`
 - local raw captures under `adb/phase5/PHASE5CY-*`
+
+## Phase 5DA status
+
+Phase 5DA completed a full host-side extraction of the official
+`Fire_HD10-7.3.3.1-20250617.tar.bz2` archive. The original archive remains
+unchanged and hashes to
+`02ffafddb97999ebcc4419dda28cab9ea6ddacf7123b1301a073a3809c762aea`.
+`platform.tar` and `fireos.tar` were separately extracted into new local
+directories. The Amazon build recipe selects the MT8183 4.4 kernel,
+`trona_defconfig`, arm64, and the four trona DTBs. The exact MT8183 futex and
+rtmutex source is now available in the extracted tree and matches the source
+paths used by the previous Phase 5 static analysis.
+
+The local source index covers 173,535 files and hashes 1,094 focus files. The
+multi-gigabyte source tree is local-only; the repository publishes the
+reproducible indexer, provenance report, evidence index, and summary table.
+The source package contains neither Fire Launcher implementation source nor a
+complete Android `frameworks/`/system-server tree, so it cannot by itself
+resolve the remaining proprietary framework questions. No source was built or
+executed, and no device, boot, partition, futex, exploit, or root operation
+was performed.
+
+Outputs:
+
+- `findings/phase-5da-ps7331-source-tree-index.md`
+- `findings/phase-5da-evidence-index.md`
+- `output/tables/phase5da-source-tree-summary.csv`
+- `tools/scripts/index_phase5da_source_tree.py`
+- local index under `artifacts/phase5/phase5da-ps7331-source-tree-index-20260804-01/`
+
+## Phase 5CZ status
+
+Phase 5CZ records the futex selftest provenance boundary. The PS7331 source
+contains functional requeue-PI selftests, and the kernel Makefile describes a
+root-run workflow after a kernel build/install/boot. A bounded read-only search
+of standard device paths found no matching selftest binary. No selftest was
+copied, built, or executed, and the stock runtime identity mismatch remains
+unobserved.
+
+Outputs:
+
+- `findings/phase-5cz-selftest-provenance.md`
+- `findings/phase-5cz-evidence-index.md`
+- `output/tables/phase5cz-selftest-provenance.csv`
+- `tools/scripts/capture_phase5cz_selftest_presence.sh`
+- local raw capture under `adb/phase5/PHASE5CZ-SELFTEST-PRESENCE-20260804-01/`

@@ -1,0 +1,13 @@
+component,path,bytes_or_count,sha256_or_status,observation,confidence
+outer_archive,firmware/original/Fire_HD10-7.3.3.1-20250617.tar.bz2,2563328975,02ffafddb97999ebcc4419dda28cab9ea6ddacf7123b1301a073a3809c762aea,Official PS7331 source archive retained,Confirmed
+platform_archive,firmware/extracted/PS7331-SOURCE-20250617/platform.tar,1617756160,69c62d65a387e22b39678df8054e6cae12b4d95b8c5d9bf21ad53811491a7fdd,Primary kernel and platform source archive,Confirmed
+fireos_archive,firmware/extracted/PS7331-SOURCE-20250617/fireos.tar,688250880,bb7030296545dd45edcf47d3e742043e7813852844f4b0fbbe8d223899b369,Partial FireOS and external source archive,Confirmed
+platform_tree,firmware/extracted/PS7331-SOURCE-20250617/platform,124234 files,local-only-indexed,Extracted platform tree,Confirmed
+fireos_tree,firmware/extracted/PS7331-SOURCE-20250617/fireos,49301 files,local-only-indexed,Extracted FireOS tree,Confirmed
+build_recipe,build_kernel_config.sh:9-18,device target,local source,MT8183 trona arm64 recipe and image outputs,Confirmed
+trona_defconfig,platform/kernel/mediatek/mt8183/4.4/arch/arm64/configs/trona_defconfig,533 lines,09ca8dfc3b3b5e139482e3dd9976dae79547077fb750a4cbc778814f85ecaaac,Device defconfig selects MT8183 trona and four DTBs,Strong evidence
+trona_dts,platform/kernel/mediatek/mt8183/4.4/arch/arm64/boot/dts/mediatek/trona_*.dts,4 files,focus-indexed,Four board variants include MT8183 base and trona cust data,Confirmed
+futex_source,platform/kernel/mediatek/mt8183/4.4/kernel/futex.c,3358 lines,ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96,Requeue-PI syscall path present,Confirmed
+rtmutex_source,platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c,1753 lines,6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde,Proxy cleanup source markers present,Confirmed
+firelauncher_source,apps/com.amazon.firelauncher,dependency archive only,not-provided,No Fire Launcher implementation source in this package,Confirmed
+framework_source,fireos/frameworks and system-server paths,not present,not-provided,Framework implementation diff still requires APK/JAR artifacts,Acknowledged gap
