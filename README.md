@@ -2454,3 +2454,21 @@ performed.
 Output:
 
 - `findings/phase-5cm-ps7331-config-and-tracing-boundary.md`
+
+## Phase 5CN status
+
+Phase 5CN separates PS7331's futex/rtmutex feature gate from the dynamic
+identity-mismatch threshold. The selected source maps the PI opcode gate,
+proxy-task handoff, and `remove_waiter()` cleanup semantics; the actual device
+config confirms FUTEX and RT_MUTEX support. The available source subset does
+not include the complete ARM64 futex header/Kconfig expansion, and no evidence
+observes `waiter->task != current`. D0 is confirmed; D1–D4 remain unobserved or
+unproven. This phase is host-side/read-only and executes no futex trigger,
+kernel instrumentation, ioctl, memory access, exploit or root payload.
+
+Outputs:
+
+- `findings/phase-5cn-futex-feature-gate.md`
+- `findings/phase-5cn-evidence-index.md`
+- `output/tables/phase5cn-futex-feature-gate.csv`
+- `output/call-graphs/phase5cn-futex-feature-gate.mmd`

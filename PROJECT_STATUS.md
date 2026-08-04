@@ -929,3 +929,26 @@ Outputs:
 - `findings/phase-5cm-ps7331-config-and-tracing-boundary.md`
 - `tools/scripts/capture_phase5cm_config_gates.sh`
 - `adb/phase5/PS7331-CONFIG-GATES-20260804-01/` (raw local evidence)
+
+## Phase 5CN status
+
+Phase 5CN separates the PS7331 futex/rtmutex feature gate from the dynamic
+identity-mismatch gate. The build-selected source proves the PI command gate,
+the proxy task wiring, and the `remove_waiter()` `current` cleanup semantics.
+The actual PS7331 runtime config proves `CONFIG_FUTEX=y` and
+`CONFIG_RT_MUTEXES=y`, but the available source subset does not include the
+complete ARM64 futex header/Kconfig expansion. Therefore the final
+`CONFIG_HAVE_FUTEX_CMPXCHG` state and the direct runtime value of
+`futex_cmpxchg_enabled` remain unobserved.
+
+Most importantly, no evidence in this phase observes
+`waiter->task != current`. D0 remains confirmed; D1, D2, D3 and D4 remain
+unobserved or unproven. No futex trigger, race, kernel instrumentation, ioctl,
+kernel memory access, root payload or device mutation was performed.
+
+Outputs:
+
+- `findings/phase-5cn-futex-feature-gate.md`
+- `findings/phase-5cn-evidence-index.md`
+- `output/tables/phase5cn-futex-feature-gate.csv`
+- `output/call-graphs/phase5cn-futex-feature-gate.mmd`

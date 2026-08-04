@@ -1,0 +1,11 @@
+evidence_id,layer,observation,source_location,confidence,status
+P5CN-SRC-001,source,"PI commands are rejected with -ENOSYS when futex_cmpxchg_enabled is false","kernel/futex.c:3233-3241",Confirmed,"gate mapping"
+P5CN-SRC-001,source,"FUTEX_CMP_REQUEUE_PI dispatches to futex_requeue with requeue_pi=1 after the gate","kernel/futex.c:3264-3269",Confirmed,"gate mapping"
+P5CN-SRC-001,source,"futex_detect_cmpxchg sets the flag only after the NULL-pointer probe returns -EFAULT when CONFIG_HAVE_FUTEX_CMPXCHG is not defined","kernel/futex.c:3310-3327",Confirmed,"build/runtime boundary"
+P5CN-SRC-002,source,"rt_mutex_start_proxy_lock accepts an explicit task and passes it to task_blocks_on_rt_mutex","kernel/locking/rtmutex.c:1658-1671",Confirmed,"D0 source wiring"
+P5CN-SRC-002,source,"task_blocks_on_rt_mutex stores the explicit task in waiter->task and task->pi_blocked_on","kernel/locking/rtmutex.c:975-988",Confirmed,"D0 source wiring"
+P5CN-SRC-002,source,"remove_waiter clears current->pi_blocked_on and passes current to chain adjustment","kernel/locking/rtmutex.c:1079-1090;1120-1128",Confirmed,"D0 source wiring"
+P5CN-RUNTIME-001,runtime,"PS7331 reports CONFIG_FUTEX=y and CONFIG_RT_MUTEXES=y","/proc/config.gz export captured in config.stdout.txt",Confirmed,"feature presence only"
+P5CN-RUNTIME-002,runtime,"trace inventory has no named futex or rtmutex category","tracing_event_categories.stdout.txt",Confirmed,"inventory only"
+P5CN-SAFETY-001,runtime,"No PI trigger or kernel instrumentation was performed","result.md",Confirmed,"safety boundary"
+P5CN-D1-001,runtime,"waiter->task != current was not observed","no identity trace available in captured evidence",Confirmed,"D1 unobserved"

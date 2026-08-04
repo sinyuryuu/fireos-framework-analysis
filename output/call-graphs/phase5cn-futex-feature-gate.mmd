@@ -1,0 +1,19 @@
+flowchart TD
+    U[Userspace futex PI opcode] --> D[do_futex]
+    D --> G{futex_cmpxchg_enabled?}
+    G -- false --> E[-ENOSYS]
+    G -- true --> R[futex_requeue requeue_pi=1]
+    R --> P[rt_mutex_start_proxy_lock]
+    P --> T[task_blocks_on_rt_mutex explicit task]
+    T --> W[waiter->task = task\ntask->pi_blocked_on = waiter]
+    P --> C{ret != 0?}
+    C -- no --> K[proxy path returns]
+    C -- yes --> X[remove_waiter]
+    X --> Q[current->pi_blocked_on = NULL]
+    X --> A[chain adjustment receives current]
+    W -. D1 observation not available .-> I[waiter->task != current? UNKNOWN]
+
+    classDef source fill:#e8f1ff,stroke:#4776a8,color:#102a43;
+    classDef runtime fill:#fff4d6,stroke:#b7791f,color:#5f370e;
+    class U,D,G,E,R,P,T,W,C,X,Q,A source;
+    class K,I runtime;
