@@ -1,0 +1,19 @@
+flowchart TD
+    E[owner == task] -->|return -EDEADLK before waiter->task assignment| T[task_blocks_on_rt_mutex result]
+    T --> W[rt_mutex_start_proxy_lock]
+    W --> N{ret && owner(lock)?}
+    N -->|no owner| Z[ret normalized to 0]
+    N -->|owner present| R{if (unlikely(ret))}
+    R -->|nonzero| C[remove_waiter]
+    R -->|zero| Q[return/requeue path]
+    C --> CC[current->pi_blocked_on = NULL]
+    C -.-> TT[waiter/explicit task state not directly cleared]
+    TT -.-> X[current != explicit task?]
+    X -.-> Y[conditional target residue]
+    F[futex_requeue] --> S{ret == 1?}
+    S -->|yes| WK[wake branch]
+    S -->|no, ret nonzero| ER[error branch]
+    S -->|ret zero| RQ[requeue branch]
+    U[Runtime mismatch and subsequent consumer remain unobserved]:::boundary
+    U -.-> X
+    classDef boundary fill:#fff3e0,stroke:#ef6c00,color:#e65100;

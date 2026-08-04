@@ -1,0 +1,9 @@
+case,cleanup_write_target,conditional_target_residue,explicit_task_pi_blocked_on_directly_cleared,followup_null_waiter_guard_relevant,futex_requeue_branch,identity_mismatch_assumed_for_model,owner_present_at_wrapper_check,proxy_result,runtime_observed,target_pi_blocked_on_present_for_model,waiter_task_assignment_before_return,wrapper_cleanup_called
+try_to_take_success,,,,False,wake_requeued_waiter,,False,ret=1,False,,True,False
+ordinary_block,,,,False,requeue_waiter,,False,ret=0,False,,True,False
+early_deadlock_owner_present,,,,True,futex_requeue_error,,True,ret=-EDEADLK,False,,False,True
+negative_chain_result_owner_present,,,,False,futex_requeue_error,,True,ret<0,False,,True,True
+negative_result_owner_absent_normalized,,,,False,requeue_waiter,,False,ret<0 then ret=0,False,,True,False
+identity_same_task,current,False,True,False,cleanup path,False,True,cleanup already selected,False,True,True,True
+identity_different_task_target_state_present,current,True,False,False,cleanup path,True,True,cleanup already selected,False,True,True,True
+identity_different_task_target_state_absent,current,False,False,False,cleanup path,True,True,cleanup already selected,False,False,True,True

@@ -1,0 +1,12 @@
+evidence_id,field,value,interpretation,confidence
+P5CF-002,build_fingerprint,PS7330.4104N,current installed build is PS7330 not PS7331,Confirmed
+P5CF-003,board_platform,mt8183,hardware platform observed,Confirmed
+P5CF-004,verified_boot,green,verified boot state observed,Confirmed
+P5CF-004,flash_locked,1,flash locked property observed,Confirmed
+P5CF-005,selinux,Enforcing,SELinux mode observed,Confirmed
+P5CF-006,firelauncher_path,/system/priv-app/com.amazon.firelauncher/com.amazon.firelauncher.apk,privileged system package path observed,Confirmed
+P5CF-007,read_failures,5,raw failures preserved and not interpreted as absence,Confirmed
+P5CF-009,fireos_marketing_name,Fire OS 7.3.3.0 (PS7330/4104),current OTA/build metadata,Confirmed
+P5CF-010,ota_packages,OTA-related packages listed,package presence is not proof of pending update,Confirmed
+P5CF-011,ota_private_paths,Permission denied for /data/ota and /data/ota_package,contents not observable to shell,Confirmed
+P5CF-012,home_resolver,Fire Launcher priority 50,read-only resolver result during OTA metadata capture,Confirmed

@@ -816,3 +816,57 @@ Phase 5CE outputs:
 - `findings/phase-5ce-evidence-index.md`
 - `output/tables/phase5ce-ghostlock-emerald-compatibility.csv`
 - `artifacts/phase5/phase5ce-ghostlock-emerald-compatibility-20260804-01/`
+
+## Phase 5CF status
+
+Phase 5CF captured a new explicit-serial read-only device baseline. The actual
+connected Fire tablet reports fingerprint `PS7330.4104N`, not PS7331, with
+MT8183, verified boot green, flash-locked property `1`, SELinux Enforcing, and
+Fire Launcher under `/system/priv-app`. PS7331 source/Image evidence therefore
+remains offline applicability evidence until the device actually runs that build.
+No GhostLock POC, root attempt, bootloader operation, or partition mutation was
+performed.
+
+Phase 5CF outputs:
+
+- `findings/phase-5cf-device-version-boundary.md`
+- `findings/phase-5cf-evidence-index.md`
+- `output/tables/phase5cf-device-version-boundary.csv`
+- `adb/phase5/PHASE5CF-READONLY-20260804-01/` (raw local evidence)
+
+## Phase 5CG status
+
+Phase 5CG models the exact PS7331 early-return and nonzero-cleanup semantics
+without executing the kernel. The source evidence is pinned to the exact
+futex/rtmutex files and line locations: `task_blocks_on_rt_mutex()` returns
+`-EDEADLK` before assigning `waiter->task`; `rt_mutex_start_proxy_lock()` keeps
+the broad `if (unlikely(ret))` cleanup gate; and `remove_waiter()` clears
+`current->pi_blocked_on`. The model separately marks an identity-mismatch
+residue as conditional on runtime state, so it does not promote source
+semantics to a live exploit claim.
+
+No futex trigger, race, unknown ioctl, root operation, bootloader operation,
+image write or partition mutation was performed.
+
+Phase 5CG outputs:
+
+- `findings/phase-5cg-ps7331-cleanup-semantics-model.md`
+- `findings/phase-5cg-evidence-index.md`
+- `tools/scripts/model_phase5cg_ps7331_cleanup_semantics.py`
+- `tests/test_model_phase5cg_ps7331_cleanup_semantics.py`
+- `output/tables/phase5cg-cleanup-semantics.csv`
+- `output/call-graphs/phase5cg-cleanup-semantics.mmd`
+- `artifacts/phase5/phase5cg-ps7331-cleanup-semantics-20260804-01/`
+
+## Phase 5CI status
+
+Phase 5CI records the official Amazon manual-update instructions and the local
+PS7331 package verification. The official path is desktop download → USB
+Transfer files → Internal storage → Settings → Device Options → System Updates
+→ Update. The local package matches `trona`, PS7331.4463N, API 28, the published
+size and SHA-256, and an Amazon OTA certificate. It remains an offline artifact;
+no sideload, Settings update, reboot or partition write was performed.
+
+Phase 5CI output:
+
+- `findings/phase-5ci-official-manual-update-procedure.md`

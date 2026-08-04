@@ -1,0 +1,157 @@
+{
+  "decision_rows": [
+    {
+      "case": "try_to_take_success",
+      "followup_null_waiter_guard_relevant": false,
+      "futex_requeue_branch": "wake_requeued_waiter",
+      "owner_present_at_wrapper_check": false,
+      "proxy_result": "ret=1",
+      "runtime_observed": false,
+      "waiter_task_assignment_before_return": true,
+      "wrapper_cleanup_called": false
+    },
+    {
+      "case": "ordinary_block",
+      "followup_null_waiter_guard_relevant": false,
+      "futex_requeue_branch": "requeue_waiter",
+      "owner_present_at_wrapper_check": false,
+      "proxy_result": "ret=0",
+      "runtime_observed": false,
+      "waiter_task_assignment_before_return": true,
+      "wrapper_cleanup_called": false
+    },
+    {
+      "case": "early_deadlock_owner_present",
+      "followup_null_waiter_guard_relevant": true,
+      "futex_requeue_branch": "futex_requeue_error",
+      "owner_present_at_wrapper_check": true,
+      "proxy_result": "ret=-EDEADLK",
+      "runtime_observed": false,
+      "waiter_task_assignment_before_return": false,
+      "wrapper_cleanup_called": true
+    },
+    {
+      "case": "negative_chain_result_owner_present",
+      "followup_null_waiter_guard_relevant": false,
+      "futex_requeue_branch": "futex_requeue_error",
+      "owner_present_at_wrapper_check": true,
+      "proxy_result": "ret<0",
+      "runtime_observed": false,
+      "waiter_task_assignment_before_return": true,
+      "wrapper_cleanup_called": true
+    },
+    {
+      "case": "negative_result_owner_absent_normalized",
+      "followup_null_waiter_guard_relevant": false,
+      "futex_requeue_branch": "requeue_waiter",
+      "owner_present_at_wrapper_check": false,
+      "proxy_result": "ret<0 then ret=0",
+      "runtime_observed": false,
+      "waiter_task_assignment_before_return": true,
+      "wrapper_cleanup_called": false
+    },
+    {
+      "case": "identity_same_task",
+      "cleanup_write_target": "current",
+      "conditional_target_residue": false,
+      "explicit_task_pi_blocked_on_directly_cleared": true,
+      "followup_null_waiter_guard_relevant": false,
+      "futex_requeue_branch": "cleanup path",
+      "identity_mismatch_assumed_for_model": false,
+      "owner_present_at_wrapper_check": true,
+      "proxy_result": "cleanup already selected",
+      "runtime_observed": false,
+      "target_pi_blocked_on_present_for_model": true,
+      "waiter_task_assignment_before_return": true,
+      "wrapper_cleanup_called": true
+    },
+    {
+      "case": "identity_different_task_target_state_present",
+      "cleanup_write_target": "current",
+      "conditional_target_residue": true,
+      "explicit_task_pi_blocked_on_directly_cleared": false,
+      "followup_null_waiter_guard_relevant": false,
+      "futex_requeue_branch": "cleanup path",
+      "identity_mismatch_assumed_for_model": true,
+      "owner_present_at_wrapper_check": true,
+      "proxy_result": "cleanup already selected",
+      "runtime_observed": false,
+      "target_pi_blocked_on_present_for_model": true,
+      "waiter_task_assignment_before_return": true,
+      "wrapper_cleanup_called": true
+    },
+    {
+      "case": "identity_different_task_target_state_absent",
+      "cleanup_write_target": "current",
+      "conditional_target_residue": false,
+      "explicit_task_pi_blocked_on_directly_cleared": false,
+      "followup_null_waiter_guard_relevant": false,
+      "futex_requeue_branch": "cleanup path",
+      "identity_mismatch_assumed_for_model": true,
+      "owner_present_at_wrapper_check": true,
+      "proxy_result": "cleanup already selected",
+      "runtime_observed": false,
+      "target_pi_blocked_on_present_for_model": false,
+      "waiter_task_assignment_before_return": true,
+      "wrapper_cleanup_called": true
+    }
+  ],
+  "futex_path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+  "futex_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+  "missing_evidence": [],
+  "rtmutex_path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+  "rtmutex_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+  "safety": {
+    "device_modified": false,
+    "race_triggered": false,
+    "syscall_invoked": false,
+    "unknown_ioctl_used": false
+  },
+  "scope": "PS7331 exact source; abstract host-only branch model",
+  "source_evidence": {
+    "cleanup_current_write": {
+      "line": 1089,
+      "text": "current->pi_blocked_on = NULL;"
+    },
+    "futex_requeue_error_branch": {
+      "line": 1971,
+      "text": "} else if (ret) {"
+    },
+    "futex_requeue_success_branch": {
+      "line": 1966,
+      "text": "if (ret == 1) {"
+    },
+    "task_blocks_early_return": {
+      "line": 973,
+      "text": "return -EDEADLK;"
+    },
+    "task_blocks_owner_check": {
+      "line": 972,
+      "text": "if (owner == task)"
+    },
+    "task_blocks_waiter_assignment": {
+      "line": 977,
+      "text": "waiter->task = task;"
+    },
+    "wrapper_broad_cleanup_guard": {
+      "line": 1683,
+      "text": "if (unlikely(ret))"
+    },
+    "wrapper_owner_normalization": {
+      "line": 1673,
+      "text": "if (ret && !rt_mutex_owner(lock)) {"
+    }
+  },
+  "source_evidence_complete": true,
+  "verdict": {
+    "abstract_identity_mismatch_can_leave_target_state_conditionally": true,
+    "broad_nonzero_cleanup_guard_present": true,
+    "cleanup_targets_current": true,
+    "controlled_memory_effect_proven": false,
+    "device_execution": false,
+    "early_return_precedes_waiter_assignment": true,
+    "persistent_invariant_violation_proven": false,
+    "root_or_privilege_gain_proven": false,
+    "runtime_identity_mismatch_observed": false
+  }
+}

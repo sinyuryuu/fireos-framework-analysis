@@ -2361,3 +2361,48 @@ reference only. It targets a different Poco/MediaTek device, Android release
 and kernel generation, and contains hard-coded build/layout metadata. It is not
 a drop-in Fire PS7331 binary. No exploit build, installation, execution or
 device mutation was performed.
+
+## Phase 5CF status
+
+The current explicit-serial read-only baseline reports the connected Fire tablet
+as `PS7330.4104N`, not PS7331. It records MT8183, verified boot green, flash
+locked, SELinux Enforcing, and the privileged Fire Launcher path. PS7331 source
+and boot artifacts remain offline evidence until the device actually runs that
+build; no exploit or boot/partition operation was performed.
+
+## Phase 5CG status
+
+Phase 5CG adds a reproducible, host-only abstract model for the exact PS7331
+`ret`/early-return cleanup chain. It confirms that the `owner == task` early
+return in `task_blocks_on_rt_mutex()` precedes `waiter->task = task`, that the
+proxy wrapper retains a broad nonzero cleanup guard, and that `remove_waiter()`
+writes `current->pi_blocked_on`. In an explicitly assumed identity-mismatch
+row, the model shows why the target task's state is not directly cleared. These
+are source-level and conditional results; runtime mismatch, persistent state,
+crash, controlled memory effect and root remain unproven.
+
+No futex syscall, race trigger, unknown ioctl, kernel address/payload work,
+exploit execution or device mutation was performed.
+
+Phase 5CG outputs:
+
+- `findings/phase-5cg-ps7331-cleanup-semantics-model.md`
+- `findings/phase-5cg-evidence-index.md`
+- `tools/scripts/model_phase5cg_ps7331_cleanup_semantics.py`
+- `tests/test_model_phase5cg_ps7331_cleanup_semantics.py`
+- `output/tables/phase5cg-cleanup-semantics.csv`
+- `output/call-graphs/phase5cg-cleanup-semantics.mmd`
+- `artifacts/phase5/phase5cg-ps7331-cleanup-semantics-20260804-01/`
+
+## Phase 5CI status
+
+Phase 5CI documents Amazon's official PS7331 manual-update procedure and
+matches it against the locally preserved full OTA. The package is a valid
+Amazon metadata-compatible `BLOCK` OTA for `trona`, but it has not been pushed
+to or installed on the tablet. The official flow is MTP file transfer followed
+by Settings → Device Options → System Updates → Update; it is not a standalone
+boot-image or fastboot procedure.
+
+Output:
+
+- `findings/phase-5ci-official-manual-update-procedure.md`
