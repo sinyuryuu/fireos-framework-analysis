@@ -1923,3 +1923,18 @@ Phase 5BG outputs:
 - `findings/phase-5bg-evidence-index.md`
 - `tools/scripts/compare_phase5bg_ps7331_semantics.py`
 - `artifacts/phase5/ps7331-source-binary-semantic-20260804-01/`
+
+### Phase 5BH — official PS7331 OTA source mapping
+
+The official Amazon update page for Fire HD 10 (11th Generation) maps to the
+preserved PS7331 OTA; the HTTP content length matches the local archive. This
+confirms PS7331 as a valid general security A/B candidate, but the Phase 5BG
+semantic result still does not demonstrate a GhostLock fix. The OTA remains a
+full-block update touching multiple system, boot-chain and firmware members;
+the extracted boot image is not an equivalent upgrade.
+
+Phase 5BH outputs:
+
+- `findings/phase-5bh-ps7331-official-ota-source.md`
+- `findings/phase-5bh-evidence-index.md`
+- `artifacts/phase5/ps7331-official-update-source-20260804-01/`
