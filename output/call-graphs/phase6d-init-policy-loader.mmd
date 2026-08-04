@@ -1,0 +1,18 @@
+flowchart TD
+    A["Bootloader / kernel cmdline / boot properties\nsource not mutated"] --> B["/init literal surfaces\n/proc/cmdline, androidboot.*, ro.boot.*"]
+    B --> C["candidate property parser\n0x41bd60: androidboot.selinux + permissive"]
+    B --> D["rootable path builder candidate\n0x41ad00; helper call w5=1"]
+    B --> E["standard path builder candidate\n0x41af80; helper call w5=0"]
+    D --> F["common stripped helper\n0x41be00; branch tbnz w5 at 0x41be48"]
+    E --> F
+    F --> G["policy load / compile candidate\nexact semantics unresolved"]
+    H["stock snapshot: Enforcing / green / locked"] -.-> G
+    I["active policy identity\nUNRESOLVED"] -.-> G
+    J["property injection / bootloader selection\nREJECTED"] -.-> B
+
+    classDef evidence fill:#e8f5e9,stroke:#2e7d32,color:#111;
+    classDef unknown fill:#fff3e0,stroke:#ef6c00,color:#111;
+    classDef rejected fill:#ffebee,stroke:#c62828,color:#111;
+    class A,B,C,D,E,F,G,H evidence;
+    class I unknown;
+    class J rejected;

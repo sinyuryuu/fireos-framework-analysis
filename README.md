@@ -3241,3 +3241,51 @@ Outputs:
 The audit is host-only, refuses to overwrite an existing output, and supports
 `--dry-run`. Stock-device requeue-PI, paired waiter, race, panic, heap shaping,
 kernel-memory and root-payload testing remain rejected.
+
+## Phase 6C GhostLock upstream patch-chain audit
+
+The preserved PS7331 GPL source was compared on the host with the public
+upstream cleanup-target, early-return and waiter-state patch-chain. The source
+still contains the `current->pi_blocked_on` cleanup marker, the broad
+`if (unlikely(ret))` wrapper branch, and the futex proxy call/caller branch;
+the later `waiter_task`/`ret < 0`/enqueued-guard signatures were not found.
+This is **已證實（source scope）** and a **高可信 pre-fix inference**, not a
+runtime GhostLock or root result.
+
+Outputs:
+
+- `tools/scripts/audit_phase6c_ghostlock_patch_chain.py`
+- `findings/phase-6c-ghostlock-patch-chain-audit.md`
+- `findings/phase-6c-ghostlock-patch-chain-evidence-index.md`
+- `output/call-graphs/phase6c-ghostlock-patch-chain.mmd`
+- `artifacts/phase6c/phase6c-ghostlock-patch-chain-20260804-01/`
+
+The audit is host-only, refuses to overwrite existing output, and supports
+`--dry-run`. No stock-device requeue-PI, paired waiter, race, panic, heap
+shaping, kernel-memory operation or privilege payload was run.
+
+## Phase 6D `/init` property/cmdline inventory
+
+The preserved PS7331 `/init` was inventoried on the host. The scan recorded
+162 literal marker occurrences and 111 mapped AArch64 ADRP/ADD references for
+`/proc/cmdline`, `androidboot.*`, `ro.boot.*`, SELinux mode/policy names,
+recovery/lock-state markers, and standard/rootable policy paths. Existing
+windows locate the `androidboot.selinux`/`permissive` comparison candidate at
+`0x41bd60`, rootable/standard path-builder candidates at `0x41ad00`/`0x41af80`,
+and a common helper branch at `0x41be48`.
+
+These results establish a policy-loader decision surface, not a shell-writable
+root switch. Active policy identity, exact `w5` semantics and any legal early
+boot selector remain **待驗證**. Boot-property injection, cmdline injection,
+bootloader/fastboot selection and policy mutation remain rejected.
+
+Outputs:
+
+- `tools/scripts/inventory_phase6d_init_properties.py`
+- `findings/phase-6d-init-property-inventory.md`
+- `findings/phase-6d-init-property-evidence-index.md`
+- `output/call-graphs/phase6d-init-policy-loader.mmd`
+- `artifacts/phase6d/phase6d-init-property-inventory-20260804-01/`
+
+The inventory is host-only, refuses to overwrite existing output, and supports
+`--dry-run`.

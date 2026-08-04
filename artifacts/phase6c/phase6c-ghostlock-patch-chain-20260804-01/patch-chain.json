@@ -1,0 +1,137 @@
+{
+  "checks": [
+    {
+      "check": "primary_current_cleanup",
+      "expected_for_fixed_tree": "absent; fixed code uses waiter_task->pi_blocked_on",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 1089,
+      "observation": "FOUND",
+      "patch": "3bfdc63936dd4773109b7b8c280c0f3b5ae7d349",
+      "pattern": "current->pi_blocked_on = NULL;"
+    },
+    {
+      "check": "primary_waiter_task_assignment",
+      "expected_for_fixed_tree": "present as the task identity source",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 977,
+      "observation": "FOUND",
+      "patch": "3bfdc63936dd4773109b7b8c280c0f3b5ae7d349",
+      "pattern": "waiter->task = task;"
+    },
+    {
+      "check": "primary_waiter_task_local",
+      "expected_for_fixed_tree": "present before dequeue/cleanup",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": "NOT_FOUND",
+      "observation": "NOT_FOUND",
+      "patch": "3bfdc63936dd4773109b7b8c280c0f3b5ae7d349",
+      "pattern": "struct task_struct \\*waiter_task\\s*=\\s*waiter->task;"
+    },
+    {
+      "check": "wrapper_nonzero_cleanup",
+      "expected_for_fixed_tree": "wrapper uses ret < 0 for remove_waiter",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": 1683,
+      "observation": "FOUND",
+      "patch": "1a1fb985f2e2b85ec0d3dc2e519ee48389ec2434",
+      "pattern": "if \\(unlikely\\(ret\\)\\)"
+    },
+    {
+      "check": "wrapper_negative_cleanup",
+      "expected_for_fixed_tree": "present in the fixed wrapper",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": "NOT_FOUND",
+      "observation": "NOT_FOUND",
+      "patch": "1a1fb985f2e2b85ec0d3dc2e519ee48389ec2434",
+      "pattern": "if \\(unlikely\\(ret\\s*<\\s*0\\)\\)"
+    },
+    {
+      "check": "unenqueued_waiter_guard",
+      "expected_for_fixed_tree": "present before remove_waiter body performs dereference/dequeue",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "file_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "line": "NOT_FOUND",
+      "observation": "NOT_FOUND",
+      "patch": "post-3bfd-enqueued-guard",
+      "pattern": "if \\(!waiter_task\\)"
+    },
+    {
+      "check": "futex_proxy_call",
+      "expected_for_fixed_tree": "call site is present for a runtime proxy path",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "file_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "line": 1963,
+      "observation": "FOUND",
+      "patch": "3bfdc63936dd4773109b7b8c280c0f3b5ae7d349",
+      "pattern": "rt_mutex_start_proxy_lock\\("
+    },
+    {
+      "check": "futex_proxy_nonzero_branch",
+      "expected_for_fixed_tree": "caller branch is present; runtime entry remains unobserved",
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "file_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "line": 1971,
+      "observation": "FOUND",
+      "patch": "1a1fb985f2e2b85ec0d3dc2e519ee48389ec2434",
+      "pattern": "else if \\(ret\\)"
+    }
+  ],
+  "findings": {
+    "early_return_pre_fix_shape": true,
+    "primary_fix_pre_fix_shape": true,
+    "proxy_path_static_present": true,
+    "unenqueued_guard_present": false
+  },
+  "generated_at_utc": "2026-08-04T14:35:07.410766+00:00",
+  "inputs": {
+    "futex": {
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96"
+    },
+    "rtmutex": {
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde"
+    },
+    "rtmutex_common": {
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex_common.h",
+      "sha256": "b3456f9e83a1919e41a88a6638ad1e26ed9966e800c6efc823940df1151919fc"
+    }
+  },
+  "safety": {
+    "device_contacted": false,
+    "futex_triggered": false,
+    "host_only": true,
+    "kernel_built": false,
+    "kernel_memory_accessed": false,
+    "payload_generated": false,
+    "race_scheduled": false,
+    "threads_created": false
+  },
+  "schema": "phase6c-ghostlock-patch-chain-audit-v1",
+  "source_root": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4",
+  "upstream_references": [
+    {
+      "id": "3bfdc63936dd4773109b7b8c280c0f3b5ae7d349",
+      "scope": "primary cleanup-target fix",
+      "subject": "rtmutex: Use waiter::task instead of current in remove_waiter()",
+      "url": "https://git.kernel.org/stable/c/3bfdc63936dd4773109b7b8c280c0f3b5ae7d349"
+    },
+    {
+      "id": "1a1fb985f2e2b85ec0d3dc2e519ee48389ec2434",
+      "scope": "wrapper/early-return cleanup arrangement",
+      "subject": "futex: Handle early deadlock return correctly",
+      "url": "https://git.kernel.org/stable/c/1a1fb985f2e2b85ec0d3dc2e519ee48389ec2434"
+    },
+    {
+      "id": "post-3bfd-enqueued-guard",
+      "scope": "later waiter-task null/enqueued guard",
+      "subject": "locking/rtmutex: Skip remove_waiter() when waiter is not enqueued",
+      "url": "https://lkml.iu.edu/2606.0/06468.html"
+    }
+  ]
+}

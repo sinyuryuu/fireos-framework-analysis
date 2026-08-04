@@ -1,0 +1,16 @@
+flowchart TD
+    A["FUTEX_CMP_REQUEUE_PI dispatch\nkernel/futex.c:3238, 3269"] --> B["futex_requeue proxy call\nkernel/futex.c:1963"]
+    B --> C["rt_mutex_start_proxy_lock\nkernel/locking/rtmutex.c:1656"]
+    C --> D{"ret branch\nrtmutex.c:1683"}
+    D -->|nonzero branch present| E["remove_waiter(lock, waiter)\npre-fix-shaped cleanup"]
+    E --> F["current->pi_blocked_on = NULL\nrtmutex.c:1089"]
+    B --> G["futex caller else-if(ret)\nkernel/futex.c:1971"]
+    H["waiter->task = task\nrtmutex.c:977"] -.-> E
+    I["upstream fixed shape\nwaiter_task = waiter->task\nret < 0 / enqueued guard"] -.-> E
+    J["runtime proxy waiter, mismatch, residue\nUNOBSERVED / SAFETY-REJECTED"] -.-> C
+
+    classDef evidence fill:#e8f5e9,stroke:#2e7d32,color:#111;
+    classDef unknown fill:#fff3e0,stroke:#ef6c00,color:#111;
+    classDef rejected fill:#ffebee,stroke:#c62828,color:#111;
+    class A,B,C,D,E,F,G,H,I evidence;
+    class J rejected;
