@@ -1002,6 +1002,31 @@ Outputs:
 - `output/call-graphs/phase5cp-proxy-context.mmd`
 - `tools/scripts/audit_phase5cp_proxy_context.py`
 
+## Phase 5CR status
+
+Phase 5CR captured the exact PS7331 Fire native runtime artifacts with explicit
+serial `G001LT0511550CFT` using read-only ADB pulls. The installed Fire libc
+contains both a generic futex wait helper and a separate PI-lock helper.
+`pthread_cond_wait` and timed condition-variable variants call the generic wait
+helper; the PI mutex path calls the PI-lock helper. A bounded host-side
+symbol/call-edge analysis did not establish a requeue-PI caller in this libc.
+
+This upgrades the conclusion that ordinary Fire pthread condition variables are
+not a demonstrated GhostLock requeue-PI entry, while leaving other vendor
+libraries/services, Fire-specific policy, runtime identity mismatch, cleanup
+residue, memory effect and privilege transition open. No ELF was executed and
+no futex, race, ioctl, kernel memory, payload, boot or partition operation was
+performed.
+
+Outputs:
+
+- `findings/phase-5cr-fire-libc-futex-analysis.md`
+- `findings/phase-5cr-evidence-index.md`
+- `output/tables/phase5cr-fire-libc-futex.csv`
+- `output/call-graphs/phase5cr-fire-libc-futex.mmd`
+- `tools/scripts/capture_phase5cr_fire_native.py`
+- `tools/scripts/analyze_phase5cr_fire_libc.py`
+
 ## Phase 5CQ status
 
 Phase 5CQ audits Android 9 userspace reachability using official AOSP

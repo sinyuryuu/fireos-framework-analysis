@@ -1,0 +1,9 @@
+evidence_id,artifact_or_symbol,role,observed_edge,confidence,interpretation
+P5CR-001,libc.so,Fire PS7331 native artifact,ELF AArch64 not stripped,Confirmed artifact scope,exact Fire libc captured
+P5CR-002,__futex_wait_ex,ordinary wait helper,called by pthread_cond paths,Confirmed disassembly scope,ordinary futex wait boundary
+P5CR-003,__futex_pi_lock_ex,PI lock helper,called by PIMutexTimedLock,Confirmed disassembly scope,PI lock only not requeue-PI
+P5CR-004,pthread_cond_wait/timedwait,condition variables,calls __futex_wait_ex,Confirmed call-site scope,no direct requeue-PI edge
+P5CR-005,PIMutexTimedLock,PI mutex path,calls __futex_pi_lock_ex,Confirmed call-site scope,proxy waiter not established
+P5CR-006,libc bounded search,requeue-PI caller,no named/identified edge established,Negative observation only,other libraries/indirect callers remain open
+P5CR-009,host analyzer,call-edge classification,ordinary wait true; PI helper true; requeue-PI false,Confirmed bounded analysis scope,inspect other native libraries offline
+P5CR-RUNTIME-001,stock PS7331 runtime,identity mismatch,no observation,Unknown,no dynamic cleanup claim

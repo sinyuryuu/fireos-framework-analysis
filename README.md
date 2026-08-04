@@ -2524,6 +2524,29 @@ Outputs:
 - `output/call-graphs/phase5cp-proxy-context.mmd`
 - `tools/scripts/audit_phase5cp_proxy_context.py`
 
+## Phase 5CR status
+
+Phase 5CR pulled the exact PS7331 Fire `/system/lib64/libc.so`, `linker64`, and
+`app_process64` using an explicit serial and read-only ADB commands. The Fire
+libc contains a generic futex wait helper and a separate PI-lock helper. The
+condition-variable call sites use the generic wait helper; the PI mutex path
+uses the PI-lock helper. A bounded host-side symbol/call-edge audit did not
+establish a requeue-PI caller in this libc. This is stronger Fire-specific
+userspace evidence, but it still does not observe the kernel proxy error path,
+identity mismatch, cleanup residue, memory effect or root.
+
+No pulled ELF was executed. No futex, race, ioctl, device-node, kernel-memory,
+payload, settings, package, boot or partition operation was performed.
+
+Outputs:
+
+- `findings/phase-5cr-fire-libc-futex-analysis.md`
+- `findings/phase-5cr-evidence-index.md`
+- `output/tables/phase5cr-fire-libc-futex.csv`
+- `output/call-graphs/phase5cr-fire-libc-futex.mmd`
+- `tools/scripts/capture_phase5cr_fire_native.py`
+- `tools/scripts/analyze_phase5cr_fire_libc.py`
+
 ## Phase 5CQ status
 
 Phase 5CQ adds a bounded Android 9 userspace reachability audit. The official

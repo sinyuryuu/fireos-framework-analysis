@@ -1,0 +1,11 @@
+flowchart TD
+    A[Fire PS7331 pthread_cond_wait/timedwait] --> B[__futex_wait_ex]
+    B --> C[libc syscall boundary]
+    D[Fire PS7331 pthread_mutex_lock PI path] --> E[PIMutexTimedLock]
+    E --> F[__futex_pi_lock_ex]
+    F --> C
+    C -. generic/PI lock boundary only .-> G[Kernel futex entry]
+    G -. requeue-PI caller not established .-> H[futex_requeue proxy path]
+    H --> I[rt_mutex_start_proxy_lock]
+    I --> J[remove_waiter pre-fix semantics]
+    J -. stock runtime observation absent .-> K[D1-R/D2 remain unknown]
