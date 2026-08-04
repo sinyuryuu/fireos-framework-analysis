@@ -952,3 +952,29 @@ Outputs:
 - `findings/phase-5cn-evidence-index.md`
 - `output/tables/phase5cn-futex-feature-gate.csv`
 - `output/call-graphs/phase5cn-futex-feature-gate.mmd`
+
+## Phase 5CO status
+
+Phase 5CO extracts the official PS7331 ARM64 futex header and Kconfig members
+that were missing from the earlier selected-source subset. It confirms, at
+source scope, the `HAVE_FUTEX_CMPXCHG` feature definition, the MT8183 ARM64
+atomic cmpxchg implementation and its `-EFAULT` invalid-address behavior. The
+MT8183 ARM64 platform block has no direct `select HAVE_FUTEX_CMPXCHG`; the
+MediaTek select found by the literal search belongs to the separate MT8167 ARM
+block. The boot-embedded IKCONFIG and existing device capture confirm FUTEX and
+RT_MUTEX support, so runtime PI-gate enablement is strongly supported but not
+directly observed.
+
+Phase 5CO does not observe `waiter->task != current`, post-cleanup invariant
+damage, a memory-safety primitive or privilege escalation. It is host-only and
+read-only; no futex PI opcode, race trigger, kernel instrumentation, ioctl,
+kernel memory access, exploit payload or device mutation was performed.
+
+Outputs:
+
+- `findings/phase-5co-ps7331-futex-config-resolution.md`
+- `findings/phase-5co-evidence-index.md`
+- `output/tables/phase5co-futex-config-resolution.csv`
+- `output/call-graphs/phase5co-futex-config-resolution.mmd`
+- `tools/scripts/extract_phase5cn_futex_arch_members.py`
+- `tools/scripts/search_phase5cn_source_literals.py`

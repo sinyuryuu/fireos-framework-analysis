@@ -2472,3 +2472,30 @@ Outputs:
 - `findings/phase-5cn-evidence-index.md`
 - `output/tables/phase5cn-futex-feature-gate.csv`
 - `output/call-graphs/phase5cn-futex-feature-gate.mmd`
+
+## Phase 5CO status
+
+Phase 5CO resolves the Phase 5CN source-completeness gap for the PS7331 ARM64
+futex feature gate. The official source contains the
+`HAVE_FUTEX_CMPXCHG` definition, the MT8183 ARM64
+`futex_atomic_cmpxchg_inatomic()` implementation, and the source-level runtime
+NULL-probe path. The MT8183 ARM64 platform block does not directly select the
+symbol; the only MediaTek `select HAVE_FUTEX_CMPXCHG` literal found by the
+archive search is under the separate MT8167 ARM block. The embedded PS7331
+IKCONFIG and device capture confirm FUTEX and RT_MUTEX support, but do not
+directly expose the final `futex_cmpxchg_enabled` value.
+
+This makes runtime PI-gate enablement a strong inference, not a dynamic
+identity observation. No evidence observes `waiter->task != current`, a
+persistent cleanup invariant violation, a controllable memory effect, or root.
+The phase is host-only/read-only and does not execute a futex trigger, race,
+kernel instrumentation, ioctl, memory access, exploit or root payload.
+
+Outputs:
+
+- `findings/phase-5co-ps7331-futex-config-resolution.md`
+- `findings/phase-5co-evidence-index.md`
+- `output/tables/phase5co-futex-config-resolution.csv`
+- `output/call-graphs/phase5co-futex-config-resolution.mmd`
+- `tools/scripts/extract_phase5cn_futex_arch_members.py`
+- `tools/scripts/search_phase5cn_source_literals.py`

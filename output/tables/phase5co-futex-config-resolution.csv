@@ -1,0 +1,11 @@
+evidence_id,layer,question,observation,source_location,classification,confidence
+P5CO-SRC-002,source,Is the futex feature gate defined?,"FUTEX defaults y and selects RT_MUTEXES; HAVE_FUTEX_CMPXCHG is a bool depending on FUTEX",kernel/mediatek/4.4/init/Kconfig:1570-1585,AMAZON_OR_VENDOR_SOURCE_INPUT,Confirmed
+P5CO-SRC-003,source,Does the MT8183 ARM64 path implement atomic futex cmpxchg?,"futex_atomic_cmpxchg_inatomic exists and invalid user address returns -EFAULT",kernel/mediatek/mt8183/4.4/arch/arm64/include/asm/futex.h:92-125,AOSP_OR_VENDOR_ARCH_IMPLEMENTATION,Confirmed
+P5CO-SRC-004,source,What does the symbol control?,"CONFIG_HAVE_FUTEX_CMPXCHG selects constant enabled=1; otherwise futex_cmpxchg_enabled is runtime state",kernel/mediatek/4.4/include/linux/futex.h:58-65,AOSP_OR_VENDOR_SOURCE_INPUT,Confirmed
+P5CO-SEARCH-001,source,Does the MT8183 ARM64 platform block select the symbol?,"No direct select found in MACH_MT8183; the MediaTek select found at arch/arm/mach-mediatek Kconfig belongs to MACH_MT8167",selected Kconfig/futex-header literal search,UNKNOWN_FINAL_KCONFIG,Confirmed search scope
+P5CO-BUILD-001,image,Are futex and rtmutex compiled into PS7331?,"Embedded IKCONFIG reports CONFIG_FUTEX=y and CONFIG_RT_MUTEXES=y",official PS7331 boot IKCONFIG,BUILD_FEATURE_PRESENCE,Confirmed
+P5CO-SRC-006,source,How is runtime detection connected?,"When HAVE_FUTEX_CMPXCHG is not defined, a NULL cmpxchg probe enables the gate only after -EFAULT",kernel/futex.c:176-178;3310-3348,AOSP_OR_VENDOR_SOURCE_INPUT,Confirmed source scope
+P5CO-RUNTIME-001,runtime,Is the device config consistent with source?,"PS7331 device capture reports FUTEX=y and RT_MUTEXES=y",PS7331-CONFIG-GATES-20260804-03,DEVICE_CONFIG,Confirmed
+P5CO-INFER-001,inference,Is runtime futex_cmpxchg_enabled likely enabled?,"ARM64 implementation plus NULL fault semantics and absent direct MT8183 select strongly support runtime detection reaching 1",cross-source inference,INFERENCE,Strong evidence
+P5CO-D1-001,runtime,Was waiter-task identity mismatch observed?,"No same-execution trace or kernel observation exists",D1 evidence audit,DYNAMIC_VALIDATION,Unobserved
+P5CO-D2-001,runtime,Was a persistent post-cleanup state or memory effect observed?,"No",D2 evidence audit,DYNAMIC_VALIDATION,Unproven

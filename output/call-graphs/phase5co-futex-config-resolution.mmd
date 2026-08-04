@@ -1,0 +1,26 @@
+flowchart TD
+    K[Official PS7331 source archive] --> C[init/Kconfig\nFUTEX + HAVE_FUTEX_CMPXCHG]
+    K --> A[MT8183 ARM64 asm/futex.h\nfutex_atomic_cmpxchg_inatomic]
+    C --> H{CONFIG_HAVE_FUTEX_CMPXCHG\nselected in final build?}
+    H -- yes --> F1[futex_cmpxchg_enabled = 1\ncompile-time path]
+    H -- no --> F2[futex_detect_cmpxchg\nNULL probe]
+    A --> P[-EFAULT for invalid user address]
+    P --> F2
+    F1 --> G[PI opcode gate passes]
+    F2 --> G
+    G --> R[FUTEX_CMP_REQUEUE_PI\nrequeue_pi=1]
+    R --> X[rt_mutex_start_proxy_lock\nexplicit task]
+    X --> W[waiter->task = task]
+    X --> E{ret != 0?}
+    E -- yes --> Q[remove_waiter\ncurrent->pi_blocked_on = NULL]
+    E -- no --> N[normal proxy return]
+    W -. D1 required .-> I{waiter->task != current?}
+    I -. not observed .-> U[Runtime identity evidence missing]
+    G -. feature inference only .-> D[Does not prove D1/D2/root]
+
+    classDef source fill:#e8f1ff,stroke:#4776a8,color:#102a43;
+    classDef inference fill:#fff4d6,stroke:#b7791f,color:#5f370e;
+    classDef unknown fill:#fde2e2,stroke:#c53030,color:#742a2a;
+    class K,C,A,F1,F2,P,G,R,X,W,E,Q,N source;
+    class D inference;
+    class I,U unknown;
