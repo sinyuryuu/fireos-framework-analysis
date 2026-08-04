@@ -14,6 +14,7 @@
 | P6B-SRC-004 | PS7331 source | `fs/pipe.c:614-625` | pipe metadata 與 buffer array 分開配置 | Confirmed |
 | P6B-SRC-005 | PS7331 source | `drivers/staging/android/ion/ion.c:106-117` | ion_buffer metadata 由 kzalloc 配置 | Confirmed |
 | P6B-SRC-006 | PS7331 source | `kernel/fork.c:307-316` | task_struct 使用 dedicated kmem_cache | Confirmed |
+| P6B-SRC-007 | PS7331 exact-source safety audit | `findings/phase-6-step4-source-safety-analysis.md`；`kernel/futex.c:798-819, 1756-1857, 1926-1965, 3233-3269`；`kernel/locking/rtmutex.c:1079-1090, 1656-1684` | Requeue-PI 不是純 switch probe；可能配置 PI state 並進入 proxy/cleanup path | Strong evidence |
 | P6B-GATE-001 | Safety boundary | 本報告 | 未執行 device-side Requeue-PI、race、panic、spray 或 root | Confirmed |
 
 原始裝置 run 含有連接裝置清單；公開整理時應移除與本研究無關的其他裝置

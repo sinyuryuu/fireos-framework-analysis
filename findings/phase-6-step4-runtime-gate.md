@@ -14,6 +14,12 @@ PI/requeue 狀態；而原始目標明確包含後續 race、memory effect 與�
 
 ## 已完成的替代證據
 
+Exact-source safety analysis is recorded in
+`findings/phase-6-step4-source-safety-analysis.md`. It shows that the syscall
+dispatch reaches `futex_requeue(..., requeue_pi=1)`, may prepare a PI-state
+allocation, and can enter the proxy try-lock path; a single-thread label does
+not make this a read-only switch probe.
+
 - Phase 6A untrusted app 已驗證普通 private PI lock/unlock syscall path 可由
   untrusted app 執行；該測試沒有 requeue、proxy waiter、thread 或 race。
 - Phase 6B 唯讀邊界顯示 shell 無法讀取 `/proc/kallsyms`，`/proc/slabinfo`

@@ -2956,6 +2956,12 @@ waiter object; pipe and ION cache classes are allocator facts, not proof of
 adjacency, reuse, corruption, or exploitability. The generated artifact and
 evidence index are under `artifacts/phase6b/` and `findings/phase-6b-*`.
 
+The exact-source reason for rejecting the stock-device Step 4 harness is
+documented in `findings/phase-6-step4-source-safety-analysis.md`: the operation
+dispatches into `futex_requeue(..., requeue_pi=1)`, can prepare PI state, and can
+reach proxy/cleanup branches. A single-thread or single-call constraint does
+not turn that path into a read-only probe.
+
 Any instrumented kernel, QEMU/KASAN experiment, requeue-PI trigger, race
 reproducer, panic test, or privilege-transition payload must be separately
 labelled `LAB_ONLY` and must not be copied to or run on the stock tablet.
