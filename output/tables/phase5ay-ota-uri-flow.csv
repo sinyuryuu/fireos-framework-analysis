@@ -1,0 +1,11 @@
+stage,component,method_or_field,source,evidence,observed_or_inferred,confidence
+1,DeviceSoftwareOTA,OTASettings.getRequestUrl,OTASettings.java:140-142,P5AY-STATIC-002,default endpoint plus remote configuration key,Confirmed
+2,DeviceSoftwareOTA,SettingsManager constructor/maybeSyncArcusConfig,SettingsManager.java:73-76;151,P5AY-STATIC-003,remote configuration app and device/build attributes,Confirmed
+3,DeviceSoftwareOTA,GetUpdatesCall.prepareUrlConnection,GetUpdatesCall.java:204-211,P5AY-STATIC-004,authenticated JSON POST to query endpoint,Confirmed
+4,DeviceSoftwareOTA,RequestBuilder.build,RequestBuilder.java:51-58,P5AY-STATIC-005,build dimensions/inventory/component types are sent,Confirmed
+5,DeviceSoftwareOTA,PublishedUpdate constructor,PublishedUpdate.java:53-67,P5AY-STATIC-006,server response URL becomes mRemoteUri,Confirmed
+6,DeviceSoftwareOTA,PublishedUpdate.toContentValues,PublishedUpdate.java:192-207,P5AY-STATIC-006,remote URI is persisted as PublishedUpdates.RemoteURI,Confirmed
+7,DeviceSoftwareOTA,DownloadStarter.createRequest,DownloadStarter.java:39-51,P5AY-STATIC-007,URI can be mapped before download enqueue,Confirmed
+8,AmazonDownloadManager,DownloadStarter.startDownload,DownloadStarter.java:64-70,P5AY-STATIC-007,download is queued through AmazonDownloadManager,Confirmed
+9,DeviceSoftwareOTA,PendingUpdate.LocalURI,AmazonDownloadManagerHelper.java:164,P5AY-STATIC-007,local destination is separate from remote URI,Confirmed
+10,Exact device,OTA private database,Phase 5AU private path probes,P5AY-DEVICE-003,actual PS7330 URI not shell-readable,Unknown

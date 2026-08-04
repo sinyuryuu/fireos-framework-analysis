@@ -1715,3 +1715,32 @@ The raw device capture remains local-only because it contains device-specific
 identifiers. The capture script requires an explicit serial, refuses to
 overwrite an output directory, supports --dry-run, and records SHA-256 hashes.
 No package, settings, OTA, reboot, root or partition state changed.
+
+### Phase 5AY — DeviceSoftwareOTA URI and update-source static review
+
+Phase 5AY follows the preserved PS7330 OTA APK offline. The APK's default
+update-query endpoint is `https://softwareupdates.amazon.com/software/inventory2`,
+but the value is read through the OTA Arcus remote-configuration key
+`getUpdatesUrlPathAndMethod`. The query is an authenticated JSON POST whose
+response supplies `AvailableUpdatesContainer.url`; that URL becomes the private
+`PublishedUpdates.RemoteURI` database field and is later passed through
+`AmazonDownloadManager`. The exact PS7330 binary URL is therefore not a fixed
+string in the APK and was not recovered from shell-visible storage.
+
+The exact `Fire_HD10-7.3.3.0-20240730.tar.bz2` source archive remains valuable
+as source/config/build context for GhostLock, but it is not a signed boot image
+or a root/recovery input. No OTA check, download, install, private-data bypass,
+GhostLock race, root payload, reboot or partition operation was run.
+
+Phase 5AY outputs:
+
+- `tools/scripts/analyze_phase5ay_ota_uri_static.py`
+- `findings/phase-5ay-ota-uri-source-review.md`
+- `findings/phase-5ay-evidence-index.md`
+- `output/tables/phase5ay-ota-uri-flow.csv`
+- `output/call-graphs/phase5ay-ota-uri-flow.mmd`
+- `artifacts/phase5/ota-uri-static-review-20260804-04/`
+
+The analyzer supports `--dry-run`, refuses to overwrite an existing output,
+uses a temporary JADX directory, records the APK hash, and performs no device
+or network I/O.

@@ -1,0 +1,13 @@
+flowchart TD
+    A[OTASettings.getRequestUrl<br/>default endpoint or Arcus override] --> B[GetUpdatesCall.prepareUrlConnection]
+    B --> C[Authenticated JSON POST<br/>software/inventory2]
+    C --> D[GetUpdateContainer<br/>AvailableUpdatesContainer.url]
+    D --> E[PublishedUpdate constructor<br/>mRemoteUri]
+    E --> F[updates.db<br/>PublishedUpdates.RemoteURI]
+    F --> G[PendingUpdate.getRemoteUri]
+    G --> H[DNWStateObservable.getOtaDownloadUrl]
+    H --> I[IAmazonDownloadManager.enqueue]
+    I --> J[download destination]
+    J --> K[PendingUpdate.LocalURI]
+    L[Exact PS7330 signed URL] -. private response/database not shell-readable .-> D
+    M[Fire_HD10-7.3.3.0 source archive] -. source/build context only .-> N[GhostLock source evidence]
