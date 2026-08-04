@@ -1,0 +1,95 @@
+{
+  "config": {
+    "CONFIG_ARM64": true,
+    "CONFIG_DEBUG_INFO": false,
+    "CONFIG_FTRACE": true,
+    "CONFIG_FUNCTION_TRACER": false,
+    "CONFIG_FUTEX": true,
+    "CONFIG_ION": true,
+    "CONFIG_KASAN": false,
+    "CONFIG_MMU": true,
+    "CONFIG_PREEMPT": true,
+    "CONFIG_RANDOMIZE_BASE": true,
+    "CONFIG_RT_MUTEXES": true,
+    "CONFIG_SLUB": true,
+    "CONFIG_SMP": true,
+    "CONFIG_USERFAULTFD": false
+  },
+  "host": {
+    "cwd_free_bytes": 19210067968,
+    "machine": "arm64",
+    "python": "3.14.6",
+    "system": "Darwin"
+  },
+  "inputs": {
+    "config": "artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config",
+    "config_sha256": "eefb8db484f65e196a7bb401ae0165f434f08b13041aef6762917e284d013d04",
+    "required_tree_present": true,
+    "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4",
+    "source_exists": true
+  },
+  "readiness": {
+    "debug_symbols_and_kasan_enabled": false,
+    "qemu_aarch64_available": false,
+    "reasons": [
+      "qemu-system-aarch64 missing",
+      "CONFIG_KASAN and CONFIG_DEBUG_INFO are not both enabled"
+    ],
+    "status": "NOT_READY"
+  },
+  "safety": [
+    "No ADB/device command",
+    "No source/config mutation",
+    "No kernel build/boot",
+    "No futex/race/panic/memory/root payload"
+  ],
+  "schema": "phase6c-lab-readiness-v1",
+  "scope": {
+    "device_execution": false,
+    "file_mutation": false,
+    "futex_trigger": false,
+    "host_only": true,
+    "installation": false,
+    "kernel_boot": false,
+    "kernel_build": false,
+    "lab_only": true
+  },
+  "tools": {
+    "aarch64-linux-gnu-gcc": {
+      "path": null,
+      "version": null
+    },
+    "clang": {
+      "path": "/usr/bin/clang",
+      "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)"
+    },
+    "clang++": {
+      "path": "/usr/bin/clang++",
+      "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)"
+    },
+    "llvm-objdump": {
+      "path": null,
+      "version": null
+    },
+    "llvm-readelf": {
+      "path": null,
+      "version": null
+    },
+    "make": {
+      "path": "/usr/bin/make",
+      "version": "GNU Make 3.81"
+    },
+    "python3": {
+      "path": "/opt/homebrew/bin/python3",
+      "version": "Python 3.14.6"
+    },
+    "qemu-img": {
+      "path": null,
+      "version": null
+    },
+    "qemu-system-aarch64": {
+      "path": null,
+      "version": null
+    }
+  }
+}
