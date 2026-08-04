@@ -2278,3 +2278,30 @@ Phase 5BY outputs:
 - `tools/scripts/analyze_phase5by_ghostlock_fix_chain.py`
 - `tests/test_phase5by_ghostlock_fix_chain.py`
 - `artifacts/phase5/phase5by-ps7331-ghostlock-fix-chain-20260804-02/`
+
+## Phase 5BZ status
+
+Phase 5BZ normalizes the preserved PS7331 binary markers and records the
+address-sanitization boundary. The three saved markers for the primary pre-fix
+relationship are present: `remove_waiter` reads the current-task source,
+clears through that current-task register, and the proxy path calls
+`remove_waiter`. The embedded config independently confirms the futex/rtmutex
+path and relevant ARM64, preemption, ASLR, and seccomp settings.
+
+The follow-up guard cannot be classified from the saved binary output because
+raw branch/return disassembly and the reconstructed ELF were intentionally not
+kept. The result is therefore
+`PRIMARY_PRE_FIX_MARKERS_CONFIRMED_FOLLOW_UP_BINARY_UNRESOLVED`, not a claim
+that the guard is present or absent. Runtime exploitability, kernel control and
+root remain unproven.
+
+Phase 5BZ outputs:
+
+- `findings/phase-5bz-ps7331-binary-evidence-boundary.md`
+- `findings/phase-5bz-evidence-index.md`
+- `tools/scripts/analyze_phase5bz_ps7331_binary_boundary.py`
+- `tests/test_phase5bz_ps7331_binary_boundary.py`
+- `artifacts/phase5/phase5bz-ps7331-binary-evidence-boundary-20260804-01/`
+- `output/tables/phase5bz-ps7331-binary-evidence.csv`
+- `output/tables/phase5bz-ps7331-config-observations.csv`
+- `output/call-graphs/phase5bz-ps7331-fix-boundary.mmd`

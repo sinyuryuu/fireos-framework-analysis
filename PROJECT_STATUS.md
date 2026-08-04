@@ -692,3 +692,26 @@ Phase 5BY outputs:
 - `tools/scripts/analyze_phase5by_ghostlock_fix_chain.py`
 - `tests/test_phase5by_ghostlock_fix_chain.py`
 - `artifacts/phase5/phase5by-ps7331-ghostlock-fix-chain-20260804-02/`
+
+## Phase 5BZ status
+
+Phase 5BZ is PS7331-only and host-only. It verifies the three preserved,
+address-sanitized Image markers for the primary GhostLock pre-fix relationship
+against the exact source control flow and extracted IKCONFIG. The primary
+pre-fix marker set is confirmed. The follow-up guard is explicitly unresolved at
+binary level because raw branch/return disassembly and the reconstructed ELF are
+not retained; absence of that evidence is not a claim about the guard itself.
+
+No device I/O, futex trigger, exploit, root attempt, boot image write,
+bootloader operation, or partition mutation was performed.
+
+Phase 5BZ outputs:
+
+- `findings/phase-5bz-ps7331-binary-evidence-boundary.md`
+- `findings/phase-5bz-evidence-index.md`
+- `tools/scripts/analyze_phase5bz_ps7331_binary_boundary.py`
+- `tests/test_phase5bz_ps7331_binary_boundary.py`
+- `artifacts/phase5/phase5bz-ps7331-binary-evidence-boundary-20260804-01/`
+- `output/tables/phase5bz-ps7331-binary-evidence.csv`
+- `output/tables/phase5bz-ps7331-config-observations.csv`
+- `output/call-graphs/phase5bz-ps7331-fix-boundary.mmd`

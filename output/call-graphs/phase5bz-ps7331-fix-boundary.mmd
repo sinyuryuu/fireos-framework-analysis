@@ -1,0 +1,14 @@
+flowchart TD
+    S[PS7331 exact rtmutex.c] --> E[early -EDEADLK before waiter task assignment]
+    S --> C[current-task cleanup in remove_waiter]
+    S --> P[proxy path conditionally calls remove_waiter]
+    I[PS7331 saved signed Image markers] --> M[current-task source and clear markers]
+    I --> Q[proxy remove_waiter marker]
+    C --> R[primary pre-fix semantics]
+    M --> R
+    P --> G[follow-up guard review required]
+    E --> G
+    D[raw branch/return disassembly intentionally omitted] --> U[follow-up binary status unresolved]
+    G --> U
+    R --> N[No live exploit/root conclusion]
+    U --> N

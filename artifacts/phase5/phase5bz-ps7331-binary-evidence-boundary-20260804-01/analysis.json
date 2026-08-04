@@ -1,0 +1,128 @@
+{
+  "binary_input": {
+    "kernel_image_sha256": "10638df8d43c83e0799bfe071ef29a8069ad909b320536cff6b58ee5e1efea7d",
+    "parser_metadata_sha256": "22c1d9ff1247219249300e4434ae874140f56b7ba1a1f4f1eefb9b4f854b794b",
+    "patterns_sha256": "0ee3da7513051f2fa32b221918c6e671bc78b2a8e192fa0ab7ad65cc6e53475d",
+    "summary_sha256": "eede2b264a6a3a9934cc09b374ae9162e4196d2bdf68a07d6cd5fe2156148f2b",
+    "symbols_present": [
+      "remove_waiter",
+      "rt_mutex_start_proxy_lock",
+      "rt_mutex_finish_proxy_lock",
+      "futex_requeue"
+    ]
+  },
+  "classification": "PRIMARY_PRE_FIX_MARKERS_CONFIRMED_FOLLOW_UP_BINARY_UNRESOLVED",
+  "config_observations": [
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_KALLSYMS",
+      "source_line": "CONFIG_KALLSYMS=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_FUTEX",
+      "source_line": "CONFIG_FUTEX=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_RT_MUTEXES",
+      "source_line": "CONFIG_RT_MUTEXES=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_PREEMPT",
+      "source_line": "CONFIG_PREEMPT=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_PREEMPT_COUNT",
+      "source_line": "CONFIG_PREEMPT_COUNT=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_SECCOMP",
+      "source_line": "CONFIG_SECCOMP=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_SECCOMP_FILTER",
+      "source_line": "CONFIG_SECCOMP_FILTER=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_RANDOMIZE_BASE",
+      "source_line": "CONFIG_RANDOMIZE_BASE=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Unknown",
+      "interpretation": "key was not observed; absence is not proof of disabled behavior",
+      "key": "CONFIG_RANDOMIZE_KSTACK_OFFSET",
+      "source_line": "",
+      "status": "not_observed"
+    },
+    {
+      "confidence": "Unknown",
+      "interpretation": "key was not observed; absence is not proof of disabled behavior",
+      "key": "CONFIG_RANDOMIZE_KSTACK_OFFSET_DEFAULT",
+      "source_line": "",
+      "status": "not_observed"
+    },
+    {
+      "confidence": "Unknown",
+      "interpretation": "key was not observed; absence is not proof of disabled behavior",
+      "key": "CONFIG_VMAP_STACK",
+      "source_line": "",
+      "status": "not_observed"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_ARM64_4K_PAGES",
+      "source_line": "CONFIG_ARM64_4K_PAGES=y",
+      "status": "present"
+    },
+    {
+      "confidence": "Confirmed",
+      "interpretation": "configuration is present in extracted IKCONFIG",
+      "key": "CONFIG_ARM64_VA_BITS",
+      "source_line": "CONFIG_ARM64_VA_BITS=39",
+      "status": "present"
+    }
+  ],
+  "device_execution": false,
+  "followup_guard_binary_reason": "The preserved parser output intentionally omits raw disassembly, branch targets, and addresses; it records no return-value guard relation.",
+  "followup_guard_binary_status": "NOT_OBSERVABLE_FROM_SAVED_SANITIZED_OUTPUT",
+  "primary_binary_markers_complete": true,
+  "root_or_privilege_gain_proven": false,
+  "runtime_exploitability_proven": false,
+  "safety_boundary": [
+    "No device command was executed.",
+    "No futex race or reproducer was compiled or run.",
+    "No kernel address, offset, gadget, credential target, or payload was produced.",
+    "No image, partition, bootloader, SELinux, or system state was modified."
+  ],
+  "scope": "PS7331 only; host-only normalization of preserved evidence",
+  "source_input": {
+    "classification": "PRE_PRIMARY_FIX_WITH_EARLY_RETURN_GUARD_REVIEW",
+    "follow_up_guard_review_needed": true,
+    "primary_fix_present": false,
+    "primary_fix_shape": true,
+    "source_result_sha256": "4e15b1302f3b3b3691fe3310298f639207365c3c78c6afece780fdb2791667d9"
+  }
+}
