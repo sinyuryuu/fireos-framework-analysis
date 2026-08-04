@@ -1,0 +1,16 @@
+flowchart TD
+    P[explicit proxy task state] --> R[remove_waiter]
+    R --> C[current->pi_blocked_on = NULL]
+    R --> D[rt_mutex_dequeue\n tree_entry conditionally cleared]
+    R --> DP[rt_mutex_dequeue_pi\n pi_tree_entry conditionally cleared]
+    R -.-> T[waiter->task / waiter->lock not directly cleared]
+    T -.-> B[conditional source implication:\ntarget task state may remain if mismatch existed]
+    B -.-> L[task_blocked_on_lock\n reads pi_blocked_on -> lock]
+    B -.-> A[rt_mutex_adjust_pi\n reads pi_blocked_on]
+    B -.-> W[rt_mutex_adjust_prio_chain\n walks waiter/lock chain]
+    D --> M[mark_wakeup_next_waiter\n uses waiter->task]
+    X[try_to_take_rt_mutex] -. potential repair/transition .-> B
+    E[Runtime mismatch, persistence, and second consumption are not observed]:::boundary
+    E -.-> B
+
+    classDef boundary fill:#fff3e0,stroke:#ef6c00,color:#e65100;

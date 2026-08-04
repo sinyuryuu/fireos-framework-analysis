@@ -1,0 +1,14 @@
+flowchart TD
+    A[SYSCALL_DEFINE6 futex] --> B[do_futex]
+    B --> C{PI requeue dispatch}
+    C --> D[futex_requeue]
+    D --> E[rt_mutex_start_proxy_lock]
+    E --> F[task_blocks_on_rt_mutex]
+    E --> G[remove_waiter]
+    H[futex_cmpxchg_enabled feature gate] --> C
+    I[SELinux/seccomp/process policy] -. outside scoped source .-> A
+    J[No direct capable/security hook observed] -. scoped observation .-> A
+    G --> K[Source reachability candidate]
+    I --> L[Runtime policy unresolved]
+    K --> M[No live exploit/root conclusion]
+    L --> M

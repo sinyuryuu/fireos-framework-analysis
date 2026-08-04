@@ -1,0 +1,12 @@
+evidence_id,area,function,kind,observation,classification,confidence
+P5CD-001,cleanup,remove_waiter,current_state_write,current->pi_blocked_on is cleared,SOURCE_CLEANUP_EFFECT,Confirmed
+P5CD-001,cleanup,remove_waiter,waiter_state_write,no waiter->task or waiter->lock write observed,SOURCE_CLEANUP_EFFECT,Confirmed
+P5CD-002,tree,rt_mutex_dequeue,tree_node_clear,waiter->tree_entry is conditionally cleared,SOURCE_TREE_CLEANUP,Confirmed
+P5CD-002,tree,rt_mutex_dequeue_pi,pi_tree_node_clear,waiter->pi_tree_entry is conditionally cleared,SOURCE_PI_TREE_CLEANUP,Confirmed
+P5CD-003,consumer,task_blocked_on_lock,read_dereference,reads p->pi_blocked_on and waiter->lock,POTENTIAL_SECOND_CONSUMER,Confirmed reference/runtime unproven
+P5CD-003,consumer,rt_mutex_adjust_prio_chain,read_dereference,walks task->pi_blocked_on and waiter->lock,POTENTIAL_SECOND_CONSUMER,Confirmed reference/runtime unproven
+P5CD-003,consumer,rt_mutex_adjust_pi,read_dereference,rechecks task->pi_blocked_on,POTENTIAL_SECOND_CONSUMER,Confirmed reference/runtime unproven
+P5CD-003,consumer,mark_wakeup_next_waiter,waiter_task_use,uses waiter->task as wake target,POTENTIAL_SECOND_CONSUMER,Confirmed reference/runtime unproven
+P5CD-003,repair,try_to_take_rt_mutex,state_clear,can clear explicit task blocked state,POTENTIAL_REPAIR_OR_STATE_TRANSITION,Confirmed reference/runtime unproven
+P5CD-004,return,task_blocks_on_rt_mutex,early_return,owner==task return precedes waiter->task assignment,REPAIR_CHAIN_BOUNDARY,Confirmed
+P5CD-004,return,rt_mutex_start_proxy_lock,cleanup_gate,PS7331 uses if (unlikely(ret)),REPAIR_CHAIN_BOUNDARY,Confirmed

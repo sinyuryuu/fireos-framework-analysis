@@ -1,0 +1,278 @@
+{
+  "cleanup_effect_model": {
+    "dequeues_lock_tree_via_helper": true,
+    "dequeues_owner_pi_tree_via_helper": true,
+    "persistent_target_state_violation_proven": false,
+    "target_task_pi_blocked_on_cleared_by_remove_waiter": false,
+    "writes_current_pi_blocked_on": true,
+    "writes_waiter_lock": false,
+    "writes_waiter_task": false
+  },
+  "consumer_model": {
+    "potential_repair_or_state_transitions": [
+      "try_to_take_rt_mutex"
+    ],
+    "potential_second_consumers": [
+      "task_blocked_on_lock",
+      "rt_mutex_adjust_prio_chain",
+      "rt_mutex_adjust_pi",
+      "mark_wakeup_next_waiter"
+    ],
+    "runtime_repair_observed": false,
+    "runtime_second_consumer_observed": false
+  },
+  "evidence": [
+    {
+      "confidence": "Confirmed, exact source",
+      "function": "remove_waiter",
+      "id": "P5CD-001",
+      "matches": {
+        "current_pi_blocked_on_write": [
+          {
+            "line": 1089,
+            "text": "current->pi_blocked_on = NULL;"
+          }
+        ],
+        "current_pi_lock": [
+          {
+            "line": 1087,
+            "text": "raw_spin_lock_irqsave(&current->pi_lock, flags);"
+          },
+          {
+            "line": 1090,
+            "text": "raw_spin_unlock_irqrestore(&current->pi_lock, flags);"
+          }
+        ],
+        "waiter_lock_write": [],
+        "waiter_pi_tree_dequeue_call": [
+          {
+            "line": 1101,
+            "text": "rt_mutex_dequeue_pi(owner, waiter);"
+          }
+        ],
+        "waiter_task_write": [],
+        "waiter_tree_dequeue_call": [
+          {
+            "line": 1088,
+            "text": "rt_mutex_dequeue(lock, waiter);"
+          }
+        ]
+      },
+      "observation": "cleanup writes current->pi_blocked_on and does not write waiter->task or waiter->lock"
+    },
+    {
+      "confidence": "Confirmed, exact source",
+      "function": "rt_mutex_dequeue / rt_mutex_dequeue_pi",
+      "id": "P5CD-002",
+      "matches": {
+        "rt_mutex_dequeue_pi_tree_clear": [
+          {
+            "line": 318,
+            "text": "RB_CLEAR_NODE(&waiter->pi_tree_entry);"
+          }
+        ],
+        "rt_mutex_dequeue_tree_clear": [
+          {
+            "line": 279,
+            "text": "RB_CLEAR_NODE(&waiter->tree_entry);"
+          }
+        ]
+      },
+      "observation": "cleanup may clear waiter tree_entry and pi_tree_entry through helper calls, conditionally"
+    },
+    {
+      "confidence": "Confirmed as source references; runtime reachability unproven",
+      "function": "PI state consumers",
+      "id": "P5CD-003",
+      "matches": [
+        {
+          "classification": "POTENTIAL_SECOND_CONSUMER",
+          "function": "task_blocked_on_lock",
+          "kind": "read_dereference",
+          "matches": [
+            {
+              "line": 422,
+              "text": "return p->pi_blocked_on ? p->pi_blocked_on->lock : NULL;"
+            }
+          ],
+          "meaning": "reads a task's pi_blocked_on and, when present, obtains waiter->lock"
+        },
+        {
+          "classification": "POTENTIAL_SECOND_CONSUMER",
+          "function": "rt_mutex_adjust_prio_chain",
+          "kind": "read_dereference",
+          "matches": [
+            {
+              "line": 548,
+              "text": "waiter = task->pi_blocked_on;"
+            },
+            {
+              "line": 578,
+              "text": "if (next_lock != waiter->lock)"
+            },
+            {
+              "line": 620,
+              "text": "lock = waiter->lock;"
+            }
+          ],
+          "meaning": "walks the PI chain through task->pi_blocked_on and the waiter's lock"
+        },
+        {
+          "classification": "POTENTIAL_SECOND_CONSUMER",
+          "function": "rt_mutex_adjust_pi",
+          "kind": "read_dereference",
+          "matches": [
+            {
+              "line": 1144,
+              "text": "waiter = task->pi_blocked_on;"
+            }
+          ],
+          "meaning": "rechecks a task's blocked waiter during PI adjustment"
+        },
+        {
+          "classification": "POTENTIAL_REPAIR_OR_STATE_TRANSITION",
+          "function": "try_to_take_rt_mutex",
+          "kind": "state_clear",
+          "matches": [
+            {
+              "line": 920,
+              "text": "task->pi_blocked_on = NULL;"
+            }
+          ],
+          "meaning": "can clear the explicit task's blocked state on successful lock acquisition"
+        },
+        {
+          "classification": "POTENTIAL_SECOND_CONSUMER",
+          "function": "mark_wakeup_next_waiter",
+          "kind": "waiter_task_use",
+          "matches": [
+            {
+              "line": 1070,
+              "text": "wake_q_add(wake_q, waiter->task);"
+            }
+          ],
+          "meaning": "uses waiter->task as the wake target after selecting a top waiter"
+        }
+      ],
+      "observation": "normal rtmutex paths later read task->pi_blocked_on or waiter->task"
+    },
+    {
+      "confidence": "Confirmed, exact source",
+      "function": "task_blocks_on_rt_mutex / rt_mutex_start_proxy_lock",
+      "id": "P5CD-004",
+      "matches": {
+        "early_deadlock_return": [
+          {
+            "line": 972,
+            "text": "if (owner == task)"
+          },
+          {
+            "line": 973,
+            "text": "return -EDEADLK;"
+          }
+        ],
+        "proxy_cleanup_condition": [
+          {
+            "line": 1089,
+            "text": "current->pi_blocked_on = NULL;"
+          }
+        ],
+        "proxy_wrapper_source": {
+          "line": 1265,
+          "text": "if (unlikely(ret)) {"
+        },
+        "waiter_task_assignment": [
+          {
+            "line": 977,
+            "text": "waiter->task = task;"
+          }
+        ]
+      },
+      "observation": "early return precedes waiter task assignment and PS7331 wrapper uses nonzero cleanup condition"
+    }
+  ],
+  "ret_and_early_return": {
+    "early_deadlock_return": [
+      {
+        "line": 972,
+        "text": "if (owner == task)"
+      },
+      {
+        "line": 973,
+        "text": "return -EDEADLK;"
+      }
+    ],
+    "proxy_cleanup_condition": [
+      {
+        "line": 1089,
+        "text": "current->pi_blocked_on = NULL;"
+      }
+    ],
+    "proxy_wrapper_source": {
+      "line": 1265,
+      "text": "if (unlikely(ret)) {"
+    },
+    "waiter_task_assignment": [
+      {
+        "line": 977,
+        "text": "waiter->task = task;"
+      }
+    ]
+  },
+  "safety": {
+    "device_modified": false,
+    "race_triggered": false,
+    "syscall_invoked": false,
+    "unknown_ioctl_used": false
+  },
+  "scope": "PS7331 exact rtmutex.c; host-only cleanup/consumer audit",
+  "source": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+  "source_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+  "spans": {
+    "mark_wakeup_next_waiter": [
+      1040,
+      1071
+    ],
+    "remove_waiter": [
+      1079,
+      1129
+    ],
+    "rt_mutex_adjust_pi": [
+      1136,
+      1158
+    ],
+    "rt_mutex_adjust_prio_chain": [
+      488,
+      818
+    ],
+    "rt_mutex_dequeue": [
+      270,
+      280
+    ],
+    "rt_mutex_dequeue_pi": [
+      309,
+      319
+    ],
+    "task_blocked_on_lock": [
+      420,
+      423
+    ],
+    "task_blocks_on_rt_mutex": [
+      952,
+      1032
+    ],
+    "try_to_take_rt_mutex": [
+      830,
+      943
+    ]
+  },
+  "verdict": {
+    "controlled_memory_effect_proven": false,
+    "device_execution": false,
+    "persistent_invariant_violation_proven": false,
+    "root_or_privilege_gain_proven": false,
+    "runtime_mismatch_observed": false,
+    "source_post_cleanup_effects_mapped": true,
+    "stable_crash_proven": false
+  }
+}

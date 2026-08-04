@@ -2329,3 +2329,27 @@ Phase 5CA outputs:
 - `artifacts/phase5/phase5ca-ps7331-followup-patch-mapping-20260804-01/`
 - `output/tables/phase5ca-followup-patch-mapping.csv`
 - `output/call-graphs/phase5ca-ghostlock-fix-chain.mmd`
+
+## Phase 5CB status
+
+Phase 5CB confirms the exact PS7331 source-level futex syscall → PI requeue →
+proxy-lock path and records that no direct capability/security hook was seen in
+the bounded scoped functions. This is an entry-path candidate only; Android
+userspace policy, runtime scheduling and exploitability are unresolved. No
+device syscall, futex trigger, exploit, or root operation was performed.
+
+## Phase 5CC status
+
+Phase 5CC confirms source-level identity separation: the futex queue binds its
+stored task to the waiting `current`, the PI requeue path passes that stored task
+as an explicit proxy parameter, and PS7331 cleanup uses `current` for
+`pi_blocked_on`. No scoped equality assertion was observed. This does not prove
+a live mismatch or race.
+
+## Phase 5CD status
+
+Phase 5CD maps what cleanup writes/removes and which normal rtmutex paths later
+read related state. It identifies candidate second consumers and a potential
+state transition, while explicitly leaving runtime persistence, crash, memory
+effect and root unproven. The work is host-only source analysis with no device
+mutation.

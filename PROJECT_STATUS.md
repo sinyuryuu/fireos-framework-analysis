@@ -739,3 +739,64 @@ Phase 5CA outputs:
 - `artifacts/phase5/phase5ca-ps7331-followup-patch-mapping-20260804-01/`
 - `output/tables/phase5ca-followup-patch-mapping.csv`
 - `output/call-graphs/phase5ca-ghostlock-fix-chain.mmd`
+
+## Phase 5CB status
+
+Phase 5CB audits the exact PS7331 futex syscall-to-PI-requeue entry path. It
+confirms the source chain from `SYSCALL_DEFINE6(futex)` through
+`do_futex()`/`futex_requeue()` to `rt_mutex_start_proxy_lock()`, while finding no
+direct capability/security hook in the bounded scoped functions. The result is
+`SYSCALL_TO_PI_REQUEUE_PROXY_PATH_PRESENT`; Android userspace policy, runtime
+reachability and exploitability remain unresolved. No device syscall or futex
+trigger was executed.
+
+Phase 5CB outputs:
+
+- `findings/phase-5cb-ps7331-futex-entry-audit.md`
+- `findings/phase-5cb-evidence-index.md`
+- `tools/scripts/audit_phase5cb_ps7331_futex_entry.py`
+- `tests/test_phase5cb_ps7331_futex_entry.py`
+- `artifacts/phase5/phase5cb-ps7331-futex-entry-audit-20260804-01/`
+- `output/tables/phase5cb-futex-entry-gate.csv`
+- `output/call-graphs/phase5cb-futex-entry-path.mmd`
+
+## Phase 5CC status
+
+Phase 5CC audits the source-level task identity dataflow. It confirms that
+`futex_q->task` is bound to the waiting `current`, that the PI requeue path has
+a separate `rt_mutex_waiter`, that `futex_requeue()` passes `this->task` as an
+explicit proxy parameter, and that PS7331 `remove_waiter()` clears
+`current->pi_blocked_on`. No direct `current == task` assertion was observed in
+the bounded proxy/task/cleanup functions. This establishes interface-level
+identity separation, not a live scheduler mismatch or race.
+
+Phase 5CC outputs:
+
+- `findings/phase-5cc-ps7331-identity-invariant.md`
+- `findings/phase-5cc-evidence-index.md`
+- `tools/scripts/audit_phase5cc_ps7331_identity_invariant.py`
+- `tests/test_phase5cc_ps7331_identity_invariant.py`
+- `artifacts/phase5/phase5cc-ps7331-identity-invariant-20260804-01/`
+- `output/tables/phase5cc-identity-invariant.csv`
+- `output/call-graphs/phase5cc-identity-invariant.mmd`
+
+## Phase 5CD status
+
+Phase 5CD maps source-level cleanup effects and candidate later consumers. It
+confirms that `remove_waiter()` does not directly clear `waiter->task` or
+`waiter->lock`, while its helper calls can conditionally clear lock and PI-tree
+nodes. It records candidate readers such as `task_blocked_on_lock()`,
+`rt_mutex_adjust_prio_chain()` and `rt_mutex_adjust_pi()`, plus a possible state
+transition in `try_to_take_rt_mutex()`. These are static references only:
+runtime persistence, second consumption, crash, controlled memory effect and
+root remain unproven. No race or device operation was performed.
+
+Phase 5CD outputs:
+
+- `findings/phase-5cd-ps7331-cleanup-consumers.md`
+- `findings/phase-5cd-evidence-index.md`
+- `tools/scripts/audit_phase5cd_ps7331_cleanup_consumers.py`
+- `tests/test_phase5cd_ps7331_cleanup_consumers.py`
+- `artifacts/phase5/phase5cd-ps7331-cleanup-consumers-20260804-01/`
+- `output/tables/phase5cd-cleanup-consumers.csv`
+- `output/call-graphs/phase5cd-cleanup-consumers.mmd`

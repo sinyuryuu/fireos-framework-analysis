@@ -1,0 +1,15 @@
+evidence_id,source_file,location,identity_role,observation,classification,confidence
+P5CC-001,kernel/futex.c,struct futex_q,futex queue task identity,queue entry stores the waiting task,SOURCE_IDENTITY_ROLE_DECLARED,Confirmed
+P5CC-002,kernel/futex.c,queue_me(),waiter binding,q->task is assigned from current,SOURCE_BINDS_QUEUE_TASK_TO_CURRENT,Confirmed
+P5CC-003,kernel/futex.c,futex_wait_queue_me(),wait path,wait helper reaches queue_me,SOURCE_WAIT_PATH_REACHES_QUEUE_BINDING,Confirmed
+P5CC-004,kernel/futex.c,futex_wait_requeue_pi(),PI proxy waiter lifetime,separate rt_mutex_waiter is attached to q,SOURCE_HAS_SEPARATE_PROXY_WAITER_OBJECT,Confirmed
+P5CC-005,kernel/futex.c,futex_wait_requeue_pi(),PI proxy waiter initialization,rt_waiter.task is initialized separately,SOURCE_WAITER_TASK_INITIALIZED_SEPARATELY,Confirmed
+P5CC-006,kernel/futex.c,futex_wait_requeue_pi(),PI wait path,requeue handoff occurs while wait path sleeps,SOURCE_PROXY_WAIT_REQUEUE_HANDOFF,Confirmed
+P5CC-007,kernel/futex.c,futex_requeue(),proxy call site,stored this->task is passed to proxy API,SOURCE_REQUEUE_PASSES_STORED_WAITER_TASK,Confirmed
+P5CC-008,kernel/locking/rtmutex.c,rt_mutex_start_proxy_lock(),proxy API identity inputs,task is an explicit parameter,SOURCE_PROXY_TASK_IS_EXPLICIT_PARAMETER,Confirmed
+P5CC-009,kernel/locking/rtmutex.c,rt_mutex_start_proxy_lock(),proxy API dataflow,explicit task is forwarded,SOURCE_PROXY_FORWARDS_EXPLICIT_TASK,Confirmed
+P5CC-010,kernel/locking/rtmutex.c,task_blocks_on_rt_mutex(),early return,owner==task branch precedes waiter assignment,SOURCE_EARLY_DEADLOCK_BRANCH_PRECEDES_WAITER_ASSIGNMENT,Confirmed
+P5CC-011,kernel/locking/rtmutex.c,task_blocks_on_rt_mutex(),waiter identity assignment,waiter->task receives explicit task,SOURCE_WAITER_TASK_ASSIGNED_FROM_EXPLICIT_TASK,Confirmed
+P5CC-012,kernel/locking/rtmutex.c,remove_waiter(),cleanup identity,cleanup locks current->pi_lock,SOURCE_CLEANUP_USES_CURRENT_PI_LOCK,Confirmed
+P5CC-013,kernel/locking/rtmutex.c,remove_waiter(),cleanup identity,cleanup clears current->pi_blocked_on,SOURCE_CLEANUP_CLEARS_CURRENT_BLOCKED_STATE,Confirmed
+P5CC-014,kernel/locking/rtmutex.c,scoped proxy/task/cleanup functions,identity invariant,no direct current/task equality assertion observed,SOURCE_EQUALITY_ASSERTION_SEARCH,Confirmed bounded search

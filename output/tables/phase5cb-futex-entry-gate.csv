@@ -1,0 +1,8 @@
+stage,location,observation,result,confidence
+syscall,futex.c:3275,SYSCALL_DEFINE6(futex),present,Confirmed
+dispatch,futex.c:3237-3269,FUTEX_WAIT_REQUEUE_PI and FUTEX_CMP_REQUEUE_PI,present,Confirmed
+requeue,futex.c:1756,futex_requeue function,present,Confirmed
+proxy,futex.c:1963-1965,rt_mutex_start_proxy_lock call,present,Confirmed
+feature_gate,futex.c:3239,futex_cmpxchg_enabled check,present,Confirmed
+credential_gate,scoped functions,no capable ns_capable or security_* call observed,not_observed,Confirmed scoped
+runtime_policy,SELinux/seccomp/process domain,not resolvable from kernel source alone,unresolved,Unknown

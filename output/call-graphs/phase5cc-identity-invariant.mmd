@@ -1,0 +1,24 @@
+flowchart TD
+    Q[struct futex_q\n task = waiting task] -->|queue_me: q->task = current| W[futex_wait_queue_me]
+    W --> R[futex_wait_requeue_pi\n separate rt_mutex_waiter]
+    R -->|rt_waiter.task = NULL; q.rt_waiter = &rt_waiter| H[queued proxy state]
+    H -->|futex_requeue| P[rt_mutex_start_proxy_lock\n explicit task parameter]
+    P --> B[task_blocks_on_rt_mutex\n waiter->task = task on enqueue path]
+    P -->|ret != 0 in PS7331| C[remove_waiter]
+    C -->|uses current->pi_lock| X[current task identity]
+    C -->|clears current->pi_blocked_on| X
+    Y[No scoped current == task assertion observed] -.-> P
+    Y -.-> C
+
+    classDef safe fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
+    classDef boundary fill:#fff3e0,stroke:#ef6c00,color:#e65100;
+    class Q,W,R,H,P,B,C,X safe;
+    class Y boundary;
+
+%% Markdown text fallback:
+%% struct futex_q task is bound to waiting current at queue_me.
+%% futex_wait_requeue_pi owns a separate rt_mutex_waiter.
+%% futex_requeue passes this->task to rt_mutex_start_proxy_lock.
+%% rt_mutex_start_proxy_lock forwards the explicit task.
+%% PS7331 remove_waiter cleanup uses current->pi_lock/current->pi_blocked_on.
+%% This is source-level role separation, not a runtime race or exploit proof.

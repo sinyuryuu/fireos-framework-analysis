@@ -1,0 +1,247 @@
+{
+  "futex_path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+  "futex_sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+  "identity_model": {
+    "cleanup_clears_current_pi_blocked_on": true,
+    "cleanup_effect_proven": false,
+    "cleanup_reads_current_pi_lock": true,
+    "device_execution": false,
+    "identity_mismatch_allowed_by_source_interface": true,
+    "identity_mismatch_observed_runtime": false,
+    "kernel_control_proven": false,
+    "proxy_api_has_explicit_task_parameter": true,
+    "proxy_waiter_is_separate_object": true,
+    "queue_task_bound_to_waiting_current_at_enqueue": true,
+    "race_window_proven": false,
+    "requeue_passes_stored_task_to_proxy_api": true,
+    "root_or_privilege_gain_proven": false,
+    "scoped_current_equals_explicit_task_assertion_observed": false
+  },
+  "observations": [
+    {
+      "classification": "SOURCE_IDENTITY_ROLE_DECLARED",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-001",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "identity_role": "futex queue task identity",
+      "line": 234,
+      "location": "struct futex_q lines 231-241",
+      "note": "The queue object stores a task pointer described as the task waiting on the futex.",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "source": "futex.c",
+      "text": "struct task_struct *task;"
+    },
+    {
+      "classification": "SOURCE_BINDS_QUEUE_TASK_TO_CURRENT",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-002",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "identity_role": "waiter binding",
+      "line": 2066,
+      "location": "queue_me() lines 2049-2068",
+      "note": "The waiting thread binds its futex_q task field to the current task when queued.",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "source": "futex.c",
+      "text": "q->task = current;"
+    },
+    {
+      "classification": "SOURCE_WAIT_PATH_REACHES_QUEUE_BINDING",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-003",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "identity_role": "wait path",
+      "line": 2321,
+      "location": "futex_wait_queue_me() lines 2321-2351",
+      "note": "The wait helper invokes queue_me before sleeping; this connects the wait path to P5CC-002.",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "source": "futex.c",
+      "text": "static void futex_wait_queue_me(struct futex_hash_bucket *hb, struct futex_q *q,"
+    },
+    {
+      "classification": "SOURCE_HAS_SEPARATE_PROXY_WAITER_OBJECT",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-004",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "identity_role": "PI proxy waiter lifetime",
+      "line": 2844,
+      "location": "futex_wait_requeue_pi() lines 2839-2997",
+      "note": "The requeue-PI wait path creates a separate rt_mutex_waiter object and attaches it to q.",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "source": "futex.c",
+      "text": "struct rt_mutex_waiter rt_waiter;"
+    },
+    {
+      "classification": "SOURCE_WAITER_TASK_INITIALIZED_SEPARATELY",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-005",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "identity_role": "PI proxy waiter initialization",
+      "line": 2873,
+      "location": "futex_wait_requeue_pi() lines 2839-2997",
+      "note": "The proxy waiter task field is initialized independently before the sleep/requeue protocol.",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "source": "futex.c",
+      "text": "rt_waiter.task = NULL;"
+    },
+    {
+      "classification": "SOURCE_PROXY_WAIT_REQUEUE_HANDOFF",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-006",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "identity_role": "PI wait path",
+      "line": 2902,
+      "location": "futex_wait_requeue_pi() lines 2839-2997",
+      "note": "The comments and call sequence show that requeue code may manipulate the waiter while the wait path sleeps.",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "source": "futex.c",
+      "text": "futex_wait_queue_me(hb, &q, to);"
+    },
+    {
+      "classification": "SOURCE_REQUEUE_PASSES_STORED_WAITER_TASK",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-007",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "identity_role": "proxy call site",
+      "line": 1963,
+      "location": "futex_requeue() lines 1756-2003",
+      "note": "The requeue path passes this->rt_waiter and this->task to the proxy API rather than substituting current in the call site.",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "source": "futex.c",
+      "text": "ret = rt_mutex_start_proxy_lock(&pi_state->pi_mutex,"
+    },
+    {
+      "classification": "SOURCE_PROXY_TASK_IS_EXPLICIT_PARAMETER",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-008",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "identity_role": "proxy API identity inputs",
+      "line": 1658,
+      "location": "rt_mutex_start_proxy_lock() lines 1656-1691",
+      "note": "The proxy API receives a task parameter distinct from the function's implicit current task.",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "source": "rtmutex.c",
+      "text": "struct task_struct *task)"
+    },
+    {
+      "classification": "SOURCE_PROXY_FORWARDS_EXPLICIT_TASK",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-009",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "identity_role": "proxy API dataflow",
+      "line": 1670,
+      "location": "rt_mutex_start_proxy_lock() lines 1656-1691",
+      "note": "The explicit task parameter is forwarded into task_blocks_on_rt_mutex.",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "source": "rtmutex.c",
+      "text": "ret = task_blocks_on_rt_mutex(lock, waiter, task,"
+    },
+    {
+      "classification": "SOURCE_EARLY_DEADLOCK_BRANCH_PRECEDES_WAITER_ASSIGNMENT",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-010",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "identity_role": "early return",
+      "line": 972,
+      "location": "task_blocks_on_rt_mutex() lines 952-1032",
+      "note": "The owner==task deadlock branch returns before the later waiter->task assignment.",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "source": "rtmutex.c",
+      "text": "if (owner == task)"
+    },
+    {
+      "classification": "SOURCE_WAITER_TASK_ASSIGNED_FROM_EXPLICIT_TASK",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-011",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "identity_role": "waiter identity assignment",
+      "line": 977,
+      "location": "task_blocks_on_rt_mutex() lines 952-1032",
+      "note": "When the enqueue path proceeds past the early branch, waiter->task receives the explicit task argument.",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "source": "rtmutex.c",
+      "text": "waiter->task = task;"
+    },
+    {
+      "classification": "SOURCE_CLEANUP_USES_CURRENT_PI_LOCK",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-012",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "identity_role": "cleanup identity",
+      "line": 1087,
+      "location": "remove_waiter() lines 1079-1129",
+      "note": "The inspected cleanup function locks current->pi_lock and clears current->pi_blocked_on.",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "source": "rtmutex.c",
+      "text": "raw_spin_lock_irqsave(&current->pi_lock, flags);"
+    },
+    {
+      "classification": "SOURCE_CLEANUP_CLEARS_CURRENT_BLOCKED_STATE",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-013",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "identity_role": "cleanup identity",
+      "line": 1089,
+      "location": "remove_waiter() lines 1079-1129",
+      "note": "The cleanup write targets current rather than waiter->task in this source function.",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "source": "rtmutex.c",
+      "text": "current->pi_blocked_on = NULL;"
+    },
+    {
+      "classification": "SOURCE_EQUALITY_ASSERTION_SEARCH",
+      "confidence": "Confirmed",
+      "evidence_id": "P5CC-014",
+      "file": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "identity_role": "identity invariant",
+      "line": null,
+      "location": "proxy/cleanup scoped functions lines 1656-1129",
+      "note": "No direct current/task equality assertion was observed in the scoped proxy, task-blocking, and cleanup functions; this is a bounded search, not a proof about every caller or scheduler state.",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "source": "rtmutex.c",
+      "text": null
+    }
+  ],
+  "rtmutex_path": "artifacts/phase5/ps7331-full-source-members-20260804-02/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+  "rtmutex_sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+  "safety": {
+    "device_modified": false,
+    "race_triggered": false,
+    "syscall_invoked": false,
+    "unknown_ioctl_used": false
+  },
+  "scope": "PS7331 exact 4.4 source; host-only identity/dataflow audit",
+  "spans": {
+    "futex_requeue": [
+      1756,
+      2003
+    ],
+    "futex_wait_queue_me": [
+      2321,
+      2351
+    ],
+    "futex_wait_requeue_pi": [
+      2839,
+      2997
+    ],
+    "queue_me": [
+      2049,
+      2068
+    ],
+    "remove_waiter": [
+      1079,
+      1129
+    ],
+    "rt_mutex_start_proxy_lock": [
+      1656,
+      1691
+    ],
+    "struct_futex_q": [
+      231,
+      241
+    ],
+    "task_blocks_on_rt_mutex": [
+      952,
+      1032
+    ]
+  }
+}
