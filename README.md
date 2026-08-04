@@ -2842,6 +2842,22 @@ Outputs:
 
 ## Phase 5DG status
 
+## Phase 5DH status
+
+Phase 5DH compared the Emerald reference prerequisites with the exact PS7331
+IKCONFIG and source. PS7331 explicitly enables FUTEX, RT_MUTEXES, CONFIGFS_FS,
+SLUB, SECCOMP and RANDOMIZE_BASE, while CONFIG_USERFAULTFD is explicitly not
+set. Generic source presence is not evidence of a usable kernel read/write
+primitive or a portable root chain.
+
+Outputs:
+
+- findings/phase-5dh-ps7331-reference-surface-gates.md
+- findings/phase-5dh-evidence-index.md
+- output/tables/phase5dh-reference-surface-matrix.csv
+- tools/scripts/audit_phase5dh_ps7331_reference_surfaces.py
+- local audit under artifacts/phase5/phase5dh-ps7331-reference-surface-gates-20260804-01/
+
 Phase 5DG statically audited the public datfooldive/ghostlock-emerald source
 at commit ebb355d302629a034d0959e5e579496559e8f84e. It contains an explicit
 PI/requeue userspace orchestration followed by target-specific layout,

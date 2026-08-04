@@ -1,0 +1,17 @@
+surface,name,value,evidence,interpretation
+config,CONFIG_FUTEX,y,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_RT_MUTEXES,y,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_CONFIGFS_FS,y,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_USERFAULTFD,not set,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_SLUB,y,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_SLUB_DEBUG,not set,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_SLUB_STATS,not set,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_SECCOMP,y,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_SECCOMP_FILTER,y,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+config,CONFIG_RANDOMIZE_BASE,y,artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config,explicit extracted IKCONFIG value
+source,configfs_source,34,fs/sdcardfs/packagelist.c;fs/configfs/mount.c;fs/configfs/dir.c;fs/configfs/configfs_internal.h;fs/configfs/inode.c;fs/configfs/symlink.c;fs/configfs/file.c;fs/configfs/item.c,source-file presence count only
+source,pipe_buffer_source,7,fs/splice.c;fs/pipe.c;kernel/trace/trace.c;fs/fuse/dev.c;include/linux/pipe_fs_i.h;include/linux/splice.h;drivers/char/mem.c,source-file presence count only
+source,anon_pipe_ops_source,1,fs/pipe.c,source-file presence count only
+source,userfaultfd_source,14,mm/memory.c;mm/mmap.c;mm/madvise.c;mm/mlock.c;mm/mprotect.c;kernel/sys.c;kernel/fork.c;kernel/sys_ni.c,source-file presence count only
+source,requeue_pi_source,4,kernel/futex_compat.c;kernel/futex.c;include/uapi/linux/futex.h;tools/testing/selftests/futex/include/futextest.h,source-file presence count only
+source,proxy_lock_source,3,kernel/futex.c;kernel/locking/rtmutex_common.h;kernel/locking/rtmutex.c,source-file presence count only
