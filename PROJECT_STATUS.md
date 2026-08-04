@@ -514,6 +514,21 @@ Phase 5BQ outputs:
 - `adb/phase5/PHASE5BQ-DEVICE-POSTCHECK-20260804-01/`
 - `artifacts/phase5/phase5bq-public-route-review-20260804-01/`
 
+## Phase 5BR status
+
+Phase 5BR ran a bounded public search for an exact
+PS7330.4104N/KFTRWI/trona signed boot, Image, or vmlinux artifact. No matching
+binary appeared in the returned results; this remains a bounded search miss,
+not a global nonexistence proof. The device and boot-chain state were not
+changed. PS7330 boot read remains denied and local PS7331 boot evidence remains
+version-mismatched.
+
+Phase 5BR outputs:
+
+- `findings/phase-5br-exact-artifact-search.md`
+- `findings/phase-5br-evidence-index.md`
+- `artifacts/phase5/phase5br-exact-artifact-search-20260804-01/`
+
 ## Phase 5BN status
 
 Phase 5BN independently rechecked the GhostLock `remove_waiter()` markers and

@@ -2106,3 +2106,19 @@ Phase 5BQ outputs:
 - `output/tables/phase5bq-route-matrix.csv`
 - `adb/phase5/PHASE5BQ-DEVICE-POSTCHECK-20260804-01/`
 - `artifacts/phase5/phase5bq-public-route-review-20260804-01/`
+
+## Phase 5BR status
+
+Phase 5BR performed a bounded public search for an exact
+`PS7330.4104N`/`KFTRWI`/`trona` signed boot, kernel Image, or `vmlinux`. The
+returned results contained device/build metadata but no matching binary. This
+is explicitly a bounded search miss, not a global nonexistence claim. The
+installed PS7330 boot read remains denied, while the locally available boot
+artifact is adjacent PS7331 and remains `VERSION_MISMATCH`. No firmware was
+downloaded or executed and no device state changed.
+
+Phase 5BR outputs:
+
+- `findings/phase-5br-exact-artifact-search.md`
+- `findings/phase-5br-evidence-index.md`
+- `artifacts/phase5/phase5br-exact-artifact-search-20260804-01/`
