@@ -1,0 +1,32 @@
+{
+  "generated_at_utc": "2026-08-04T11:11:45.433509+00:00",
+  "source_roots": [
+    "firmware/extracted/PS7331-SOURCE-20250617/platform",
+    "firmware/extracted/PS7331-SOURCE-20250617/fireos"
+  ],
+  "native_scan_dirs": [
+    "artifacts/phase5/phase5cr-fire-native-20260804-02",
+    "artifacts/phase5/phase5cs-fire-amazon-native-20260804-01"
+  ],
+  "source_hit_rows": 231,
+  "source_hit_files": 34,
+  "source_classes": {
+    "kernel_implementation": 60,
+    "selftest": 135,
+    "uapi_or_documentation": 36
+  },
+  "source_patterns": {
+    "FUTEX_CMP_REQUEUE_PI": 83,
+    "FUTEX_REQUEUE_PI": 60,
+    "FUTEX_WAIT_REQUEUE_PI": 88
+  },
+  "native_hit_rows": 0,
+  "userspace_candidate_rows": 0,
+  "source_executed": false,
+  "native_objects_executed": false,
+  "device_contacted": false,
+  "futex_triggered": false,
+  "kernel_memory_accessed": false,
+  "payload_or_address_generated": false,
+  "interpretation": "Requeue-PI references are classified by source role. A kernel or selftest hit is not a shipped userspace caller; zero userspace-candidate hits is a bounded negative observation, not proof of impossibility."
+}

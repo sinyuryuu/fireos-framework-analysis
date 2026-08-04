@@ -1261,3 +1261,32 @@ Outputs:
 - `tools/scripts/capture_phase5db_exact_ps7331_match.sh`
 - `tools/scripts/verify_phase5db_ps7331_exact_chain.py`
 - local exact-target capture under `adb/phase5/PS7331-EXACT-MATCH-20260804-01/`
+
+## Phase 5DC / Phase 6A boundary
+
+Phase 5DC completed a host-only caller-role audit over the full locally
+extracted PS7331 source roots and the preserved Fire native scan inputs. It
+found 231 matching source rows in 34 files: 60 kernel implementation rows,
+135 futex selftest rows, and 36 UAPI/documentation rows. No source row was a
+Fire framework/app userspace candidate, and the bounded native scan found zero
+named requeue-PI rows. The exact MT8183 kernel path and selftest wrappers remain
+confirmed in their respective scopes; an installed Fire userspace caller is
+not established.
+
+This is not runtime validation. `waiter->task != current`, cleanup residue, a
+later consumer, memory effect and privilege transition remain unobserved. No
+futex trigger, race, native execution, kernel memory operation, payload, boot
+write or partition operation was performed.
+
+Outputs:
+
+- `findings/phase-5dc-ps7331-requeue-pi-caller-audit.md`
+- `findings/phase-6a-runtime-verification-boundary.md`
+- `output/tables/phase5dc-requeue-pi-callers.csv`
+- `output/call-graphs/phase5dc-userspace-boundary.mmd`
+- `tools/scripts/audit_phase5dc_requeue_pi_callers.py`
+- local audit artifact under `artifacts/phase5/phase5dc-requeue-pi-caller-audit-20260804-05/`
+
+Phase 6A is currently limited to a safe observation schema and lab-only model.
+It does not authorize a stock-device futex/race trigger; any isolated
+instrumented environment result must be labeled `LAB_ONLY`.

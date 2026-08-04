@@ -1,0 +1,13 @@
+flowchart LR
+    A[Fire app/framework source] -->|0 candidate rows in PS7331 source scan| U[Userspace caller not established]
+    N[Preserved Fire libc/Amazon native scan] -->|0 named requeue-PI rows| U
+    S[Kernel selftest helper] -->|direct futex wrapper| O[FUTEX_WAIT_REQUEUE_PI / FUTEX_CMP_REQUEUE_PI]
+    D[PS7331 MT8183 kernel dispatch] --> O
+    O --> R[futex_requeue]
+    R --> P[rt_mutex_start_proxy_lock]
+    P --> C[remove_waiter cleanup branch]
+    X[Documentation example] -.-> O
+    U -.->|requires Fire-specific caller evidence| O
+
+    classDef unobserved fill:#fff3cd,stroke:#856404,color:#000;
+    class U,C unobserved;

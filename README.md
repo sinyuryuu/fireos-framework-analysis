@@ -2780,3 +2780,27 @@ Outputs:
 - `tools/scripts/capture_phase5db_exact_ps7331_match.sh`
 - `tools/scripts/verify_phase5db_ps7331_exact_chain.py`
 - local exact-target capture under `adb/phase5/PS7331-EXACT-MATCH-20260804-01/`
+
+## Phase 5DC / Phase 6A boundary
+
+Phase 5DC classifies every `FUTEX_*_REQUEUE_PI` hit in the locally extracted
+PS7331 source by role. The exact MT8183 kernel implementation is present, and
+direct wrappers are present only in the kernel futex selftests/documentation;
+the bounded Fire libc/Amazon native scan found no named shipped userspace
+caller. This is a bounded negative observation, not proof that an indirect or
+unpulled caller cannot exist. No source, native object, futex operation, race,
+kernel memory path, payload or device state was executed.
+
+Outputs:
+
+- `findings/phase-5dc-ps7331-requeue-pi-caller-audit.md`
+- `findings/phase-6a-runtime-verification-boundary.md`
+- `output/tables/phase5dc-requeue-pi-callers.csv`
+- `output/call-graphs/phase5dc-userspace-boundary.mmd`
+- `tools/scripts/audit_phase5dc_requeue_pi_callers.py`
+- local audit artifact under `artifacts/phase5/phase5dc-requeue-pi-caller-audit-20260804-05/`
+
+Phase 6A remains a runtime-observation design boundary. A stock-device
+requeue-PI trigger or race is not part of this repository workflow; any
+instrumented emulator/research-kernel result must be labeled `LAB_ONLY` and
+must not be presented as PS7331 stock-runtime evidence.
