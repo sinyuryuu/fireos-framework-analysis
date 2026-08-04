@@ -1744,3 +1744,42 @@ Phase 5AY outputs:
 The analyzer supports `--dry-run`, refuses to overwrite an existing output,
 uses a temporary JADX directory, records the APK hash, and performs no device
 or network I/O.
+
+### Phase 5AZ — GhostLock／MTK exact-target compatibility matrix
+
+Phase 5AZ consolidates the exact PS7330 source/config evidence, the already
+sealed MTK-SU failure, adjacent PS7331 compiled-kernel evidence and public
+route screens. It does not run a futex race, root payload, ioctl, BROM/DA,
+fastboot, bootloader or partition operation. The result is a source/config
+candidate for GhostLock, not a signed PS7330 binary or root confirmation.
+
+Phase 5AZ outputs:
+
+- `tools/scripts/build_phase5az_compatibility_matrix.py`
+- `findings/phase-5az-ghostlock-mtk-compatibility.md`
+- `findings/phase-5az-evidence-index.md`
+- `output/tables/phase5az-root-route-matrix.csv`
+
+### Phase 5BA — PS7331 source／boot image and upgrade assessment
+
+Phase 5BA records the user-provided official 7.3.3.1 source URL, the local
+PS7331 OTA and `boot.img`, and a host-only compiled `remove_waiter()` review.
+The PS7331 signed Image shows the old current-task cleanup pattern associated
+with GhostLock; its focus kernel configuration also matches PS7330 in the
+relevant futex/rtmutex/ARM64 gates. Therefore PS7331 is not currently shown to
+be a GhostLock remediation, and no upgrade or image flash was performed.
+
+PS7331 `boot.img` is retained as an adjacent-version analysis artifact only. It
+must not be written alone to a PS7330 device; an official update, if ever
+considered, must be treated as a potentially non-reversible full OS mutation.
+
+Phase 5BA outputs:
+
+- `tools/scripts/compare_phase5_ps7330_ps7331_kernel.py`
+- `tools/scripts/capture_phase5ba_device_postcheck.sh`
+- `findings/phase-5ba-ps7331-upgrade-assessment.md`
+- `findings/phase-5ba-evidence-index.md`
+- `output/tables/phase5ba-upgrade-matrix.csv`
+- `output/call-graphs/phase5ba-upgrade-evidence.mmd`
+- `artifacts/phase5/phase5ba-ps7331-upgrade-comparison-20260804-01/`
+- `adb/phase5/PHASE5BA-DEVICE-POSTCHECK-20260804-01/`

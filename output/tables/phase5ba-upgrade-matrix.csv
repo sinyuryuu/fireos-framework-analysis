@@ -1,0 +1,9 @@
+item,ps7330_installed,ps7331_reference,evidence,decision
+device_build,PS7330.4104N/0030099376128,PS7331.4463N/0031575863040,P5BA-001;P5BA-002,VERSION_MISMATCH
+product_soc,trona/MT8183,trona/MT8183,P5BA-001;P5BA-002,adjacent product family only
+security_patch,2024-02-01,2024-08-01,P5BA-001;P5BA-002,PS7331 has later patch level
+focus_kernel_config,FUTEX RT_MUTEXES PREEMPT ARM64_4K VA39,FUTEX RT_MUTEXES PREEMPT ARM64_4K VA39,P5BA-006,no GhostLock gate change shown
+rtmutex_source,old exact 7.3.3.0 source,full 7.3.3.1 member comparison pending,P5BA-007;P5BA-009,do not overclaim
+compiled_remove_waiter,exact PS7330 Image unavailable,old current-task pattern observed,P5BA-004;P5BA-010,PS7331 not a demonstrated remediation
+upgrade_action,not performed,official OTA available offline,P5BA-001;P5BA-002;P5BA-003,do not flash boot.img alone
+source_layout,exact 7.3.3.0 member path recorded,nested platform tar input with kernel/mediatek/mt8183/4.4 build path,P5BA-012;P5BA-013,exact PS7331 rtmutex member comparison pending

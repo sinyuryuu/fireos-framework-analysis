@@ -2,6 +2,7 @@
 # Sample a bounded tail range of an official bzip2 source archive.
 # Host-side evidence collection only; never invokes adb, fastboot, or a device command.
 set -Eeuo pipefail
+export LC_ALL=C
 
 SOURCE_URL=""
 OUTPUT=""
@@ -79,10 +80,10 @@ BOOTCHAIN_MATCHES="$OUTPUT/boot-chain-source-matches.txt"
 : > "$BOOTCHAIN_MATCHES"
 for recovered in "$WORK_DIR"/rec*; do
   [ -f "$recovered" ] || continue
-  strings -n 4 "$recovered" 2>/dev/null || true
+  bzip2 -dc "$recovered" 2>/dev/null | strings -n 4 || true
 done | sort -u > "$WORK_DIR/strings.sorted.txt"
 
-rg -i '^kernel/mediatek/mt8183/' "$WORK_DIR/strings.sorted.txt" \
+rg -i '(^|/)(kernel/mediatek/4\.4/|rtmutex\.c|futex\.c|sched\.h|mt8183_defconfig|cmdq|ion|preloader|lk|bootrom|bootloader)(/|\.|$)' "$WORK_DIR/strings.sorted.txt" \
   | sed 's/[[:cntrl:]]//g' \
   | sort -u > "$MT8183_MATCHES" || true
 rg -i '(^|/)(preloader|lk|u-boot|uboot|bootrom|bootloader)(/|\\.|$)|PS7330|MTK_BLOADER|daa_enabled|download agent' \

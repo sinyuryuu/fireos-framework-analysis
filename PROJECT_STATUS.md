@@ -193,3 +193,23 @@ Phase 3A outputs:
 - `adb/mutation-tests/HOME-PRIORITY-P50/`
 - `adb/mutation-tests/HOME-PRIORITY-P51/`
 - `adb/mutation-tests/HOME-PRIORITY-P100/`
+
+## Phase 5BA status
+
+Phase 5BA evaluates the newly available PS7331 source URL and local official
+PS7331 `boot.img` as adjacent-version, host-only evidence. The PS7331 signed
+kernel Image retains the inspected old `remove_waiter()` current-task cleanup
+pattern, and PS7330/PS7331 focus kernel configs differ in only three unrelated
+keys. The project therefore does not recommend upgrading solely as a
+GhostLock remediation. The device remains PS7330.4104N and the upgrade was not
+attempted.
+
+Phase 5BA outputs:
+
+- `findings/phase-5ba-ps7331-upgrade-assessment.md`
+- `findings/phase-5ba-evidence-index.md`
+- `output/tables/phase5ba-upgrade-matrix.csv`
+- `output/call-graphs/phase5ba-upgrade-evidence.mmd`
+- `tools/scripts/compare_phase5_ps7330_ps7331_kernel.py`
+- `tools/scripts/capture_phase5ba_device_postcheck.sh`
+- `adb/phase5/PHASE5BA-DEVICE-POSTCHECK-20260804-01/`

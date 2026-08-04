@@ -1,0 +1,17 @@
+flowchart TD
+    D[Installed device: PS7330.4104N] --> S30[Exact PS7330 rtmutex source]
+    S30 --> O30[Old v4.4.146 remove_waiter semantics]
+    O30 --> U[GhostLock source/config candidate]
+    P[PS7331 official OTA] --> B[PS7331 boot.img]
+    B --> I[Decompressed signed kernel Image]
+    I --> C[Compiled remove_waiter pattern]
+    C --> O31[Old current-task cleanup pattern]
+    O31 --> R[PS7331 not demonstrated as GhostLock remediation]
+    K[PS7330/PS7331 config comparison] --> U
+    K --> R
+    A[Upgrade decision] -->|not performed| D
+    R --> A
+    S31[PS7331 exact rtmutex source member] -. pending full extraction .-> A
+
+    classDef unknown stroke-dasharray: 5 5;
+    class S31 unknown;
