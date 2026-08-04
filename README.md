@@ -1981,3 +1981,20 @@ Phase 5BJ outputs:
 - `tools/scripts/compare_phase5bj_ghostlock_fix.py`
 - `artifacts/phase5/phase5bj-ghostlock-fix-application-20260804-01/`
 - `adb/phase5/PHASE5BJ-DEVICE-READONLY-20260804-01/`
+
+## Phase 5BK status
+
+Phase 5BK records the preserved build metadata delta: PS7330 is at security
+patch `2024-02-01`, while the official PS7331 OTA metadata is at `2024-08-01`
+for the same `trona` product family. This makes PS7331 a credible general
+security-update candidate, but it remains separate from the GhostLock result:
+Phase 5BJ found the PS7331 rtmutex function marker still pre-fix. No OTA or
+device state change was performed.
+
+Phase 5BK outputs:
+
+- `findings/phase-5bk-ps7331-security-delta.md`
+- `findings/phase-5bk-evidence-index.md`
+- `output/tables/phase5bk-security-delta.csv`
+- `tools/scripts/compare_phase5bk_security_delta.py`
+- `artifacts/phase5/phase5bk-security-delta-20260804-02/`

@@ -1,0 +1,60 @@
+{
+  "generated_at_utc": "2026-08-04T04:46:16.387435+00:00",
+  "host_only": true,
+  "device_io": false,
+  "inputs": {
+    "ps7330": {
+      "path": "device/baseline/BASELINE-20260803-05/device_properties.txt",
+      "sha256": "6c3d90c57c2bec37d15c7e5e278f380efdb4f52f57c911555ae49fc4a1d8d78d"
+    },
+    "ps7331": {
+      "path": "artifacts/phase5/ps7331-ota-metadata-inspection-20260804-01/system-build.prop",
+      "sha256": "068b257362514773113671a7be67ff1288c484382ee43694872a19dbcb93e15e"
+    }
+  },
+  "rows": [
+    {
+      "key": "ro.build.id",
+      "ps7330": "PS7330.4104N",
+      "ps7331": "PS7331.4463N",
+      "changed": true
+    },
+    {
+      "key": "ro.build.fingerprint",
+      "ps7330": "Amazon/trona/trona:9/PS7330.4104N/0030099376128:user/amz-p,release-keys",
+      "ps7331": "Amazon/trona/trona:9/PS7331.4463N/0031575863040:user/amz-p,release-keys",
+      "changed": true
+    },
+    {
+      "key": "ro.build.version.security_patch",
+      "ps7330": "2024-02-01",
+      "ps7331": "2024-08-01",
+      "changed": true
+    },
+    {
+      "key": "ro.build.version.incremental",
+      "ps7330": "0030099376260",
+      "ps7331": "0031575863172",
+      "changed": true
+    },
+    {
+      "key": "ro.build.version.name",
+      "ps7330": "Fire OS 7.3.3.0 (PS7330/4104)",
+      "ps7331": "Fire OS 7.3.3.1 (PS7331/4463)",
+      "changed": true
+    },
+    {
+      "key": "ro.product.device",
+      "ps7330": "trona",
+      "ps7331": "trona",
+      "changed": false
+    }
+  ],
+  "decision": {
+    "security_patch_delta": [
+      "2024-02-01",
+      "2024-08-01"
+    ],
+    "same_product": true
+  }
+}
