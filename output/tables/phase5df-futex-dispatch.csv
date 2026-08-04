@@ -1,0 +1,9 @@
+landmark_scope,source_file,source_line,meaning,evidence_boundary
+syscall_dispatch,kernel/futex.c,3221-3270,FUTEX_WAIT_REQUEUE_PI and FUTEX_CMP_REQUEUE_PI dispatch to futex handlers,source-only
+requeue_parameter,kernel/futex.c,3303-3307,requeue argument is decoded for CMP_REQUEUE_PI,source-only
+proxy_precondition,kernel/futex.c,1849-1857,proxy try-lock branch is conditional on requeue_pi and task counts,source-only
+proxy_task_selection,kernel/futex.c,1728-1730,top waiter task is passed to futex_lock_pi_atomic,source-only
+proxy_waiter_task,kernel/futex.c,1961-1965,rt_mutex_start_proxy_lock receives this->rt_waiter and this->task,source-only
+proxy_error_branch,kernel/futex.c,1970-1977,nonzero proxy return takes error cleanup path,source-only
+early_return,kernel/locking/rtmutex.c,972-977,owner == task returns before waiter->task assignment,source-only
+cleanup_target,kernel/locking/rtmutex.c,1087-1090,remove_waiter clears current->pi_blocked_on,source-only

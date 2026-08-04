@@ -60,5 +60,7 @@ kernel addresses、race schedule 或 exploit payload。
 
 Phase 5DD 已將保存的 16 個 Fire ELF 做第一輪 marker/symbol inventory；
 目前仍沒有 named requeue-PI caller。下一個最有資訊量且不擴大風險的步驟
-是擴充未擷取 native component 與 policy/source mapping，而不是直接在
-stock tablet 上追 race。
+是以 Phase 5DF 的 source dispatch boundary 對照未擷取 native component
+與 policy/source mapping，而不是直接在 stock tablet 上追 race。Phase 5DF
+確認 kernel source 的 dispatch/proxy/cleanup landmarks，但沒有新增
+runtime mismatch、residue 或 root 證據。

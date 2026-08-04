@@ -1291,6 +1291,22 @@ Phase 6A is currently limited to a safe observation schema and lab-only model.
 It does not authorize a stock-device futex/race trigger; any isolated
 instrumented environment result must be labeled `LAB_ONLY`.
 
+## Phase 5DF status
+
+Phase 5DF extracted the PS7331 futex dispatch and proxy cleanup boundary from
+the exact MT8183 source. The source contains the requeue-PI syscall dispatch,
+passes `this->rt_waiter` and `this->task` into the proxy lock API, and retains
+the pre-fix cleanup landmarks. This remains source-only evidence; it does not
+establish a shipped caller or stock runtime mismatch.
+
+Outputs:
+
+- `findings/phase-5df-futex-dispatch-boundary.md`
+- `findings/phase-5df-evidence-index.md`
+- `output/tables/phase5df-futex-dispatch.csv`
+- `tools/scripts/audit_phase5df_futex_dispatch_boundary.py`
+- local audit under `artifacts/phase5/phase5df-futex-dispatch-boundary-20260804-01/`
+
 ## Phase 5DD status
 
 Phase 5DD extended the native caller audit to 16 preserved Fire ELF inputs.

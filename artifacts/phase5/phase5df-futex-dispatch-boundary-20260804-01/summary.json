@@ -1,0 +1,39 @@
+{
+  "generated_at_utc": "2026-08-04T11:29:09.622853+00:00",
+  "kernel_root": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4",
+  "input_files": {
+    "kernel/futex.c": {
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "bytes": 91823
+    },
+    "kernel/locking/rtmutex.c": {
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "bytes": 46820
+    }
+  },
+  "landmark_rows": 29,
+  "landmarks": [
+    "cleanup_remove_waiter",
+    "cleanup_ret_branch",
+    "cmp_requeue_pi_call",
+    "current_cleanup",
+    "dispatch_cmp_requeue_pi",
+    "dispatch_wait_requeue_pi",
+    "early_self_deadlock",
+    "proxy_precondition",
+    "proxy_start",
+    "proxy_task",
+    "proxy_trylock",
+    "proxy_waiter",
+    "requeue_parameter",
+    "syscall_entry",
+    "wait_requeue_pi_call",
+    "waiter_task_assignment"
+  ],
+  "device_contacted": false,
+  "source_executed": false,
+  "futex_triggered": false,
+  "kernel_memory_accessed": false,
+  "payload_or_address_generated": false,
+  "interpretation": "The preserved source exposes a futex syscall dispatch to the requeue-PI implementation and a proxy waiter/task dataflow. This is source reachability evidence only; it does not establish a shipped userspace caller, a runtime identity mismatch, cleanup residue, memory corruption, or privilege transition."
+}

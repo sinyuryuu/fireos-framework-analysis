@@ -1,0 +1,30 @@
+file,line,landmark,excerpt
+kernel/futex.c,1339,proxy_task,new_owner = this->task;
+kernel/futex.c,1452,proxy_waiter,if (this->pi_state || this->rt_waiter) {
+kernel/futex.c,1574,proxy_waiter,if (this->pi_state || this->rt_waiter) {
+kernel/futex.c,1588,proxy_waiter,if (this->pi_state || this->rt_waiter) {
+kernel/futex.c,1670,proxy_trylock,* futex_proxy_trylock_atomic() - Attempt an atomic lock for the top waiter
+kernel/futex.c,1689,proxy_trylock,"static int futex_proxy_trylock_atomic(u32 __user *pifutex,"
+kernel/futex.c,1849,proxy_precondition,if (requeue_pi && (task_count - nr_wake < nr_requeue)) {
+kernel/futex.c,1856,proxy_trylock,"ret = futex_proxy_trylock_atomic(uaddr2, hb1, hb2, &key1,"
+kernel/futex.c,1932,proxy_waiter,if ((requeue_pi && !this->rt_waiter) ||
+kernel/futex.c,1933,proxy_waiter,(!requeue_pi && this->rt_waiter) ||
+kernel/futex.c,1963,proxy_start,"ret = rt_mutex_start_proxy_lock(&pi_state->pi_mutex,"
+kernel/futex.c,1964,proxy_waiter,"this->rt_waiter,"
+kernel/futex.c,1965,proxy_task,this->task);
+kernel/futex.c,1971,cleanup_ret_branch,} else if (ret) {
+kernel/futex.c,3237,dispatch_wait_requeue_pi,case FUTEX_WAIT_REQUEUE_PI:
+kernel/futex.c,3238,dispatch_cmp_requeue_pi,case FUTEX_CMP_REQUEUE_PI:
+kernel/futex.c,3264,dispatch_wait_requeue_pi,case FUTEX_WAIT_REQUEUE_PI:
+kernel/futex.c,3266,wait_requeue_pi_call,"return futex_wait_requeue_pi(uaddr, flags, val, timeout, val3,"
+kernel/futex.c,3268,dispatch_cmp_requeue_pi,case FUTEX_CMP_REQUEUE_PI:
+kernel/futex.c,3269,cmp_requeue_pi_call,"return futex_requeue(uaddr, flags, uaddr2, val, val2, &val3, 1);"
+kernel/futex.c,3275,syscall_entry,"SYSCALL_DEFINE6(futex, u32 __user *, uaddr, int, op, u32, val,"
+kernel/futex.c,3304,requeue_parameter,cmd == FUTEX_CMP_REQUEUE_PI || cmd == FUTEX_WAKE_OP)
+kernel/locking/rtmutex.c,972,early_self_deadlock,if (owner == task)
+kernel/locking/rtmutex.c,977,waiter_task_assignment,waiter->task = task;
+kernel/locking/rtmutex.c,1089,current_cleanup,current->pi_blocked_on = NULL;
+kernel/locking/rtmutex.c,1644,proxy_start,* rt_mutex_start_proxy_lock() - Start lock acquisition for another task
+kernel/locking/rtmutex.c,1656,proxy_start,"int rt_mutex_start_proxy_lock(struct rt_mutex *lock,"
+kernel/locking/rtmutex.c,1684,cleanup_remove_waiter,"remove_waiter(lock, waiter);"
+kernel/locking/rtmutex.c,1742,cleanup_remove_waiter,"remove_waiter(lock, waiter);"

@@ -2805,6 +2805,23 @@ requeue-PI trigger or race is not part of this repository workflow; any
 instrumented emulator/research-kernel result must be labeled `LAB_ONLY` and
 must not be presented as PS7331 stock-runtime evidence.
 
+## Phase 5DF status
+
+Phase 5DF extracted the exact PS7331 source-level futex dispatch boundary:
+the syscall switch reaches the requeue-PI handlers, the requeue path passes
+`this->rt_waiter` and `this->task` into `rt_mutex_start_proxy_lock`, and the
+pre-fix cleanup landmarks remain in `rtmutex.c`. This is source reachability
+evidence only. It does not prove a shipped userspace caller, a runtime
+identity mismatch, cleanup residue, memory corruption, or root.
+
+Outputs:
+
+- `findings/phase-5df-futex-dispatch-boundary.md`
+- `findings/phase-5df-evidence-index.md`
+- `output/tables/phase5df-futex-dispatch.csv`
+- `tools/scripts/audit_phase5df_futex_dispatch_boundary.py`
+- local audit under `artifacts/phase5/phase5df-futex-dispatch-boundary-20260804-01/`
+
 ## Phase 5DD status
 
 Phase 5DD extends the caller audit to all 16 preserved Fire ELF inputs from
