@@ -1858,3 +1858,27 @@ Phase 5BD outputs:
 - `tools/scripts/inspect_phase5_ps7331_ota.py`
 - `artifacts/phase5/ps7331-ota-metadata-inspection-20260804-01/`
 - `adb/phase5/PHASE5BD-ACCESSIBILITY-PENDINGINTENT-T01/`
+
+### Phase 5BE — PS7331 build patch／overlay boundary
+
+Phase 5BE streams the official 7.3.3.1 source bundle and lists the complete
+nested `platform.tar` path set without retaining or executing the source. The
+precise `.patch`/`.diff`/`series` subset contains only four Mali hrtimer patch
+paths; no rtmutex/futex/GhostLock patch path appears. The visible Amazon build
+script only extracts the platform tar, runs `trona_defconfig` and `make`, then
+copies and validates ARM64 images; it contains no visible `git apply`, `patch`,
+or rtmutex overlay step.
+
+Together with the build-selected `mt8183/4.4/rtmutex.c` source semantics and the
+PS7331 signed Image review, this does not support upgrading solely to remediate
+GhostLock. PS7331 may still contain other security changes. If a general
+security A/B study is later desired, use the complete official full-block OTA
+as a potentially non-reversible system mutation; never write the extracted
+boot image alone.
+
+Phase 5BE outputs:
+
+- `findings/phase-5be-ps7331-build-overlay-review.md`
+- `findings/phase-5be-evidence-index.md`
+- `tools/scripts/index_phase5_ps7331_nested_build_patches.sh`
+- `artifacts/phase5/ps7331-nested-build-patch-index-20260804-01/`

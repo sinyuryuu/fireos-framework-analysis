@@ -285,3 +285,26 @@ Phase 5BD outputs:
 - `tools/scripts/inspect_phase5_ps7331_ota.py`
 - `artifacts/phase5/ps7331-ota-metadata-inspection-20260804-01/`
 - `adb/phase5/PHASE5BD-ACCESSIBILITY-PENDINGINTENT-T01/`
+
+## Phase 5BE status
+
+Phase 5BE completed a full host-only nested `platform.tar` path inventory for
+the official PS7331 source bundle. The exact `.patch`/`.diff`/`series` subset
+contains only four Mali hrtimer patch paths; no rtmutex/futex/GhostLock patch
+path was found. The preserved `build_kernel.sh` visibly performs extraction,
+defconfig, make, output copy and validation, with no visible patch-apply or
+overlay step. The build-selected PS7331 `rtmutex.c` and inspected signed Image
+still show the pre-fix current-task cleanup pattern.
+
+This strengthens the decision not to upgrade solely for GhostLock. A general
+security-update A/B remains a separate possible study, but the official PS7331
+package is a full block OTA touching boot-chain and firmware partitions; the
+standalone boot image is not an equivalent or reversible upgrade operation.
+No upgrade or device mutation was performed.
+
+Phase 5BE outputs:
+
+- `findings/phase-5be-ps7331-build-overlay-review.md`
+- `findings/phase-5be-evidence-index.md`
+- `tools/scripts/index_phase5_ps7331_nested_build_patches.sh`
+- `artifacts/phase5/ps7331-nested-build-patch-index-20260804-01/`
