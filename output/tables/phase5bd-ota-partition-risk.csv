@@ -1,0 +1,13 @@
+partition,updater_action,source_member,device_path,risk,classification,notes
+system,block_image_update,system.new.dat.br + system.transfer.list,/dev/block/platform/bootdevice/by-name/system,high,metadata-only,Full block image mutation
+vendor,block_image_update,vendor.new.dat.br + vendor.transfer.list,/dev/block/platform/bootdevice/by-name/vendor,high,metadata-only,Full block image mutation
+boot,package_extract_file,boot.img,/dev/block/platform/bootdevice/by-name/boot,high,metadata-only,Standalone boot write is not equivalent to the full OTA
+preloader,package_extract_file,images/preloader.img,/dev/block/platform/bootdevice/by-name/preloader,critical,metadata-only,Boot-chain component
+lk,package_extract_file,images/lk.img,/dev/block/platform/bootdevice/by-name/lk,critical,metadata-only,Boot-chain component
+tee1,package_extract_file,images/tee.img,/dev/block/platform/bootdevice/by-name/tee1,critical,metadata-only,Trusted execution environment
+tee2,package_extract_file,images/tee.img,/dev/block/platform/bootdevice/by-name/tee2,critical,metadata-only,Trusted execution environment
+spmfw,package_extract_file,images/spmfw.img,/dev/block/platform/bootdevice/by-name/spmfw,critical,metadata-only,Firmware component
+sspm_1,package_extract_file,images/sspm.img,/dev/block/platform/bootdevice/by-name/sspm_1,critical,metadata-only,Firmware component
+cam_vpu1,package_extract_file,images/cam_vpu1.img,/dev/block/platform/bootdevice/by-name/cam_vpu1,high,metadata-only,Camera firmware
+cam_vpu2,package_extract_file,images/cam_vpu2.img,/dev/block/platform/bootdevice/by-name/cam_vpu2,high,metadata-only,Camera firmware
+cam_vpu3,package_extract_file,images/cam_vpu3.img,/dev/block/platform/bootdevice/by-name/cam_vpu3,high,metadata-only,Camera firmware

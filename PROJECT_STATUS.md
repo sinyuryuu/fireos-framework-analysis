@@ -266,3 +266,22 @@ Phase 5BC outputs:
 - `artifacts/phase5/exact-kernel-source-review-7331-trona-defconfig-member-20260804-01/metadata.tsv`
 - `artifacts/phase5/phase5bc-defconfig-focus-20260804-01/`
 - `adb/phase5/PHASE5BC-DEVICE-POSTCHECK-20260804-01/`
+
+## Phase 5BD status
+
+The preserved PS7331 package was inspected without installation. It is a full
+block OTA whose updater writes system/vendor/boot plus preloader, LK, TEE,
+SPMFW, SSPM and camera VPU partitions. The standalone boot image is not an
+equivalent upgrade path. A user-consented PendingIntent Accessibility redirect
+measurement produced 30 dispatch attempts but 0/30 stable foreground handoffs;
+the research toggle was restored off and Fire Launcher remained the formal HOME.
+No OTA, root, exploit, boot-chain or partition operation was attempted.
+
+Phase 5BD outputs:
+
+- `findings/phase-5bd-ota-and-redirect-followup.md`
+- `findings/phase-5bd-evidence-index.md`
+- `output/tables/phase5bd-ota-partition-risk.csv`
+- `tools/scripts/inspect_phase5_ps7331_ota.py`
+- `artifacts/phase5/ps7331-ota-metadata-inspection-20260804-01/`
+- `adb/phase5/PHASE5BD-ACCESSIBILITY-PENDINGINTENT-T01/`
