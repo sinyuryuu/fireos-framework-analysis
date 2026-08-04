@@ -1,0 +1,1 @@
+adb -s G001LT0511550CFT shell for\ node\ in\ /dev/aed0\ /dev/aed1\ /dev/atf_log\;\ do\ if\ test\ -r\ \"\$node\"\;\ then\ r=1\;\ else\ r=0\;\ fi\;\ if\ test\ -w\ \"\$node\"\;\ then\ w=1\;\ else\ w=0\;\ fi\;\ printf\ \"%s\ read=%s\ write=%s\\n\"\ \"\$node\"\ \"\$r\"\ \"\$w\"\;\ done 

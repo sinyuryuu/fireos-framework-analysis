@@ -384,3 +384,25 @@ Phase 5BI outputs:
 - `findings/phase-5bi-mtk-public-route-recheck.md`
 - `findings/phase-5bi-evidence-index.md`
 - `artifacts/phase5/mtk-public-route-recheck-20260804-01/`
+
+## Phase 5BJ status
+
+Phase 5BJ performed a host-only comparison of the upstream GhostLock fix marker
+against the preserved Fire source inputs. Both the PS7330 source family and the
+PS7331 build-selected MT8183 source retain the pre-fix `current->pi_blocked_on`
+cleanup and `current` chain-walk argument. The fixed reference uses
+`waiter->task`. This strengthens the conclusion that PS7331 is not a demonstrated
+GhostLock remediation.
+
+A new read-only device snapshot confirmed the device remains KFTRWI/trona/MT8183,
+PS7330.4104N, green verified boot, SELinux Enforcing, shell UID 2000, and Fire
+Launcher as HOME. No exploit, root, bootloader, OTA, reboot or partition write
+was performed.
+
+Phase 5BJ outputs:
+
+- `findings/phase-5bj-ghostlock-fix-application.md`
+- `findings/phase-5bj-evidence-index.md`
+- `tools/scripts/compare_phase5bj_ghostlock_fix.py`
+- `artifacts/phase5/phase5bj-ghostlock-fix-application-20260804-01/`
+- `adb/phase5/PHASE5BJ-DEVICE-READONLY-20260804-01/`

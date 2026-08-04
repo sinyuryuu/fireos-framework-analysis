@@ -1961,3 +1961,23 @@ Phase 5BI outputs:
 - `findings/phase-5bi-mtk-public-route-recheck.md`
 - `findings/phase-5bi-evidence-index.md`
 - `artifacts/phase5/mtk-public-route-recheck-20260804-01/`
+
+## Phase 5BJ status
+
+Phase 5BJ added a host-only semantic checker for the upstream GhostLock fix. It
+compares the preserved PS7330 source family, the PS7331 build-selected MT8183
+source, and a fixed reference. Both Fire source inputs retain the
+`current->pi_blocked_on` cleanup and `current` chain-walk argument; the fixed
+reference uses `waiter->task`.
+
+The result strengthens the decision that PS7331 is not a demonstrated
+GhostLock remediation. It remains a possible general security-update A/B
+candidate, but no boot image was written and the device remains PS7330.
+
+Phase 5BJ outputs:
+
+- `findings/phase-5bj-ghostlock-fix-application.md`
+- `findings/phase-5bj-evidence-index.md`
+- `tools/scripts/compare_phase5bj_ghostlock_fix.py`
+- `artifacts/phase5/phase5bj-ghostlock-fix-application-20260804-01/`
+- `adb/phase5/PHASE5BJ-DEVICE-READONLY-20260804-01/`

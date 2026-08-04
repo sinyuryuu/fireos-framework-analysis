@@ -1,0 +1,67 @@
+{
+  "generated_at_utc": "2026-08-04T04:39:28.462357+00:00",
+  "host_only": true,
+  "device_io": false,
+  "address_or_offset_output": false,
+  "payload_or_reproducer": false,
+  "inputs": [
+    {
+      "path": "artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/locking/rtmutex.c",
+      "sha256": "c4ddac5fe820c7f07670bc332425be05b0df0400ae334a147b483f0ee9b07345",
+      "function": "remove_waiter",
+      "function_start_line": 1079,
+      "function_end_line": 1129,
+      "markers": {
+        "current_pi_blocked_on_cleanup": true,
+        "waiter_task_declaration": false,
+        "waiter_task_pi_blocked_on_cleanup": false,
+        "current_chain_walk_argument": true,
+        "waiter_task_chain_walk_argument": false
+      },
+      "classification": "PRE_FIX_CURRENT_TASK_CLEANUP",
+      "proxy_caller_present_in_file": true,
+      "label": "PS7330_SOURCE_FAMILY"
+    },
+    {
+      "path": "artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "function": "remove_waiter",
+      "function_start_line": 1079,
+      "function_end_line": 1129,
+      "markers": {
+        "current_pi_blocked_on_cleanup": true,
+        "waiter_task_declaration": false,
+        "waiter_task_pi_blocked_on_cleanup": false,
+        "current_chain_walk_argument": true,
+        "waiter_task_chain_walk_argument": false
+      },
+      "classification": "PRE_FIX_CURRENT_TASK_CLEANUP",
+      "proxy_caller_present_in_file": true,
+      "label": "PS7331_BUILD_SELECTED_SOURCE"
+    },
+    {
+      "path": "artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c",
+      "sha256": "c307ed54156d1f16e82387df7b214445dddf27be8a880f31575f698ca07d880a",
+      "function": "remove_waiter",
+      "function_start_line": 1517,
+      "function_end_line": 1569,
+      "markers": {
+        "current_pi_blocked_on_cleanup": false,
+        "waiter_task_declaration": true,
+        "waiter_task_pi_blocked_on_cleanup": true,
+        "current_chain_walk_argument": false,
+        "waiter_task_chain_walk_argument": true
+      },
+      "classification": "FIXED_WAITER_TASK_CLEANUP",
+      "proxy_caller_present_in_file": true,
+      "label": "UPSTREAM_FIXED_REFERENCE"
+    }
+  ],
+  "comparison": {
+    "ps7330_classification": "PRE_FIX_CURRENT_TASK_CLEANUP",
+    "ps7331_classification": "PRE_FIX_CURRENT_TASK_CLEANUP",
+    "fixed_reference_classification": "FIXED_WAITER_TASK_CLEANUP",
+    "ps7330_and_ps7331_same_classification": true,
+    "ps7331_is_fixed_marker": false
+  }
+}
