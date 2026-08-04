@@ -308,3 +308,26 @@ Phase 5BE outputs:
 - `findings/phase-5be-evidence-index.md`
 - `tools/scripts/index_phase5_ps7331_nested_build_patches.sh`
 - `artifacts/phase5/ps7331-nested-build-patch-index-20260804-01/`
+
+## Phase 5BF status
+
+Phase 5BF adds a deterministic host-only source/config reachability review. The
+PS7331 build-selected `mt8183/4.4` `rtmutex.c` retains the pre-fix
+`current->pi_blocked_on` cleanup in `remove_waiter()`, its proxy error path still
+calls `remove_waiter()`, and the paired `futex.c` contains the PI requeue path.
+The captured device config observes `CONFIG_FUTEX=y` and
+`CONFIG_RT_MUTEXES=y`. A fixed reference uses `waiter->task` instead.
+
+This is a source/config candidate only: no reproducer, compilation, kernel
+execution, address/offset extraction, root attempt, ADB mutation, upgrade, or
+partition operation was performed. The exact installed PS7330 signed boot
+function remains unavailable. The project therefore still does not recommend
+PS7331 solely as a GhostLock fix; general security A/B remains a separate
+full-block-OTA decision.
+
+Phase 5BF outputs:
+
+- `findings/phase-5bf-ghostlock-reachability.md`
+- `findings/phase-5bf-evidence-index.md`
+- `tools/scripts/analyze_phase5bf_ghostlock_reachability.py`
+- `artifacts/phase5/ghostlock-reachability-review-20260804-04/`

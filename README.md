@@ -1882,3 +1882,27 @@ Phase 5BE outputs:
 - `findings/phase-5be-evidence-index.md`
 - `tools/scripts/index_phase5_ps7331_nested_build_patches.sh`
 - `artifacts/phase5/ps7331-nested-build-patch-index-20260804-01/`
+
+### Phase 5BF — GhostLock source/config reachability boundary
+
+Phase 5BF adds a deterministic host-only analyzer for the exact PS7331
+build-selected `mt8183/4.4` source, the captured device config, and a fixed
+reference `remove_waiter()` implementation. It confirms the source-level
+pre-fix current-task cleanup pattern, the PI requeue/proxy path, and the
+`CONFIG_FUTEX=y`/`CONFIG_RT_MUTEXES=y` observations. It deliberately does not
+execute a reproducer, derive addresses or offsets, compile code, connect to
+ADB, or claim root.
+
+The result is a source/config reachability candidate, not an exploitability
+result. The PS7331 source and inspected signed Image do not currently prove a
+GhostLock remediation, so the project does not recommend upgrading solely for
+that CVE. The official PS7331 full-block OTA remains a separate, potentially
+non-reversible general-security A/B candidate; the extracted boot image must
+not be written alone.
+
+Phase 5BF outputs:
+
+- `findings/phase-5bf-ghostlock-reachability.md`
+- `findings/phase-5bf-evidence-index.md`
+- `tools/scripts/analyze_phase5bf_ghostlock_reachability.py`
+- `artifacts/phase5/ghostlock-reachability-review-20260804-04/`
