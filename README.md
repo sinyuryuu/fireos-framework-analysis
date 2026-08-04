@@ -2597,3 +2597,26 @@ Outputs:
 - `output/tables/phase5cs-native-inventory.csv`
 - `output/call-graphs/phase5cs-native-futex-flow.mmd`
 - `tools/scripts/analyze_phase5cs_native_inventory.py`
+
+## Phase 5CT status
+
+Phase 5CT deepens the public `ghostlock-emerald` review without building or
+executing it. The Emerald source has a build-specific target selector, a
+coordinated userspace PI-requeue architecture, and target-specific post-trigger
+memory/root stages. Fire PS7331 source confirms the defect-family kernel path,
+but Fire userspace requeue-PI reachability, runtime identity mismatch, cleanup
+residue, memory effect and privilege transition remain unobserved.
+
+The public Emerald profile targets Poco M6 Pro/MT6789/Android 16/6.12.30,
+whereas the tablet is PS7331/MT8183/Android 9/4.4. This is a profile mismatch,
+not a missing single offset. No exploit source was adapted, compiled, installed
+or executed; no futex trigger, kernel memory operation, root payload, boot or
+partition operation was performed.
+
+Outputs:
+
+- `findings/phase-5ct-ghostlock-architecture-audit.md`
+- `findings/phase-5ct-evidence-index.md`
+- `output/tables/phase5ct-ghostlock-architecture.csv`
+- `output/call-graphs/phase5ct-ghostlock-architecture.mmd`
+- `tools/scripts/build_phase5ct_architecture_matrix.py`

@@ -1,0 +1,22 @@
+flowchart LR
+    E0[Emerald target selector] --> E1[Coordinated userspace PI trigger]
+    E1 --> E2[Target-specific post-trigger memory stage]
+    E2 --> E3[Target-specific root delivery]
+
+    F0[Fire PS7331 exact source] --> F1[Futex requeue path]
+    F1 --> F2[rt_mutex proxy path]
+    F2 --> F3[current-based cleanup pattern]
+    F3 -. runtime identity unobserved .-> F4[Dynamic validation gate open]
+    F4 -. no Fire memory primitive .-> F5[Root unproven]
+
+    U0[Fire libc ordinary wait / PI-lock helpers] -. requeue-PI caller not established .-> F1
+
+## Text fallback
+
+Emerald: target selector → coordinated PI trigger → target-specific memory stage
+→ root delivery.
+
+Fire PS7331: exact source → futex requeue → rtmutex proxy → current-based cleanup
+pattern. The runtime identity mismatch, memory effect and privilege transition
+remain unobserved. Fire libc's ordinary wait and PI-lock helpers do not by
+themselves establish the requeue-PI edge.
