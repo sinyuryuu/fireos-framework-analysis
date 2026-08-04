@@ -75,6 +75,14 @@ MTK BROM/DA、preloader/LK、fastboot、OTA、boot image 或分割區寫入。�
 | standalone PS7331 boot 寫入 | 拒絕；不是完整 OTA，也未證明 boot-chain 相容 |
 | 目前 GhostLock live root test | 不可責任地執行；缺少 exact PS7330 signed target 與可靠 recovery |
 
+## Scope correction from full PS7330 archive
+
+Phase 5BO later extracted the actual `kernel/mediatek/mt8183/4.4` build-selected
+members from the complete official archive. For build provenance, use the
+`6cb544…` `rtmutex.c` and `ca9140…` `futex.c` hashes from Phase 5BO; the earlier
+`c4ddac…` hash in this report refers to the generic
+`kernel/mediatek/4.4` source member and remains source-family evidence only.
+
 ## 可重現方式
 
 ```sh
@@ -87,4 +95,3 @@ python3 tools/scripts/compare_phase5bj_ghostlock_fix.py \\
 
 Checker 是 host-only，拒絕覆寫既有 output，不連接裝置，不輸出 address、offset
 或 payload。
-

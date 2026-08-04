@@ -2047,3 +2047,19 @@ Phase 5BN outputs:
 - `findings/phase-5bn-ghostlock-current-verdict.md`
 - `findings/phase-5bn-evidence-index.md`
 - `artifacts/phase5/phase5bn-ghostlock-marker-recheck-20260804-01/`
+
+## Phase 5BO status
+
+Phase 5BO downloaded and verified the complete official PS7330 source archive,
+then extracted the actual `mt8183/4.4` build-selected kernel members. The exact
+PS7330 `rtmutex.c` and `futex.c` are byte-identical to the corresponding PS7331
+source members and still show the pre-fix GhostLock marker. This remains
+source-level evidence; no signed PS7330 boot image or live root test was created.
+
+Phase 5BO outputs:
+
+- `findings/phase-5bo-ps7330-full-source-build-path.md`
+- `findings/phase-5bo-evidence-index.md`
+- `tools/scripts/extract_phase5_ps7330_nested_members.py`
+- `artifacts/phase5/ps7330-full-source-members-20260804-01/`
+- `artifacts/phase5/phase5bo-exact-build-source-marker-20260804-01/`

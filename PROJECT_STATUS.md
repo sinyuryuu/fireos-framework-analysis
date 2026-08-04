@@ -459,6 +459,22 @@ Phase 5BM outputs:
 - `tools/scripts/build_phase5bm_artifact_ledger.py`
 - `artifacts/phase5/phase5bm-artifact-ledger-20260804-01/`
 
+## Phase 5BO status
+
+Phase 5BO verified the complete official PS7330 source archive and extracted
+the actual `mt8183/4.4` build-selected kernel members. The exact PS7330 and
+PS7331 `rtmutex.c`/`futex.c` source members are byte-identical and retain the
+pre-fix GhostLock marker. No device operation, exploit, upgrade, or partition
+mutation was run.
+
+Phase 5BO outputs:
+
+- `findings/phase-5bo-ps7330-full-source-build-path.md`
+- `findings/phase-5bo-evidence-index.md`
+- `tools/scripts/extract_phase5_ps7330_nested_members.py`
+- `artifacts/phase5/ps7330-full-source-members-20260804-01/`
+- `artifacts/phase5/phase5bo-exact-build-source-marker-20260804-01/`
+
 ## Phase 5BN status
 
 Phase 5BN independently rechecked the GhostLock `remove_waiter()` markers and
