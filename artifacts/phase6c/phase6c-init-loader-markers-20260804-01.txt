@@ -1,0 +1,34 @@
+Phase 6C host-only init loader marker extract
+source=artifacts/phase6c/phase6c-image-policy-extract-20260804-06/root/init
+source_sha256=e72ed4e90d73b88be341985ebd624725b67d67967d04157317456233e15f31fd
+tool=/usr/bin/strings
+device_contacted=false
+elf_executed=false
+policy_loaded=false
+
+1885b9 androidboot.selinux
+1885cd permissive
+1885d8 /system/etc/selinux/rootable_plat_sepolicy.cil
+188607 /vendor/etc/selinux/rootable_plat_pub_versioned.cil
+18863b /vendor/etc/selinux/rootable_vendor_sepolicy.cil
+18866c /odm/etc/selinux/rootable_odm_sepolicy.cil
+188697 rootable_fireos_sepolicy.cil
+1886b4 /vendor/etc/selinux/plat_pub_versioned.cil
+1886df /vendor/etc/selinux/vendor_sepolicy.cil
+188707 /odm/etc/selinux/odm_sepolicy.cil
+188729 fireos_sepolicy.cil
+18873d Failed to load SELinux policy from
+188761 Compiling SELinux policy
+188868 Loading compiled SELinux policy
+188888 No precompiled sepolicy
+1888a0 /system/etc/selinux/plat_and_mapping_sepolicy.cil.sha256
+18894a fireos_precompiled_sepolicy.plat_and_mapping.sha256
+18897e /fireos/etc/selinux/
+188993 /system/fireos/etc/selinux/
+1889af /system/etc/selinux/
+188abb Loading SELinux policy from monolithic file
+
+Interpretation: compiled init contains both rootable and standard policy path
+strings. These markers do not identify the branch, property value, loaded
+policy hash, or active SELinux policy. No policy was compiled, loaded, or sent
+to a device.

@@ -3120,6 +3120,43 @@ Outputs:
 The device was not sent a futex call. Race, panic, kernel-memory and root
 testing remain outside the stock-device boundary.
 
+## Phase 6C image policy／zygote coverage
+
+The preserved PS7331 `system.img` and `vendor.img` were inspected on the host
+with `debugfs 1.47.4` using read-only `rdump`/`dump` commands. The canonical
+extraction recovered 281 raw files, including root `/init`, from selected policy/config paths without
+mounting or writing either image. It includes service seccomp profiles,
+zygote init files, `app_process64`, Bionic/ART runtime libraries, SELinux
+contexts/policy, permissions, sysconfig, init and BPF paths.
+
+The extracted service profiles contain generic `futex: 1` entries, but no named
+requeue-PI rule. The raw-tree marker audit found zero named
+`FUTEX_CMP_REQUEUE_PI`/`FUTEX_WAIT_REQUEUE_PI` markers and five generic futex
+policy lines. This is bounded artifact evidence; it does not classify the
+ordinary app filter or prove a runtime opcode allow/deny result.
+
+The image also contains `rootable_*_sepolicy.cil` variants. A host-only
+comparison confirms they differ from the standard policy and include broader
+`su`-related type-attribute membership. The compiled `/init` contains strings
+for both rootable and standard policy paths, but this does not reveal the
+selection branch or prove that rootable policy is active. Runtime policy
+selection is therefore **待驗證**; the filename is not evidence of active root.
+
+Outputs:
+
+- `tools/scripts/extract_phase6c_image_policy_readonly.sh`
+- `tools/scripts/audit_phase6c_installed_artifacts.py`
+- `tools/scripts/audit_phase6c_selinux_policy_variants.py`
+- `findings/phase-6c-image-policy-extraction.md`
+- `findings/phase-6c-image-policy-evidence-index.md`
+- `artifacts/phase6c/phase6c-image-policy-extract-20260804-06/`
+- `artifacts/phase6c/phase6c-image-policy-marker-audit-20260804-04/`
+- `artifacts/phase6c/phase6c-selinux-variant-audit-20260804-02/`
+
+The extractor and audits refuse to overwrite an existing output and support
+`--dry-run`. No stock-device requeue-PI call, paired waiter, race, panic,
+heap-shaping, kernel-memory access or root payload was executed.
+
 ## Phase 6C requeue-PI precondition model
 
 The exact source was modeled into two abstract states. A single-context call

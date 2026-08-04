@@ -1,0 +1,45 @@
+{
+  "binary_executed": false,
+  "comparisons": [
+    {
+      "byte_identical": false,
+      "line_count_delta": 526,
+      "standard": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/system/etc/selinux/plat_sepolicy.cil",
+      "standard_bytes": 1095579,
+      "standard_lines": 17073,
+      "standard_sha256": "4056ed9140f6c201cb2dd55edf70041667a195e20233bb6a6a2468b40c9a872d",
+      "standard_su_related_lines": 10,
+      "variant": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/system/etc/selinux/rootable_plat_sepolicy.cil",
+      "variant_bytes": 1152902,
+      "variant_lines": 17599,
+      "variant_sha256": "51123eabcb7bbc36574ea90eb8c42b82677f5ffd35a40e1d48e61c58a6ec5d35",
+      "variant_su_related_lines": 332
+    },
+    {
+      "byte_identical": false,
+      "line_count_delta": 1054,
+      "standard": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/vendor/etc/selinux/vendor_sepolicy.cil",
+      "standard_bytes": 691263,
+      "standard_lines": 9749,
+      "standard_sha256": "82430dbe87b8a5f653110b635289489b99e82bdbe7bdc7a2e1ee5564e674e035",
+      "standard_su_related_lines": 5,
+      "variant": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/vendor/etc/selinux/rootable_vendor_sepolicy.cil",
+      "variant_bytes": 814078,
+      "variant_lines": 10803,
+      "variant_sha256": "82559be062226861221c58fb33de39d2541d0a4b08a96ea10bea2b3acc2e5b7a",
+      "variant_su_related_lines": 7
+    }
+  ],
+  "device_contacted": false,
+  "host_only": true,
+  "interpretation": [
+    "A rootable_* filename is an artifact name, not proof of an active runtime policy.",
+    "Text differences identify an alternate policy variant but do not establish which policy init or the kernel loaded.",
+    "This audit does not alter, compile, load, or test SELinux policy."
+  ],
+  "literal_variant_filename_references": [
+    "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/root/init"
+  ],
+  "policy_loaded": false,
+  "schema": "phase6c-selinux-policy-variant-audit-v1"
+}
