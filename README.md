@@ -2064,3 +2064,24 @@ Phase 5BO outputs:
 - `artifacts/phase5/ps7330-full-source-members-20260804-01/`
 - `artifacts/phase5/phase5bo-exact-build-source-marker-20260804-01/`
 - `adb/phase5/PHASE5BO-DEVICE-POSTCHECK-20260804-01/`
+
+## Phase 5BP status
+
+Phase 5BP inspected the kernel build scripts preserved in the official PS7330
+source archive. The scripts select the exact `kernel/mediatek/mt8183/4.4`
+subtree, `trona_defconfig`, `arm64`, and the expected Image outputs. They
+reference the AOSP GCC prebuilt branch `llvm-r383902b` and recommend a
+separately supplied Clang 6.0.2-compatible compiler. A static scan found no
+visible executable patch, overlay, or signing step in these two files. This
+strengthens source/build-path provenance but cannot prove signed production
+boot-image provenance or the absence of release-CI changes. The scripts were
+not executed; no toolchain was cloned, no image was built, and no device state
+changed.
+
+Phase 5BP outputs:
+
+- `findings/phase-5bp-ps7330-build-script-analysis.md`
+- `findings/phase-5bp-evidence-index.md`
+- `tools/scripts/analyze_phase5bp_build_scripts.py`
+- `output/tables/phase5bp-build-script-controls.csv`
+- `artifacts/phase5/ps7330-build-scripts-20260804-01/`

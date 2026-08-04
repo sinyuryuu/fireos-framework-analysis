@@ -476,6 +476,24 @@ Phase 5BO outputs:
 - `artifacts/phase5/phase5bo-exact-build-source-marker-20260804-01/`
 - `adb/phase5/PHASE5BO-DEVICE-POSTCHECK-20260804-01/`
 
+## Phase 5BP status
+
+Phase 5BP preserved and analyzed the PS7330 kernel build scripts from the
+official source archive. The exact build-selected path is
+`kernel/mediatek/mt8183/4.4` with `trona_defconfig` and `arm64`; the scripts
+reference the AOSP GCC prebuilt branch `llvm-r383902b` and recommend Clang
+6.0.2/4691093. No visible patch, overlay, or signing command appears in the
+two scripts. This is source/build provenance only, not signed-binary proof.
+The scripts were not executed and the device was not modified.
+
+Phase 5BP outputs:
+
+- `findings/phase-5bp-ps7330-build-script-analysis.md`
+- `findings/phase-5bp-evidence-index.md`
+- `tools/scripts/analyze_phase5bp_build_scripts.py`
+- `output/tables/phase5bp-build-script-controls.csv`
+- `artifacts/phase5/ps7330-build-scripts-20260804-01/`
+
 ## Phase 5BN status
 
 Phase 5BN independently rechecked the GhostLock `remove_waiter()` markers and

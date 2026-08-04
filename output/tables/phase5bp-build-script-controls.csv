@@ -1,0 +1,15 @@
+control,file,line,value,interpretation,confidence
+kernel_subpath,build_kernel_config.sh,9,kernel/mediatek/mt8183/4.4,Exact trona/MT8183 kernel source subtree,Confirmed
+defconfig,build_kernel_config.sh,10,trona_defconfig,Device product kernel configuration selector,Confirmed
+target_arch,build_kernel_config.sh,11,arm64,Target architecture,Confirmed
+toolchain_repo,build_kernel_config.sh,12,https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9,AOSP-hosted cross-compiler repository,Confirmed
+toolchain_branch,build_kernel_config.sh,13,llvm-r383902b,Requested toolchain branch,Confirmed
+toolchain_prefix,build_kernel_config.sh,15,aarch64-linux-android-,Cross-compiler prefix,Confirmed
+kernel_images,build_kernel_config.sh,18,Image:Image.gz:Image.gz-dtb,Expected arm64 boot outputs,Confirmed
+clang_recommendation,build_kernel_config.sh,21-24,6.0.2 or 4691093,Recommended separately supplied Clang version,Confirmed
+defconfig_invocation,build_kernel.sh,139-140,make ... trona_defconfig,Generates output configuration before build,Confirmed
+kernel_build_invocation,build_kernel.sh,149-150,make -j24 ... CROSS_COMPILE ... CC=clang,Build invocation,Confirmed
+output_copy,build_kernel.sh,160-174,find/cp arch/arm64/boot,Copies generated boot outputs,Confirmed
+output_validation,build_kernel.sh,176-185,Image/Image.gz/Image.gz-dtb,Checks expected output files,Confirmed
+patch_application,build_kernel.sh,1-216,NONE_VISIBLE,Static scan found no executable patch/apply/cherry-pick command,Confirmed_scan_scope
+signing_step,build_kernel.sh,1-216,NONE_VISIBLE,No signing command is visible in captured scripts; release signing remains unknown,Unknown

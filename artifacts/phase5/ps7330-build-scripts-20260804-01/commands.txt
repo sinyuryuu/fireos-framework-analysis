@@ -1,0 +1,19 @@
+Phase 5BP host-only commands
+
+1. Read the exact PS7330 source archive member list and extracted only the
+   allow-listed build-selected members using:
+   python3 tools/scripts/extract_phase5_ps7330_nested_members.py
+
+2. Read the extracted build scripts with sed and numbered line output.
+
+3. Computed SHA-256 with:
+   shasum -a 256 artifacts/phase5/ps7330-build-scripts-20260804-01/build_kernel.sh
+   shasum -a 256 artifacts/phase5/ps7330-build-scripts-20260804-01/build_kernel_config.sh
+
+4. Performed a static command-token scan for patch, git apply/am/cherry-pick,
+   apply_patch, and overlay invocations. No matching executable command was
+   found in the two preserved files.
+
+No command in this record executed either shell script, cloned a toolchain,
+ran make, generated a kernel image, contacted the device, or changed device
+state.
