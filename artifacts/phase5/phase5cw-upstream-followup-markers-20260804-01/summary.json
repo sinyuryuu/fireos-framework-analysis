@@ -1,0 +1,146 @@
+{
+  "generated_at_utc": "2026-08-04T10:11:41.437918+00:00",
+  "scope": {
+    "host_only": true,
+    "device_io": false,
+    "compilation": false,
+    "futex_trigger": false,
+    "kernel_memory_access": false,
+    "address_or_offset_output": false,
+    "payload_or_reproducer": false
+  },
+  "inputs": [
+    {
+      "path": "artifacts/phase5/ps7331-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "remove_waiter": {
+        "span": [
+          1079,
+          1129
+        ],
+        "markers": {
+          "current_pi_blocked_on_cleanup": true,
+          "waiter_task_declaration": false,
+          "waiter_task_pi_blocked_on_cleanup": false,
+          "waiter_task_pi_lock": false,
+          "waiter_null_guard": false,
+          "current_chain_walk_argument": true,
+          "waiter_task_chain_walk_argument": false
+        }
+      },
+      "task_blocks_on_rt_mutex": {
+        "span": [
+          952,
+          1032
+        ],
+        "waiter_assignment": [
+          {
+            "line": 977,
+            "text": "waiter->task = task;"
+          }
+        ],
+        "early_deadlock_returns": [
+          {
+            "line": 973,
+            "text": "return -EDEADLK;"
+          }
+        ],
+        "early_deadlock_before_waiter_assignment": [
+          {
+            "line": 973,
+            "text": "return -EDEADLK;"
+          }
+        ]
+      },
+      "rt_mutex_start_proxy_lock": {
+        "span": [
+          1656,
+          1691
+        ],
+        "markers": {
+          "broad_ret_cleanup_guard": true,
+          "negative_only_cleanup_guard": false,
+          "proxy_remove_waiter_call": true
+        }
+      },
+      "primary_classification": "PRE_PRIMARY_FIX_SHAPE",
+      "followup_classification": "BROAD_RET_CLEANUP_SHAPE",
+      "label": "PS7331_EXACT_SOURCE"
+    },
+    {
+      "path": "artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c",
+      "sha256": "c307ed54156d1f16e82387df7b214445dddf27be8a880f31575f698ca07d880a",
+      "remove_waiter": {
+        "span": [
+          1517,
+          1569
+        ],
+        "markers": {
+          "current_pi_blocked_on_cleanup": false,
+          "waiter_task_declaration": true,
+          "waiter_task_pi_blocked_on_cleanup": true,
+          "waiter_task_pi_lock": true,
+          "waiter_null_guard": false,
+          "current_chain_walk_argument": false,
+          "waiter_task_chain_walk_argument": true
+        }
+      },
+      "task_blocks_on_rt_mutex": {
+        "span": [
+          1180,
+          1280
+        ],
+        "waiter_assignment": [
+          {
+            "line": 1209,
+            "text": "waiter->task = task;"
+          }
+        ],
+        "early_deadlock_returns": [
+          {
+            "line": 1206,
+            "text": "return -EDEADLK;"
+          }
+        ],
+        "early_deadlock_before_waiter_assignment": [
+          {
+            "line": 1206,
+            "text": "return -EDEADLK;"
+          }
+        ]
+      },
+      "rt_mutex_start_proxy_lock": {
+        "span": null,
+        "markers": {
+          "broad_ret_cleanup_guard": false,
+          "negative_only_cleanup_guard": false,
+          "proxy_remove_waiter_call": false
+        }
+      },
+      "primary_classification": "PRIMARY_FIX_SHAPE",
+      "followup_classification": "NOT_PRESENT_OR_NOT_THIS_API_SHAPE",
+      "label": "LOCAL_UPSTREAM_PRIMARY_FIX_REFERENCE"
+    }
+  ],
+  "upstream_references": {
+    "primary_fix": {
+      "url": "https://github.com/torvalds/linux/commit/3bfdc63936dd",
+      "commit": "3bfdc63936dd",
+      "semantic_change": "remove_waiter() uses waiter->task for PI cleanup and chain adjustment"
+    },
+    "followup_fix": {
+      "url": "https://patchew.org/linux/20260507112913.1019537-1-dave%40stgolabs.net/",
+      "commit": "40a25d59e85b3c8709ac2424d44f65610467871e",
+      "semantic_change": "guard an un-enqueued waiter and restrict wrapper cleanup to ret < 0"
+    }
+  },
+  "verdict": {
+    "ps7331_primary_fix_present": false,
+    "ps7331_matches_pre_primary_shape": true,
+    "ps7331_has_followup_guard_shape": false,
+    "runtime_identity_mismatch_observed": false,
+    "cleanup_residue_observed": false,
+    "memory_effect_observed": false,
+    "root_or_privilege_gain_proven": false
+  }
+}

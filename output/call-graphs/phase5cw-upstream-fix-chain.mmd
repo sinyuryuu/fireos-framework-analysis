@@ -1,0 +1,28 @@
+flowchart TD
+    U["Userspace / kernel entry<br/>not executed in this phase"]
+    F["PS7331 futex_requeue()<br/>proxy call passes stored waiter task"]
+    P["rt_mutex_start_proxy_lock()<br/>PS7331 source"]
+    S["try_to_take_rt_mutex() success<br/>return 1 early"]
+    T["task_blocks_on_rt_mutex()"]
+    D["self-deadlock return -EDEADLK<br/>before waiter->task assignment"]
+    A["waiter->task = task<br/>normal binding"]
+    R["PS7331 if (unlikely(ret))"]
+    C["PS7331 remove_waiter()<br/>current->pi_blocked_on = NULL"]
+    M["Runtime question<br/>was waiter->task != current observed?"]
+    PF["Upstream primary fix<br/>use waiter_task for cleanup and chain"]
+    FF["Upstream follow-up<br/>guard !waiter_task; cleanup only ret < 0"]
+    N["No runtime trigger, residue, memory effect<br/>or root evidence captured"]
+
+    U -. "not run" .-> F
+    F --> P
+    P --> S
+    P --> T
+    T --> D
+    T --> A
+    D -. "early boundary" .-> R
+    A --> R
+    R --> C
+    C --> M
+    C -. "pre-primary shape" .-> PF
+    D -. "follow-up boundary" .-> FF
+    M --> N

@@ -1,0 +1,9 @@
+evidence_id,source_label,file_or_method,source_line,marker,ps7331_value,upstream_reference_value,classification,confidence
+P5CW-001,PS7331_EXACT_SOURCE,remove_waiter,current cleanup 1089,current_pi_blocked_on_cleanup,true,false,AMAZON_OR_VENDOR_BUILD_PRE_PRIMARY_FIX,Confirmed-source-scope
+P5CW-002,PS7331_EXACT_SOURCE,remove_waiter,1079-1129,waiter_task_pi_blocked_on_cleanup,false,true,PRIMARY_FIX_ABSENT_IN_PS7331,Confirmed-source-scope
+P5CW-003,PS7331_EXACT_SOURCE,task_blocks_on_rt_mutex,973 before 977,early_deadlock_before_waiter_assignment,true,true,EARLY_RETURN_BOUNDARY,Confirmed-source-scope
+P5CW-004,PS7331_EXACT_SOURCE,rt_mutex_start_proxy_lock,1683-1684,broad_ret_cleanup_guard,true,false,FOLLOW_UP_GUARD_ABSENT_IN_PS7331,Confirmed-source-scope
+P5CW-005,LOCAL_UPSTREAM_PRIMARY_FIX_REFERENCE,remove_waiter,1517-1569,waiter_task_cleanup,false,true,PRIMARY_FIX_SHAPE,Confirmed-source-scope
+P5CW-006,UPSTREAM_FOLLOWUP_PATCH,rt_mutex_start_proxy_lock,patch diff,negative_only_cleanup_guard,not present in PS7331,ret < 0,RET_DOMAIN_GUARD_REQUIRED,Confirmed-upstream-patch
+P5CW-007,UPSTREAM_FOLLOWUP_PATCH,remove_waiter,patch diff,waiter_null_guard,not present in PS7331,if (!waiter_task) return,UNENQUEUED_WAITER_GUARD_REQUIRED,Confirmed-upstream-patch
+P5CW-D1,PS7331_RUNTIME,stock device,not captured,dynamic_identity_mismatch,false,unknown,NOT_VALIDATED,Unobserved

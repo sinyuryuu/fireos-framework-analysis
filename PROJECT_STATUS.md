@@ -1138,3 +1138,28 @@ Outputs:
 - `findings/phase-5cv-evidence-index.md`
 - `output/tables/phase5cv-ret-early-return.csv`
 - `output/call-graphs/phase5cv-ret-early-return.mmd`
+
+## Phase 5CW status
+
+Phase 5CW compares the exact PS7331 `rtmutex.c` with a preserved upstream
+primary-fix reference and records the upstream follow-up guard separately.
+The exact PS7331 source retains `current->pi_blocked_on = NULL` in
+`remove_waiter()` and `if (unlikely(ret)) remove_waiter(lock, waiter)` in the
+proxy wrapper. Its self-deadlock `-EDEADLK` return precedes `waiter->task =
+task`. The upstream primary fix uses `waiter->task` for PI cleanup and chain
+adjustment; the later follow-up adds an un-enqueued waiter guard and changes
+the wrapper test to `ret < 0`.
+
+This is a source-level confirmation only. A stock PS7331 runtime identity
+mismatch, cleanup residue, later consumer, controlled memory effect or root
+has not been observed. No futex trigger, race, exploit, kernel-memory,
+payload, boot or partition operation was performed.
+
+Outputs:
+
+- `findings/phase-5cw-upstream-followup-fix-diff.md`
+- `findings/phase-5cw-evidence-index.md`
+- `output/tables/phase5cw-upstream-fix-diff.csv`
+- `output/call-graphs/phase5cw-upstream-fix-chain.mmd`
+- `tools/scripts/compare_phase5cw_upstream_followup.py`
+- `tests/test_phase5cw_upstream_followup.py`
