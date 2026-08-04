@@ -2430,3 +2430,15 @@ GhostLock exploitability or root.
 Output:
 
 - `findings/phase-5ck-ps7331-runtime-gates.md`
+
+## Phase 5CL status
+
+Phase 5CL defines the evidence gate for moving GhostLock from static analysis to
+dynamic validation. A real, reproducible `waiter->task != current` observation
+is required for D1, but it is not by itself proof of a persistent kernel
+invariant violation or root. The stock PS7331 shell snapshot has not produced
+D1 evidence and no futex trigger or kernel instrumentation was installed.
+
+Output:
+
+- `findings/phase-5cl-identity-mismatch-validation-gate.md`

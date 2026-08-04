@@ -903,3 +903,15 @@ Outputs:
 
 - `findings/phase-5ck-ps7331-runtime-gates.md`
 - `adb/phase5/PS7331-FUTEX-GATES-20260804-01/` (raw local evidence)
+
+## Phase 5CL status
+
+Phase 5CL formalizes the dynamic-validation gate: D0 source identity separation
+is confirmed, while D1 runtime `waiter->task != current`, D2 wrong cleanup target,
+D3 persistent consumer, and D4 controlled memory effect/root remain unobserved.
+The stock PS7331 device was not used as an exploit target and no kernel
+instrumentation, futex trigger, memory access, or root payload was executed.
+
+Output:
+
+- `findings/phase-5cl-identity-mismatch-validation-gate.md`
