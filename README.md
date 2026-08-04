@@ -2033,3 +2033,17 @@ Phase 5BM outputs:
 - `findings/phase-5bm-evidence-index.md`
 - `tools/scripts/build_phase5bm_artifact_ledger.py`
 - `artifacts/phase5/phase5bm-artifact-ledger-20260804-01/`
+
+## Phase 5BN status
+
+Phase 5BN independently rechecked the GhostLock `remove_waiter()` markers and
+revalidated the official PS7330/PS7331 source archive headers. Both preserved
+source families remain classified as pre-fix; the fixed reference uses
+`waiter->task`. The result is source/binary-provenance evidence only. No device
+I/O, exploit, upgrade, bootloader operation, or partition mutation was run.
+
+Phase 5BN outputs:
+
+- `findings/phase-5bn-ghostlock-current-verdict.md`
+- `findings/phase-5bn-evidence-index.md`
+- `artifacts/phase5/phase5bn-ghostlock-marker-recheck-20260804-01/`
