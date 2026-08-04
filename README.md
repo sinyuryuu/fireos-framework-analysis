@@ -1906,3 +1906,20 @@ Phase 5BF outputs:
 - `findings/phase-5bf-evidence-index.md`
 - `tools/scripts/analyze_phase5bf_ghostlock_reachability.py`
 - `artifacts/phase5/ghostlock-reachability-review-20260804-04/`
+
+### Phase 5BG — PS7331 source-to-inspected-Image semantic comparison
+
+Phase 5BG combines the preserved PS7331 source semantics, the sanitized
+instruction-pattern summary from the PS7331 boot Image, and a fixed
+`waiter->task` reference. The three-way machine result is
+`PS7331_INSPECTED_IMAGE_CONSISTENT_WITH_PRE_FIX_SOURCE`. This strengthens the
+version-scoped conclusion that PS7331 is not demonstrated to remediate
+GhostLock, while still keeping exact PS7330 signed-binary and runtime
+exploitability claims out of scope.
+
+Phase 5BG outputs:
+
+- `findings/phase-5bg-ps7331-source-binary-semantic.md`
+- `findings/phase-5bg-evidence-index.md`
+- `tools/scripts/compare_phase5bg_ps7331_semantics.py`
+- `artifacts/phase5/ps7331-source-binary-semantic-20260804-01/`

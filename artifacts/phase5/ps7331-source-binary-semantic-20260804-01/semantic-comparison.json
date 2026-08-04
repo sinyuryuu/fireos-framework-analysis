@@ -1,0 +1,60 @@
+{
+  "analysis": {
+    "name": "Phase 5BG PS7331 source-to-inspected-Image semantic comparison",
+    "generated_at_utc": "2026-08-04T04:22:47.583203+00:00",
+    "device_io": false,
+    "binary_execution": false,
+    "address_or_offset_output": false,
+    "payload_or_reproducer": false,
+    "scope": "PS7331 preserved source and inspected Image pattern consistency only"
+  },
+  "inputs": [
+    {
+      "kind": "source_semantics",
+      "path": "/Users/bob/Documents/Codex/2026-08-03-fire-os-7-framework-amazon-fire/artifacts/phase5/ghostlock-source-semantics-20260804-01/mt8183.json",
+      "sha256": "3a02f57d3aeb548948666d7feda4e9121cdc3dff67998f637db6257e67225ba2"
+    },
+    {
+      "kind": "sanitized_image_patterns",
+      "path": "/Users/bob/Documents/Codex/2026-08-03-fire-os-7-framework-amazon-fire/artifacts/phase5/ps7331-rtmutex-static-review-20260804-01/instruction-patterns.csv",
+      "sha256": "0ee3da7513051f2fa32b221918c6e671bc78b2a8e192fa0ab7ad65cc6e53475d"
+    },
+    {
+      "kind": "fixed_reference_source",
+      "path": "/Users/bob/Documents/Codex/2026-08-03-fire-os-7-framework-amazon-fire/artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c",
+      "sha256": "c307ed54156d1f16e82387df7b214445dddf27be8a880f31575f698ca07d880a"
+    }
+  ],
+  "source": {
+    "classification": "PRE_FIX_CURRENT_TASK_CLEANUP_PATTERN",
+    "proxy_error_remove_waiter_call_present": true
+  },
+  "inspected_image_patterns": {
+    "remove_waiter_current_task_source": true,
+    "remove_waiter_current_task_blocked_on_clear": true,
+    "proxy_error_calls_remove_waiter": true
+  },
+  "fixed_reference": {
+    "found": true,
+    "waiter_task_cleanup": true,
+    "current_cleanup": false,
+    "span": {
+      "start_line": 1517,
+      "end_line": 1569
+    }
+  },
+  "verdict": {
+    "ps7331_inspected_image_consistent_with_pre_fix_source": true,
+    "exact_ps7330_signed_binary_proven": false,
+    "runtime_exploitability_proven": false,
+    "root_or_privilege_gain_proven": false,
+    "classification": "PS7331_INSPECTED_IMAGE_CONSISTENT_WITH_PRE_FIX_SOURCE"
+  },
+  "safety": {
+    "no_adb": true,
+    "no_flash": true,
+    "no_bootloader": true,
+    "no_kernel_memory_access": true,
+    "no_unknown_ioctl": true
+  }
+}

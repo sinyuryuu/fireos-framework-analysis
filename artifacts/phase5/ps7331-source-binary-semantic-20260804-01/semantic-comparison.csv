@@ -1,0 +1,9 @@
+layer,observation,value,confidence
+source,pre-fix current-task cleanup,True,"Confirmed, source scope"
+source,proxy error calls remove_waiter,True,"Confirmed, source scope"
+inspected Image,remove_waiter reads current-task source,True,"Confirmed, inspected-function scope"
+inspected Image,remove_waiter clears current-task field,True,"Confirmed, inspected-function scope"
+inspected Image,proxy error calls remove_waiter,True,"Confirmed, inspected-function scope"
+fixed reference,remove_waiter uses waiter task,True,"Confirmed, reference scope"
+overall,PS7331 inspected Image consistent with pre-fix source,True,"Strong evidence, version-scoped"
+boundary,exact PS7330 signed binary proven,False,Unknown

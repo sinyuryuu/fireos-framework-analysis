@@ -331,3 +331,19 @@ Phase 5BF outputs:
 - `findings/phase-5bf-evidence-index.md`
 - `tools/scripts/analyze_phase5bf_ghostlock_reachability.py`
 - `artifacts/phase5/ghostlock-reachability-review-20260804-04/`
+
+## Phase 5BG status
+
+Phase 5BG combines three host-only evidence layers: PS7331 build-selected
+source semantics, the address-sanitized PS7331 inspected-Image pattern summary,
+and a fixed `waiter->task` reference. The machine result is
+`PS7331_INSPECTED_IMAGE_CONSISTENT_WITH_PRE_FIX_SOURCE`. This strengthens the
+version-scoped decision not to upgrade solely for GhostLock, without claiming
+exact PS7330 signed-binary equivalence, runtime exploitability, or root.
+
+Phase 5BG outputs:
+
+- `findings/phase-5bg-ps7331-source-binary-semantic.md`
+- `findings/phase-5bg-evidence-index.md`
+- `tools/scripts/compare_phase5bg_ps7331_semantics.py`
+- `artifacts/phase5/ps7331-source-binary-semantic-20260804-01/`
