@@ -1,0 +1,14 @@
+evidence_id,config_or_symbol,location,observed_value,meaning,confidence
+P5BU-CONFIG-001,CONFIG_FUTEX,kernel.config:169,y,Futex subsystem enabled,Confirmed
+P5BU-CONFIG-001,CONFIG_RT_MUTEXES,kernel.config:248,y,RT mutex implementation enabled,Confirmed
+P5BU-CONFIG-001,CONFIG_PREEMPT,kernel.config:363,y,Preemptible kernel configuration,Confirmed
+P5BU-CONFIG-001,CONFIG_PREEMPT_COUNT,kernel.config:364,y,Preemption accounting enabled,Confirmed
+P5BU-CONFIG-001,CONFIG_ARM64_4K_PAGES,kernel.config:350,y,ARM64 page size,Confirmed
+P5BU-CONFIG-001,CONFIG_ARM64_VA_BITS,kernel.config:353-355,39,ARM64 virtual address width,Confirmed
+P5BU-CONFIG-001,CONFIG_RANDOMIZE_BASE,kernel.config:431,y,Kernel base randomization configured,Confirmed
+P5BU-CONFIG-001,CONFIG_DEBUG_RT_MUTEXES,kernel.config:4184,not_set,Debug RT mutex instrumentation disabled,Confirmed
+P5BU-SOURCE-001,FUTEX_WAIT_REQUEUE_PI,futex.c:3237-3238,present,PI wait dispatch source present,Confirmed
+P5BU-SOURCE-001,FUTEX_CMP_REQUEUE_PI,futex.c:3238-3269,present,PI requeue dispatch source present,Confirmed
+P5BU-SOURCE-002,rt_mutex_start_proxy_lock,rtmutex.c:1656-1684,present,Proxy-lock error path reaches remove_waiter,Confirmed
+P5BU-IMAGE-001,futex_requeue,sanitized Image symbol-presence.csv,present,Inspected Image marker,Strong evidence
+P5BU-IMAGE-001,remove_waiter current-task cleanup,sanitized Image instruction-patterns.csv,present,Inspected Image pre-fix marker,Strong evidence

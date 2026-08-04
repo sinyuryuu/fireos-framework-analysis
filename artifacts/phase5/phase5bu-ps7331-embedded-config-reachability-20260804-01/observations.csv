@@ -1,0 +1,8 @@
+source,symbol,line,observation,classification
+artifacts/phase5/ps7331-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c,remove_waiter,1089,current->pi_blocked_on = NULL;,PRE_FIX_CURRENT_TASK_CLEANUP_PATTERN
+artifacts/phase5/ps7331-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c,rt_mutex_start_proxy_lock,1684,"remove_waiter(lock, waiter);",PROXY_ERROR_PATH_PRESENT
+artifacts/phase5/ps7331-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c,futex_pi_dispatch_and_requeue,1644,* rt_mutex_start_proxy_lock() - Start lock acquisition for another task,PI_REQUEUE_SOURCE_PATH_PRESENT
+artifacts/phase5/ps7331-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c,futex_pi_dispatch_and_requeue,1656,"int rt_mutex_start_proxy_lock(struct rt_mutex *lock,",PI_REQUEUE_SOURCE_PATH_PRESENT
+artifacts/phase5/ps7331-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c,config_focus,,,CONFIG_CAPTURED
+artifacts/phase5/ps7331-full-source-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c,futex.c,,,
+artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c,remove_waiter,1522,struct task_struct *waiter_task = waiter->task;,WAITER_TASK_CLEANUP_REFERENCE

@@ -1,0 +1,14 @@
+flowchart TD
+    A[PS7331 boot.img] --> B[decompressed kernel Image]
+    B --> C[IKCONFIG]
+    C --> D[CONFIG_FUTEX=y<br/>CONFIG_RT_MUTEXES=y<br/>CONFIG_PREEMPT=y]
+    E[mt8183/4.4 futex.c] --> F[FUTEX_WAIT_REQUEUE_PI<br/>FUTEX_CMP_REQUEUE_PI dispatch]
+    F --> G[futex_requeue]
+    G --> H[rt_mutex_start_proxy_lock]
+    H --> I[remove_waiter]
+    J[mt8183/4.4 rtmutex.c] --> I
+    I --> K[current->pi_blocked_on cleanup<br/>pre-fix semantic]
+    D --> L[host-only source/config reachability candidate]
+    K --> L
+    L --> M[Runtime trigger: unverified]
+    L --> N[Root/privilege gain: unverified]

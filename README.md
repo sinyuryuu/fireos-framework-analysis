@@ -2179,3 +2179,26 @@ Phase 5BT outputs:
 - `artifacts/phase5/phase5bt-build-script-controls-20260804-01.csv`
 - `output/tables/phase5bt-ps7331-source-binary-status.csv`
 - `output/call-graphs/phase5bt-ghostlock-source-path.mmd`
+
+## Phase 5BU status
+
+Phase 5BU adds the PS7331 boot-embedded `IKCONFIG` to the source/Image
+cross-check. The preserved PS7331 kernel config contains
+`CONFIG_FUTEX=y`, `CONFIG_RT_MUTEXES=y`, `CONFIG_PREEMPT=y`, ARM64 VA39/4K,
+`CONFIG_RANDOMIZE_BASE=y`, and `CONFIG_KALLSYMS=y`. The build-selected source
+contains the `FUTEX_REQUEUE_PI`/`futex_requeue()`/`rt_mutex_start_proxy_lock()`
+path, while the inspected Image contains matching function and pre-fix cleanup
+markers.
+
+This strengthens the classification to **PS7331 source/config/Image
+reachability candidate**. It still does not prove a live race, kernel control,
+root, or privilege transition. No futex race, memory access, exploit payload,
+ADB mutation, bootloader operation, or partition write was executed.
+
+Phase 5BU outputs:
+
+- `findings/phase-5bu-ps7331-embedded-config-reachability.md`
+- `findings/phase-5bu-evidence-index.md`
+- `artifacts/phase5/phase5bu-ps7331-embedded-config-reachability-20260804-01/`
+- `output/tables/phase5bu-ps7331-config-reachability.csv`
+- `output/call-graphs/phase5bu-ps7331-reachability.mmd`
