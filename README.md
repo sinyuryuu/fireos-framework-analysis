@@ -3076,6 +3076,31 @@ Outputs:
 The analyzer is host-only, refuses to overwrite outputs, and supports
 `--dry-run`.
 
+## Phase 6C installed-artifact policy audit
+
+The preserved PS7331 installed-artifact candidates were audited offline on
+2026-08-04. The scan covered the selected framework/APK set, ODEX/VDEX files,
+Amazon init/callback XMLs, and preserved zygote/native artifacts. It found no
+named `FUTEX_CMP_REQUEUE_PI` or `FUTEX_WAIT_REQUEUE_PI` marker. Generic
+`SECCOMP`/`NO_NEW_PRIVS` strings in `linker64` and zygote strings in
+`app_process64` are retained as surface clues only; they do not reveal a
+futex allowlist or prove runtime policy enforcement.
+
+The raw image files remain unmounted and were not content-scanned in this
+pass. This is a coverage boundary, not an absence proof. No device-side
+requeue-PI, paired waiter, race, panic, kernel-memory operation, or root
+payload was run.
+
+Outputs:
+
+- `tools/scripts/audit_phase6c_installed_artifacts.py`
+- `findings/phase-6c-installed-artifact-policy-audit.md`
+- `findings/phase-6c-installed-artifact-policy-evidence-index.md`
+- `artifacts/phase6c/phase6c-installed-artifact-policy-20260804-04/`
+
+The script is host-only, refuses to overwrite an existing output, and
+supports `--dry-run`.
+
 ## Phase 6C requeue-PI precondition model
 
 The exact source was modeled into two abstract states. A single-context call
