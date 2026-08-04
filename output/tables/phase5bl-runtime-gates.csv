@@ -1,0 +1,7 @@
+evidence_id,surface,observed,scope,confidence
+P5BL-RUNTIME-001,identity,"PS7330.4104N; Linux 4.4.146+; aarch64; UID 2000 shell; SELinux Enforcing",exact runtime snapshot,Confirmed
+P5BL-RUNTIME-002,kernel_sysctls,"perf_event_paranoid=3; selected panic/kptr/dmesg/randomize sysctls denied",shell read-permission boundary,Confirmed
+P5BL-RUNTIME-003,proc_kallsyms,"Permission denied",exact runtime snapshot,Confirmed
+P5BL-RUNTIME-004,futex_symbols,"No usable output after kallsyms denial",negative observation only,Confirmed
+P5BL-RUNTIME-005,device_nodes,"/dev/ion and /dev/mtk_cmdq metadata listed; no open/ioctl",metadata only,Confirmed
+P5BL-SAFETY-001,test_boundary,"No futex trigger; no device mutation",test boundary,Confirmed

@@ -1998,3 +1998,22 @@ Phase 5BK outputs:
 - `output/tables/phase5bk-security-delta.csv`
 - `tools/scripts/compare_phase5bk_security_delta.py`
 - `artifacts/phase5/phase5bk-security-delta-20260804-02/`
+
+## Phase 5BL status
+
+Phase 5BL captured the exact PS7330 futex applicability gates using a
+serial-qualified, read-only ADB script. The device remains Linux 4.4.146+ /
+Android 9 / PS7330.4104N with SELinux Enforcing and shell UID 2000. Shell cannot
+read `/proc/kallsyms` or most selected kernel sysctls; ION and CMDQ node metadata
+was listed without opening either node. No futex PI trigger, ioctl, exploit,
+reboot or device mutation was performed. This improves the runtime evidence
+boundary but does not prove or disprove GhostLock exploitability.
+
+Phase 5BL outputs:
+
+- `findings/phase-5bl-futex-runtime-gates.md`
+- `findings/phase-5bl-evidence-index.md`
+- `tools/scripts/analyze_phase5bl_futex_gates.py`
+- `adb/phase5/PHASE5BL-FUTEX-GATES-20260804-01/`
+- `artifacts/phase5/phase5bl-futex-gates-analysis-20260804-01/`
+- `output/tables/phase5bl-runtime-gates.csv`
