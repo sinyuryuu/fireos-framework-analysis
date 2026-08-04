@@ -2085,3 +2085,24 @@ Phase 5BP outputs:
 - `tools/scripts/analyze_phase5bp_build_scripts.py`
 - `output/tables/phase5bp-build-script-controls.csv`
 - `artifacts/phase5/ps7330-build-scripts-20260804-01/`
+
+## Phase 5BQ status
+
+Phase 5BQ refreshed the GhostLock/public-route evidence without changing the
+device. A serial-qualified read-only postcheck still reports PS7330.4104N,
+security patch `2024-02-01`, ADB state `device`, and HOME resolved to
+`com.amazon.firelauncher/.Launcher`. The current public `mtk-easy-su` and
+LauncherHijack heads were pinned for reproducibility; neither supplies an
+exact `KFTRWI/trona/MT8183/PS7330` implementation, and no unknown APK was
+installed. Exact PS7330 source and inspected PS7331 source/Image remain
+consistent with the GhostLock pre-fix semantic. No exploit, root payload,
+unknown ioctl, reboot, OTA, fastboot, boot write, or partition operation was
+performed.
+
+Phase 5BQ outputs:
+
+- `findings/phase-5bq-ghostlock-next-verdict.md`
+- `findings/phase-5bq-evidence-index.md`
+- `output/tables/phase5bq-route-matrix.csv`
+- `adb/phase5/PHASE5BQ-DEVICE-POSTCHECK-20260804-01/`
+- `artifacts/phase5/phase5bq-public-route-review-20260804-01/`

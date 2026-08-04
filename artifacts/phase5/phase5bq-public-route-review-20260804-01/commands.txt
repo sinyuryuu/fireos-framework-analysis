@@ -1,0 +1,16 @@
+Phase 5BQ commands
+
+Host-only/public metadata:
+git ls-remote https://github.com/KoCleo/mtk-easy-su.git HEAD
+git ls-remote https://github.com/BaronKiko/LauncherHijack.git HEAD
+
+Device read-only postcheck:
+bash tools/scripts/capture_phase5ba_device_postcheck.sh --dry-run --serial G001LT0511550CFT --output adb/phase5/PHASE5BQ-DEVICE-POSTCHECK-20260804-01
+bash tools/scripts/capture_phase5ba_device_postcheck.sh --serial G001LT0511550CFT --output adb/phase5/PHASE5BQ-DEVICE-POSTCHECK-20260804-01
+(cd adb/phase5/PHASE5BQ-DEVICE-POSTCHECK-20260804-01 && shasum -a 256 -c sha256sums.txt)
+
+Public web references were read without downloading or executing an APK,
+native binary, exploit, kernel image, or boot-chain tool.
+
+No command in this record performed package mutation, settings mutation,
+reboot, OTA, fastboot, BROM/DA, ioctl, boot write, or partition access.

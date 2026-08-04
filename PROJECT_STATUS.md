@@ -494,6 +494,26 @@ Phase 5BP outputs:
 - `output/tables/phase5bp-build-script-controls.csv`
 - `artifacts/phase5/ps7330-build-scripts-20260804-01/`
 
+## Phase 5BQ status
+
+Phase 5BQ refreshed the GhostLock and public MTK-route boundary with a new
+serial-qualified, read-only device postcheck. The device remains PS7330.4104N
+with the 2024-02-01 patch, ADB `device`, and Fire Launcher as HOME. Public
+`mtk-easy-su` and LauncherHijack heads were pinned; no exact
+KFTRWI/trona/MT8183 implementation was found in the reviewed route, and no
+unknown APK was installed. Exact PS7330 source and inspected PS7331
+source/Image evidence remain pre-fix-consistent for GhostLock. No exploit,
+root, reboot, OTA, fastboot, boot write, ioctl, or partition operation was
+performed.
+
+Phase 5BQ outputs:
+
+- `findings/phase-5bq-ghostlock-next-verdict.md`
+- `findings/phase-5bq-evidence-index.md`
+- `output/tables/phase5bq-route-matrix.csv`
+- `adb/phase5/PHASE5BQ-DEVICE-POSTCHECK-20260804-01/`
+- `artifacts/phase5/phase5bq-public-route-review-20260804-01/`
+
 ## Phase 5BN status
 
 Phase 5BN independently rechecked the GhostLock `remove_waiter()` markers and
