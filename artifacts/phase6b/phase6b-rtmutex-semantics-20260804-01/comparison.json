@@ -1,0 +1,78 @@
+[
+  {
+    "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c",
+    "functions": {
+      "remove_waiter": {
+        "chain_uses_waiter_task": false,
+        "current_pi_blocked_on_clear": true,
+        "current_pi_lock": true,
+        "end": 1129,
+        "null_waiter_guard": false,
+        "start": 1079,
+        "waiter_task_binding": false,
+        "waiter_task_pi_blocked_on_clear": false,
+        "waiter_task_pi_lock": false
+      },
+      "rt_mutex_start_proxy_lock": {
+        "available": true,
+        "broad_nonzero_cleanup": true,
+        "early_return_before_cleanup": true,
+        "end": 1691,
+        "negative_only_cleanup": false,
+        "remove_waiter_call": true,
+        "start": 1656
+      }
+    },
+    "label": "PS7331",
+    "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde"
+  },
+  {
+    "file": "artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v4.4.146.c",
+    "functions": {
+      "remove_waiter": {
+        "chain_uses_waiter_task": false,
+        "current_pi_blocked_on_clear": true,
+        "current_pi_lock": true,
+        "end": 1129,
+        "null_waiter_guard": false,
+        "start": 1079,
+        "waiter_task_binding": false,
+        "waiter_task_pi_blocked_on_clear": false,
+        "waiter_task_pi_lock": false
+      },
+      "rt_mutex_start_proxy_lock": {
+        "available": true,
+        "broad_nonzero_cleanup": true,
+        "early_return_before_cleanup": true,
+        "end": 1692,
+        "negative_only_cleanup": false,
+        "remove_waiter_call": true,
+        "start": 1657
+      }
+    },
+    "label": "legacy-v4.4.146",
+    "sha256": "c4ddac5fe820c7f07670bc332425be05b0df0400ae334a147b483f0ee9b07345"
+  },
+  {
+    "file": "artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v6.1.175.c",
+    "functions": {
+      "remove_waiter": {
+        "chain_uses_waiter_task": true,
+        "current_pi_blocked_on_clear": false,
+        "current_pi_lock": false,
+        "end": 1569,
+        "null_waiter_guard": false,
+        "start": 1517,
+        "waiter_task_binding": true,
+        "waiter_task_pi_blocked_on_clear": true,
+        "waiter_task_pi_lock": true
+      },
+      "rt_mutex_start_proxy_lock": {
+        "available": false,
+        "reason": "function signature not found: rt_mutex_start_proxy_lock"
+      }
+    },
+    "label": "fixed-v6.1.175",
+    "sha256": "c307ed54156d1f16e82387df7b214445dddf27be8a880f31575f698ca07d880a"
+  }
+]

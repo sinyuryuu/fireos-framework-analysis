@@ -2962,6 +2962,13 @@ dispatches into `futex_requeue(..., requeue_pi=1)`, can prepare PI state, and ca
 reach proxy/cleanup branches. A single-thread or single-call constraint does
 not turn that path into a read-only probe.
 
+The host-only semantic comparison is reproducible with
+`tools/scripts/compare_phase6b_rtmutex_semantics.py`. It compares the PS7331
+source with the preserved legacy v4.4.146 source and a fixed v6.1.175 focused
+slice, while treating unavailable functions as `UNAVAILABLE` rather than as
+semantic differences. Its derived output is
+`artifacts/phase6b/phase6b-rtmutex-semantics-20260804-01/`.
+
 Any instrumented kernel, QEMU/KASAN experiment, requeue-PI trigger, race
 reproducer, panic test, or privilege-transition payload must be separately
 labelled `LAB_ONLY` and must not be copied to or run on the stock tablet.
