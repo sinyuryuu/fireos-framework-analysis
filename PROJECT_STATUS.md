@@ -617,3 +617,19 @@ Phase 5BU outputs:
 - `artifacts/phase5/phase5bu-ps7331-embedded-config-reachability-20260804-01/`
 - `output/tables/phase5bu-ps7331-config-reachability.csv`
 - `output/call-graphs/phase5bu-ps7331-reachability.mmd`
+
+## Phase 5BV status
+
+Phase 5BV adds a host-only semantic regression model for the proxy-waiter
+cleanup mismatch. The model reproduces the distinction between
+`current->pi_blocked_on` and `waiter->task->pi_blocked_on`, passes four unit
+tests, and includes a same-task control. It does not execute kernel code or
+claim a live exploit, root, or privilege transition.
+
+Phase 5BV outputs:
+
+- `findings/phase-5bv-ghostlock-semantic-model.md`
+- `findings/phase-5bv-evidence-index.md`
+- `tools/scripts/model_phase5bv_ghostlock_semantics.py`
+- `tests/test_phase5bv_ghostlock_semantics.py`
+- `artifacts/phase5/phase5bv-ghostlock-semantic-model-20260804-01/`

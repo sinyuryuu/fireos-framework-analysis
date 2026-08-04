@@ -1,0 +1,44 @@
+{
+  "model": "GHOSTLOCK_PROXY_WAITER_CLEANUP_SEMANTICS",
+  "host_only": true,
+  "device_io": false,
+  "kernel_code_executed": false,
+  "address_or_offset_output": false,
+  "payload_or_reproducer": false,
+  "proxy_condition": {
+    "current_task": "current",
+    "waiter_task": "proxy-waiter",
+    "tasks_are_distinct": true,
+    "waiter_task_initial_pi_blocked_on": "proxy-lock"
+  },
+  "pre_fix": {
+    "operation": "clear current->pi_blocked_on",
+    "state_after": {
+      "current_pi_blocked_on": null
+    },
+    "waiter_task_remains_blocked_on": "proxy-lock",
+    "wrong_task_cleanup_observed": true
+  },
+  "fixed_reference": {
+    "operation": "clear waiter->task->pi_blocked_on",
+    "state_after": {
+      "waiter_task_pi_blocked_on": null
+    },
+    "waiter_task_remains_blocked_on": null,
+    "wrong_task_cleanup_observed": false
+  },
+  "non_proxy_control": {
+    "same_task": true,
+    "pre_fix_state_after": {
+      "current_pi_blocked_on": null
+    },
+    "pre_fix_matches_expected": true
+  },
+  "verdict": {
+    "semantic_mismatch_reproduced": true,
+    "fixed_cleanup_clears_waiter_task": true,
+    "live_kernel_exploitability_proven": false,
+    "root_or_privilege_gain_proven": false
+  },
+  "generated_at_utc": "2026-08-04T06:50:13.796317+00:00"
+}
