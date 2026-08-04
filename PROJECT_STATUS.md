@@ -1325,6 +1325,21 @@ Outputs:
 
 ## Phase 5DE status
 
+## Phase 5DG status
+
+Phase 5DG audited the public datfooldive/ghostlock-emerald source at commit
+ebb355d302629a034d0959e5e579496559e8f84e. The reference has named
+PI/requeue userspace orchestration and later target-specific memory/credential
+stages, but its MT6789/Linux 6.12/Android 16 target is not PS7331. No source
+was compiled or executed and no offsets or payload were reused.
+
+Outputs:
+
+- findings/phase-5dg-ghostlock-emerald-architecture.md
+- findings/phase-5dg-evidence-index.md
+- tools/scripts/audit_ghostlock_reference_architecture.py
+- local audit under artifacts/phase5/phase5dg-ghostlock-emerald-architecture-20260804-01/
+
 Phase 5DE searched the non-kernel PS7331 source roots. It found 26 rows in two
 external GLib files, including eight direct `syscall(__NR_futex, ...)` rows,
 all using ordinary `FUTEX_WAIT`/`FUTEX_WAKE`. It found zero PI or requeue-PI
