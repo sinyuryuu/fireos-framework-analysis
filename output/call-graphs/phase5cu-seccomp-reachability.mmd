@@ -1,0 +1,17 @@
+flowchart TD
+    A[ordinary app process] --> B[Seccomp mode 2]
+    B -. policy contents not recovered .-> C[Fire app-domain futex operation]
+    D[adbd process] --> E[Seccomp mode 0 in snapshot]
+    E -. separate policy context .-> C
+    F[mediaextractor / mediacodec policy] --> G[futex: 1]
+    G -. service-only evidence .-> H[generic futex syscall allowed]
+    H -. PI operation not established .-> I[requeue-PI proxy path]
+    I -. no trigger .-> J[GhostLock runtime gates remain unknown]
+
+## Text fallback
+
+Ordinary app → seccomp mode 2 → app-domain futex operation policy (not
+recovered). `adbd` is mode 0 in the snapshot, but that is a different process
+context and does not imply root. Media service policies contain `futex: 1`, which
+is service-only evidence. None of these observations establishes a successful
+PI requeue operation.

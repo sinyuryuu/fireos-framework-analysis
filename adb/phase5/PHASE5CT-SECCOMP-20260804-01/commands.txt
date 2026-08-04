@@ -1,0 +1,11 @@
+# Read-only capture; explicit serial; no device mutation.
+date -u +%FT%TZ
+adb -s G001LT0511550CFT get-state
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+adb -s G001LT0511550CFT shell getprop ro.build.version.incremental
+adb -s G001LT0511550CFT shell find /system/etc /system_ext/etc /product/etc /vendor/etc -maxdepth 3 \( -iname '*seccomp*' -o -iname '*sandbox*' -o -iname '*policy*' \) -print
+adb -s G001LT0511550CFT shell ls -la /system/etc/seccomp_policy /system/etc/seccomp
+adb -s G001LT0511550CFT shell ps -A
+adb -s G001LT0511550CFT shell cat /proc/PID/status
+adb -s G001LT0511550CFT pull /system/etc/seccomp_policy/*.policy
+adb -s G001LT0511550CFT pull /vendor/etc/seccomp_policy/configstore@1.1.policy

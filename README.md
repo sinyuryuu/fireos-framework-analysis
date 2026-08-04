@@ -2620,3 +2620,23 @@ Outputs:
 - `output/tables/phase5ct-ghostlock-architecture.csv`
 - `output/call-graphs/phase5ct-ghostlock-architecture.mmd`
 - `tools/scripts/build_phase5ct_architecture_matrix.py`
+
+## Phase 5CU status
+
+Phase 5CU captures the PS7331 seccomp boundary using read-only process status,
+policy listings and policy pulls. `system_server`, Microsoft Launcher, SystemUI,
+OTA and research APK processes report `Seccomp: 2`; `adbd` reports `Seccomp: 0`
+but remains UID 2000 with zero capabilities. Selected media/configstore service
+policies contain `futex: 1`, but the ordinary app-domain filter was not recovered.
+
+This confirms a userspace policy gate without proving whether PI requeue is
+allowed or reachable. No futex operation, exploit, native payload, security
+policy change or device mutation was performed.
+
+Outputs:
+
+- `findings/phase-5cu-ps7331-seccomp-reachability.md`
+- `findings/phase-5cu-evidence-index.md`
+- `output/tables/phase5cu-seccomp-reachability.csv`
+- `output/call-graphs/phase5cu-seccomp-reachability.mmd`
+- `adb/phase5/PHASE5CT-SECCOMP-20260804-01/`

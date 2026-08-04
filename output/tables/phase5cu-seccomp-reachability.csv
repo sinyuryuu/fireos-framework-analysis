@@ -1,0 +1,9 @@
+evidence_id,subject,observed,interpretation,confidence,limitation
+P5CU-001,system_server,"Seccomp: 2; UID 1000",system_server runs under a seccomp filter in this snapshot,Confirmed process snapshot,"filter contents not exposed"
+P5CU-002,ordinary third-party app,"com.microsoft.launcher Seccomp: 2; UID 10178",ordinary app-domain process runs under a seccomp filter,Confirmed process snapshot,"does not reveal futex operation policy"
+P5CU-003,test apps,"phase4.redirect and phase4.alias Seccomp: 2",research APK processes are also filtered,Confirmed process snapshot,"no futex syscall was attempted"
+P5CU-004,adbd,"Seccomp: 0; UID 2000",ADB daemon has a different seccomp mode in the snapshot,Confirmed process snapshot,"does not grant root or kernel memory access"
+P5CU-005,media service policies,"futex: 1 in mediaextractor/mediacodec policies",selected service policy permits futex syscall at syscall-filter level,Confirmed policy artifact,"not the ordinary app policy"
+P5CU-006,vendor configstore policy,"futex: 1",vendor service policy permits futex syscall at syscall-filter level,Confirmed policy artifact,"not proof of PI requeue availability"
+P5CU-007,ordinary app policy,"no dedicated app policy file found under visible seccomp_policy directory",app policy likely comes from runtime/policy generation not recovered here,Unknown,"no policy bypass or trigger performed"
+P5CU-008,operation-specific filtering,"policy syntax observed only at syscall/argument rules; futex line has no operation selector",available policy files do not demonstrate futex-op filtering,Probable policy interpretation,"scope limited to pulled service policies"
