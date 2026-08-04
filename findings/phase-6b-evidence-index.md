@@ -18,6 +18,7 @@
 | P6B-SRC-008 | Host-only semantic parser | `artifacts/phase6b/phase6b-rtmutex-semantics-20260804-01/` | PS7331 marker set matches legacy v4.4.146; fixed focused slice exposes waiter-task cleanup but omits complete proxy wrapper | Strong evidence, source scope |
 | P6B-SRC-009 | Host-only selftest inventory | `artifacts/phase6b/phase6b-requeue-selftests-20260804-01/`；PS7331 `tools/testing/selftests/futex/functional/*` | Functional requeue-PI tests require waiter/waker, child or signal coordination and `-pthread`; they are not single-thread switch probes | Strong evidence, source scope |
 | P6C-LAB-001 | Host-only readiness audit | `artifacts/phase6c/phase6c-readiness-20260804-01/`；`findings/phase-6c-lab-readiness.md` | Required source exists, but host lacks QEMU AArch64 and PS7331 config lacks KASAN/DEBUG_INFO | Confirmed, lab preparation scope |
+| P6C-ID-001 | Host-only identity state model | `artifacts/phase6c/phase6c-identity-model-20260804-01/`；PS7331 `rtmutex.c:972-978, 986, 1683-1684, 1087-1089`；`futex.c:1963-1965, 2844, 2880` | Source ordering preserves stored waiter/task dataflow and separate current-task cleanup target; runtime identity mismatch remains unobserved | Strong evidence, source scope |
 | P6B-GATE-001 | Safety boundary | 本報告 | 未執行 device-side Requeue-PI、race、panic、spray 或 root | Confirmed |
 
 原始裝置 run 含有連接裝置清單；公開整理時應移除與本研究無關的其他裝置

@@ -1,0 +1,74 @@
+{
+  "inputs": {
+    "kernel/futex.c": "e4ff0f8cfc46d023f66b3e842e275ee9eb6725ac6902942e235af32d8f0a2ab5",
+    "kernel/locking/rtmutex.c": "c4ddac5fe820c7f07670bc332425be05b0df0400ae334a147b483f0ee9b07345",
+    "kernel/locking/rtmutex_common.h": "ee7fcb3d8edb06312606073f02435da8e6bb1d60b53604733a218c75c48ec51c"
+  },
+  "interpretation": [
+    "Source establishes a stored waiter/task dataflow and a separate current-task cleanup target.",
+    "The model does not assert that the two identities differ at runtime.",
+    "The model does not assert cleanup residue, memory corruption, crash, or privilege transition."
+  ],
+  "landmarks": {
+    "broad_cleanup_gate": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/locking/rtmutex.c",
+      "line": 1684
+    },
+    "current_cleanup": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/locking/rtmutex.c",
+      "line": 1089
+    },
+    "early_deadlock_return": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/locking/rtmutex.c",
+      "line": 972
+    },
+    "futex_queue_waiter": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/futex.c",
+      "line": 2863
+    },
+    "local_waiter": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/futex.c",
+      "line": 2827
+    },
+    "proxy_call": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/futex.c",
+      "line": 1946
+    },
+    "proxy_stored_task_argument": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/futex.c",
+      "line": 1948
+    },
+    "stack_waiter_documentation": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/futex.c",
+      "line": 2850
+    },
+    "task_pi_blocked_on_assignment": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/locking/rtmutex.c",
+      "line": 986
+    },
+    "waiter_lock_assignment": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/locking/rtmutex.c",
+      "line": 978
+    },
+    "waiter_task_assignment": {
+      "file": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/kernel/locking/rtmutex.c",
+      "line": 977
+    }
+  },
+  "ordering": {
+    "cleanup_uses_current": true,
+    "early_return_precedes_waiter_assignment": true,
+    "proxy_cleanup_gate_is_broad_nonzero": true,
+    "proxy_passes_stored_task": true,
+    "waiter_identity_set_before_task_blocked_on": true
+  },
+  "schema": "phase6c-identity-state-model-v1",
+  "scope": {
+    "device_execution": false,
+    "host_only": true,
+    "memory_operation": false,
+    "race_trigger": false,
+    "root_operation": false,
+    "thread_creation": false
+  }
+}
