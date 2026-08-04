@@ -3056,3 +3056,22 @@ Outputs:
 This is bounded artifact-scan evidence. Stripped, inline, numeric, indirect,
 unpulled, or generated callers remain **待驗證**; no device-side trigger was
 run.
+
+## Phase 6C futex/policy surface
+
+The PS7331 source/config was audited offline against the preserved userspace
+tree and native summary. The config enables FUTEX, RT_MUTEXES, SECCOMP and
+SECCOMP_FILTER, while the non-kernel source contains only ordinary WAIT/WAKE
+hits and no named requeue-PI hit. No recognizable seccomp/zygote/syscall policy
+file was found outside kernel paths in the captured source archive; this is a
+coverage limitation, not proof that the installed runtime has no policy.
+
+Outputs:
+
+- `tools/scripts/audit_phase6c_futex_policy_surface.py`
+- `findings/phase-6c-futex-policy-surface.md`
+- `findings/phase-6c-futex-policy-surface-evidence-index.md`
+- `artifacts/phase6c/phase6c-futex-policy-surface-20260804-01/`
+
+The analyzer is host-only, refuses to overwrite outputs, and supports
+`--dry-run`.

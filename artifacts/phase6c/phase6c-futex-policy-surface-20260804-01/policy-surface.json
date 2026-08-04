@@ -1,0 +1,56 @@
+{
+  "config": {
+    "CONFIG_FUTEX": true,
+    "CONFIG_RT_MUTEXES": true,
+    "CONFIG_SECCOMP": true,
+    "CONFIG_SECCOMP_FILTER": true,
+    "CONFIG_USERFAULTFD": false
+  },
+  "generated_at_utc": "2026-08-04T13:17:52.593405+00:00",
+  "inputs": {
+    "config": "artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config",
+    "config_sha256": "eefb8db484f65e196a7bb401ae0165f434f08b13041aef6762917e284d013d04",
+    "native_summary": "artifacts/phase6c/phase6c-userspace-native-scan-20260804-01/summary.json",
+    "native_summary_sha256": "3f5ee7dc44e934d52b0ec0f5bdfcfee86800bc5065be095454f85c3fb36aa05d",
+    "source_root": "firmware/extracted/PS7331-SOURCE-20250617",
+    "source_root_exists": true
+  },
+  "interpretation": [
+    "Kernel configuration enables futex/rtmutex/seccomp only where the captured config says so.",
+    "A userspace source hit is not proof of an installed or executed caller.",
+    "No policy file outside kernel paths is not proof that device policy is absent.",
+    "No named native marker is not proof against stripped, inline, numeric, indirect, or unpulled callers."
+  ],
+  "native_summary": {
+    "elf_files_scanned": 16,
+    "named_requeue_pi_files": [],
+    "result_counts": {
+      "generic_syscall_boundary_only": 1,
+      "no_named_requeue_pi_marker": 10,
+      "ordinary_or_pi_helper_marker_only": 5
+    }
+  },
+  "safety": {
+    "device_contacted": false,
+    "elf_executed": false,
+    "futex_triggered": false,
+    "kernel_memory_accessed": false,
+    "payload_or_address_generated": false,
+    "source_executed": false
+  },
+  "schema": "phase6c-futex-policy-surface-v1",
+  "userspace_source": {
+    "hit_rows_capped_at": 500,
+    "marker_counts": {
+      "FUTEX_CMP_REQUEUE_PI": 0,
+      "FUTEX_LOCK_PI": 0,
+      "FUTEX_UNLOCK_PI": 0,
+      "FUTEX_WAIT": 4,
+      "FUTEX_WAIT_REQUEUE_PI": 0,
+      "FUTEX_WAKE": 4,
+      "seccomp": 0
+    },
+    "policy_named_files_outside_kernel": [],
+    "text_files_scanned": 7135
+  }
+}
