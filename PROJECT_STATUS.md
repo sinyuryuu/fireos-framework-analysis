@@ -559,3 +559,38 @@ Phase 5BN outputs:
 - `findings/phase-5bn-ghostlock-current-verdict.md`
 - `findings/phase-5bn-evidence-index.md`
 - `artifacts/phase5/phase5bn-ghostlock-marker-recheck-20260804-01/`
+
+## Phase 5BT status
+
+Phase 5BT is PS7331-only and validates the complete official source archive
+already downloaded to the workspace. The local archive size matches the
+official Content-Length, its MD5 matches the preserved S3 ETag, and its
+SHA-256 is `02ffafddb97999ebcc4419dda28cab9ea6ddacf7123b1301a073a3809c762aea`.
+
+Top-level build scripts from the same archive select
+`kernel/mediatek/mt8183/4.4`, `trona_defconfig`, and `arm64`. The extracted
+build-selected source retains the pre-fix `current->pi_blocked_on` cleanup in
+`remove_waiter()` and the paired futex PI proxy path. The existing sanitized
+PS7331 Image review and host-only verifier remain pre-fix-consistent. The local
+path inventory found four named Mali hrtimer patches and no named GhostLock
+patch; absence of a path name is not proof against release-CI transformations.
+
+Final Phase 5BT boundary: **static PS7331 pre-fix evidence is confirmed;
+runtime exploitability and root are not proven**. No source or build script was
+executed, and no exploit, OTA, fastboot, boot write, partition write, or device
+mutation was performed. PS7331 is not recommended solely as a GhostLock fix.
+
+Phase 5BT outputs:
+
+- `findings/phase-5bt-ps7331-full-source-audit.md`
+- `findings/phase-5bt-evidence-index.md`
+- `tools/scripts/index_phase5_ps7331_local_nested_build_inputs.sh`
+- `tools/scripts/extract_phase5_ps7331_nested_members.py`
+- `tools/scripts/extract_phase5_ps7331_outer_members.py`
+- `artifacts/phase5/phase5bt-ps7331-source-archive-validation-20260804-01/`
+- `artifacts/phase5/ps7331-local-nested-build-index-20260804-02/`
+- `artifacts/phase5/ps7331-full-source-members-20260804-01/`
+- `artifacts/phase5/ps7331-top-level-build-members-20260804-01/`
+- `artifacts/phase5/phase5bt-build-script-controls-20260804-01.csv`
+- `output/tables/phase5bt-ps7331-source-binary-status.csv`
+- `output/call-graphs/phase5bt-ghostlock-source-path.mmd`

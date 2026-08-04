@@ -2141,3 +2141,41 @@ Phase 5BS outputs:
 - `tools/scripts/verify_phase5bs_ps7331_ghostlock_evidence.py`
 - `artifacts/phase5/phase5bs-ps7331-source-semantic-recheck-20260804-01/`
 - `artifacts/phase5/phase5bs-ps7331-evidence-verification-20260804-01/`
+
+## Phase 5BT status
+
+Phase 5BT validates the complete local PS7331 source archive and rechecks the
+build-selected kernel path using only host-side read-only processing. The
+archive is `2563328975` bytes, its local MD5 equals the preserved S3 ETag, and
+its SHA-256 is
+`02ffafddb97999ebcc4419dda28cab9ea6ddacf7123b1301a073a3809c762aea`.
+
+The same archive's top-level build scripts select
+`kernel/mediatek/mt8183/4.4`, `trona_defconfig`, and `arm64`. The extracted
+build-selected `rtmutex.c` retains `current->pi_blocked_on` cleanup in
+`remove_waiter()` and the `futex.c` PI requeue path still feeds the proxy-lock
+API. The saved PS7331 boot Image marker review remains pre-fix-consistent. The
+public path inventory found only four named Mali hrtimer patches and no named
+GhostLock patch; release-CI transformations remain outside the captured
+scripts.
+
+This establishes **PS7331 static patch-status evidence**, not a live GhostLock
+trigger, root, or privilege-transition proof. No source/build script was
+executed, and no ADB, fastboot, OTA, exploit, boot-image write, or partition
+operation was performed. The project therefore does not recommend PS7331
+solely as a GhostLock remediation.
+
+Phase 5BT outputs:
+
+- `findings/phase-5bt-ps7331-full-source-audit.md`
+- `findings/phase-5bt-evidence-index.md`
+- `tools/scripts/index_phase5_ps7331_local_nested_build_inputs.sh`
+- `tools/scripts/extract_phase5_ps7331_nested_members.py`
+- `tools/scripts/extract_phase5_ps7331_outer_members.py`
+- `artifacts/phase5/phase5bt-ps7331-source-archive-validation-20260804-01/`
+- `artifacts/phase5/ps7331-local-nested-build-index-20260804-02/`
+- `artifacts/phase5/ps7331-full-source-members-20260804-01/`
+- `artifacts/phase5/ps7331-top-level-build-members-20260804-01/`
+- `artifacts/phase5/phase5bt-build-script-controls-20260804-01.csv`
+- `output/tables/phase5bt-ps7331-source-binary-status.csv`
+- `output/call-graphs/phase5bt-ghostlock-source-path.mmd`

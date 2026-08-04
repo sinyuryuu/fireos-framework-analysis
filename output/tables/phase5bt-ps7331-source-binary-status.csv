@@ -1,0 +1,9 @@
+evidence_id,artifact_or_method,scope,observed_marker,classification,confidence
+P5BT-ARCHIVE-001,official PS7331 source archive,archive identity,Content-Length=local size and MD5=ETag,EXACT_OFFICIAL_OBJECT,Confirmed
+P5BT-BUILD-001,build_kernel_config.sh:9-18,build mapping,KERNEL_SUBPATH=kernel/mediatek/mt8183/4.4; trona_defconfig; arm64,BUILD_SELECTED_PATH,Confirmed
+P5BT-SOURCE-001,rtmutex.c:1079-1129,source semantics,current->pi_blocked_on cleanup; no waiter->task in remove_waiter,PRE_FIX_CURRENT_TASK_CLEANUP_PATTERN,Confirmed
+P5BT-SOURCE-002,futex.c:1958-1965,source wiring,proxy lock receives this->task and this->rt_waiter,PROXY_PI_PATH_PRESENT,Confirmed
+P5BT-PATH-001,platform.tar path inventory,public named patch paths,four Mali hrtimer patches; no GhostLock-named patch,NO_NAMED_GHOSTLOCK_PATCH_FOUND,Strong evidence
+P5BT-IMAGE-001,PS7331 boot.img sanitized Image review,inspected binary markers,current-task source and cleanup plus proxy remove_waiter,PRE_FIX_CONSISTENT,Strong evidence
+P5BT-VERIFY-001,host-only verifier,verification boundary,all consistency checks pass; no payload/address output,STATIC_ONLY,Confirmed
+P5BT-SAFETY-001,command manifests,device safety,no device I/O or partition write,NO_DEVICE_MUTATION,Confirmed

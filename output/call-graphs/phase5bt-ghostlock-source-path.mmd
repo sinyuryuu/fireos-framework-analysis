@@ -1,0 +1,16 @@
+flowchart TD
+    A[Official PS7331 source archive<br/>SHA-256 02ff...62aea] --> B[build_kernel_config.sh:9-18]
+    B --> C[kernel/mediatek/mt8183/4.4]
+    B --> D[trona_defconfig / arm64]
+    C --> E[rtmutex.c:1079-1129<br/>remove_waiter]
+    C --> F[futex.c:1958-1965<br/>PI requeue proxy call]
+    F --> G[rt_mutex_start_proxy_lock]
+    G --> E
+    E --> H[current->pi_blocked_on cleanup<br/>pre-fix semantic]
+    H --> I[host-only semantic checker]
+    J[Official PS7331 boot.img<br/>SHA-256 cf12...6fa1b] --> K[sanitized Image markers]
+    K --> L[host-only source/Image consistency verifier]
+    H --> L
+    L --> M[Static patch-status conclusion only]
+    M -. no live trigger .-> N[Runtime exploitability: unproven]
+    M -. no payload .-> O[Root/privilege gain: unproven]
