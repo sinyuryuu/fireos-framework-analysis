@@ -1118,3 +1118,23 @@ Outputs:
 - `output/tables/phase5cu-seccomp-reachability.csv`
 - `output/call-graphs/phase5cu-seccomp-reachability.mmd`
 - `adb/phase5/PHASE5CT-SECCOMP-20260804-01/`
+
+## Phase 5CV status
+
+Phase 5CV separates the PS7331 return-value domains around proxy cleanup.
+`ret=1` from initial lock acquisition returns before cleanup;
+`task_blocks_on_rt_mutex()` can return before assigning `waiter->task`; an
+owner-release condition can reset a nonzero result to zero; and only the
+remaining nonzero path reaches `remove_waiter()`. The futex requeue caller then
+branches on positive, zero and negative proxy results.
+
+This confirms why `if (ret)` and early-return ordering matter, but no stock
+runtime error branch, identity mismatch, cleanup residue, memory effect or root
+was observed. No futex trigger, race, exploit or device mutation was performed.
+
+Outputs:
+
+- `findings/phase-5cv-ps7331-ret-early-return-audit.md`
+- `findings/phase-5cv-evidence-index.md`
+- `output/tables/phase5cv-ret-early-return.csv`
+- `output/call-graphs/phase5cv-ret-early-return.mmd`

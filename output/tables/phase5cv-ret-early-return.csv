@@ -1,0 +1,8 @@
+evidence_id,location,control_flow,reachable_ret_values,importance,confidence
+P5CV-001,rt_mutex_start_proxy_lock top,"try_to_take_rt_mutex success returns immediately",1,"ret=1 does not reach remove_waiter cleanup",Confirmed source scope
+P5CV-002,task_blocks_on_rt_mutex early branch,"owner == task returns -EDEADLK before waiter->task assignment",negative,"waiter initialization state differs from normal enqueue path",Confirmed source scope
+P5CV-003,rt_mutex_start_proxy_lock owner reset,"ret && !rt_mutex_owner(lock) can reset error to 0",0 after reset,"cleanup may be suppressed when owner released during chain walk",Confirmed source scope; runtime unobserved
+P5CV-004,rt_mutex_start_proxy_lock cleanup,"if (unlikely(ret)) remove_waiter(lock, waiter)",negative after reachable paths,"syntax alone is not proof of all nonzero values reaching cleanup",Confirmed control-flow scope
+P5CV-005,futex_requeue proxy caller,"ret==1 wakes, ret nonzero handles proxy failure, ret==0 requeues",positive/negative/zero,"caller outcome selects state transition before return",Confirmed source scope
+P5CV-006,remove_waiter,"PS7331 cleanup uses implicit current",n/a,"target identity depends on proxy caller versus stored waiter task",Confirmed source scope; runtime unobserved
+P5CV-D1,stock runtime,"No observed same-execution proxy cleanup trace",n/a,"identity mismatch and post-cleanup state remain open",Unobserved

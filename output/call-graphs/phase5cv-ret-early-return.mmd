@@ -1,0 +1,28 @@
+flowchart TD
+    A[rt_mutex_start_proxy_lock] --> B{try_to_take_rt_mutex}
+    B -->|success| C[return 1]
+    B -->|not acquired| D[task_blocks_on_rt_mutex]
+    D --> E{owner == task?}
+    E -->|-EDEADLK| F[early return before waiter->task assignment]
+    E -->|no| G[assign waiter->task and continue chain walk]
+    F --> H{owner still present?}
+    G --> H
+    H -->|released| I[reset ret to 0]
+    H -->|present and ret nonzero| J[remove_waiter]
+    H -->|ret zero| K[return success/queue path]
+    J --> L[PS7331 uses current cleanup]
+    L -. runtime identity/residue unobserved .-> M[D1-D3 open]
+    N[futex_requeue] --> O{proxy ret}
+    O -->|1| P[wake path]
+    O -->|0| Q[requeue path]
+    O -->|negative| R[proxy failure state cleanup]
+
+## Text fallback
+
+`rt_mutex_start_proxy_lock` first has a direct success return (`ret=1`). Only
+the non-acquired path calls `task_blocks_on_rt_mutex`; its self-deadlock early
+return happens before `waiter->task` assignment. An owner-release condition can
+reset a nonzero result to zero. The remaining cleanup call is reached only when
+the post-reset result is still nonzero, which is a control-flow fact—not proof
+of a runtime mismatch. `futex_requeue` then branches on positive, zero or
+negative proxy outcomes.
