@@ -3289,3 +3289,119 @@ Outputs:
 
 The inventory is host-only, refuses to overwrite existing output, and supports
 `--dry-run`.
+
+## Phase 6C.5 GPL source scope verification
+
+The PS7331 GPL package was audited without building or executing source. It
+contains the MT8183 4.4 kernel sources, including `kernel/futex.c` and
+`kernel/locking/rtmutex.c`, but does not contain `platform/system/core/init`,
+`selinux.cpp`, or `selinux.h`. SELinux-named files found elsewhere are recorded
+as kernel or external headers, not treated as `/init` source.
+
+Outputs:
+
+- `tools/scripts/audit_phase6c5_gpl_source_scope.py`
+- `findings/phase-6c5-gpl-source-scope.md`
+- `findings/phase-6c5-gpl-source-scope-evidence-index.md`
+- `artifacts/phase6c5/gpl-source-scope-20260804-01/`
+
+## Phase 6D `/init` AOSP anchor and pipeline map
+
+Official AOSP Android 9 `system/core/init` anchor files for r1 and r61 are
+preserved under `aosp/android-9/init-source-20260804-01/`. A host-only
+comparison maps the AOSP `StatusFromCmdline`,
+`FindPrecompiledSplitPolicy`, `LoadSplitPolicy`, `LoadPolicy`, and
+`SelinuxInitialize` anchors to conservative candidate regions in the stripped
+PS7331 `/init`. The binary regions are explicitly marked as unresolved where
+symbols or an Amazon source tree are unavailable; the map is not a claim that
+the rootable policy is active.
+
+Outputs:
+
+- `tools/scripts/fetch_aosp9_init_baseline.sh`
+- `tools/scripts/analyze_phase6d_init_pipeline.py`
+- `findings/phase-6d-init-pipeline-differential.md`
+- `findings/phase-6d-init-pipeline-evidence-index.md`
+- `aosp/android-9/init-source-20260804-01/`
+- `artifacts/phase6d/phase6d-init-pipeline-diff-20260804-01/`
+- `output/call-graphs/phase6d-init-pipeline-knowledge-base.mmd`
+
+The analysis is host-only: it does not execute `/init`, inject boot
+properties, load alternate SELinux policy, remount partitions, use fastboot,
+trigger a kernel race/panic, access kernel memory, or generate a root payload.
+
+## Phase 6D active-policy visibility capture
+
+`tools/scripts/capture_phase6d_active_policy_readonly.sh` records a new output
+directory per serial. The PS7331 capture `adb/phase6d/PHASE6D-ACTIVE-POLICY-RO-20260804-03/`
+confirms Fire OS 7.3.3.1, Android API 28, kernel 4.4.146+, enforcing mode,
+green/locked boot state, and visible standard/rootable CIL files. Shell access
+to the live SELinux policy blob and kernel cmdline remains denied, so active
+policy identity is not overstated.
+
+## Phase 6D `/init` policy-loader scenario classification
+
+The four proposed `/init` scenarios were classified from host-only evidence.
+The strongest current result is a boot-time selector hypothesis: the stripped
+binary has an `androidboot.selinux`/`permissive` parser candidate and separate
+standard/rootable path-builder call sites. AVB/BoringSSL markers are present,
+but no current CFG evidence connects them to the rootable branch. Rootable
+paths are code-referenced, so a strings-only dead-code explanation is not
+sufficient; runtime reachability remains unresolved.
+
+Outputs:
+
+- `tools/scripts/classify_phase6d_policy_loader_scenarios.py`
+- `findings/phase-6d-policy-loader-scenarios.md`
+- `findings/phase-6d-policy-loader-scenario-evidence-index.md`
+- `artifacts/phase6d/phase6d-policy-scenarios-20260804-01/`
+
+The classifier is host-only, refuses to overwrite output, and supports
+`--dry-run`. It does not execute `/init`, inject boot properties, select
+alternate policy, bypass AVB, remount partitions, or create a root payload.
+
+## Phase 6E selected CVE surface audit
+
+The preserved PS7331 source/config review narrows several unrelated CVE
+surfaces: AF_ALG AEAD is disabled and its source file is absent; the described
+AF_UNIX OOB path is not present in this 4.4 source shape; and the reviewed
+MediaTek display/Bluetooth records do not establish MT8183 applicability.
+These are reachability results, not claims that the kernel is vulnerability
+free.
+
+Outputs:
+
+- `tools/scripts/audit_phase6e_cve_surface.py`
+- `findings/phase-6e-cve-surface.md`
+- `findings/phase-6e-cve-surface-evidence-index.md`
+- `artifacts/phase6e/phase6e-cve-surface-20260804-01/`
+
+## Phase 6F Binder static surface
+
+The local Binder tree contains the expected validation/transaction function
+family, but `binder_transaction_buffer_release()` has the older 4.4 vendor
+signature (`failed_at` pointer) rather than the later Android common shape with
+`binder_thread`, value-form `failed_at`, and `is_failure`. This is a version
+difference and does not prove CVE-2023-20938 affectedness or exploitability.
+
+Outputs:
+
+- `tools/scripts/audit_phase6f_binder_cve_surface.py`
+- `findings/phase-6f-binder-cve-2023-20938-static.md`
+- `artifacts/phase6f/phase6f-binder-cve-20260804-01/`
+- `output/call-graphs/phase6f-binder-static.mmd`
+
+## Phase 6G MTK CMDQ static surface
+
+The PS7331 source/config confirms `CONFIG_MTK_CMDQ=y`, `CONFIG_MTK_CMDQ_TAB=y`,
+the `mtk_cmdq` device registration, v3 ioctl dispatch and user-copy/readback
+paths. This is a sensitive control surface, not a confirmed CVE-2020-0069
+finding. New device-node/ioctl, DMA, crash, kernel-memory and root tests remain
+rejected.
+
+Outputs:
+
+- `tools/scripts/audit_phase6g_cmdq_surface.py`
+- `findings/phase-6g-cmdq-static-surface.md`
+- `artifacts/phase6g/phase6g-cmdq-static-20260804-02/`
+- `output/call-graphs/phase6g-cmdq-static.mmd`

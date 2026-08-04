@@ -1,0 +1,95 @@
+{
+  "generated_at_utc": "2026-08-04T15:12:48.138216+00:00",
+  "inputs": {
+    "audit_json": "artifacts/phase6c/phase6c-init-policy-loader-audit-20260804-02/policy-loader-audit.json",
+    "audit_json_sha256": "37d77ceed1004aa76e38004fd365c286eade2abca112c89e0e5f7898e51e5235",
+    "device_capture": "adb/phase6d/PHASE6D-ACTIVE-POLICY-RO-20260804-03",
+    "init_binary": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/root/init",
+    "init_binary_sha256": "e72ed4e90d73b88be341985ebd624725b67d67967d04157317456233e15f31fd"
+  },
+  "safety": {
+    "boot_property_changed": false,
+    "device_contacted": false,
+    "device_mutated": false,
+    "host_only": true,
+    "init_executed": false,
+    "policy_loaded": false,
+    "root_payload": false,
+    "verification_bypassed": false
+  },
+  "scenarios": [
+    {
+      "confidence": "Hypothesis",
+      "evidence": "No source-level selector is available; the binary contains no direct proof that a shell/untrusted-writable persist or data marker controls the rootable branch.",
+      "id": "S1",
+      "name": "userspace-controlled selector",
+      "next_minimum": "Recover the exact stripped caller/branch semantics from a matching symbolized build or a legally available debug artifact; do not mutate properties.",
+      "verdict": "\u5f85\u9a57\u8b49"
+    },
+    {
+      "confidence": "Strong evidence",
+      "evidence": "The image contains an androidboot.selinux/permissive parser candidate and separate standard/rootable path-builder call sites; the stock capture is locked/enforcing and shell cannot read cmdline.",
+      "id": "S2",
+      "name": "boot/kernel cmdline-dependent selector",
+      "next_minimum": "Map the property-parser return/field to the policy helper in a host-only disassembly; no boot-property injection.",
+      "verdict": "\u9ad8\u53ef\u4fe1\u63a8\u8ad6"
+    },
+    {
+      "confidence": "Hypothesis",
+      "evidence": "AVB/BoringSSL verification markers are compiled into /init, but the current stripped CFG evidence does not connect those calls to rootable policy selection or an eFuse check.",
+      "id": "S3",
+      "name": "AVB/signature/fuse-bound selector",
+      "next_minimum": "Map AVB call sites and data/control dependencies to the policy-loader window on the host; do not bypass verification.",
+      "verdict": "\u5f85\u9a57\u8b49"
+    },
+    {
+      "confidence": "Strong evidence",
+      "evidence": "Rootable path literals have ADRP/ADD code references and a call into the common helper with w5=1, so they are not string-only residue; exact runtime branch reachability remains unresolved.",
+      "id": "S4",
+      "name": "dead-code/compiler-residue",
+      "next_minimum": "Complete host CFG recovery around 0x41ad00\u20130x41bf30 and validate callers; do not execute /init.",
+      "verdict": "\u5df2\u6392\u9664\uff08\u7d14\u5b57\u4e32\u6b98\u7559\u7248\u672c\uff09\uff0f\u5f85\u9a57\u8b49\uff08\u57f7\u884c\u53ef\u9054\u6027\uff09"
+    }
+  ],
+  "schema": "phase6d-policy-loader-scenarios-v1",
+  "static_landmarks": {
+    "boot_property_parser_candidate": {
+      "address": "0x41bd60",
+      "classification": "boot_property_parser_candidate",
+      "observation": "compares a 19-byte key against androidboot.selinux and a 10-byte value against permissive, then writes zero to a field on success"
+    },
+    "rootable_path_builder_candidate": {
+      "address": "0x41ad00",
+      "classification": "rootable_path_builder_candidate",
+      "observation": "builds several policy-path records and calls 0x41be00 with w5=1"
+    },
+    "standard_path_builder_candidate": {
+      "address": "0x41af80",
+      "classification": "standard_path_builder_candidate",
+      "observation": "calls 0x41be00 with w5=0 after standard policy-path setup"
+    },
+    "static_call_site_only": {
+      "address": "0x4041fc",
+      "classification": "static_call_site_only",
+      "observation": "direct call to 0x41b748, followed by direct call to 0x41ad00"
+    },
+    "unresolved_branch": {
+      "address": "0x41be48",
+      "classification": "unresolved_branch",
+      "observation": "branches on w5 before the policy-loader body; exact semantic meaning of the flag is unresolved in stripped code"
+    }
+  },
+  "string_markers": {
+    "/data/": 17,
+    "FsManagerAvbHandle": 3,
+    "SIGNATURE_MISMATCH": 1,
+    "androidboot.selinux": 1,
+    "avb_slot_verify": 2,
+    "eFuse": 0,
+    "efuse": 1,
+    "permissive": 2,
+    "persist.": 14,
+    "rootable_plat_sepolicy.cil": 1,
+    "rootable_vendor_sepolicy.cil": 1
+  }
+}

@@ -1,0 +1,5 @@
+surface,result,confidence,evidence
+/dev/mtk_cmdq registration,source-present,Confirmed,"CMDQ_DRIVER_DEVICE_NAME, alloc_chrdev_region, class_create and device_create are present"
+CMDQ ioctl dispatcher,source-present,Confirmed,cmdqOP wires unlocked_ioctl and cmdq_ioctl dispatches named CMDQ requests
+user-controlled register/readback path,sensitive control surface; vulnerability not established,Strong evidence,copy_from_user/copy_to_user and count bounds are present; hardware semantics and runtime permissions are separate questions
+CVE-2020-0069 applicability,Unknown,Unknown,the preserved source has no exact CVE patch comparison in this audit; no ioctl or exploit test is permitted

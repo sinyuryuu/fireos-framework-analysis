@@ -1,0 +1,15 @@
+flowchart TD
+  U[userspace Binder caller\nnot executed in this audit]
+  T[binder_transaction\nsource lines 2896-3513]
+  VP[binder_validate_ptr\n2280-2297]
+  VF[binder_validate_fixup\n2337-2361]
+  FD[binder_translate_fd_array\n2678-2734]
+  R[binder_transaction_buffer_release\n2363-2496]
+  U -. source-level caller .-> T
+  T --> VP
+  T --> VF
+  T --> FD
+  T --> R
+  R --> V[older 4.4 release signature\nfailed_at pointer]
+  classDef untested stroke-dasharray: 5 5;
+  class U untested;

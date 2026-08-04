@@ -1,0 +1,424 @@
+{
+  "aosp": {
+    "android-9.0.0_r1": {
+      "anchors": {
+        "FindPrecompiledSplitPolicy": {
+          "end": 236,
+          "start": 201
+        },
+        "IsEnforcing": {
+          "end": 96,
+          "start": 91
+        },
+        "LoadMonolithicPolicy": {
+          "end": 376,
+          "start": 369
+        },
+        "LoadPolicy": {
+          "end": 380,
+          "start": 378
+        },
+        "LoadSplitPolicy": {
+          "end": 367,
+          "start": 256
+        },
+        "SelinuxInitialize": {
+          "end": 406,
+          "start": 384
+        },
+        "StatusFromCmdline": {
+          "end": 89,
+          "start": 78
+        }
+      },
+      "line_count": 533,
+      "path": "aosp/android-9/init-source-20260804-01/android-9.0.0_r1/init/selinux.cpp",
+      "sha256": "b2bb7d74d8cb8863d04b2172eedc22d0074129cab16c3335285fc9c2f9e69fa1"
+    },
+    "android-9.0.0_r61": {
+      "anchors": {
+        "FindPrecompiledSplitPolicy": {
+          "end": 236,
+          "start": 201
+        },
+        "IsEnforcing": {
+          "end": 96,
+          "start": 91
+        },
+        "LoadMonolithicPolicy": {
+          "end": 376,
+          "start": 369
+        },
+        "LoadPolicy": {
+          "end": 380,
+          "start": 378
+        },
+        "LoadSplitPolicy": {
+          "end": 367,
+          "start": 256
+        },
+        "SelinuxInitialize": {
+          "end": 406,
+          "start": 384
+        },
+        "StatusFromCmdline": {
+          "end": 89,
+          "start": 78
+        }
+      },
+      "line_count": 533,
+      "path": "aosp/android-9/init-source-20260804-01/android-9.0.0_r61/init/selinux.cpp",
+      "sha256": "b2bb7d74d8cb8863d04b2172eedc22d0074129cab16c3335285fc9c2f9e69fa1"
+    }
+  },
+  "classification": {
+    "AMAZON_ADDITION_NOT_PROVEN": "rootable path surface is binary evidence, not a source diff",
+    "AOSP_STANDARD": "AOSP anchor source and line ranges",
+    "UNKNOWN": "stripped-binary candidate mapping; no symbol/control-flow proof"
+  },
+  "generated_at_utc": "2026-08-04T14:57:26.355731+00:00",
+  "inputs": {
+    "aosp_root": "aosp/android-9/init-source-20260804-01",
+    "audit_json": "artifacts/phase6c/phase6c-init-policy-loader-audit-20260804-02/policy-loader-audit.json",
+    "audit_json_sha256": "37d77ceed1004aa76e38004fd365c286eade2abca112c89e0e5f7898e51e5235",
+    "init_sha256": "e72ed4e90d73b88be341985ebd624725b67d67967d04157317456233e15f31fd",
+    "inventory_json": "artifacts/phase6d/phase6d-init-property-inventory-20260804-01/property-cmdline-inventory.json",
+    "inventory_json_sha256": "bb51f7b4e3b725c275f48d0215e49261008d66397a9e97902a431b71447863d1"
+  },
+  "observations": {
+    "active_policy_variant_proven": false,
+    "aosp_r1_r61_selinux_cpp_same_sha256": true,
+    "binary_has_rootable_and_standard_path_references": true,
+    "exact_binary_symbol_mapping": false,
+    "gpl_init_source_present": false,
+    "inventory_adrp_add_reference_count": 111,
+    "inventory_marker_count": 162
+  },
+  "rows": [
+    {
+      "anchor": "StatusFromCmdline",
+      "classification": "AOSP_STANDARD",
+      "end_line": 89,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 78,
+      "tag": "android-9.0.0_r1"
+    },
+    {
+      "anchor": "IsEnforcing",
+      "classification": "AOSP_STANDARD",
+      "end_line": 96,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 91,
+      "tag": "android-9.0.0_r1"
+    },
+    {
+      "anchor": "FindPrecompiledSplitPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 236,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 201,
+      "tag": "android-9.0.0_r1"
+    },
+    {
+      "anchor": "LoadSplitPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 367,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 256,
+      "tag": "android-9.0.0_r1"
+    },
+    {
+      "anchor": "LoadMonolithicPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 376,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 369,
+      "tag": "android-9.0.0_r1"
+    },
+    {
+      "anchor": "LoadPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 380,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 378,
+      "tag": "android-9.0.0_r1"
+    },
+    {
+      "anchor": "SelinuxInitialize",
+      "classification": "AOSP_STANDARD",
+      "end_line": 406,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 384,
+      "tag": "android-9.0.0_r1"
+    },
+    {
+      "anchor": "StatusFromCmdline",
+      "classification": "AOSP_STANDARD",
+      "end_line": 89,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 78,
+      "tag": "android-9.0.0_r61"
+    },
+    {
+      "anchor": "IsEnforcing",
+      "classification": "AOSP_STANDARD",
+      "end_line": 96,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 91,
+      "tag": "android-9.0.0_r61"
+    },
+    {
+      "anchor": "FindPrecompiledSplitPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 236,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 201,
+      "tag": "android-9.0.0_r61"
+    },
+    {
+      "anchor": "LoadSplitPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 367,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 256,
+      "tag": "android-9.0.0_r61"
+    },
+    {
+      "anchor": "LoadMonolithicPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 376,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 369,
+      "tag": "android-9.0.0_r61"
+    },
+    {
+      "anchor": "LoadPolicy",
+      "classification": "AOSP_STANDARD",
+      "end_line": 380,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 378,
+      "tag": "android-9.0.0_r61"
+    },
+    {
+      "anchor": "SelinuxInitialize",
+      "classification": "AOSP_STANDARD",
+      "end_line": 406,
+      "kind": "aosp_anchor",
+      "note": "function anchor found in fetched official AOSP source",
+      "source_file": "init/selinux.cpp",
+      "start_line": 384,
+      "tag": "android-9.0.0_r61"
+    },
+    {
+      "address": "0x4041fc",
+      "anchor": "SelinuxInitialize",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_candidate",
+      "note": "static_call_site_only: top-level caller candidate; exact caller identity unresolved",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41ad00",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_candidate",
+      "note": "rootable_path_builder_candidate: split-policy path/helper candidate; exact function mapping unresolved",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41af80",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_candidate",
+      "note": "standard_path_builder_candidate: split-policy path/helper candidate; exact function mapping unresolved",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41bd60",
+      "anchor": "StatusFromCmdline",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_candidate",
+      "note": "boot_property_parser_candidate: property-parser candidate; caller and return semantics unresolved",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41be48",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_candidate",
+      "note": "unresolved_branch: split-policy path/helper candidate; exact function mapping unresolved",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41ad8c",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/vendor/etc/selinux/rootable_plat_pub_versioned.cil",
+      "note": "rootable path literal reference; not proof of active selection",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41adb4",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/vendor/etc/selinux/rootable_vendor_sepolicy.cil",
+      "note": "rootable path literal reference; not proof of active selection",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41ade8",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/odm/etc/selinux/rootable_odm_sepolicy.cil",
+      "note": "rootable path literal reference; not proof of active selection",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41ae1c",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "rootable_fireos_sepolicy.cil",
+      "note": "rootable path literal reference; not proof of active selection",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41ae54",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/system/etc/selinux/rootable_plat_sepolicy.cil",
+      "note": "rootable path literal reference; not proof of active selection",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41aeb0",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/vendor/etc/selinux/plat_pub_versioned.cil",
+      "note": "standard policy path literal reference",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41aee4",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/vendor/etc/selinux/vendor_sepolicy.cil",
+      "note": "standard policy path literal reference",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41af20",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/odm/etc/selinux/odm_sepolicy.cil",
+      "note": "standard policy path literal reference",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41af44",
+      "anchor": "LoadSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "fireos_sepolicy.cil",
+      "note": "standard policy path literal reference",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    },
+    {
+      "address": "0x41bf08",
+      "anchor": "FindPrecompiledSplitPolicy",
+      "classification": "UNKNOWN",
+      "end_line": "",
+      "kind": "binary_literal_reference",
+      "marker": "/system/etc/selinux/plat_and_mapping_sepolicy.cil.sha256",
+      "note": "hash-marker reference candidate",
+      "source_file": "stripped /init",
+      "start_line": "",
+      "tag": "PS7331"
+    }
+  ],
+  "safety": {
+    "boot_property_changed": false,
+    "device_contacted": false,
+    "device_mutated": false,
+    "elf_executed": false,
+    "exploit_or_root_payload": false,
+    "host_only": true,
+    "selinux_policy_loaded": false
+  },
+  "schema": "phase6d-init-pipeline-differential-v1"
+}

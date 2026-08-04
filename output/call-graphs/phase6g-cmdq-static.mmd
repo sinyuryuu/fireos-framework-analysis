@@ -1,0 +1,18 @@
+flowchart TD
+  U[userspace caller\nnot executed in this audit]
+  N[/dev/mtk_cmdq\nsource device name]
+  F[file_operations cmdqOP]
+  I[cmdq_ioctl\nsource line 660]
+  Q[query/capability/DTS paths]
+  A[async/readback paths]
+  C[compat dispatcher]
+  B[copy_from_user/copy_to_user\nvisible count bounds]
+  U -. source surface only .-> N
+  N --> F
+  F --> I
+  F --> C
+  I --> Q
+  I --> A
+  A --> B
+  classDef untested stroke-dasharray: 5 5;
+  class U untested;

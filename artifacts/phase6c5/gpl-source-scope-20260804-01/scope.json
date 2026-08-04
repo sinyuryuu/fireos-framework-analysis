@@ -1,0 +1,89 @@
+{
+  "findings": {
+    "kernel_futex_present": true,
+    "kernel_rtmutex_present": true,
+    "system_core_init_present": false
+  },
+  "generated_at_utc": "2026-08-04T14:54:47.508233+00:00",
+  "root": "firmware/extracted/PS7331-SOURCE-20250617",
+  "safety": {
+    "device_contacted": false,
+    "device_mutated": false,
+    "host_only": true,
+    "source_built": false,
+    "source_executed": false
+  },
+  "schema": "phase6c5-gpl-source-scope-v1",
+  "selinux_named_matches": [
+    {
+      "path": "fireos/fireos/external/dbus/bus/selinux.h",
+      "sha256": "878470d5e2a51dbfe5c985646d582f7d9ac290765b8b118744b97a5e58eb7fe3",
+      "size": 2806
+    },
+    {
+      "path": "platform/kernel/mediatek/4.4/include/linux/selinux.h",
+      "sha256": "df9fbb20b183b267715c6034e69dec3f49a5934d4400006d181ab11b3937ef2c",
+      "size": 910
+    },
+    {
+      "path": "platform/kernel/mediatek/mt8183/4.4/include/linux/selinux.h",
+      "sha256": "df9fbb20b183b267715c6034e69dec3f49a5934d4400006d181ab11b3937ef2c",
+      "size": 910
+    },
+    {
+      "path": "platform/kernel/mediatek/mt8183/4.4_emc/include/linux/selinux.h",
+      "sha256": "df9fbb20b183b267715c6034e69dec3f49a5934d4400006d181ab11b3937ef2c",
+      "size": 910
+    }
+  ],
+  "targets": [
+    {
+      "exists": false,
+      "kind": "missing",
+      "sha256": "",
+      "target": "platform/system/core/init"
+    },
+    {
+      "exists": false,
+      "kind": "missing",
+      "sha256": "",
+      "target": "platform/system/core/init/selinux.cpp"
+    },
+    {
+      "exists": false,
+      "kind": "missing",
+      "sha256": "",
+      "target": "platform/system/core/init/selinux.h"
+    },
+    {
+      "exists": true,
+      "kind": "directory",
+      "sha256": "",
+      "target": "platform/system/core/libcutils"
+    },
+    {
+      "exists": true,
+      "kind": "directory",
+      "sha256": "",
+      "target": "platform/system/core/logwrapper"
+    },
+    {
+      "exists": true,
+      "kind": "directory",
+      "sha256": "",
+      "target": "platform/device/amazon"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96",
+      "target": "platform/kernel/mediatek/mt8183/4.4/kernel/futex.c"
+    },
+    {
+      "exists": true,
+      "kind": "file",
+      "sha256": "6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde",
+      "target": "platform/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c"
+    }
+  ]
+}

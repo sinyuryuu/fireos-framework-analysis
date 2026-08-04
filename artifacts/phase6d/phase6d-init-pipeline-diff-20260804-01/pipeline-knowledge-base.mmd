@@ -1,0 +1,21 @@
+flowchart TD
+  A["Boot cmdline / properties"] --> B["/init decision surface"]
+  B --> C["StatusFromCmdline"]
+  B --> D["FindPrecompiledSplitPolicy"]
+  D --> E["LoadSplitPolicy"]
+  E --> F["LoadPolicy"]
+  F --> G["SelinuxInitialize"]
+  H["PS7331 0x41bd60 property-parser candidate"] -.-> C
+  I["PS7331 0x41ad00 rootable path candidate"] -.-> E
+  J["PS7331 0x41af80 standard path candidate"] -.-> E
+  K["PS7331 0x41be00 common-helper candidate"] -.-> E
+  L["Exact mapping / active policy: UNRESOLVED"] -.-> E
+  M["Boot-property mutation / policy injection: REJECTED"] -.-> B
+  classDef source fill:#e8f5e9,stroke:#2e7d32,color:#111;
+  classDef candidate fill:#fff3e0,stroke:#ef6c00,color:#111;
+  classDef unknown fill:#ede7f6,stroke:#5e35b1,color:#111;
+  classDef rejected fill:#ffebee,stroke:#c62828,color:#111;
+  class A,B,C,D,E,F,G source;
+  class H,I,J,K candidate;
+  class L unknown;
+  class M rejected;

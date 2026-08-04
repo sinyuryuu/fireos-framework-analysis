@@ -1,0 +1,129 @@
+{
+  "config_symbols": {
+    "COMPAT": "y",
+    "MTK_CMDQ": "y",
+    "MTK_CMDQ_TAB": "y"
+  },
+  "files": [
+    {
+      "exists": true,
+      "path": "drivers/misc/mediatek/cmdq/v3/cmdq_driver.c",
+      "sha256": "b3a54d37b4e498ff969a2717cb02cefc923ae6f39da32f5fd8529fe3dce6e899",
+      "size": 29298
+    },
+    {
+      "exists": true,
+      "path": "drivers/misc/mediatek/cmdq/v3/cmdq_def.h",
+      "sha256": "2dcdb4b2abc76b0100d4448796e2f4d223dbd28027fa63cc7ba8517911450fc1",
+      "size": 15057
+    },
+    {
+      "exists": true,
+      "path": "drivers/misc/mediatek/cmdq/v3/cmdq_driver.h",
+      "sha256": "ff6fda2e6c53b62ccc1fe4dcbfc0dc14ca083b15852fe13b60d5640181cb5aab",
+      "size": 3207
+    },
+    {
+      "exists": true,
+      "path": "drivers/misc/mediatek/cmdq/v3/Makefile",
+      "sha256": "a8e47479f0f128011c067b605807907ca9ab033dc3f080bb508003e94ef12bd5",
+      "size": 3531
+    },
+    {
+      "exists": false,
+      "path": "drivers/misc/mediatek/cmdq/v3/Kconfig",
+      "sha256": "",
+      "size": 0
+    },
+    {
+      "exists": true,
+      "path": "arch/arm64/configs/trona_defconfig",
+      "sha256": "09ca8dfc3b3b5e139482e3dd9976dae79547077fb750a4cbc778814f85ecaaac",
+      "size": 14743
+    }
+  ],
+  "findings": [
+    {
+      "confidence": "Confirmed",
+      "evidence": "CMDQ_DRIVER_DEVICE_NAME, alloc_chrdev_region, class_create and device_create are present",
+      "result": "source-present",
+      "surface": "/dev/mtk_cmdq registration"
+    },
+    {
+      "confidence": "Confirmed",
+      "evidence": "cmdqOP wires unlocked_ioctl and cmdq_ioctl dispatches named CMDQ requests",
+      "result": "source-present",
+      "surface": "CMDQ ioctl dispatcher"
+    },
+    {
+      "confidence": "Strong evidence",
+      "evidence": "copy_from_user/copy_to_user and count bounds are present; hardware semantics and runtime permissions are separate questions",
+      "result": "sensitive control surface; vulnerability not established",
+      "surface": "user-controlled register/readback path"
+    },
+    {
+      "confidence": "Unknown",
+      "evidence": "the preserved source has no exact CVE patch comparison in this audit; no ioctl or exploit test is permitted",
+      "result": "Unknown",
+      "surface": "CVE-2020-0069 applicability"
+    }
+  ],
+  "generated_at_utc": "2026-08-04T15:16:17.381104+00:00",
+  "inputs": {
+    "kernel_config": "artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config",
+    "kernel_config_sha256": "eefb8db484f65e196a7bb401ae0165f434f08b13041aef6762917e284d013d04",
+    "kernel_root": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4",
+    "source_root": "firmware/extracted/PS7331-SOURCE-20250617"
+  },
+  "ioctl_cases": [
+    "CMDQ_IOCTL_QUERY_USAGE",
+    "CMDQ_IOCTL_QUERY_CAP_BITS",
+    "CMDQ_IOCTL_QUERY_DTS",
+    "CMDQ_IOCTL_NOTIFY_ENGINE",
+    "CMDQ_IOCTL_ASYNC_EXEC",
+    "CMDQ_IOCTL_ASYNC_WAIT",
+    "CMDQ_IOCTL_ALLOC_READBACK_SLOTS",
+    "CMDQ_IOCTL_FREE_READBACK_SLOTS",
+    "CMDQ_IOCTL_READ_READBACK_SLOTS",
+    "CMDQ_IOCTL_LOCK_MUTEX",
+    "CMDQ_IOCTL_UNLOCK_MUTEX"
+  ],
+  "line_anchors": {
+    "alloc_chrdev_region": 848,
+    "cmdq_driver_process_read_address_request": 248,
+    "device_create\\(gCMDQClass": 865,
+    "static const struct file_operations cmdqOP": 735,
+    "static int cmdq_open": 120,
+    "static int cmdq_release": 145,
+    "static long cmdq_ioctl": 660
+  },
+  "safety": {
+    "device_contacted": false,
+    "device_mutated": false,
+    "device_node_opened": false,
+    "exploit_or_payload": false,
+    "host_only": true,
+    "ioctl_issued": false,
+    "kernel_built": false,
+    "kernel_memory_accessed": false
+  },
+  "schema": "phase6g-cmdq-static-surface-v1",
+  "source_markers": {
+    "alloc_chrdev_region_present": true,
+    "compat_ioctl_present": true,
+    "copy_from_user_present": 6,
+    "copy_to_user_present": 6,
+    "device_create_present": true,
+    "device_name": "mtk_cmdq",
+    "file_operations_present": true,
+    "ioctl_default_reject_present": true,
+    "open_present": true,
+    "proc_debug_record_mode": true,
+    "proc_debug_status_mode": true,
+    "read_address_count_bound_present": true,
+    "read_address_handler_present": true,
+    "reg_count_bound_present": true,
+    "release_present": true,
+    "unlocked_ioctl_present": true
+  }
+}
