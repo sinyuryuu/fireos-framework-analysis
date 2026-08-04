@@ -1323,12 +1323,6 @@ Outputs:
 - `tools/scripts/audit_phase5dd_native_futex_surface.py`
 - local inventory under `artifacts/phase5/phase5dd-native-futex-surface-20260804-03/`
 
-## Phase 5DE status
-
-## Phase 5DG status
-
-## Phase 5DH status
-
 ## Phase 5DI status
 
 Phase 5DI added the preserved services.odex and fosservices.odex to the
@@ -1341,6 +1335,8 @@ Outputs:
 - findings/phase-5di-additional-odex-futex-surface.md
 - findings/phase-5di-evidence-index.md
 - local inventory under artifacts/phase5/phase5di-additional-odex-futex-surface-20260804-01/
+
+## Phase 5DH status
 
 Phase 5DH compared the Emerald reference prerequisites with the exact PS7331
 IKCONFIG and source. FUTEX, RT_MUTEXES, CONFIGFS_FS, SLUB, SECCOMP and
@@ -1355,6 +1351,8 @@ Outputs:
 - tools/scripts/audit_phase5dh_ps7331_reference_surfaces.py
 - local audit under artifacts/phase5/phase5dh-ps7331-reference-surface-gates-20260804-01/
 
+## Phase 5DG status
+
 Phase 5DG audited the public datfooldive/ghostlock-emerald source at commit
 ebb355d302629a034d0959e5e579496559e8f84e. The reference has named
 PI/requeue userspace orchestration and later target-specific memory/credential
@@ -1367,6 +1365,8 @@ Outputs:
 - findings/phase-5dg-evidence-index.md
 - tools/scripts/audit_ghostlock_reference_architecture.py
 - local audit under artifacts/phase5/phase5dg-ghostlock-emerald-architecture-20260804-01/
+
+## Phase 5DE status
 
 Phase 5DE searched the non-kernel PS7331 source roots. It found 26 rows in two
 external GLib files, including eight direct `syscall(__NR_futex, ...)` rows,
