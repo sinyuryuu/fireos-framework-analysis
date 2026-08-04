@@ -1,0 +1,204 @@
+{
+  "conclusion": "The preserved PS7331 selftests define requeue-PI as a paired, stateful protocol. A single-thread/single-call probe can classify only the no-waiter or argument-validation boundary; it cannot validate the proxy identity condition or cleanup consequence.",
+  "generated_at_utc": "2026-08-04T14:09:11.715340+00:00",
+  "inputs": {
+    "functional_selftest": {
+      "landmarks": {
+        "broadcast_waker_function": [
+          147
+        ],
+        "join": [
+          342,
+          346,
+          347
+        ],
+        "pi_lock": [
+          139,
+          164,
+          215,
+          265
+        ],
+        "pi_unlock": [
+          141,
+          186,
+          229,
+          270
+        ],
+        "signal_waker_function": [
+          195
+        ],
+        "sleep_or_yield": [
+          120,
+          158,
+          159,
+          206,
+          207,
+          239
+        ],
+        "thread_creation": [
+          102
+        ],
+        "wait_for_waiters": [
+          39,
+          123,
+          157,
+          205
+        ],
+        "waiter_call": [
+          126
+        ],
+        "waiter_function": [
+          111
+        ],
+        "waker_call": [
+          168,
+          220
+        ]
+      },
+      "line_count": 409,
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi.c",
+      "sha256": "1ed88169b15385b97643e7621f1582b605eccacef7bba3de90142fc9e6a45cc2"
+    },
+    "kernel_futex": {
+      "landmarks": {
+        "no_waiter_return": [
+          1716
+        ],
+        "proxy_call": [
+          1963
+        ],
+        "proxy_return_cleanup": [
+          1971
+        ],
+        "requeue_dispatch": [
+          3238,
+          3268
+        ],
+        "stored_task_argument": [
+          1339,
+          1965
+        ],
+        "wait_requeue_dispatch": [
+          3237,
+          3264
+        ]
+      },
+      "line_count": 3358,
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "sha256": "ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96"
+    },
+    "mismatched_ops_selftest": {
+      "landmarks": {
+        "delay_for_child": [
+          88
+        ],
+        "join": [
+          126
+        ],
+        "ordinary_wait_call": [
+          48
+        ],
+        "requeue_call": [
+          96
+        ],
+        "thread_creation": [
+          82
+        ],
+        "wake_after_check": [
+          104
+        ]
+      },
+      "line_count": 135,
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi_mismatched_ops.c",
+      "sha256": "0862834b8cdfa12f93bf71b8b83b1c8f8dcfb9ae995ff8afc58a30b86047461d"
+    },
+    "selftest_header": {
+      "landmarks": {
+        "pairing_note": [
+          185,
+          186
+        ],
+        "requeue_helper": [
+          186,
+          197,
+          204
+        ],
+        "requeue_opcode": [
+          43
+        ],
+        "wait_helper": [
+          181,
+          189
+        ],
+        "wait_opcode": [
+          40
+        ]
+      },
+      "line_count": 266,
+      "path": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/include/futextest.h",
+      "sha256": "75a5667100864b2bd2dc91fa91cc8a62108ff05192144c374f04bb0f43f43ca6"
+    }
+  },
+  "protocol_rows": [
+    {
+      "classification": "stateful_precondition",
+      "line": "111",
+      "role_or_condition": "waiter role",
+      "runtime_implication": "A single caller cannot create this pre-existing waiter state.",
+      "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi.c",
+      "static_fact": "A task calls FUTEX_WAIT_REQUEUE_PI and remains part of the requeue protocol."
+    },
+    {
+      "classification": "stateful_precondition",
+      "line": "147,195",
+      "role_or_condition": "waker/requeue role",
+      "runtime_implication": "The proxy path requires at least two participating execution contexts.",
+      "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi.c",
+      "static_fact": "A distinct control path calls FUTEX_CMP_REQUEUE_PI after waiters are observed."
+    },
+    {
+      "classification": "ordering_requirement",
+      "line": "39,123,157,205",
+      "role_or_condition": "waiter/waker ordering",
+      "runtime_implication": "This is synchronization, not a harmless feature probe.",
+      "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi.c",
+      "static_fact": "The selftest waits for waiter progress before issuing the requeue operation."
+    },
+    {
+      "classification": "bounded_no_waiter",
+      "line": "1716",
+      "role_or_condition": "kernel no-waiter branch",
+      "runtime_implication": "A call without a matching waiter cannot observe waiter identity.",
+      "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "static_fact": "The kernel has a no-waiter return before the proxy call."
+    },
+    {
+      "classification": "static_only",
+      "line": "1963",
+      "role_or_condition": "proxy branch",
+      "runtime_implication": "Static reachability is not runtime execution evidence.",
+      "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/mt8183/4.4/kernel/futex.c",
+      "static_fact": "The source contains a call to rt_mutex_start_proxy_lock()."
+    },
+    {
+      "classification": "stateful_precondition",
+      "line": "48,96",
+      "role_or_condition": "mismatch selftest",
+      "runtime_implication": "Even the error-path test is not a single-call test.",
+      "source": "firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/tools/testing/selftests/futex/functional/futex_requeue_pi_mismatched_ops.c",
+      "static_fact": "The negative selftest also creates a child waiter before testing the mismatch."
+    }
+  ],
+  "safety": {
+    "device_contacted": false,
+    "futex_triggered": false,
+    "host_only": true,
+    "kernel_memory_accessed": false,
+    "payload_or_address_generated": false,
+    "race_scheduled": false,
+    "source_compiled": false,
+    "source_executed": false,
+    "thread_created": false
+  },
+  "schema": "phase6c-requeue-protocol-analysis-v1"
+}

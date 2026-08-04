@@ -3172,3 +3172,24 @@ Outputs:
 - `findings/phase-6c-requeue-precondition-model.md`
 - `findings/phase-6c-requeue-precondition-evidence-index.md`
 - `artifacts/phase6c/phase6c-requeue-preconditions-20260804-02/`
+
+## Phase 6C requeue-PI protocol analysis
+
+The preserved PS7331 futex selftests were analyzed on the host. The analysis
+records the waiter/waker pairing, synchronization ordering, mismatch-test
+setup, and the kernel no-waiter/proxy boundary. It does not compile or execute
+the selftests, create threads, schedule a race, contact a device, access kernel
+memory, or generate a payload.
+
+Outputs:
+
+- `tools/scripts/analyze_phase6c_requeue_protocol.py`
+- `findings/phase-6c-requeue-protocol-analysis.md`
+- `findings/phase-6c-requeue-protocol-evidence-index.md`
+- `artifacts/phase6c/phase6c-requeue-protocol-analysis-20260804-01/`
+
+The selected-device read-only boundary capture is retained locally at
+`adb/phase6c/PHASE6C-RO-CAPTURE-20260804-01/` and documented in
+`findings/phase-6c-runtime-capture-20260804-01.md`. Its HOME/setup-state
+observation is snapshot-scoped and is not treated as GhostLock runtime or root
+evidence.
