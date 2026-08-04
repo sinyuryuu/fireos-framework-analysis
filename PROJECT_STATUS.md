@@ -870,3 +870,36 @@ no sideload, Settings update, reboot or partition write was performed.
 Phase 5CI output:
 
 - `findings/phase-5ci-official-manual-update-procedure.md`
+
+## Phase 5CJ status
+
+Phase 5CJ records the actual result of applying the official Amazon PS7331 full
+OTA through the native System Updates UI. The tablet now reports PS7331.4463N,
+incremental `0031575863172`, security patch `2024-08-01`, Linux `4.4.146+`,
+Verified Boot `green`, flash locked, and SELinux Enforcing. The OTA file was
+accepted by Amazon's sideload installer and removed after installation. The
+post-update resolver was temporarily OOBE because user setup was incomplete;
+this is not treated as a HOME replacement result.
+
+Phase 5CJ also records the target-profile mismatch between the public
+`ghostlock-emerald` project (Poco/MT6789/Android 16/kernel 6.12.30) and Fire
+PS7331 (MT8183/Android 9/kernel 4.4). No exploit binary was built or executed.
+
+Output:
+
+- `findings/phase-5cj-ps7331-update-and-ghostlock-boundary.md`
+
+## Phase 5CK status
+
+Phase 5CK captures a new PS7331 read-only futex/runtime gate snapshot. Shell has
+zero capabilities in the captured process, SELinux is Enforcing, `/proc/kallsyms`
+is denied, `/proc/kcore` and `/dev/kmem` are unavailable, and ION/CMDQ are only
+recorded as device-node metadata. The capture did not open a device node, invoke
+ioctl, trigger futex PI, change settings, reboot, or mutate package state. These
+observations bound runtime visibility; they do not prove that futex/rtmutex is
+absent or that GhostLock is exploitable.
+
+Outputs:
+
+- `findings/phase-5ck-ps7331-runtime-gates.md`
+- `adb/phase5/PS7331-FUTEX-GATES-20260804-01/` (raw local evidence)

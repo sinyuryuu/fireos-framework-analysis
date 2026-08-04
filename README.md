@@ -2406,3 +2406,27 @@ boot-image or fastboot procedure.
 Output:
 
 - `findings/phase-5ci-official-manual-update-procedure.md`
+
+## Phase 5CJ status
+
+The official Amazon PS7331 full OTA was applied through the native System
+Updates UI. The post-update device identity is PS7331.4463N with incremental
+`0031575863172` and security patch `2024-08-01`; Verified Boot remains green,
+the bootloader remains locked, and SELinux remains Enforcing. The temporary
+post-update OOBE resolver state is documented separately and is not treated as
+a launcher replacement.
+
+Output:
+
+- `findings/phase-5cj-ps7331-update-and-ghostlock-boundary.md`
+
+## Phase 5CK status
+
+Phase 5CK is a PS7331 read-only runtime-gate capture. It records shell identity,
+capability visibility, selected sysctl results, procfs restrictions, and ION/CMDQ
+node metadata without opening nodes or invoking ioctl. It does not claim live
+GhostLock exploitability or root.
+
+Output:
+
+- `findings/phase-5ck-ps7331-runtime-gates.md`
