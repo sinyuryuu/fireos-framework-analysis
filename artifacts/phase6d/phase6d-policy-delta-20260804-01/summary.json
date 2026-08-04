@@ -1,0 +1,2632 @@
+{
+  "generated_at_utc": "2026-08-04T16:02:28.531588+00:00",
+  "limits": [
+    "CIL line-set differences do not prove semantic policy validity.",
+    "The delta does not prove that the retail boot selected a rootable file.",
+    "No policy was compiled, loaded, installed, or applied."
+  ],
+  "pairs": [
+    {
+      "exact_set": {
+        "added_unique": 2295,
+        "normal_unique": 14408,
+        "removed_unique": 1803,
+        "rootable_unique": 14900
+      },
+      "focus_counts": {
+        "added": {
+          "allow": 302,
+          "allow_shell": 16,
+          "allow_su": 57,
+          "allow_untrusted_app": 0,
+          "capability": 14,
+          "debug_build_marker": 0,
+          "dyntransition": 26,
+          "init_domain": 111,
+          "load_policy": 2,
+          "neverallow": 1327,
+          "setcurrent": 2,
+          "setenforce": 2,
+          "su_token": 317,
+          "typepermissive": 1
+        },
+        "normal": {
+          "allow": 5805,
+          "allow_shell": 239,
+          "allow_su": 0,
+          "allow_untrusted_app": 3,
+          "capability": 116,
+          "debug_build_marker": 0,
+          "dyntransition": 32,
+          "init_domain": 845,
+          "load_policy": 2,
+          "neverallow": 2573,
+          "setcurrent": 4,
+          "setenforce": 3,
+          "su_token": 5,
+          "typepermissive": 0
+        },
+        "rootable": {
+          "allow": 6062,
+          "allow_shell": 260,
+          "allow_su": 58,
+          "allow_untrusted_app": 3,
+          "capability": 123,
+          "debug_build_marker": 0,
+          "dyntransition": 34,
+          "init_domain": 870,
+          "load_policy": 3,
+          "neverallow": 2578,
+          "setcurrent": 6,
+          "setenforce": 4,
+          "su_token": 323,
+          "typepermissive": 1
+        }
+      },
+      "focused_additions": [
+        {
+          "categories": "allow",
+          "line": "(allow adbd adb_data_file (dir (ioctl read write getattr lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow adbd adb_data_file (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow,setcurrent",
+          "line": "(allow adbd self (process (setcurrent)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su,dyntransition",
+          "line": "(allow adbd su (process (dyntransition)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow appdomain heapdump_data_file (file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow appdomain method_trace_data_file (dir (write lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow appdomain method_trace_data_file (file (write create lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow atrace atrace_tmpfs (file (read write getattr map)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow atrace base_typeattr_317 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow atrace debugfs_tracing_debug (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow atrace debugfs_tracing_debug (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow atrace tmpfs (dir (getattr search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow audioserver audioserver_data_file (dir (ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow audioserver audioserver_data_file (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow audioserver media_data_file (dir (ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow audioserver self (process (ptrace)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow audioserver su (fd (use)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow audioserver su (fifo_file (read write)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow audioserver su (unix_stream_socket (read write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_364 node_type (tcp_socket (node_bind)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_364 node_type (udp_socket (node_bind)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_364 port_type (tcp_socket (name_bind)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_364 port_type (udp_socket (name_bind)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_422 dalvikcache_data_file (file (execute)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow base_typeattr_69 su (binder (call transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_70 binder_device (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_71 hwbinder_device (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_72 netutils_wrapper (process (siginh rlimitinh)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_72 netutils_wrapper (process (transition)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_72 netutils_wrapper_exec (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_72 vendor_default_prop (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_73 vendor_file_type (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_73 vendor_file_type (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_73 vendor_file_type (lnk_file (read getattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_74 hwservice_manager_type (hwservice_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_74 vndservice_manager_type (service_manager (add find)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow cameraserver su (fd (use)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow cameraserver su (fifo_file (read write)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow cameraserver su (unix_stream_socket (read write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow crash_dump base_typeattr_328 (process (sigchld sigkill sigstop signal ptrace)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow crash_dump kmsg_debug_device (chr_file (append open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow crash_dump logd (process (sigchld sigkill sigstop signal ptrace)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain coredump_file (dir (ioctl read write getattr lock add_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain coredump_file (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow domain su (fd (use)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow domain su (fifo_file (write getattr)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow domain su (process (sigchld)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow domain su (unix_dgram_socket (sendto)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow domain su (unix_stream_socket (read write getattr getopt shutdown connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate base_typeattr_172 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate misc_logd_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate misc_logd_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow dumpstate su (process (sigchld)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow dumpstate su (process (siginh rlimitinh)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow dumpstate su (process (transition)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate su_exec (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate user_profile_data_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate user_profile_data_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate wm_trace_data_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate wm_trace_data_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow hal_configstore_server su (fifo_file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow hal_wifi_server tombstone_wifi_data_file (dir (ioctl read write getattr lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow hal_wifi_server tombstone_wifi_data_file (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow incident su (process (sigchld)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow incidentd logcat_exec (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow incidentd logd (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow incidentd logdr_socket (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow incidentd pstorefs (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow incidentd pstorefs (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow incidentd self (cap_userns (sys_ptrace)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow incidentd self (capability (sys_ptrace)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init atrace (process (siginh rlimitinh)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init atrace (process (transition)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init atrace_exec (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_233 (dir (ioctl read create getattr setattr search open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_234 (dir (write relabelfrom add_name remove_name rmdir)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_234 (fifo_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_234 (lnk_file (create getattr setattr relabelfrom unlink)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_234 (sock_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_235 (file (read write create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_236 (blk_file (relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_236 (chr_file (relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_236 (dir (relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_236 (fifo_file (relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_236 (file (relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_236 (lnk_file (relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_236 (sock_file (relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_237 (file (read setattr open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_238 (dir (read setattr search open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_239 (chr_file (read open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init base_typeattr_241 (chr_file (setattr)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init kmsg_debug_device (chr_file (write relabelto)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init logcat_exec (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init logpersist (process (siginh rlimitinh)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init logpersist (process (transition)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init perfprofd (process (siginh rlimitinh)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init perfprofd (process (transition)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow init perfprofd_exec (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow kernel nativetest_data_file (file (read write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow kernel update_engine_data_file (file (read)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logd misc_logd_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logd misc_logd_file (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist cgroup (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist cgroup (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist cgroup (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist logcat_exec (file (read getattr map execute entrypoint open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist logd (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist logd_socket (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist logdr_socket (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist misc_logd_file (dir (ioctl read write getattr lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist misc_logd_file (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist pstorefs (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist pstorefs (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist runtime_event_log_tags_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logpersist self (cap_userns (sys_nice)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow logpersist self (capability (sys_nice)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow mediacodec su (fifo_file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaextractor apk_data_file (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaextractor apk_data_file (file (execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaextractor mediaextractor_update_service (service_manager (add find)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow mediaextractor su (fifo_file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaserver self (process (ptrace)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow netutils_wrapper base_typeattr_72 (process (sigchld)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow perfetto su (process (sigchld)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd apk_data_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd apk_data_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd apk_data_file (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd app_data_file (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd app_data_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd dalvikcache_data_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd dalvikcache_data_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd dalvikcache_data_file (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd debugfs_tracing (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd debugfs_tracing (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd debugfs_tracing (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd debugfs_tracing_debug (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd debugfs_tracing_debug (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd debugfs_tracing_debug (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd devpts (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd domain (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd domain (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd domain (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd dropbox_service (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd exec_type (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow,init_domain",
+          "line": "(allow perfprofd init (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd logcat_exec (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd logd (unix_dgram_socket (sendto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd logd (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd logdr_socket (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd logdw_socket (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd perfprofd_data_file (dir (ioctl read write getattr lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd perfprofd_data_file (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd perfprofd_exec (file (read getattr map execute entrypoint open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd perfprofd_service (service_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd perfprofd_tmpfs (file (read write getattr map)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd pmsg_device (chr_file (write lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd proc_loadavg (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd proc_modules (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd proc_perf (file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd proc_stat (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd property_socket (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd self (cap2_userns (block_suspend)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd self (cap_userns (dac_override)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd self (cap_userns (ipc_lock)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd self (cap_userns (sys_admin)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd self (cap_userns (sys_ptrace sys_resource)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd self (capability (dac_override)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd self (capability (ipc_lock)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd self (capability (sys_admin)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd self (capability (sys_ptrace sys_resource)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd self (capability2 (block_suspend)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd servicemanager (binder (call transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd shell_exec (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd shell_prop (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd shell_prop (property_service (set)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd statsd (binder (transfer)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow perfprofd su (fifo_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow,su_token,allow_su",
+          "line": "(allow perfprofd su (unix_stream_socket (read write getattr sendto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_batteryinfo (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_batteryinfo (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_batteryinfo (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_devices_system_cpu (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_kernel_notes (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_thermal (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_type (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd sysfs_wake_lock (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd system_file (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd system_server (binder (call transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd system_server (fd (use)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd tmpfs (dir (getattr search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd toolbox_exec (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd vendor_app_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd vendor_app_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd vendor_app_file (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd vendor_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd vendor_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd vendor_file (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow priv_app perfprofd_data_file (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow priv_app perfprofd_data_file (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow,dyntransition",
+          "line": "(allow runas base_typeattr_280 (process (dyntransition)))"
+        }
+      ],
+      "name": "plat",
+      "normal": {
+        "lines": 17073,
+        "path": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/system/etc/selinux/plat_sepolicy.cil",
+        "sha256": "4056ed9140f6c201cb2dd55edf70041667a195e20233bb6a6a2468b40c9a872d"
+      },
+      "rootable": {
+        "lines": 17599,
+        "path": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/system/etc/selinux/rootable_plat_sepolicy.cil",
+        "sha256": "51123eabcb7bbc36574ea90eb8c42b82677f5ffd35a40e1d48e61c58a6ec5d35"
+      }
+    },
+    {
+      "exact_set": {
+        "added_unique": 1437,
+        "normal_unique": 8422,
+        "removed_unique": 1067,
+        "rootable_unique": 8792
+      },
+      "focus_counts": {
+        "added": {
+          "allow": 185,
+          "allow_shell": 0,
+          "allow_su": 0,
+          "allow_untrusted_app": 0,
+          "capability": 11,
+          "debug_build_marker": 0,
+          "dyntransition": 16,
+          "init_domain": 0,
+          "load_policy": 2,
+          "neverallow": 746,
+          "setcurrent": 1,
+          "setenforce": 2,
+          "su_token": 0,
+          "typepermissive": 0
+        },
+        "normal": {
+          "allow": 3411,
+          "allow_shell": 0,
+          "allow_su": 0,
+          "allow_untrusted_app": 0,
+          "capability": 88,
+          "debug_build_marker": 0,
+          "dyntransition": 17,
+          "init_domain": 1,
+          "load_policy": 1,
+          "neverallow": 1244,
+          "setcurrent": 1,
+          "setenforce": 2,
+          "su_token": 1,
+          "typepermissive": 0
+        },
+        "rootable": {
+          "allow": 3553,
+          "allow_shell": 0,
+          "allow_su": 0,
+          "allow_untrusted_app": 0,
+          "capability": 93,
+          "debug_build_marker": 0,
+          "dyntransition": 18,
+          "init_domain": 1,
+          "load_policy": 2,
+          "neverallow": 1247,
+          "setcurrent": 2,
+          "setenforce": 3,
+          "su_token": 1,
+          "typepermissive": 0
+        }
+      },
+      "focused_additions": [
+        {
+          "categories": "allow",
+          "line": "(allow appdomain heapdump_data_file_28_0_0 (file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow appdomain method_trace_data_file_28_0_0 (dir (write lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow appdomain method_trace_data_file_28_0_0 (file (write create lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_69_28_0_0 su_28_0_0 (binder (call transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_70_28_0_0 binder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_71_28_0_0 hwbinder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_72_28_0_0 vendor_default_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_73_28_0_0 vendor_file_type (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_73_28_0_0 vendor_file_type (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_73_28_0_0 vendor_file_type (lnk_file (read getattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_74_28_0_0 hwservice_manager_type (hwservice_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_74_28_0_0 vndservice_manager_type (service_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow cameraserver_28_0_0 su_28_0_0 (fd (use)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow cameraserver_28_0_0 su_28_0_0 (fifo_file (read write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow cameraserver_28_0_0 su_28_0_0 (unix_stream_socket (read write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow crash_dump_28_0_0 kmsg_debug_device_28_0_0 (chr_file (append open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow crash_dump_28_0_0 logd_28_0_0 (process (sigchld sigkill sigstop signal ptrace)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain coredump_file_28_0_0 (dir (ioctl read write getattr lock add_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain coredump_file_28_0_0 (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain su_28_0_0 (fd (use)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain su_28_0_0 (fifo_file (write getattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain su_28_0_0 (process (sigchld)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain su_28_0_0 (unix_dgram_socket (sendto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow domain su_28_0_0 (unix_stream_socket (read write getattr getopt shutdown connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate_28_0_0 base_typeattr_172_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate_28_0_0 misc_logd_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate_28_0_0 misc_logd_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate_28_0_0 user_profile_data_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate_28_0_0 user_profile_data_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow hal_configstore_server su_28_0_0 (fifo_file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow hal_wifi_server tombstone_wifi_data_file_28_0_0 (dir (ioctl read write getattr lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow hal_wifi_server tombstone_wifi_data_file_28_0_0 (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_233_28_0_0 (dir (ioctl read create getattr setattr search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_234_28_0_0 (dir (write relabelfrom add_name remove_name rmdir)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_234_28_0_0 (fifo_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_234_28_0_0 (lnk_file (create getattr setattr relabelfrom unlink)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_234_28_0_0 (sock_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_235_28_0_0 (file (read write create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_236_28_0_0 (blk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_236_28_0_0 (chr_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_236_28_0_0 (dir (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_236_28_0_0 (fifo_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_236_28_0_0 (file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_236_28_0_0 (lnk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_236_28_0_0 (sock_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_237_28_0_0 (file (read setattr open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_238_28_0_0 (dir (read setattr search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_239_28_0_0 (chr_file (read open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_241_28_0_0 (chr_file (setattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 kmsg_debug_device_28_0_0 (chr_file (write relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow kernel_28_0_0 nativetest_data_file_28_0_0 (file (read write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow kernel_28_0_0 update_engine_data_file_28_0_0 (file (read)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logd_28_0_0 misc_logd_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow logd_28_0_0 misc_logd_file_28_0_0 (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediacodec_28_0_0 su_28_0_0 (fifo_file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaextractor_28_0_0 apk_data_file_28_0_0 (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaextractor_28_0_0 apk_data_file_28_0_0 (file (execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaextractor_28_0_0 mediaextractor_update_service_28_0_0 (service_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaextractor_28_0_0 su_28_0_0 (fifo_file (append)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow mediaserver_28_0_0 self (process (ptrace)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 apk_data_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 apk_data_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 apk_data_file_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 app_data_file_28_0_0 (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 app_data_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 dalvikcache_data_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 dalvikcache_data_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 dalvikcache_data_file_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 debugfs_tracing_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 debugfs_tracing_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 debugfs_tracing_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 debugfs_tracing_debug_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 debugfs_tracing_debug_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 debugfs_tracing_debug_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 devpts_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 domain (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 domain (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 domain (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 dropbox_service_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 exec_type (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 init_28_0_0 (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 logcat_exec_28_0_0 (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 logd_28_0_0 (unix_dgram_socket (sendto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 logd_28_0_0 (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 logdr_socket_28_0_0 (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 logdw_socket_28_0_0 (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 perfprofd_data_file_28_0_0 (dir (ioctl read write getattr lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 perfprofd_data_file_28_0_0 (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 perfprofd_service_28_0_0 (service_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 pmsg_device_28_0_0 (chr_file (write lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 proc_loadavg_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 proc_modules_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 proc_perf_28_0_0 (file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 proc_stat_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 property_socket_28_0_0 (sock_file (write)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 self (cap2_userns (block_suspend)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 self (cap_userns (dac_override)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 self (cap_userns (ipc_lock)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 self (cap_userns (sys_admin)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 self (cap_userns (sys_ptrace sys_resource)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd_28_0_0 self (capability (dac_override)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd_28_0_0 self (capability (ipc_lock)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd_28_0_0 self (capability (sys_admin)))"
+        },
+        {
+          "categories": "allow,capability",
+          "line": "(allow perfprofd_28_0_0 self (capability (sys_ptrace sys_resource)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 self (capability2 (block_suspend)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 servicemanager_28_0_0 (binder (call transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 shell_exec_28_0_0 (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 shell_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 shell_prop_28_0_0 (property_service (set)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 su_28_0_0 (fifo_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 su_28_0_0 (unix_stream_socket (read write getattr sendto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_batteryinfo_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_batteryinfo_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_batteryinfo_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_devices_system_cpu_28_0_0 (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_kernel_notes_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_thermal_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_type (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 sysfs_wake_lock_28_0_0 (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 system_file_28_0_0 (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 system_server_28_0_0 (binder (call transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 system_server_28_0_0 (fd (use)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 toolbox_exec_28_0_0 (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 vendor_app_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 vendor_app_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 vendor_app_file_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 vendor_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 vendor_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow perfprofd_28_0_0 vendor_file_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow,dyntransition",
+          "line": "(allow runas_28_0_0 base_typeattr_280_28_0_0 (process (dyntransition)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow servicemanager_28_0_0 base_typeattr_281_28_0_0 (binder (transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow servicemanager_28_0_0 perfprofd_28_0_0 (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow servicemanager_28_0_0 perfprofd_28_0_0 (file (read open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow servicemanager_28_0_0 perfprofd_28_0_0 (process (getattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 base_typeattr_283_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 boottrace_data_file_28_0_0 (dir (ioctl read write getattr lock add_name remove_name search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 boottrace_data_file_28_0_0 (file (ioctl read write create getattr setattr lock append map unlink rename open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 log_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 log_prop_28_0_0 (property_service (set)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 logpersistd_logging_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 logpersistd_logging_prop_28_0_0 (property_service (set)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 nativetest_data_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 nativetest_data_file_28_0_0 (file (ioctl read getattr lock map execute execute_no_trans open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 persist_debug_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 persist_debug_prop_28_0_0 (property_service (set)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 core_property_type (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported2_config_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported2_radio_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported2_system_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported2_vold_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported3_default_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported3_radio_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported3_system_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported_dalvik_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported_ffs_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 exported_system_radio_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 vndbinder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow su_28_0_0 vndservicemanager_28_0_0 (binder (call transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow system_server_28_0_0 perfprofd_28_0_0 (binder (transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow traceur_app_28_0_0 base_typeattr_283_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow ueventd_28_0_0 base_typeattr_288_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow ueventd_28_0_0 base_typeattr_288_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow ueventd_28_0_0 base_typeattr_288_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow uncrypt_28_0_0 shell_data_file_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow uncrypt_28_0_0 shell_data_file_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow uncrypt_28_0_0 shell_data_file_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_291_28_0_0 (dir (ioctl read write create getattr setattr relabelfrom add_name remove_name search rmdir open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_291_28_0_0 (fifo_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_291_28_0_0 (lnk_file (create getattr setattr relabelfrom unlink)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_291_28_0_0 (sock_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_292_28_0_0 (file (read write create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_293_28_0_0 (blk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_293_28_0_0 (chr_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_293_28_0_0 (dir (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_293_28_0_0 (fifo_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_293_28_0_0 (file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_293_28_0_0 (lnk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_293_28_0_0 (sock_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_294_28_0_0 (dir (read setattr search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_294_28_0_0 (file (read setattr open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_295_28_0_0 (chr_file (setattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_296_28_0_0 (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vndservicemanager_28_0_0 su_28_0_0 (dir (search)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vndservicemanager_28_0_0 su_28_0_0 (file (read open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vndservicemanager_28_0_0 su_28_0_0 (process (getattr)))"
+        },
+        {
+          "categories": "setcurrent,dyntransition",
+          "line": "(dontaudit su_28_0_0 domain (process (fork transition sigchld sigkill sigstop signull signal ptrace getsched setsched getsession getpgid setpgid getcap setcap share getattr setexec setfscreate noatsecure siginh setrlimit rlimitinh dyntransition setcurrent execmem execstack execheap setkeycreate setsockcreate getrlimit)))"
+        },
+        {
+          "categories": "load_policy,setenforce",
+          "line": "(dontaudit su_28_0_0 kernel_28_0_0 (security (compute_av compute_create compute_member check_context load_policy compute_relabel compute_user setenforce setbool setsecparam setcheckreqprot read_policy validate_trans)))"
+        },
+        {
+          "categories": "capability",
+          "line": "(dontaudit su_28_0_0 self (capability (chown dac_override dac_read_search fowner fsetid kill setgid setuid setpcap linux_immutable net_bind_service net_broadcast net_admin net_raw ipc_lock ipc_owner sys_module sys_rawio sys_chroot sys_ptrace sys_pacct sys_admin sys_boot sys_nice sys_resource sys_time sys_tty_config mknod lease audit_write audit_control setfcap)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow appdomain base_typeattr_52_28_0_0 (file (write create setattr relabelfrom append unlink link rename)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow appdomain base_typeattr_52_28_0_0 (process (ptrace)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow appdomain base_typeattr_52_28_0_0 (process (sigkill sigstop signal)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_100_28_0_0 frp_block_device_28_0_0 (blk_file (ioctl read write create setattr lock relabelfrom append unlink link rename open)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_101_28_0_0 metadata_block_device_28_0_0 (blk_file (ioctl read write lock append link rename open)))"
+        },
+        {
+          "categories": "neverallow,dyntransition",
+          "line": "(neverallow base_typeattr_102_28_0_0 postinstall_28_0_0 (process (transition dyntransition)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_102_28_0_0 system_block_device_28_0_0 (blk_file (write append)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_103_28_0_0 recovery_block_device_28_0_0 (blk_file (write append)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_104_28_0_0 misc_block_device_28_0_0 (blk_file (ioctl read write lock relabelfrom append link rename open)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_105_28_0_0 base_typeattr_60_28_0_0 (binder (set_context_mgr)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_106_28_0_0 binder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_106_28_0_0 service_manager_type (service_manager (find)))"
+        }
+      ],
+      "name": "plat_pub",
+      "normal": {
+        "lines": 8562,
+        "path": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/vendor/etc/selinux/plat_pub_versioned.cil",
+        "sha256": "da53a898c9799e9922ccc0f952706e0977ced86061b20894ff33c6b4346a9350"
+      },
+      "rootable": {
+        "lines": 8939,
+        "path": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/vendor/etc/selinux/rootable_plat_pub_versioned.cil",
+        "sha256": "74fbd09302aac0d7104435b4aed9acd39807eb4e64ae716f0fe097911620f163"
+      }
+    },
+    {
+      "exact_set": {
+        "added_unique": 1060,
+        "normal_unique": 9357,
+        "removed_unique": 6,
+        "rootable_unique": 10411
+      },
+      "focus_counts": {
+        "added": {
+          "allow": 49,
+          "allow_shell": 0,
+          "allow_su": 0,
+          "allow_untrusted_app": 0,
+          "capability": 6,
+          "debug_build_marker": 0,
+          "dyntransition": 15,
+          "init_domain": 0,
+          "load_policy": 1,
+          "neverallow": 743,
+          "setcurrent": 0,
+          "setenforce": 1,
+          "su_token": 0,
+          "typepermissive": 0
+        },
+        "normal": {
+          "allow": 5961,
+          "allow_shell": 0,
+          "allow_su": 0,
+          "allow_untrusted_app": 0,
+          "capability": 62,
+          "debug_build_marker": 0,
+          "dyntransition": 0,
+          "init_domain": 0,
+          "load_policy": 0,
+          "neverallow": 65,
+          "setcurrent": 0,
+          "setenforce": 0,
+          "su_token": 0,
+          "typepermissive": 0
+        },
+        "rootable": {
+          "allow": 6010,
+          "allow_shell": 0,
+          "allow_su": 0,
+          "allow_untrusted_app": 0,
+          "capability": 68,
+          "debug_build_marker": 0,
+          "dyntransition": 15,
+          "init_domain": 0,
+          "load_policy": 1,
+          "neverallow": 808,
+          "setcurrent": 0,
+          "setenforce": 1,
+          "su_token": 0,
+          "typepermissive": 0
+        }
+      },
+      "focused_additions": [
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_67_28_0_0 binder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_68_28_0_0 hwbinder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_69_28_0_0 vendor_default_prop_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_70_28_0_0 vendor_file_type (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_70_28_0_0 vendor_file_type (file (read getattr map execute open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_70_28_0_0 vendor_file_type (lnk_file (read getattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_71_28_0_0 hwservice_manager_type (hwservice_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow base_typeattr_71_28_0_0 vndservice_manager_type (service_manager (add find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow dumpstate_28_0_0 base_typeattr_168_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_229_28_0_0 (dir (ioctl read create getattr setattr search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_230_28_0_0 (dir (write relabelfrom add_name remove_name rmdir)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_230_28_0_0 (fifo_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_230_28_0_0 (lnk_file (create getattr setattr relabelfrom unlink)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_230_28_0_0 (sock_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_231_28_0_0 (file (read write create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_232_28_0_0 (blk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_232_28_0_0 (chr_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_232_28_0_0 (dir (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_232_28_0_0 (fifo_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_232_28_0_0 (file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_232_28_0_0 (lnk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_232_28_0_0 (sock_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_233_28_0_0 (file (read setattr open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_234_28_0_0 (dir (read setattr search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_235_28_0_0 (chr_file (read open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow init_28_0_0 base_typeattr_237_28_0_0 (chr_file (setattr)))"
+        },
+        {
+          "categories": "allow,dyntransition",
+          "line": "(allow runas_28_0_0 base_typeattr_274_28_0_0 (process (dyntransition)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow servicemanager_28_0_0 base_typeattr_275_28_0_0 (binder (transfer)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow shell_28_0_0 base_typeattr_277_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow traceur_app_28_0_0 base_typeattr_277_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow ueventd_28_0_0 base_typeattr_282_28_0_0 (dir (ioctl read getattr lock search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow ueventd_28_0_0 base_typeattr_282_28_0_0 (file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow ueventd_28_0_0 base_typeattr_282_28_0_0 (lnk_file (ioctl read getattr lock map open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_285_28_0_0 (dir (ioctl read write create getattr setattr relabelfrom add_name remove_name search rmdir open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_285_28_0_0 (fifo_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_285_28_0_0 (lnk_file (create getattr setattr relabelfrom unlink)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_285_28_0_0 (sock_file (read create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_286_28_0_0 (file (read write create getattr setattr relabelfrom unlink open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_287_28_0_0 (blk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_287_28_0_0 (chr_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_287_28_0_0 (dir (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_287_28_0_0 (fifo_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_287_28_0_0 (file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_287_28_0_0 (lnk_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_287_28_0_0 (sock_file (relabelto)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_288_28_0_0 (dir (read setattr search open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_288_28_0_0 (file (read setattr open)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_289_28_0_0 (chr_file (setattr)))"
+        },
+        {
+          "categories": "allow",
+          "line": "(allow vendor_init_28_0_0 base_typeattr_290_28_0_0 (file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow appdomain base_typeattr_51_28_0_0 (file (write create setattr relabelfrom append unlink link rename)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow appdomain base_typeattr_51_28_0_0 (process (ptrace)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow appdomain base_typeattr_51_28_0_0 (process (sigkill sigstop signal)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_100_28_0_0 recovery_block_device_28_0_0 (blk_file (write append)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_101_28_0_0 misc_block_device_28_0_0 (blk_file (ioctl read write lock relabelfrom append link rename open)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_102_28_0_0 base_typeattr_58_28_0_0 (binder (set_context_mgr)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_103_28_0_0 binder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_103_28_0_0 service_manager_type (service_manager (find)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_104_28_0_0 base_typeattr_105_28_0_0 (service_manager (find)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_104_28_0_0 base_typeattr_115_28_0_0 (sock_file (create setattr lock relabelfrom relabelto map unlink link rename execute quotaon mounton open audit_access execmod)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_106_28_0_0 servicemanager_28_0_0 (binder (call transfer)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_107_28_0_0 vndbinder_device_28_0_0 (chr_file (ioctl read write getattr lock append map open)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_108_28_0_0 vndservice_manager_type (service_manager (add find list)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_108_28_0_0 vndservicemanager_28_0_0 (binder (impersonate call set_context_mgr transfer)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (alg_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (appletalk_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (atmpvc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (atmsvc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (ax25_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (bluetooth_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (caif_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (can_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (decnet_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (icmp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (ieee802154_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (ipx_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (irda_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (isdn_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (iucv_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (kcm_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (key_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (llc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_audit_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_connector_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_crypto_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_dnrt_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_fib_lookup_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_generic_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_iscsi_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_kobject_uevent_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_netfilter_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_nflog_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_rdma_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_route_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_scsitransport_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_selinux_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_tcpdiag_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netlink_xfrm_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (netrom_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (nfc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (packet_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (phonet_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (pppox_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (qipcrtr_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (rawip_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (rds_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (rose_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (rxrpc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (sctp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (smc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (tcp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (tipc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (tun_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (udp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (unix_dgram_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (unix_stream_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (vsock_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_109_28_0_0 base_typeattr_110_28_0_0 (x25_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (alg_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (appletalk_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (atmpvc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (atmsvc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (ax25_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (bluetooth_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (caif_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (can_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (decnet_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (icmp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (ieee802154_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (ipx_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (irda_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (isdn_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (iucv_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (kcm_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (key_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (llc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_audit_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_connector_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_crypto_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_dnrt_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_fib_lookup_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_generic_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_iscsi_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_kobject_uevent_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_netfilter_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_nflog_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_rdma_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_route_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_scsitransport_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_selinux_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_tcpdiag_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netlink_xfrm_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (netrom_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (nfc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (packet_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (phonet_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (pppox_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (qipcrtr_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (rawip_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (rds_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (rose_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (rxrpc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (sctp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (smc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (tcp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (tipc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (tun_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (udp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (unix_dgram_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (unix_stream_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (unix_stream_socket (connectto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (vsock_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_111_28_0_0 base_typeattr_112_28_0_0 (x25_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (alg_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (appletalk_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (atmpvc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (atmsvc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (ax25_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (bluetooth_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (caif_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (can_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (decnet_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (icmp_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (ieee802154_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (ipx_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (irda_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (isdn_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (iucv_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (kcm_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (key_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (llc_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (netlink_audit_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (netlink_connector_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (netlink_crypto_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (netlink_dnrt_socket (connect sendto)))"
+        },
+        {
+          "categories": "neverallow",
+          "line": "(neverallow base_typeattr_113_28_0_0 netd_28_0_0 (netlink_fib_lookup_socket (connect sendto)))"
+        }
+      ],
+      "name": "vendor",
+      "normal": {
+        "lines": 9749,
+        "path": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/vendor/etc/selinux/vendor_sepolicy.cil",
+        "sha256": "82430dbe87b8a5f653110b635289489b99e82bdbe7bdc7a2e1ee5564e674e035"
+      },
+      "rootable": {
+        "lines": 10803,
+        "path": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/vendor/etc/selinux/rootable_vendor_sepolicy.cil",
+        "sha256": "82559be062226861221c58fb33de39d2541d0a4b08a96ea10bea2b3acc2e5b7a"
+      }
+    }
+  ],
+  "safety": {
+    "device_contacted": false,
+    "device_mutated": false,
+    "host_only": true,
+    "policy_compiled": false,
+    "policy_loaded": false,
+    "root_payload": false
+  },
+  "schema": "phase6d-policy-delta-v1"
+}

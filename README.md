@@ -3342,12 +3342,15 @@ policy identity is not overstated.
 ## Phase 6D `/init` policy-loader scenario classification
 
 The four proposed `/init` scenarios were classified from host-only evidence.
-The strongest current result is a boot-time selector hypothesis: the stripped
-binary has an `androidboot.selinux`/`permissive` parser candidate and separate
-standard/rootable path-builder call sites. AVB/BoringSSL markers are present,
-but no current CFG evidence connects them to the rootable branch. Rootable
-paths are code-referenced, so a strings-only dead-code explanation is not
-sufficient; runtime reachability remains unresolved.
+The latest selector data-flow audit narrows an earlier interpretation: the
+stripped binary has an `androidboot.selinux`/`permissive` parser candidate, but
+AOSP Android 9 uses that shape for enforcing-status selection after policy load,
+not as proof of choosing a `rootable_*` policy. Separate standard/rootable
+path-builder call sites and a `w5` branch remain real binary landmarks. AVB/
+BoringSSL markers are present, but no current CFG evidence connects them to the
+rootable branch. Rootable paths are code-referenced, so a strings-only dead-code
+explanation is not sufficient; indirect callers, stock runtime reachability and
+active policy identity remain unresolved.
 
 Outputs:
 
@@ -3384,8 +3387,22 @@ The consolidated scenario review is preserved in:
 - `output/call-graphs/phase6d-policy-scenario-flow.mmd`
 
 The current boundary is precise: the pure strings-only dead-code explanation is
-disproved, but stock runtime reachability and the selector's exact data flow are
+disproved, but a direct boot/cmdline selector and stock runtime reachability are
 not. No temporary-root route is established.
+
+The selector/data-flow and policy-content follow-up outputs are:
+
+- `tools/scripts/audit_phase6d_init_selector_dataflow.py`
+- `tools/scripts/audit_phase6d_policy_delta.py`
+- `findings/phase-6d-init-selector-dataflow.md`
+- `findings/phase-6d-policy-delta.md`
+- `artifacts/phase6d/phase6d-init-selector-dataflow-20260804-02/`
+- `artifacts/phase6d/phase6d-policy-delta-20260804-01/`
+- `output/call-graphs/phase6d-init-selector-dataflow.mmd`
+
+Both tools are host-only, refuse to overwrite an output directory, and support
+`--dry-run`. They do not execute `/init`, compile/load policy, inject boot
+properties, bypass AVB, access kernel memory, or generate a root payload.
 
 ## Phase 6H Framework IPC and system-service audit
 

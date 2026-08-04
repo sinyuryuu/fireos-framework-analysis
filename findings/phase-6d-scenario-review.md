@@ -21,7 +21,7 @@ root payload。
 | 情節 | 判定 | 信心 | 可由現有證據說明的最窄結論 |
 |---|---|---|---|
 | S1：userspace 可控屬性或 `/data` 標誌 | **待驗證** | Hypothesis | 尚無資料流證據把 shell／untrusted-writable 狀態連到 rootable branch；不可把 `persist.*` 或 `/data/` 字串當成控制條件。 |
-| S2：Boot／kernel cmdline | **高可信推論** | Strong evidence | `/init` 有 `androidboot.selinux`／`permissive` 的 parser candidate，並有 standard/rootable 兩組 path-builder call site；精確 selector 與 caller 仍未還原。 |
+| S2：Boot／kernel cmdline 直接選擇 rootable policy | **待驗證** | Hypothesis | `/init` 有 `androidboot.selinux`／`permissive` 的 parser candidate，但 AOSP 對照顯示這類邏輯決定 enforcing 狀態，不等於選擇 rootable policy；目前沒有把 cmdline 值連到 rootable path-builder 的資料流證據。 |
 | S3：AVB／簽章／eFuse | **待驗證** | Hypothesis | AVB、BoringSSL、`SIGNATURE_MISMATCH`、`efuse` markers 存在，但尚未以 CFG 或資料流證明它們 guard rootable policy。 |
 | S4：死碼／編譯殘留 | **已排除（純字串版本）／待驗證（stock runtime reachability）** | Strong evidence | rootable literal 有 ADRP/ADD code references；`w5=1` 進 common helper，且 `0x41be48` 存在明確分支。這排除「只有無引用字串」，但不證明量產開機會走該路徑。 |
 
@@ -47,15 +47,54 @@ stripped binary 的間接 branch、原始 symbol、函式邊界與 runtime calle
 解析，因此 `0x41ad00`、`0x41af80`、`0x41bd60`、`0x41be00` 都應繼續視為
 保守人工標籤。
 
+### 最新 selector data-flow 複核
+
+`artifacts/phase6d/phase6d-init-selector-dataflow-20260804-02/` 對完整 `.text`
+做了 direct `bl`／branch scan。結果是：
+
+- `0x41ad00` 有 1 個 direct caller；`0x41be00` 有 2 個 direct call site，
+  分別鄰近 `w5=1` 與 `w5=0` 定義。
+- `0x41bd60` 沒有 direct `bl` caller。其已保存的指令仍呈現 19-byte
+  `androidboot.selinux` 與 10-byte `permissive` 比較，成功時將狀態欄位寫為
+  zero；這與 AOSP `StatusFromCmdline()` 的 enforcing-status 形狀相符，不能
+  單獨解釋為 rootable selector。
+- `0x41c30c` 有 6 個 branch reference，包含 `0x41be48` 的 `tbnz w5` 分支。
+
+這一輪因此將 S2 從「Strong evidence 的 boot selector」校正為「直接選擇
+rootable policy 尚未證明」。零 direct-call 結果不排除 indirect call 或 inline
+邏輯，故仍不能宣稱該路徑不存在。
+
 ## AOSP 對照
 
 官方 Android 9 r1/r61 `init/selinux.cpp` 的 anchors 在兩個 tag 中具有相同
 SHA-256：`b2bb7d74d8cb8863d04b2172eedc22d0074129cab16c3335285fc9c2f9e69fa1`。
-已確認的 AOSP 範圍包括 `StatusFromCmdline`、`IsEnforcing`、
+`StatusFromCmdline`（r1 lines 78–89）只在 `androidboot.selinux=permissive`
+時把 enforcing status 設為 permissive；`LoadPolicy`（378–380）與
+`SelinuxInitialize`（384–398）先載入 policy，再由 `IsEnforcing` 決定是否
+呼叫 `security_setenforce`。已確認的 AOSP 範圍包括 `StatusFromCmdline`、`IsEnforcing`、
 `FindPrecompiledSplitPolicy`、`LoadSplitPolicy`、`LoadMonolithicPolicy`、
 `LoadPolicy` 與 `SelinuxInitialize`。這證明可用 AOSP loader 作為 anchor，
 但不構成 Amazon `/init` 的 source-level diff：官方 GPL source package 沒有
 `system/core/init/selinux.cpp`。
+
+這個順序是本輪最重要的語意校正：`androidboot.selinux` 的 parser candidate
+不等於「選擇 `rootable_*` 檔案」。
+
+## 保存的 policy 檔案差異
+
+`artifacts/phase6d/phase6d-policy-delta-20260804-01/` 以標準／rootable
+CIL 的雜湊與 line-set 差異產生可重現統計：
+
+| Pair | Rootable lines | Added unique | Removed unique | `typepermissive` | `su` token |
+|---|---:|---:|---:|---:|---:|
+| plat | 17,599 | 2,295 | 1,803 | 1 | 323 |
+| plat_pub | 8,939 | 1,437 | 1,067 | 0 | 1 |
+| vendor | 10,803 | 1,060 | 6 | 0 | 0 |
+
+這支持「rootable 檔案不是單純同一檔案的別名」的判定，也顯示 `plat`
+變體包含更明顯的工程／debug-oriented 規則（例如 `adbd` 對 `su` 的
+transition 與額外 `typepermissive`）。它仍然沒有證明量產裝置選用該檔案、
+存在 userspace-writable selector，或可由 shell 取得 root。
 
 ## 裝置現況的限制性證據
 
@@ -83,8 +122,8 @@ policy 與部分 kernel 狀態的讀取受 SELinux 限制；「讀不到」不�
 
 ## Root 結論
 
-目前沒有安全、可重現的 temporary-root 路徑。S1 尚未證實，S2 只顯示可能
-存在 bootloader-controlled selector，S3 尚未連到 rootable branch，S4 只排除
+目前沒有安全、可重現的 temporary-root 路徑。S1 尚未證實，S2 尚未證明存在
+直接選擇 rootable policy 的 bootloader-controlled selector，S3 尚未連到 rootable branch，S4 只排除
 「純字串死碼」而沒有證明可達。任何為了取得 root 而進行 boot-property 注入、
 alternate policy selection、AVB bypass、kernel race、panic、heap shaping、
 未知 Binder 或分割區寫入，都超出本階段且被拒絕。

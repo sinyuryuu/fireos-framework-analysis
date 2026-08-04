@@ -1,0 +1,20 @@
+flowchart TD
+    A[PS7331 /init ELF<br/>host objdump only] --> B[0x41ad00<br/>policy path-builder candidate]
+    B --> C[0x41ae5c<br/>w5 = 1]
+    B --> D[0x41af80<br/>w5 = 0]
+    C --> E[0x41be00<br/>common helper candidate]
+    D --> E
+    E --> F{0x41be48<br/>tbnz w5}
+    F -->|branch: 6 references to 0x41c30c| G[alternate branch target]
+    F -->|fall-through: 0x41be4c| H[standard/helper body candidate]
+    I[0x41bd60<br/>androidboot.selinux/permissive shape] -.-> J[AOSP-shaped enforcing-status parser candidate]
+    J -.-> K[No direct bl caller found<br/>selector role unresolved]
+    L[rootable_* path literals] -.-> B
+    M[AOSP r1/r61<br/>LoadPolicy before IsEnforcing] -.-> J
+    M -.-> N[Do not equate cmdline parser<br/>with rootable policy selection]
+
+    classDef evidence fill:#e8f5e9,stroke:#2e7d32,color:#111;
+    classDef unresolved fill:#fff3e0,stroke:#ef6c00,color:#111;
+    classDef limit fill:#ffebee,stroke:#c62828,color:#111;
+    class A,B,C,D,E,F,G,H,L,M evidence;
+    class I,J,K,N unresolved;

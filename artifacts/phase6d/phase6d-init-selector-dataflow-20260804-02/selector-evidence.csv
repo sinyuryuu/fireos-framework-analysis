@@ -1,0 +1,6 @@
+id,observation,classification,confidence
+INIT-DF-001,0x41bd60 contains an androidboot.selinux/permissive comparison shape and writes zero to a caller-provided field on success.,AOSP-shaped enforcing-status-parser-candidate,Strong evidence
+INIT-DF-002,Full-text direct-call scan found 0 direct bl call(s) to 0x41bd60.,not-direct-policy-selector-evidence,Confirmed
+INIT-DF-003,0x41be00 is called from both a nearby w5=1 site and a nearby w5=0 site; 0x41be48 branches on w5.,mode-branch-exists-but-semantics-unresolved,Confirmed
+INIT-DF-004,Rootable policy path literals have code/data references in the stripped ELF.,path-reference-only,Confirmed
+INIT-DF-005,"Indirect calls, inlining, runtime caller reachability, and the active policy variant remain unresolved.",evidence-limit,Confirmed

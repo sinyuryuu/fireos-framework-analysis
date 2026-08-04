@@ -1,0 +1,232 @@
+{
+  "branch_reference_counts": {
+    "0x41ad00": 0,
+    "0x41b748": 0,
+    "0x41bd60": 0,
+    "0x41be00": 0,
+    "0x41c30c": 6
+  },
+  "branch_references": [
+    {
+      "branch_site": "0x41be48",
+      "instruction": "tbnz\tw5, #0x0, 0x41c30c <.text+0x1c10c>",
+      "target": "0x41c30c",
+      "target_role": "alternate_branch_target"
+    },
+    {
+      "branch_site": "0x41be80",
+      "instruction": "b.gt\t0x41c30c <.text+0x1c10c>",
+      "target": "0x41c30c",
+      "target_role": "alternate_branch_target"
+    },
+    {
+      "branch_site": "0x41bee0",
+      "instruction": "b\t0x41c30c <.text+0x1c10c>",
+      "target": "0x41c30c",
+      "target_role": "alternate_branch_target"
+    },
+    {
+      "branch_site": "0x41c0e8",
+      "instruction": "cbz\tw20, 0x41c30c <.text+0x1c10c>",
+      "target": "0x41c30c",
+      "target_role": "alternate_branch_target"
+    },
+    {
+      "branch_site": "0x41c2b4",
+      "instruction": "cbz\tw20, 0x41c30c <.text+0x1c10c>",
+      "target": "0x41c30c",
+      "target_role": "alternate_branch_target"
+    },
+    {
+      "branch_site": "0x41c2e0",
+      "instruction": "b.eq\t0x41c30c <.text+0x1c10c>",
+      "target": "0x41c30c",
+      "target_role": "alternate_branch_target"
+    }
+  ],
+  "common_helper_calls": [
+    {
+      "call_site": "0x41ae5c",
+      "instruction": "bl\t0x41be00 <.text+0x1bc00>",
+      "w5_nearby": {
+        "definitions": [
+          {
+            "address": "0x41ae44",
+            "instruction": "orr\tw5, wzr, #0x1",
+            "value": "1"
+          }
+        ],
+        "value": "1"
+      }
+    },
+    {
+      "call_site": "0x41af80",
+      "instruction": "bl\t0x41be00 <.text+0x1bc00>",
+      "w5_nearby": {
+        "definitions": [
+          {
+            "address": "0x41af78",
+            "instruction": "mov\tw5, wzr",
+            "value": "0"
+          }
+        ],
+        "value": "0"
+      }
+    }
+  ],
+  "direct_call_counts": {
+    "0x41ad00": 1,
+    "0x41b748": 3,
+    "0x41bd60": 0,
+    "0x41be00": 2,
+    "0x41c30c": 0
+  },
+  "direct_calls": [
+    {
+      "call_site": "0x4041fc",
+      "instruction": "bl\t0x41b748 <.text+0x1b548>",
+      "target": "0x41b748",
+      "target_role": "property_or_global_helper_candidate"
+    },
+    {
+      "call_site": "0x404200",
+      "instruction": "bl\t0x41ad00 <.text+0x1ab00>",
+      "target": "0x41ad00",
+      "target_role": "policy_path_builder_candidate"
+    },
+    {
+      "call_site": "0x404bb4",
+      "instruction": "bl\t0x41b748 <.text+0x1b548>",
+      "target": "0x41b748",
+      "target_role": "property_or_global_helper_candidate"
+    },
+    {
+      "call_site": "0x41ae5c",
+      "instruction": "bl\t0x41be00 <.text+0x1bc00>",
+      "target": "0x41be00",
+      "target_role": "common_policy_helper_candidate"
+    },
+    {
+      "call_site": "0x41af80",
+      "instruction": "bl\t0x41be00 <.text+0x1bc00>",
+      "target": "0x41be00",
+      "target_role": "common_policy_helper_candidate"
+    },
+    {
+      "call_site": "0x437790",
+      "instruction": "bl\t0x41b748 <.text+0x1b548>",
+      "target": "0x41b748",
+      "target_role": "property_or_global_helper_candidate"
+    }
+  ],
+  "generated_at_utc": "2026-08-04T16:03:32.938097+00:00",
+  "input": {
+    "binary": "artifacts/phase6c/phase6c-image-policy-extract-20260804-06/root/init",
+    "elf_executed": false,
+    "instruction_count": 398793,
+    "objdump": "objdump",
+    "sha256": "e72ed4e90d73b88be341985ebd624725b67d67967d04157317456233e15f31fd"
+  },
+  "limits": [
+    "No direct-call match does not exclude an indirect call or inlined logic.",
+    "A string/code reference does not prove stock-boot reachability.",
+    "Address labels are stripped-binary landmarks, not original source symbols.",
+    "This audit does not select, replace, or load any SELinux policy."
+  ],
+  "observations": [
+    {
+      "classification": "AOSP-shaped enforcing-status-parser-candidate",
+      "confidence": "Strong evidence",
+      "id": "INIT-DF-001",
+      "observation": "0x41bd60 contains an androidboot.selinux/permissive comparison shape and writes zero to a caller-provided field on success."
+    },
+    {
+      "classification": "not-direct-policy-selector-evidence",
+      "confidence": "Confirmed",
+      "id": "INIT-DF-002",
+      "observation": "Full-text direct-call scan found 0 direct bl call(s) to 0x41bd60."
+    },
+    {
+      "classification": "mode-branch-exists-but-semantics-unresolved",
+      "confidence": "Confirmed",
+      "id": "INIT-DF-003",
+      "observation": "0x41be00 is called from both a nearby w5=1 site and a nearby w5=0 site; 0x41be48 branches on w5."
+    },
+    {
+      "classification": "path-reference-only",
+      "confidence": "Confirmed",
+      "id": "INIT-DF-004",
+      "observation": "Rootable policy path literals have code/data references in the stripped ELF."
+    },
+    {
+      "classification": "evidence-limit",
+      "confidence": "Confirmed",
+      "id": "INIT-DF-005",
+      "observation": "Indirect calls, inlining, runtime caller reachability, and the active policy variant remain unresolved."
+    }
+  ],
+  "policy_path_markers": [
+    {
+      "file_offset": "0x1885d8",
+      "marker": "/system/etc/selinux/rootable_plat_sepolicy.cil",
+      "vma": "0x5885d8"
+    },
+    {
+      "file_offset": "0x188607",
+      "marker": "/vendor/etc/selinux/rootable_plat_pub_versioned.cil",
+      "vma": "0x588607"
+    },
+    {
+      "file_offset": "0x18863b",
+      "marker": "/vendor/etc/selinux/rootable_vendor_sepolicy.cil",
+      "vma": "0x58863b"
+    },
+    {
+      "file_offset": "0x18866c",
+      "marker": "/odm/etc/selinux/rootable_odm_sepolicy.cil",
+      "vma": "0x58866c"
+    },
+    {
+      "file_offset": "0x188697",
+      "marker": "rootable_fireos_sepolicy.cil",
+      "vma": "0x588697"
+    },
+    {
+      "file_offset": "0x1886b4",
+      "marker": "/vendor/etc/selinux/plat_pub_versioned.cil",
+      "vma": "0x5886b4"
+    },
+    {
+      "file_offset": "0x1886df",
+      "marker": "/vendor/etc/selinux/vendor_sepolicy.cil",
+      "vma": "0x5886df"
+    },
+    {
+      "file_offset": "0x188707",
+      "marker": "/odm/etc/selinux/odm_sepolicy.cil",
+      "vma": "0x588707"
+    },
+    {
+      "file_offset": "0x188729",
+      "marker": "fireos_sepolicy.cil",
+      "vma": "0x588729"
+    }
+  ],
+  "safety": {
+    "boot_property_changed": false,
+    "device_contacted": false,
+    "elf_executed": false,
+    "exploit_or_root_payload": false,
+    "host_only": true,
+    "kernel_memory_accessed": false,
+    "selinux_policy_loaded": false
+  },
+  "schema": "phase6d-init-selector-dataflow-v1",
+  "targets": {
+    "0x41ad00": "policy_path_builder_candidate",
+    "0x41b748": "property_or_global_helper_candidate",
+    "0x41bd60": "androidboot_selinux_parser_candidate",
+    "0x41be00": "common_policy_helper_candidate",
+    "0x41c30c": "alternate_branch_target"
+  }
+}
