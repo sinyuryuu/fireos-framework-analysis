@@ -3101,6 +3101,25 @@ Outputs:
 The script is host-only, refuses to overwrite an existing output, and
 supports `--dry-run`.
 
+## Phase 6C seccomp policy boundary addendum
+
+The preserved PS7331 read-only capture includes service seccomp profiles and a
+process-status snapshot. The five recovered service profiles contain generic
+`futex: 1` rules, while the listed app/SystemUI/OTA processes report
+`Seccomp: 2`. No ordinary app policy file was recovered, and no named
+`FUTEX_CMP_REQUEUE_PI` or `FUTEX_WAIT_REQUEUE_PI` rule/caller marker was found.
+This distinguishes service-policy evidence from app-policy evidence; it does
+not prove that an untrusted app can or cannot reach requeue-PI.
+
+Outputs:
+
+- `findings/phase-6c-seccomp-policy-boundary.md`
+- `findings/phase-6c-seccomp-policy-evidence-index.md`
+- `artifacts/phase6c/phase6c-installed-artifact-policy-20260804-05/`
+
+The device was not sent a futex call. Race, panic, kernel-memory and root
+testing remain outside the stock-device boundary.
+
 ## Phase 6C requeue-PI precondition model
 
 The exact source was modeled into two abstract states. A single-context call

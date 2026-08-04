@@ -1,0 +1,95 @@
+{
+  "generated_at_utc": "2026-08-04T13:33:20.251846+00:00",
+  "inputs": [
+    {
+      "exists": true,
+      "root": "firmware/extracted/PS7331/selected"
+    },
+    {
+      "exists": true,
+      "root": "firmware/extracted/PS7331/compiled-02"
+    },
+    {
+      "exists": true,
+      "root": "firmware/extracted/PS7331/compiled"
+    },
+    {
+      "exists": true,
+      "root": "firmware/extracted/PS7331/system"
+    },
+    {
+      "exists": true,
+      "root": "artifacts/amazon-services"
+    },
+    {
+      "exists": true,
+      "root": "artifacts/phase5/phase5cq-fire-native-20260804-01/files"
+    },
+    {
+      "exists": true,
+      "root": "artifacts/phase5/phase5cr-fire-native-20260804-02/files"
+    },
+    {
+      "exists": true,
+      "root": "artifacts/phase5/phase5cs-fire-amazon-native-20260804-01/files"
+    },
+    {
+      "exists": true,
+      "root": "adb/phase5/PHASE5CT-SECCOMP-20260804-01"
+    }
+  ],
+  "interpretation": [
+    "A marker or path hit identifies an artifact surface, not an executed runtime policy.",
+    "A zero marker count is bounded to the supplied files and scan method; stripped, encoded, indirect, or unpulled policy remains unknown.",
+    "Raw system/vendor/boot images are not content-scanned unless explicitly supplied; an explicitly supplied file above the scan limit is metadata-only because no read-only filesystem extractor is used by this audit.",
+    "The audit does not establish whether Android seccomp filters permit or deny any futex opcode."
+  ],
+  "inventory": {
+    "archive_members_seen": 14075,
+    "files_seen": 72,
+    "large_files_skipped": 0,
+    "max_scan_bytes": 268435456,
+    "policy_named_paths": 15
+  },
+  "large_files_skipped": [],
+  "marker_counts": {
+    "APP_PROCESS": 7,
+    "FUTEX_CMP_REQUEUE_PI": 0,
+    "FUTEX_LOCK_PI": 0,
+    "FUTEX_SYSCALL_POLICY": 5,
+    "FUTEX_UNLOCK_PI": 0,
+    "FUTEX_WAIT_REQUEUE_PI": 0,
+    "NO_NEW_PRIVS": 2,
+    "PRCTL": 23,
+    "SECCOMP": 7,
+    "SECCOMP_FILTER": 0,
+    "ZYGOTE": 42
+  },
+  "path_policy_candidates": [
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/commands.txt",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/device-status.txt",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/policy-list.txt",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/sha256sums.txt",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/system-crash_dump.arm.policy",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/system-crash_dump.arm64.policy",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/system-mediacodec.policy",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/system-mediaextractor.policy",
+    "adb/phase5/PHASE5CT-SECCOMP-20260804-01/vendor-configstore@1.1.policy",
+    "artifacts/amazon-services/amazondevicepolicymanager_fosinit.xml",
+    "artifacts/amazon-services/keypolicymanager_fosinit.xml",
+    "artifacts/amazon-services/serendipity_allowlist.xml",
+    "artifacts/amazon-services/tabletkeypolicymanager_fosinit.xml",
+    "artifacts/phase5/phase5cq-fire-native-20260804-01/files/app_process64",
+    "artifacts/phase5/phase5cr-fire-native-20260804-02/files/app_process64"
+  ],
+  "safety": {
+    "device_contacted": false,
+    "elf_executed": false,
+    "futex_triggered": false,
+    "host_only": true,
+    "image_mounted": false,
+    "kernel_memory_accessed": false,
+    "payload_or_address_generated": false
+  },
+  "schema": "phase6c-installed-artifact-policy-audit-v1"
+}

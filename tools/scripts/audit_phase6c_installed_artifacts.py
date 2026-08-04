@@ -25,6 +25,7 @@ MARKERS = {
     "FUTEX_WAIT_REQUEUE_PI": re.compile(rb"\bFUTEX_WAIT_REQUEUE_PI\b"),
     "FUTEX_LOCK_PI": re.compile(rb"\bFUTEX_LOCK_PI(?:2)?(?:_PRIVATE)?\b"),
     "FUTEX_UNLOCK_PI": re.compile(rb"\bFUTEX_UNLOCK_PI(?:_PRIVATE)?\b"),
+    "FUTEX_SYSCALL_POLICY": re.compile(rb"(?im)^\s*futex\s*:\s*"),
     "SECCOMP": re.compile(rb"\b(?:SECCOMP|seccomp)\b"),
     "SECCOMP_FILTER": re.compile(rb"\b(?:SECCOMP_FILTER|seccomp_filter)\b"),
     "ZYGOTE": re.compile(rb"\bzygote\b", re.IGNORECASE),
