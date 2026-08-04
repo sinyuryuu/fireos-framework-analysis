@@ -213,3 +213,34 @@ Phase 5BA outputs:
 - `tools/scripts/compare_phase5_ps7330_ps7331_kernel.py`
 - `tools/scripts/capture_phase5ba_device_postcheck.sh`
 - `adb/phase5/PHASE5BA-DEVICE-POSTCHECK-20260804-01/`
+
+## Phase 5BB status
+
+Phase 5BB follows the PS7331 source／boot evidence without changing the
+device. The official adjacent PS7331 Image still contains the inspected
+pre-fix `remove_waiter()` current-task pattern, and the PS7330／PS7331 focus
+kernel configs differ only in three unrelated keys. The exact PS7331 nested
+platform source member comparison remains a host-only follow-up; the outer
+source package and build scripts prove the `mt8183/4.4` and `trona_defconfig`
+layout but are not themselves `rtmutex.c` evidence.
+
+Current decision: defer upgrading solely for GhostLock. Do not write the
+standalone PS7331 boot image. If a general security-update A/B study is later
+chosen, treat the complete official update as potentially non-reversible and
+freeze the current PS7330 baseline first.
+
+Phase 5BB outputs:
+
+- `findings/phase-5bb-ghostlock-ps7331-followup.md`
+- `findings/phase-5bb-evidence-index.md`
+- `output/tables/phase5bb-ps7331-upgrade-decision.csv`
+- `tools/scripts/index_phase5_nested_platform_members.sh`
+- `tools/scripts/extract_phase5_nested_kernel_members.sh`
+
+The nested source member scan subsequently found both `kernel/mediatek/mt8183/4.4`
+and legacy `kernel/mediatek/4.4` trees. The build-selected `mt8183/4.4`
+`rtmutex.c` still uses the pre-fix `current->pi_blocked_on` cleanup in
+`remove_waiter()` and has no `waiter->task` fix. The legacy `4.4` file is
+byte-identical to the old v4.4.146 reference but is not the build-script path.
+This strengthens the decision to defer PS7331 as a GhostLock remediation; it
+does not claim that no other PS7331 security changes exist.

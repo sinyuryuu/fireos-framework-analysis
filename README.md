@@ -1783,3 +1783,35 @@ Phase 5BA outputs:
 - `output/call-graphs/phase5ba-upgrade-evidence.mmd`
 - `artifacts/phase5/phase5ba-ps7331-upgrade-comparison-20260804-01/`
 - `adb/phase5/PHASE5BA-DEVICE-POSTCHECK-20260804-01/`
+
+### Phase 5BB — PS7331 GhostLock follow-up and upgrade decision
+
+Phase 5BB adds the official NVD patch-semantic reference to the existing
+PS7331 compiled review and records the remaining nested-source boundary. The
+PS7331 `remove_waiter()` inspection still shows the pre-fix current-task
+cleanup pattern, while the PS7330/PS7331 focus configs remain equal. This is
+not evidence that every PS7331 security change is absent; it means PS7331 is
+not demonstrated to remediate GhostLock and is not recommended solely for
+that purpose.
+
+The current device was not upgraded. The 7.3.3.1 `boot.img` remains a
+host-only adjacent-version artifact and must not be written by itself. A full
+official update, if considered for a separate A/B study, is a potentially
+non-reversible system mutation and requires a frozen PS7330 baseline plus a
+verified recovery/update path.
+
+Phase 5BB outputs:
+
+- `findings/phase-5bb-ghostlock-ps7331-followup.md`
+- `findings/phase-5bb-evidence-index.md`
+- `output/tables/phase5bb-ps7331-upgrade-decision.csv`
+- `tools/scripts/index_phase5_nested_platform_members.sh`
+- `tools/scripts/extract_phase5_nested_kernel_members.sh`
+
+The nested source scan found both the build-selected `mt8183/4.4` tree and a
+legacy `4.4` tree. The selected `mt8183/4.4/rtmutex.c` still clears
+`current->pi_blocked_on` in `remove_waiter()` and has no `waiter->task` fix; the
+legacy tree is byte-identical to the old v4.4.146 reference but is not the path
+named by the build script. Selected source comparison artifacts are preserved
+locally under `artifacts/phase5/` and are summarized by the Phase 5BB evidence
+index. No source was built and no device state changed.

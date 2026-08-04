@@ -1,0 +1,12 @@
+--- artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/locking/rtmutex_common.h	2025-06-18 00:38:03
++++ artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex_common.h	2025-06-18 00:41:09
+@@ -101,8 +101,7 @@
+ extern struct task_struct *rt_mutex_next_owner(struct rt_mutex *lock);
+ extern void rt_mutex_init_proxy_locked(struct rt_mutex *lock,
+ 				       struct task_struct *proxy_owner);
+-extern void rt_mutex_proxy_unlock(struct rt_mutex *lock,
+-				  struct task_struct *proxy_owner);
++extern void rt_mutex_proxy_unlock(struct rt_mutex *lock);
+ extern int rt_mutex_start_proxy_lock(struct rt_mutex *lock,
+ 				     struct rt_mutex_waiter *waiter,
+ 				     struct task_struct *task);

@@ -1,0 +1,533 @@
+[hashes]
+c4ddac5fe820c7f07670bc332425be05b0df0400ae334a147b483f0ee9b07345  artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v4.4.146.c
+c4ddac5fe820c7f07670bc332425be05b0df0400ae334a147b483f0ee9b07345  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/locking/rtmutex.c
+6cb5442a765b69fa74c8c87b3fa8f44ce1cbb67eec45db3290e512f38eb75dde  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c
+e4ff0f8cfc46d023f66b3e842e275ee9eb6725ac6902942e235af32d8f0a2ab5  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/futex.c
+ca9140bac21e62154462315abc9f047f5f69dff4a12d8a03d88986ba54ca7a96  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c
+ee7fcb3d8edb06312606073f02435da8e6bb1d60b53604733a218c75c48ec51c  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/locking/rtmutex_common.h
+b3456f9e83a1919e41a88a6638ad1e26ed9966e800c6efc823940df1151919fc  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex_common.h
+fd3eb1c3dd015bf897dfe2b8d3b832b2c1f70b09c18e3d8b2a26391319121d9d  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/include/linux/sched.h
+7678d8a67c7a2c8a062ac660adb87398c7e319ad32aa8abbdf6dcea85ee70f7b  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/include/linux/sched.h
+55f430e2656d5e85d8f88a0810a71356408dba7f656b72739c2f099daf502426  artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/arch/arm64/configs/mt8183_defconfig
+[line-counts]
+    1754 artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v4.4.146.c
+    1754 artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/locking/rtmutex.c
+    1753 artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c
+    3341 artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/futex.c
+    3358 artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c
+   11960 total
+[target-patterns]
+--- artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/locking/rtmutex.c
+418-int max_lock_depth = 1024;
+419-
+420-static inline struct rt_mutex *task_blocked_on_lock(struct task_struct *p)
+421-{
+422:	return p->pi_blocked_on ? p->pi_blocked_on->lock : NULL;
+423-}
+424-
+425-/*
+426- * Adjust the priority chain. Also used for deadlock detection.
+--
+463- *	again:
+464- *	  loop_sanity_check();
+465- *	retry:
+466- * [1]	  lock(task->pi_lock);			[R] acquire [P]
+467: * [2]	  waiter = task->pi_blocked_on;		[P]
+468- * [3]	  check_exit_conditions_1();		[P]
+469- * [4]	  lock = waiter->lock;			[P]
+470- * [5]	  if (!try_lock(lock->wait_lock)) {	[P] try to acquire [L]
+471- *	    unlock(task->pi_lock);		release [P]
+--
+484- * [13]	  unlock(task->pi_lock);		release [P]
+485- *	  unlock(lock->wait_lock);		release [L]
+486- *	  goto again;
+487- */
+488:static int rt_mutex_adjust_prio_chain(struct task_struct *task,
+489-				      enum rtmutex_chainwalk chwalk,
+490-				      struct rt_mutex *orig_lock,
+491-				      struct rt_mutex *next_lock,
+492-				      struct rt_mutex_waiter *orig_waiter,
+--
+544-
+545-	/*
+546-	 * [2] Get the waiter on which @task is blocked on.
+547-	 */
+548:	waiter = task->pi_blocked_on;
+549-
+550-	/*
+551-	 * [3] check_exit_conditions_1() protected by task->pi_lock.
+552-	 */
+--
+881-		 * If the lock has waiters already we check whether @task is
+882-		 * eligible to take over the lock.
+883-		 *
+884-		 * If there are no other waiters, @task can acquire
+885:		 * the lock.  @task->pi_blocked_on is NULL, so it does
+886-		 * not need to be dequeued.
+887-		 */
+888-		if (rt_mutex_has_waiters(lock)) {
+889-			/*
+--
+901-			 */
+902-		} else {
+903-			/*
+904-			 * No waiters. Take the lock without the
+905:			 * pi_lock dance.@task->pi_blocked_on is NULL
+906-			 * and we have no waiters to enqueue in @task
+907-			 * pi waiters tree.
+908-			 */
+909-			goto takeit;
+910-		}
+911-	}
+912-
+913-	/*
+914:	 * Clear @task->pi_blocked_on. Requires protection by
+915-	 * @task->pi_lock. Redundant operation for the @waiter == NULL
+916-	 * case, but conditionals are more expensive than a redundant
+917-	 * store.
+918-	 */
+919-	raw_spin_lock_irqsave(&task->pi_lock, flags);
+920:	task->pi_blocked_on = NULL;
+921-	/*
+922-	 * Finish the lock acquisition. @task is the new owner. If
+923-	 * other waiters exist we have to insert the highest priority
+924-	 * waiter into @task->pi_waiters tree.
+--
+973-		return -EDEADLK;
+974-
+975-	raw_spin_lock_irqsave(&task->pi_lock, flags);
+976-	__rt_mutex_adjust_prio(task);
+977:	waiter->task = task;
+978-	waiter->lock = lock;
+979-	waiter->prio = task->prio;
+980-
+981-	/* Get the top priority waiter on the lock */
+982-	if (rt_mutex_has_waiters(lock))
+983-		top_waiter = rt_mutex_top_waiter(lock);
+984-	rt_mutex_enqueue(lock, waiter);
+985-
+986:	task->pi_blocked_on = waiter;
+987-
+988-	raw_spin_unlock_irqrestore(&task->pi_lock, flags);
+989-
+990-	if (!owner)
+--
+995-		rt_mutex_dequeue_pi(owner, top_waiter);
+996-		rt_mutex_enqueue_pi(owner, waiter);
+997-
+998-		__rt_mutex_adjust_prio(owner);
+999:		if (owner->pi_blocked_on)
+1000-			chain_walk = 1;
+1001-	} else if (rt_mutex_cond_detect_deadlock(waiter, chwalk)) {
+1002-		chain_walk = 1;
+1003-	}
+--
+1016-
+1017-	/*
+1018-	 * The owner can't disappear while holding a lock,
+1019-	 * so the owner struct is protected by wait_lock.
+1020:	 * Gets dropped in rt_mutex_adjust_prio_chain()!
+1021-	 */
+1022-	get_task_struct(owner);
+1023-
+1024-	raw_spin_unlock(&lock->wait_lock);
+1025-
+1026:	res = rt_mutex_adjust_prio_chain(owner, chwalk, lock,
+1027-					 next_lock, waiter, task);
+1028-
+1029-	raw_spin_lock(&lock->wait_lock);
+1030-
+--
+1066-	lock->owner = (void *) RT_MUTEX_HAS_WAITERS;
+1067-
+1068-	raw_spin_unlock_irqrestore(&current->pi_lock, flags);
+1069-
+1070:	wake_q_add(wake_q, waiter->task);
+1071-}
+1072-
+1073-/*
+1074- * Remove a waiter from a lock and give up
+1075- *
+1076- * Must be called with lock->wait_lock held and
+1077- * have just failed to try_to_take_rt_mutex().
+1078- */
+1079:static void remove_waiter(struct rt_mutex *lock,
+1080-			  struct rt_mutex_waiter *waiter)
+1081-{
+1082-	bool is_top_waiter = (waiter == rt_mutex_top_waiter(lock));
+1083-	struct task_struct *owner = rt_mutex_owner(lock);
+--
+1085-	unsigned long flags;
+1086-
+1087-	raw_spin_lock_irqsave(&current->pi_lock, flags);
+1088-	rt_mutex_dequeue(lock, waiter);
+1089:	current->pi_blocked_on = NULL;
+1090-	raw_spin_unlock_irqrestore(&current->pi_lock, flags);
+1091-
+1092-	/*
+1093-	 * Only update priority if the waiter was the highest priority
+--
+1116-	 */
+1117-	if (!next_lock)
+1118-		return;
+1119-
+1120:	/* gets dropped in rt_mutex_adjust_prio_chain()! */
+1121-	get_task_struct(owner);
+1122-
+1123-	raw_spin_unlock(&lock->wait_lock);
+1124-
+1125:	rt_mutex_adjust_prio_chain(owner, RT_MUTEX_MIN_CHAINWALK, lock,
+1126-				   next_lock, NULL, current);
+1127-
+1128-	raw_spin_lock(&lock->wait_lock);
+1129-}
+--
+1140-	unsigned long flags;
+1141-
+1142-	raw_spin_lock_irqsave(&task->pi_lock, flags);
+1143-
+1144:	waiter = task->pi_blocked_on;
+1145-	if (!waiter || (waiter->prio == task->prio &&
+1146-			!dl_prio(task->prio))) {
+1147-		raw_spin_unlock_irqrestore(&task->pi_lock, flags);
+1148-		return;
+1149-	}
+1150-	next_lock = waiter->lock;
+1151-	raw_spin_unlock_irqrestore(&task->pi_lock, flags);
+1152-
+1153:	/* gets dropped in rt_mutex_adjust_prio_chain()! */
+1154-	get_task_struct(task);
+1155-
+1156:	rt_mutex_adjust_prio_chain(task, RT_MUTEX_MIN_CHAINWALK, NULL,
+1157-				   next_lock, NULL, task);
+1158-}
+1159-
+1160-/**
+--
+1264-
+1265-	if (unlikely(ret)) {
+1266-		__set_current_state(TASK_RUNNING);
+1267-		if (rt_mutex_has_waiters(lock))
+1268:			remove_waiter(lock, &waiter);
+1269-		rt_mutex_handle_deadlock(ret, chwalk, &waiter);
+1270-	}
+1271-
+1272-	/*
+--
+1641-	rt_mutex_deadlock_account_unlock(proxy_owner);
+1642-}
+1643-
+1644-/**
+1645: * rt_mutex_start_proxy_lock() - Start lock acquisition for another task
+1646- * @lock:		the rt_mutex to take
+1647- * @waiter:		the pre-initialized rt_mutex_waiter
+1648- * @task:		the task to prepare
+1649- *
+--
+1653- * <0 - error
+1654- *
+1655- * Special API call for FUTEX_REQUEUE_PI support.
+1656- */
+1657:int rt_mutex_start_proxy_lock(struct rt_mutex *lock,
+1658-			      struct rt_mutex_waiter *waiter,
+1659-			      struct task_struct *task)
+1660-{
+1661-	int ret;
+--
+1681-		ret = 0;
+1682-	}
+1683-
+1684-	if (unlikely(ret))
+1685:		remove_waiter(lock, waiter);
+1686-
+1687-	raw_spin_unlock(&lock->wait_lock);
+1688-
+1689-	debug_rt_mutex_print_deadlock(waiter);
+--
+1739-	/* sleep on the mutex */
+1740-	ret = __rt_mutex_slowlock(lock, TASK_INTERRUPTIBLE, to, waiter);
+1741-
+1742-	if (unlikely(ret))
+1743:		remove_waiter(lock, waiter);
+1744-
+1745-	/*
+1746-	 * try_to_take_rt_mutex() sets the waiter bit unconditionally. We might
+1747-	 * have to fix that up.
+--- artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c
+418-int max_lock_depth = 1024;
+419-
+420-static inline struct rt_mutex *task_blocked_on_lock(struct task_struct *p)
+421-{
+422:	return p->pi_blocked_on ? p->pi_blocked_on->lock : NULL;
+423-}
+424-
+425-/*
+426- * Adjust the priority chain. Also used for deadlock detection.
+--
+463- *	again:
+464- *	  loop_sanity_check();
+465- *	retry:
+466- * [1]	  lock(task->pi_lock);			[R] acquire [P]
+467: * [2]	  waiter = task->pi_blocked_on;		[P]
+468- * [3]	  check_exit_conditions_1();		[P]
+469- * [4]	  lock = waiter->lock;			[P]
+470- * [5]	  if (!try_lock(lock->wait_lock)) {	[P] try to acquire [L]
+471- *	    unlock(task->pi_lock);		release [P]
+--
+484- * [13]	  unlock(task->pi_lock);		release [P]
+485- *	  unlock(lock->wait_lock);		release [L]
+486- *	  goto again;
+487- */
+488:static int rt_mutex_adjust_prio_chain(struct task_struct *task,
+489-				      enum rtmutex_chainwalk chwalk,
+490-				      struct rt_mutex *orig_lock,
+491-				      struct rt_mutex *next_lock,
+492-				      struct rt_mutex_waiter *orig_waiter,
+--
+544-
+545-	/*
+546-	 * [2] Get the waiter on which @task is blocked on.
+547-	 */
+548:	waiter = task->pi_blocked_on;
+549-
+550-	/*
+551-	 * [3] check_exit_conditions_1() protected by task->pi_lock.
+552-	 */
+--
+881-		 * If the lock has waiters already we check whether @task is
+882-		 * eligible to take over the lock.
+883-		 *
+884-		 * If there are no other waiters, @task can acquire
+885:		 * the lock.  @task->pi_blocked_on is NULL, so it does
+886-		 * not need to be dequeued.
+887-		 */
+888-		if (rt_mutex_has_waiters(lock)) {
+889-			/*
+--
+901-			 */
+902-		} else {
+903-			/*
+904-			 * No waiters. Take the lock without the
+905:			 * pi_lock dance.@task->pi_blocked_on is NULL
+906-			 * and we have no waiters to enqueue in @task
+907-			 * pi waiters tree.
+908-			 */
+909-			goto takeit;
+910-		}
+911-	}
+912-
+913-	/*
+914:	 * Clear @task->pi_blocked_on. Requires protection by
+915-	 * @task->pi_lock. Redundant operation for the @waiter == NULL
+916-	 * case, but conditionals are more expensive than a redundant
+917-	 * store.
+918-	 */
+919-	raw_spin_lock_irqsave(&task->pi_lock, flags);
+920:	task->pi_blocked_on = NULL;
+921-	/*
+922-	 * Finish the lock acquisition. @task is the new owner. If
+923-	 * other waiters exist we have to insert the highest priority
+924-	 * waiter into @task->pi_waiters tree.
+--
+973-		return -EDEADLK;
+974-
+975-	raw_spin_lock_irqsave(&task->pi_lock, flags);
+976-	__rt_mutex_adjust_prio(task);
+977:	waiter->task = task;
+978-	waiter->lock = lock;
+979-	waiter->prio = task->prio;
+980-
+981-	/* Get the top priority waiter on the lock */
+982-	if (rt_mutex_has_waiters(lock))
+983-		top_waiter = rt_mutex_top_waiter(lock);
+984-	rt_mutex_enqueue(lock, waiter);
+985-
+986:	task->pi_blocked_on = waiter;
+987-
+988-	raw_spin_unlock_irqrestore(&task->pi_lock, flags);
+989-
+990-	if (!owner)
+--
+995-		rt_mutex_dequeue_pi(owner, top_waiter);
+996-		rt_mutex_enqueue_pi(owner, waiter);
+997-
+998-		__rt_mutex_adjust_prio(owner);
+999:		if (owner->pi_blocked_on)
+1000-			chain_walk = 1;
+1001-	} else if (rt_mutex_cond_detect_deadlock(waiter, chwalk)) {
+1002-		chain_walk = 1;
+1003-	}
+--
+1016-
+1017-	/*
+1018-	 * The owner can't disappear while holding a lock,
+1019-	 * so the owner struct is protected by wait_lock.
+1020:	 * Gets dropped in rt_mutex_adjust_prio_chain()!
+1021-	 */
+1022-	get_task_struct(owner);
+1023-
+1024-	raw_spin_unlock(&lock->wait_lock);
+1025-
+1026:	res = rt_mutex_adjust_prio_chain(owner, chwalk, lock,
+1027-					 next_lock, waiter, task);
+1028-
+1029-	raw_spin_lock(&lock->wait_lock);
+1030-
+--
+1066-	lock->owner = (void *) RT_MUTEX_HAS_WAITERS;
+1067-
+1068-	raw_spin_unlock_irqrestore(&current->pi_lock, flags);
+1069-
+1070:	wake_q_add(wake_q, waiter->task);
+1071-}
+1072-
+1073-/*
+1074- * Remove a waiter from a lock and give up
+1075- *
+1076- * Must be called with lock->wait_lock held and
+1077- * have just failed to try_to_take_rt_mutex().
+1078- */
+1079:static void remove_waiter(struct rt_mutex *lock,
+1080-			  struct rt_mutex_waiter *waiter)
+1081-{
+1082-	bool is_top_waiter = (waiter == rt_mutex_top_waiter(lock));
+1083-	struct task_struct *owner = rt_mutex_owner(lock);
+--
+1085-	unsigned long flags;
+1086-
+1087-	raw_spin_lock_irqsave(&current->pi_lock, flags);
+1088-	rt_mutex_dequeue(lock, waiter);
+1089:	current->pi_blocked_on = NULL;
+1090-	raw_spin_unlock_irqrestore(&current->pi_lock, flags);
+1091-
+1092-	/*
+1093-	 * Only update priority if the waiter was the highest priority
+--
+1116-	 */
+1117-	if (!next_lock)
+1118-		return;
+1119-
+1120:	/* gets dropped in rt_mutex_adjust_prio_chain()! */
+1121-	get_task_struct(owner);
+1122-
+1123-	raw_spin_unlock(&lock->wait_lock);
+1124-
+1125:	rt_mutex_adjust_prio_chain(owner, RT_MUTEX_MIN_CHAINWALK, lock,
+1126-				   next_lock, NULL, current);
+1127-
+1128-	raw_spin_lock(&lock->wait_lock);
+1129-}
+--
+1140-	unsigned long flags;
+1141-
+1142-	raw_spin_lock_irqsave(&task->pi_lock, flags);
+1143-
+1144:	waiter = task->pi_blocked_on;
+1145-	if (!waiter || (waiter->prio == task->prio &&
+1146-			!dl_prio(task->prio))) {
+1147-		raw_spin_unlock_irqrestore(&task->pi_lock, flags);
+1148-		return;
+1149-	}
+1150-	next_lock = waiter->lock;
+1151-	raw_spin_unlock_irqrestore(&task->pi_lock, flags);
+1152-
+1153:	/* gets dropped in rt_mutex_adjust_prio_chain()! */
+1154-	get_task_struct(task);
+1155-
+1156:	rt_mutex_adjust_prio_chain(task, RT_MUTEX_MIN_CHAINWALK, NULL,
+1157-				   next_lock, NULL, task);
+1158-}
+1159-
+1160-/**
+--
+1264-
+1265-	if (unlikely(ret)) {
+1266-		__set_current_state(TASK_RUNNING);
+1267-		if (rt_mutex_has_waiters(lock))
+1268:			remove_waiter(lock, &waiter);
+1269-		rt_mutex_handle_deadlock(ret, chwalk, &waiter);
+1270-	}
+1271-
+1272-	/*
+--
+1640-	rt_mutex_deadlock_account_unlock(proxy_owner);
+1641-}
+1642-
+1643-/**
+1644: * rt_mutex_start_proxy_lock() - Start lock acquisition for another task
+1645- * @lock:		the rt_mutex to take
+1646- * @waiter:		the pre-initialized rt_mutex_waiter
+1647- * @task:		the task to prepare
+1648- *
+--
+1652- * <0 - error
+1653- *
+1654- * Special API call for FUTEX_REQUEUE_PI support.
+1655- */
+1656:int rt_mutex_start_proxy_lock(struct rt_mutex *lock,
+1657-			      struct rt_mutex_waiter *waiter,
+1658-			      struct task_struct *task)
+1659-{
+1660-	int ret;
+--
+1680-		ret = 0;
+1681-	}
+1682-
+1683-	if (unlikely(ret))
+1684:		remove_waiter(lock, waiter);
+1685-
+1686-	raw_spin_unlock(&lock->wait_lock);
+1687-
+1688-	debug_rt_mutex_print_deadlock(waiter);
+--
+1738-	/* sleep on the mutex */
+1739-	ret = __rt_mutex_slowlock(lock, TASK_INTERRUPTIBLE, to, waiter);
+1740-
+1741-	if (unlikely(ret))
+1742:		remove_waiter(lock, waiter);
+1743-
+1744-	/*
+1745-	 * try_to_take_rt_mutex() sets the waiter bit unconditionally. We might
+1746-	 * have to fix that up.
+--- artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/4.4/kernel/futex.c
+1707-	 * Try to take the lock for top_waiter.  Set the FUTEX_WAITERS bit in
+1708-	 * the contended case or if set_waiters is 1.  The pi_state is returned
+1709-	 * in ps in contended cases.
+1710-	 */
+1711:	vpid = task_pid_vnr(top_waiter->task);
+1712:	ret = futex_lock_pi_atomic(pifutex, hb2, key2, ps, top_waiter->task,
+1713-				   set_waiters);
+1714-	if (ret == 1) {
+1715-		requeue_pi_wake_futex(top_waiter, key2, hb2);
+1716-		return vpid;
+--
+1942-		if (requeue_pi) {
+1943-			/* Prepare the waiter to take the rt_mutex. */
+1944-			atomic_inc(&pi_state->refcount);
+1945-			this->pi_state = pi_state;
+1946:			ret = rt_mutex_start_proxy_lock(&pi_state->pi_mutex,
+1947-							this->rt_waiter,
+1948-							this->task);
+1949-			if (ret == 1) {
+1950-				/* We got the lock. */
+--- artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/futex.c
+1724-	 * Try to take the lock for top_waiter.  Set the FUTEX_WAITERS bit in
+1725-	 * the contended case or if set_waiters is 1.  The pi_state is returned
+1726-	 * in ps in contended cases.
+1727-	 */
+1728:	vpid = task_pid_vnr(top_waiter->task);
+1729:	ret = futex_lock_pi_atomic(pifutex, hb2, key2, ps, top_waiter->task,
+1730-				   set_waiters);
+1731-	if (ret == 1) {
+1732-		requeue_pi_wake_futex(top_waiter, key2, hb2);
+1733-		return vpid;
+--
+1959-		if (requeue_pi) {
+1960-			/* Prepare the waiter to take the rt_mutex. */
+1961-			atomic_inc(&pi_state->refcount);
+1962-			this->pi_state = pi_state;
+1963:			ret = rt_mutex_start_proxy_lock(&pi_state->pi_mutex,
+1964-							this->rt_waiter,
+1965-							this->task);
+1966-			if (ret == 1) {
+1967-				/* We got the lock. */

@@ -1,0 +1,12 @@
+--- artifacts/phase5/public-source-review/linux-rtmutex/linux-stable-v4.4.146.c	2026-08-03 23:58:59
++++ artifacts/phase5/exact-kernel-source-review-7331-nested-platform-members-20260804-01/extracted/kernel/mediatek/mt8183/4.4/kernel/locking/rtmutex.c	2025-06-18 00:41:09
+@@ -1633,8 +1633,7 @@
+  * No locking. Caller has to do serializing itself
+  * Special API call for PI-futex support
+  */
+-void rt_mutex_proxy_unlock(struct rt_mutex *lock,
+-			   struct task_struct *proxy_owner)
++void rt_mutex_proxy_unlock(struct rt_mutex *lock)
+ {
+ 	debug_rt_mutex_proxy_unlock(lock);
+ 	rt_mutex_set_owner(lock, NULL);

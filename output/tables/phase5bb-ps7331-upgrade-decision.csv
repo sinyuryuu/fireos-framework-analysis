@@ -1,0 +1,8 @@
+scope,build_or_artifact,evidence,observed_result,decision,confidence
+device,PS7330.4104N/0030099376128,P5BB-001;P5BB-002,device remains PS7330 and HOME resolves to Fire Launcher,do not mutate baseline,Confirmed
+source,PS7330 public 7.3.3.0,phase-5n;phase-5av,old rtmutex source pattern and enabled futex/rtmutex config,source candidate only,Confirmed (scope-bounded)
+compiled,PS7331 signed boot Image,P5BB-003;P5BB-004,old current-task cleanup pattern observed in remove_waiter and proxy path,not a demonstrated GhostLock remediation,Strong evidence
+config,PS7330 vs PS7331,P5BB-005,focus keys equal; only 3 unrelated keys differ,not a remediation signal,Strong evidence
+source-layout,PS7331 nested source bundle,P5BB-006;P5BB-007;P5BB-011;P5BB-013;P5BB-014,build-selected mt8183/4.4 source retains old remove_waiter semantics; legacy 4.4 tree is byte-identical old reference,not a demonstrated GhostLock remediation,Strong evidence
+upgrade,official full OTA only,phase-5ba;phase-5bb,standalone boot write is not an upgrade path,defer until exact source comparison and recovery plan,High-confidence recommendation
+root-route,live GhostLock or unknown payload,P5BB-009;P5BB-012,exact signed PS7330 binary/layout and recovery path unavailable,do not execute,Rejected for safety
