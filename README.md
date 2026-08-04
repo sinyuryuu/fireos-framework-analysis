@@ -3018,3 +3018,22 @@ OOBE Home activity at priority 100, while the current foreground was a
 Microsoft Launcher task and Fire Launcher remained in the task/window state.
 This is a context-change observation, not new GhostLock or Amazon callback
 proof; no requeue-PI operation was attempted.
+
+## Phase 6C host-only re-verification
+
+The preserved PS7331 source was re-audited offline on 2026-08-04. The fresh
+landmark audit and identity model confirm the `FUTEX_CMP_REQUEUE_PI` dispatch,
+stored waiter/task proxy arguments, broad nonzero cleanup branch, and
+`current->pi_blocked_on` cleanup marker. They do not establish a runtime
+identity mismatch, cleanup residue, memory effect, or privilege transition.
+
+Outputs:
+
+- `findings/phase-6c-host-reverification.md`
+- `findings/phase-6c-host-reverification-evidence-index.md`
+- `artifacts/phase6c/phase6c-dispatch-audit-20260804-01/`
+- `artifacts/phase6c/phase6c-identity-model-20260804-02/`
+
+The real-device single-thread requeue-PI Step 4 remains **因風險拒絕測試**:
+the syscall is stateful and reaches the very proxy path under investigation.
+Phase 6A ordinary private PI lock/unlock is not equivalent evidence.
