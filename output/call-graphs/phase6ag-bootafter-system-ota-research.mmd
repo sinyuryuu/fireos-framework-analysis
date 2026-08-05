@@ -1,0 +1,14 @@
+flowchart TD
+    SS[AmazonPackageManagerService.onBootPhase] --> G1{boot phase == 550}
+    G1 -->|yes| G2{PackageManagerService.isUpgrade()}
+    G2 -->|yes| PB[send protected BOOT_AFTER_SYSTEM_OTA]
+    PB --> R[BootAfterSystemOTAReceiver.onReceive]
+    R --> G3{OOBE/demo/shared-pref gates}
+    G3 -->|pass| E[enable OobeHomeActivity]
+    E --> O[OOBEActivationHelper.activateOOBEIF]
+    O --> S1[user_setup_complete = 0]
+    O --> S2[isOOBEActive = 1]
+    PB --> A1[Alexa SystemOTAReceiver]
+    PB --> A2[Alexa multimodal SystemOTAReceiver]
+    PB -. manual shell replay rejected .-> X[Do not trigger on retail device]
+    E -. baseline User 0 disabled .-> B[Not daily HOME resolver result]

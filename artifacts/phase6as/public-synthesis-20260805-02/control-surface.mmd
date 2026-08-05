@@ -1,0 +1,20 @@
+flowchart LR
+  HK[Home key] --> IMPL[KeyPolicyManagerCommon
+implicit MAIN + HOME]
+  IMPL --> PM[Android activity / PackageManager HOME resolution]
+  PM --> FIRE[Fire Launcher candidate
+privileged / effective priority 50]
+  PROT[amazon.fireos deny-list resource] --> GATE[Amazon protected-package callback]
+  GATE --> STATE[enabled-state protection]
+  SVC[Amazon private service registrations] --> AVC[SELinux service-manager boundary]
+  AVC -->|shell lookup denied in saved enforcing capture| SVCSTOP[No shell Binder handle]
+  OTA[Official OTA package] --> WRITE[Updater write boundary]
+  WRITE -->|not executed| STOP[No partition mutation]
+  OTA --> POST[Post-OTA OOBE lifecycle]
+  POST -->|protected / guarded| OOBE[OOBE state and setup component path]
+  classDef safe fill:#e7f5e9,stroke:#2b7a3d;
+  classDef boundary fill:#fff1d6,stroke:#a66b00;
+  classDef stopped fill:#fbe4e6,stroke:#a33a46;
+  class PM,FIRE,PROT,GATE,STATE safe;
+  class AVC,WRITE,POST boundary;
+  class SVCSTOP,STOP,OOBE stopped;

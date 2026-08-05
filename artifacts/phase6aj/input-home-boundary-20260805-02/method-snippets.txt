@@ -1,0 +1,161 @@
+### decompiled/baksmali/vdexExtractor/fosservices/disassembly.log
+
+19827:       025644: 7020 007a 1000                         |0058: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+19828:       02564a: 2700                                   |005b: throw v0
+19829:    virtual_method #3827: registerKeyEventInterceptor (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;[IZZ)Z
+19830:     access=0001 (PUBLIC)
+19831:     codeOff=24c3e (150590)
+19832:     quickening_size=0 (0)
+19833:       024c42: 0801 1100                              |0000: move-object/from16 v1, v17
+
+20046:       0256fa: 7020 007a 1000                         |004f: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+20047:       025700: 2700                                   |0052: throw v0
+20048:    virtual_method #3829: registerKeyEventListener (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;)V
+20049:     access=0001 (PUBLIC)
+20050:     codeOff=25710 (153360)
+20051:     quickening_size=0 (0)
+20052:       025714: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+
+20075:       025772: 7020 007a 1000                         |002f: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+20076:       025778: 2700                                   |0032: throw v0
+20077:    virtual_method #3830: registerNextKeyEventListener (Lcom/amazon/android/internal/hardware/input/IKeyEventNextCallback;)V
+20078:     access=0001 (PUBLIC)
+20079:     codeOff=2577a (153466)
+20080:     quickening_size=0 (0)
+20081:       02577e: 5430 a104                              |0000: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+
+20110:       0257e2: 7020 007a 1000                         |0032: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+20111:       0257e8: 2700                                   |0035: throw v0
+20112:    virtual_method #3831: setInputFilter (Landroid/view/IInputFilter;)V
+20113:     access=0001 (PUBLIC)
+20114:     codeOff=257f8 (153592)
+20115:     quickening_size=0 (0)
+20116:       0257fc: 5410 a104                              |0000: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+
+21716:       026bb8: 5a01 f104                              |0000: iput-wide v1, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mLastEventTime:J // field@04f1
+21717:       026bbc: 1001                                   |0002: return-wide v1
+21718:    direct_method #3936: checkInjectEventsPermission (II)Z
+21719:     access=0002 (PRIVATE)
+21720:     codeOff=2667a (157306)
+21721:     quickening_size=0 (0)
+21722:       02667e: 7100 ef0a 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+
+22435:       026976: 0f04                                   |0045: return v4
+22436:       026978: 0f02                                   |0046: return v2
+22437:    direct_method #3978: validateInputFilterAccessPermission ()V
+22438:     access=0002 (PRIVATE)
+22439:     codeOff=27b6e (162670)
+22440:     quickening_size=0 (0)
+22441:       027b72: 7010 6d0f 0300                         |0000: invoke-direct {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.isCallerSystemApp:()Z // method@0f6d
+
+21872:       026b24: 1a00 ce55                              |0000: const-string v0, "amazon_input" // string@55ce
+21873:       026b28: 1100                                   |0002: return-object v0
+21874:    direct_method #3949: isCallerSystemApp ()Z
+21875:     access=0002 (PRIVATE)
+21876:     codeOff=26768 (157544)
+21877:     quickening_size=0 (0)
+21878:       02676c: 1200                                   |0000: const/4 v0, #int 0 // #0
+
+### decompiled/baksmali/vdexExtractor/boot-fosframework/disassembly.log
+
+40283:       095ca4: 7300                                   |0020: return-void-no-barrier
+40284: [new] 095ca4: 0e00                                   |0020: return-void
+40285:   class #485: IAmazonInputManager ('Lcom/amazon/android/internal/hardware/input/IAmazonInputManager;')
+40286:    access=0601 (PUBLIC INTERFACE ABSTRACT)
+40287:    source_file=IAmazonInputManager.java, class_data_off=293b2a (2702122)
+40288:    static_fields=0, instance_fields=0, direct_methods=0, virtual_methods=26
+40289:    virtual_method #5568: createKeyboardDevice ()Z
+
+40285:   class #485: IAmazonInputManager ('Lcom/amazon/android/internal/hardware/input/IAmazonInputManager;')
+40286:    access=0601 (PUBLIC INTERFACE ABSTRACT)
+40287:    source_file=IAmazonInputManager.java, class_data_off=293b2a (2702122)
+40288:    static_fields=0, instance_fields=0, direct_methods=0, virtual_methods=26
+40289:    virtual_method #5568: createKeyboardDevice ()Z
+40290:     access=0401 (PUBLIC ABSTRACT)
+40291:     codeOff=0 (0)
+
+### artifacts/phase6j/ota-alexa-system-ota-jadx-20260805-01/sources/com/amazon/aria/AriaPartialScreen.java
+
+54:     private static final String EXTRA_CURRENT_STATE = "currentState";
+55:     private static final String EXTRA_PRESENTATION_TOKEN = "presentationToken";
+56:     static final String GO_HOME_ACTION = "com.amazon.tv.launcher.HOME_PRESSED";
+57:     private static final String PARTIAL_STATE_CHANGE_ACTION = "amazon.aria.intent.PARTIAL_STATE_CHANGE";
+58:     private static final String TAG = "AriaPartialScreen";
+59:     private static final ExecutorService sExecutor;
+60:     private static final AtomicInteger traceIdCounter = new AtomicInteger();
+
+200:         IntentFilter intentFilter = new IntentFilter();
+201:         intentFilter.addAction(DISMISS_PARTIAL_ACTION);
+202:         intentFilter.addAction(GO_HOME_ACTION);
+203:         this.mContext.registerReceiver(this.mDismissReceiver, intentFilter);
+204:     }
+205: 
+206:     private void unregisterDismissBroadcastReceiver() {
+
+75:     private final String mTraceId;
+76:     private final WindowManager mWindowManager;
+77:     private final int[] SPECIAL_BUTTON = {3, 82};
+78:     private final LifecycleRegistry mLifecycleRegistry = new LifecycleRegistry(this);
+79: 
+80:     static {
+81:         ALLOWED_KEYCODES = Build.VERSION.SDK_INT >= 24 ? new int[]{22, 21, 19, 20, 23, 269, 271, 268, ThermalEventsReceiver.THERMAL_MITIGATION_270P_HEIGHT, 4} : new int[]{22, 21, 19, 20, 23, 4};
+
+177:                 return;
+178:             }
+179:             this.mAmazonInputManager.registerKeyEventListListener(this, this.SPECIAL_BUTTON);
+180:             this.mAmazonInputManager.registerKeyEventInterceptor(this, ALLOWED_KEYCODES, this.mRoot, true);
+181:         } catch (Exception e) {
+182:             Log.wtf(TAG, "Exception in registerKeyEventInterceptor", e);
+183:         }
+
+177:                 return;
+178:             }
+179:             this.mAmazonInputManager.registerKeyEventListListener(this, this.SPECIAL_BUTTON);
+180:             this.mAmazonInputManager.registerKeyEventInterceptor(this, ALLOWED_KEYCODES, this.mRoot, true);
+181:         } catch (Exception e) {
+182:             Log.wtf(TAG, "Exception in registerKeyEventInterceptor", e);
+183:         }
+
+321: 
+322:     @Override // com.amazon.android.hardware.input.KeyEventCallback
+323:     public void onKeyEvent(final KeyEvent keyEvent) {
+324:         if (this.mPresenter == null) {
+325:             return;
+326:         }
+327:         int keyCode = keyEvent.getKeyCode();
+
+341:                 @Override // java.lang.Runnable
+342:                 public final void run() {
+343:                     this.f$0.lambda$onKeyEvent$1$AriaPartialScreen(keyEvent);
+344:                 }
+345:             });
+346:         }
+347:     }
+
+### artifacts/phase6j/ota-alexa-system-ota-jadx-20260805-01/sources/com/amazon/aria/PartialScreenManager.java
+
+144:     @VisibleForTesting
+145:     AriaPartialScreen createNewPartialScreen(Intent intent, WindowManager windowManager, OverlaySettings overlaySettings) {
+146:         return new AriaPartialScreen(this.mContext, intent, getAmazonInputManager(), windowManager, overlaySettings);
+147:     }
+148: 
+149:     @VisibleForTesting
+150:     AriaPartialScreen getInstance(OverlayGroupType overlayGroupType) {
+
+172:     @Nullable
+173:     @SuppressLint({"ServiceCast", "WrongConstant"})
+174:     public AmazonInputManager getAmazonInputManager() {
+175:         Object systemService = this.mContext.getApplicationContext().getSystemService(AmazonInputManager.SERVICE_NAME);
+176:         if (systemService instanceof AmazonInputManager) {
+177:             return (AmazonInputManager) systemService;
+178:         }
+
+### artifacts/phase6j/ota-alexa-system-ota-jadx-20260805-01/resources/AndroidManifest.xml
+
+166:     <uses-permission android:name="android.permission.CONTROL_KEYGUARD"/>
+167:     <uses-permission android:name="com.amazon.vizzini.permission.VOICE_SERVICE"/>
+168:     <uses-permission android:name="com.amazon.permission.GET_KEYEVENTS"/>
+169:     <uses-permission android:name="amazon.speech.permission.DISMISS_PARTIAL"/>
+170:     <uses-permission android:name="amazon.alarms.ALARM_OPERATIONS"/>
+171:     <uses-permission android:name="amazon.speech.permission.ACCESS_WAKEWORD"/>
+172:     <uses-permission android:name="com.amazon.theia.sm.permission.FRAMEWORK"/>

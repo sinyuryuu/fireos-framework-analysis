@@ -1,0 +1,12 @@
+flowchart TD
+    A[android.amazon.perm APK manifest] --> B[protected-broadcast<br/>amazon.intent.action.BOOT_AFTER_SYSTEM_OTA]
+    B --> C[PackageParser.Package.protectedBroadcasts]
+    C --> D[PackageManagerService.mProtectedBroadcasts.add]
+    D --> E[PackageManagerService.isProtectedBroadcast]
+    E --> F[ActivityManagerService protected-broadcast caller check]
+    F --> G[system_server phase 550 + isUpgrade sender]
+    F -. shell/manual broadcast remains untested and rejected .-> H[No runtime trigger]
+    G --> I[BootAfterSystemOTAReceiver]
+    I --> J[Enable OobeHomeActivity]
+    I --> K[OOBE secure-state mutation]
+    I --> L[Additional Alexa consumers]

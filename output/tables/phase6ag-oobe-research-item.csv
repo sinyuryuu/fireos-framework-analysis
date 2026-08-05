@@ -1,0 +1,8 @@
+surface,trigger_or_source,static_effect,authorization_or_state,risk,status,allowed_next_step,evidence
+system-server sender,phase 550 + PMS.isUpgrade(),send protected BOOT_AFTER_SYSTEM_OTA broadcast,system-server lifecycle; receiver permission signature|amazon,critical,Confirmed,host-only provenance or natural OTA post-observation,E6AG-01;E6AG-03
+BootAfterSystemOTAReceiver,OOBE action receiver,enable OobeHomeActivity and call activateOOBEIF(),action protected; OOBE/demo/shared-pref gates,critical,Confirmed static,do not replay; observe only after natural official OTA,E6AG-02;E6AG-03
+OOBE Home candidate,MAIN + SETUP_WIZARD + HOME + DEFAULT,priority 100 candidate,User 0 baseline component disabled,high,Confirmed current state,host-only candidate/timing analysis,E6AG-04
+OOBEActivationHelper,receiver incremental flow,write user_setup_complete=0 and isOOBEActive=1,setup/OOBE state mutation,critical,Confirmed static,no settings mutation,E6AG-05
+Alexa consumers,same OTA action,additional accessibility/show-mode/access-control effects,shared action delivery; exact runtime ordering open,high,Strong evidence,static only,E6AG-06
+manual broadcast,shell replay attempt,unknown multi-consumer OOBE effects,not an equivalent verified sender,critical,因風險拒絕測試,never execute on retail device,E6AG-01;E6AG-03
+launcher/root adoption,not established,not a HOME selector or root route,no safe caller bypass found,critical,已排除目前證據支持,keep outside workaround set,E6AG-02;E6AG-03;E6AG-04

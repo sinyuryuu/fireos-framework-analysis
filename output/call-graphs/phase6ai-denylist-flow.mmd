@@ -1,0 +1,27 @@
+flowchart TD
+  A[pm / cmd package shell UID 2000] --> B[PackageManagerService enabled-state path]
+  B --> C[ProtectedPackages.isPackageStateProtected]
+  C --> D[VendorProtectedPackagesCallback.callShouldProtectPackage]
+  D --> E[ControlProtectedPackagesCallback.shouldProtectPackage]
+  E --> F{system or privileged app?}
+  F -->|yes| G[getSharedPrefPackages]
+  G --> H[PackageManagerDenyList / DenyListKeyPackages]
+  H --> I{package in set?}
+  I -->|yes + UID 2000| J[protected=true]
+  J --> K[PackageManager rejects before state write]
+
+  L[AmazonPackageManagerService.onBootPhase 500] --> M[DenyListArcusHelper constructor]
+  M --> N[device-protected SharedPreferences]
+  M --> O[extractListFromResorces]
+  O --> P[Resources.getSystem raw 0x7e05000a]
+  P --> Q[packages_deny_list JSON]
+  Q --> R[putStringSet + commit initial seed]
+  M --> S[initialize]
+  S --> T[persist.sys.denylist_arcusid]
+  S --> U[Arcus register + syncId + dynamic receiver]
+  U --> V[amazon.arcus.sync.<id> / unmod.<id>]
+  V --> W[onReceive -> Handler worker]
+  W --> X[ArcusFwkManager.openConfiguration]
+  X --> Y[getDenyList JSON parser]
+  Y --> Z[saveProtectedPackages]
+  Z --> N

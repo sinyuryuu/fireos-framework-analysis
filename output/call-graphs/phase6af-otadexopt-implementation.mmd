@@ -1,0 +1,29 @@
+flowchart TD
+    SS[SystemServer start path
+services/disassembly.log:107990-108045] -->|mOnlyCore=false && !config.disable_otadexopt| MAIN[OtaDexoptService.main
+:482249-482263]
+    MAIN --> PUB[ServiceManager.addService(otadexopt)
+:482249-482263]
+    PUB --> SHELL[Binder shellCommand / OtaDexoptShellCommand
+:482598-482611]
+    SHELL --> DONE[done -> isDone
+:482514-482532]
+    SHELL --> PROGRESS[progress -> getProgress
+:482490-482513]
+    SHELL --> PREPARE[prepare -> prepare
+:482613-482?]
+    SHELL --> NEXT[next -> nextDexoptCommand
+:482533-482597]
+    SHELL --> CLEANUP[cleanup -> cleanup
+:482460-482478]
+    SHELL --> STEP[step -> dexoptNextPackage
+:482479-482489]
+    DONE -->|captured done before prepare| ERR[IllegalStateException
+PHASE6AE status capture]
+    PROGRESS -->|captured| ONE[1.00
+PHASE6AE status capture]
+    PREPARE -->|rejected| MUT[builds command list; may delete OAT artifacts on low space]
+    NEXT -->|rejected| MUT2[removes command; may clear list]
+    CLEANUP -->|rejected| MUT3[clears state and logs metrics]
+    STEP --> UNSUP[UnsupportedOperationException]
+    

@@ -1,0 +1,16 @@
+flowchart TD
+  INV[Phase 6W exported-component triage] --> DEDUP[deduplicate manifest rows]
+  DEDUP --> OOBE{OOBE activity?}
+  OOBE -- yes --> PERM[OOBE_PERMISSION protectionLevel 0x2]
+  PERM --> SIG[signature component guard]
+  SIG --> SIDE[OOBE setup / OobeHomeActivity side effect]
+  OOBE -- no --> BADGE{BadgingProvider?}
+  BADGE -- yes --> UID[Binder.getCallingUid]
+  UID --> PKGS[PackageManager.getPackagesForUid]
+  PKGS --> OWN{caller owns target pkg?}
+  OWN -- no --> DENY[return -1]
+  OWN -- yes --> UPDATE[badge state only]
+  BADGE -- no --> UNKNOWN[bounded closure unknown]
+  SHELL[ordinary shell] -. no OOBE signature match .-> SIG
+  SHELL -. target package mismatch .-> DENY
+  HOME[HOME resolver / system UID] -. no observed edge .-> SIDE

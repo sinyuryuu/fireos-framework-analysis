@@ -1,0 +1,9 @@
+flowchart TD
+    A[Explicit preserved PS7331 APK scope: 28] --> B[aapt manifest parser]
+    B --> C{BOOT_AFTER_SYSTEM_OTA protected-broadcast?}
+    C -->|yes| D[android.amazon.perm only in scanned scope]
+    C -->|no| E[No declaration in that APK]
+    D --> F[PackageParser.Package.protectedBroadcasts]
+    F --> G[PackageManagerService.mProtectedBroadcasts]
+    G --> H[isProtectedBroadcast caller authorization]
+    H -. not a global runtime inventory .-> I[Other packages/runtime inputs remain unknown]

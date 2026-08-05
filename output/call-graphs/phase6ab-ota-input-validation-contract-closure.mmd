@@ -1,0 +1,20 @@
+flowchart TD
+    A[system_server boot phase 550 + isUpgrade] --> B[BOOT_AFTER_SYSTEM_OTA]
+    B --> C[BootAfterSystemOTAReceiver]
+    C --> D{OOBE not running and demo mode off?}
+    D -- no --> E[disable incremental OOBE flag]
+    D -- yes --> F[write incremental OOBE prefs]
+    F --> G[enable OobeHomeActivity]
+    F --> H[activateOOBEIF: setup state mutation]
+
+    I[external storage filename] --> J[SideloadFilenameFilter regex]
+    J --> K[SideloadFactory / BuildPropertiesFactory]
+    K --> L[system/build.prop Properties]
+    L --> M[SideloadMetadataChecker]
+    M --> N[SideloadVerifier + RecoverySystem.verifyPackage]
+    N --> O[SideloadDeviceStateChecker]
+    O --> P[SideloadMover]
+    P --> Q[UpdateSystem.install high-impact sink]
+
+    C -. no manual broadcast .-> R[Phase boundary: natural OTA observation only]
+    J -. separate contract source .-> S[Sideload + BuildProperties model]

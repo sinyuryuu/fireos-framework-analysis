@@ -1,0 +1,39 @@
+{
+  "phase": "6AH",
+  "captured_at_utc": "2026-08-04T23:37:00.092164+00:00",
+  "host_only": true,
+  "device_contacted": false,
+  "ota_executed": false,
+  "unknown_binder_transaction": false,
+  "inputs": {
+    "binary": {
+      "path": "firmware/extracted/PS7331/META-INF/com/google/android/update-binary",
+      "sha256": "02643fa987778361742a5ecaa601034b7f20a55df9bacc58ec8bbcdcd8ac896b"
+    },
+    "script": {
+      "path": "firmware/extracted/PS7331/META-INF/com/google/android/updater-script",
+      "sha256": "4a61d66754187a5b84f173ad7bc50216b00969743ce3193346762613615ac248"
+    },
+    "functions": {
+      "path": "artifacts/phase6s/ota-cfg-focus-20260805-01/selected-functions.csv",
+      "sha256": "adbf977955846e529d4a9bc44c5b499494a94e529b2e01c60b4731091dc7374d"
+    },
+    "edges": {
+      "path": "artifacts/phase6s/ota-call-edges-20260805-01/call-edges.csv",
+      "sha256": "ede44312f2f667adff552475866de0b17c06b96161854c35a17a3a1c361eaa75"
+    },
+    "disassembly": {
+      "path": "artifacts/phase6s/ota-cfg-focus-20260805-01/focus-disassembly.txt",
+      "sha256": "0e780e51ced6f7b000bf0a821ffe6cfe81bc0108e6073174b7fa0cb0b94abdcd"
+    }
+  },
+  "counts": {
+    "script_rows": 13,
+    "partition_targets": 10,
+    "selected_functions": 20,
+    "all_direct_edges": 1169,
+    "bounded_relevant_edges": 227,
+    "control_rows": 21
+  },
+  "classification": "static control-flow closure; no exploit or bypass claim"
+}

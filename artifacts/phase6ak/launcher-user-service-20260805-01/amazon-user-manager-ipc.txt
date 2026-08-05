@@ -1,0 +1,169 @@
+371789:    virtual_method #1424: onTransact (ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+371790:     access=0001 (PUBLIC)
+371791:     codeOff=7b9c0 (506304)
+371792:     quickening_size=43 (67)
+371793:       07b9c4: 1a00 db58                              |0000: const-string v0, "amazon.os.IAmazonUserManager" // string@58db
+371794:       07b9c8: 1401 4654 4e5f                         |0002: const v1, #float 1.48676e+19 // #5f4e5446
+371795:       07b9ce: 1212                                   |0005: const/4 v2, #int 1 // #1
+371796:       07b9d0: 3215 8700                              |0006: if-eq v5, v1, 008d // +0087
+371797:       07b9d4: 1201                                   |0008: const/4 v1, #int 0 // #0
+371798:       07b9d6: 2b05 8900 0000                         |0009: packed-switch v5, 00000092 // +00000005
+371799:       07b9dc: 6f58 b30a 5476                         |000c: invoke-super {v4, v5, v6, v7, v8}, Landroid/os/Binder;.onTransact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0ab3
+371800:       07b9e2: 0a01                                   |000f: move-result v1
+371801:       07b9e4: 0f01                                   |0010: return v1
+371802:       07b9e6: e920 2100 0600                         |0011: invoke-virtual-quick {v6, v0}, [0021] // vtable #0021
+371803: [new] 07b9e6: 6e20 a60b 0600                         |0011: invoke-virtual {v6, v0}, Landroid/os/Parcel;.enforceInterface:(Ljava/lang/String;)V // method@0ba6
+371804:       07b9ec: e910 1c00 0400                         |0014: invoke-virtual-quick {v4}, [001c] // vtable #001c
+371805: [new] 07b9ec: 6e10 8e05 0400                         |0014: invoke-virtual {v4}, Lamazon/os/IAmazonUserManager$Stub;.getActiveProfileType:()I // method@058e
+371806:       07b9f2: 0a01                                   |0017: move-result v1
+371807:       07b9f4: e910 8f00 0700                         |0018: invoke-virtual-quick {v7}, [008f] // vtable #008f
+371808: [new] 07b9f4: 6e10 cf0b 0700                         |0018: invoke-virtual {v7}, Landroid/os/Parcel;.writeNoException:()V // method@0bcf
+371809:       07b9fa: e920 8700 1700                         |001b: invoke-virtual-quick {v7, v1}, [0087] // vtable #0087
+371810: [new] 07b9fa: 6e20 c80b 1700                         |001b: invoke-virtual {v7, v1}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+371811:       07ba00: 0f02                                   |001e: return v2
+371812:       07ba02: e920 2100 0600                         |001f: invoke-virtual-quick {v6, v0}, [0021] // vtable #0021
+371813: [new] 07ba02: 6e20 a60b 0600                         |001f: invoke-virtual {v6, v0}, Landroid/os/Parcel;.enforceInterface:(Ljava/lang/String;)V // method@0ba6
+371814:       07ba08: e910 4600 0600                         |0022: invoke-virtual-quick {v6}, [0046] // vtable #0046
+371815: [new] 07ba08: 6e10 b20b 0600                         |0022: invoke-virtual {v6}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+371816:       07ba0e: 0a01                                   |0025: move-result v1
+371817:       07ba10: e920 1e00 1400                         |0026: invoke-virtual-quick {v4, v1}, [001e] // vtable #001e
+371818: [new] 07ba10: 6e20 9105 1400                         |0026: invoke-virtual {v4, v1}, Lamazon/os/IAmazonUserManager$Stub;.setActiveProfileType:(I)V // method@0591
+371819:       07ba16: e910 8f00 0700                         |0029: invoke-virtual-quick {v7}, [008f] // vtable #008f
+371820: [new] 07ba16: 6e10 cf0b 0700                         |0029: invoke-virtual {v7}, Landroid/os/Parcel;.writeNoException:()V // method@0bcf
+371821:       07ba1c: 0f02                                   |002c: return v2
+371822:       07ba1e: e920 2100 0600                         |002d: invoke-virtual-quick {v6, v0}, [0021] // vtable #0021
+371823: [new] 07ba1e: 6e20 a60b 0600                         |002d: invoke-virtual {v6, v0}, Landroid/os/Parcel;.enforceInterface:(Ljava/lang/String;)V // method@0ba6
+371824:       07ba24: e910 4600 0600                         |0030: invoke-virtual-quick {v6}, [0046] // vtable #0046
+371825: [new] 07ba24: 6e10 b20b 0600                         |0030: invoke-virtual {v6}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+371826:       07ba2a: 0a03                                   |0033: move-result v3
+371827:       07ba2c: 3803 0b00                              |0034: if-eqz v3, 003f // +000b
+371828:       07ba30: 6201 a206                              |0036: sget-object v1, Landroid/content/pm/UserInfo;.CREATOR:Landroid/os/Parcelable$Creator; // field@06a2
+371829:       07ba34: 7220 e40b 6100                         |0038: invoke-interface {v1, v6}, Landroid/os/Parcelable$Creator;.createFromParcel:(Landroid/os/Parcel;)Ljava/lang/Object; // method@0be4
+371830:       07ba3a: 0c01                                   |003b: move-result-object v1
+371831:       07ba3c: 1f01 7901                              |003c: check-cast v1, Landroid/content/pm/UserInfo; // type@0179
+371832:       07ba40: 2802                                   |003e: goto 0040 // +0002
+371833:       07ba42: 0000                                   |003f: nop // spacer
+371834:       07ba44: e920 1f00 1400                         |0040: invoke-virtual-quick {v4, v1}, [001f] // vtable #001f
+371835: [new] 07ba44: 6e20 9205 1400                         |0040: invoke-virtual {v4, v1}, Lamazon/os/IAmazonUserManager$Stub;.setUserSetupComplete:(Landroid/content/pm/UserInfo;)Z // method@0592
+371836:       07ba4a: 0a03                                   |0043: move-result v3
+371837:       07ba4c: e910 8f00 0700                         |0044: invoke-virtual-quick {v7}, [008f] // vtable #008f
+371838: [new] 07ba4c: 6e10 cf0b 0700                         |0044: invoke-virtual {v7}, Landroid/os/Parcel;.writeNoException:()V // method@0bcf
+371839:       07ba52: e920 8700 3700                         |0047: invoke-virtual-quick {v7, v3}, [0087] // vtable #0087
+371840: [new] 07ba52: 6e20 c80b 3700                         |0047: invoke-virtual {v7, v3}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+371841:       07ba58: 0f02                                   |004a: return v2
+371842:       07ba5a: e920 2100 0600                         |004b: invoke-virtual-quick {v6, v0}, [0021] // vtable #0021
+371843: [new] 07ba5a: 6e20 a60b 0600                         |004b: invoke-virtual {v6, v0}, Landroid/os/Parcel;.enforceInterface:(Ljava/lang/String;)V // method@0ba6
+371844:       07ba60: e910 4600 0600                         |004e: invoke-virtual-quick {v6}, [0046] // vtable #0046
+371845: [new] 07ba60: 6e10 b20b 0600                         |004e: invoke-virtual {v6}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+371846:       07ba66: 0a03                                   |0051: move-result v3
+371847:       07ba68: 3803 0b00                              |0052: if-eqz v3, 005d // +000b
+371848:       07ba6c: 6201 a206                              |0054: sget-object v1, Landroid/content/pm/UserInfo;.CREATOR:Landroid/os/Parcelable$Creator; // field@06a2
+371849:       07ba70: 7220 e40b 6100                         |0056: invoke-interface {v1, v6}, Landroid/os/Parcelable$Creator;.createFromParcel:(Landroid/os/Parcel;)Ljava/lang/Object; // method@0be4
+371850:       07ba76: 0c01                                   |0059: move-result-object v1
+371851:       07ba78: 1f01 7901                              |005a: check-cast v1, Landroid/content/pm/UserInfo; // type@0179
+371852:       07ba7c: 2802                                   |005c: goto 005e // +0002
+371853:       07ba7e: 0000                                   |005d: nop // spacer
+371854:       07ba80: e920 1b00 1400                         |005e: invoke-virtual-quick {v4, v1}, [001b] // vtable #001b
+371855: [new] 07ba80: 6e20 8d05 1400                         |005e: invoke-virtual {v4, v1}, Lamazon/os/IAmazonUserManager$Stub;.enableKftLauncher:(Landroid/content/pm/UserInfo;)Z // method@058d
+371856:       07ba86: 0a03                                   |0061: move-result v3
+371857:       07ba88: e910 8f00 0700                         |0062: invoke-virtual-quick {v7}, [008f] // vtable #008f
+371858: [new] 07ba88: 6e10 cf0b 0700                         |0062: invoke-virtual {v7}, Landroid/os/Parcel;.writeNoException:()V // method@0bcf
+371859:       07ba8e: e920 8700 3700                         |0065: invoke-virtual-quick {v7, v3}, [0087] // vtable #0087
+371860: [new] 07ba8e: 6e20 c80b 3700                         |0065: invoke-virtual {v7, v3}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+371861:       07ba94: 0f02                                   |0068: return v2
+371862:       07ba96: e920 2100 0600                         |0069: invoke-virtual-quick {v6, v0}, [0021] // vtable #0021
+371863: [new] 07ba96: 6e20 a60b 0600                         |0069: invoke-virtual {v6, v0}, Landroid/os/Parcel;.enforceInterface:(Ljava/lang/String;)V // method@0ba6
+371864:       07ba9c: e910 1d00 0400                         |006c: invoke-virtual-quick {v4}, [001d] // vtable #001d
+371865: [new] 07ba9c: 6e10 8f05 0400                         |006c: invoke-virtual {v4}, Lamazon/os/IAmazonUserManager$Stub;.getUserSortedList:()Ljava/util/List; // method@058f
+371866:       07baa2: 0c01                                   |006f: move-result-object v1
+371867:       07baa4: e910 8f00 0700                         |0070: invoke-virtual-quick {v7}, [008f] // vtable #008f
+371868: [new] 07baa4: 6e10 cf0b 0700                         |0070: invoke-virtual {v7}, Landroid/os/Parcel;.writeNoException:()V // method@0bcf
+371869:       07baaa: e920 8a00 1700                         |0073: invoke-virtual-quick {v7, v1}, [008a] // vtable #008a
+371870: [new] 07baaa: 6e20 cb0b 1700                         |0073: invoke-virtual {v7, v1}, Landroid/os/Parcel;.writeList:(Ljava/util/List;)V // method@0bcb
+371871:       07bab0: 0f02                                   |0076: return v2
+371872:       07bab2: e920 2100 0600                         |0077: invoke-virtual-quick {v6, v0}, [0021] // vtable #0021
+371873: [new] 07bab2: 6e20 a60b 0600                         |0077: invoke-virtual {v6, v0}, Landroid/os/Parcel;.enforceInterface:(Ljava/lang/String;)V // method@0ba6
+371874:       07bab8: e910 0300 0400                         |007a: invoke-virtual-quick {v4}, [0003] // vtable #0003
+371875: [new] 07bab8: 6e10 a466 0400                         |007a: invoke-virtual {v4}, Ljava/lang/Object;.getClass:()Ljava/lang/Class; // method@66a4
+371876:       07babe: 0c01                                   |007d: move-result-object v1
+371877:       07bac0: e910 1300 0100                         |007e: invoke-virtual-quick {v1}, [0013] // vtable #0013
+371878: [new] 07bac0: 6e10 1566 0100                         |007e: invoke-virtual {v1}, Ljava/lang/Class;.getClassLoader:()Ljava/lang/ClassLoader; // method@6615
+371879:       07bac6: 0c01                                   |0081: move-result-object v1
+371880:       07bac8: e920 2a00 1600                         |0082: invoke-virtual-quick {v6, v1}, [002a] // vtable #002a
+371881: [new] 07bac8: 6e20 a90b 1600                         |0082: invoke-virtual {v6, v1}, Landroid/os/Parcel;.readArrayList:(Ljava/lang/ClassLoader;)Ljava/util/ArrayList; // method@0ba9
+371882:       07bace: 0c03                                   |0085: move-result-object v3
+371883:       07bad0: e920 2000 3400                         |0086: invoke-virtual-quick {v4, v3}, [0020] // vtable #0020
+371884: [new] 07bad0: 6e20 9305 3400                         |0086: invoke-virtual {v4, v3}, Lamazon/os/IAmazonUserManager$Stub;.setUserSortedList:(Ljava/util/List;)V // method@0593
+371885:       07bad6: e910 8f00 0700                         |0089: invoke-virtual-quick {v7}, [008f] // vtable #008f
+371886: [new] 07bad6: 6e10 cf0b 0700                         |0089: invoke-virtual {v7}, Landroid/os/Parcel;.writeNoException:()V // method@0bcf
+371887:       07badc: 0f02                                   |008c: return v2
+371888:       07bade: e920 9d00 0700                         |008d: invoke-virtual-quick {v7, v0}, [009d] // vtable #009d
+371889: [new] 07bade: 6e20 d40b 0700                         |008d: invoke-virtual {v7, v0}, Landroid/os/Parcel;.writeString:(Ljava/lang/String;)V // method@0bd4
+371890:       07bae4: 0f02                                   |0090: return v2
+371891:       07bae6: 0000                                   |0091: nop // spacer
+371892:       07bae8: 0001 0600 0100 0000 6e00 0000 6000 ... |0092: packed-switch-data (16 units)
+
+370295:    virtual_method #1285: createChildUser (Ljava/lang/String;)Lamazon/os/AmazonUserInfo;
+370296:     access=0001 (PUBLIC)
+370297:     codeOff=79edc (499420)
+370298:     quickening_size=1d (29)
+370299:       079ee0: 1400 0080 0000                         |0000: const v0, #float 4.59177e-41 // #00008000
+370300:       079ee6: e930 1500 6500                         |0003: invoke-virtual-quick {v5, v6, v0}, [0015] // vtable #0015
+370301: [new] 079ee6: 6e30 0605 6500                         |0003: invoke-virtual {v5, v6, v0}, Lamazon/os/AmazonUserManagerImpl;.createUser:(Ljava/lang/String;I)Landroid/content/pm/UserInfo; // method@0506
+370302:       079eec: 0c00                                   |0006: move-result-object v0
+370303:       079eee: 1201                                   |0007: const/4 v1, #int 0 // #0
+370304:       079ef0: 3900 1900                              |0008: if-nez v0, 0021 // +0019
+370305:       079ef4: 6202 c204                              |000a: sget-object v2, Lamazon/os/AmazonUserManagerImpl;.TAG:Ljava/lang/String; // field@04c2
+370306:       079ef8: 2203 790e                              |000c: new-instance v3, Ljava/lang/StringBuilder; // type@0e79
+370307:       079efc: 7010 2767 0300                         |000e: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@6727
+370308:       079f02: 1a04 4319                              |0011: const-string v4, "Failed to create user: " // string@1943
+370309:       079f06: e920 4b00 4300                         |0013: invoke-virtual-quick {v3, v4}, [004b] // vtable #004b
+370310: [new] 079f06: 6e20 3367 4300                         |0013: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6733
+370311:       079f0c: e920 4b00 6300                         |0016: invoke-virtual-quick {v3, v6}, [004b] // vtable #004b
+370312: [new] 079f0c: 6e20 3367 6300                         |0016: invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@6733
+370313:       079f12: e910 0700 0300                         |0019: invoke-virtual-quick {v3}, [0007] // vtable #0007
+370314: [new] 079f12: 6e10 5267 0300                         |0019: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@6752
+370315:       079f18: 0c03                                   |001c: move-result-object v3
+370316:       079f1a: 7120 230d 3200                         |001d: invoke-static {v2, v3}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d23
+370317:       079f20: 1101                                   |0020: return-object v1
+370318:       079f22: 7010 0a05 0500                         |0021: invoke-direct {v5}, Lamazon/os/AmazonUserManagerImpl;.getAmazonUserManager:()V // method@050a
+370319:       079f28: e552 1800                              |0024: iget-object-quick v2, v5, [obj+0018]
+370320: [new] 079f28: 5452 c404                              |0024: iget-object v2, v5, Lamazon/os/AmazonUserManagerImpl;.mService:Lamazon/os/IAmazonUserManager; // field@04c4
+370321:       079f2c: 3902 0f00                              |0026: if-nez v2, 0035 // +000f
+370322:       079f30: 6202 c204                              |0028: sget-object v2, Lamazon/os/AmazonUserManagerImpl;.TAG:Ljava/lang/String; // field@04c2
+370323:       079f34: 1a03 e008                              |002a: const-string v3, "AmazonUserManagerService is unavailable" // string@08e0
+370324:       079f38: 7120 2c0d 3200                         |002c: invoke-static {v2, v3}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d2c
+370325:       079f3e: e302 2800                              |002f: iget-quick v2, v0, [obj+0028]
+370326: [new] 079f3e: 5202 a506                              |002f: iget v2, v0, Landroid/content/pm/UserInfo;.id:I // field@06a5
+370327:       079f42: e920 5e00 2500                         |0031: invoke-virtual-quick {v5, v2}, [005e] // vtable #005e
+370328: [new] 079f42: 6e20 1505 2500                         |0031: invoke-virtual {v5, v2}, Lamazon/os/AmazonUserManagerImpl;.removeUser:(I)Z // method@0515
+370329:       079f48: 1101                                   |0034: return-object v1
+370330:       079f4a: e552 1800                              |0035: iget-object-quick v2, v5, [obj+0018]
+370331: [new] 079f4a: 5452 c404                              |0035: iget-object v2, v5, Lamazon/os/AmazonUserManagerImpl;.mService:Lamazon/os/IAmazonUserManager; // field@04c4
+370332:       079f4e: 7220 9405 0200                         |0037: invoke-interface {v2, v0}, Lamazon/os/IAmazonUserManager;.enableKftLauncher:(Landroid/content/pm/UserInfo;)Z // method@0594
+370333:       079f54: 0a02                                   |003a: move-result v2
+370334:       079f56: 3802 1200                              |003b: if-eqz v2, 004d // +0012
+370335:       079f5a: e552 1800                              |003d: iget-object-quick v2, v5, [obj+0018]
+370336: [new] 079f5a: 5452 c404                              |003d: iget-object v2, v5, Lamazon/os/AmazonUserManagerImpl;.mService:Lamazon/os/IAmazonUserManager; // field@04c4
+370337:       079f5e: 7220 9805 0200                         |003f: invoke-interface {v2, v0}, Lamazon/os/IAmazonUserManager;.setUserSetupComplete:(Landroid/content/pm/UserInfo;)Z // method@0598
+370338:       079f64: 0a02                                   |0042: move-result v2
+370339:       079f66: 3902 0300                              |0043: if-nez v2, 0046 // +0003
+370340:       079f6a: 2808                                   |0045: goto 004d // +0008
+370341:       079f6c: 0000                                   |0046: nop // spacer
+370342:       079f6e: 2201 a900                              |0047: new-instance v1, Lamazon/os/AmazonUserInfo; // type@00a9
+370343:       079f72: 7020 e604 0100                         |0049: invoke-direct {v1, v0}, Lamazon/os/AmazonUserInfo;.<init>:(Landroid/content/pm/UserInfo;)V // method@04e6
+370344:       079f78: 1101                                   |004c: return-object v1
+370345:       079f7a: e302 2800                              |004d: iget-quick v2, v0, [obj+0028]
+370346: [new] 079f7a: 5202 a506                              |004d: iget v2, v0, Landroid/content/pm/UserInfo;.id:I // field@06a5
+370347:       079f7e: e920 5e00 2500                         |004f: invoke-virtual-quick {v5, v2}, [005e] // vtable #005e
+370348: [new] 079f7e: 6e20 1505 2500                         |004f: invoke-virtual {v5, v2}, Lamazon/os/AmazonUserManagerImpl;.removeUser:(I)Z // method@0515
+370349:       079f84: 1101                                   |0052: return-object v1
+370350:       079f86: 0d02                                   |0053: move-exception v2
+370351:       079f88: 6203 c204                              |0054: sget-object v3, Lamazon/os/AmazonUserManagerImpl;.TAG:Ljava/lang/String; // field@04c2
+370352:       079f8c: 1a04 a211                              |0056: const-string v4, "Could not enable KFT or complete setup" // string@11a2
+370353:       079f90: 7130 240d 4302                         |0058: invoke-static {v3, v4, v2}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I // method@0d24
+370354:       079f96: e303 2800                              |005b: iget-quick v3, v0, [obj+0028]
+370355: [new] 079f96: 5203 a506                              |005b: iget v3, v0, Landroid/content/pm/UserInfo;.id:I // field@06a5
+370356:       079f9a: e920 5e00 3500                         |005d: invoke-virtual-quick {v5, v3}, [005e] // vtable #005e
+370357: [new] 079f9a: 6e20 1505 3500                         |005d: invoke-virtual {v5, v3}, Lamazon/os/AmazonUserManagerImpl;.removeUser:(I)Z // method@0515
+370358:       079fa0: 1101                                   |0060: return-object v1

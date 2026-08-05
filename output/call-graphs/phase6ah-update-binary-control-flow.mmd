@@ -1,0 +1,28 @@
+flowchart TD
+    SCRIPT[official updater-script
+compatibility guards] -->|not executed here| EVAL[update-binary main
+parse_string + Evaluate]
+    MAIN[main] --> REGI[RegisterInstallFunctions
+24 RegisterFunction edges]
+    MAIN --> REGB[RegisterBlockImageFunctions
+registry calls in bounded disassembly]
+    MAIN --> EVAL
+    EVAL -. data-driven function lookup .-> PEF[PackageExtractFileFn]
+    EVAL -. data-driven function lookup .-> BIV[BlockImageVerifyFn]
+    EVAL -. data-driven function lookup .-> BIU[BlockImageUpdateFn]
+    BIV -->|unconditional branch, mode=1| PBI[PerformBlockImageUpdate]
+    BIU -->|unconditional branch, mode=0| PBI
+    PBI -->|direct edge| OPEN[ota_open]
+    PBI -->|direct edge| FSYNC[ota_fsync]
+    LSV[LoadSrcTgtVersion3] -->|two direct edges| VERIFY[VerifyBlocks
+SHA1 + comparison]
+    PBI -. bounded edge not recovered .-> LSV
+    WRITE[WriteToPartition
+symbol body] --> OW[ota_write]
+    OW -->|direct libc edge| SYSWRITE[libc write]
+    OPEN -->|direct libc edge| SYSOPEN[libc open]
+    PEF -->|direct edge| EXTRACT[ExtractEntryToFile / ota I/O]
+    SCRIPT -->|partition targets present| PART[system/vendor/boot/firmware targets
+static request only]
+    classDef unsafe fill:#ffe3e3,stroke:#b00020;
+    class PART,WRITE,SYSWRITE unsafe;

@@ -1,0 +1,14 @@
+script_line,command,target,source,classification,verification_or_gate,device_effect_if_executed,execution_status
+1,build_date_guard,ro.build.date,"(!less_than_int(1746234888, getprop(""ro.build.date.utc""))) || abort(""E3003: Can't install this package (Sat May  3 01:14:48 UTC 2025) over newer build ("" + getprop(""ro.build.date"") + "")."");",version_compatibility_gate,abort if package date is not older than the device build,abort on version mismatch,NOT_EXECUTED
+2,getprop_guard,ro.product.device,trona,device_compatibility_gate,requires ro.product.device == trona,abort on mismatch,NOT_EXECUTED
+13,package_extract_file,/dev/block/platform/bootdevice/by-name/boot,boot.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+15,package_extract_file,/dev/block/platform/bootdevice/by-name/preloader,images/preloader.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+16,package_extract_file,/dev/block/platform/bootdevice/by-name/lk,images/lk.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+17,package_extract_file,/dev/block/platform/bootdevice/by-name/tee1,images/tee.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+18,package_extract_file,/dev/block/platform/bootdevice/by-name/tee2,images/tee.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+19,package_extract_file,/dev/block/platform/bootdevice/by-name/spmfw,images/spmfw.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+20,package_extract_file,/dev/block/platform/bootdevice/by-name/sspm_1,images/sspm.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+21,package_extract_file,/dev/block/platform/bootdevice/by-name/cam_vpu1,images/cam_vpu1.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+22,package_extract_file,/dev/block/platform/bootdevice/by-name/cam_vpu2,images/cam_vpu2.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+23,package_extract_file,/dev/block/platform/bootdevice/by-name/cam_vpu3,images/cam_vpu3.img,boot_or_firmware_partition_write,package entry lookup/extraction,writes an extracted file to a named block device,NOT_EXECUTED
+24,package_extract_file,/cache/recovery/last_blocklist,META-INF/com/amazon/android/target.blocklist,recovery_metadata_write,package entry lookup/extraction,writes OTA metadata for recovery,NOT_EXECUTED

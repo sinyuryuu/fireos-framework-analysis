@@ -1,0 +1,337 @@
+{
+  "conclusions": {
+    "consumer_gate": "Amazon ControlProtectedPackagesCallback is registered under the Fire OS VendorProtectedPackagesCallback fan-in and checks system/privileged status, deny-list membership, and UID 2000.",
+    "home_relation": "This is a package-state protection flow, not a HOME resolver or preferred-activity selector.",
+    "initial_seed": "The first seed is resource-backed JSON (resource ID 0x7e05000a, key packages_deny_list) and is committed only when DenyListKeyPackages is absent.",
+    "membership": "The live shell capture does not expose the set contents; literal com.amazon.firelauncher membership remains unobserved in this artifact scope.",
+    "runtime_refresh": "An Arcus-selected, dynamically registered sync/unmod receiver obtains JSON and replaces the stored set through saveProtectedPackages.",
+    "writer": "The saved disassembly shows no public shell/Binder writer; the direct writer path is internal to DenyListArcusHelper and its Arcus worker."
+  },
+  "details": {
+    "caller_classification": {
+      "constructor_lines": [
+        96103
+      ],
+      "get_definition_lines": [
+        97252
+      ],
+      "note": "The saved disassembly exposes the helper constructor as the external service entry and the receiver worker as the refresh entry; no public shell/Binder writer was found in this scope.",
+      "save_definition_lines": [
+        97454
+      ],
+      "save_direct_call_lines": [
+        97283
+      ]
+    },
+    "line_occurrences": {
+      "DenyListArcusHelper_constructor": [
+        96103
+      ],
+      "DenyListKeyPackages": [
+        96993,
+        97236,
+        97247,
+        97461,
+        97468,
+        97471,
+        97479
+      ],
+      "denylist_property": [
+        97304
+      ],
+      "getDenyList": [
+        97223,
+        97252
+      ],
+      "packages_deny_list": [
+        97262,
+        97348
+      ],
+      "saveProtectedPackages": [
+        97283,
+        97454
+      ]
+    },
+    "resource_ids": {
+      "arcus_default_id": "0x7e060058",
+      "deny_list_json": "0x7e05000a"
+    }
+  },
+  "device_contacted": false,
+  "generated_at_utc": "2026-08-04T23:56:38.988176+00:00",
+  "input_manifest": [
+    {
+      "path": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "sha256": "ecbe62fe8eb8bd575da8b2a73a155875df937073ccc2faa020ca592c0515151c",
+      "size": 48839442
+    },
+    {
+      "path": "decompiled/baksmali/vdexExtractor/services/disassembly.log",
+      "sha256": "373a51150fcb079da026b20e71d44380bc3d86e52be88c63ebd39cfd58a6ba53",
+      "size": 124436016
+    },
+    {
+      "path": "artifacts/amazon-services/amazonpackagemanager_fosinit.xml",
+      "sha256": "eb53e50cf72174eddcde25fd3538e4736d2cd4cb7866bab4e5bc2b70fc514286",
+      "size": 1648
+    },
+    {
+      "path": "artifacts/phase6k/readonly-device-20260805-01/deny_list_ls.stdout.txt",
+      "sha256": "9f7ad63a2514d38b0b488ff69de9136f3de064c2c08ee1bc26d5fcbd89c4e76c",
+      "size": 85
+    },
+    {
+      "path": "artifacts/phase6k/readonly-device-20260805-01/deny_list_stat.stdout.txt",
+      "sha256": "0d1fda69c255b17cb44cb0a6dea15d796027c5ec0e2bd309648b503dd2a71438",
+      "size": 327
+    },
+    {
+      "path": "artifacts/phase6k/readonly-device-20260805-01/deny_list_shared_pref_ls.stderr.txt",
+      "sha256": "5b3f6d3330a214881f41dd9e8f720d7320535f7e964b0032612813cda7771b89",
+      "size": 81
+    }
+  ],
+  "rows": [
+    {
+      "caller_or_trigger": "VendorProtectedPackagesCallback.callShouldProtectPackage",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-002",
+      "input_or_condition": "system/updated-system application AND deny-list membership AND caller UID == 2000",
+      "location": "lines 97034-97049; smali 0x06a61a-0x06a640",
+      "method_or_artifact": "ControlProtectedPackagesCallback.shouldProtectPackage(int,String,Context)",
+      "operation": "isSystemApp -> shouldDisableAmazonApp -> contains(package) -> UID comparison",
+      "output_effect": "returns true to the vendor callback dispatcher; the PackageManager protection path can reject the mutation",
+      "owner": "Amazon system-server callback",
+      "shell_boundary": "system-server code; no shell input to this method was found",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "consumer_gate",
+      "status": "static predicate; live literal membership pending"
+    },
+    {
+      "caller_or_trigger": "PackageManagerService / ActivityManagerService callers in saved services VDEX",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-003",
+      "input_or_condition": "any registered vendor callback may return true",
+      "location": "lines 539225-539239; smali 0x302b34-0x302b52",
+      "method_or_artifact": "VendorProtectedPackagesCallback.callShouldProtectPackage(callbacks,uid,package,context)",
+      "operation": "iterate callback array; invoke shouldProtectPackage; OR each boolean result",
+      "output_effect": "propagates a vendor protection decision to the caller",
+      "owner": "AOSP-shaped Fire OS framework",
+      "shell_boundary": "not a shell command; callback array is framework-owned",
+      "source": "decompiled/baksmali/vdexExtractor/services/disassembly.log",
+      "stage": "callback_dispatch",
+      "status": "framework callback fan-in"
+    },
+    {
+      "caller_or_trigger": "system-server startup callback discovery",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-004",
+      "input_or_condition": "callback implementation is declared with classLoader=SYSTEMSERVER",
+      "location": "XML line 22",
+      "method_or_artifact": "ControlProtectedPackagesCallback registration",
+      "operation": "register Amazon callback as a SYSTEMSERVER VendorProtectedPackagesCallback",
+      "output_effect": "makes the Amazon callback discoverable by VendorProtectedPackagesCallback.findCallbacks",
+      "owner": "Amazon fosinit",
+      "shell_boundary": "not user-writable; no shell registration route",
+      "source": "artifacts/amazon-services/amazonpackagemanager_fosinit.xml",
+      "stage": "callback_registration",
+      "status": "registration provenance"
+    },
+    {
+      "caller_or_trigger": "AmazonPackageManagerService.onBootPhase",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-005",
+      "input_or_condition": "saved code constructs the helper at boot phase 500; this is distinct from the phase-550 OTA broadcast branch",
+      "location": "onBootPhase line 96087; helper construction line 96103",
+      "method_or_artifact": "AmazonPackageManagerService.onBootPhase(int)",
+      "operation": "construct DenyListArcusHelper at the package-manager vendor service boot phase",
+      "output_effect": "creates the persistent deny-list reader/producer and schedules initialization",
+      "owner": "AmazonPackageManagerService",
+      "shell_boundary": "system-server service lifecycle; no shell trigger identified",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "helper_initialization",
+      "status": "startup path"
+    },
+    {
+      "caller_or_trigger": "constructor from AmazonPackageManagerService.onBootPhase",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-006",
+      "input_or_condition": "file basename PackageManagerDenyList; device-protected storage; handler thread initialized",
+      "location": "constructor line 97161; smali 0x06a9ce-0x06aa68",
+      "method_or_artifact": "DenyListArcusHelper(Context)",
+      "operation": "createDeviceProtectedStorageContext -> Environment.getDataSystemDirectory -> SharedPreferences(File,0); post Runnable",
+      "output_effect": "establishes the backing store before seed or Arcus refresh",
+      "owner": "DenyListArcusHelper",
+      "shell_boundary": "live file metadata is visible to shell, content is not",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "persistent_store",
+      "status": "persistent-store shape"
+    },
+    {
+      "caller_or_trigger": "ControlProtectedPackagesCallback.shouldDisableAmazonApp",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-007",
+      "input_or_condition": "returns the stored set, or null/empty fallback when unavailable",
+      "location": "method line 96969; smali 0x06a648-0x06a69a",
+      "method_or_artifact": "getSharedPrefPackages(Context)",
+      "operation": "open device-protected PackageManagerDenyList and getStringSet(DenyListKeyPackages)",
+      "output_effect": "feeds shouldDisableAmazonApp.contains(packageName)",
+      "owner": "ControlProtectedPackagesCallback",
+      "shell_boundary": "shell cannot read the contents of the backing file in the saved capture",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "consumer_read",
+      "status": "read path"
+    },
+    {
+      "caller_or_trigger": "DenyListArcusHelper constructor",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-008",
+      "input_or_condition": "seed is conditional on key absence; existing persisted set is not replaced by this branch",
+      "location": "method line 97231; smali 0x06aa86-0x06aaca",
+      "method_or_artifact": "extractListFromResorces()",
+      "operation": "if SharedPreferences does not contain DenyListKeyPackages, parse processJSON and commit a HashSet",
+      "output_effect": "creates initial deny-list state from a system raw resource",
+      "owner": "DenyListArcusHelper",
+      "shell_boundary": "resource is system-owned; no shell writer identified",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "initial_seed",
+      "status": "resource-backed seed"
+    },
+    {
+      "caller_or_trigger": "extractListFromResorces",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-009",
+      "input_or_condition": "resource ID and JSON key are observed; human-readable resource name/content is not in current readable scope",
+      "location": "method line 97326; smali 0x06a7f0-0x06a95e",
+      "method_or_artifact": "processJSON()",
+      "operation": "Resources.getSystem().openRawResource(0x7e05000a); parse JSON; read packages_deny_list array",
+      "output_effect": "returns package-name strings to extractListFromResorces",
+      "owner": "DenyListArcusHelper",
+      "shell_boundary": "no shell path to replace the system raw resource",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "initial_seed",
+      "status": "resource identity/content unresolved"
+    },
+    {
+      "caller_or_trigger": "constructor-posted DenyListArcusHelper$1.run -> access$000 -> initialize",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-010",
+      "input_or_condition": "property selects the Arcus configuration identifier; empty value returns without registering the refresh receiver",
+      "location": "method line 97300; property line 97304; smali 0x06ab96-0x06abf2",
+      "method_or_artifact": "initialize()",
+      "operation": "read SystemProperties.get(persist.sys.denylist_arcusid, resource-default); register Arcus and syncId when non-empty",
+      "output_effect": "selects the dynamic refresh channel; it does not itself write the package set",
+      "owner": "DenyListArcusHelper",
+      "shell_boundary": "property mutation deliberately not attempted; shell writability not established",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "refresh_selector",
+      "status": "runtime refresh selector"
+    },
+    {
+      "caller_or_trigger": "initialize",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-011",
+      "input_or_condition": "actions are data-derived from the Arcus ID; receiver is registered by a system-server-owned Context",
+      "location": "method line 97427; smali 0x06abf8-0x06ac66",
+      "method_or_artifact": "registerArcusBroadcastReceivers(String)",
+      "operation": "construct amazon.arcus.sync.<id> and amazon.arcus.sync.unmod.<id>; register an in-process BroadcastReceiver",
+      "output_effect": "connects Arcus configuration updates to the refresh worker",
+      "owner": "DenyListArcusHelper",
+      "shell_boundary": "no broadcast was sent; action replay is authorization-sensitive and excluded",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "refresh_registration",
+      "status": "dynamic trigger registration"
+    },
+    {
+      "caller_or_trigger": "registered BroadcastReceiver",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-012",
+      "input_or_condition": "only the two registered action strings reach the worker branch",
+      "location": "method line 97109; smali 0x06a742-0x06a7cc",
+      "method_or_artifact": "onReceive(Context,Intent)",
+      "operation": "compare action to sync/unmod strings; post a worker Runnable when either matches",
+      "output_effect": "schedules ArcusFwkManager.openConfiguration(arcusId)",
+      "owner": "DenyListArcusHelper$2",
+      "shell_boundary": "no exported component or shell broadcast route is established by this method",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "refresh_trigger",
+      "status": "refresh trigger"
+    },
+    {
+      "caller_or_trigger": "BroadcastReceiver.onReceive posted worker",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-013",
+      "input_or_condition": "configuration payload is obtained from Arcus before local parsing",
+      "location": "worker method line 97079; smali 0x06a6f2-0x06a720",
+      "method_or_artifact": "run()",
+      "operation": "ArcusFwkManager.openConfiguration(arcusId) -> synthetic access$300 -> getDenyList(String)",
+      "output_effect": "passes the JSON string to getDenyList",
+      "owner": "DenyListArcusHelper$2$1",
+      "shell_boundary": "Arcus manager is a system service dependency; no shell API was invoked",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "refresh_worker",
+      "status": "refresh worker"
+    },
+    {
+      "caller_or_trigger": "DenyListArcusHelper$2$1.run",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-014",
+      "input_or_condition": "empty/missing list logs no protected apps; JSON/IO exceptions return without a write",
+      "location": "method line 97252; smali 0x06aad0-0x06ab80",
+      "method_or_artifact": "getDenyList(String)",
+      "operation": "parse JSON; read packages_deny_list JSONArray; convert elements to List<String>; call saveProtectedPackages",
+      "output_effect": "invokes saveProtectedPackages(List)",
+      "owner": "DenyListArcusHelper",
+      "shell_boundary": "payload source is Arcus; no shell-controlled payload path observed",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "refresh_parse",
+      "status": "runtime replacement parser"
+    },
+    {
+      "caller_or_trigger": "getDenyList; no public Binder or shell caller found in saved disassembly",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-015",
+      "input_or_condition": "writer replaces the persisted set atomically at the SharedPreferences API level",
+      "location": "method line 97454; call site line 97283; smali 0x06ac6c-0x06acd4",
+      "method_or_artifact": "saveProtectedPackages(List<String>)",
+      "operation": "copy List to HashSet; if key exists remove it; putStringSet(DenyListKeyPackages); commit()",
+      "output_effect": "only observed direct caller is getDenyList; initial seed writes through its own putStringSet/commit branch",
+      "owner": "DenyListArcusHelper",
+      "shell_boundary": "device-protected system-owned SharedPreferences; shell content read denied",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "persistent_writer",
+      "status": "writer closure"
+    },
+    {
+      "caller_or_trigger": "AmazonPackageManagerService.onBootPhase; helper inner classes",
+      "confidence": "Strong evidence",
+      "evidence_id": "6AI-DL-016",
+      "input_or_condition": "external entry found: AmazonPackageManagerService.onBootPhase constructs the helper; subsequent writes are internal callbacks/workers",
+      "location": "constructor call line 96105; all symbol occurrences audited by script",
+      "method_or_artifact": "DenyListArcusHelper caller inventory",
+      "operation": "search direct constructor/getDenyList/saveProtectedPackages references across saved fosservices disassembly",
+      "output_effect": "no separate shell/exported/public writer found in the selected saved disassembly",
+      "owner": "Saved PS7331 artifacts",
+      "shell_boundary": "negative result is limited to the preserved artifact scope; it is not a proof that no other binary can influence Arcus",
+      "source": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "stage": "external_caller_search",
+      "status": "scope-limited caller inventory"
+    },
+    {
+      "caller_or_trigger": "adb shell ls/stat only; no pull/content read",
+      "confidence": "Confirmed",
+      "evidence_id": "6AI-DL-017",
+      "input_or_condition": "system:system mode 0660 and 2645 bytes",
+      "location": "saved read-only capture; see ACL files and hashes",
+      "method_or_artifact": "PackageManagerDenyList live metadata",
+      "operation": "ls/stat metadata succeeds; content and shared-preference XML listing are denied",
+      "output_effect": "does not expose literal package membership to shell",
+      "owner": "PS7331 device shell capture",
+      "shell_boundary": "no mutation, no elevated read, no attempt to bypass SELinux/file ACL",
+      "source": "artifacts/phase6k/readonly-device-20260805-01/deny_list_ls.stdout.txt",
+      "stage": "live_acl",
+      "status": "membership boundary"
+    }
+  ],
+  "unsafe_operations_performed": false
+}
