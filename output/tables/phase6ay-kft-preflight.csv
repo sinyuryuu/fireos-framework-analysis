@@ -1,0 +1,8 @@
+evidence_id,observation,result,confidence,device_mutation,interpretation
+6AY-KFT-RT-001,only User 0 is listed,NO_CHILD_USER,Confirmed,false,KFT child-user lifecycle has no current target
+6AY-KFT-RT-002,amazonusermanagerservice service check,NOT_FOUND_FOR_SHELL,Confirmed,false,private Binder handle unavailable to shell
+6AY-KFT-RT-003,HOME resolver,com.amazon.firelauncher/.Launcher priority=50,Confirmed,false,primary HOME unchanged
+6AY-KFT-RT-004,Fire Launcher User 0 state,installed enabled=0,Confirmed,false,Fire Launcher was not disabled by preflight
+6AY-KFT-RT-005,Tahoe User 0 state,enabled=3 lastDisabledCaller=shell:1000,Confirmed,false,pre-existing state makes direct Tahoe/KFT test non-isolated
+6AY-KFT-RT-006,Device policy,profile owner on User 0 and no device owner,Confirmed,false,creating a test profile would cross DPM/user lifecycle boundary
+6AY-KFT-RT-007,KFT entry condition,requires child UserInfo and trusted lifecycle,Strong evidence,false,no safe direct ADB mutation route established
