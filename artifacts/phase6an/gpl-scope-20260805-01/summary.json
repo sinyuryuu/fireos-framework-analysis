@@ -1,0 +1,28 @@
+{
+  "archive_extracted": false,
+  "archives": [
+    {
+      "archive": "firmware/extracted/PS7331-SOURCE-20250617/fireos.tar",
+      "member_count": 53549,
+      "sha256": "bb7030296545dd45edcfec47d3e742043e7813852844f4b0fbbe8d223899b369"
+    },
+    {
+      "archive": "firmware/extracted/PS7331-SOURCE-20250617/platform.tar",
+      "member_count": 138574,
+      "sha256": "69c62d65a387e22b39678df8054e6cae12b4d95b8c5d9bf21ad53811491a7fdd"
+    }
+  ],
+  "device_contacted": false,
+  "generated_utc": "2026-08-05T01:02:22.215537+00:00",
+  "host_only": true,
+  "key_findings": [
+    "fireos.tar has no system/core, frameworks/base, Amazon namespace, or deny-list member-path hit.",
+    "platform.tar has generic system/core members but no system/core/init, selinux.cpp, frameworks/base, Amazon namespace, or deny-list member-path hit.",
+    "The preserved GPL archive path scope is insufficient to prove the Amazon /init policy loader or PackageManagerDenyList resource contents."
+  ],
+  "limitations": [
+    "A member-path inventory cannot prove that a generic source file has no relevant code unless its content is separately reviewed.",
+    "Absence of a member path is not proof that no proprietary binary or runtime overlay contains equivalent logic."
+  ],
+  "source_executed": false
+}
