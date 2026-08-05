@@ -1,0 +1,30 @@
+Test ID: CHILD-TEST-20260805-01
+Device serial: G001LT0511550CFT
+
+Read-only pre-change capture:
+adb -s G001LT0511550CFT shell pm list users
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME
+adb -s G001LT0511550CFT shell dumpsys activity activities
+adb -s G001LT0511550CFT shell dumpsys activity recents
+adb -s G001LT0511550CFT shell dumpsys package com.amazon.firelauncher
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+
+UI actions:
+1. Start android.settings.SETTINGS.
+2. Open Profiles & Family Library.
+3. Select Add child profile.
+4. When Fire OS requested a lock-screen PIN, enter the researcher-supplied six-digit test value twice and submit.
+5. Re-open Profiles & Family Library and select Add child profile again.
+
+Read-only post-change capture:
+adb -s G001LT0511550CFT shell pm list users
+adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME
+adb -s G001LT0511550CFT shell dumpsys activity activities
+adb -s G001LT0511550CFT shell dumpsys package com.amazon.firelauncher
+adb -s G001LT0511550CFT shell getprop ro.build.fingerprint
+adb -s G001LT0511550CFT shell settings get secure lockscreen.password_type
+adb -s G001LT0511550CFT shell settings get secure lockscreen.disabled
+adb -s G001LT0511550CFT shell dumpsys device_policy
+adb -s G001LT0511550CFT shell dumpsys package com.amazon.tahoe
+adb -s G001LT0511550CFT shell pm path com.amazon.tahoe
+adb -s G001LT0511550CFT logcat -d -v threadtime -t 2000

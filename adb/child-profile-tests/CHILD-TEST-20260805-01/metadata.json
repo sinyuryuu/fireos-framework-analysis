@@ -1,0 +1,27 @@
+{
+  "test_id": "CHILD-TEST-20260805-01",
+  "serial": "G001LT0511550CFT",
+  "purpose": "Validate the native Fire OS Settings child-profile creation path using a disposable test profile request.",
+  "requested_profile": {
+    "name": "TEST",
+    "birthday": "2000-01-01",
+    "avatar": "default",
+    "child_pin": "researcher-supplied six-digit value; not stored in this artifact"
+  },
+  "device_mutations": [
+    "Foreground navigation through Settings UI",
+    "A lock-screen PIN form was opened and submitted because the child-profile UI required it"
+  ],
+  "prohibited_operations_not_run": [
+    "pm create-user",
+    "service call",
+    "private Binder transaction",
+    "Fire Launcher state change",
+    "Fire Launcher data clear",
+    "factory reset",
+    "reboot",
+    "partition or boot image write"
+  ],
+  "result": "FAILED_NO_CHILD_USER",
+  "timestamp_local": "2026-08-05T14:21-14:23+08:00"
+}
