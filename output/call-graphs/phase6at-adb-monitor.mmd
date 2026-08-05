@@ -1,0 +1,8 @@
+flowchart TD
+    A[Physical or adb input KEYCODE_HOME] --> B[Android standard HOME resolution]
+    B --> C[Fire Launcher resumed\npriority 50]
+    C --> D[Host ADB logcat monitor]
+    D --> E[adb shell am start -W -n\nresearch Activity]
+    E --> F[Research Activity foreground\nfinal snapshot]
+    B -. resolver remains unchanged .-> G[com.amazon.firelauncher/.Launcher]
+    D -. requires active ADB .-> H[Temporary only]
