@@ -1,0 +1,24 @@
+flowchart TD
+    A[HOME key or explicit HOME intent] --> B[implicit MAIN + CATEGORY_HOME]
+    B --> C[ActivityStackSupervisor callback pre-hook]
+    C --> D[PackageManager resolver]
+    D --> E[Fire Launcher priority 50]
+    E --> F[Fire Launcher resumed]
+
+    G[shell enabled-state request] --> H[PackageManager protected path]
+    H --> I[Amazon deny-list callback]
+    I --> J[system/privileged + deny-list + UID 2000]
+    J --> K[reject before mutation]
+
+    L[KFT child-user/upgrade lifecycle] --> M[enableKftLauncherComponent]
+    M --> N[disable Fire Launcher and Launcher3]
+
+    O[system-server post-OTA lifecycle] --> P[BootAfterSystemOTAReceiver]
+    P --> Q[enable OobeHomeActivity + setup-state mutation]
+
+    R[ADB monitor] --> S[observe Fire resumed]
+    S --> T[explicit research Activity]
+    T --> U[temporary foreground redirect]
+
+    classDef static fill:#eef,stroke:#446;
+    class A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U static;

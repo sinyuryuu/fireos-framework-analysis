@@ -1,0 +1,9 @@
+surface,primary_evidence,effect,formal_home_replacement,root_or_privilege_transition,device_action,status
+PackageManager deny-list,6BA-PM-001;6BA-PM-002,protects Fire Launcher enabled-state mutation,No,No,static/read-only,Confirmed
+KFT user lifecycle,6BA-KFT-001,disables Fire Launcher and Launcher3 for eligible child user,Not for ordinary user 0,Not established,not invoked,Confirmed static; device test rejected
+HOME callback set,6BA-CB-001,pre-resolution hook with PM-delegating callbacks,No direct Fire override found,No,host-only,Strong evidence bounded scope
+Amazon input/key services,6BA-IN-001,key interception/filtering and input state,No,No,shell lookup denied,Confirmed
+Amazon ActivityManager prewarm,6BA-AM-001,startProcessLocked prewarm candidate,No,No evidence,host-only; Binder not called,Strong evidence candidate only
+OOBE/post-OTA,6BA-OOBE-001,priority-100 setup Home and setup-state mutation,No general third-party setter,Not established,replay rejected,Confirmed static high risk
+Official updater,6BA-OTA-001,system/vendor/boot-related write capability,No,No safe user-level transition,host-only,Confirmed static high impact
+ADB foreground monitor,6BA-ADB-001,explicitly starts research Activity after Fire foreground,No,No,30/30 measured,Confirmed temporary workaround
