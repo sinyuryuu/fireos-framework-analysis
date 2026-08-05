@@ -1,0 +1,338 @@
+  class #663: DenyListArcusHelper ('Lcom/amazon/android/service/pm/DenyListArcusHelper;')
+   access=0001 (PUBLIC)
+   source_file=DenyListArcusHelper.java, class_data_off=2482a5 (2392741)
+   static_fields=8, instance_fields=4, direct_methods=13, virtual_methods=0
+   direct_method #7614: <clinit> ()V
+    access=10008 (STATIC CONSTRUCTOR)
+    codeOff=6a9b4 (436660)
+    quickening_size=3 (3)
+      06a9b8: 1c00 4905                              |0000: const-class v0, Lcom/amazon/android/service/pm/DenyListArcusHelper; // type@0549
+      06a9bc: e910 3900 0000                         |0002: invoke-virtual-quick {v0}, [0039] // vtable #0039
+[new] 06a9bc: 6e10 4579 0000                         |0002: invoke-virtual {v0}, Ljava/lang/Class;.getSimpleName:()Ljava/lang/String; // method@7945
+      06a9c2: 0c00                                   |0005: move-result-object v0
+      06a9c4: 6900 d30f                              |0006: sput-object v0, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06a9c8: 7300                                   |0008: return-void-no-barrier
+[new] 06a9c8: 0e00                                   |0008: return-void
+   direct_method #7615: <init> (Landroid/content/Context;)V
+    access=10000 (CONSTRUCTOR)
+    codeOff=6a9ca (436682)
+    quickening_size=0 (0)
+      06a9ce: 7010 dd79 0400                         |0000: invoke-direct {v4}, Ljava/lang/Object;.<init>:()V // method@79dd
+      06a9d4: 5b45 d50f                              |0003: iput-object v5, v4, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mContext:Landroid/content/Context; // field@0fd5
+      06a9d8: 5440 d50f                              |0005: iget-object v0, v4, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mContext:Landroid/content/Context; // field@0fd5
+      06a9dc: 6e10 3702 0000                         |0007: invoke-virtual {v0}, Landroid/content/Context;.createDeviceProtectedStorageContext:()Landroid/content/Context; // method@0237
+      06a9e2: 0c00                                   |000a: move-result-object v0
+      06a9e4: 2201 2b12                              |000b: new-instance v1, Ljava/io/File; // type@122b
+      06a9e8: 7100 1e0b 0000                         |000d: invoke-static {}, Landroid/os/Environment;.getDataSystemDirectory:()Ljava/io/File; // method@0b1e
+      06a9ee: 0c02                                   |0010: move-result-object v2
+      06a9f0: 6e10 7778 0200                         |0011: invoke-virtual {v2}, Ljava/io/File;.getAbsolutePath:()Ljava/lang/String; // method@7877
+      06a9f6: 0c02                                   |0014: move-result-object v2
+      06a9f8: 1a03 f541                              |0015: const-string v3, "PackageManagerDenyList" // string@41f5
+      06a9fc: 7030 6d78 2103                         |0017: invoke-direct {v1, v2, v3}, Ljava/io/File;.<init>:(Ljava/lang/String;Ljava/lang/String;)V // method@786d
+      06aa02: 1202                                   |001a: const/4 v2, #int 0 // #0
+      06aa04: 6e30 4302 1002                         |001b: invoke-virtual {v0, v1, v2}, Landroid/content/Context;.getSharedPreferences:(Ljava/io/File;I)Landroid/content/SharedPreferences; // method@0243
+      06aa0a: 0c00                                   |001e: move-result-object v0
+      06aa0c: 5b40 d70f                              |001f: iput-object v0, v4, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mPreferences:Landroid/content/SharedPreferences; // field@0fd7
+      06aa10: 7010 c51d 0400                         |0021: invoke-direct {v4}, Lcom/amazon/android/service/pm/DenyListArcusHelper;.extractListFromResorces:()V // method@1dc5
+      06aa16: 5440 d50f                              |0024: iget-object v0, v4, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mContext:Landroid/content/Context; // field@0fd5
+      06aa1a: 7110 8324 0000                         |0026: invoke-static {v0}, Lcom/amazon/arcus/ArcusFwkManager;.getInstance:(Landroid/content/Context;)Ljava/lang/Object; // method@2483
+      06aa20: 0c00                                   |0029: move-result-object v0
+      06aa22: 1f00 1306                              |002a: check-cast v0, Lcom/amazon/arcus/ArcusFwkManager; // type@0613
+      06aa26: 5b40 d40f                              |002c: iput-object v0, v4, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mArcusFwkManager:Lcom/amazon/arcus/ArcusFwkManager; // field@0fd4
+      06aa2a: 2200 1002                              |002e: new-instance v0, Landroid/os/HandlerThread; // type@0210
+      06aa2e: 6201 d30f                              |0030: sget-object v1, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06aa32: 7020 3c0b 1000                         |0032: invoke-direct {v0, v1}, Landroid/os/HandlerThread;.<init>:(Ljava/lang/String;)V // method@0b3c
+      06aa38: 6e10 400b 0000                         |0035: invoke-virtual {v0}, Landroid/os/HandlerThread;.start:()V // method@0b40
+      06aa3e: 2201 0f02                              |0038: new-instance v1, Landroid/os/Handler; // type@020f
+      06aa42: 6e10 3e0b 0000                         |003a: invoke-virtual {v0}, Landroid/os/HandlerThread;.getLooper:()Landroid/os/Looper; // method@0b3e
+      06aa48: 0c02                                   |003d: move-result-object v2
+      06aa4a: 7020 280b 2100                         |003e: invoke-direct {v1, v2}, Landroid/os/Handler;.<init>:(Landroid/os/Looper;)V // method@0b28
+      06aa50: 5b41 d60f                              |0041: iput-object v1, v4, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mHandler:Landroid/os/Handler; // field@0fd6
+      06aa54: 5441 d60f                              |0043: iget-object v1, v4, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mHandler:Landroid/os/Handler; // field@0fd6
+      06aa58: 2202 4605                              |0045: new-instance v2, Lcom/amazon/android/service/pm/DenyListArcusHelper$1; // type@0546
+      06aa5c: 7020 b81d 4200                         |0047: invoke-direct {v2, v4}, Lcom/amazon/android/service/pm/DenyListArcusHelper$1;.<init>:(Lcom/amazon/android/service/pm/DenyListArcusHelper;)V // method@1db8
+      06aa62: 6e20 310b 2100                         |004a: invoke-virtual {v1, v2}, Landroid/os/Handler;.post:(Ljava/lang/Runnable;)Z // method@0b31
+      06aa68: 0e00                                   |004d: return-void
+   direct_method #7616: access$000 (Lcom/amazon/android/service/pm/DenyListArcusHelper;)V
+    access=1008 (STATIC SYNTHETIC)
+    codeOff=6aa6a (436842)
+    quickening_size=0 (0)
+      06aa6e: 7010 c71d 0000                         |0000: invoke-direct {v0}, Lcom/amazon/android/service/pm/DenyListArcusHelper;.initialize:()V // method@1dc7
+      06aa74: 0e00                                   |0003: return-void
+   direct_method #7617: access$100 ()Ljava/lang/String;
+    access=1008 (STATIC SYNTHETIC)
+    codeOff=6a7e2 (436194)
+    quickening_size=0 (0)
+      06a7e6: 6200 d30f                              |0000: sget-object v0, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06a7ea: 1100                                   |0002: return-object v0
+   direct_method #7618: access$200 (Lcom/amazon/android/service/pm/DenyListArcusHelper;)Lcom/amazon/arcus/ArcusFwkManager;
+    access=1008 (STATIC SYNTHETIC)
+    codeOff=6a7d8 (436184)
+    quickening_size=0 (0)
+      06a7dc: 5410 d40f                              |0000: iget-object v0, v1, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mArcusFwkManager:Lcom/amazon/arcus/ArcusFwkManager; // field@0fd4
+      06a7e0: 1100                                   |0002: return-object v0
+   direct_method #7619: access$300 (Lcom/amazon/android/service/pm/DenyListArcusHelper;Ljava/lang/String;)V
+    access=1008 (STATIC SYNTHETIC)
+    codeOff=6aa76 (436854)
+    quickening_size=0 (0)
+      06aa7a: 7020 c61d 1000                         |0000: invoke-direct {v0, v1}, Lcom/amazon/android/service/pm/DenyListArcusHelper;.getDenyList:(Ljava/lang/String;)V // method@1dc6
+      06aa80: 0e00                                   |0003: return-void
+   direct_method #7620: access$400 (Lcom/amazon/android/service/pm/DenyListArcusHelper;)Landroid/os/Handler;
+    access=1008 (STATIC SYNTHETIC)
+    codeOff=6a7ce (436174)
+    quickening_size=0 (0)
+      06a7d2: 5410 d60f                              |0000: iget-object v0, v1, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mHandler:Landroid/os/Handler; // field@0fd6
+      06a7d6: 1100                                   |0002: return-object v0
+   direct_method #7621: extractListFromResorces ()V
+    access=0002 (PRIVATE)
+    codeOff=6aa82 (436866)
+    quickening_size=0 (0)
+      06aa86: 5430 d70f                              |0000: iget-object v0, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mPreferences:Landroid/content/SharedPreferences; // field@0fd7
+      06aa8a: 1a01 3713                              |0002: const-string v1, "DenyListKeyPackages" // string@1337
+      06aa8e: 7220 9d02 1000                         |0004: invoke-interface {v0, v1}, Landroid/content/SharedPreferences;.contains:(Ljava/lang/String;)Z // method@029d
+      06aa94: 0a00                                   |0007: move-result v0
+      06aa96: 3900 1a00                              |0008: if-nez v0, 0022 // +001a
+      06aa9a: 2200 f612                              |000a: new-instance v0, Ljava/util/HashSet; // type@12f6
+      06aa9e: 7010 c81d 0300                         |000c: invoke-direct {v3}, Lcom/amazon/android/service/pm/DenyListArcusHelper;.processJSON:()Ljava/util/List; // method@1dc8
+      06aaa4: 0c01                                   |000f: move-result-object v1
+      06aaa6: 7020 7b7c 1000                         |0010: invoke-direct {v0, v1}, Ljava/util/HashSet;.<init>:(Ljava/util/Collection;)V // method@7c7b
+      06aaac: 5431 d70f                              |0013: iget-object v1, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mPreferences:Landroid/content/SharedPreferences; // field@0fd7
+      06aab0: 7210 9e02 0100                         |0015: invoke-interface {v1}, Landroid/content/SharedPreferences;.edit:()Landroid/content/SharedPreferences$Editor; // method@029e
+      06aab6: 0c01                                   |0018: move-result-object v1
+      06aab8: 1a02 3713                              |0019: const-string v2, "DenyListKeyPackages" // string@1337
+      06aabc: 7230 9b02 2100                         |001b: invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;.putStringSet:(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor; // method@029b
+      06aac2: 0c01                                   |001e: move-result-object v1
+      06aac4: 7210 9602 0100                         |001f: invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;.commit:()Z // method@0296
+      06aaca: 0e00                                   |0022: return-void
+   direct_method #7622: getDenyList (Ljava/lang/String;)V
+    access=0002 (PRIVATE)
+    codeOff=6aacc (436940)
+    quickening_size=0 (0)
+      06aad0: 7110 d10c 0600                         |0000: invoke-static {v6}, Landroid/text/TextUtils;.isEmpty:(Ljava/lang/CharSequence;)Z // method@0cd1
+      06aad6: 0a00                                   |0003: move-result v0
+      06aad8: 3800 0300                              |0004: if-eqz v0, 0007 // +0003
+      06aadc: 0e00                                   |0006: return-void
+      06aade: 2200 9713                              |0007: new-instance v0, Lorg/json/JSONObject; // type@1397
+      06aae2: 7020 f17e 6000                         |0009: invoke-direct {v0, v6}, Lorg/json/JSONObject;.<init>:(Ljava/lang/String;)V // method@7ef1
+      06aae8: 1a01 f388                              |000c: const-string v1, "packages_deny_list" // string@88f3
+      06aaec: 6e20 f77e 1000                         |000e: invoke-virtual {v0, v1}, Lorg/json/JSONObject;.getJSONArray:(Ljava/lang/String;)Lorg/json/JSONArray; // method@7ef7
+      06aaf2: 0c01                                   |0011: move-result-object v1
+      06aaf4: 3801 2700                              |0012: if-eqz v1, 0039 // +0027
+      06aaf8: 6e10 eb7e 0100                         |0014: invoke-virtual {v1}, Lorg/json/JSONArray;.length:()I // method@7eeb
+      06aafe: 0a02                                   |0017: move-result v2
+      06ab00: 3c02 0300                              |0018: if-gtz v2, 001b // +0003
+      06ab04: 281f                                   |001a: goto 0039 // +001f
+      06ab06: 2202 e712                              |001b: new-instance v2, Ljava/util/ArrayList; // type@12e7
+      06ab0a: 7010 ba7b 0200                         |001d: invoke-direct {v2}, Ljava/util/ArrayList;.<init>:()V // method@7bba
+      06ab10: 1203                                   |0020: const/4 v3, #int 0 // #0
+      06ab12: 6e10 eb7e 0100                         |0021: invoke-virtual {v1}, Lorg/json/JSONArray;.length:()I // method@7eeb
+      06ab18: 0a04                                   |0024: move-result v4
+      06ab1a: 3543 1000                              |0025: if-ge v3, v4, 0035 // +0010
+      06ab1e: 6e20 e67e 3100                         |0027: invoke-virtual {v1, v3}, Lorg/json/JSONArray;.get:(I)Ljava/lang/Object; // method@7ee6
+      06ab24: 0c04                                   |002a: move-result-object v4
+      06ab26: 6e10 e579 0400                         |002b: invoke-virtual {v4}, Ljava/lang/Object;.toString:()Ljava/lang/String; // method@79e5
+      06ab2c: 0c04                                   |002e: move-result-object v4
+      06ab2e: 7220 a17c 4200                         |002f: invoke-interface {v2, v4}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@7ca1
+      06ab34: d803 0301                              |0032: add-int/lit8 v3, v3, #int 1 // #01
+      06ab38: 28ed                                   |0034: goto 0021 // -0013
+      06ab3a: 7020 ca1d 2500                         |0035: invoke-direct {v5, v2}, Lcom/amazon/android/service/pm/DenyListArcusHelper;.saveProtectedPackages:(Ljava/util/List;)V // method@1dca
+      06ab40: 2808                                   |0038: goto 0040 // +0008
+      06ab42: 6202 d30f                              |0039: sget-object v2, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06ab46: 1a03 603f                              |003b: const-string v3, "No protected apps for this device" // string@3f60
+      06ab4a: 7120 050d 3200                         |003d: invoke-static {v2, v3}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d05
+      06ab50: 2818                                   |0040: goto 0058 // +0018
+      06ab52: 0d00                                   |0041: move-exception v0
+      06ab54: 6201 d30f                              |0042: sget-object v1, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06ab58: 2202 8112                              |0044: new-instance v2, Ljava/lang/StringBuilder; // type@1281
+      06ab5c: 7010 4a7a 0200                         |0046: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      06ab62: 1a03 0411                              |0049: const-string v3, "Could not open JSON file" // string@1104
+      06ab66: 6e20 557a 3200                         |004b: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06ab6c: 6e20 547a 0200                         |004e: invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      06ab72: 6e10 5e7a 0200                         |0051: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      06ab78: 0c02                                   |0054: move-result-object v2
+      06ab7a: 7120 050d 2100                         |0055: invoke-static {v1, v2}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d05
+      06ab80: 0e00                                   |0058: return-void
+   direct_method #7623: initialize ()V
+    access=0002 (PRIVATE)
+    codeOff=6ab92 (437138)
+    quickening_size=0 (0)
+      06ab96: 1a00 2d8a                              |0000: const-string v0, "persist.sys.denylist_arcusid" // string@8a2d
+      06ab9a: 5431 d50f                              |0002: iget-object v1, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mContext:Landroid/content/Context; // field@0fd5
+      06ab9e: 6e10 4202 0100                         |0004: invoke-virtual {v1}, Landroid/content/Context;.getResources:()Landroid/content/res/Resources; // method@0242
+      06aba4: 0c01                                   |0007: move-result-object v1
+      06aba6: 1402 5800 067e                         |0008: const v2, #float 4.45296e+37 // #7e060058
+      06abac: 6e20 f002 2100                         |000b: invoke-virtual {v1, v2}, Landroid/content/res/Resources;.getString:(I)Ljava/lang/String; // method@02f0
+      06abb2: 0c01                                   |000e: move-result-object v1
+      06abb4: 7120 420c 1000                         |000f: invoke-static {v0, v1}, Landroid/os/SystemProperties;.get:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@0c42
+      06abba: 0c00                                   |0012: move-result-object v0
+      06abbc: 7110 d10c 0000                         |0013: invoke-static {v0}, Landroid/text/TextUtils;.isEmpty:(Ljava/lang/CharSequence;)Z // method@0cd1
+      06abc2: 0a01                                   |0016: move-result v1
+      06abc4: 3801 0a00                              |0017: if-eqz v1, 0021 // +000a
+      06abc8: 6201 d30f                              |0019: sget-object v1, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06abcc: 1a02 3513                              |001b: const-string v2, "Deny List Arus Id is null" // string@1335
+      06abd0: 7120 050d 2100                         |001d: invoke-static {v1, v2}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d05
+      06abd6: 0e00                                   |0020: return-void
+      06abd8: 5431 d40f                              |0021: iget-object v1, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mArcusFwkManager:Lcom/amazon/arcus/ArcusFwkManager; // field@0fd4
+      06abdc: 6e20 8524 0100                         |0023: invoke-virtual {v1, v0}, Lcom/amazon/arcus/ArcusFwkManager;.register:(Ljava/lang/String;)V // method@2485
+      06abe2: 7020 c91d 0300                         |0026: invoke-direct {v3, v0}, Lcom/amazon/android/service/pm/DenyListArcusHelper;.registerArcusBroadcastReceivers:(Ljava/lang/String;)V // method@1dc9
+      06abe8: 5431 d40f                              |0029: iget-object v1, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mArcusFwkManager:Lcom/amazon/arcus/ArcusFwkManager; // field@0fd4
+      06abec: 6e20 8624 0100                         |002b: invoke-virtual {v1, v0}, Lcom/amazon/arcus/ArcusFwkManager;.syncId:(Ljava/lang/String;)V // method@2486
+      06abf2: 0e00                                   |002e: return-void
+   direct_method #7624: processJSON ()Ljava/util/List;
+    access=0002 (PRIVATE)
+    codeOff=6a7ec (436204)
+    quickening_size=0 (0)
+      06a7f0: 1200                                   |0000: const/4 v0, #int 0 // #0
+      06a7f2: 7100 f202 0000                         |0001: invoke-static {}, Landroid/content/res/Resources;.getSystem:()Landroid/content/res/Resources; // method@02f2
+      06a7f8: 0c01                                   |0004: move-result-object v1
+      06a7fa: 1402 0a00 057e                         |0005: const v2, #float 4.41969e+37 // #7e05000a
+      06a800: 6e20 f502 2100                         |0008: invoke-virtual {v1, v2}, Landroid/content/res/Resources;.openRawResource:(I)Ljava/io/InputStream; // method@02f5
+      06a806: 0c01                                   |000b: move-result-object v1
+      06a808: 6e10 b578 0100                         |000c: invoke-virtual {v1}, Ljava/io/InputStream;.available:()I // method@78b5
+      06a80e: 0a02                                   |000f: move-result v2
+      06a810: 2322 a413                              |0010: new-array v2, v2, [B // type@13a4
+      06a814: 6e20 ba78 2100                         |0012: invoke-virtual {v1, v2}, Ljava/io/InputStream;.read:([B)I // method@78ba
+      06a81a: 0a03                                   |0015: move-result v3
+      06a81c: 12f4                                   |0016: const/4 v4, #int -1 // #ff
+      06a81e: 3243 0300                              |0017: if-eq v3, v4, 001a // +0003
+      06a822: 28f9                                   |0019: goto 0012 // -0007
+      06a824: 2203 7f12                              |001a: new-instance v3, Ljava/lang/String; // type@127f
+      06a828: 7020 0a7a 2300                         |001c: invoke-direct {v3, v2}, Ljava/lang/String;.<init>:([B)V // method@7a0a
+      06a82e: 2204 9713                              |001f: new-instance v4, Lorg/json/JSONObject; // type@1397
+      06a832: 7020 f17e 3400                         |0021: invoke-direct {v4, v3}, Lorg/json/JSONObject;.<init>:(Ljava/lang/String;)V // method@7ef1
+      06a838: 1a05 f388                              |0024: const-string v5, "packages_deny_list" // string@88f3
+      06a83c: 6e20 f77e 5400                         |0026: invoke-virtual {v4, v5}, Lorg/json/JSONObject;.getJSONArray:(Ljava/lang/String;)Lorg/json/JSONArray; // method@7ef7
+      06a842: 0c05                                   |0029: move-result-object v5
+      06a844: 2206 e712                              |002a: new-instance v6, Ljava/util/ArrayList; // type@12e7
+      06a848: 7010 ba7b 0600                         |002c: invoke-direct {v6}, Ljava/util/ArrayList;.<init>:()V // method@7bba
+      06a84e: 3805 1e00                              |002f: if-eqz v5, 004d // +001e
+      06a852: 6e10 eb7e 0500                         |0031: invoke-virtual {v5}, Lorg/json/JSONArray;.length:()I // method@7eeb
+      06a858: 0a07                                   |0034: move-result v7
+      06a85a: 3c07 0300                              |0035: if-gtz v7, 0038 // +0003
+      06a85e: 2816                                   |0037: goto 004d // +0016
+      06a860: 1207                                   |0038: const/4 v7, #int 0 // #0
+      06a862: 6e10 eb7e 0500                         |0039: invoke-virtual {v5}, Lorg/json/JSONArray;.length:()I // method@7eeb
+      06a868: 0a08                                   |003c: move-result v8
+      06a86a: 3587 1700                              |003d: if-ge v7, v8, 0054 // +0017
+      06a86e: 6e20 e67e 7500                         |003f: invoke-virtual {v5, v7}, Lorg/json/JSONArray;.get:(I)Ljava/lang/Object; // method@7ee6
+      06a874: 0c08                                   |0042: move-result-object v8
+      06a876: 6e10 e579 0800                         |0043: invoke-virtual {v8}, Ljava/lang/Object;.toString:()Ljava/lang/String; // method@79e5
+      06a87c: 0c08                                   |0046: move-result-object v8
+      06a87e: 7220 a17c 8600                         |0047: invoke-interface {v6, v8}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@7ca1
+      06a884: d807 0701                              |004a: add-int/lit8 v7, v7, #int 1 // #01
+      06a888: 28ed                                   |004c: goto 0039 // -0013
+      06a88a: 6207 d30f                              |004d: sget-object v7, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06a88e: 1a08 603f                              |004f: const-string v8, "No protected apps for this device" // string@3f60
+      06a892: 7120 050d 8700                         |0051: invoke-static {v7, v8}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d05
+      06a898: 0000                                   |0054: nop // spacer
+[new] 06a898: 0000                                   |0054: nop // spacer
+      06a89a: 3801 0500                              |0055: if-eqz v1, 005a // +0005
+      06a89e: 6e10 b678 0100                         |0057: invoke-virtual {v1}, Ljava/io/InputStream;.close:()V // method@78b6
+      06a8a4: 1106                                   |005a: return-object v6
+      06a8a6: 0d02                                   |005b: move-exception v2
+      06a8a8: 0703                                   |005c: move-object v3, v0
+      06a8aa: 2807                                   |005d: goto 0064 // +0007
+      06a8ac: 0d02                                   |005e: move-exception v2
+      06a8ae: 2702                                   |005f: throw v2
+      06a8b0: 0d03                                   |0060: move-exception v3
+      06a8b2: 0739                                   |0061: move-object v9, v3
+      06a8b4: 0723                                   |0062: move-object v3, v2
+      06a8b6: 0792                                   |0063: move-object v2, v9
+      06a8b8: 3801 1000                              |0064: if-eqz v1, 0074 // +0010
+      06a8bc: 3803 0b00                              |0066: if-eqz v3, 0071 // +000b
+      06a8c0: 6e10 b678 0100                         |0068: invoke-virtual {v1}, Ljava/io/InputStream;.close:()V // method@78b6
+      06a8c6: 2809                                   |006b: goto 0074 // +0009
+      06a8c8: 0d04                                   |006c: move-exception v4
+      06a8ca: 6e20 867a 4300                         |006d: invoke-virtual {v3, v4}, Ljava/lang/Throwable;.addSuppressed:(Ljava/lang/Throwable;)V // method@7a86
+      06a8d0: 2804                                   |0070: goto 0074 // +0004
+      06a8d2: 6e10 b678 0100                         |0071: invoke-virtual {v1}, Ljava/io/InputStream;.close:()V // method@78b6
+      06a8d8: 2702                                   |0074: throw v2
+      06a8da: 0d01                                   |0075: move-exception v1
+      06a8dc: 6202 d30f                              |0076: sget-object v2, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06a8e0: 6e10 7479 0100                         |0078: invoke-virtual {v1}, Ljava/lang/Exception;.getMessage:()Ljava/lang/String; // method@7974
+      06a8e6: 0c03                                   |007b: move-result-object v3
+      06a8e8: 7130 060d 3201                         |007c: invoke-static {v2, v3, v1}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I // method@0d06
+      06a8ee: 1100                                   |007f: return-object v0
+      06a8f0: 0d01                                   |0080: move-exception v1
+      06a8f2: 6202 d30f                              |0081: sget-object v2, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06a8f6: 2203 8112                              |0083: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+      06a8fa: 7010 4a7a 0300                         |0085: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      06a900: 1a04 9616                              |0088: const-string v4, "Exception with JSON: " // string@1696
+      06a904: 6e20 557a 4300                         |008a: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06a90a: 6e10 ed7e 0100                         |008d: invoke-virtual {v1}, Lorg/json/JSONException;.getMessage:()Ljava/lang/String; // method@7eed
+      06a910: 0c04                                   |0090: move-result-object v4
+      06a912: 6e20 557a 4300                         |0091: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06a918: 6e10 5e7a 0300                         |0094: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      06a91e: 0c03                                   |0097: move-result-object v3
+      06a920: 7130 060d 3201                         |0098: invoke-static {v2, v3, v1}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I // method@0d06
+      06a926: 1100                                   |009b: return-object v0
+      06a928: 0d01                                   |009c: move-exception v1
+      06a92a: 6202 d30f                              |009d: sget-object v2, Lcom/amazon/android/service/pm/DenyListArcusHelper;.TAG:Ljava/lang/String; // field@0fd3
+      06a92e: 2203 8112                              |009f: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+      06a932: 7010 4a7a 0300                         |00a1: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      06a938: 1a04 9516                              |00a4: const-string v4, "Exception with IO: " // string@1695
+      06a93c: 6e20 557a 4300                         |00a6: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06a942: 6e10 b078 0100                         |00a9: invoke-virtual {v1}, Ljava/io/IOException;.getMessage:()Ljava/lang/String; // method@78b0
+      06a948: 0c04                                   |00ac: move-result-object v4
+      06a94a: 6e20 557a 4300                         |00ad: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06a950: 6e10 5e7a 0300                         |00b0: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      06a956: 0c03                                   |00b3: move-result-object v3
+      06a958: 7130 060d 3201                         |00b4: invoke-static {v2, v3, v1}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I // method@0d06
+      06a95e: 1100                                   |00b7: return-object v0
+   direct_method #7625: registerArcusBroadcastReceivers (Ljava/lang/String;)V
+    access=0002 (PRIVATE)
+    codeOff=6abf4 (437236)
+    quickening_size=0 (0)
+      06abf8: 2200 8112                              |0000: new-instance v0, Ljava/lang/StringBuilder; // type@1281
+      06abfc: 7010 4a7a 0000                         |0002: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      06ac02: 1a01 7d55                              |0005: const-string v1, "amazon.arcus.sync." // string@557d
+      06ac06: 6e20 557a 1000                         |0007: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06ac0c: 6e20 557a 6000                         |000a: invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06ac12: 6e10 5e7a 0000                         |000d: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      06ac18: 0c00                                   |0010: move-result-object v0
+      06ac1a: 2201 8112                              |0011: new-instance v1, Ljava/lang/StringBuilder; // type@1281
+      06ac1e: 7010 4a7a 0100                         |0013: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      06ac24: 1a02 8755                              |0016: const-string v2, "amazon.arcus.sync.unmod." // string@5587
+      06ac28: 6e20 557a 2100                         |0018: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06ac2e: 6e20 557a 6100                         |001b: invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      06ac34: 6e10 5e7a 0100                         |001e: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      06ac3a: 0c01                                   |0021: move-result-object v1
+      06ac3c: 2202 4805                              |0022: new-instance v2, Lcom/amazon/android/service/pm/DenyListArcusHelper$2; // type@0548
+      06ac40: 7056 bc1d 5210                         |0024: invoke-direct {v2, v5, v0, v1, v6}, Lcom/amazon/android/service/pm/DenyListArcusHelper$2;.<init>:(Lcom/amazon/android/service/pm/DenyListArcusHelper;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V // method@1dbc
+      06ac46: 2203 9200                              |0027: new-instance v3, Landroid/content/IntentFilter; // type@0092
+      06ac4a: 7010 8902 0300                         |0029: invoke-direct {v3}, Landroid/content/IntentFilter;.<init>:()V // method@0289
+      06ac50: 6e20 8b02 0300                         |002c: invoke-virtual {v3, v0}, Landroid/content/IntentFilter;.addAction:(Ljava/lang/String;)V // method@028b
+      06ac56: 6e20 8b02 1300                         |002f: invoke-virtual {v3, v1}, Landroid/content/IntentFilter;.addAction:(Ljava/lang/String;)V // method@028b
+      06ac5c: 5454 d50f                              |0032: iget-object v4, v5, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mContext:Landroid/content/Context; // field@0fd5
+      06ac60: 6e30 4b02 2403                         |0034: invoke-virtual {v4, v2, v3}, Landroid/content/Context;.registerReceiver:(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent; // method@024b
+      06ac66: 0e00                                   |0037: return-void
+   direct_method #7626: saveProtectedPackages (Ljava/util/List;)V
+    access=0002 (PRIVATE)
+    codeOff=6ac68 (437352)
+    quickening_size=0 (0)
+      06ac6c: 2200 f612                              |0000: new-instance v0, Ljava/util/HashSet; // type@12f6
+      06ac70: 7020 7b7c 4000                         |0002: invoke-direct {v0, v4}, Ljava/util/HashSet;.<init>:(Ljava/util/Collection;)V // method@7c7b
+      06ac76: 5431 d70f                              |0005: iget-object v1, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mPreferences:Landroid/content/SharedPreferences; // field@0fd7
+      06ac7a: 1a02 3713                              |0007: const-string v2, "DenyListKeyPackages" // string@1337
+      06ac7e: 7220 9d02 2100                         |0009: invoke-interface {v1, v2}, Landroid/content/SharedPreferences;.contains:(Ljava/lang/String;)Z // method@029d
+      06ac84: 0a01                                   |000c: move-result v1
+      06ac86: 3801 1800                              |000d: if-eqz v1, 0025 // +0018
+      06ac8a: 5431 d70f                              |000f: iget-object v1, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mPreferences:Landroid/content/SharedPreferences; // field@0fd7
+      06ac8e: 7210 9e02 0100                         |0011: invoke-interface {v1}, Landroid/content/SharedPreferences;.edit:()Landroid/content/SharedPreferences$Editor; // method@029e
+      06ac94: 0c01                                   |0014: move-result-object v1
+      06ac96: 1a02 3713                              |0015: const-string v2, "DenyListKeyPackages" // string@1337
+      06ac9a: 7220 9c02 2100                         |0017: invoke-interface {v1, v2}, Landroid/content/SharedPreferences$Editor;.remove:(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor; // method@029c
+      06aca0: 0c01                                   |001a: move-result-object v1
+      06aca2: 1a02 3713                              |001b: const-string v2, "DenyListKeyPackages" // string@1337
+      06aca6: 7230 9b02 2100                         |001d: invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;.putStringSet:(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor; // method@029b
+      06acac: 0c01                                   |0020: move-result-object v1
+      06acae: 7210 9602 0100                         |0021: invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;.commit:()Z // method@0296
+      06acb4: 2810                                   |0024: goto 0034 // +0010
+      06acb6: 5431 d70f                              |0025: iget-object v1, v3, Lcom/amazon/android/service/pm/DenyListArcusHelper;.mPreferences:Landroid/content/SharedPreferences; // field@0fd7
+      06acba: 7210 9e02 0100                         |0027: invoke-interface {v1}, Landroid/content/SharedPreferences;.edit:()Landroid/content/SharedPreferences$Editor; // method@029e
+      06acc0: 0c01                                   |002a: move-result-object v1
+      06acc2: 1a02 3713                              |002b: const-string v2, "DenyListKeyPackages" // string@1337
+      06acc6: 7230 9b02 2100                         |002d: invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;.putStringSet:(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor; // method@029b
+      06accc: 0c01                                   |0030: move-result-object v1
+      06acce: 7210 9602 0100                         |0031: invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;.commit:()Z // method@0296
+      06acd4: 0e00                                   |0034: return-void

@@ -1,0 +1,12 @@
+flowchart TD
+    A[AmazonPackageManagerService / DenyListArcusHelper.processJSON\nPS7331 services VDEX consumer] --> B[Resources.getSystem().openRawResource\nresource ID 0x7e05000a]
+    B --> C[fireos-res.apk\npackage ID 0x7e / amazon.fireos]
+    C --> D[amazon.fireos:raw/package_manager_deny_list]
+    D --> E[JSON packages_deny_list]
+    E --> F[com.amazon.firelauncher\nexplicit member]
+    F --> G[PackageManagerDenyList seed\nDenyListKeyPackages]
+    G --> H[ControlProtectedPackagesCallback\nprotected-package decision path]
+    H --> I[setComponentEnabledSetting rejection\nbefore enabled-state mutation]
+
+    classDef evidence fill:#eef,stroke:#446;
+    class A,B,C,D,E,F,G,H,I evidence;

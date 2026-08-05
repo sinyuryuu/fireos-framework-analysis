@@ -1,0 +1,10 @@
+flowchart TD
+    A[PS7331 runtime baseline\nexplicit serial + read-only ADB] --> B[PackageManager query]
+    B --> C[HOME resolve\nFire Launcher priority 50]
+    B --> D[HOME candidate set\nthird-party candidates priority 0]
+    B --> E[Fire Launcher package state\n/system/priv-app + privileged]
+    A --> F[ServiceManager listing\nAmazon private names visible]
+    F --> G[No Binder transaction performed\nreachability not implied]
+    A --> H[OTA/OOBE package metadata]
+    H --> I[OobeHomeActivity priority 100\nSETUP_WIZARD lifecycle candidate]
+    I --> J[Not activated\nnot a normal HOME replacement finding]
