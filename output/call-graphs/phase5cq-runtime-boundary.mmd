@@ -1,0 +1,13 @@
+flowchart LR
+  PROBE[Research test probe] --> HOME[KEYCODE_HOME]
+  HOME --> RESOLVE[Implicit HOME start / resolver]
+  RESOLVE --> FIRE[com.amazon.firelauncher/.Launcher]
+  ACCESS[Accessibility/PendingIntent service] -. attempted foreground redirect .-> ALIAS[Test alias]
+  ALIAS -->|observed 0/20| FIRE
+  RESOLVE -->|before and after unchanged| FIRE
+  classDef observed fill:#e7f5e9,stroke:#2b7a3d;
+  classDef negative fill:#fbe4e6,stroke:#a33a46;
+  classDef boundary fill:#fff1d6,stroke:#a66b00;
+  class FIRE,RESOLVE observed;
+  class ALIAS negative;
+  class ACCESS boundary;
