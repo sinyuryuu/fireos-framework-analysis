@@ -1,0 +1,205 @@
+{
+  "commands": {
+    "activity_state": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "dumpsys",
+      "activity",
+      "activities"
+    ],
+    "adb_state": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "get-state"
+    ],
+    "build_version": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "getprop",
+      "ro.build.version.incremental"
+    ],
+    "denylist_children_metadata": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "ls",
+      "-l",
+      "/data/system/PackageManagerDenyList"
+    ],
+    "denylist_metadata": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "ls",
+      "-ld",
+      "/data/system/PackageManagerDenyList"
+    ],
+    "fingerprint": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "getprop",
+      "ro.build.fingerprint"
+    ],
+    "firelauncher_package": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "dumpsys",
+      "package",
+      "com.amazon.firelauncher"
+    ],
+    "home_candidates": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "cmd",
+      "package",
+      "query-activities",
+      "--brief",
+      "--user",
+      "0",
+      "-a",
+      "android.intent.action.MAIN",
+      "-c",
+      "android.intent.category.HOME"
+    ],
+    "home_resolve": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "cmd",
+      "package",
+      "resolve-activity",
+      "--brief",
+      "--user",
+      "0",
+      "-a",
+      "android.intent.action.MAIN",
+      "-c",
+      "android.intent.category.HOME"
+    ],
+    "oobe_active": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "settings",
+      "get",
+      "secure",
+      "isOOBEActive"
+    ],
+    "oobe_setup_complete": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "settings",
+      "get",
+      "secure",
+      "user_setup_complete"
+    ],
+    "service_list": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "service",
+      "list"
+    ],
+    "window_state": [
+      "adb",
+      "-s",
+      "G001LT0511550CFT",
+      "shell",
+      "dumpsys",
+      "window",
+      "windows"
+    ]
+  },
+  "device_mutation": false,
+  "finished_utc": "2026-08-05T00:45:43.125895+00:00",
+  "read_only": true,
+  "results": {
+    "activity_state": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 30865
+    },
+    "adb_state": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 7
+    },
+    "build_version": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 14
+    },
+    "denylist_children_metadata": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 85
+    },
+    "denylist_metadata": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 85
+    },
+    "fingerprint": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 72
+    },
+    "firelauncher_package": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 54952
+    },
+    "home_candidates": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 1017
+    },
+    "home_resolve": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 110
+    },
+    "oobe_active": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 2
+    },
+    "oobe_setup_complete": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 2
+    },
+    "service_list": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 8215
+    },
+    "window_state": {
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "stdout_bytes": 38129
+    }
+  },
+  "serial": "G001LT0511550CFT",
+  "started_utc": "2026-08-05T00:45:42.337886+00:00",
+  "test_id": "PHASE6AL-HOME-20260805-01",
+  "unknown_binder_transaction": false
+}

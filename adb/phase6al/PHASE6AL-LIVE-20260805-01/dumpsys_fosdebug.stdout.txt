@@ -1,0 +1,488 @@
+FIREOS DEBUG SERVICE (dumpsys fosdebug)
+
+Vendor Services:
+   class amazon.fireos.debug.FireOSDebugService
+   class com.amazon.android.crl.CRLSetManagerService
+   class com.amazon.android.display.FireOsDisplayPowerControllerService
+   class com.amazon.android.internal.packagerecency.PackageRecencyFilterConfigService
+   class com.amazon.android.internal.server.input.AmazonInputManagerService
+   class com.amazon.android.mediacodeclogger.AmazonMediaCodecLoggerService
+   class com.amazon.android.modeswitch.service.AlexaModeSwitchManagerService
+   class com.amazon.android.os.MigrationService
+   class com.amazon.android.server.AmazonStorageManagerService
+   class com.amazon.android.server.ShipModeService
+   class com.amazon.android.server.accessibility.AmazonAccessibilityManagerService
+   class com.amazon.android.server.ads.identifier.AdvertisingIdManagerService
+   class com.amazon.android.server.am.AmazonActivityManagerService
+   class com.amazon.android.server.arcusservice.ArcusService
+   class com.amazon.android.server.bulkmoveappstosdcard.BulkMoveAppsToSDCardService
+   class com.amazon.android.server.db.AmazonDropBoxManagerService
+   class com.amazon.android.server.devicepolicy.AmazonDevicePolicyManagerService
+   class com.amazon.android.server.media.AmazonAudioService
+   class com.amazon.android.server.pm.AmazonUserManagerService
+   class com.amazon.android.server.wm.AmazonWindowManagerService
+   class com.amazon.android.service.AmazonProductPolicyService
+   class com.amazon.android.service.AmazonWifiService
+   class com.amazon.android.service.DeviceInfoService
+   class com.amazon.android.service.MarketplaceService
+   class com.amazon.android.service.amazonnetworkservice.AmazonNetworkService
+   class com.amazon.android.service.amazonprofile.AmazonProfileService
+   class com.amazon.android.service.asp.AmazonAspService
+   class com.amazon.android.service.audioeffects.AmazonAudioEffectsService
+   class com.amazon.android.service.devicemodelinfo.DeviceModelInfoService
+   class com.amazon.android.service.hrbll.HighResolutionBatteryLevelLogService
+   class com.amazon.android.service.lockscreen.LockScreenService
+   class com.amazon.android.service.moonlight.AmazonMoonlightService
+   class com.amazon.android.service.mtp.AmazonMtpObserverService
+   class com.amazon.android.service.pm.AmazonPackageManagerService
+   class com.amazon.android.service.smartsuspend.SmartSuspendManagerService
+   class com.amazon.android.service.temperatureobserver.ThermalTemperatureObserverService
+   class com.amazon.android.service.thermal.AmazonThermalService
+   class com.amazon.android.service.thermaleventmonitor.ThermalEventMonitor
+   class com.amazon.android.service.wifidiags.WifiDiagsService
+   class com.amazon.appcompatwhitelist.AppCompatWhitelistService
+   class com.amazon.appverification.AppVerificationService
+   class com.amazon.automatictimezone.TimeZoneService
+   class com.amazon.fireos.cirrus.CirrusService
+   class com.amazon.fireos.perfmonitor.AmazonPerfMonitorService
+   class com.amazon.fireos.runtimepersistent.RuntimePersistentService
+   class com.amazon.fireos.service.timeservice.service.TimeService
+   class com.amazon.gamemode.GameModeService
+   class com.amazon.liquiddetection.LiquidDetectionService
+   class com.amazon.server.UsageStats.AmazonUsageStatsService
+   class com.amazon.server.adep.AbuseDetectionService
+   class com.amazon.server.amazonsmartidle.AmazonSmartIdleService
+   class com.amazon.server.crash.CrashReporterService
+   class com.amazon.server.statusbar.AmazonStatusBarManagerService
+   class com.amazon.server.wirelessmetrics.AmazonWirelessMetricsService
+   class com.amazon.service.MultiWindowExtensionsService$Lifecycle
+   class com.amazon.service.bspdiagservice.BspDiagService
+   class com.amazon.service.speech.AmazonSpeechService
+   class com.amazon.service.tabletbroadcastrelay.TabletBroadcastRelayService
+   class com.amazon.services.keyguard.AmazonKeyguardService
+   class com.amazon.toddlermode.ToddlerModeService
+   class com.android.server.am.ExcessivePowerUsageMonitorAndKillService
+   class com.android.server.power.AmazonPowerManagerService
+   class com.android.server.power.FireOSPowerSupportService
+   class com.fireos.service.eve.EveService
+
+VendorManagers:
+   amazon_keyevent -> class com.amazon.android.server.amazoninputmanager.AmazonKeyEventManager -> class com.amazon.android.server.amazoninputmanager.AmazonKeyEventManager
+   abusedetection -> class com.amazon.adep.AbuseDetectionManager -> class com.amazon.adep.AbuseDetectionManager
+   amazon_download -> interface com.amazon.android.app.IAmazonDownloadManager -> class com.amazon.android.app.AmazonDownloadManager
+   runtimepersistentservice -> class com.amazon.fireos.runtimepersistent.RuntimePersistentManager -> class com.amazon.fireos.runtimepersistent.RuntimePersistentManager
+   amazonthermalservice -> class com.amazon.android.thermal.ThermalManager -> class com.amazon.android.thermal.ThermalManager
+   amazon_speech -> class com.amazon.speech.AmazonSpeechManager -> class com.amazon.speech.AmazonSpeechManager
+   AmazonMtpObserverService -> class com.amazon.android.service.mtp.AmazonMtpObserverManager -> class com.amazon.android.service.mtp.AmazonMtpObserverManager
+   amazonstatusbarmanagerservice -> class amazon.app.AmazonStatusBarManager -> class amazon.app.AmazonStatusBarManager
+   alexa_modeswitch -> class com.amazon.android.modeswitch.AlexaModeSwitchManagerImpl -> class com.amazon.android.modeswitch.AlexaModeSwitchManagerImpl
+   SmartSuspend -> class com.amazon.android.service.smartsuspend.SmartSuspendManager -> class com.amazon.android.service.smartsuspend.SmartSuspendManager
+   amazon_input -> class com.amazon.android.hardware.input.AmazonInputManager -> class com.amazon.android.hardware.input.AmazonInputManager
+   amazonpowermanagerservice -> class com.android.server.power.AmazonPowerManager -> class com.android.server.power.AmazonPowerManager
+   cirrusservice -> class com.amazon.fireos.cirrus.CirrusManager -> class com.amazon.fireos.cirrus.CirrusManager
+   amazonnetworkmanager -> class com.amazon.android.service.networkmanager.AmazonNetworkManager -> class com.amazon.android.service.networkmanager.AmazonNetworkManager
+   liquiddetectionservice -> class com.amazon.liquiddetection.LiquidDetectionManager -> class com.amazon.liquiddetection.LiquidDetectionManager
+   amazon_display -> class com.amazon.android.hardware.display.AmazonDisplayManager -> class com.amazon.android.hardware.display.AmazonDisplayManager
+   appverificationservice -> class com.amazon.appverification.AppVerificationManager -> class com.amazon.appverification.AppVerificationManager
+   audiosignalprocessor -> class com.amazon.asp.AudioSignalProcessor -> class com.amazon.asp.AudioSignalProcessor
+   amazonaudioeffectsservice -> class com.amazon.media.AmazonAudioEffectsManager -> class com.amazon.media.AmazonAudioEffectsManager
+   user -> class android.os.UserManager -> class amazon.os.AmazonUserManagerImpl
+   amazonprofileservice -> class com.amazon.android.amazonprofile.AmazonProfileManager -> class com.amazon.android.amazonprofile.AmazonProfileManager
+   devicemodelinfo -> class com.amazon.android.devicemodelinfo.DeviceModelInfoManager -> class com.amazon.android.devicemodelinfo.DeviceModelInfoManager
+   amazonlockscreen -> class com.amazon.android.lockscreen.LockScreenManager -> class com.amazon.android.lockscreen.LockScreenManager
+   amazonmediacodecloggerservice -> class com.amazon.android.mediacodeclogger.AmazonMediaCodecLogger -> class com.amazon.android.mediacodeclogger.AmazonMediaCodecLogger
+   marketplace -> class com.amazon.android.marketplace.MarketplaceServiceManager -> class com.amazon.android.marketplace.MarketplaceServiceManager
+   content_support -> class com.amazon.android.app.ContentSupportManager -> class com.amazon.android.app.ContentSupportManager
+   activity -> class android.app.ActivityManager -> class amazon.app.AmazonActivityManagerImpl
+   device_policy -> class android.app.admin.DevicePolicyManager -> class amazon.app.admin.AmazonDevicePolicyManagerImpl
+   arcusservice -> class com.amazon.arcus.ArcusFwkManager -> class com.amazon.arcus.ArcusFwkManager
+   amazon_keyguard_service -> class amazon.app.AmazonKeyguardManager -> class amazon.app.AmazonKeyguardManager
+   crashreporterservice -> class com.amazon.android.crash.CrashReporterManager -> class com.amazon.android.crash.CrashReporterManager
+   fireospowersupportservice -> class com.amazon.fireospowersupport.FireOSPowerSupport -> class com.amazon.fireospowersupport.FireOSPowerSupport
+   gamemodeservice -> class com.amazon.gamemode.GameModeManager -> class com.amazon.gamemode.GameModeManager
+   window -> class android.view.WindowManagerImpl -> class amazon.view.AmazonWindowManagerImpl
+   dropbox -> class android.os.DropBoxManager -> class amazon.os.AmazonDropboxManagerImpl
+   audio -> class com.amazon.media.AmazonAudioManager -> class com.amazon.media.AmazonAudioManager
+   wifi -> class android.net.wifi.WifiManager -> class com.amazon.android.service.AmazonWifiManager
+   eve -> class com.fireos.eve.Eve -> class com.fireos.eve.Eve
+   AdvertisingIdManagerService -> class amazon.app.ads.AdvertisingIdManager -> class amazon.app.ads.AdvertisingIdManager
+   amazonusagestatsservice -> class com.amazon.UsageStats.AmazonUsageStatsManager -> class com.amazon.UsageStats.AmazonUsageStatsManager
+
+VendorCallbacks:
+   Vendor Callbacks of class com.android.server.wifi.VendorWifiConnectivityManagerCallback:
+      class com.amazon.android.service.WifiConnectivityManagerCallback
+   Vendor Callbacks of class android.content.pm.VendorPermissionInfoCallback:
+      class amazon.content.pm.AmazonProtectionLevelPermissionInfo
+      class amazon.content.pm.AmazonRestrictedProtectionLevelPermissionInfo
+   Vendor Callbacks of class com.android.server.display.VendorVirtualDisplayAdapterCallback:
+      class com.android.server.display.AmazonDisplayManagerVirtualDisplayCallback
+   Vendor Callbacks of class com.android.server.wm.VendorInputMonitorCallback:
+      class com.android.server.wm.CrashReporterInputMonitorCallback
+      class com.android.server.wm.VendorKSOWallpaperTouchDuplicationCallback
+   Vendor Callbacks of class com.android.server.notification.VendorNotificationManagerServiceCallback:
+      class com.android.server.notification.TabletAlexaNotificationManagerServiceCallback
+      class com.android.server.notification.NotificationManagerServiceCallback
+      class com.android.server.notification.ChildProtectionPolicyCallback
+   Vendor Callbacks of class com.android.server.wifi.VendorSavedNetworkEvaluatorCallback:
+      class com.amazon.android.service.AmazonSavedNetworkEvaluatorCallback
+   Vendor Callbacks of class com.android.server.pm.VendorUserManagerServiceCallback:
+      class com.amazon.android.service.pm.StandbyUserManagerServiceCallback
+   Vendor Callbacks of class com.android.server.devicepolicy.VendorDevicePolicyManagerCallback:
+      class amazon.app.admin.AmazonDevicePolicyManagerCallback
+      class com.amazon.android.service.lockscreen.AmazonLockScreenVendorCallback
+   Vendor Callbacks of class android.media.VendorAudioRecordCallback:
+      class amazon.media.AmazonAudioRecordCallback
+   Vendor Callbacks of class com.android.server.media.VendorMediaSessionCallback:
+      class com.amazon.android.server.media.MediaSessionCallback
+   Vendor Callbacks of class android.hardware.display.VendorBrightnessUtilsCallback:
+      class com.amazon.android.display.BrightnessUtilsCallback
+   Vendor Callbacks of class com.android.server.pm.VendorUserRestrictionsUtilsCallback:
+      class amazon.app.admin.DevicePolicyManagerUserRestrictionsCallback
+   Vendor Callbacks of class com.android.server.VendorAlarmManagerServiceCallback:
+      class com.amazon.android.service.smartsuspend.TimeChangedCallback
+   Vendor Callbacks of class com.android.server.accessibility.VendorKeyEventDispatcherCallback:
+      class com.android.server.accessibility.AmazonA11yAuthorizerCallback
+   Vendor Callbacks of class com.android.server.am.VendorActivityManagerServiceCallbackEOL:
+      class com.android.server.am.CrashReporterActivityManagerCallbackEol
+   Vendor Callbacks of class android.net.dhcp.VendorDhcpClientCallback:
+      class com.amazon.android.net.dhcp.DhcpClientCallback
+   Vendor Callbacks of class com.android.server.input.VendorInputManagerServiceCallback:
+      class com.amazon.android.internal.server.input.kcmoverlay.KCMOverlayInputManagerServiceCallback
+      class com.amazon.android.internal.server.input.monitor.InputFilterMonitorInputManagerServiceCallback
+   Vendor Callbacks of class com.android.server.power.VendorWirelessChargerDetectorCallback:
+      class com.amazon.dockdetector.WirelessChargerDetectorCallback
+   Vendor Callbacks of class com.android.server.am.VendorActivityStackSupervisorCallback:
+      class com.amazon.android.server.am.AppCompatActivityStackSupervisorCallback
+      class com.fireos.eve.EveActivityStackSupervisorCallback
+   Vendor Callbacks of class com.android.server.pm.permission.VendorPermissionManagerCallback:
+      class com.amazon.launcherhijackpreventer.LauncherHijackPreventerPermissionManagerCallback
+      class com.android.server.pm.permission.SerendityPermisionManagerCallback
+      class com.android.server.pm.permission.AmazonPermissionsGranter
+   Vendor Callbacks of class android.media.VendorAudioFormatCallback:
+      class amazon.media.AmazonAudioFormatCallback
+   Vendor Callbacks of class com.android.server.wallpaper.VendorWallpaperManagerServiceCallback:
+      class com.android.server.wallpaper.WallpaperColorsDisabledCallback
+      class com.android.server.wallpaper.WallpaperBackupRestorePolicyVendorCallback
+   Vendor Callbacks of class com.android.server.wm.VendorWindowStateCallback:
+      class com.android.server.wm.AmazonMoonlightWindowStateCallback
+      class com.android.server.wm.MagnifierWindowStateCallback
+   Vendor Callbacks of class android.graphics.PixelFormatCallback:
+      class com.amazon.android.graphics.DirectTexturePixelFormat
+   Vendor Callbacks of class com.android.server.accessibility.VendorMagnificationControllerCallback:
+      class com.android.server.accessibility.MagnificationControllerCallback
+   Vendor Callbacks of class com.android.server.VendorSystemServiceManagerCallback:
+      class com.amazon.android.service.SystemServiceManagerCallback
+      class com.amazon.android.systemtuner.server.SstFwkSsmCallback
+   Vendor Callbacks of class com.android.server.pm.VendorProtectedPackagesCallback:
+      class com.amazon.android.service.pm.ControlProtectedPackagesCallback
+   Vendor Callbacks of class com.android.server.usb.VendorUsbAlsaManagerCallback:
+      class com.amazon.android.server.media.UsbAlsaManagerCallback
+   Vendor Callbacks of class com.android.server.VendorUiModeManagerServiceCallback:
+      class com.amazon.android.modeswitch.service.AlexaUiModeManagerServiceCallback
+   Vendor Callbacks of class com.android.server.notification.VendorNotificationListenersCallback:
+      class com.android.server.notification.RecommendationNotificationFilterCallback
+   Vendor Callbacks of class com.android.providers.settings.VendorSettingsProviderCallback:
+      class com.amazon.android.settings.keypolicymanager.KeyPolicyManagerSettingsProvider
+      class com.amazon.android.settings.accessibilityshortcut.AccessibilityShortcutSettingsProviderCallback
+      class com.amazon.android.settings.app.AmazonAppSettingsProviderCallback
+      class com.amazon.android.settings.toddlermode.ToddlerModeSettingsProviderCallback
+      class com.amazon.android.settings.amazoncaptiveportal.AmazonCaptivePortalSettingsProviderCallback
+      class com.amazon.android.settings.amazondropbox.AmazonDropboxSettingsProviderCallback
+      class com.amazon.settings.perfboost.PerfBoostSettingsProviderCallback
+      class com.amazon.android.settings.advertisingid.AdvertisingIdSettingsProviderCallback
+      class com.amazon.android.settings.devicestoragemonitor.DeviceStorageMonitorSettingsProviderCallback
+      class com.amazon.gamemode.GameModeSettingsProviderCallback
+      class com.amazon.android.settings.smartbattery.SmartBatterySettingsProviderDBHelperCallback
+      class com.amazon.android.internal.settings.sdcard.SDCardSettingsProviderCallback
+      class com.amazon.android.settings.multipleprofile.MultipleProfileSettingsProviderCallback
+      class com.amazon.android.settings.tabletsettings.TabletSettingsProviderCallback
+      class com.amazon.tv.AmazonTvSettingsProviderCallback
+      class com.amazon.android.settings.accessibility.AccessibilitySettingsProviderCallback
+      class com.amazon.android.settings.moonlight.MoonlightSettingsProviderCallback
+      class com.amazon.android.settings.alexa.AlexaSettingsProviderCallback
+      class amazon.media.AudioServiceSettingsProviderCallback
+   Vendor Callbacks of class com.android.server.wm.VendorWindowManagerServiceCallback:
+      class com.android.server.wm.AmazonANRWindowManagerServiceCallback
+      class com.android.server.wm.AmazonUsageStatsWindowManagerCallback
+      class com.android.server.wm.AmazonVendorWindowManagerServiceCallback
+   Vendor Callbacks of class com.android.server.net.VendorNetworkPolicyManagerCallback:
+      class com.amazon.android.service.networkpassport.NetworkPolicyManagerCallback
+   Vendor Callbacks of class com.android.server.connectivity.VendorNetworkMonitorCallback:
+      class com.amazon.android.net.dhcp.NetworkMonitorCallback
+      class com.amazon.server.UsageStats.AmazonNetworkMonitorCallback
+   Vendor Callbacks of class android.view.VendorViewRootImplCallback:
+      class amazon.view.AmazonVendorViewRootImplCallback
+      class android.view.ViewRootImplCallback
+   Vendor Callbacks of class com.android.server.power.batterysaver.VendorBatterySaverControllerCallback:
+      class com.amazon.service.smartbattery.SmartBatteryVendorCallback
+   Vendor Callbacks of class com.android.server.pm.VendorPackageManagerCallback:
+      class com.android.server.pm.PackageWhitelisterCallback
+      class com.android.server.pm.SerendipityPackageManagerCallback
+      class com.android.server.pm.ExternalInstallPackageManagerCallback
+      class com.amazon.android.service.pm.PermissionToUsesPermissionCallback
+      class com.android.server.pm.AppVerificationPackageManagerCallback
+      class com.amazon.os.SharedStorageDirectoryManager
+      class com.amazon.android.service.pm.AmazonPackageManagerCallback
+      class com.amazon.metrics.SplitScreenVendorPackageManagerCallback
+      class com.amazon.launcherhijackpreventer.LauncherHijackPreventerPackageManagerCallback
+      class com.amazon.android.server.devicepolicy.DevicePolicySystemOtaHandlerCallback
+      class com.android.server.pm.ReceiverFilterCallback
+      class com.android.server.pm.CirrusPackageManagerCallback
+      class com.amazon.android.service.pm.CleanUpDalvikCacheCallback
+   Vendor Callbacks of class com.android.server.wm.VendorAccessibilityControllerCallback:
+      class com.android.server.wm.AccessibilityControllerCallback
+   Vendor Callbacks of class com.android.server.VendorInputMethodManagerServiceCallback:
+      class com.amazon.android.internal.server.AmazonInputMethodManagerServiceCallback
+   Vendor Callbacks of class com.android.server.VendorDeviceIdleControllerCallback:
+      class com.amazon.server.amazonsmartidle.AmazonSmartIdleDeviceIdleControllerCallback
+      class com.amazon.android.service.smartsuspend.SmartSuspendDeviceIdleControllerCallback
+   Vendor Callbacks of class android.media.VendorAudioTrackCallback:
+      class amazon.media.AmazonAudioTrackCallback
+   Vendor Callbacks of class com.android.server.pm.VendorBackgroundDexOptServiceCallback:
+      class com.android.server.pm.CirrusBackgroundDexOptServiceCallback
+   Vendor Callbacks of class android.content.pm.VendorPackageParserCallback:
+      class com.amazon.android.internal.os.SkinnyProcessPackageParserCallback
+      class com.amazon.android.internal.PhoenixSDKSupportPackageParser
+      class com.amazon.android.internal.AmazonLibraryPackageParser
+   Vendor Callbacks of class com.android.server.job.VendorJobSchedulerServiceCallback:
+      class com.android.server.job.EspressoShotCallback
+      class com.android.server.job.JobSchedulerSpamBlockerCallback
+   Vendor Callbacks of class com.android.server.usage.VendorUsageStatsServiceCallback:
+      class com.android.server.usage.StandbyUsageStatsServiceCallback
+   Vendor Callbacks of class com.android.server.wifi.util.VendorScanResultUtilCallback:
+      class com.amazon.android.service.ScanResultUtilCallback
+   Vendor Callbacks of class com.android.server.am.VendorProcessRecordCallback:
+      class com.amazon.server.leakrecovery.LeakRecoveryKillCallback
+      class com.fireos.eve.EveProcessRecordCallback
+   Vendor Callbacks of class com.android.internal.os.VendorBatteryStatsImplCallback:
+      class com.fireos.amazonbatterystats.AmazonBatteryStatsImplCallback
+      class com.fireos.amazonbatterystats.AmazonBatteryStatsProcessSnapshotCallback
+      class com.fireos.amazonbatterystats.AmazonBatteryStatsDischargeCallback
+      class com.fireos.amazonbatterystats.AmazonBatteryStatsScreenOffAnalysisCallback
+   Vendor Callbacks of class com.android.server.am.VendorActivityStarterCallback:
+      class com.amazon.android.server.am.AppCompatActivityStarterCallback
+      class com.fireos.eve.EveActivityStarterCallback
+   Vendor Callbacks of class com.android.server.VendorStorageManagerServiceCallback:
+      class com.amazon.storage.mountservice.StorageManagerServiceCallback
+   Vendor Callbacks of class com.android.server.VendorBluetoothManagerServiceCallback:
+      class com.amazon.android.server.AmazonBluetoothManagerServiceCallback
+   Vendor Callbacks of class com.android.settingslib.applications.VendorApplicationsStateCallback:
+      class com.amazon.android.settings.tabletsettings.AmazonApplicationStateCallback
+   Vendor Callbacks of class com.android.server.wifi.scanner.VendorWificondScannerImplCallback:
+      class com.amazon.android.service.WificondScannerImplCallback
+   Vendor Callbacks of class android.net.ip.VendorIpManagerCallback:
+      class com.amazon.android.net.ip.IpManagerCallback
+   Vendor Callbacks of class com.android.server.VendorGestureLauncherServiceCallback:
+      class com.android.server.AccessibilityShortcutCallback
+   Vendor Callbacks of class android.media.VendorAudioAttributesCallback:
+      class amazon.media.AmazonAudioAttributesCallback
+   Vendor Callbacks of class com.android.internal.os.VendorZygoteCallback:
+      class com.amazon.android.internal.os.SkinnyProcessZygoteCallback
+   Vendor Callbacks of class com.android.server.power.VendorNotifierCallback:
+      class com.amazon.android.service.smartsuspend.SmartSuspendNotifierCallback
+      class com.android.server.power.AmazonNotifierCallback
+      class com.amazon.server.leakrecovery.LmkScreenStatusCallback
+   Vendor Callbacks of class com.android.server.power.VendorPowerManagerCallback:
+      class com.amazon.android.service.smartsuspend.SmartSuspendPowerManagerCallback
+      class com.android.server.power.AmazonPowerManagerVendorCallback
+      class com.amazon.android.service.thermaleventmonitor.ThermalEventWakelockCallback
+      class com.amazon.android.service.amazonprofile.AmazonProfileServiceCallback
+   Vendor Callbacks of class android.provider.VendorSettingsCallback:
+      class com.amazon.gamemode.GameModeSettingsCallback
+      class com.amazon.android.settings.tabletsettings.TabletSettingsProvider$TabletSettingsCallback
+      class com.amazon.android.settings.alexa.AlexaSettingsCallback
+      class com.amazon.android.settings.accessibilityshortcut.AccessibilityShortcutSettingsCallback
+      class com.amazon.android.internal.settings.smartsuspend.SmartSuspendSettingsCallback
+      class com.amazon.android.settings.toddlermode.ToddlerModeSettingsCallback
+      class com.amazon.android.settings.accessibility.AccessibilitySettingsCallback
+      class com.amazon.android.settings.amazondropbox.AmazonDropboxSettings$AmazonDropboxSettingsCallback
+      class com.amazon.android.settings.app.AmazonAppSettings$AmazonAppSettingsCallback
+      class com.amazon.tv.Settings$AmazonTVAppSettingsCallback
+      class com.amazon.android.settings.inputmethod.InputMethodSettingsCallback
+   Vendor Callbacks of class com.android.server.wm.VendorAppTransitionCallback:
+      class com.android.server.wm.AmazonVendorAppTransitionCallback
+      class com.android.server.wm.LowLatencyAnimationAppTransitionCallback
+   Vendor Callbacks of class android.media.VendorAudioManagerCallback:
+      class amazon.media.AmazonAudioManagerCallback
+   Vendor Callbacks of class com.android.server.audio.VendorAudioServiceCallback:
+      class com.amazon.android.server.media.AudioServiceCallback
+      class com.amazon.android.service.audioeffects.AmazonAudioEffectsVendorAudioServiceCallback
+      class com.amazon.liquiddetection.LiquidDetectionAudioServiceCallback
+   Vendor Callbacks of class com.android.server.VendorSystemServerCallback:
+      class com.amazon.android.server.InitFireOsSystemConfigCallback
+      class com.amazon.android.systemtuner.server.SstFwkSsCallback
+   Vendor Callbacks of class android.app.VendorNotificationManagerCallback:
+      class com.android.server.notification.NotificationManagerCallback
+   Vendor Callbacks of class com.android.server.display.VendorDisplayPowerControllerCallback:
+      class com.android.server.display.DisplayPowerControllerCallback
+   Vendor Callbacks of class com.android.server.VendorWiredAccessoryManagerCallback:
+      class com.amazon.server.UsageStats.AmazonWiredAccessoryManagerCallback
+   Vendor Callbacks of class com.android.server.pm.permission.VendorDefaultPermissionGrantPolicyCallback:
+      class com.android.server.pm.permission.SerendipityDefaultPermissionGrantPolicyCallback
+   Vendor Callbacks of class com.android.server.am.VendorActivityRecordCallback:
+      class com.amazon.android.server.am.OnConfigurationChanged
+      class com.amazon.server.UsageStats.AmazonActivityRecordCallback
+      class com.amazon.usagestats.PipMetricsVendorCallback
+      class com.amazon.metrics.SplitScreenVendorActivityRecordCallback
+      class com.android.server.am.EveActivityRecordCallback
+   Vendor Callbacks of class com.android.server.wm.VendorDisplayContentCallback:
+      class com.android.server.wm.PerfBoostDisplayContentCallback
+      class com.android.server.wm.MagnifierDisplayContentCallback
+   Vendor Callbacks of class com.android.server.VendorBootReceiverCallback:
+      class com.amazon.service.bspdiagservice.BspDiagServiceBootReceiverCallback
+      class com.amazon.android.server.AmazonBootReceiverCallback
+   Vendor Callbacks of class android.net.dhcp.VendorDhcpPacketCallback:
+      class com.amazon.android.net.dhcp.DhcpPacketCallback
+   Vendor Callbacks of class com.android.server.locksettings.VendorLockSettingsServiceCallback:
+      class com.android.server.locksettings.AmazonLockPatternUtilsCallback
+   Vendor Callbacks of class android.os.VendorServiceManagerNativeCallback:
+      class com.amazon.android.systemtuner.server.SstFwkSmnCallback
+   Vendor Callbacks of class com.android.server.pm.VendorPackageDexOptimizerCallback:
+      class com.fireos.eve.EvePackageDexOptimizerCallback
+   Vendor Callbacks of class com.android.server.am.VendorActivityStackCallback:
+      class com.amazon.launcherhijackpreventer.LauncherHijackPreventerActivityStackCallback
+      class com.android.server.am.EveActivityStackCallback
+      class com.android.server.am.KindleFreeTimeActivityStackCallback
+   Vendor Callbacks of class android.speech.tts.VendorPlaybackSynthesisCallbackCallback:
+      class android.speech.tts.AmazonPlaybackSynthesisCallback$SpeechMarksPlaybackSynthesisVendorCallback
+   Vendor Callbacks of class com.android.server.am.VendorActivityDisplayCallback:
+      class com.amazon.server.UsageStats.AmazonActivityDisplayCallback
+      class com.amazon.metrics.SplitScreenVendorActivityDisplayCallback
+      class com.android.server.am.GameModeActivityDisplayCallback
+   Vendor Callbacks of class com.android.server.VendorDropBoxManagerServiceCallback:
+      class com.amazon.android.server.db.AmazonDropBoxManagerServiceCallback
+      class com.android.server.CrashReporterDropBoxManagerCallback
+   Vendor Callbacks of class android.app.VendorNotificationCallback:
+      class com.android.server.notification.NotificationCallback
+   Vendor Callbacks of class com.android.server.am.VendorActivityManagerServiceCallback:
+      class com.android.server.am.KindleFreeTimeActivityManagerCallback
+      class com.android.server.am.ExcessivePowerUsageMonitorAndKillCallback
+      class com.android.server.am.AppCompatActivityManagerServiceCallback
+      class com.android.server.am.GameModeActivityManagerServiceCallback
+      class com.android.server.am.LowStorageActivityManagerServiceCallback
+      class com.android.server.am.PerfBoostActivityManagerServiceCallback
+      class com.android.server.am.EveActivityManagerServiceCallback
+      class com.amazon.android.service.amazonprofile.AmazonProfileServiceActivityManagerCallback
+      class com.android.server.am.AmazonOomAdjPolicyVendorAMSCallback
+      class com.android.server.am.AmazonCgroupSupportActivityManagerCallback
+      class com.fireos.service.amazonbatterystats.AmazonBatteryStatsActivityManagerCallback
+      class com.android.server.am.AlexaModeSwitchManagerAmsCallback
+      class com.android.server.am.CrashReporterActivityManagerCallback
+      class com.amazon.server.leakrecovery.LeakRecoveryAMSCallback
+      class com.amazon.launcherhijackpreventer.LauncherHijackPreventerActivityManagerServiceCallback
+      class com.amazon.android.internal.packagerecency.PackageRecencyCallback
+      class com.android.server.am.ActivityManagerServiceCallback
+      class com.android.server.am.AmazonActivityManagerAMSCallback
+      class com.android.server.am.RuntimePersistentManagerCallback
+      class com.android.server.am.MultiWindowExtensionsAmsCallback
+      class com.amazon.android.server.arcusservice.ArcusServiceActivityManagerServiceCallback
+      class com.amazon.server.UsageStats.AmazonActivityManagerCallback
+   Vendor Callbacks of class com.android.server.VendorServiceWatcherCallback:
+      class com.android.server.AmazonVendorServiceWatcherCallback
+   Vendor Callbacks of class com.android.server.am.VendorActiveServicesCallback:
+      class com.android.server.am.EveActiveServicesCallback
+      class com.android.server.am.AmazonVendorActiveServicesCallback
+      class com.android.server.am.ProfileVendorActiveServicesCallback
+      class com.android.server.am.GameModeActiveServicesCallback
+      class com.android.server.am.AmazonOomAdjPolicyActiveServicesCallback
+   Vendor Callbacks of class com.android.internal.policy.VendorDecorViewCallback:
+      class com.android.internal.policy.AlexaModeSwitchManagerDecorViewCallback
+   Vendor Callbacks of class com.android.server.wifi.VendorWifiStateMachineCallback:
+      class com.android.server.wifi.AmazonWifiStateMachine
+   Vendor Callbacks of class com.android.server.dreams.VendorDreamControllerCallback:
+      class com.amazon.server.UsageStats.AmazonDreamStateCallback
+      class com.android.server.am.AmazonDreamControllerCallback
+   Vendor Callbacks of class android.os.VendorRecoverySystemCallback:
+      class com.amazon.android.os.ota.FireOSSystemOTACallback
+      class com.amazon.android.os.factoryresetwhitelist.FactoryResetWhitelistCallback
+      class com.amazon.service.bspdiagservice.BspDiagServiceRecoverySystemCallback
+   Vendor Callbacks of class com.android.server.net.VendorNetworkStatsRecorderCallback:
+      class com.android.server.net.EveNetworkStatsRecorderCallback
+   Vendor Callbacks of class com.android.server.usb.VendorUsbDeviceManagerCallback:
+      class com.amazon.android.service.mtp.AmazonUsbDeviceManagerCallback
+   Vendor Callbacks of class android.inputmethodservice.VendorInputMethodServiceCallback:
+      class android.inputmethodservice.PerfBoostInputMethodServiceCallback
+   Vendor Callbacks of class com.android.server.am.VendorNativeCrashListenerCallback:
+      class com.android.server.am.CrashReporterNativeCrashListenerCallback
+   Vendor Callbacks of class com.android.server.VendorConnectivityServiceCallback:
+      class com.amazon.android.server.ConnectivityServiceCallback
+   Vendor Callbacks of class android.speech.tts.VendorSynthesisPlaybackQueueItemCallback:
+      class android.speech.tts.AmazonSynthesisPlaybackQueueItem$SpeechMarksSynthesisPlaybackQueueItemCallback
+   Vendor Callbacks of class android.bluetooth.le.VendorBluetoothLeAdvertiserCallback:
+      class amazon.bluetooth.le.AmazonBluetoothLeAdvertiserCallback
+   Vendor Callbacks of class android.app.VendorActivityThreadCallback:
+      class com.fireos.eve.EveActivityThreadCallback
+      class android.app.CrashReporterActivityThread
+      class com.amazon.fireos.law.ANRWatchDogActivityThreadCallback
+   Vendor Callbacks of class com.android.server.storage.VendorDeviceStorageMonitorServiceCallback:
+      class com.amazon.android.server.storage.DeviceStorageMonitorServiceCallback
+   Vendor Callbacks of class com.android.settingslib.net.VendorUidDetailProviderCallback:
+      class com.amazon.android.settings.tabletsettings.AmazonUidDetailProviderCallback
+   Vendor Callbacks of class com.android.server.VendorDockObserverCallback:
+      class com.amazon.dockdetector.DockObserverCallback
+      class com.android.server.AlexaDockObserverCallback
+   Vendor Callbacks of class com.android.server.display.VendorAutomaticBrightnessControllerCallback:
+      class com.android.server.display.AutomaticBrightnessControllerCallback
+   Vendor Callbacks of class com.android.server.wm.VendorWindowSurfacePlacerCallback:
+      class com.android.server.wm.LowLatencyAnimationWindowSurfacePlacerCallback
+   Vendor Callbacks of class com.android.server.policy.VendorPhoneWindowManagerCallback:
+      class com.amazon.gamemode.GameModePhoneWindowManagerCallback
+      class com.android.server.policy.SplitScreenToggleCallback
+      class com.fireos.eve.EvePhoneWindowManagerCallback
+      class com.android.server.policy.ToddlerModePWMCallback
+      class com.amazon.policy.keypolicymanager.KeyInterceptorCallback
+      class com.android.server.policy.AccessibilityPhoneWindowManagerCallback
+      class com.amazon.windowmetrics.WindowEventListener
+      class com.amazon.android.service.temperatureobserver.TemperatureObserverWindowCallback
+      class com.amazon.android.internal.server.input.KeyEventListenerCallbacksDispatcher
+      class com.android.server.policy.AlexaPhoneWindowManagerCallback
+      class com.android.server.policy.AlexaModeSwitchManagerPhoneWindowManagerCallback
+      class com.amazon.server.UsageStats.AmazonWindowEventsCallback
+      class com.android.server.policy.AmazonWindowManagerPwmCallback
+      class com.amazon.metrics.SplitScreenVendorPhoneWindowManagerCallback
+      class com.amazon.android.service.thermaleventmonitor.ThermalEventMonitorWindowCallback
+   Vendor Callbacks of class android.widget.VendorTextViewCallback:
+      class com.amazon.android.widget.TabletMayDayTextViewCallback
+   Vendor Callbacks of class android.app.VendorActivityCallback:
+      class com.amazon.hyperview.HyperviewCallback
+
+Native VendorCallbacks
+   amz_servers_jni
+      stub_jni_registration
+      register_amazon_fireos_debug_FireOSDebugService
+      register_com_amazon_android_server_media_AmazonAudioService_Native
+      register_com_amazon_android_server_media_SmartVolume
+      register_com_amazon_perfboost_PerfBoost
+      register_android_server_AmazonInputManagerService
+
+Instances:
+   Instances of class com.amazon.android.appcompatsupport.AppCompatSupport:
+      class com.amazon.android.appcompatsupport.AppCompatSupportImpl
+   Instances of class android.os.DropBoxManager:
+      class amazon.os.AmazonDropboxManagerImpl
+   Instances of interface com.android.server.updates.CertPinInstallReceiver$VendorCertPinInstallReceiver:
+      class com.amazon.fireos.server.updates.AmazonCertPinInstallReceiver
+   Instances of interface amazon.app.PerfBoostBase:
+      class com.amazon.perfboost.PerfBoost
+   Instances of interface com.android.server.accessibility.EventStreamTransformation:
+      class com.android.server.accessibility.AmazonTouchExplorer
+   Instances of class com.amazon.android.service.temperatureobserver.TemperatureObserver:
+      class com.amazon.android.service.temperatureobserver.SysfsTemperatureObserver
+   Instances of class android.content.pm.PackageStats:
+      class amazon.content.pm.AmazonPackageStats
+   Instances of class android.bluetooth.BluetoothHidHost:
+      class android.bluetooth.AmazonBluetoothInputDevice
+   Instances of class android.view.DisplayListCanvas:
+      class com.amazon.android.view.DirectTextureCanvas
+   Instances of class android.hardware.display.DisplayManagerGlobal:
+      class com.amazon.android.hardware.display.AmazonDisplayManagerGlobal
+   Instances of class android.os.DropBoxManager$Entry:
+      class amazon.os.AmazonDropboxManagerEntryImpl
+   Instances of interface com.amazon.android.metrics.MetricsFactory:
+      class com.amazon.client.metrics.platform.FrameworkMetricsFactoryAdapter
+   Instances of class com.amazon.android.keypolicymanager.KeyPolicyManager:
+      class com.amazon.policy.keypolicymanager.TabletKeyPolicyManager
+   Instances of class android.speech.tts.SynthesisPlaybackQueueItem:
+      class android.speech.tts.AmazonSynthesisPlaybackQueueItem
+   Instances of class android.content.pm.PackageManager:
+      class amazon.content.pm.AmazonPackageManagerImpl

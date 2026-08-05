@@ -1,0 +1,20 @@
+   direct_method #5023: isUninstalledApp (Landroid/content/pm/ResolveInfo;)Z
+    access=0002 (PRIVATE)
+    codeOff=3799e (227742)
+    quickening_size=0 (0)
+      0379a2: 3804 0500                              |0000: if-eqz v4, 0005 // +0005
+      0379a6: 5440 2501                              |0002: iget-object v0, v4, Landroid/content/pm/ResolveInfo;.activityInfo:Landroid/content/pm/ActivityInfo; // field@0125
+      0379aa: 2802                                   |0004: goto 0006 // +0002
+      0379ac: 1200                                   |0005: const/4 v0, #int 0 // #0
+      0379ae: 3800 1100                              |0006: if-eqz v0, 0017 // +0011
+      0379b2: 5401 0001                              |0008: iget-object v1, v0, Landroid/content/pm/ActivityInfo;.applicationInfo:Landroid/content/pm/ApplicationInfo; // field@0100
+      0379b6: 3801 0d00                              |000a: if-eqz v1, 0017 // +000d
+      0379ba: 5401 0001                              |000c: iget-object v1, v0, Landroid/content/pm/ActivityInfo;.applicationInfo:Landroid/content/pm/ApplicationInfo; // field@0100
+      0379be: 5211 0401                              |000e: iget v1, v1, Landroid/content/pm/ApplicationInfo;.flags:I // field@0104
+      0379c2: 1502 8000                              |0010: const/high16 v2, #int 8388608 // #80
+      0379c6: b521                                   |0012: and-int/2addr v1, v2
+      0379c8: 3901 0400                              |0013: if-nez v1, 0017 // +0004
+      0379cc: 1211                                   |0015: const/4 v1, #int 1 // #1
+      0379ce: 2802                                   |0016: goto 0018 // +0002
+      0379d0: 1201                                   |0017: const/4 v1, #int 0 // #0
+      0379d2: 0f01                                   |0018: return v1

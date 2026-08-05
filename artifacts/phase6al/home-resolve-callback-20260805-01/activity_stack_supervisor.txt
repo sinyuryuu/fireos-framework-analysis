@@ -1,0 +1,78 @@
+   virtual_method #20996: resolveIntent (Landroid/content/Intent;Ljava/lang/String;III)Landroid/content/pm/ResolveInfo;
+    access=0000 ()
+    codeOff=11a138 (1155384)
+    quickening_size=0 (0)
+      11a13c: 0801 1300                              |0000: move-object/from16 v1, v19
+      11a140: 0202 1700                              |0002: move/from16 v2, v23
+      11a144: 5413 2121                              |0004: iget-object v3, v1, Lcom/android/server/am/ActivityStackSupervisor;.mService:Lcom/android/server/am/ActivityManagerService; // field@2121
+      11a148: 1d03                                   |0006: monitor-enter v3
+      11a14a: 1604 4000                              |0007: const-wide/16 v4, #int 64 // #40
+      11a14e: 7100 444c 0000                         |0009: invoke-static {}, Lcom/android/server/am/ActivityManagerService;.boostPriorityForLockedSection:()V // method@4c44
+      11a154: 1b00 cb3a 0100                         |000c: const-string/jumbo v0, "resolveIntent" // string@00013acb
+      11a15a: 7130 9324 5400                         |000f: invoke-static {v4, v5, v0}, Landroid/os/Trace;.traceBegin:(JLjava/lang/String;)V // method@2493
+      11a160: 5410 2c21                              |0012: iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;.mVendorCallbacks:[Lcom/android/server/am/VendorActivityStackSupervisorCallback; // field@212c
+      11a164: 080d 1400                              |0014: move-object/from16 v13, v20
+      11a168: 080e 1500                              |0016: move-object/from16 v14, v21
+      11a16c: 020f 1600                              |0018: move/from16 v15, v22
+      11a170: 7152 b959 d0fe                         |001a: invoke-static {v0, v13, v14, v15, v2}, Lcom/android/server/am/VendorActivityStackSupervisorCallback;.callResolveIntent:([Lcom/android/server/am/VendorActivityStackSupervisorCallback;Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ResolveInfo; // method@59b9
+      11a176: 0c00                                   |001d: move-result-object v0
+      11a178: 0810 0000                              |001e: move-object/from16 v16, v0
+      11a17c: 3810 0a00                              |0020: if-eqz v16, 002a // +000a
+      11a180: 7120 9524 5400                         |0022: invoke-static {v4, v5}, Landroid/os/Trace;.traceEnd:(J)V // method@2495
+      11a186: 1e03                                   |0025: monitor-exit v3
+      11a188: 7100 fc4d 0000                         |0026: invoke-static {}, Lcom/android/server/am/ActivityManagerService;.resetPriorityAfterLockedSection:()V // method@4dfc
+      11a18e: 1110                                   |0029: return-object v16
+      11a190: 1500 0100                              |002a: const/high16 v0, #int 65536 // #1
+      11a194: b620                                   |002c: or-int/2addr v0, v2
+      11a196: d600 0004                              |002d: or-int/lit16 v0, v0, #int 1024 // #0400
+      11a19a: 7401 6106 1400                         |002f: invoke-virtual/range {v20}, Landroid/content/Intent;.isWebIntent:()Z // method@0661
+      11a1a0: 0a06                                   |0032: move-result v6
+      11a1a2: 3906 0a00                              |0033: if-nez v6, 003d // +000a
+      11a1a6: 7401 4d06 1400                         |0035: invoke-virtual/range {v20}, Landroid/content/Intent;.getFlags:()I // method@064d
+      11a1ac: 0a06                                   |0038: move-result v6
+      11a1ae: d566 0008                              |0039: and-int/lit16 v6, v6, #int 2048 // #0800
+      11a1b2: 3806 0500                              |003b: if-eqz v6, 0040 // +0005
+      11a1b6: 1506 8000                              |003d: const/high16 v6, #int 8388608 // #80
+      11a1ba: b660                                   |003f: or-int/2addr v0, v6
+      11a1bc: 0211 0000                              |0040: move/from16 v17, v0
+      11a1c0: 7100 ee1f 0000                         |0042: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@1fee
+      11a1c6: 0b06                                   |0045: move-result-wide v6
+      11a1c8: 046b                                   |0046: move-wide v11, v6
+      11a1ca: 5410 2121                              |0047: iget-object v0, v1, Lcom/android/server/am/ActivityStackSupervisor;.mService:Lcom/android/server/am/ActivityManagerService; // field@2121
+      11a1ce: 6e10 0e4d 0000                         |0049: invoke-virtual {v0}, Lcom/android/server/am/ActivityManagerService;.getPackageManagerInternalLocked:()Landroid/content/pm/PackageManagerInternal; // method@4d0e
+      11a1d4: 0c06                                   |004c: move-result-object v6
+      11a1d6: 1210                                   |004d: const/4 v0, #int 1 // #1
+      11a1d8: 07d7                                   |004e: move-object v7, v13
+      11a1da: 07e8                                   |004f: move-object v8, v14
+      11a1dc: 0209 1100                              |0050: move/from16 v9, v17
+      11a1e0: 01fa                                   |0052: move v10, v15
+      11a1e2: 04b4                                   |0053: move-wide v4, v11
+      11a1e4: 010b                                   |0054: move v11, v0
+      11a1e6: 020c 1800                              |0055: move/from16 v12, v24
+      11a1ea: 7407 9108 0600                         |0057: invoke-virtual/range {v6, v7, v8, v9, v10, v11, v12}, Landroid/content/pm/PackageManagerInternal;.resolveIntent:(Landroid/content/Intent;Ljava/lang/String;IIZI)Landroid/content/pm/ResolveInfo; // method@0891
+      11a1f0: 0c00                                   |005a: move-result-object v0
+      11a1f2: 7120 f51f 5400                         |005b: invoke-static {v4, v5}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@1ff5
+      11a1f8: 1606 4000                              |005e: const-wide/16 v6, #int 64 // #40
+      11a1fc: 7120 9524 7600                         |0060: invoke-static {v6, v7}, Landroid/os/Trace;.traceEnd:(J)V // method@2495
+      11a202: 1e03                                   |0063: monitor-exit v3
+      11a204: 7100 fc4d 0000                         |0064: invoke-static {}, Lcom/android/server/am/ActivityManagerService;.resetPriorityAfterLockedSection:()V // method@4dfc
+      11a20a: 1100                                   |0067: return-object v0
+      11a20c: 0d00                                   |0068: move-exception v0
+      11a20e: 2803                                   |0069: goto 006c // +0003
+      11a210: 0d00                                   |006a: move-exception v0
+      11a212: 04b4                                   |006b: move-wide v4, v11
+      11a214: 7120 f51f 5400                         |006c: invoke-static {v4, v5}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@1ff5
+      11a21a: 2700                                   |006f: throw v0
+      11a21c: 0d00                                   |0070: move-exception v0
+      11a21e: 2808                                   |0071: goto 0079 // +0008
+      11a220: 0d00                                   |0072: move-exception v0
+      11a222: 080d 1400                              |0073: move-object/from16 v13, v20
+      11a226: 080e 1500                              |0075: move-object/from16 v14, v21
+      11a22a: 020f 1600                              |0077: move/from16 v15, v22
+      11a22e: 1604 4000                              |0079: const-wide/16 v4, #int 64 // #40
+      11a232: 7120 9524 5400                         |007b: invoke-static {v4, v5}, Landroid/os/Trace;.traceEnd:(J)V // method@2495
+      11a238: 2700                                   |007e: throw v0
+      11a23a: 0d00                                   |007f: move-exception v0
+      11a23c: 1e03                                   |0080: monitor-exit v3
+      11a23e: 7100 fc4d 0000                         |0081: invoke-static {}, Lcom/android/server/am/ActivityManagerService;.resetPriorityAfterLockedSection:()V // method@4dfc
+      11a244: 2700                                   |0084: throw v0

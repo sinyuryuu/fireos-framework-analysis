@@ -1,0 +1,16 @@
+   direct_method #22969: callResolveIntent ([Lcom/android/server/am/VendorActivityStackSupervisorCallback;Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ResolveInfo;
+    access=0009 (PUBLIC STATIC)
+    codeOff=15aa2a (1419818)
+    quickening_size=0 (0)
+      15aa2e: 2140                                   |0000: array-length v0, v4
+      15aa30: 1201                                   |0001: const/4 v1, #int 0 // #0
+      15aa32: 3501 0e00                              |0002: if-ge v1, v0, 0010 // +000e
+      15aa36: 4602 0401                              |0004: aget-object v2, v4, v1
+      15aa3a: 6e58 bd59 5276                         |0006: invoke-virtual {v2, v5, v6, v7, v8}, Lcom/android/server/am/VendorActivityStackSupervisorCallback;.resolveIntent:(Landroid/content/Intent;Ljava/lang/String;II)Landroid/content/pm/ResolveInfo; // method@59bd
+      15aa40: 0c03                                   |0009: move-result-object v3
+      15aa42: 3803 0300                              |000a: if-eqz v3, 000d // +0003
+      15aa46: 1103                                   |000c: return-object v3
+      15aa48: d801 0101                              |000d: add-int/lit8 v1, v1, #int 1 // #01
+      15aa4c: 28f3                                   |000f: goto 0002 // -000d
+      15aa4e: 1200                                   |0010: const/4 v0, #int 0 // #0
+      15aa50: 1100                                   |0011: return-object v0
