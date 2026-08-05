@@ -1,0 +1,13 @@
+flowchart TD
+  A[SystemServer publishes amazon_input / amazon_keyevent] --> B[ServiceManager / SELinux boundary]
+  B -->|shell find denied in saved AVC| X[No ordinary shell Binder handle]
+  B --> C[Authorized Amazon caller]
+  C --> D[GET_KEYEVENTS + whitelist + foreground + key checks]
+  C --> E[system app OR FILTER_INPUT_EVENTS for setInputFilter]
+  C --> F[ARIA partial-screen callback]
+  F --> G[HOME key 3 can dismiss overlay]
+  D --> H[Input callback registry]
+  E --> I[Secondary input filter]
+  H -. no resolver API in bounded service scope .-> J[HOME resolver remains elsewhere]
+  K[BootAfterSystemOTAReceiver] -. related, static-only .-> L[OOBE state / OobeHomeActivity]
+  L -. not a shell HOME selector .-> J
