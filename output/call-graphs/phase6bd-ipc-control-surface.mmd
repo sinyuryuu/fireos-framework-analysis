@@ -1,0 +1,15 @@
+flowchart TD
+    A[Shell / ordinary app] -->|service check only| B{Amazon private service visible?}
+    B -->|not found in enforcing capture| C[No Binder handle / no transaction]
+    A --> D[AmazonInputManagerService.setInputFilter]
+    D --> E[access$600]
+    E --> F[validateInputFilterAccessPermission]
+    F -->|system or updated-system app| G[allowed]
+    F -->|otherwise| H[enforce FILTER_INPUT_EVENTS]
+    H --> I[signature|amazon permission]
+    J[KFT child-user lifecycle] --> K[enableKftLauncherComponent(UserInfo)]
+    K --> L[enable FreeTime launcher]
+    K --> M[request Fire Launcher state=2]
+    M --> N[High-impact mutation; not invoked]
+    O[dumpsys fosdebug] --> P[DUMP-gated diagnostic inventory]
+    P --> Q[Vendor services/managers/callbacks; no selector write]
