@@ -1,0 +1,8 @@
+flowchart TD
+    A[cmd shortcut clear-default-launcher] --> B[ShortcutService cached launcher = null]
+    B --> C[PackageManager HOME resolver]
+    C --> D[Fire Launcher priority 50]
+    B --> E[Current foreground remains Fire Launcher]
+    F[KEYCODE_HOME] --> C
+    C --> G[ShortcutService repopulates cache]
+    G --> D
