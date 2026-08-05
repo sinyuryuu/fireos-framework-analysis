@@ -1,0 +1,23 @@
+flowchart LR
+    Main["main"] --> Register["RegisterInstallFunctions"]
+    Register --> Extract["PackageExtractFileFn"]
+    Extract --> Find["FindEntry"]
+    Extract --> Open3["ota_open(path, 0x241, 0x180)"]
+    Open3 --> LibcOpen["libc open"]
+    Extract --> Entry["ExtractEntryToFile"]
+    Entry --> ArchiveWriter["archive writer / indirect edges"]
+    Extract --> Fsync["ota_fsync"]
+    Extract --> Close["ota_close"]
+    WritePart["WriteToPartition"] --> Open2["ota_open(path, O_RDWR)"]
+    Open2 --> LibcOpen
+    WritePart --> Write["ota_write"]
+    Write --> LibcWrite["libc write"]
+    WritePart --> Fsync
+    WritePart --> Close
+    Block["PerformBlockImageUpdate"] --> RawOpen["open / __open_2 / ota_open"]
+    Block --> Fsync
+    Cache["MakeFreeSpaceOnCache"] --> ReadlinkChk["__readlink_chk"]
+    ReadlinkChk --> ReadlinkAt["readlinkat(AT_FDCWD)"]
+
+    classDef high fill:#fff0f0,stroke:#a33;
+    class Open3,Open2,LibcOpen,Write,LibcWrite,RawOpen high;

@@ -1,0 +1,33 @@
+flowchart LR
+    A1["AmazonActivityManagerImpl.preWarmApplication"] --> A2["preWarmApplicationForUser wrapper"]
+    A2 --> A3["IAmazonActivityManager Proxy"]
+    A3 --> A4["IAmazonActivityManager.Stub.onTransact"]
+    A4 --> A5["AmazonActivityManagerService.BinderService.preWarmApplicationForUser"]
+    A5 --> A6["checkCallingPermission(APP_PREWARM)"]
+    A6 --> A7["clearCallingIdentity"]
+    A7 --> A8["getApplicationInfo / startProcessLocked"]
+
+    I1["AmazonInputManager.registerKeyEventInterceptor"] --> I2["IAmazonInputManager Proxy"]
+    I2 --> I3["IAmazonInputManager.Stub.onTransact"]
+    I3 --> I4["Input BinderService"]
+    I4 --> I5["GET_KEYEVENTS"]
+    I5 --> I6["calling UID / package whitelist"]
+    I6 --> I7["foreground + key whitelist"]
+
+    W1["AmazonWindowManagerPwmCallback.onSetPipVisibility"] --> W2["IAmazonWindowManager Stub"]
+    W2 --> W3["setPipVisibility"]
+    W3 --> W4["mPipState only"]
+
+    K1["Amazon user-management lifecycle"] --> K2["enableKftLauncher(UserInfo)"]
+    K2 --> K3["tryEnableKftLauncherComponent(UserInfo)"]
+    K3 --> K4["enableKftLauncherComponent(UserInfo)"]
+    K4 --> K5["enable Tahoe FreeTime launcher"]
+    K4 --> K6["disable Fire Launcher for supplied user"]
+    K4 --> K7["disable Launcher3 for supplied user"]
+
+    S1["shell service check"] -. "not found; no handle" .-> A4
+    S1 -. "not found; no handle" .-> I3
+    S1 -. "not found; no handle" .-> W2
+
+    classDef noexec fill:#f7f7f7,stroke:#777,stroke-dasharray: 5 5;
+    class S1 noexec;
