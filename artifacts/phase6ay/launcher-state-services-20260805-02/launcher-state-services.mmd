@@ -1,0 +1,16 @@
+flowchart TD
+  U[AmazonUserManagerService.onBootPhase / child-user lifecycle] --> K[enableKftLauncher]
+  K --> G[isMMDevice / isTv / KFT component existence]
+  G --> W[tryEnableKftLauncherComponent]
+  W --> T[enable com.amazon.tahoe FreeTimeLauncherActivity]
+  W --> F[disable com.amazon.firelauncher application]
+  W --> L[disable com.android.launcher3 application]
+  K --> D[clearCallingIdentity]
+  D --> P[setActiveAdmin / setProfileOwner for KFT user]
+  S[AmazonPackageManagerService.onBootPhase] --> I[phase 550 + PackageManagerService.isUpgrade]
+  I --> B[BOOT_AFTER_SYSTEM_OTA]
+  B --> R[sendBroadcast with RECEIVE_BOOT_AFTER_SYSTEM_OTA permission]
+  X[ordinary shell UID 2000] -. service_manager find denied in saved enforcing capture .-> U
+  X -.-> S
+  F -. special user lifecycle, not ordinary HOME .-> H[No safe ADB HOME replacement established]
+  R -. OOBE/OTA lifecycle, not a shell selector .-> H
