@@ -1,0 +1,32 @@
+flowchart TD
+    SRC["PS7331 official source\nMT8183/trona kernel + defconfig"] --> K["Host-only provenance\nfutex.c / rtmutex.c hashes"]
+    SRC -. absent in extracted scope .-> INIT["system/core/init/selinux.cpp\nnot available from source package"]
+
+    OTA["DeviceSoftwareOTA"] --> VERIFY["SideloadVerifier\nmetadata + recovery/device checks"]
+    VERIFY --> MOVE["SideloadMover\nbasename staging"]
+    MOVE --> COPY["FileHelper\nrenameTo or copy/delete"]
+    COPY --> UPDATE["UpdateSystem / recovery\nprivileged high-impact boundary"]
+    UPDATE -. not executed .-> PART["partition write"]
+
+    SYS["system_server boot phase 550\n+ isUpgrade()"] --> OOBE["BOOT_AFTER_SYSTEM_OTA"]
+    OOBE --> RECEIVER["BootAfterSystemOTAReceiver"]
+    RECEIVER --> OOBEHOME["enable OobeHomeActivity\npriority 100 + setup state"]
+    OOBE -. manual replay rejected .-> DEVICE["retail device mutation"]
+
+    IPC["preWarmApplicationForUser"] --> CHECK["APP_PREWARM check\nstatic result-consumption anomaly"]
+    CHECK --> CLEAR["clearCallingIdentity"]
+    CLEAR --> START["startProcessLocked prewarm"]
+    SHELL["shell UID / SELinux"] -. service find denied .-> IPC
+
+    REDIRECT["research Accessibility APK"] --> CONSENT["explicit user Settings consent"]
+    CONSENT --> FG["foreground redirect only"]
+    FG --> CLEAN["stop service + uninstall test APKs"]
+    CLEAN --> FIRE["Fire Launcher HOME\nresolver priority 50"]
+    FIRE --> RESTORE["ADB connected / rollback verified"]
+
+    classDef safe fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
+    classDef risk fill:#fff3e0,stroke:#ef6c00,color:#7f3f00;
+    classDef rejected fill:#ffebee,stroke:#c62828,color:#7f0000;
+    class SRC,K,VERIFY,MOVE,COPY,REDIRECT,CONSENT,CLEAN,FIRE,RESTORE safe;
+    class OOBE,RECEIVER,OOBEHOME,IPC,CHECK,CLEAR,START,UPDATE risk;
+    class PART,DEVICE rejected;

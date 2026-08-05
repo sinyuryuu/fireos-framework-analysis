@@ -1,0 +1,12 @@
+surface,component_or_source,operation_or_method,observed_or_static_boundary,result,confidence,safety_disposition,evidence
+source provenance,PS7331 official source,MT8183/trona kernel and defconfig,source focus files and hashes present,device-specific kernel provenance confirmed,Confirmed,host-only,6BC-SRC-001;6BC-SRC-003
+source scope,PS7331 extracted source,platform/system/core/init/selinux.cpp and framework tree,not present in extracted scope,framework/init source unavailable from this package,Confirmed scope-limited,host-only,6BC-SRC-002
+OTA staging,DeviceSoftwareOTA,SideloadMover.maybeMoveSideloadFile,basename destination under OTA data directory,static review signal only; no input staged,Confirmed static,not executed,6BC-OTA-001
+OTA file move,FileHelper,renameTo / copy-delete fallback,source-level fallback and MD5 handling present,static review signal only; no payload tested,Confirmed static,not executed,6BC-OTA-002
+OTA install,DeviceSoftwareOTA,SideloadVerifier → SideloadInstaller → UpdateSystemWrapper,verification and privileged hand-off path present,no shell install primitive established,Confirmed static,not executed,6BC-OTA-003
+OOBE lifecycle,BootAfterSystemOTAReceiver,BOOT_AFTER_SYSTEM_OTA → OobeHomeActivity,guarded post-OTA setup state path,not a normal shell HOME selector,Confirmed static,manual trigger rejected,6BC-OOBE-001
+Amazon IPC,AmazonActivityManagerService,preWarmApplicationForUser,permission-check then identity-clear then process-start sink,authorization anomaly candidate only,Strong evidence,unknown Binder call rejected,6BC-IPC-001;6BC-IPC-002
+HOME resolver,PackageManager,ordinary preferred / set-home-activity,record persists but effective HOME remains Fire,formal replacement not achieved,Confirmed existing,not repeated,6BC-HOME-001
+foreground fallback,Phase 4 redirect APK,Accessibility foreground redirect,pre-state existed; service was stopped by user-confirmed Settings action,not enabled in this cleanup,Confirmed local,explicit consent only,6BC-FALLBACK-001
+rollback,Phase 4 redirect APKs,uninstall --user 0 for research packages only,paths absent; Accessibility empty; HOME Fire; ADB connected,rollback complete,Confirmed,Fire package untouched,6BC-FALLBACK-002
+fallback assessment,Phase 4 implementation,30 foreground handoff attempts,0/30 reliable handoffs on tested build,not recommended stable workaround,Confirmed scope-limited,not a HOME replacement,6BC-FALLBACK-003
