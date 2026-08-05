@@ -1,0 +1,11 @@
+flowchart TD
+  A[Alexa ExplicitIntentAction.prewarmApplicationProcess] --> B[AmazonActivityManagerImpl]
+  B --> C[ServiceManager.getService amazonactivitymanager]
+  C --> D[IAmazonActivityManager Proxy]
+  D -->|Binder transaction 1| E[AmazonActivityManagerService BinderService]
+  E --> F[checkCallingPermission APP_PREWARM]
+  F --> G[clearCallingIdentity]
+  G --> H[getApplicationInfo / PreWarmCacheHelper]
+  H --> I[startProcessLocked prewarm]
+  J[ordinary sideloaded app] -. no saved caller .-> D
+  K[shell] -. service-manager find denied in saved capture .-> C

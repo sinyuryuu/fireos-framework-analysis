@@ -1,0 +1,13 @@
+flowchart TD
+  A[Alexa ExplicitIntentAction.prewarmApplicationProcess] --> B[AmazonActivityManagerImpl]
+  B --> C[ServiceManager.getService amazonactivitymanager]
+  C --> D[IAmazonActivityManager Stub Proxy]
+  D -->|Binder transaction 1| E[AmazonActivityManagerService BinderService]
+  E --> F[checkCallingPermission APP_PREWARM]
+  F --> G[clearCallingIdentity]
+  G --> H[IPackageManager getApplicationInfo]
+  H --> I[PreWarmCacheHelper]
+  I --> J[startProcessLocked reason prewarm]
+  K[ordinary sideloaded app] -. no caller in saved source scope .-> D
+  L[shell] -. service-manager find denied in saved capture .-> C
+  J -. no HOME resolver operation .-> M[No HOME selection]
