@@ -1,0 +1,34 @@
+   virtual_method #10620: canSeeHomeTask (ILandroid/content/Context;)Z
+    access=0001 (PUBLIC)
+    codeOff=989fe (625150)
+    quickening_size=0 (0)
+      098a02: 7030 7d29 7608                         |0000: invoke-direct {v6, v7, v8}, Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerActivityStackCallback;.getAppInfo:(ILandroid/content/Context;)Landroid/content/pm/ApplicationInfo; // method@297d
+      098a08: 0c00                                   |0003: move-result-object v0
+      098a0a: 1201                                   |0004: const/4 v1, #int 0 // #0
+      098a0c: 3800 2f00                              |0005: if-eqz v0, 0034 // +002f
+      098a10: 5402 0b01                              |0007: iget-object v2, v0, Landroid/content/pm/ApplicationInfo;.seInfo:Ljava/lang/String; // field@010b
+      098a14: 3902 0300                              |0009: if-nez v2, 000c // +0003
+      098a18: 2829                                   |000b: goto 0034 // +0029
+      098a1a: 1302 1027                              |000c: const/16 v2, #int 10000 // #2710
+      098a1e: 5403 0b01                              |000e: iget-object v3, v0, Landroid/content/pm/ApplicationInfo;.seInfo:Ljava/lang/String; // field@010b
+      098a22: 7120 2e0c 3200                         |0010: invoke-static {v2, v3}, Landroid/os/SELinux;.getAppContext:(ILjava/lang/String;)Ljava/lang/String; // method@0c2e
+      098a28: 0c02                                   |0013: move-result-object v2
+      098a2a: 7100 2f0c 0000                         |0014: invoke-static {}, Landroid/os/SELinux;.getContext:()Ljava/lang/String; // method@0c2f
+      098a30: 0c03                                   |0017: move-result-object v3
+      098a32: 1a04 d755                              |0018: const-string v4, "amazon_policies" // string@55d7
+      098a36: 1a05 e793                              |001a: const-string v5, "see_home_task" // string@93e7
+      098a3a: 7140 2d0c 3254                         |001c: invoke-static {v2, v3, v4, v5}, Landroid/os/SELinux;.checkSELinuxAccess:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z // method@0c2d
+      098a40: 0a02                                   |001f: move-result v2
+      098a42: 1213                                   |0020: const/4 v3, #int 1 // #1
+      098a44: 3802 0300                              |0021: if-eqz v2, 0024 // +0003
+      098a48: 0f03                                   |0023: return v3
+      098a4a: 6e10 4002 0800                         |0024: invoke-virtual {v8}, Landroid/content/Context;.getPackageManager:()Landroid/content/pm/PackageManager; // method@0240
+      098a50: 0c02                                   |0027: move-result-object v2
+      098a52: 5404 0801                              |0028: iget-object v4, v0, Landroid/content/pm/ApplicationInfo;.packageName:Ljava/lang/String; // field@0108
+      098a56: 1a05 0c56                              |002a: const-string v5, "android" // string@560c
+      098a5a: 6e30 be02 4205                         |002c: invoke-virtual {v2, v4, v5}, Landroid/content/pm/PackageManager;.checkSignatures:(Ljava/lang/String;Ljava/lang/String;)I // method@02be
+      098a60: 0a04                                   |002f: move-result v4
+      098a62: 3a04 0300                              |0030: if-ltz v4, 0033 // +0003
+      098a66: 0f03                                   |0032: return v3
+      098a68: 0f01                                   |0033: return v1
+      098a6a: 0f01                                   |0034: return v1

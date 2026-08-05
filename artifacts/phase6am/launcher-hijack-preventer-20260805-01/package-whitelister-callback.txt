@@ -1,0 +1,349 @@
+  class #1402: PackageWhitelisterCallback ('Lcom/android/server/pm/PackageWhitelisterCallback;')
+   access=0001 (PUBLIC)
+   source_file=PackageWhitelisterCallback.java, class_data_off=251b21 (2431777)
+   static_fields=4, instance_fields=4, direct_methods=9, virtual_methods=4
+   direct_method #14077: $closeResource (Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V
+    access=100a (PRIVATE STATIC SYNTHETIC)
+    codeOff=23dd8 (146904)
+      023ddc: 3801 0b00                              |0000: if-eqz v1, 000b // +000b
+      023de0: 7210 0979 0200                         |0002: invoke-interface {v2}, Ljava/lang/AutoCloseable;.close:()V // method@7909
+      023de6: 2809                                   |0005: goto 000e // +0009
+      023de8: 0d00                                   |0006: move-exception v0
+      023dea: 6e20 867a 0100                         |0007: invoke-virtual {v1, v0}, Ljava/lang/Throwable;.addSuppressed:(Ljava/lang/Throwable;)V // method@7a86
+      023df0: 2804                                   |000a: goto 000e // +0004
+      023df2: 7210 0979 0200                         |000b: invoke-interface {v2}, Ljava/lang/AutoCloseable;.close:()V // method@7909
+      023df8: 0e00                                   |000e: return-void
+   direct_method #14078: <clinit> ()V
+    access=10008 (STATIC CONSTRUCTOR)
+    codeOff=d1690 (857744)
+    quickening_size=0 (0)
+      0d1694: 1c00 7a09                              |0000: const-class v0, Lcom/android/server/pm/PackageWhitelisterCallback; // type@097a
+      0d1698: 6e10 4579 0000                         |0002: invoke-virtual {v0}, Ljava/lang/Class;.getSimpleName:()Ljava/lang/String; // method@7945
+      0d169e: 0c00                                   |0005: move-result-object v0
+      0d16a0: 6900 9023                              |0006: sput-object v0, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d16a4: 6300 a603                              |0008: sget-boolean v0, Landroid/os/Build;.IS_DEBUGGABLE:Z // field@03a6
+      0d16a8: 6a00 8f23                              |000a: sput-boolean v0, Lcom/android/server/pm/PackageWhitelisterCallback;.DEBUG:Z // field@238f
+      0d16ac: 0e00                                   |000c: return-void
+   direct_method #14079: <init> ()V
+    access=10001 (PUBLIC CONSTRUCTOR)
+    codeOff=d16ae (857774)
+    quickening_size=0 (0)
+      0d16b2: 7010 2f37 0200                         |0000: invoke-direct {v2}, Lcom/android/server/pm/VendorPackageManagerCallback;.<init>:()V // method@372f
+      0d16b8: 2200 9502                              |0003: new-instance v0, Landroid/util/ArrayMap; // type@0295
+      0d16bc: 7010 e60c 0000                         |0005: invoke-direct {v0}, Landroid/util/ArrayMap;.<init>:()V // method@0ce6
+      0d16c2: 5b20 9123                              |0008: iput-object v0, v2, Lcom/android/server/pm/PackageWhitelisterCallback;.mApkPaths:Landroid/util/ArrayMap; // field@2391
+      0d16c6: 7100 f202 0000                         |000a: invoke-static {}, Landroid/content/res/Resources;.getSystem:()Landroid/content/res/Resources; // method@02f2
+      0d16cc: 0c00                                   |000d: move-result-object v0
+      0d16ce: 1401 1500 097e                         |000e: const v1, #float 4.55262e+37 // #7e090015
+      0d16d4: 6e20 f102 1000                         |0011: invoke-virtual {v0, v1}, Landroid/content/res/Resources;.getStringArray:(I)[Ljava/lang/String; // method@02f1
+      0d16da: 0c00                                   |0014: move-result-object v0
+      0d16dc: 7110 d37b 0000                         |0015: invoke-static {v0}, Ljava/util/Arrays;.asList:([Ljava/lang/Object;)Ljava/util/List; // method@7bd3
+      0d16e2: 0c00                                   |0018: move-result-object v0
+      0d16e4: 5b20 9223                              |0019: iput-object v0, v2, Lcom/android/server/pm/PackageWhitelisterCallback;.mBlacklistedApps:Ljava/util/List; // field@2392
+      0d16e8: 1200                                   |001b: const/4 v0, #int 0 // #0
+      0d16ea: 5b20 9323                              |001c: iput-object v0, v2, Lcom/android/server/pm/PackageWhitelisterCallback;.mPackageManager:Lamazon/internal/SystemJumpTable$PackageManagerService; // field@2393
+      0d16ee: 5b20 9423                              |001e: iput-object v0, v2, Lcom/android/server/pm/PackageWhitelisterCallback;.mPackageManagerService:Lcom/android/server/pm/PackageManagerService; // field@2394
+      0d16f2: 0e00                                   |0020: return-void
+   direct_method #14080: access$000 (Lcom/android/server/pm/PackageWhitelisterCallback;)Lcom/android/server/pm/PackageManagerService;
+    access=1008 (STATIC SYNTHETIC)
+    codeOff=d167c (857724)
+    quickening_size=0 (0)
+      0d1680: 5410 9423                              |0000: iget-object v0, v1, Lcom/android/server/pm/PackageWhitelisterCallback;.mPackageManagerService:Lcom/android/server/pm/PackageManagerService; // field@2394
+      0d1684: 1100                                   |0002: return-object v0
+   direct_method #14081: access$100 ()Ljava/lang/String;
+    access=1008 (STATIC SYNTHETIC)
+    codeOff=d1686 (857734)
+    quickening_size=0 (0)
+      0d168a: 6200 9023                              |0000: sget-object v0, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d168e: 1100                                   |0002: return-object v0
+   direct_method #14083: doBoolExists (Landroid/os/Bundle;Ljava/lang/String;)Z
+    access=000a (PRIVATE STATIC)
+    codeOff=d162a (857642)
+    quickening_size=0 (0)
+      0d162e: 3801 0a00                              |0000: if-eqz v1, 000a // +000a
+      0d1632: 6e20 fa0a 2100                         |0002: invoke-virtual {v1, v2}, Landroid/os/Bundle;.getBoolean:(Ljava/lang/String;)Z // method@0afa
+      0d1638: 0a00                                   |0005: move-result v0
+      0d163a: 3800 0400                              |0006: if-eqz v0, 000a // +0004
+      0d163e: 1210                                   |0008: const/4 v0, #int 1 // #1
+      0d1640: 2802                                   |0009: goto 000b // +0002
+      0d1642: 1200                                   |000a: const/4 v0, #int 0 // #0
+      0d1644: 0f00                                   |000b: return v0
+   direct_method #14084: isSystemApp (Landroid/content/pm/PackageParser$Package;)Z
+    access=000a (PRIVATE STATIC)
+    codeOff=d1646 (857670)
+    quickening_size=0 (0)
+      0d164a: 5420 1c01                              |0000: iget-object v0, v2, Landroid/content/pm/PackageParser$Package;.applicationInfo:Landroid/content/pm/ApplicationInfo; // field@011c
+      0d164e: 5200 0401                              |0002: iget v0, v0, Landroid/content/pm/ApplicationInfo;.flags:I // field@0104
+      0d1652: 1211                                   |0004: const/4 v1, #int 1 // #1
+      0d1654: b510                                   |0005: and-int/2addr v0, v1
+      0d1656: 3800 0300                              |0006: if-eqz v0, 0009 // +0003
+      0d165a: 2802                                   |0008: goto 000a // +0002
+      0d165c: 1201                                   |0009: const/4 v1, #int 0 // #0
+      0d165e: 0f01                                   |000a: return v1
+   direct_method #14085: isUpdatedSystemApp (Landroid/content/pm/PackageParser$Package;)Z
+    access=000a (PRIVATE STATIC)
+    codeOff=d1660 (857696)
+    quickening_size=0 (0)
+      0d1664: 5410 1c01                              |0000: iget-object v0, v1, Landroid/content/pm/PackageParser$Package;.applicationInfo:Landroid/content/pm/ApplicationInfo; // field@011c
+      0d1668: 5200 0401                              |0002: iget v0, v0, Landroid/content/pm/ApplicationInfo;.flags:I // field@0104
+      0d166c: d500 8000                              |0004: and-int/lit16 v0, v0, #int 128 // #0080
+      0d1670: 3800 0400                              |0006: if-eqz v0, 000a // +0004
+      0d1674: 1210                                   |0008: const/4 v0, #int 1 // #1
+      0d1676: 2802                                   |0009: goto 000b // +0002
+      0d1678: 1200                                   |000a: const/4 v0, #int 0 // #0
+      0d167a: 0f00                                   |000b: return v0
+   direct_method #14088: populateWhitelistedPackagesToConf ()V
+    access=0002 (PRIVATE)
+    codeOff=d18fc (858364)
+    quickening_size=0 (0)
+      0d1900: 54a0 9123                              |0000: iget-object v0, v10, Lcom/android/server/pm/PackageWhitelisterCallback;.mApkPaths:Landroid/util/ArrayMap; // field@2391
+      0d1904: 6e10 eb0c 0000                         |0002: invoke-virtual {v0}, Landroid/util/ArrayMap;.isEmpty:()Z // method@0ceb
+      0d190a: 0a00                                   |0005: move-result v0
+      0d190c: 3800 0300                              |0006: if-eqz v0, 0009 // +0003
+      0d1910: 0e00                                   |0008: return-void
+      0d1912: 6300 8f23                              |0009: sget-boolean v0, Lcom/android/server/pm/PackageWhitelisterCallback;.DEBUG:Z // field@238f
+      0d1916: 3800 1e00                              |000b: if-eqz v0, 0029 // +001e
+      0d191a: 6200 9023                              |000d: sget-object v0, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d191e: 2201 8112                              |000f: new-instance v1, Ljava/lang/StringBuilder; // type@1281
+      0d1922: 7010 4a7a 0100                         |0011: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0d1928: 1a02 0442                              |0014: const-string v2, "Packages to be whitelisted are: " // string@4204
+      0d192c: 6e20 557a 2100                         |0016: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1932: 54a2 9123                              |0019: iget-object v2, v10, Lcom/android/server/pm/PackageWhitelisterCallback;.mApkPaths:Landroid/util/ArrayMap; // field@2391
+      0d1936: 6e10 f10c 0200                         |001b: invoke-virtual {v2}, Landroid/util/ArrayMap;.toString:()Ljava/lang/String; // method@0cf1
+      0d193c: 0c02                                   |001e: move-result-object v2
+      0d193e: 6e20 557a 2100                         |001f: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1944: 6e10 5e7a 0100                         |0022: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0d194a: 0c01                                   |0025: move-result-object v1
+      0d194c: 7120 030d 1000                         |0026: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d03
+      0d1952: 2200 2b12                              |0029: new-instance v0, Ljava/io/File; // type@122b
+      0d1956: 1a01 c406                              |002b: const-string v1, "/data/system/fdrw_apks.conf" // string@06c4
+      0d195a: 7020 6c78 1000                         |002d: invoke-direct {v0, v1}, Ljava/io/File;.<init>:(Ljava/lang/String;)V // method@786c
+      0d1960: 2201 2f12                              |0030: new-instance v1, Ljava/io/FileOutputStream; // type@122f
+      0d1964: 7020 9778 0100                         |0032: invoke-direct {v1, v0}, Ljava/io/FileOutputStream;.<init>:(Ljava/io/File;)V // method@7897
+      0d196a: 1202                                   |0035: const/4 v2, #int 0 // #0
+      0d196c: 2203 7b08                              |0036: new-instance v3, Lcom/android/internal/util/FastPrintWriter; // type@087b
+      0d1970: 7020 d632 1300                         |0038: invoke-direct {v3, v1}, Lcom/android/internal/util/FastPrintWriter;.<init>:(Ljava/io/OutputStream;)V // method@32d6
+      0d1976: 0000                                   |003b: nop // spacer
+[new] 0d1976: 0000                                   |003b: nop // spacer
+      0d1978: 54a4 9123                              |003c: iget-object v4, v10, Lcom/android/server/pm/PackageWhitelisterCallback;.mApkPaths:Landroid/util/ArrayMap; // field@2391
+      0d197c: 6e10 e90c 0400                         |003e: invoke-virtual {v4}, Landroid/util/ArrayMap;.entrySet:()Ljava/util/Set; // method@0ce9
+      0d1982: 0c04                                   |0041: move-result-object v4
+      0d1984: 7210 447d 0400                         |0042: invoke-interface {v4}, Ljava/util/Set;.iterator:()Ljava/util/Iterator; // method@7d44
+      0d198a: 0c04                                   |0045: move-result-object v4
+      0d198c: 7210 867c 0400                         |0046: invoke-interface {v4}, Ljava/util/Iterator;.hasNext:()Z // method@7c86
+      0d1992: 0a05                                   |0049: move-result v5
+      0d1994: 3805 3e00                              |004a: if-eqz v5, 0088 // +003e
+      0d1998: 7210 877c 0400                         |004c: invoke-interface {v4}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@7c87
+      0d199e: 0c05                                   |004f: move-result-object v5
+      0d19a0: 1f05 0013                              |0050: check-cast v5, Ljava/util/Map$Entry; // type@1300
+      0d19a4: 7210 ce7c 0500                         |0052: invoke-interface {v5}, Ljava/util/Map$Entry;.getValue:()Ljava/lang/Object; // method@7cce
+      0d19aa: 0c06                                   |0055: move-result-object v6
+      0d19ac: 1f06 7f12                              |0056: check-cast v6, Ljava/lang/String; // type@127f
+      0d19b0: 3806 2600                              |0058: if-eqz v6, 007e // +0026
+      0d19b4: 2207 8112                              |005a: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      0d19b8: 7010 4a7a 0700                         |005c: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0d19be: 7210 cd7c 0500                         |005f: invoke-interface {v5}, Ljava/util/Map$Entry;.getKey:()Ljava/lang/Object; // method@7ccd
+      0d19c4: 0c08                                   |0062: move-result-object v8
+      0d19c6: 1f08 7f12                              |0063: check-cast v8, Ljava/lang/String; // type@127f
+      0d19ca: 6e20 557a 8700                         |0065: invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d19d0: 1a08 a707                              |0068: const-string v8, ":" // string@07a7
+      0d19d4: 6e20 557a 8700                         |006a: invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d19da: 7210 ce7c 0500                         |006d: invoke-interface {v5}, Ljava/util/Map$Entry;.getValue:()Ljava/lang/Object; // method@7cce
+      0d19e0: 0c08                                   |0070: move-result-object v8
+      0d19e2: 1f08 7f12                              |0071: check-cast v8, Ljava/lang/String; // type@127f
+      0d19e6: 6e20 557a 8700                         |0073: invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d19ec: 6e10 5e7a 0700                         |0076: invoke-virtual {v7}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0d19f2: 0c07                                   |0079: move-result-object v7
+      0d19f4: 6e20 e078 7300                         |007a: invoke-virtual {v3, v7}, Ljava/io/PrintWriter;.println:(Ljava/lang/String;)V // method@78e0
+      0d19fa: 280a                                   |007d: goto 0087 // +000a
+      0d19fc: 7210 cd7c 0500                         |007e: invoke-interface {v5}, Ljava/util/Map$Entry;.getKey:()Ljava/lang/Object; // method@7ccd
+      0d1a02: 0c07                                   |0081: move-result-object v7
+      0d1a04: 1f07 7f12                              |0082: check-cast v7, Ljava/lang/String; // type@127f
+      0d1a08: 6e20 e078 7300                         |0084: invoke-virtual {v3, v7}, Ljava/io/PrintWriter;.println:(Ljava/lang/String;)V // method@78e0
+      0d1a0e: 28bf                                   |0087: goto 0046 // -0041
+      0d1a10: 7120 fd36 3200                         |0088: invoke-static {v2, v3}, Lcom/android/server/pm/PackageWhitelisterCallback;.$closeResource:(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V // method@36fd
+      0d1a16: 7120 fd36 1200                         |008b: invoke-static {v2, v1}, Lcom/android/server/pm/PackageWhitelisterCallback;.$closeResource:(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V // method@36fd
+      0d1a1c: 281a                                   |008e: goto 00a8 // +001a
+      0d1a1e: 0d04                                   |008f: move-exception v4
+      0d1a20: 0725                                   |0090: move-object v5, v2
+      0d1a22: 2807                                   |0091: goto 0098 // +0007
+      0d1a24: 0d04                                   |0092: move-exception v4
+      0d1a26: 2704                                   |0093: throw v4
+      0d1a28: 0d05                                   |0094: move-exception v5
+      0d1a2a: 0759                                   |0095: move-object v9, v5
+      0d1a2c: 0745                                   |0096: move-object v5, v4
+      0d1a2e: 0794                                   |0097: move-object v4, v9
+      0d1a30: 7120 fd36 3500                         |0098: invoke-static {v5, v3}, Lcom/android/server/pm/PackageWhitelisterCallback;.$closeResource:(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V // method@36fd
+      0d1a36: 2704                                   |009b: throw v4
+      0d1a38: 0d03                                   |009c: move-exception v3
+      0d1a3a: 2803                                   |009d: goto 00a0 // +0003
+      0d1a3c: 0d02                                   |009e: move-exception v2
+      0d1a3e: 2702                                   |009f: throw v2
+      0d1a40: 7120 fd36 1200                         |00a0: invoke-static {v2, v1}, Lcom/android/server/pm/PackageWhitelisterCallback;.$closeResource:(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V // method@36fd
+      0d1a46: 2703                                   |00a3: throw v3
+      0d1a48: 0d01                                   |00a4: move-exception v1
+      0d1a4a: 6e10 7779 0100                         |00a5: invoke-virtual {v1}, Ljava/lang/Exception;.printStackTrace:()V // method@7977
+      0d1a50: 0e00                                   |00a8: return-void
+   virtual_method #14082: commitPackageSettings (Landroid/content/pm/PackageParser$Package;Lcom/android/server/pm/Settings;)V
+    access=0001 (PUBLIC)
+    codeOff=d16f4 (857844)
+    quickening_size=0 (0)
+      0d16f8: 7110 0537 0600                         |0000: invoke-static {v6}, Lcom/android/server/pm/PackageWhitelisterCallback;.isUpdatedSystemApp:(Landroid/content/pm/PackageParser$Package;)Z // method@3705
+      0d16fe: 0a00                                   |0003: move-result v0
+      0d1700: 3800 8600                              |0004: if-eqz v0, 008a // +0086
+      0d1704: 5460 2001                              |0006: iget-object v0, v6, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1708: 6e20 2737 0700                         |0008: invoke-virtual {v7, v0}, Lcom/android/server/pm/Settings;.getDisabledSystemPkgLPr:(Ljava/lang/String;)Lcom/android/server/pm/PackageSetting; // method@3727
+      0d170e: 0c00                                   |000b: move-result-object v0
+      0d1710: 3900 2000                              |000c: if-nez v0, 002c // +0020
+      0d1714: 6201 9023                              |000e: sget-object v1, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d1718: 2202 8112                              |0010: new-instance v2, Ljava/lang/StringBuilder; // type@1281
+      0d171c: 7010 4a7a 0200                         |0012: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0d1722: 1a03 aa88                              |0015: const-string v3, "package " // string@88aa
+      0d1726: 6e20 557a 3200                         |0017: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d172c: 5463 2001                              |001a: iget-object v3, v6, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1730: 6e20 557a 3200                         |001c: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1736: 1a03 3f02                              |001f: const-string v3, " has no package setting for its disabled version but is an updated system app." // string@023f
+      0d173a: 6e20 557a 3200                         |0021: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1740: 6e10 5e7a 0200                         |0024: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0d1746: 0c02                                   |0027: move-result-object v2
+      0d1748: 7120 050d 2100                         |0028: invoke-static {v1, v2}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d05
+      0d174e: 0e00                                   |002b: return-void
+      0d1750: 6e10 fa36 0000                         |002c: invoke-virtual {v0}, Lcom/android/server/pm/PackageSetting;.getPackage:()Landroid/content/pm/PackageParser$Package; // method@36fa
+      0d1756: 0c01                                   |002f: move-result-object v1
+      0d1758: 3901 2000                              |0030: if-nez v1, 0050 // +0020
+      0d175c: 6202 9023                              |0032: sget-object v2, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d1760: 2203 8112                              |0034: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+      0d1764: 7010 4a7a 0300                         |0036: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0d176a: 1a04 aa88                              |0039: const-string v4, "package " // string@88aa
+      0d176e: 6e20 557a 4300                         |003b: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1774: 5464 2001                              |003e: iget-object v4, v6, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1778: 6e20 557a 4300                         |0040: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d177e: 1a04 3e02                              |0043: const-string v4, " has no disabled package but is an updated system app." // string@023e
+      0d1782: 6e20 557a 4300                         |0045: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1788: 6e10 5e7a 0300                         |0048: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0d178e: 0c03                                   |004b: move-result-object v3
+      0d1790: 7120 0d0d 3200                         |004c: invoke-static {v2, v3}, Landroid/util/Log;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d0d
+      0d1796: 0e00                                   |004f: return-void
+      0d1798: 5412 1f01                              |0050: iget-object v2, v1, Landroid/content/pm/PackageParser$Package;.mAppMetaData:Landroid/os/Bundle; // field@011f
+      0d179c: 1a03 e85c                              |0052: const-string v3, "com.amazon.platform.fdrw.apk" // string@5ce8
+      0d17a0: 7120 0337 3200                         |0054: invoke-static {v2, v3}, Lcom/android/server/pm/PackageWhitelisterCallback;.doBoolExists:(Landroid/os/Bundle;Ljava/lang/String;)Z // method@3703
+      0d17a6: 0a02                                   |0057: move-result v2
+      0d17a8: 3802 3100                              |0058: if-eqz v2, 0089 // +0031
+      0d17ac: 6302 8f23                              |005a: sget-boolean v2, Lcom/android/server/pm/PackageWhitelisterCallback;.DEBUG:Z // field@238f
+      0d17b0: 3802 2400                              |005c: if-eqz v2, 0080 // +0024
+      0d17b4: 6202 9023                              |005e: sget-object v2, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d17b8: 2203 8112                              |0060: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+      0d17bc: 7010 4a7a 0300                         |0062: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0d17c2: 1a04 aa88                              |0065: const-string v4, "package " // string@88aa
+      0d17c6: 6e20 557a 4300                         |0067: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d17cc: 5464 2001                              |006a: iget-object v4, v6, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d17d0: 6e20 557a 4300                         |006c: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d17d6: 1a04 4102                              |006f: const-string v4, " has opted for whitelisting using fdrw. Package path - " // string@0241
+      0d17da: 6e20 557a 4300                         |0071: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d17e0: 5464 1e01                              |0074: iget-object v4, v6, Landroid/content/pm/PackageParser$Package;.codePath:Ljava/lang/String; // field@011e
+      0d17e4: 6e20 557a 4300                         |0076: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d17ea: 6e10 5e7a 0300                         |0079: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0d17f0: 0c03                                   |007c: move-result-object v3
+      0d17f2: 7120 030d 3200                         |007d: invoke-static {v2, v3}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d03
+      0d17f8: 5452 9123                              |0080: iget-object v2, v5, Lcom/android/server/pm/PackageWhitelisterCallback;.mApkPaths:Landroid/util/ArrayMap; // field@2391
+      0d17fc: 5463 2001                              |0082: iget-object v3, v6, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1800: 5464 1e01                              |0084: iget-object v4, v6, Landroid/content/pm/PackageParser$Package;.codePath:Ljava/lang/String; // field@011e
+      0d1804: 6e30 ee0c 3204                         |0086: invoke-virtual {v2, v3, v4}, Landroid/util/ArrayMap;.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@0cee
+      0d180a: 283a                                   |0089: goto 00c3 // +003a
+      0d180c: 7110 0437 0600                         |008a: invoke-static {v6}, Lcom/android/server/pm/PackageWhitelisterCallback;.isSystemApp:(Landroid/content/pm/PackageParser$Package;)Z // method@3704
+      0d1812: 0a00                                   |008d: move-result v0
+      0d1814: 3800 3500                              |008e: if-eqz v0, 00c3 // +0035
+      0d1818: 5460 1f01                              |0090: iget-object v0, v6, Landroid/content/pm/PackageParser$Package;.mAppMetaData:Landroid/os/Bundle; // field@011f
+      0d181c: 1a01 e85c                              |0092: const-string v1, "com.amazon.platform.fdrw.apk" // string@5ce8
+      0d1820: 7120 0337 1000                         |0094: invoke-static {v0, v1}, Lcom/android/server/pm/PackageWhitelisterCallback;.doBoolExists:(Landroid/os/Bundle;Ljava/lang/String;)Z // method@3703
+      0d1826: 0a00                                   |0097: move-result v0
+      0d1828: 3800 2b00                              |0098: if-eqz v0, 00c3 // +002b
+      0d182c: 6300 8f23                              |009a: sget-boolean v0, Lcom/android/server/pm/PackageWhitelisterCallback;.DEBUG:Z // field@238f
+      0d1830: 3800 1f00                              |009c: if-eqz v0, 00bb // +001f
+      0d1834: 6200 9023                              |009e: sget-object v0, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d1838: 2201 8112                              |00a0: new-instance v1, Ljava/lang/StringBuilder; // type@1281
+      0d183c: 7010 4a7a 0100                         |00a2: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0d1842: 1a02 aa88                              |00a5: const-string v2, "package " // string@88aa
+      0d1846: 6e20 557a 2100                         |00a7: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d184c: 5462 2001                              |00aa: iget-object v2, v6, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1850: 6e20 557a 2100                         |00ac: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1856: 1a02 4002                              |00af: const-string v2, " has opted for whitelisting using fdrw" // string@0240
+      0d185a: 6e20 557a 2100                         |00b1: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0d1860: 6e10 5e7a 0100                         |00b4: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0d1866: 0c01                                   |00b7: move-result-object v1
+      0d1868: 7120 030d 1000                         |00b8: invoke-static {v0, v1}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d03
+      0d186e: 5450 9123                              |00bb: iget-object v0, v5, Lcom/android/server/pm/PackageWhitelisterCallback;.mApkPaths:Landroid/util/ArrayMap; // field@2391
+      0d1872: 5461 2001                              |00bd: iget-object v1, v6, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1876: 1202                                   |00bf: const/4 v2, #int 0 // #0
+      0d1878: 6e30 ee0c 1002                         |00c0: invoke-virtual {v0, v1, v2}, Landroid/util/ArrayMap;.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@0cee
+      0d187e: 7010 0837 0500                         |00c3: invoke-direct {v5}, Lcom/android/server/pm/PackageWhitelisterCallback;.populateWhitelistedPackagesToConf:()V // method@3708
+      0d1884: 0e00                                   |00c6: return-void
+   virtual_method #14086: onInit (ILcom/android/server/pm/PackageManagerService;Landroid/util/ArrayMap;)V
+    access=0001 (PUBLIC)
+    codeOff=d1886 (858246)
+    quickening_size=0 (0)
+      0d188a: 3802 0b00                              |0000: if-eqz v2, 000b // +000b
+      0d188e: 1300 e803                              |0002: const/16 v0, #int 1000 // #3e8
+      0d1892: 3202 0300                              |0004: if-eq v2, v0, 0007 // +0003
+      0d1896: 280f                                   |0006: goto 0015 // +000f
+      0d1898: 7010 0837 0100                         |0007: invoke-direct {v1}, Lcom/android/server/pm/PackageWhitelisterCallback;.populateWhitelistedPackagesToConf:()V // method@3708
+      0d189e: 280b                                   |000a: goto 0015 // +000b
+      0d18a0: 5b13 9423                              |000b: iput-object v3, v1, Lcom/android/server/pm/PackageWhitelisterCallback;.mPackageManagerService:Lcom/android/server/pm/PackageManagerService; // field@2394
+      0d18a4: 2200 3000                              |000d: new-instance v0, Lamazon/internal/SystemJumpTable$PackageManagerService; // type@0030
+      0d18a8: 7020 9e00 3000                         |000f: invoke-direct {v0, v3}, Lamazon/internal/SystemJumpTable$PackageManagerService;.<init>:(Lcom/android/server/pm/PackageManagerService;)V // method@009e
+      0d18ae: 5b10 9323                              |0012: iput-object v0, v1, Lcom/android/server/pm/PackageWhitelisterCallback;.mPackageManager:Lamazon/internal/SystemJumpTable$PackageManagerService; // field@2393
+      0d18b2: 0000                                   |0014: nop // spacer
+[new] 0d18b2: 0000                                   |0014: nop // spacer
+      0d18b4: 0e00                                   |0015: return-void
+   virtual_method #14087: onUpdateFoundForDeletedSystemApp (Landroid/content/pm/PackageParser$Package;Landroid/os/Handler;)V
+    access=0004 (PROTECTED)
+    codeOff=d18b6 (858294)
+    quickening_size=0 (0)
+      0d18ba: 5420 9223                              |0000: iget-object v0, v2, Lcom/android/server/pm/PackageWhitelisterCallback;.mBlacklistedApps:Ljava/util/List; // field@2392
+      0d18be: 7210 ab7c 0000                         |0002: invoke-interface {v0}, Ljava/util/List;.isEmpty:()Z // method@7cab
+      0d18c4: 0a00                                   |0005: move-result v0
+      0d18c6: 3900 1a00                              |0006: if-nez v0, 0020 // +001a
+      0d18ca: 3803 1800                              |0008: if-eqz v3, 0020 // +0018
+      0d18ce: 3804 1600                              |000a: if-eqz v4, 0020 // +0016
+      0d18d2: 5420 9223                              |000c: iget-object v0, v2, Lcom/android/server/pm/PackageWhitelisterCallback;.mBlacklistedApps:Ljava/util/List; // field@2392
+      0d18d6: 5431 2001                              |000e: iget-object v1, v3, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d18da: 7220 a57c 1000                         |0010: invoke-interface {v0, v1}, Ljava/util/List;.contains:(Ljava/lang/Object;)Z // method@7ca5
+      0d18e0: 0a00                                   |0013: move-result v0
+      0d18e2: 3900 0300                              |0014: if-nez v0, 0017 // +0003
+      0d18e6: 280a                                   |0016: goto 0020 // +000a
+      0d18e8: 2200 7909                              |0017: new-instance v0, Lcom/android/server/pm/PackageWhitelisterCallback$1; // type@0979
+      0d18ec: 7030 fb36 2003                         |0019: invoke-direct {v0, v2, v3}, Lcom/android/server/pm/PackageWhitelisterCallback$1;.<init>:(Lcom/android/server/pm/PackageWhitelisterCallback;Landroid/content/pm/PackageParser$Package;)V // method@36fb
+      0d18f2: 6e20 310b 0400                         |001c: invoke-virtual {v4, v0}, Landroid/os/Handler;.post:(Ljava/lang/Runnable;)Z // method@0b31
+      0d18f8: 0e00                                   |001f: return-void
+      0d18fa: 0e00                                   |0020: return-void
+   virtual_method #14089: scanPackageNewLI (Landroid/content/pm/PackageParser$Package;Lcom/android/server/pm/Settings;Landroid/util/ArrayMap;Landroid/util/ArrayMap;)V
+    access=0001 (PUBLIC)
+    codeOff=d1ab6 (858806)
+    quickening_size=0 (0)
+      0d1aba: 1d07                                   |0000: monitor-enter v7
+      0d1abc: 5450 2001                              |0001: iget-object v0, v5, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1ac0: 6e20 ea0c 0700                         |0003: invoke-virtual {v7, v0}, Landroid/util/ArrayMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@0cea
+      0d1ac6: 0c00                                   |0006: move-result-object v0
+      0d1ac8: 1f00 a300                              |0007: check-cast v0, Landroid/content/pm/PackageParser$Package; // type@00a3
+      0d1acc: 3900 0b00                              |0009: if-nez v0, 0014 // +000b
+      0d1ad0: 6201 9023                              |000b: sget-object v1, Lcom/android/server/pm/PackageWhitelisterCallback;.TAG:Ljava/lang/String; // field@2390
+      0d1ad4: 1a02 0949                              |000d: const-string v2, "System package not found, this should not happen" // string@4909
+      0d1ad8: 7120 050d 2100                         |000f: invoke-static {v1, v2}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d05
+      0d1ade: 1e07                                   |0012: monitor-exit v7
+      0d1ae0: 0e00                                   |0013: return-void
+      0d1ae2: 5401 2001                              |0014: iget-object v1, v0, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1ae6: 6e20 2837 1600                         |0016: invoke-virtual {v6, v1}, Lcom/android/server/pm/Settings;.getPackageLPr:(Ljava/lang/String;)Lcom/android/server/pm/PackageSetting; // method@3728
+      0d1aec: 0c01                                   |0019: move-result-object v1
+      0d1aee: 5402 2001                              |001a: iget-object v2, v0, Landroid/content/pm/PackageParser$Package;.packageName:Ljava/lang/String; // field@0120
+      0d1af2: 1213                                   |001c: const/4 v3, #int 1 // #1
+      0d1af4: 6e30 2637 2603                         |001d: invoke-virtual {v6, v2, v3}, Lcom/android/server/pm/Settings;.disableSystemPackageLPw:(Ljava/lang/String;Z)Z // method@3726
+      0d1afa: 5442 9323                              |0020: iget-object v2, v4, Lcom/android/server/pm/PackageWhitelisterCallback;.mPackageManager:Lamazon/internal/SystemJumpTable$PackageManagerService; // field@2393
+      0d1afe: 6e30 a500 0203                         |0022: invoke-virtual {v2, v0, v3}, Lamazon/internal/SystemJumpTable$PackageManagerService;.removePackageLI:(Landroid/content/pm/PackageParser$Package;Z)V // method@00a5
+      0d1b04: 5412 8a23                              |0025: iget-object v2, v1, Lcom/android/server/pm/PackageSetting;.name:Ljava/lang/String; // field@238a
+      0d1b08: 5413 8923                              |0027: iget-object v3, v1, Lcom/android/server/pm/PackageSetting;.codePath:Ljava/io/File; // field@2389
+      0d1b0c: 6e30 ee0c 2803                         |0029: invoke-virtual {v8, v2, v3}, Landroid/util/ArrayMap;.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@0cee
+      0d1b12: 1e07                                   |002c: monitor-exit v7
+      0d1b14: 0e00                                   |002d: return-void
+      0d1b16: 0d00                                   |002e: move-exception v0
+      0d1b18: 1e07                                   |002f: monitor-exit v7
+      0d1b1a: 2700                                   |0030: throw v0

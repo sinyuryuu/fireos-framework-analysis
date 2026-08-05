@@ -1,0 +1,37 @@
+  class #978: LauncherHijackPreventerPackageStore ('Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerPackageStore;')
+   access=0001 (PUBLIC)
+   source_file=LauncherHijackPreventerPackageStore.java, class_data_off=24c4d0 (2409680)
+   static_fields=3, instance_fields=0, direct_methods=4, virtual_methods=0
+   direct_method #10625: <clinit> ()V
+    access=10008 (STATIC CONSTRUCTOR)
+    codeOff=98b3c (625468)
+    quickening_size=1 (1)
+      098b40: 6300 a603                              |0000: sget-boolean v0, Landroid/os/Build;.IS_DEBUGGABLE:Z // field@03a6
+      098b44: 6a00 3618                              |0002: sput-boolean v0, Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerPackageStore;.DBG:Z // field@1836
+      098b48: 2200 e712                              |0004: new-instance v0, Ljava/util/ArrayList; // type@12e7
+      098b4c: 7010 ba7b 0000                         |0006: invoke-direct {v0}, Ljava/util/ArrayList;.<init>:()V // method@7bba
+      098b52: 6900 3818                              |0009: sput-object v0, Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerPackageStore;.sPackages:Ljava/util/List; // field@1838
+      098b56: 7300                                   |000b: return-void-no-barrier
+[new] 098b56: 0e00                                   |000b: return-void
+   direct_method #10626: <init> ()V
+    access=10001 (PUBLIC CONSTRUCTOR)
+    codeOff=2ebc (11964)
+      002ec0: 7010 dd79 0000                         |0000: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@79dd
+      002ec6: 0e00                                   |0003: return-void
+   direct_method #10627: addPackageUserPair (Ljava/lang/String;I)V
+    access=0009 (PUBLIC STATIC)
+    codeOff=98b58 (625496)
+    quickening_size=0 (0)
+      098b5c: 6200 3818                              |0000: sget-object v0, Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerPackageStore;.sPackages:Ljava/util/List; // field@1838
+      098b60: 7110 a479 0300                         |0002: invoke-static {v3}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      098b66: 0c01                                   |0005: move-result-object v1
+      098b68: 7120 180d 1200                         |0006: invoke-static {v2, v1}, Landroid/util/Pair;.create:(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair; // method@0d18
+      098b6e: 0c01                                   |0009: move-result-object v1
+      098b70: 7220 a17c 1000                         |000a: invoke-interface {v0, v1}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@7ca1
+      098b76: 0e00                                   |000d: return-void
+   direct_method #10628: getPackages ()Ljava/util/List;
+    access=0009 (PUBLIC STATIC)
+    codeOff=98b32 (625458)
+    quickening_size=0 (0)
+      098b36: 6200 3818                              |0000: sget-object v0, Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerPackageStore;.sPackages:Ljava/util/List; // field@1838
+      098b3a: 1100                                   |0002: return-object v0

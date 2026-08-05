@@ -1,0 +1,43 @@
+   virtual_method #10624: onShutdown (Landroid/content/Context;)V
+    access=0001 (PUBLIC)
+    codeOff=98a86 (625286)
+    quickening_size=0 (0)
+      098a8a: 7100 8429 0000                         |0000: invoke-static {}, Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerPackageStore;.getPackages:()Ljava/util/List; // method@2984
+      098a90: 0c00                                   |0003: move-result-object v0
+      098a92: 7210 ac7c 0000                         |0004: invoke-interface {v0}, Ljava/util/List;.iterator:()Ljava/util/Iterator; // method@7cac
+      098a98: 0c01                                   |0007: move-result-object v1
+      098a9a: 7210 867c 0100                         |0008: invoke-interface {v1}, Ljava/util/Iterator;.hasNext:()Z // method@7c86
+      098aa0: 0a02                                   |000b: move-result v2
+      098aa2: 3802 4700                              |000c: if-eqz v2, 0053 // +0047
+      098aa6: 7210 877c 0100                         |000e: invoke-interface {v1}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@7c87
+      098aac: 0c02                                   |0011: move-result-object v2
+      098aae: 1f02 9f02                              |0012: check-cast v2, Landroid/util/Pair; // type@029f
+      098ab2: 5423 e703                              |0014: iget-object v3, v2, Landroid/util/Pair;.first:Ljava/lang/Object; // field@03e7
+      098ab6: 1f03 7f12                              |0016: check-cast v3, Ljava/lang/String; // type@127f
+      098aba: 5424 e803                              |0018: iget-object v4, v2, Landroid/util/Pair;.second:Ljava/lang/Object; // field@03e8
+      098abe: 1f04 6612                              |001a: check-cast v4, Ljava/lang/Integer; // type@1266
+      098ac2: 6e10 9879 0400                         |001c: invoke-virtual {v4}, Ljava/lang/Integer;.intValue:()I // method@7998
+      098ac8: 0a04                                   |001f: move-result v4
+      098aca: 3a04 3200                              |0020: if-ltz v4, 0052 // +0032
+      098ace: 6305 3318                              |0022: sget-boolean v5, Lcom/amazon/launcherhijackpreventer/LauncherHijackPreventerPackageManagerCallback;.DBG:Z // field@1833
+      098ad2: 3805 2000                              |0024: if-eqz v5, 0044 // +0020
+      098ad6: 1a05 7b22                              |0026: const-string v5, "LauncherHijack" // string@227b
+      098ada: 2206 8112                              |0028: new-instance v6, Ljava/lang/StringBuilder; // type@1281
+      098ade: 7010 4a7a 0600                         |002a: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      098ae4: 1a07 0645                              |002d: const-string v7, "Revoking android.permission.READ_LOGS permission for package: " // string@4506
+      098ae8: 6e20 557a 7600                         |002f: invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      098aee: 6e20 557a 3600                         |0032: invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      098af4: 1a07 d501                              |0035: const-string v7, " and user: " // string@01d5
+      098af8: 6e20 557a 7600                         |0037: invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      098afe: 6e20 507a 4600                         |003a: invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      098b04: 6e10 5e7a 0600                         |003d: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      098b0a: 0c06                                   |0040: move-result-object v6
+      098b0c: 7120 030d 6500                         |0041: invoke-static {v5, v6}, Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d03
+      098b12: 6e10 4002 0900                         |0044: invoke-virtual {v9}, Landroid/content/Context;.getPackageManager:()Landroid/content/pm/PackageManager; // method@0240
+      098b18: 0c05                                   |0047: move-result-object v5
+      098b1a: 1a06 7556                              |0048: const-string v6, "android.permission.READ_LOGS" // string@5675
+      098b1e: 2207 4002                              |004a: new-instance v7, Landroid/os/UserHandle; // type@0240
+      098b22: 7020 590c 4700                         |004c: invoke-direct {v7, v4}, Landroid/os/UserHandle;.<init>:(I)V // method@0c59
+      098b28: 6e40 d502 3576                         |004f: invoke-virtual {v5, v3, v6, v7}, Landroid/content/pm/PackageManager;.revokeRuntimePermission:(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V // method@02d5
+      098b2e: 28b6                                   |0052: goto 0008 // -004a
+      098b30: 0e00                                   |0053: return-void

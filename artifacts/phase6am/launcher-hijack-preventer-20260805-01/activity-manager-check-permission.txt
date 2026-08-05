@@ -1,0 +1,14 @@
+   virtual_method #10618: checkPermission (Landroid/content/Context;)Ljava/lang/String;
+    access=0001 (PUBLIC)
+    codeOff=9896e (625006)
+    quickening_size=0 (0)
+      098972: 6e10 4002 0300                         |0000: invoke-virtual {v3}, Landroid/content/Context;.getPackageManager:()Landroid/content/pm/PackageManager; // method@0240
+      098978: 0c00                                   |0003: move-result-object v0
+      09897a: 1a01 8056                              |0004: const-string v1, "android.software.leanback" // string@5680
+      09897e: 6e20 ce02 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;.hasSystemFeature:(Ljava/lang/String;)Z // method@02ce
+      098984: 0a00                                   |0009: move-result v0
+      098986: 3800 0500                              |000a: if-eqz v0, 000f // +0005
+      09898a: 1a01 bc5c                              |000c: const-string v1, "com.amazon.permission.ENABLE_KEYGUARD_FLAGS" // string@5cbc
+      09898e: 2802                                   |000e: goto 0010 // +0002
+      098990: 1201                                   |000f: const/4 v1, #int 0 // #0
+      098992: 1101                                   |0010: return-object v1
