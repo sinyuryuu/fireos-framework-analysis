@@ -1,0 +1,40 @@
+{
+  "phase": "6AW",
+  "generated_utc": "2026-08-05T02:50:57.149570+00:00",
+  "host_only": true,
+  "device_contacted": false,
+  "updater_executed": false,
+  "recovery_executed": false,
+  "partition_written": false,
+  "script_row_count": 13,
+  "write_operation_count": 13,
+  "targets": [
+    "/dev/block/platform/bootdevice/by-name/system",
+    "/dev/block/platform/bootdevice/by-name/vendor",
+    "/dev/block/platform/bootdevice/by-name/boot",
+    "/dev/block/platform/bootdevice/by-name/preloader",
+    "/dev/block/platform/bootdevice/by-name/lk",
+    "/dev/block/platform/bootdevice/by-name/tee1",
+    "/dev/block/platform/bootdevice/by-name/tee2",
+    "/dev/block/platform/bootdevice/by-name/spmfw",
+    "/dev/block/platform/bootdevice/by-name/sspm_1",
+    "/dev/block/platform/bootdevice/by-name/cam_vpu1",
+    "/dev/block/platform/bootdevice/by-name/cam_vpu2",
+    "/dev/block/platform/bootdevice/by-name/cam_vpu3",
+    "/cache/recovery/last_blocklist"
+  ],
+  "device_gate": "trona",
+  "post_build": "Amazon/trona/trona:9/PS7331.4463N/0031575863040:user/amz-p,release-keys",
+  "post_incremental": "0031575863172",
+  "post_security_patch": "2024-08-01",
+  "ota_version": "Fire OS 7.3.3.1 (PS7331.4463N/4463)",
+  "binary_classification": "static control-flow closure; no exploit or bypass claim",
+  "input_sha256": {
+    "firmware/extracted/PS7331/META-INF/com/google/android/updater-script": "4a61d66754187a5b84f173ad7bc50216b00969743ce3193346762613615ac248",
+    "firmware/extracted/PS7331/META-INF/com/android/metadata": "9501caa9c986904bda3fe0f0e5f21134f968edaf30a4949779357d2aeb66bbf2",
+    "firmware/extracted/PS7331/ota.prop": "f91b4c792339c605d81a2d6d5e819fee5d522a7514111daa1468717e07319ded",
+    "artifacts/phase6ah/update-binary-validation-20260805-01/analysis.json": "d9cfd596e24cfa0fe6a0659f67c56451834b70b0fe53aa5fb4c906dc62e94eee",
+    "artifacts/phase6ah/update-binary-validation-20260805-01/script-commands.csv": "e6d768b3da779ba8f6aa0379e2732f6578b07671a7bcf4f5f380f9e60e9e089f",
+    "artifacts/phase6s/ota-call-edges-20260805-01/call-edges.csv": "ede44312f2f667adff552475866de0b17c06b96161854c35a17a3a1c361eaa75"
+  }
+}

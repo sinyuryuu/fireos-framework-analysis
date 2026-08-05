@@ -1,0 +1,11 @@
+flowchart TD
+    M[PS7331 metadata: trona + release-keys + full BLOCK OTA] --> G[date/device guards]
+    G --> E[recovery/update-binary expression evaluation]
+    E --> V[verification helpers / block-image handlers]
+    V --> S[system + vendor block-image targets]
+    V --> B[boot / preloader / lk / tee / firmware targets]
+    V --> C[cache recovery blocklist metadata]
+    S --> W[high-impact write boundary]
+    B --> W
+    C --> W
+    W -. not executed .-> N[No device mutation in Phase 6AW]

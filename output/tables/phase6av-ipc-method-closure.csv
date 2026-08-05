@@ -1,0 +1,8 @@
+evidence_id,service,method,source_lines,authorization,control_effect,shell_boundary,classification,confidence
+6AV-IPC-001,AmazonInputManagerService,registerKeyEventInterceptor,19829-19999,"GET_KEYEVENTS; UID/package; whitelist; foreground","key-event interceptor only","private service find denied",CLOSED_FOR_SHELL_HOME_ROUTE,Confirmed
+6AV-IPC-002,AmazonInputManagerService,setInputFilter,20112-20122,"synthetic helper access$600 unresolved","secondary input filter","private service find denied",STATIC_REVIEW_ONLY,"Strong evidence"
+6AV-IPC-003,AmazonInputManagerService,setInputLockingMode,20679-20713,INPUT_LOCKING,"input locking state","private service find denied",CLOSED_FOR_SHELL_HOME_ROUTE,Confirmed
+6AV-IPC-004,AmazonProfileService,initiateLauncher,"76246-76256; guard 78949-78966",PROFILE_INTERACTION,"profile flow acknowledgement","private service find denied",NOT_HOME_SELECTOR,Confirmed
+6AV-IPC-005,AmazonProfileService,startProfilePicker,77222-77266,"service/caller contract unresolved locally","explicit profile picker activity","private service find denied",STATIC_REVIEW_ONLY,"Strong evidence"
+6AV-IPC-006,AmazonUserManagerService,enableKftLauncherComponent,54297-54325,"KFT lifecycle path","disables Fire Launcher state 2","private service find denied",STATIC_ONLY_REJECTED_FOR_DEVICE_TEST,Confirmed
+6AV-IPC-007,AmazonActivityManagerService,preWarmApplicationForUser,40453-40534,"APP_PREWARM result not consumed in bounded block","startProcessLocked prewarm","private service find denied; Alexa caller",STATIC_AUTH_ANOMALY_CANDIDATE_NOT_SHELL_REACHABLE,"Strong evidence"

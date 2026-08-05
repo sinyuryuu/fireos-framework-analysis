@@ -1,0 +1,14 @@
+sequence,command,target,impact_class,precondition_or_gate,execution_status
+1,block_image_update,/dev/block/platform/bootdevice/by-name/system,system_or_vendor_block_image_write,"trona/date/recovery context",NOT_EXECUTED
+2,block_image_update,/dev/block/platform/bootdevice/by-name/vendor,system_or_vendor_block_image_write,"trona/date/recovery context",NOT_EXECUTED
+3,package_extract_file,/dev/block/platform/bootdevice/by-name/boot,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+4,package_extract_file,/dev/block/platform/bootdevice/by-name/preloader,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+5,package_extract_file,/dev/block/platform/bootdevice/by-name/lk,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+6,package_extract_file,/dev/block/platform/bootdevice/by-name/tee1,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+7,package_extract_file,/dev/block/platform/bootdevice/by-name/tee2,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+8,package_extract_file,/dev/block/platform/bootdevice/by-name/spmfw,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+9,package_extract_file,/dev/block/platform/bootdevice/by-name/sspm_1,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+10,package_extract_file,/dev/block/platform/bootdevice/by-name/cam_vpu1,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+11,package_extract_file,/dev/block/platform/bootdevice/by-name/cam_vpu2,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+12,package_extract_file,/dev/block/platform/bootdevice/by-name/cam_vpu3,boot_or_firmware_partition_write,"trona/date/recovery context",NOT_EXECUTED
+13,package_extract_file,/cache/recovery/last_blocklist,recovery_metadata_write,"trona/date/recovery context",NOT_EXECUTED

@@ -1,0 +1,372 @@
+### 6AV-IPC-001 AmazonInputManagerService.registerKeyEventInterceptor
+source lines: 19829-19999
+19829:    virtual_method #3827: registerKeyEventInterceptor (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;[IZZ)Z
+19830:     access=0001 (PUBLIC)
+19831:     codeOff=24c3e (150590)
+19832:     quickening_size=0 (0)
+19833:       024c42: 0801 1100                              |0000: move-object/from16 v1, v17
+19834:       024c46: 0808 1200                              |0002: move-object/from16 v8, v18
+19835:       024c4a: 0809 1300                              |0004: move-object/from16 v9, v19
+19836:       024c4e: 5410 a104                              |0006: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19837:       024c52: 5400 dd04                              |0008: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+19838:       024c56: 1a02 c35c                              |000a: const-string v2, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+19839:       024c5a: 6e20 3302 2000                         |000c: invoke-virtual {v0, v2}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+19840:       024c60: 0a00                                   |000f: move-result v0
+19841:       024c62: 3900 2201                              |0010: if-nez v0, 0132 // +0122
+19842:       024c66: 7100 f00a 0000                         |0012: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+19843:       024c6c: 0a0a                                   |0015: move-result v10
+19844:       024c6e: 5410 a104                              |0016: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19845:       024c72: 5400 dd04                              |0018: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+19846:       024c76: 6e10 4002 0000                         |001a: invoke-virtual {v0}, Landroid/content/Context;.getPackageManager:()Landroid/content/pm/PackageManager; // method@0240
+19847:       024c7c: 0c0b                                   |001d: move-result-object v11
+19848:       024c7e: 1200                                   |001e: const/4 v0, #int 0 // #0
+19849:       024c80: 390b 0a00                              |001f: if-nez v11, 0029 // +000a
+19850:       024c84: 6202 ce04                              |0021: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+19851:       024c88: 1a03 d841                              |0023: const-string v3, "Package Manager is null" // string@41d8
+19852:       024c8c: 7120 1c0d 3200                         |0025: invoke-static {v2, v3}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+19853:       024c92: 0f00                                   |0028: return v0
+19854:       024c94: 6e20 ca02 ab00                         |0029: invoke-virtual {v11, v10}, Landroid/content/pm/PackageManager;.getPackagesForUid:(I)[Ljava/lang/String; // method@02ca
+19855:       024c9a: 0c0c                                   |002c: move-result-object v12
+19856:       024c9c: 380c fd00                              |002d: if-eqz v12, 012a // +00fd
+19857:       024ca0: 4602 0c00                              |002f: aget-object v2, v12, v0
+19858:       024ca4: 3902 0400                              |0031: if-nez v2, 0035 // +0004
+19859:       024ca8: 2900 f700                              |0033: goto/16 012a // +00f7
+19860:       024cac: 460d 0c00                              |0035: aget-object v13, v12, v0
+19861:       024cb0: 5412 a104                              |0037: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19862:       024cb4: 7110 3a0f 0200                         |0039: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1300:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3a
+19863:       024cba: 0c02                                   |003c: move-result-object v2
+19864:       024cbc: 6e20 6e7c d200                         |003d: invoke-virtual {v2, v13}, Ljava/util/HashMap;.containsKey:(Ljava/lang/Object;)Z // method@7c6e
+19865:       024cc2: 0a02                                   |0040: move-result v2
+19866:       024cc4: 3902 1e00                              |0041: if-nez v2, 005f // +001e
+19867:       024cc8: 6202 ce04                              |0043: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+19868:       024ccc: 2203 8112                              |0045: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+19869:       024cd0: 7010 4a7a 0300                         |0047: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+19870:       024cd6: 1a04 ae88                              |004a: const-string v4, "package name: " // string@88ae
+19871:       024cda: 6e20 557a 4300                         |004c: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+19872:       024ce0: 6e20 557a d300                         |004f: invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+19873:       024ce6: 1a04 6002                              |0052: const-string v4, " is not in whitelist" // string@0260
+19874:       024cea: 6e20 557a 4300                         |0054: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+19875:       024cf0: 6e10 5e7a 0300                         |0057: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+19876:       024cf6: 0c03                                   |005a: move-result-object v3
+19877:       024cf8: 7120 210d 3200                         |005b: invoke-static {v2, v3}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+19878:       024cfe: 0f00                                   |005e: return v0
+19879:       024d00: 3915 1600                              |005f: if-nez v21, 0075 // +0016
+19880:       024d04: 5412 a104                              |0061: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19881:       024d08: 7110 3b0f 0200                         |0063: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1400:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/lang/String; // method@0f3b
+19882:       024d0e: 0c02                                   |0066: move-result-object v2
+19883:       024d10: 6e20 177a d200                         |0067: invoke-virtual {v2, v13}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+19884:       024d16: 0a02                                   |006a: move-result v2
+19885:       024d18: 3902 0a00                              |006b: if-nez v2, 0075 // +000a
+19886:       024d1c: 6202 ce04                              |006d: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+19887:       024d20: 1a03 225a                              |006f: const-string v3, "can't register if not in foreground!" // string@5a22
+19888:       024d24: 7120 1c0d 3200                         |0071: invoke-static {v2, v3}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+19889:       024d2a: 0f00                                   |0074: return v0
+19890:       024d2c: 5412 a104                              |0075: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19891:       024d30: 7110 380f 0200                         |0077: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+19892:       024d36: 0c0e                                   |007a: move-result-object v14
+19893:       024d38: 1d0e                                   |007b: monitor-enter v14
+19894:       024d3a: 0102                                   |007c: move v2, v0
+19895:       024d3c: 2193                                   |007d: array-length v3, v9
+19896:       024d3e: 3532 4100                              |007e: if-ge v2, v3, 00bf // +0041
+19897:       024d42: 5413 a104                              |0080: iget-object v3, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19898:       024d46: 7110 3d0f 0300                         |0082: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1500:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3d
+19899:       024d4c: 0c03                                   |0085: move-result-object v3
+19900:       024d4e: 4404 0902                              |0086: aget v4, v9, v2
+19901:       024d52: 7110 a479 0400                         |0088: invoke-static {v4}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+19902:       024d58: 0c04                                   |008b: move-result-object v4
+19903:       024d5a: 6e20 6e7c 4300                         |008c: invoke-virtual {v3, v4}, Ljava/util/HashMap;.containsKey:(Ljava/lang/Object;)Z // method@7c6e
+19904:       024d60: 0a03                                   |008f: move-result v3
+19905:       024d62: 3803 0b00                              |0090: if-eqz v3, 009b // +000b
+19906:       024d66: 6203 ce04                              |0092: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+19907:       024d6a: 1a04 1b40                              |0094: const-string v4, "One of the keyevents is already intercepted" // string@401b
+19908:       024d6e: 7120 210d 4300                         |0096: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+19909:       024d74: 1e0e                                   |0099: monitor-exit v14
+19910:       024d76: 0f00                                   |009a: return v0
+19911:       024d78: 5413 a104                              |009b: iget-object v3, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19912:       024d7c: 7110 3a0f 0300                         |009d: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1300:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3a
+19913:       024d82: 0c03                                   |00a0: move-result-object v3
+19914:       024d84: 6e20 707c d300                         |00a1: invoke-virtual {v3, v13}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+19915:       024d8a: 0c03                                   |00a4: move-result-object v3
+19916:       024d8c: 1f03 fd12                              |00a5: check-cast v3, Ljava/util/List; // type@12fd
+19917:       024d90: 4404 0902                              |00a7: aget v4, v9, v2
+19918:       024d94: 7110 a479 0400                         |00a9: invoke-static {v4}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+19919:       024d9a: 0c04                                   |00ac: move-result-object v4
+19920:       024d9c: 7220 a57c 4300                         |00ad: invoke-interface {v3, v4}, Ljava/util/List;.contains:(Ljava/lang/Object;)Z // method@7ca5
+19921:       024da2: 0a03                                   |00b0: move-result v3
+19922:       024da4: 3903 0b00                              |00b1: if-nez v3, 00bc // +000b
+19923:       024da8: 6203 ce04                              |00b3: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+19924:       024dac: 1a04 e787                              |00b5: const-string v4, "one of the keys being intercepted is not whitelisted" // string@87e7
+19925:       024db0: 7120 210d 4300                         |00b7: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+19926:       024db6: 1e0e                                   |00ba: monitor-exit v14
+19927:       024db8: 0f00                                   |00bb: return v0
+19928:       024dba: d802 0201                              |00bc: add-int/lit8 v2, v2, #int 1 // #01
+19929:       024dbe: 28bf                                   |00be: goto 007d // -0041
+19930:       024dc0: 5412 a104                              |00bf: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19931:       024dc4: 7110 380f 0200                         |00c1: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+19932:       024dca: 0c02                                   |00c4: move-result-object v2
+19933:       024dcc: 6e10 130f 0200                         |00c5: invoke-virtual {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.getRegisteredCallbackCount:()I // method@0f13
+19934:       024dd2: 0a02                                   |00c8: move-result v2
+19935:       024dd4: 012f                                   |00c9: move v15, v2
+19936:       024dd6: 3808 5b00                              |00ca: if-eqz v8, 0125 // +005b
+19937:       024dda: 5412 a104                              |00cc: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+19938:       024dde: 7110 380f 0200                         |00ce: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+19939:       024de4: 0c02                                   |00d1: move-result-object v2
+19940:       024de6: 6e20 160f 8200                         |00d2: invoke-virtual {v2, v8}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.register:(Landroid/os/IInterface;)Z // method@0f16
+19941:       024dec: 0a02                                   |00d5: move-result v2
+19942:       024dee: 3902 0b00                              |00d6: if-nez v2, 00e1 // +000b
+19943:       024df2: 6202 ce04                              |00d8: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+19944:       024df6: 1a03 1011                              |00da: const-string v3, "Could not register callback " // string@1110
+19945:       024dfa: 7120 1c0d 3200                         |00dc: invoke-static {v2, v3}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+19946:       024e00: 1e0e                                   |00df: monitor-exit v14
+19947:       024e02: 0f00                                   |00e0: return v0
+19948:       024e04: 5412 a104                              |00e1: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+[snippet truncated by host-only exporter]
+
+### 6AV-IPC-002 AmazonInputManagerService.setInputFilter
+source lines: 20112-20122
+20112:    virtual_method #3831: setInputFilter (Landroid/view/IInputFilter;)V
+20113:     access=0001 (PUBLIC)
+20114:     codeOff=257f8 (153592)
+20115:     quickening_size=0 (0)
+20116:       0257fc: 5410 a104                              |0000: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+20117:       025800: 7110 5b0f 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$600:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)V // method@0f5b
+20118:       025806: 5410 a104                              |0005: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+20119:       02580a: 7110 5c0f 0000                         |0007: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$700:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/android/server/input/InputManagerService; // method@0f5c
+20120:       025810: 0c00                                   |000a: move-result-object v0
+20121:       025812: 6e20 3c36 2000                         |000b: invoke-virtual {v0, v2}, Lcom/android/server/input/InputManagerService;.registerSecondaryInputFilter:(Landroid/view/IInputFilter;)V // method@363c
+20122:       025818: 0e00                                   |000e: return-void
+
+### 6AV-IPC-003 AmazonInputManagerService.setInputLockingMode
+source lines: 20679-20713
+20679:    virtual_method #3850: setInputLockingMode (I)Z
+20680:     access=0001 (PUBLIC)
+20681:     codeOff=25edc (155356)
+20682:     quickening_size=0 (0)
+20683:       025ee0: 5440 a404                              |0000: iget-object v0, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventBinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a4
+20684:       025ee4: 1a01 295c                              |0002: const-string v1, "com.amazon.amazoninputmanager.permission.INPUT_LOCKING" // string@5c29
+20685:       025ee8: 7120 4f0f 1000                         |0004: invoke-static {v0, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2900:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Ljava/lang/String;)V // method@0f4f
+20686:       025eee: 1210                                   |0007: const/4 v0, #int 1 // #1
+20687:       025ef0: 3805 1c00                              |0008: if-eqz v5, 0024 // +001c
+20688:       025ef4: 3205 1a00                              |000a: if-eq v5, v0, 0024 // +001a
+20689:       025ef8: 6200 ce04                              |000c: sget-object v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+20690:       025efc: 2201 8112                              |000e: new-instance v1, Ljava/lang/StringBuilder; // type@1281
+20691:       025f00: 7010 4a7a 0100                         |0010: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+20692:       025f06: 1a02 a51c                              |0013: const-string v2, "Invalid input locking mode " // string@1ca5
+20693:       025f0a: 6e20 557a 2100                         |0015: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+20694:       025f10: 6e20 507a 5100                         |0018: invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+20695:       025f16: 6e10 5e7a 0100                         |001b: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+20696:       025f1c: 0c01                                   |001e: move-result-object v1
+20697:       025f1e: 7120 1c0d 1000                         |001f: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+20698:       025f24: 1200                                   |0022: const/4 v0, #int 0 // #0
+20699:       025f26: 0f00                                   |0023: return v0
+20700:       025f28: 5441 a404                              |0024: iget-object v1, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventBinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a4
+20701:       025f2c: 7120 530f 5100                         |0026: invoke-static {v1, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$3102:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;I)I // method@0f53
+20702:       025f32: 6201 ce04                              |0029: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+20703:       025f36: 2202 8112                              |002b: new-instance v2, Ljava/lang/StringBuilder; // type@1281
+20704:       025f3a: 7010 4a7a 0200                         |002d: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+20705:       025f40: 1a03 d34d                              |0030: const-string v3, "Update input locking to " // string@4dd3
+20706:       025f44: 6e20 557a 3200                         |0032: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+20707:       025f4a: 6e20 507a 5200                         |0035: invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+20708:       025f50: 6e10 5e7a 0200                         |0038: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+20709:       025f56: 0c02                                   |003b: move-result-object v2
+20710:       025f58: 7120 1e0d 2100                         |003c: invoke-static {v1, v2}, Landroid/util/Slog;.i:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1e
+20711:       025f5e: 7110 a60f 0500                         |003f: invoke-static {v5}, Lcom/amazon/android/internal/server/input/MetricsHelper;.recordInputLockingModeUpdateEvent:(I)V // method@0fa6
+20712:       025f64: 6e30 0c0f 5400                         |0042: invoke-virtual {v4, v5, v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventBinderService;.showInputLockingNotification:(IZ)V // method@0f0c
+20713:       025f6a: 0f00                                   |0045: return v0
+
+### 6AV-IPC-004 AmazonProfileService.initiateLauncher
+source lines: 76246-76256
+76246:    virtual_method #6514: initiateLauncher ()I
+76247:     access=0001 (PUBLIC)
+76248:     codeOff=579ca (358858)
+76249:     quickening_size=0 (0)
+76250:       0579ce: 5420 b50c                              |0000: iget-object v0, v2, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+76251:       0579d2: 7110 ec19 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$6400:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)V // method@19ec
+76252:       0579d8: 6200 190d                              |0005: sget-object v0, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.TAG:Ljava/lang/String; // field@0d19
+76253:       0579dc: 1a01 391c                              |0007: const-string v1, "Initiate launcher" // string@1c39
+76254:       0579e0: 7120 1e0d 1000                         |0009: invoke-static {v0, v1}, Landroid/util/Slog;.i:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1e
+76255:       0579e6: 6000 1f04                              |000c: sget v0, Lcom/amazon/android/amazonprofile/AmazonProfileManager;.SUCCESS:I // field@041f
+76256:       0579ea: 0f00                                   |000e: return v0
+78949:    direct_method #6671: enforceProfileInteractionPermissions ()V
+78950:     access=0002 (PRIVATE)
+78951:     codeOff=5aad6 (371414)
+78952:     quickening_size=0 (0)
+78953:       05aada: 5440 290d                              |0000: iget-object v0, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.mContext:Landroid/content/Context; // field@0d29
+78954:       05aade: 1a01 565c                              |0002: const-string v1, "com.amazon.device.permission.PROFILE_INTERACTION" // string@5c56
+78955:       05aae2: 7010 1a1a 0400                         |0004: invoke-direct {v4}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.getProcessId:()I // method@1a1a
+78956:       05aae8: 0a02                                   |0007: move-result v2
+78957:       05aaea: 7010 1d1a 0400                         |0008: invoke-direct {v4}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.getUserId:()I // method@1a1d
+78958:       05aaf0: 0a03                                   |000b: move-result v3
+78959:       05aaf2: 6e40 3502 1032                         |000c: invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@0235
+78960:       05aaf8: 0a00                                   |000f: move-result v0
+78961:       05aafa: 3900 0300                              |0010: if-nez v0, 0013 // +0003
+78962:       05aafe: 0e00                                   |0012: return-void
+78963:       05ab00: 2200 7b12                              |0013: new-instance v0, Ljava/lang/SecurityException; // type@127b
+78964:       05ab04: 1a01 c944                              |0015: const-string v1, "Requires com.amazon.device.permission.PROFILE_INTERACTION permission" // string@44c9
+78965:       05ab08: 7020 007a 1000                         |0017: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+78966:       05ab0e: 2700                                   |001a: throw v0
+
+### 6AV-IPC-005 AmazonProfileService.startProfilePicker
+source lines: 77222-77266
+77222:    virtual_method #6539: startProfilePicker (I)V
+77223:     access=0001 (PUBLIC)
+77224:     codeOff=589c2 (362946)
+77225:     quickening_size=0 (0)
+77226:       0589c6: 2200 9000                              |0000: new-instance v0, Landroid/content/Intent; // type@0090
+77227:       0589ca: 7010 6102 0000                         |0002: invoke-direct {v0}, Landroid/content/Intent;.<init>:()V // method@0261
+77228:       0589d0: 1a01 774f                              |0005: const-string v1, "WAKE_UP_SOURCE" // string@4f77
+77229:       0589d4: 6e30 7602 1005                         |0007: invoke-virtual {v0, v1, v5}, Landroid/content/Intent;.putExtra:(Ljava/lang/String;I)Landroid/content/Intent; // method@0276
+77230:       0589da: 5441 b50c                              |000a: iget-object v1, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+77231:       0589de: 7110 c019 0100                         |000c: invoke-static {v1}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$3000:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)Ljava/util/Map; // method@19c0
+77232:       0589e4: 0c01                                   |000f: move-result-object v1
+77233:       0589e6: 1a02 011e                              |0010: const-string v2, "KEY_PROFILE_PICKER_PACKAGE_NAME" // string@1e01
+77234:       0589ea: 7220 d77c 2100                         |0012: invoke-interface {v1, v2}, Ljava/util/Map;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7cd7
+77235:       0589f0: 0c01                                   |0015: move-result-object v1
+77236:       0589f2: 1f01 7f12                              |0016: check-cast v1, Ljava/lang/String; // type@127f
+77237:       0589f6: 5442 b50c                              |0018: iget-object v2, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+77238:       0589fa: 7110 c019 0200                         |001a: invoke-static {v2}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$3000:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)Ljava/util/Map; // method@19c0
+77239:       058a00: 0c02                                   |001d: move-result-object v2
+77240:       058a02: 1a03 001e                              |001e: const-string v3, "KEY_PROFILE_PICKER_ACTIVITY_NAME" // string@1e00
+77241:       058a06: 7220 d77c 3200                         |0020: invoke-interface {v2, v3}, Ljava/util/Map;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7cd7
+77242:       058a0c: 0c02                                   |0023: move-result-object v2
+77243:       058a0e: 1f02 7f12                              |0024: check-cast v2, Ljava/lang/String; // type@127f
+77244:       058a12: 6e30 8202 1002                         |0026: invoke-virtual {v0, v1, v2}, Landroid/content/Intent;.setClassName:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent; // method@0282
+77245:       058a18: 1501 0004                              |0029: const/high16 v1, #int 67108864 // #400
+77246:       058a1c: 6e20 8502 1000                         |002b: invoke-virtual {v0, v1}, Landroid/content/Intent;.setFlags:(I)Landroid/content/Intent; // method@0285
+77247:       058a22: 5441 b50c                              |002e: iget-object v1, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+77248:       058a26: 7110 ba19 0100                         |0030: invoke-static {v1}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$2400:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)Landroid/content/Context; // method@19ba
+77249:       058a2c: 0c01                                   |0033: move-result-object v1
+77250:       058a2e: 7100 8e01 0000                         |0034: invoke-static {}, Landroid/app/ActivityManager;.getCurrentUser:()I // method@018e
+77251:       058a34: 0a02                                   |0037: move-result v2
+77252:       058a36: 7110 610c 0200                         |0038: invoke-static {v2}, Landroid/os/UserHandle;.of:(I)Landroid/os/UserHandle; // method@0c61
+77253:       058a3c: 0c02                                   |003b: move-result-object v2
+77254:       058a3e: 6e30 5902 0102                         |003c: invoke-virtual {v1, v0, v2}, Landroid/content/Context;.startActivityAsUser:(Landroid/content/Intent;Landroid/os/UserHandle;)V // method@0259
+77255:       058a44: 2818                                   |003f: goto 0057 // +0018
+77256:       058a46: 0d00                                   |0040: move-exception v0
+77257:       058a48: 6201 190d                              |0041: sget-object v1, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.TAG:Ljava/lang/String; // field@0d19
+77258:       058a4c: 2202 8112                              |0043: new-instance v2, Ljava/lang/StringBuilder; // type@1281
+77259:       058a50: 7010 4a7a 0200                         |0045: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+77260:       058a56: 1a03 6816                              |0048: const-string v3, "Exception while attempting to launch profile picker activity. Message: " // string@1668
+77261:       058a5a: 6e20 557a 3200                         |004a: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+77262:       058a60: 6e20 547a 0200                         |004d: invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+77263:       058a66: 6e10 5e7a 0200                         |0050: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+77264:       058a6c: 0c02                                   |0053: move-result-object v2
+77265:       058a6e: 7120 1c0d 2100                         |0054: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+77266:       058a74: 0e00                                   |0057: return-void
+
+### 6AV-IPC-006 AmazonUserManagerService.enableKftLauncherComponent
+source lines: 54297-54325
+54297:    direct_method #5625: enableKftLauncherComponent (Landroid/content/pm/UserInfo;)V
+54298:     access=0002 (PRIVATE)
+54299:     codeOff=431e2 (274914)
+54300:     quickening_size=0 (0)
+54301:       0431e6: 5450 8909                              |0000: iget-object v0, v5, Lcom/amazon/android/server/pm/AmazonUserManagerService$BinderService;.this$0:Lcom/amazon/android/server/pm/AmazonUserManagerService; // field@0989
+54302:       0431ea: 7110 0716 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/pm/AmazonUserManagerService;.access$1000:(Lcom/amazon/android/server/pm/AmazonUserManagerService;)Lamazon/content/pm/AmazonPackageManager; // method@1607
+54303:       0431f0: 0c00                                   |0005: move-result-object v0
+54304:       0431f2: 2201 8800                              |0006: new-instance v1, Landroid/content/ComponentName; // type@0088
+54305:       0431f6: 1a02 fd5c                              |0008: const-string v2, "com.amazon.tahoe" // string@5cfd
+54306:       0431fa: 1a03 035d                              |000a: const-string v3, "com.amazon.tahoe.launcher.FreeTimeLauncherActivity" // string@5d03
+54307:       0431fe: 7030 1f02 2103                         |000c: invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;.<init>:(Ljava/lang/String;Ljava/lang/String;)V // method@021f
+54308:       043204: 5262 2a01                              |000f: iget v2, v6, Landroid/content/pm/UserInfo;.id:I // field@012a
+54309:       043208: 1213                                   |0011: const/4 v3, #int 1 // #1
+54310:       04320a: 6e52 3b00 1033                         |0012: invoke-virtual {v0, v1, v3, v3, v2}, Lamazon/content/pm/AmazonPackageManager;.setComponentEnabledSetting:(Landroid/content/ComponentName;III)V // method@003b
+54311:       043210: 5450 8909                              |0015: iget-object v0, v5, Lcom/amazon/android/server/pm/AmazonUserManagerService$BinderService;.this$0:Lcom/amazon/android/server/pm/AmazonUserManagerService; // field@0989
+54312:       043214: 7110 0716 0000                         |0017: invoke-static {v0}, Lcom/amazon/android/server/pm/AmazonUserManagerService;.access$1000:(Lcom/amazon/android/server/pm/AmazonUserManagerService;)Lamazon/content/pm/AmazonPackageManager; // method@1607
+54313:       04321a: 0c00                                   |001a: move-result-object v0
+54314:       04321c: 1a01 6b5c                              |001b: const-string v1, "com.amazon.firelauncher" // string@5c6b
+54315:       043220: 5262 2a01                              |001d: iget v2, v6, Landroid/content/pm/UserInfo;.id:I // field@012a
+54316:       043224: 1203                                   |001f: const/4 v3, #int 0 // #0
+54317:       043226: 1224                                   |0020: const/4 v4, #int 2 // #2
+54318:       043228: 6e52 3a00 1034                         |0021: invoke-virtual {v0, v1, v4, v3, v2}, Lamazon/content/pm/AmazonPackageManager;.setApplicationEnabledSetting:(Ljava/lang/String;III)V // method@003a
+54319:       04322e: 5450 8909                              |0024: iget-object v0, v5, Lcom/amazon/android/server/pm/AmazonUserManagerService$BinderService;.this$0:Lcom/amazon/android/server/pm/AmazonUserManagerService; // field@0989
+54320:       043232: 7110 0716 0000                         |0026: invoke-static {v0}, Lcom/amazon/android/server/pm/AmazonUserManagerService;.access$1000:(Lcom/amazon/android/server/pm/AmazonUserManagerService;)Lamazon/content/pm/AmazonPackageManager; // method@1607
+54321:       043238: 0c00                                   |0029: move-result-object v0
+54322:       04323a: 1a01 2e5d                              |002a: const-string v1, "com.android.launcher3" // string@5d2e
+54323:       04323e: 5262 2a01                              |002c: iget v2, v6, Landroid/content/pm/UserInfo;.id:I // field@012a
+54324:       043242: 6e52 3a00 1034                         |002e: invoke-virtual {v0, v1, v4, v3, v2}, Lamazon/content/pm/AmazonPackageManager;.setApplicationEnabledSetting:(Ljava/lang/String;III)V // method@003a
+54325:       043248: 0e00                                   |0031: return-void
+
+### 6AV-IPC-007 AmazonActivityManagerService.preWarmApplicationForUser
+source lines: 40453-40534
+40453:    virtual_method #4985: preWarmApplicationForUser (Ljava/lang/String;II)I
+40454:     access=0001 (PUBLIC)
+40455:     codeOff=36f0c (225036)
+40456:     quickening_size=0 (0)
+40457:       036f10: 0801 1500                              |0000: move-object/from16 v1, v21
+40458:       036f14: 0802 1600                              |0002: move-object/from16 v2, v22
+40459:       036f18: 2200 8112                              |0004: new-instance v0, Ljava/lang/StringBuilder; // type@1281
+40460:       036f1c: 7010 4a7a 0000                         |0006: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+40461:       036f22: 1a03 348b                              |0009: const-string v3, "preWarmApplication: " // string@8b34
+40462:       036f26: 6e20 557a 3000                         |000b: invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+40463:       036f2c: 6e20 557a 2000                         |000e: invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+40464:       036f32: 6e10 5e7a 0000                         |0011: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+40465:       036f38: 0c00                                   |0014: move-result-object v0
+40466:       036f3a: 1603 4000                              |0015: const-wide/16 v3, #int 64 // #40
+40467:       036f3e: 7130 4e0c 4300                         |0017: invoke-static {v3, v4, v0}, Landroid/os/Trace;.traceBegin:(JLjava/lang/String;)V // method@0c4e
+40468:       036f44: 12f5                                   |001a: const/4 v5, #int -1 // #ff
+40469:       036f46: 5410 8d07                              |001b: iget-object v0, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+40470:       036f4a: 7110 8b13 0000                         |001d: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+40471:       036f50: 0c00                                   |0020: move-result-object v0
+40472:       036f52: 1a06 b05c                              |0021: const-string v6, "com.amazon.permission.APP_PREWARM" // string@5cb0
+40473:       036f56: 6e20 3402 6000                         |0023: invoke-virtual {v0, v6}, Landroid/content/Context;.checkCallingPermission:(Ljava/lang/String;)I // method@0234
+40474:       036f5c: 7100 ed0a 0000                         |0026: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@0aed
+40475:       036f62: 0b06                                   |0029: move-result-wide v6
+40476:       036f64: 3802 6100                              |002a: if-eqz v2, 008b // +0061
+40477:       036f68: 3917 5f00                              |002c: if-nez v23, 008b // +005f
+40478:       036f6c: 5418 8d07                              |002e: iget-object v8, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+40479:       036f70: 1d08                                   |0030: monitor-enter v8
+40480:       036f72: 7100 b001 0000                         |0031: invoke-static {}, Landroid/app/AppGlobals;.getPackageManager:()Landroid/content/pm/IPackageManager; // method@01b0
+40481:       036f78: 0c00                                   |0034: move-result-object v0
+40482:       036f7a: 1309 0004                              |0035: const/16 v9, #int 1024 // #400
+40483:       036f7e: 020a 1800                              |0037: move/from16 v10, v24
+40484:       036f82: 7240 ae02 20a9                         |0039: invoke-interface {v0, v2, v9, v10}, Landroid/content/pm/IPackageManager;.getApplicationInfo:(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo; // method@02ae
+40485:       036f88: 0c00                                   |003c: move-result-object v0
+40486:       036f8a: 3800 2600                              |003d: if-eqz v0, 0063 // +0026
+40487:       036f8e: 5419 8d07                              |003f: iget-object v9, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+40488:       036f92: 7110 8c13 0900                         |0041: invoke-static {v9}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$300:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lcom/amazon/android/server/am/PreWarmCacheHelper; // method@138c
+40489:       036f98: 0c09                                   |0044: move-result-object v9
+40490:       036f9a: 6e20 ae13 2900                         |0045: invoke-virtual {v9, v2}, Lcom/amazon/android/server/am/PreWarmCacheHelper;.getKeepIfLargeValue:(Ljava/lang/String;)Z // method@13ae
+40491:       036fa0: 0a14                                   |0048: move-result v20
+40492:       036fa2: 5419 8d07                              |0049: iget-object v9, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+40493:       036fa6: 7110 8d13 0900                         |004b: invoke-static {v9}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+40494:       036fac: 0c0b                                   |004e: move-result-object v11
+40495:       036fae: 540c 0a01                              |004f: iget-object v12, v0, Landroid/content/pm/ApplicationInfo;.processName:Ljava/lang/String; // field@010a
+40496:       036fb2: 120e                                   |0051: const/4 v14, #int 0 // #0
+40497:       036fb4: 120f                                   |0052: const/4 v15, #int 0 // #0
+40498:       036fb6: 1a10 718b                              |0053: const-string v16, "prewarm" // string@8b71
+40499:       036fba: 1311 0000                              |0055: const/16 v17, #int 0 // #0
+40500:       036fbe: 1312 0000                              |0057: const/16 v18, #int 0 // #0
+40501:       036fc2: 1313 0000                              |0059: const/16 v19, #int 0 // #0
+40502:       036fc6: 070d                                   |005b: move-object v13, v0
+40503:       036fc8: 740a 6100 0b00                         |005c: invoke-virtual/range {v11, v12, v13, v14, v15, v16, v17, v18, v19, v20}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.startProcessLocked:(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZ)Lamazon/internal/SystemJumpTable$ProcessRecord; // method@0061
+40504:       036fce: 0c09                                   |005f: move-result-object v9
+40505:       036fd0: 3809 0300                              |0060: if-eqz v9, 0063 // +0003
+40506:       036fd4: 1205                                   |0062: const/4 v5, #int 0 // #0
+40507:       036fd6: 2824                                   |0063: goto 0087 // +0024
+40508:       036fd8: 0d00                                   |0064: move-exception v0
+40509:       036fda: 2824                                   |0065: goto 0089 // +0024
+40510:       036fdc: 0d00                                   |0066: move-exception v0
+40511:       036fde: 2808                                   |0067: goto 006f // +0008
+40512:       036fe0: 0d00                                   |0068: move-exception v0
+40513:       036fe2: 020a 1800                              |0069: move/from16 v10, v24
+40514:       036fe6: 281e                                   |006b: goto 0089 // +001e
+40515:       036fe8: 0d00                                   |006c: move-exception v0
+40516:       036fea: 020a 1800                              |006d: move/from16 v10, v24
+40517:       036fee: 7100 8713 0000                         |006f: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+40518:       036ff4: 0c09                                   |0072: move-result-object v9
+40519:       036ff6: 220b 8112                              |0073: new-instance v11, Ljava/lang/StringBuilder; // type@1281
+40520:       036ffa: 7010 4a7a 0b00                         |0075: invoke-direct {v11}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+40521:       037000: 1a0c 9644                              |0078: const-string v12, "Remote exception trying to prewarm application " // string@4496
+40522:       037004: 6e20 557a cb00                         |007a: invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+40523:       03700a: 6e20 557a 2b00                         |007d: invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+40524:       037010: 6e10 5e7a 0b00                         |0080: invoke-virtual {v11}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+40525:       037016: 0c0b                                   |0083: move-result-object v11
+40526:       037018: 7120 1c0d b900                         |0084: invoke-static {v9, v11}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+40527:       03701e: 1e08                                   |0087: monitor-exit v8
+40528:       037020: 2805                                   |0088: goto 008d // +0005
+40529:       037022: 1e08                                   |0089: monitor-exit v8
+40530:       037024: 2700                                   |008a: throw v0
+40531:       037026: 020a 1800                              |008b: move/from16 v10, v24
+40532:       03702a: 7120 f30a 7600                         |008d: invoke-static {v6, v7}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+40533:       037030: 7120 500c 4300                         |0090: invoke-static {v3, v4}, Landroid/os/Trace;.traceEnd:(J)V // method@0c50
+40534:       037036: 0f05                                   |0093: return v5

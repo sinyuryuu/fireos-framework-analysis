@@ -1,0 +1,12 @@
+flowchart TD
+    S[ADB shell uid 2000] --> F[service_manager find]
+    F -->|SELinux enforcing deny| X[No Amazon private Binder handle]
+    T[Trusted Amazon client] --> B[Amazon private Binder service]
+    B --> I[Input method: permission + UID/package + whitelist + foreground]
+    B --> P[Profile method: PROFILE_INTERACTION / picker contract]
+    B --> K[KFT lifecycle: explicit Fire Launcher disabled state]
+    B --> W[Prewarm method: APP_PREWARM check then process-start path]
+    I --> N[No bounded ordinary HOME write]
+    P --> N
+    K --> R[High-risk; rejected for device test]
+    W --> A[Static authorization anomaly candidate only]
