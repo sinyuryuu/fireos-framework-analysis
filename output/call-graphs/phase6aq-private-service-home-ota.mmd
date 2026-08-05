@@ -1,0 +1,37 @@
+flowchart TD
+  A[Home key] --> B[TabletKeyPolicyManager / KeyInterceptorCallback]
+  B --> C[KeyPolicyManagerCommon.launchHomeFromHotKey]
+  C --> D[Implicit MAIN + CATEGORY_HOME\nflags 0x10200000]
+  D --> E[Context.startActivityAsUser\nUserHandle.CURRENT]
+  E --> F[Android HOME resolver]
+  F --> G[Fire Launcher\npriority 50 in live baseline]
+
+  B --> H[HomeEventHandler.handleCustomHome]
+  H --> I[check RECEIVE_CUSTOM_HOME]
+  I --> J[Explicit CUSTOM_HOME broadcast\nforeground package receiver]
+
+  K[LauncherHijackPreventer callback] --> L[canSeeHomeTask]
+  L --> M[SELinux check\namazon_policies / see_home_task]
+  M --> N[Android signature fallback]
+  N --> O[Home task visibility allow/deny]
+
+  P[fosinit] --> Q[Amazon private services]
+  Q --> R[service_manager lookup by shell UID 2000]
+  R --> S{SELinux enforcing}
+  S -->|denied| T[No shell Binder handle]
+  Q --> U[fosdebug inventory]
+  U --> V[Read-only diagnostics;\nnot proof of HOME setter]
+
+  W[Official OTA staging] --> X[verification / metadata / device checks]
+  X --> Y[UpdateSystem.install boundary]
+  Y --> Z[Natural post-system-OTA lifecycle]
+  Z --> AA[BootAfterSystemOTAReceiver]
+  AA --> AB[OOBE/setup state branch]
+  AB --> AC[Not ordinary preferred HOME selector]
+
+  classDef confirmed fill:#d9f7be,stroke:#389e0d,color:#000;
+  classDef boundary fill:#fff1b8,stroke:#d48806,color:#000;
+  classDef blocked fill:#ffd6e7,stroke:#c41d7f,color:#000;
+  class C,D,E,F,G,H,I,J,L,M,N,O,U,V,AA,AB,AC confirmed;
+  class P,Q,W,X,Y,Z boundary;
+  class R,S,T blocked;
