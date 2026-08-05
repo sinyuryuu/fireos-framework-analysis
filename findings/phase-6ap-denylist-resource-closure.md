@@ -62,9 +62,10 @@ python3 tools/scripts/audit_phase6ap_denylist_resource.py \
   --output artifacts/phase6ap/denylist-resource-closure-20260805-01
 ```
 
-The local canonical artifact also contains the extracted APK. The APK itself
-is intentionally not staged in the public commit (the repository excludes
-derived APK binaries); its hash is retained in `input-sha256.json`, and the
+The local canonical artifact also contains the small extracted APK as a
+derived evidence artifact (338,278 bytes); it is included when this evidence
+set is published so the recorded resource table and raw resource can be
+independently inspected. Its hash is retained in `sha256sums.txt`, and the
 same host-only script regenerates it from the preserved image. The raw JSON,
 resource-table mapping, input hash, debugfs commands, summary and SHA-256
 manifest are public. The consumer excerpt can be regenerated with:

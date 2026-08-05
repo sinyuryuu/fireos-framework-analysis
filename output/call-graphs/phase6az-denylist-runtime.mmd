@@ -1,0 +1,28 @@
+flowchart TD
+    A[Shell pm/cmd package enabled-state request] --> B[PackageManagerService protection path]
+    B --> C[VendorProtectedPackagesCallback.callShouldProtectPackage]
+    C --> D[Amazon ControlProtectedPackagesCallback.shouldProtectPackage]
+    D --> E{system or privileged app?}
+    E -- no --> X[not this Amazon gate]
+    E -- yes --> F[PackageManagerDenyList:DenyListKeyPackages]
+    F --> G{package membership?}
+    G -- no --> X
+    G -- yes --> H{caller UID == 2000?}
+    H -- no --> X
+    H -- yes --> I[protected=true]
+    I --> J[reject before package/component state mutation]
+
+    K[AmazonPackageManagerService.onBootPhase] --> L[DenyListArcusHelper]
+    L --> M[Resources.getSystem().openRawResource(0x7e05000a)]
+    M --> N[amazon.fireos:raw/package_manager_deny_list]
+    N --> O[JSON packages_deny_list]
+    O --> P[com.amazon.firelauncher]
+    P --> Q[PackageManagerDenyList seed]
+    Q --> F
+
+    R[AmazonUserManagerService.onBootPhase(500)] --> S[child-user and upgrade gates]
+    S --> T[enableKftLauncherComponent(UserInfo)]
+    T --> U[disable Fire Launcher and Launcher3]
+
+    classDef evidence fill:#eef,stroke:#446;
+    class A,B,C,D,F,I,J,K,L,M,N,O,P,Q,R,S,T,U evidence;

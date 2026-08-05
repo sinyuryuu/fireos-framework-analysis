@@ -1,0 +1,9 @@
+evidence_id,scope,observation,status,confidence
+6AZ-KFT-001,static KFT VDEX,"enableKftLauncherComponent disables com.amazon.firelauncher with state 2",confirmed,Confirmed
+6AZ-KFT-002,static KFT VDEX,"child-user/upgrade/DPM gates precede the mutation",confirmed,Confirmed
+6AZ-PM-001,static PackageManager,"Amazon callback checks system/privileged, deny-list membership, and UID 2000",confirmed,Confirmed
+6AZ-PM-002,matched PS7331 system image,"resource 0x7e05000a JSON contains com.amazon.firelauncher",confirmed,Confirmed
+6AZ-PM-003,static fosinit,"ControlProtectedPackagesCallback registered in system-server callback fan-in",confirmed,Confirmed
+6AZ-LIVE-001,read-only device,"HOME resolves Fire Launcher priority 50; SELinux enforcing; private Amazon services not shell-visible",observed,Strong evidence
+6AZ-LIVE-002,read-only device and static search,"tb_custom_launcher points to an absent package and has no inspected HOME reader/writer",observed,Strong evidence
+6AZ-SAFETY-001,artifact integrity,"raw capture hashes verify and no mutation command is present",confirmed,Confirmed
