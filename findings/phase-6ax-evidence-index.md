@@ -1,0 +1,21 @@
+# Phase 6AX evidence index
+
+All evidence below is host-side or a previously saved read-only device capture. No Phase 6AX Binder transaction or device mutation was performed.
+
+| Evidence ID | Source | File | SHA-256 | Test ID | Command / method | Observed result | Interpretation | Confidence |
+|---|---|---|---|---|---|---|---|---|
+| 6AX-AM-001 | PS7331 VDEX disassembly | `decompiled/baksmali/vdexExtractor/fosservices/disassembly.log` | `ecbe62fe8eb8bd575da8b2a73a155875df937073ccc2faa020ca592c0515151c` | `PHASE6AX-HOST-01` | `audit_phase6ax_activity_manager_home_surface.py` | BinderService lines 39645–40680; 19 methods parsed | Bounded Activity Manager Binder inventory is reproducible | Confirmed |
+| 6AX-AM-002 | PS7331 VDEX disassembly | same as above | same as above | `PHASE6AX-HOST-01` | `isOnHomeStack()`, lines 40336–40373 | Reads focused stack info and activity type | HOME-related query, not a selector | Confirmed |
+| 6AX-AM-003 | PS7331 VDEX disassembly | same as above | same as above | `PHASE6AX-HOST-01` | `onActivityResume(ComponentName)`, lines 40401–40416 | Writes `mComponentInForeground` through `access$702`; sends Handler message | Foreground state and observer path | Confirmed |
+| 6AX-AM-004 | PS7331 VDEX disassembly | same as above | same as above | `PHASE6AX-HOST-01` | `ActivitySwitchHandler.handleMessage`, lines 39617–39644 | For `what=1`, calls `notifyActivitySwitch(ComponentName)` | Observer fan-out, not HOME selection | Confirmed |
+| 6AX-AM-005 | PS7331 VDEX disassembly | same as above | same as above | `PHASE6AX-HOST-01` | `AmazonActivityManagerAMSCallback.updateUsageStatsOnResume`, lines 180274–180288 | Forwards the resumed component to `IAmazonActivityManager.onActivityResume` when service exists | Normal internal caller edge identified | Confirmed |
+| 6AX-AM-006 | PS7331 VDEX disassembly | same as above | same as above | `PHASE6AX-HOST-01` | `getSystemServiceName`, lines 40954–40962; `onStart` publish path | Service name is `amazonactivitymanager`; Binder service is published | Service identity and registration path | Confirmed |
+| 6AX-AM-007 | Saved PS7331 live capture | `artifacts/phase6aq/public-summary-20260805-01/service-check-results.txt` | `242b8381d43970c6d25075d7434e9a8c6f26e0167bb4c8c31d910af1e0bb5aed` | `PHASE6AQ-SERVICE-RO-20260805-01` | `adb -s G001LT0511550CFT shell service check amazonactivitymanager` | `Service amazonactivitymanager: not found` for shell-side check | Ordinary shell cannot obtain a service handle | Confirmed |
+| 6AX-AM-008 | Saved PS7331 live capture | `artifacts/phase6aq/public-summary-20260805-01/amazon-service-avc.txt` | `d436542564947472c1b2481519312542d7d1053512b9cb47c68abbb981e0b0a4` | `PHASE6AQ-SERVICE-RO-20260805-01` | Targeted `logcat` review after read-only service checks | Enforcing AVC denies `{ find }` for `amazonactivitymanager`, shell UID 2000, `permissive=0` | Service-manager boundary is active | Confirmed |
+| 6AX-AM-009 | PS7331 VDEX disassembly | same as 6AX-AM-001 | same as 6AX-AM-001 | `PHASE6AX-HOST-01` | `checkKillAppGoingIntoBg*`, lines 39808–39940 | Body can reach `TestHelper.killApp` after package/process checks | High-impact process-control candidate; not a HOME route | Strong evidence |
+| 6AX-AM-010 | PS7331 VDEX disassembly | same as 6AX-AM-001 | same as 6AX-AM-001 | `PHASE6AX-HOST-01` | `preWarmApplicationForUser`, lines 40453–40534 | APP_PREWARM check is present; result is not observed being consumed before identity clearing in the bounded block | Static anomaly candidate only; no invocation | Strong evidence |
+| 6AX-AM-011 | Generated host artifact | `artifacts/phase6ax/activity-manager-home-surface-20260805-01/activity-manager-binder-methods.csv` | `9ce611abaebb5dae3796b48cced862a9a3730abdd9fdfcf546dbad5968576879` | `PHASE6AX-HOST-01` | CSV and generated graph | Method classifications and negative HOME search are preserved | Reproduction output is integrity-checked | Confirmed |
+
+## Safety record
+
+The generated `summary.json` records `device_contacted=false`, `binder_invoked=false`, `process_started_or_killed=false`, `input_injected=false`, `settings_or_package_state_changed=false`, and `partition_written=false`. Its SHA-256 is `2b6408e61ecc3fc3946cfcb28a9214065ff6a2578c5b8da525a4e2074b1302a6`.

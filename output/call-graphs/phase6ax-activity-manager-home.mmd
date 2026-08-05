@@ -1,0 +1,14 @@
+flowchart TD
+  S[AmazonActivityManagerService publishes amazonactivitymanager] --> V[Saved SELinux service-manager boundary]
+  V -->|shell uid 2000 find denied| X[No ordinary shell Binder handle]
+  V --> T[Trusted/internal caller]
+  T --> Q[isOnHomeStack: query focused stack]
+  T --> F[onActivityResume: stores mComponentInForeground and notifies observers]
+  F --> O[ActivitySwitchHandler -> authorized observers]
+  T --> P[packageLifetimeHint: SMARTOOM_HINTING]
+  T --> W[preWarmApplicationForUser: APP_PREWARM check then process prewarm]
+  T --> K[checkKillAppGoingIntoBg: process-control candidate]
+  T --> M[PIP / multi-window controls]
+  Q -. no bounded resolver or Fire component write .-> H[HOME resolver remains in PackageManager/ActivityManager path]
+  F -. foreground telemetry/observer path, not HOME selection .-> H
+  W -. no bounded HOME selector .-> H
