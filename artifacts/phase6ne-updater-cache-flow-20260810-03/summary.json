@@ -1,0 +1,31 @@
+{
+  "analysis": "host-only updater CacheSizeCheck and MakeFreeSpaceOnCache flow closure",
+  "device_contacted": false,
+  "generated_at_utc": "2026-08-09T23:19:30.375308+00:00",
+  "host_only": true,
+  "inputs": {
+    "artifacts/phase6s/ota-debugdata-audit-20260805-01/debugdata-function-symbols.csv": "6a667275ea88bc33e3f2297077255a8f12a87f3e08318cf6d9704032e6024eca",
+    "firmware/extracted/PS7331/META-INF/com/google/android/update-binary": "02643fa987778361742a5ecaa601034b7f20a55df9bacc58ec8bbcdcd8ac896b"
+  },
+  "interpretation": [
+    "The two direct calls and return branches establish a static decision-flow relation only.",
+    "A zero CacheSizeCheck result takes the continuation path at both observed call sites; non-zero takes an error or fallback path selected by surrounding control flow.",
+    "No runtime updater, OTA, malformed path, symlink, recovery, device, or partition operation was executed."
+  ],
+  "objdump": "/opt/homebrew/opt/llvm/bin/llvm-objdump",
+  "observations": {
+    "cache_size_check_calls_make_free_space_on_cache": true,
+    "cache_size_check_tests_sign_bit": true,
+    "perform_block_image_update_branches_on_cache_result": true,
+    "perform_block_image_update_calls_cache_size_check": true
+  },
+  "partition_written": false,
+  "phase": "6NE",
+  "recovery_executed": false,
+  "selected_functions": [
+    "CacheSizeCheck",
+    "MakeFreeSpaceOnCache",
+    "PerformBlockImageUpdate"
+  ],
+  "updater_executed": false
+}

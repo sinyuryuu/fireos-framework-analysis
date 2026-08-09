@@ -1,0 +1,14 @@
+function,instruction,branch,target,meaning
+CacheSizeCheck,0x414734,"tbnz w0,#0x1f",0x414740,negative/sign-bit result takes the error branch in CacheSizeCheck
+MakeFreeSpaceOnCache,0x417bf4,"tbnz w0,#0x1f",0x417d54,negative/sign-bit result takes the error branch in MakeFreeSpaceOnCache
+PerformBlockImageUpdate,0x409190,cbz w0,0x40920c,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x409250,cbz w0,0x409308,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x409544,cbz w0,0x409604,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x409ab4,cbz w0,0x409b2c,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x409b00,cbz w0,0x409bd0,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x409be0,cbz w0,0x409cd8,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x409cb8,cbz w0,0x409cc8,zero CacheSizeCheck result takes the continuation branch
+PerformBlockImageUpdate,0x409ce0,cbz w0,0x40b27c,zero CacheSizeCheck result takes the continuation branch
+PerformBlockImageUpdate,0x40acf8,cbz w0,0x40ad18,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x40ad90,cbz w0,0x40aeb8,zero result takes the success/continuation branch at this call site
+PerformBlockImageUpdate,0x40ae74,cbz w0,0x40aeb8,zero result takes the success/continuation branch at this call site

@@ -1,0 +1,7 @@
+flowchart LR
+    Update["PerformBlockImageUpdate"] -->|0x409cb4| Cache["CacheSizeCheck"]
+    Update -->|0x409cdc| Cache
+    Cache -->|x0=size| Free["MakeFreeSpaceOnCache"]
+    Cache -->|sign bit set| Error["error result"]
+    Cache -->|w0=0| Continue["continuation path"]
+    Free -."static helper only".-> FS["cache/filesystem operations"]
