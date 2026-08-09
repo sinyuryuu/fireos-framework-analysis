@@ -1,0 +1,24 @@
+{
+  "classification": "handle lookup only; no Binder transaction or HOME/package-state effect tested",
+  "fire_package_after_sha256": "ec4b9bbaf229d842ac28a2114d6146d13c816d982e7f512127274f9a938ab213",
+  "fire_package_before_sha256": "d8097d787d45cc57aee941b05cf3f0df23c47d3ed0d19475e8d9a00aceb82cb3",
+  "fire_package_state_observed_only": true,
+  "handle_lines": [
+    "08-10 06:51:50.674  5065  5065 I Phase6MX: service=amazonpackagemanager handle=true",
+    "08-10 06:51:50.678  5065  5065 I Phase6MX: service=amazonusermanagerservice handle=true",
+    "08-10 06:51:50.678  5065  5065 I Phase6MX: service=amazonprofileservice handle=true"
+  ],
+  "home_after": "priority=50 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=true\ncom.amazon.firelauncher/.Launcher",
+  "home_before": "priority=50 preferredOrder=0 match=0x108000 specificIndex=-1 isDefault=true\ncom.amazon.firelauncher/.Launcher",
+  "home_unchanged": true,
+  "install_succeeded": true,
+  "service_handle_false_lines": [],
+  "service_handle_true_lines": [
+    "08-10 06:51:50.674  5065  5065 I Phase6MX: service=amazonpackagemanager handle=true",
+    "08-10 06:51:50.678  5065  5065 I Phase6MX: service=amazonusermanagerservice handle=true",
+    "08-10 06:51:50.678  5065  5065 I Phase6MX: service=amazonprofileservice handle=true"
+  ],
+  "start_returncode": 0,
+  "test_absent_after_rollback": true,
+  "uninstall_succeeded": true
+}
