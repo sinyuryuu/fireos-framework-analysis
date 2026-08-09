@@ -1,0 +1,18 @@
+flowchart TD
+    H["HOME MAIN + CATEGORY_HOME"] --> P["PackageManagerService.setHomeActivity / resolver"]
+    P --> F["Fire Launcher remains selected in saved tests"]
+    U["KFT child-user lifecycle"] --> K["AmazonUserManagerService.enableKftLauncherComponent(UserInfo.id)"]
+    K --> K2["profile-scoped component state writer"]
+    C["Vendor resolver callback chain"] --> A["AppCompat: IPackageManager.resolveIntent"]
+    C --> E["Eve: inherited null"]
+    A --> P
+    E --> P
+    O["OTA/OOBE lifecycle"] --> O2["OOBE component/setup-state writer"]
+    M["AMS private Binder"] --> M1["prewarm / observer / foreground state"]
+    M1 -. "no bounded HOME sink" .-> P
+    S["ASP tablet permission branch"] -. "sensitive non-HOME" .-> X["not executed"]
+    D["CMDQ/GED/sysenv/IDME/lifecycle"] -. "no audited PMS/AMS/HOME edge" .-> X
+    classDef known fill:#e8f5e9,stroke:#2e7d32,color:#111;
+    classDef boundary fill:#fff4cc,stroke:#8a6d1d,color:#111;
+    class P,F,A,E,K,K2,O2 known;
+    class M1,S,D,X boundary;

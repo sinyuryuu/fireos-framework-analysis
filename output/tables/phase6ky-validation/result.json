@@ -1,0 +1,154 @@
+{
+  "inputs": [
+    {
+      "file": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "exists": true,
+      "sha256": "ecbe62fe8eb8bd575da8b2a73a155875df937073ccc2faa020ca592c0515151c",
+      "anchors": {
+        "class #440: AmazonUserManagerService": 54237,
+        "enableKftLauncherComponent": 54297,
+        "hasCallerGotPermission": 82014,
+        "preWarmApplicationForUser": 40453
+      }
+    },
+    {
+      "file": "decompiled/baksmali/vdexExtractor/services/disassembly.log",
+      "exists": true,
+      "sha256": "373a51150fcb079da026b20e71d44380bc3d86e52be88c63ebd39cfd58a6ba53",
+      "anchors": {
+        "setHomeActivity": 500924,
+        "VendorActivityStackSupervisorCallback": 222435,
+        "ActivityStackSupervisor\\.resolveIntent": null
+      }
+    },
+    {
+      "file": "artifacts/phase6kw-vendor-home-callbacks/vendor-home-callbacks.csv",
+      "exists": true,
+      "sha256": "638c1a8ae1bae66cb24ebede74a8afcb48e26fd09f0028d87a8d2fef6ac3bc3d",
+      "anchors": {
+        "AppCompatActivityStackSupervisorCallback": 2,
+        "EveActivityStackSupervisorCallback": 3
+      }
+    },
+    {
+      "file": "artifacts/amazon-services/amazonactivitymanager_fosinit.xml",
+      "exists": true,
+      "sha256": "5d212c94f047aee7abc85ef6dc99aa92ca61e3e3d9318bb69db3c10d9e0da411",
+      "anchors": {
+        "AmazonActivityManagerService": 10
+      }
+    }
+  ],
+  "device_actions": "none",
+  "binder_transactions": "none",
+  "routes": [
+    {
+      "route_id": "PMS-HOME-001",
+      "surface": "PackageManagerService.setHomeActivity",
+      "sink": "formal HOME preferred writer",
+      "caller_gate": "standard Android shell/package-manager path",
+      "home_effect": "writes ordinary preferred record; Fire still resolves in saved tests",
+      "shell_reachable": "yes (already tested)",
+      "device_action": "no new mutation",
+      "disposition": "KNOWN_STANDARD_PATH",
+      "confidence": "Confirmed",
+      "evidence": "findings/phase-6kv-pms-home-caller-closure.md: setHomeActivity/replacePreferredActivity closure"
+    },
+    {
+      "route_id": "KFT-USER-001",
+      "surface": "AmazonUserManagerService.enableKftLauncherComponent",
+      "sink": "per-user Tahoe/Fire/Launcher3 component state writer",
+      "caller_gate": "KFT child-user lifecycle and private service visibility",
+      "home_effect": "can change launcher state for supplied child UserInfo.id; no unconditional User 0 route",
+      "shell_reachable": "no (saved service check not found)",
+      "device_action": "STATIC_ONLY_REJECTED_FOR_DEVICE_TEST",
+      "disposition": "PROFILE_SCOPED_WRITER",
+      "confidence": "Confirmed",
+      "evidence": "fosservices/disassembly.log:54310-54324; artifacts/phase6av/ipc-method-closure-20260805-05/ipc-method-closure.csv"
+    },
+    {
+      "route_id": "CALLBACK-001",
+      "surface": "AppCompatActivityStackSupervisorCallback.resolveIntent",
+      "sink": "vendor resolver callback",
+      "caller_gate": "registered SYSTEMSERVER fosinit callback",
+      "home_effect": "delegates to IPackageManager.resolveIntent and filters observed uninstalled flag; no Fire literal",
+      "shell_reachable": "not an app-facing shell service",
+      "device_action": "HOST_ONLY",
+      "disposition": "NO_DIRECT_HOME_OVERRIDE",
+      "confidence": "Strong evidence",
+      "evidence": "artifacts/phase6kw-vendor-home-callbacks/vendor-home-callbacks.csv; result.md"
+    },
+    {
+      "route_id": "CALLBACK-002",
+      "surface": "EveActivityStackSupervisorCallback",
+      "sink": "vendor resolver callback",
+      "caller_gate": "registered SYSTEMSERVER fosinit callback",
+      "home_effect": "no concrete resolveIntent override; inherited base returns null",
+      "shell_reachable": "not an app-facing shell service",
+      "device_action": "HOST_ONLY",
+      "disposition": "NO_DIRECT_HOME_OVERRIDE",
+      "confidence": "Confirmed",
+      "evidence": "artifacts/phase6kw-vendor-home-callbacks/vendor-home-callbacks.csv; services/disassembly.log:222435-222489,796458-796504"
+    },
+    {
+      "route_id": "OOBE-OTA-001",
+      "surface": "BootAfterSystemOTAReceiver / OOBEActivationHelper",
+      "sink": "OOBE component and setup-state writer",
+      "caller_gate": "OTA/OOBE lifecycle and protected OobeHomeActivity",
+      "home_effect": "setup-only HOME state; not a normal Fire Launcher preferred writer",
+      "shell_reachable": "not established",
+      "device_action": "NOT_TRIGGERED",
+      "disposition": "OOBE_ONLY",
+      "confidence": "Confirmed",
+      "evidence": "artifacts/phase6j/ota-oobe-ps7331-jadx-20260805-01/sources/com/amazon/kindle/otter/oobe/BootAfterSystemOTAReceiver.java; findings/phase-6ku-low-privilege-boundary.md"
+    },
+    {
+      "route_id": "AMS-001",
+      "surface": "AmazonActivityManagerService.preWarmApplicationForUser",
+      "sink": "process prewarm via startProcessLocked",
+      "caller_gate": "APP_PREWARM check result is not consumed in bounded method block",
+      "home_effect": "no HOME resolver, preferred writer, or Fire component write observed",
+      "shell_reachable": "no (saved enforcing service lookup denied/not found)",
+      "device_action": "HOST_ONLY; no transaction",
+      "disposition": "AUTHORIZATION_ANOMALY_NON_HOME",
+      "confidence": "Strong evidence",
+      "evidence": "fosservices/disassembly.log:40453-40534; artifacts/phase6av/ipc-method-closure-20260805-05/result.md"
+    },
+    {
+      "route_id": "AMS-002",
+      "surface": "AmazonActivityManagerService.registerActivitySwitchObserver / onActivityResume",
+      "sink": "foreground component cache and observer notification",
+      "caller_gate": "ACTIVITY_SWITCH_WATCHER permission for registration",
+      "home_effect": "observes foreground state; no resolver or package-state write",
+      "shell_reachable": "no saved shell service handle",
+      "device_action": "HOST_ONLY",
+      "disposition": "OBSERVER_ONLY",
+      "confidence": "Confirmed",
+      "evidence": "fosservices/disassembly.log:40374-40416,40535-40564; artifacts/phase6ax/activity-manager-home-surface-20260805-01/activity-manager-binder-methods.csv"
+    },
+    {
+      "route_id": "ASP-001",
+      "surface": "AmazonAspService.hasCallerGotPermission / command",
+      "sink": "audio signal processor command handler",
+      "caller_gate": "tablet branch returns true before ASP_PERMISSION check",
+      "home_effect": "no PackageManager, ActivityTaskManager, or HOME sink in bounded body",
+      "shell_reachable": "service visibility is not a proof of safe command authorization",
+      "device_action": "NO TRANSACTION; NO NATIVE COMMAND",
+      "disposition": "SENSITIVE_NON_HOME",
+      "confidence": "Confirmed",
+      "evidence": "fosservices/disassembly.log:82014-82077"
+    },
+    {
+      "route_id": "DRIVER-001",
+      "surface": "MT8183 CMDQ/GED/sysenv/IDME/lifecycle source scope",
+      "sink": "hardware, telemetry, or boot-environment surfaces",
+      "caller_gate": "driver/file-context/configuration dependent",
+      "home_effect": "no source edge to PMS/AMS/HOME in audited PS7331 source scope",
+      "shell_reachable": "mixed; existing read-only GED evidence only",
+      "device_action": "NO ioctl/write/malformed payload",
+      "disposition": "SENSITIVE_SURFACE_NO_HOME_EDGE",
+      "confidence": "Strong evidence",
+      "evidence": "findings/phase-6bq-ged-readonly-ioctl.md; findings/phase-6br-amazon-kernel-user-surfaces.md; findings/phase-6fs-p5-driver-source-audit.md"
+    }
+  ]
+}
