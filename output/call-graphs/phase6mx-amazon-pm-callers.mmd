@@ -1,0 +1,13 @@
+flowchart LR
+  F[fosinit vendor instance] --> I[AmazonPackageManagerImpl]
+  I --> H[ServiceManager.getService
+ amazonpackagemanager]
+  H --> P[IAmazonPackageManager Stub.Proxy]
+  P --> R[Amazon flags / metadata / FtvSpec / mic / proxy receiver]
+  S[AmazonPackageManagerService] --> N[getSystemServiceName]
+  S --> B[publishBinderService]
+  B --> H
+  A[FtvSpecAssertionUtility] --> H
+  A --> Q[configuration / FtvSpec read calls]
+  R -. no HOME/preferred/enabled setter in interface .-> X[No direct HOME writer proven]
+  I -. delegates separately to standard package Binder .-> M[IPackageManager / standard PMS gates]

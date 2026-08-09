@@ -1,0 +1,8 @@
+flowchart TD
+  A["Preserved PS7331 JADX and disassembly"] --> B["HOME/package-state sink scan"]
+  B --> C["Standard PMS/DPM/Settings paths"]
+  B --> D["Amazon/OEM callsites"]
+  D --> E["Fire/Tahoe/user-scope review"]
+  C --> F["Permission and caller-identity review"]
+  E -. no runtime claim .-> G["Review queue"]
+  F -. no runtime claim .-> G
