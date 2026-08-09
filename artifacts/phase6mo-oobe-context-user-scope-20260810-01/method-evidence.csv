@@ -1,0 +1,11 @@
+evidence_id,source,line_range,method,observed_markers,classification
+6MO-E01,decompiled/baksmali/vdexExtractor/fosservices/disassembly.log,96087-96126,AmazonPackageManagerService.onBootPhase,550; isUpgrade; BOOT_AFTER_SYSTEM_OTA; mContext.sendBroadcast,Confirmed
+6MO-E02,artifacts/phase6j/ota-oobe-ps7331-jadx-20260805-01/sources/com/amazon/kindle/otter/oobe/BootAfterSystemOTAReceiver.java,27-46,BootAfterSystemOTAReceiver.onReceive,Context; guarded action; getPackageManager; receiver component,Confirmed
+6MO-E03,artifacts/phase6j/ota-oobe-ps7331-jadx-20260805-01/sources/com/amazon/kindle/otter/oobe/BootAfterSystemOTAReceiver.java,56-61,enableIncrementalFlow,PackageHelper.enableComponent; activateOOBEIF,Confirmed
+6MO-E04,artifacts/phase6j/ota-oobe-ps7331-jadx-20260805-01/sources/com/amazon/kindle/otter/oobe/commons/OOBEActivationHelper.java,29-34;53-61,OOBEActivationHelper,ContentResolver; Secure/Global setup writes,Confirmed
+6MO-E05,artifacts/phase6j/ota-oobe-ps7331-jadx-20260805-01/sources/com/amazon/oobe/commons/utils/PackageHelper.java,11-22,PackageHelper,setComponentEnabledSetting; component state 1/2,Confirmed
+6MO-E06,decompiled/baksmali/vdexExtractor/boot-framework-dis/disassembly.log,435176-435236,ActivityThread.handleReceiver,ApplicationInfo; LoadedApk; ContextImpl; receiver-restricted Context; onReceive,Confirmed
+6MO-E07,decompiled/baksmali/vdexExtractor/boot-framework-dis/disassembly.log,449212-449298;449515-449534,ContextImpl constructor/createAppContext,UserHandle parameter; null defaults to Process.myUserHandle; mUser storage,Confirmed
+6MO-E08,decompiled/baksmali/vdexExtractor/boot-framework-dis/disassembly.log,449092-449185;452137-452150,ApplicationContentResolver/ContextImpl.getUserId,provider user resolution from ContextImpl.mUser,Strong evidence
+6MO-E09,decompiled/baksmali/vdexExtractor/boot-framework-dis/disassembly.log,452691-452721,ContextImpl.sendBroadcast,getUserId passed to IActivityManager.broadcastIntent,Confirmed
+6MO-E10,artifacts/phase6j/ota-oobe-ps7331-jadx-20260805-01/sources/com/amazon/oobe/commons/utils/ContextUtils.java,11-24,ContextUtils storage-context helpers,createDeviceProtectedStorageContext,Confirmed
