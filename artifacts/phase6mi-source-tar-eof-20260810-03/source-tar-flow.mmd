@@ -1,0 +1,11 @@
+flowchart LR
+  A[Fire_HD10-7.3.3.1.tar.bz2] --> B[bzip2 stream]
+  B --> C[tar member headers]
+  C --> D[35 outer members; EOF reached]
+  D --> E[apps payloads]
+  D --> F[fireos.tar]
+  D --> G[platform.tar]
+  E -. no recovery/update/post-install member .-> X[No OTA writer in outer archive]
+  F -. source payload only .-> Y[Offline source analysis]
+  G -. source payload only .-> Y
+  C -. no extraction or execution .-> Z[Host-only evidence]
