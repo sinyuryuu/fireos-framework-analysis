@@ -1,0 +1,127 @@
+{
+  "test_id": "CHILD-TEST-20260810-01",
+  "serial": "G001LT0511550CFT",
+  "activity": "com.amazon.tahoe/.settings.household.HouseholdSettingsAddChildActivity",
+  "action": null,
+  "h2_child": false,
+  "settings": false,
+  "launch_kind": "explicit_component",
+  "timestamp_utc": "2026-08-09T17:46:16.009491+00:00",
+  "supported_settings_ui": true,
+  "foreground_changed": true,
+  "private_binder_transaction": false,
+  "service_call_used": false,
+  "profile_data_typed": false,
+  "child_profile_submitted": false,
+  "firelauncher_mutation_attempted": false,
+  "package_state_changed": false,
+  "settings_changed": false,
+  "reboot_requested": false,
+  "commands": [
+    {
+      "name": "launch_child_profile_ui",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "am",
+        "start",
+        "-n",
+        "com.amazon.tahoe/.settings.household.HouseholdSettingsAddChildActivity"
+      ],
+      "returncode": 0,
+      "stdout": "launch_child_profile_ui.stdout.txt",
+      "stderr": "launch_child_profile_ui.stderr.txt"
+    },
+    {
+      "name": "users_after_launch",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "pm",
+        "list",
+        "users"
+      ],
+      "returncode": 0,
+      "stdout": "users_after_launch.stdout.txt",
+      "stderr": "users_after_launch.stderr.txt"
+    },
+    {
+      "name": "activity_after_launch",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "activity",
+        "activities"
+      ],
+      "returncode": 0,
+      "stdout": "activity_after_launch.stdout.txt",
+      "stderr": "activity_after_launch.stderr.txt"
+    },
+    {
+      "name": "window_after_launch",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "window",
+        "windows"
+      ],
+      "returncode": 0,
+      "stdout": "window_after_launch.stdout.txt",
+      "stderr": "window_after_launch.stderr.txt"
+    },
+    {
+      "name": "home_resolver_after_launch",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "returncode": 0,
+      "stdout": "home_resolver_after_launch.stdout.txt",
+      "stderr": "home_resolver_after_launch.stderr.txt"
+    },
+    {
+      "name": "filtered_logcat_after_launch",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "logcat",
+        "-d",
+        "-v",
+        "threadtime",
+        "-s",
+        "ActivityTaskManager:I",
+        "ActivityManager:I",
+        "PackageManager:I",
+        "AmazonUserManagerService:I",
+        "AmazonProductPolicyService:I",
+        "*:S"
+      ],
+      "returncode": 0,
+      "stdout": "filtered_logcat_after_launch.stdout.txt",
+      "stderr": "filtered_logcat_after_launch.stderr.txt"
+    }
+  ],
+  "finished_timestamp_utc": "2026-08-09T17:46:16.411081+00:00"
+}

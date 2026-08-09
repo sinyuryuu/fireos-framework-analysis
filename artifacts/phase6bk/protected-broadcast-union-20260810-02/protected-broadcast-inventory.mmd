@@ -1,0 +1,6 @@
+flowchart TD
+    A[Explicit preserved PS7331 APK scope] --> B[aapt manifest parser]
+    B --> C{BOOT_AFTER_SYSTEM_OTA protected-broadcast?}
+    C -->|yes| D[Source-package membership confirmed]
+    C -->|no| E[No declaration in this APK scope]
+    D -. not a global runtime inventory .-> F[Other packages/runtime inputs remain out of scope]

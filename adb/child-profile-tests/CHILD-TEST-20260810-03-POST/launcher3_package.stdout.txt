@@ -1,0 +1,86 @@
+Receiver Resolver Table:
+  Non-Data Actions:
+      com.amazon.dcp.sso.action.account.added:
+        956bb62 com.android.launcher3/com.android.quickstep.ToolTipState$AccountChangeReceiver filter 2955d6c
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+      com.amazon.dcp.sso.action.account.removed:
+        956bb62 com.android.launcher3/com.android.quickstep.ToolTipState$AccountChangeReceiver filter 2955d6c
+          Action: "com.amazon.dcp.sso.action.account.added"
+          Action: "com.amazon.dcp.sso.action.account.removed"
+
+Service Resolver Table:
+  Non-Data Actions:
+      android.intent.action.QUICKSTEP_SERVICE:
+        47023ac com.android.launcher3/com.android.quickstep.TouchInteractionService filter 933a61f permission android.permission.STATUS_BAR_SERVICE
+          Action: "android.intent.action.QUICKSTEP_SERVICE"
+
+Key Set Manager:
+  [com.android.launcher3]
+      Signing KeySets: 2
+
+Packages:
+  Package [com.android.launcher3] (be20701):
+    userId=10075
+    pkg=Package{92579a6 com.android.launcher3}
+    codePath=/system/priv-app/com.android.launcher3
+    resourcePath=/system/priv-app/com.android.launcher3
+    legacyNativeLibraryDir=/system/priv-app/com.android.launcher3/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=1145410 minSdk=28 targetSdk=28
+    versionName=1.0.331.0-quickstep_1145410
+    splits=[base]
+    apkSigningVersion=1
+    applicationInfo=ApplicationInfo{c698fe7 com.android.launcher3}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_RESIZEABLE_VIA_SDK_VERSION PRIVILEGED ]
+    dataDir=/data/user/0/com.android.launcher3
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      com.fireos.sdk.minerva
+    usesLibraryFiles:
+      /system/priv-app/MinervaApi/MinervaApi.apk
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{674d794 version:1, signatures:[e627f73a], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP KILL_AFTER_RESTORE RESTORE_ANY_VERSION ]
+    requested permissions:
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS
+      android.permission.INTERACT_ACROSS_USERS
+      com.amazon.dcp.sso.permission.account.changed
+      amazon.permission.COLLECT_METRICS
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION
+    install permissions:
+      android.permission.CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      com.amazon.dcp.sso.permission.account.changed: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+    User 0: ceDataInode=852280 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      runtime permissions:
+    User 10: ceDataInode=827615 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=2 instant=false virtual=false
+      lastDisabledCaller: android
+      runtime permissions:
+
+Package Changes:
+  Sequence number=15
+  User 0:
+    seq=3, package=com.google.android.gms
+    seq=12, package=com.microsoft.launcher
+    seq=14, package=com.amazon.frameworksettings
+
+
+Dexopt state:
+  [com.android.launcher3]
+    path: /system/priv-app/com.android.launcher3/com.android.launcher3.apk
+      arm64: [status=speed-profile] [reason=bg-dexopt]
+
+
+Compiler stats:
+  [com.android.launcher3]
+     com.android.launcher3.apk - 1222

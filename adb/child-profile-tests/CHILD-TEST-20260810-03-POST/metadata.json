@@ -1,0 +1,387 @@
+{
+  "test_id": "CHILD-TEST-20260810-03-POST",
+  "serial": "G001LT0511550CFT",
+  "child_user": 10,
+  "timestamp_utc": "2026-08-09T17:52:10.079367+00:00",
+  "read_only": true,
+  "manual_gui_creation": true,
+  "private_binder_transaction": false,
+  "service_call_used": false,
+  "user_created_by_script": false,
+  "user_switched_by_script": false,
+  "device_policy_changed": false,
+  "package_state_changed": false,
+  "settings_changed": false,
+  "reboot_requested": false,
+  "commands": [
+    {
+      "name": "adb_get_state",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "get-state"
+      ],
+      "returncode": 0,
+      "stdout": "adb_get_state.stdout.txt",
+      "stderr": "adb_get_state.stderr.txt"
+    },
+    {
+      "name": "adb_id",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "id"
+      ],
+      "returncode": 0,
+      "stdout": "adb_id.stdout.txt",
+      "stderr": "adb_id.stderr.txt"
+    },
+    {
+      "name": "current_user",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "am",
+        "get-current-user"
+      ],
+      "returncode": 0,
+      "stdout": "current_user.stdout.txt",
+      "stderr": "current_user.stderr.txt"
+    },
+    {
+      "name": "build_fingerprint",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "returncode": 0,
+      "stdout": "build_fingerprint.stdout.txt",
+      "stderr": "build_fingerprint.stderr.txt"
+    },
+    {
+      "name": "build_configuration",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.configuration"
+      ],
+      "returncode": 0,
+      "stdout": "build_configuration.stdout.txt",
+      "stderr": "build_configuration.stderr.txt"
+    },
+    {
+      "name": "getenforce",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getenforce"
+      ],
+      "returncode": 0,
+      "stdout": "getenforce.stdout.txt",
+      "stderr": "getenforce.stderr.txt"
+    },
+    {
+      "name": "users",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "pm",
+        "list",
+        "users"
+      ],
+      "returncode": 0,
+      "stdout": "users.stdout.txt",
+      "stderr": "users.stderr.txt"
+    },
+    {
+      "name": "user_state",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "user"
+      ],
+      "returncode": 0,
+      "stdout": "user_state.stdout.txt",
+      "stderr": "user_state.stderr.txt"
+    },
+    {
+      "name": "device_policy",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "device_policy"
+      ],
+      "returncode": 0,
+      "stdout": "device_policy.stdout.txt",
+      "stderr": "device_policy.stderr.txt"
+    },
+    {
+      "name": "firelauncher_package",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.firelauncher"
+      ],
+      "returncode": 0,
+      "stdout": "firelauncher_package.stdout.txt",
+      "stderr": "firelauncher_package.stderr.txt"
+    },
+    {
+      "name": "tahoe_package",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.tahoe"
+      ],
+      "returncode": 0,
+      "stdout": "tahoe_package.stdout.txt",
+      "stderr": "tahoe_package.stderr.txt"
+    },
+    {
+      "name": "launcher3_package",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.android.launcher3"
+      ],
+      "returncode": 0,
+      "stdout": "launcher3_package.stdout.txt",
+      "stderr": "launcher3_package.stderr.txt"
+    },
+    {
+      "name": "home_user0",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "--user",
+        "0",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "returncode": 0,
+      "stdout": "home_user0.stdout.txt",
+      "stderr": "home_user0.stderr.txt"
+    },
+    {
+      "name": "home_child",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "--user",
+        "10",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "returncode": 0,
+      "stdout": "home_child.stdout.txt",
+      "stderr": "home_child.stderr.txt"
+    },
+    {
+      "name": "home_candidates_child",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "query-activities",
+        "--brief",
+        "--user",
+        "10",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "returncode": 0,
+      "stdout": "home_candidates_child.stdout.txt",
+      "stderr": "home_candidates_child.stderr.txt"
+    },
+    {
+      "name": "child_package_list",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "pm",
+        "list",
+        "packages",
+        "--user",
+        "10"
+      ],
+      "returncode": 0,
+      "stdout": "child_package_list.stdout.txt",
+      "stderr": "child_package_list.stderr.txt"
+    },
+    {
+      "name": "child_running",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "activity",
+        "is-user-running",
+        "10"
+      ],
+      "returncode": 255,
+      "stdout": "child_running.stdout.txt",
+      "stderr": "child_running.stderr.txt"
+    },
+    {
+      "name": "child_unlocked",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "activity",
+        "is-user-unlocked",
+        "10"
+      ],
+      "returncode": 255,
+      "stdout": "child_unlocked.stdout.txt",
+      "stderr": "child_unlocked.stderr.txt"
+    },
+    {
+      "name": "service_list",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "service",
+        "list"
+      ],
+      "returncode": 0,
+      "stdout": "service_list.stdout.txt",
+      "stderr": "service_list.stderr.txt"
+    },
+    {
+      "name": "kft_service_check",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "service",
+        "check",
+        "amazonusermanagerservice"
+      ],
+      "returncode": 0,
+      "stdout": "kft_service_check.stdout.txt",
+      "stderr": "kft_service_check.stderr.txt"
+    },
+    {
+      "name": "activity_state",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "activity",
+        "activities"
+      ],
+      "returncode": 0,
+      "stdout": "activity_state.stdout.txt",
+      "stderr": "activity_state.stderr.txt"
+    },
+    {
+      "name": "window_state",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "window",
+        "windows"
+      ],
+      "returncode": 0,
+      "stdout": "window_state.stdout.txt",
+      "stderr": "window_state.stderr.txt"
+    },
+    {
+      "name": "filtered_logcat",
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "logcat",
+        "-d",
+        "-b",
+        "all",
+        "-v",
+        "threadtime",
+        "-s",
+        "AmazonUserManagerService:I",
+        "ActivityManager:I",
+        "ActivityTaskManager:I",
+        "PackageManager:I",
+        "UserManager:I",
+        "DevicePolicyManager:I",
+        "*:S"
+      ],
+      "returncode": 0,
+      "stdout": "filtered_logcat.stdout.txt",
+      "stderr": "filtered_logcat.stderr.txt"
+    }
+  ],
+  "finished_timestamp_utc": "2026-08-09T17:52:11.659234+00:00"
+}

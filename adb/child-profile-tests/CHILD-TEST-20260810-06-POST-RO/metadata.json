@@ -1,0 +1,200 @@
+{
+  "broadcast_sent": false,
+  "captured_at_utc": "2026-08-09T17:55:49.916625+00:00",
+  "commands": [
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "get-state"
+      ],
+      "command": "adb -s G001LT0511550CFT get-state",
+      "label": "get_state",
+      "returncode": 0,
+      "stderr": "get_state.stderr.txt",
+      "stdout": "get_state.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "command": "adb -s G001LT0511550CFT shell getprop ro.build.fingerprint",
+      "label": "fingerprint",
+      "returncode": 0,
+      "stderr": "fingerprint.stderr.txt",
+      "stdout": "fingerprint.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "am",
+        "get-current-user"
+      ],
+      "command": "adb -s G001LT0511550CFT shell am get-current-user",
+      "label": "current_user",
+      "returncode": 0,
+      "stderr": "current_user.stderr.txt",
+      "stdout": "current_user.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "pm",
+        "list",
+        "users"
+      ],
+      "command": "adb -s G001LT0511550CFT shell pm list users",
+      "label": "users",
+      "returncode": 0,
+      "stderr": "users.stderr.txt",
+      "stdout": "users.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "user"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys user",
+      "label": "user_state",
+      "returncode": 0,
+      "stderr": "user_state.stderr.txt",
+      "stdout": "user_state.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "--user",
+        "0",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "command": "adb -s G001LT0511550CFT shell cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.HOME",
+      "label": "home_user0",
+      "returncode": 0,
+      "stderr": "home_user0.stderr.txt",
+      "stdout": "home_user0.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.firelauncher"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package com.amazon.firelauncher",
+      "label": "firelauncher_package",
+      "returncode": 0,
+      "stderr": "firelauncher_package.stderr.txt",
+      "stdout": "firelauncher_package.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.tahoe"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package com.amazon.tahoe",
+      "label": "tahoe_package",
+      "returncode": 0,
+      "stderr": "tahoe_package.stderr.txt",
+      "stdout": "tahoe_package.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "activity",
+        "activities"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys activity activities",
+      "label": "activity_state",
+      "returncode": 0,
+      "stderr": "activity_state.stderr.txt",
+      "stdout": "activity_state.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "window",
+        "windows"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys window windows",
+      "label": "window_state",
+      "returncode": 0,
+      "stderr": "window_state.stderr.txt",
+      "stdout": "window_state.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "logcat",
+        "-d",
+        "-b",
+        "all",
+        "-v",
+        "threadtime",
+        "-t",
+        "5000"
+      ],
+      "command": "adb -s G001LT0511550CFT logcat -d -b all -v threadtime -t 5000",
+      "label": "logcat_all",
+      "returncode": 0,
+      "stderr": "logcat_all.stderr.txt",
+      "stdout": "logcat_all.stdout.txt"
+    }
+  ],
+  "finished_at_utc": "2026-08-09T17:55:50.618490+00:00",
+  "manual_gui_submission_already_completed": true,
+  "package_state_changed": false,
+  "partition_written": false,
+  "private_binder_transaction": false,
+  "read_only": true,
+  "reboot_requested": false,
+  "schema": 1,
+  "serial": "G001LT0511550CFT",
+  "settings_changed": false,
+  "test_id": "CHILD-TEST-20260810-06-POST-RO",
+  "user_created_by_script": false,
+  "user_switched_by_script": false
+}

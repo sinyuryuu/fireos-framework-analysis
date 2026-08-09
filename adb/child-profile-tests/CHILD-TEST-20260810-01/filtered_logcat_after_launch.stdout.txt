@@ -1,0 +1,274 @@
+--------- beginning of system
+--------- beginning of crash
+08-09 19:45:00.005   638   638 I ActivityManager: Killing 16741:com.amazon.cloud9/u0a87 (adj 903): empty for 1819s
+08-09 19:45:00.006   638   638 I ActivityManager: Killing 16945:com.amazon.avod/u0a106 (adj 903): empty for 1820s
+08-09 19:45:00.008   638   638 I ActivityManager: Killing 16789:android.process.media/u0a85 (adj 903): empty for 1822s
+08-09 19:45:00.008   638   638 I ActivityManager: Killing 16765:com.android.defcontainer/u0a136 (adj 903): empty for 1814s
+08-09 19:45:00.009   638   638 I ActivityManager: Killing 16706:com.amazon.storagemanager/1000 (adj 903): empty for 1822s
+08-09 19:45:00.042   638   885 W ActivityManager: Scheduling restart of crashed service com.android.defcontainer/.DefaultContainerService in 1000ms
+08-09 19:45:00.076   638  1197 W ActivityManager: Exception when unbinding service com.amazon.avod/.sdk.DownloadSdkService
+08-09 19:45:00.076   638  1197 W ActivityManager: android.os.DeadObjectException
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at android.os.BinderProxy.transactNative(Native Method)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at android.os.BinderProxy.transact(Binder.java:1129)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at android.app.IApplicationThread$Stub$Proxy.scheduleUnbindService(IApplicationThread.java:1106)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at com.android.server.am.ActiveServices.removeConnectionLocked(ActiveServices.java:2986)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at com.android.server.am.ActiveServices.killServicesLocked(ActiveServices.java:3385)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at com.android.server.am.ActivityManagerService.cleanUpApplicationRecordLocked(ActivityManagerService.java:20629)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at com.android.server.am.ActivityManagerService.handleAppDiedLocked(ActivityManagerService.java:6016)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at com.android.server.am.ActivityManagerService.appDiedLocked(ActivityManagerService.java:6221)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at com.android.server.am.ActivityManagerService$AppDeathRecipient.binderDied(ActivityManagerService.java:1929)
+08-09 19:45:00.076   638  1197 W ActivityManager: 	at android.os.BinderProxy.sendDeathNotice(Binder.java:1195)
+08-09 19:45:28.798   638   658 I ActivityManager: Start proc 18406:com.amazon.device.software.ota/u0a17 for service com.amazon.device.software.ota/.OtaService
+08-09 19:45:29.098   638 18386 I ActivityManager: Killing 16812:com.amazon.mp3/u0a110 (adj 903): empty for 1848s
+08-09 19:45:29.141   638 18386 W ActivityManager: Unable to start service Intent { cmp=com.amazon.tv.csg.dnwstateservice/.DNWStateService } U=0: not found
+08-09 20:14:21.194   638   658 I ActivityManager: Start proc 18785:com.aurora.store/u0a177 for service com.aurora.store/androidx.work.impl.background.systemjob.SystemJobService
+08-09 20:14:21.218   638   658 I ActivityManager: Start proc 18798:com.amazon.sync.service/u0a27 for broadcast com.amazon.sync.service/com.amazon.sync.framework.interval.AlarmSyncBroadcastReceiver
+08-09 20:14:21.437   638  8064 I ActivityManager: Killing 16674:com.amazon.cloud9.contentservice/u0a100 (adj 903): empty for 3580s
+08-09 20:14:21.608   638   658 I ActivityManager: Start proc 18850:com.amazon.sync.provider.ipc/u0a104 for service com.amazon.sync.provider.ipc/.ProviderService
+08-09 20:15:00.007   638   638 I ActivityManager: Killing 17366:com.amazon.alta.h2clientservice/u0a12 (adj 903): empty for 3616s
+08-09 20:15:00.007   638   638 I ActivityManager: Killing 17343:com.amazon.identity.auth.device.authorization/u0a125 (adj 903): empty for 3616s
+08-09 20:36:12.597   638   658 I ActivityManager: Start proc 19151:com.amazon.venezia/u0a76 for content provider com.amazon.venezia/.deviceinfo.DeviceInfoProvider
+08-09 20:36:13.250   638   658 I ActivityManager: Start proc 19225:com.amazon.alexa.multimodal.gemini:nowplaying/u0a44 for service com.amazon.alexa.multimodal.gemini/com.amazon.alexamediaplayer.runtime.NowPlayingService
+08-09 20:36:13.283   638   658 I ActivityManager: Start proc 19242:com.android.settings/1000 for broadcast com.android.settings/com.amazon.settings.AccountPropertyChangeReceiver
+08-09 20:36:13.358   638   658 I ActivityManager: Start proc 19266:android.process.acore/u0a33 for content provider com.android.providers.userdictionary/.UserDictionaryProvider
+08-09 20:36:13.597   638   658 I ActivityManager: Start proc 19297:com.amazon.webview.chromium:webview_apk/u0a162 for service com.amazon.webview.chromium/org.chromium.android_webview.nonembedded.AwComponentUpdateService
+08-09 20:36:13.749   638   658 I ActivityManager: Start proc 19324:com.android.vending/u0a180 for service com.android.vending/com.google.android.finsky.scheduler.process.mainimpl.PhoneskyJobServiceMain
+08-09 20:36:14.352   638   658 I ActivityManager: Start proc 19433:com.google.process.gapps/u0a179 for content provider com.google.android.gsf/.settings.GoogleSettingsProvider
+08-09 20:36:14.624   638   658 I ActivityManager: Start proc 19508:com.android.vending:background/u0a180 for service com.android.vending/com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService
+08-09 20:36:14.888   638  6576 I ActivityManager: Killing 17656:com.amazon.webview.chromium/u0a162 (adj 903): empty for 4888s
+08-09 20:36:14.888   638  6576 I ActivityManager: Killing 17487:com.amazon.logan/u0a66 (adj 903): empty for 4890s
+08-09 20:36:16.991   638  5551 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.android.documentsui/.LauncherActivity} from uid 10120
+08-09 20:36:17.093   638   658 I ActivityManager: Start proc 19597:com.android.documentsui/u0a107 for activity com.android.documentsui/.LauncherActivity
+08-09 20:36:17.212   638   658 I ActivityManager: Start proc 19617:com.android.externalstorage/u0a99 for content provider com.android.externalstorage/.ExternalStorageProvider
+08-09 20:36:17.214   638  8064 I ActivityManager: START u0 {(has data) flg=0x10200000 cmp=com.android.documentsui/.files.FilesActivity (has extras)} from uid 10107
+08-09 20:36:17.359   638   658 I ActivityManager: Start proc 19642:com.android.mtp/u0a85 for content provider com.android.mtp/.MtpDocumentsProvider
+08-09 20:36:17.445   638   658 I ActivityManager: Start proc 19658:android.process.media/u0a85 for content provider com.android.providers.media/.MediaDocumentsProvider
+08-09 20:36:17.535   638   658 I ActivityManager: Start proc 19675:com.android.shell/2000 for content provider com.android.shell/.BugreportStorageProvider
+08-09 20:36:18.424   638   718 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.amazon.firelauncher/.Launcher (has extras)} from uid 1000
+08-09 20:36:18.652   638   718 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10200000 cmp=com.amazon.firelauncher/.Launcher (has extras)} from uid 1000
+08-09 20:36:19.312   638   658 I ActivityManager: Start proc 19764:com.amazon.weather/u0a79 for content provider com.amazon.weather/.preferences.WeatherSharedPreferencesContentProvider
+08-09 20:36:24.143   638   658 I ActivityManager: Start proc 19801:com.android.vending:quick_launch/u0a180 for service com.android.vending/com.google.frameworks.client.data.android.server.play.QuickLaunchProcessEndpointService
+08-09 20:36:28.589   638   656 I ActivityManager: Waited long enough for: ServiceRecord{25b493 u0 com.google.android.gms/.cast.service.CastPersistentService_Persistent}
+08-09 20:36:35.223   638  4898 I ActivityManager: Killing 16695:com.amazon.kindle/u0a52 (adj 903): empty for 4612s
+08-09 20:36:35.226   638  4898 I ActivityManager: Killing 17431:com.audible.application.kindle/u0a123 (adj 903): empty for 4907s
+08-09 20:36:35.229   638  4898 I ActivityManager: Killing 17689:com.amazon.webview.chromium:sandboxed_process0/u0a123i2 (adj 900): empty for 4907s
+08-09 20:36:35.287   638  4898 W ActivityManager: Scheduling restart of crashed service com.audible.application.kindle/org.chromium.content.app.SandboxedProcessService0 in 1000ms
+08-09 20:36:39.409   638  1779 I ActivityManager: Killing 18105:com.amazon.wifilocker/u0a69 (adj 903): empty for 3389s
+08-09 20:37:12.301   638   656 W ActivityManager: Stopping service due to app idle: u0a74 -9h57m7s819ms com.amazon.kindle.kso/.lockscreen.controller.SystemEventService
+08-09 20:37:12.301   638   656 W ActivityManager: Stopping service due to app idle: u0a74 -9h57m8s592ms com.amazon.kindle.kso/.lockscreen.view.KSOWallpaperService
+08-09 20:40:09.982   638   658 I ActivityManager: Start proc 19913:com.amazon.wifilocker/u0a69 for broadcast com.amazon.wifilocker/.receivers.WifiChangeReceiver
+08-09 20:45:00.006   638   638 I ActivityManager: Killing 18850:com.amazon.sync.provider.ipc/u0a104 (adj 903): empty for 1838s
+08-09 20:45:00.006   638   638 I ActivityManager: Killing 18785:com.aurora.store/u0a177 (adj 903): empty for 1838s
+08-09 21:06:13.697   638   648 I ActivityManager: Killing 19266:android.process.acore/u0a33 (adj 903): empty for 1800s
+08-09 21:06:13.698   638   648 I ActivityManager: Killing 19242:com.android.settings/1000 (adj 903): empty for 1800s
+08-09 21:06:13.699   638   648 I ActivityManager: Killing 17451:com.amazon.dcpms.fos.service/u0a90 (adj 903): empty for 1800s
+08-09 21:06:13.700   638   648 I ActivityManager: Killing 1050:com.amazon.kindle.kso/u0a74 (adj 903): empty for 1801s
+08-09 21:06:13.777   638   664 W ActivityManager: setHasOverlayUi called on unknown pid: 1050
+08-09 21:07:00.006   638   638 I ActivityManager: Killing 19642:com.android.mtp/u0a85 (adj 903): empty for 1842s
+08-09 21:07:00.007   638   638 I ActivityManager: Killing 18798:com.amazon.sync.service/u0a27 (adj 903): empty for 1842s
+08-09 21:07:00.008   638   638 I ActivityManager: Killing 19433:com.google.process.gapps/u0a179 (adj 903): empty for 1845s
+08-09 21:07:00.009   638   638 I ActivityManager: Killing 19297:com.amazon.webview.chromium:webview_apk/u0a162 (adj 903): empty for 1846s
+08-09 21:10:03.153   638   658 I ActivityManager: Start proc 22375:com.google.android.youtube/u0a182 for service com.google.android.youtube/androidx.work.impl.background.systemjob.SystemJobService
+08-09 21:10:03.170   638   658 I ActivityManager: Start proc 22389:com.microsoft.launcher/u0a178 for service com.microsoft.launcher/androidx.work.impl.background.systemjob.SystemJobService
+08-09 21:10:04.022   638   658 I ActivityManager: Start proc 22536:com.google.android.gms.unstable/u0a179 for service com.google.android.gms/.droidguard.DroidGuardService
+08-09 21:10:10.563   638  4809 I ActivityManager: Killing 19658:android.process.media/u0a85 (adj 903): empty for 2033s
+08-09 21:10:13.835   638   658 I ActivityManager: Start proc 22704:com.amazon.adep/u0a132 for broadcast com.amazon.adep/.nimh.device.management.SecurityEventReceiver
+08-09 21:10:14.247   638  2500 I ActivityManager: Killing 19675:com.android.shell/2000 (adj 903): empty for 2036s
+08-09 21:10:14.282   638   658 I ActivityManager: Start proc 22745:android.process.acore/u0a33 for content provider com.android.providers.contacts/.ContactsProvider2
+08-09 21:10:17.986   638   658 I ActivityManager: Start proc 22770:org.mozilla.firefox/u0a189 for service org.mozilla.firefox/androidx.work.impl.background.systemjob.SystemJobService
+08-09 21:10:18.634   638   658 I ActivityManager: Start proc 22802:org.mozilla.firefox:crashhelper_disable_art_image_/u0a189 for service org.mozilla.firefox/org.mozilla.gecko.crashhelper.CrashHelper
+08-09 21:10:21.581   638  4809 I ActivityManager: Killing 19617:com.android.externalstorage/u0a99 (adj 903): empty for 2043s
+08-09 21:10:25.851   638 22325 I ActivityManager: Killing 19151:com.amazon.venezia/u0a76 (adj 903): empty for 2044s
+08-09 21:10:25.852   638 22325 I ActivityManager: Killing 19225:com.amazon.alexa.multimodal.gemini:nowplaying/u0a44 (adj 903): empty for 2047s
+08-09 21:10:36.012   638 22325 I ActivityManager: Killing 19508:com.android.vending:background/u0a180 (adj 903): empty for 2050s
+08-09 21:10:36.027   638 22325 I ActivityManager: Killing 19801:com.android.vending:quick_launch/u0a180 (adj 903): empty for 2050s
+08-09 21:15:23.306   638   658 I ActivityManager: Start proc 22979:com.aurora.store/u0a177 for service com.aurora.store/androidx.work.impl.background.systemjob.SystemJobService
+08-09 21:15:23.324   638   658 W ActivityManager: Slow operation: 53ms so far, now at startProcess: returned from zygote!
+08-09 21:15:23.324   638   658 W ActivityManager: Slow operation: 53ms so far, now at startProcess: done updating battery stats
+08-09 21:15:23.324   638   658 W ActivityManager: Slow operation: 53ms so far, now at startProcess: building log message
+08-09 21:15:23.324   638   658 I ActivityManager: Start proc 22998:com.amazon.sync.service/u0a27 for broadcast com.amazon.sync.service/com.amazon.sync.framework.interval.AlarmSyncBroadcastReceiver
+08-09 21:15:23.324   638   658 W ActivityManager: Slow operation: 53ms so far, now at startProcess: starting to update pids map
+08-09 21:15:23.324   638   658 W ActivityManager: Slow operation: 53ms so far, now at startProcess: done updating pids map
+08-09 21:15:23.356   638   658 I ActivityManager: Start proc 23013:com.google.process.gapps/u0a179 for content provider com.google.android.gsf/.settings.GoogleSettingsProvider
+08-09 21:15:23.691   638   658 I ActivityManager: Start proc 23077:com.amazon.sync.provider.ipc/u0a104 for service com.amazon.sync.provider.ipc/.ProviderService
+08-09 21:15:33.882   638  6945 I ActivityManager: Killing 19913:com.amazon.wifilocker/u0a69 (adj 903): empty for 2123s
+08-09 21:16:00.008   638   638 I ActivityManager: Killing 18137:com.android.providers.downloads/u0a14 (adj 903): empty for 2144s
+08-09 21:20:06.002   638   658 I ActivityManager: Start proc 23174:com.android.vending:background/u0a180 for service com.android.vending/com.google.android.finsky.scheduler.process.backgroundimpl.PhoneskyJobServiceBackground
+08-09 21:23:30.471   638   656 I ActivityManager: Killing 18406:com.amazon.device.software.ota/u0a17 (adj 903): empty for 1815s
+08-09 21:23:30.525   638  4898 I ActivityManager: Killing 19764:com.amazon.weather/u0a79 (adj 903): empty for 1811s
+08-09 21:40:05.847   638  2500 I ActivityManager: Killing 22389:com.microsoft.launcher/u0a178 (adj 903): empty for 1802s
+08-09 21:40:10.007   638   658 I ActivityManager: Start proc 23495:com.amazon.wifilocker/u0a69 for broadcast com.amazon.wifilocker/.receivers.WifiChangeReceiver
+08-09 21:40:10.128   638  4898 I ActivityManager: Killing 22375:com.google.android.youtube/u0a182 (adj 903): empty for 1803s
+08-09 21:40:15.151   638   658 I ActivityManager: Start proc 23530:com.android.providers.downloads/u0a14 for service com.android.providers.downloads/.DownloadMonitorService
+08-09 21:40:15.252   638  8064 I ActivityManager: Killing 22536:com.google.android.gms.unstable/u0a179 (adj 903): empty for 1804s
+08-09 22:35:02.245   638   658 I ActivityManager: Start proc 24222:com.amazon.device.software.ota/u0a17 for service com.amazon.device.software.ota/.OtaService
+08-09 22:35:02.533   638 18207 I ActivityManager: Killing 22745:android.process.acore/u0a33 (adj 903): empty for 5088s
+08-09 22:40:17.873   638   658 I ActivityManager: Start proc 24339:com.amazon.logan:a11ymetrics/u0a66 for service com.amazon.logan/.metrics.AppUsageMetricsReporter
+08-09 22:40:17.982   638   658 I ActivityManager: Start proc 24359:com.amazon.logan/u0a66 for content provider com.amazon.logan/.provider.LoganProvider
+08-09 22:40:18.062   638 19858 I ActivityManager: Killing 22704:com.amazon.adep/u0a132 (adj 903): empty for 5402s
+08-09 22:40:18.082   638   658 I ActivityManager: Start proc 24376:com.amazon.device.logmanager/1000 for service com.amazon.device.logmanager/.panacea.PanaceaPeriodicSyncService
+08-09 22:40:18.218   638  6945 I ActivityManager: Killing 22802:org.mozilla.firefox:crashhelper_disable_art_image_/u0a189 (adj 903): empty for 5392s
+08-09 22:40:18.236   638 19858 W ActivityManager: Scheduling restart of crashed service org.mozilla.firefox/org.mozilla.gecko.crashhelper.CrashHelper in 1000ms
+08-09 22:40:19.264   638   658 I ActivityManager: Start proc 24417:org.mozilla.firefox:crashhelper_disable_art_image_/u0a189 for service org.mozilla.firefox/org.mozilla.gecko.crashhelper.CrashHelper
+08-09 22:40:19.359   638 19858 I ActivityManager: Killing 22770:org.mozilla.firefox/u0a189 (adj 903): empty for 5393s
+08-09 22:41:00.006   638   638 I ActivityManager: Killing 23013:com.google.process.gapps/u0a179 (adj 903): empty for 5136s
+08-09 23:16:55.583   638   658 I ActivityManager: Start proc 24882:com.google.process.gapps/u0a179 for content provider com.google.android.gsf/.settings.GoogleSettingsProvider
+08-09 23:17:24.978   638 18207 I ActivityManager: Killing 23174:com.android.vending:background/u0a180 (adj 903): empty for 7037s
+08-10 00:15:23.937   638   658 I ActivityManager: Start proc 25562:com.microsoft.launcher/u0a178 for service com.microsoft.launcher/androidx.work.impl.background.systemjob.SystemJobService
+08-10 00:15:24.178   638  8064 I ActivityManager: Killing 24359:com.amazon.logan/u0a66 (adj 903): empty for 5706s
+08-10 00:15:34.235   638   658 I ActivityManager: Start proc 25659:com.amazon.adep/u0a132 for broadcast com.amazon.adep/.nimh.device.management.SecurityEventReceiver
+08-10 00:15:41.269   638  4898 I ActivityManager: Killing 24339:com.amazon.logan:a11ymetrics/u0a66 (adj 903): empty for 5723s
+08-10 01:10:25.853   638   658 I ActivityManager: Start proc 26287:org.mozilla.firefox/u0a189 for service org.mozilla.firefox/androidx.work.impl.background.systemjob.SystemJobService
+08-10 01:11:00.006   638   638 I ActivityManager: Killing 24376:com.amazon.device.logmanager/1000 (adj 903): empty for 9041s
+08-10 01:22:45.469   638  4898 I ActivityManager: Starting userid:10 fg:false
+08-10 01:22:47.773   638  4898 I ActivityManager: User 10 state changed from BOOTING to RUNNING_LOCKED
+08-10 01:22:47.850   638   658 W ActivityManager: Slow operation: 74ms so far, now at startProcess: returned from zygote!
+08-10 01:22:47.851   638   658 W ActivityManager: Slow operation: 74ms so far, now at startProcess: done updating battery stats
+08-10 01:22:47.851   638   658 W ActivityManager: Slow operation: 75ms so far, now at startProcess: building log message
+08-10 01:22:47.851   638   658 I ActivityManager: Start proc 26784:com.amazon.kindle.rdmdeviceadmin/u10a115 for broadcast com.amazon.kindle.rdmdeviceadmin/com.amazon.rdmdeviceadmin.DeviceBootCompleteReceiver
+08-10 01:22:47.851   638   658 W ActivityManager: Slow operation: 75ms so far, now at startProcess: starting to update pids map
+08-10 01:22:47.851   638   658 W ActivityManager: Slow operation: 75ms so far, now at startProcess: done updating pids map
+08-10 01:22:48.115   638  4898 I ActivityManager: Killing 22979:com.aurora.store/u0a177 (adj 903): empty for 7644s
+08-10 01:22:48.131   638   658 I ActivityManager: Start proc 26833:com.amazon.alexa.multimodal.gemini/u10a44 for broadcast com.amazon.alexa.multimodal.gemini/com.amazon.alexa.timeoutmanager.receiver.BootCompletedReceiver
+08-10 01:22:48.326   638   657 I ActivityManager: Starting userid:10 fg:true
+08-10 01:22:48.386   638   657 I ActivityManager: START u10 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.android.settings/.FallbackHome} from uid 0
+08-10 01:22:48.391   638   657 I ActivityManager: Loaded persisted task ids for user 10
+08-10 01:22:48.452   638   658 I ActivityManager: Start proc 26871:com.android.settings/u10s1000 for activity com.android.settings/.FallbackHome
+08-10 01:22:48.773   638   648 I ActivityManager: Killing 17669:com.amazon.webview.chromium:webview_service/u0a162 (adj 906): empty for 7553s
+08-10 01:22:48.809   638  8064 I ActivityManager: User 10 state changed from RUNNING_LOCKED to STOPPING
+08-10 01:22:48.856   638   656 W ActivityManager: Skipping broadcast of Intent { act=android.intent.action.INPUT_METHOD_CHANGED flg=0x20000010 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:48.865   638   658 I ActivityManager: Start proc 26908:com.android.systemui/u10a36 for service com.android.systemui/com.amazon.systemui.keyguard.ads.WallpaperComponentSwitchService
+08-10 01:22:48.880   638   658 I ActivityManager: Start proc 26914:com.amazon.redstone/u10a80 for service com.amazon.redstone/.FireKeyboardService
+08-10 01:22:48.918   638   658 I ActivityManager: Start proc 26934:com.android.proxyhandler/u0a22 for service com.fireos.usagestats.proxy/.AmazonUsageStatsMAPProxy
+08-10 01:22:48.928   638   648 I ActivityManager: START u10 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.amazon.tahoe/.launcher.FreeTimeLauncherActivity} from uid 0
+08-10 01:22:48.988   638   656 W ActivityManager: Expected user 10 in state BOOTING but was in state STOPPING
+08-10 01:22:48.990   638   658 I ActivityManager: Start proc 26952:com.amazon.kindle.kso/u10a74 for service com.amazon.kindle.kso/.lockscreen.view.KSOWallpaperService
+08-10 01:22:49.012   638   638 I ActivityManager: Killing 2570:com.amazon.kindle.unifiedSearch/u0a26 (adj 904): killBackgroundUserProcessesWithAudioRecordPermission
+08-10 01:22:49.015   638   638 W ActivityManager: Scheduling restart of crashed service com.amazon.kindle.unifiedSearch/.appWidget.USearchAppWidgetService in 1000ms
+08-10 01:22:49.037   638  2500 I ActivityManager: Killing 2857:com.amazon.webview.chromium:AWVMetricsProcess/u0a162 (adj 906): empty for 17195s
+08-10 01:22:49.047   638 18386 I ActivityManager: Killing 2779:com.amazon.webview.chromium:AWVArcusServiceProcess/u0a162 (adj 904): empty for 17195s
+08-10 01:22:49.098   638   649 I ActivityManager: Killing 25562:com.microsoft.launcher/u0a178 (adj 906): empty for 4044s
+08-10 01:22:49.217   638   658 I ActivityManager: Start proc 27011:com.amazon.alexa.multimodal.gemini:nowplaying/u0a44 for service com.amazon.alexa.multimodal.gemini/com.amazon.alexamediaplayer.runtime.NowPlayingService
+08-10 01:22:49.241   638   658 I ActivityManager: Start proc 27017:com.amazon.dcpms.fos.service/u0a90 for broadcast com.amazon.dcpms.fos.service/.lifecycle.device.userswitch.AccountPropertyChangeReceiver
+08-10 01:22:49.337   638  5551 I ActivityManager: Killing 25659:com.amazon.adep/u0a132 (adj 906): empty for 4034s
+08-10 01:22:49.389   638 22325 W ActivityManager: Unable to launch app com.amazon.logan/1010066 for provider com.amazon.logan.provider.LoganProvider: user 10 is stopped
+08-10 01:22:49.419   638   658 I ActivityManager: Start proc 27077:com.android.keychain/u10s1000 for service com.android.keychain/.KeyChainService
+08-10 01:22:49.445   638 22325 W ActivityManager: Skipping broadcast of Intent { act=com.amazon.kindle.dtcp.action.appRestart flg=0x10 cmp=com.amazon.kindle.kso/.alarm.HouseKeepingBroadcastReceiver }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.460   638 18207 W ActivityManager: Skipping broadcast of Intent { act=com.dolby.intent.action.DAP_PARAMS_UPDATE flg=0x10 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.462   638   648 W ActivityManager: Skipping broadcast of Intent { act=com.dolby.intent.action.DAP_PARAMS_UPDATE flg=0x10 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.468   638   648 W ActivityManager: Skipping broadcast of Intent { act=com.dolby.intent.action.DAP_PARAMS_UPDATE flg=0x10 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.469   638 18386 W ActivityManager: Skipping broadcast of Intent { act=com.dolby.intent.action.DAP_PARAMS_UPDATE flg=0x10 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.470   638 18207 W ActivityManager: Skipping broadcast of Intent { act=com.dolby.intent.action.DAP_PARAMS_UPDATE flg=0x10 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.471   638  1197 W ActivityManager: Skipping broadcast of Intent { act=com.dolby.intent.action.DAP_PARAMS_UPDATE flg=0x10 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.490   638   648 W ActivityManager: Skipping broadcast of Intent { act=com.dolby.intent.action.DAP_PARAMS_UPDATE flg=0x10 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.538   638   658 I ActivityManager: Start proc 27118:com.amazon.providers.contentsupport/u0a138 for content provider com.amazon.providers.contentsupport/.ContentSupportProvider
+08-10 01:22:49.589   638   658 I ActivityManager: Start proc 27136:com.android.settings/1000 for broadcast com.android.settings/com.amazon.settings.AccountPropertyChangeReceiver
+08-10 01:22:49.597   638  6945 W ActivityManager: Skipping broadcast of Intent { act=android.intent.action.WALLPAPER_CHANGED flg=0x10 }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.606   638  6945 W ActivityManager: Skipping broadcast of Intent { act=android.intent.action.WALLPAPER_CHANGED flg=0x10 }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.620   638   667 W ActivityManager: Skipping broadcast of Intent { act=amazon.intent.action.WAKELOCK_ACQUIRED flg=0x10000010 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:49.757   638   658 I ActivityManager: Start proc 27187:com.amazon.kindle.kso/u0a74 for service com.amazon.kindle.kso/.lockscreen.controller.SystemEventService
+08-10 01:22:49.761   638   888 W ActivityManager: Background start not allowed: service Intent { act=com.amazon.kindle.dtcp.action.WALLPAPER_ENGINE_CREATED cmp=com.amazon.kindle.kso/.lockscreen.controller.SystemEventService (has extras) } to com.amazon.kindle.kso/.lockscreen.controller.SystemEventService from pid=26952 uid=1010074 pkg=com.amazon.kindle.kso startFg?=false
+08-10 01:22:49.837   638   664 I ActivityManager: Override config changes=20005df8 {0.0 ?mcc?mnc ?localeList ?layoutDir sw800dp w800dp h1280dp 240dpi xlrg port ?uimode ?night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1200, 1920) mAppBounds=Rect(0, 0 - 1200, 1920) mWindowingMode=fullscreen mActivityType=undefined}} for displayId=3
+08-10 01:22:49.853   638 22325 I ActivityManager: Killing 22998:com.amazon.sync.service/u0a27 (adj 906): empty for 3399s
+08-10 01:22:49.913   638   662 W ActivityManager: Expected user 10 in state RUNNING_LOCKED but was in state STOPPING
+08-10 01:22:49.918   638   664 I ActivityManager: Override config changes=20005df8 {0.0 ?mcc?mnc ?localeList ?layoutDir sw800dp w800dp h1280dp 240dpi xlrg port ?uimode ?night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1200, 1920) mAppBounds=Rect(0, 0 - 1200, 1920) mWindowingMode=fullscreen mActivityType=undefined}} for displayId=4
+08-10 01:22:50.017   638   658 I ActivityManager: Start proc 27253:com.amazon.device.services/u10s1000 for service com.amazon.device.sale.service/com.amazon.device.sale.api.SessionScheduler
+08-10 01:22:50.044   638   658 W ActivityManager: Slow operation: 61ms so far, now at startProcess: returned from zygote!
+08-10 01:22:50.044   638   658 W ActivityManager: Slow operation: 62ms so far, now at startProcess: done updating battery stats
+08-10 01:22:50.044   638   658 W ActivityManager: Slow operation: 62ms so far, now at startProcess: building log message
+08-10 01:22:50.044   638   658 I ActivityManager: Start proc 27264:com.amazon.storagemanager/u10s1000 for service com.amazon.storagemanager/.services.MetricsJobService
+08-10 01:22:50.044   638   658 W ActivityManager: Slow operation: 62ms so far, now at startProcess: starting to update pids map
+08-10 01:22:50.044   638   658 W ActivityManager: Slow operation: 62ms so far, now at startProcess: done updating pids map
+08-10 01:22:50.063   638  1779 W ActivityManager: Unable to launch app com.android.providers.userdictionary/1010033 for provider user_dictionary: user 10 is stopped
+08-10 01:22:50.067   638   658 W ActivityManager: Slow operation: 52ms so far, now at startProcess: returned from zygote!
+08-10 01:22:50.067   638   658 W ActivityManager: Slow operation: 52ms so far, now at startProcess: done updating battery stats
+08-10 01:22:50.068   638   658 W ActivityManager: Slow operation: 52ms so far, now at startProcess: building log message
+08-10 01:22:50.068   638   658 I ActivityManager: Start proc 27277:com.amazon.kindle.unifiedSearch/u0a26 for service com.amazon.kindle.unifiedSearch/.appWidget.USearchAppWidgetService
+08-10 01:22:50.068   638   658 W ActivityManager: Slow operation: 52ms so far, now at startProcess: starting to update pids map
+08-10 01:22:50.068   638   658 W ActivityManager: Slow operation: 52ms so far, now at startProcess: done updating pids map
+08-10 01:22:50.253   638 18386 I ActivityManager: Killing 23077:com.amazon.sync.provider.ipc/u0a104 (adj 906): empty for 3389s
+08-10 01:22:50.347   638 18386 I ActivityManager: Killing 23495:com.amazon.wifilocker/u0a69 (adj 906): empty for 2560s
+08-10 01:22:50.360   638   658 I ActivityManager: Start proc 27402:com.amazon.venezia/u0a76 for content provider com.amazon.venezia/.deviceinfo.DeviceInfoProvider
+08-10 01:22:50.575   638   658 I ActivityManager: Start proc 27454:com.android.defcontainer/u0a136 for service com.android.defcontainer/.DefaultContainerService
+08-10 01:22:50.672   638   649 I ActivityManager: Killing 23530:com.android.providers.downloads/u0a14 (adj 906): empty for 2555s
+08-10 01:22:50.718   638   658 I ActivityManager: Start proc 27493:com.amazon.webview.chromium:AWVArcusServiceProcess/u0a162 for service com.amazon.webview.chromium/com.amazon.webview.awvdeploymentservice.service.AWVArcusService
+08-10 01:22:50.734   638   658 I ActivityManager: Start proc 27506:com.amazon.webview.chromium/u0a162 for content provider com.amazon.webview.chromium/com.amazon.webview.awvdeploymentservice.service.AWVArcusContentProvider
+08-10 01:22:50.754   638   658 I ActivityManager: Start proc 27522:com.amazon.webview.chromium:webview_service/u0a162 for service com.amazon.webview.chromium/org.chromium.android_webview.services.VariationsSeedServer
+08-10 01:22:50.851   638  6442 W ActivityManager: Unable to launch app com.android.providers.media/1010085 for provider media: user 10 is stopped
+08-10 01:22:50.852   638  6442 W ActivityManager: Unable to launch app com.android.providers.media/1010085 for provider media: user 10 is stopped
+08-10 01:22:50.852   638  6442 W ActivityManager: Unable to launch app com.amazon.mp3/1010110 for provider com.amazon.mp3.storage: user 10 is stopped
+08-10 01:22:50.853   638  6442 W ActivityManager: Unable to launch app com.android.providers.media/1010085 for provider media: user 10 is stopped
+08-10 01:22:50.853   638  6442 W ActivityManager: Unable to launch app com.amazon.mp3/1010110 for provider com.amazon.mp3.storage: user 10 is stopped
+08-10 01:22:50.855   638  6442 W ActivityManager: Unable to launch app com.android.providers.downloads/1010014 for provider downloads: user 10 is stopped
+08-10 01:22:50.857   638   648 W ActivityManager: Unable to launch app com.android.providers.media/1010085 for provider media: user 10 is stopped
+08-10 01:22:50.861   638  6442 W ActivityManager: Unable to launch app com.android.providers.downloads/1010014 for provider downloads: user 10 is stopped
+08-10 01:22:50.875   638   658 I ActivityManager: Start proc 27574:com.amazon.webview.chromium:AWVMetricsProcess/u0a162 for service com.amazon.webview.chromium/com.amazon.webview.metrics.service.AWVMetricsService
+08-10 01:22:50.940   638  4809 I ActivityManager: Killing 24222:com.amazon.device.software.ota/u0a17 (adj 906): empty for 2241s
+08-10 01:22:51.280   638   888 W ActivityManager: Unable to launch app com.amazon.kindle/1010052 for provider com.amazon.kindle.bookmetadataprovider: user 10 is stopped
+08-10 01:22:51.284   638   888 W ActivityManager: Unable to launch app com.amazon.kindle/1010052 for provider com.amazon.kindle.bookmetadataprovider: user 10 is stopped
+08-10 01:22:51.288   638   888 W ActivityManager: Unable to launch app com.amazon.kindle/1010052 for provider com.amazon.kindle.bookmetadataprovider: user 10 is stopped
+08-10 01:22:51.289   638  6576 W ActivityManager: Unable to launch app com.amazon.kindle/1010052 for provider com.amazon.kindle.bookmetadataprovider: user 10 is stopped
+08-10 01:22:51.313   638   658 I ActivityManager: Start proc 27672:com.amazon.avod/u0a106 for service com.amazon.avod/.sdk.DownloadSdkService
+08-10 01:22:51.381   638   656 E ActivityManager: User switch timeout: from 0 to 10
+08-10 01:22:51.442   638  1779 W ActivityManager: Skipping broadcast of Intent { act=android.intent.action.WALLPAPER_CHANGED flg=0x10 }: user 10 and its parent (if any) are stopped
+08-10 01:22:51.680   638   658 I ActivityManager: Start proc 27721:com.amazon.pm/u0a67 for broadcast com.amazon.pm/.receiver.BootStrapReceiver
+08-10 01:22:51.714   638   657 I ActivityManager: Starting userid:0 fg:true
+08-10 01:22:51.777   638   657 I ActivityManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.amazon.firelauncher/.Launcher} from uid 0
+08-10 01:22:51.801   638   657 W ActivityManager: Skipping broadcast of Intent { act=android.intent.action.USER_BACKGROUND flg=0x50000010 (has extras) }: user 10 and its parent (if any) are stopped
+08-10 01:22:51.875   638   658 I ActivityManager: Start proc 27754:com.amazon.sync.service/u0a27 for content provider com.amazon.sync.service/com.amazon.sync.framework.attributes.SyncAttributeProvider
+08-10 01:22:51.906   638  2500 W ActivityManager: Expected user 0 in state BOOTING but was in state RUNNING_UNLOCKED
+08-10 01:22:51.917   638   658 I ActivityManager: Start proc 27769:com.amazon.cardinal/u0a121 for broadcast com.amazon.cardinal/.CsmPublishCapabilitiesBroadcastReceiver
+08-10 01:22:52.086   638   656 I ActivityManager: User 10 state changed from STOPPING to SHUTDOWN
+08-10 01:22:52.581   638   658 I ActivityManager: Start proc 27871:com.android.externalstorage/u0a99 for content provider com.android.externalstorage/.ExternalStorageProvider
+08-10 01:22:52.619   638  5551 I ActivityManager: Activity reported stop, but no longer stopping: ActivityRecord{7833224 u0 com.android.documentsui/.files.FilesActivity t4}
+08-10 01:22:53.165   638   658 I ActivityManager: Start proc 27943:com.android.keychain/1000 for service com.android.keychain/.KeyChainService
+08-10 01:22:53.169   638  6945 I ActivityManager: Activity reported stop, but no longer stopping: ActivityRecord{9c7384e u0 com.amazon.firelauncher/.Launcher t2}
+08-10 01:22:53.419   638   658 I ActivityManager: Start proc 27964:com.amazon.device.crashmanager/u0a105 for broadcast com.amazon.device.crashmanager/.CrashManagerSystemReceiver
+08-10 01:22:53.541   638   649 W ActivityManager: Unable to start service Intent { act=com.google.android.gms.home.service.START pkg=com.google.android.gms } U=0: not found
+08-10 01:22:53.542   638  6945 W ActivityManager: Unbind failed: could not find connection for android.os.BinderProxy@7caa025
+08-10 01:22:53.700   638   656 I ActivityManager: Force stopping u10: finish user
+08-10 01:22:53.701   638   656 I ActivityManager: Killing 27264:com.amazon.storagemanager/u10s1000 (adj 904): stop user 10
+08-10 01:22:53.707   638   656 I ActivityManager: Killing 26914:com.amazon.redstone/u10a80 (adj 904): stop user 10
+08-10 01:22:53.710   638   656 I ActivityManager: Killing 26833:com.amazon.alexa.multimodal.gemini/u10a44 (adj 904): stop user 10
+08-10 01:22:53.713   638   656 I ActivityManager: Killing 26952:com.amazon.kindle.kso/u10a74 (adj 904): stop user 10
+08-10 01:22:53.715   638   656 I ActivityManager: Killing 27077:com.android.keychain/u10s1000 (adj 904): stop user 10
+08-10 01:22:53.718   638   656 I ActivityManager: Killing 26871:com.android.settings/u10s1000 (adj 904): stop user 10
+08-10 01:22:53.720   638   656 I ActivityManager: Killing 26784:com.amazon.kindle.rdmdeviceadmin/u10a115 (adj 904): stop user 10
+08-10 01:22:53.721   638   656 I ActivityManager: Killing 26908:com.android.systemui/u10a36 (adj 904): stop user 10
+08-10 01:22:53.724   638   656 I ActivityManager: Killing 27253:com.amazon.device.services/u10s1000 (adj 904): stop user 10
+08-10 01:22:53.730   638   656 I ActivityManager:   Force finishing activity ActivityRecord{858359b u10 com.amazon.tahoe/.launcher.FreeTimeLauncherActivity t1000002}
+08-10 01:22:53.799   638   664 W ActivityManager: setHasOverlayUi called on unknown pid: 26952
+08-10 01:22:54.769   638  8064 W ActivityManager: Unable to start service Intent { act=com.google.android.gms.home.service.START pkg=com.google.android.gms } U=0: not found
+08-10 01:22:54.769   638   656 E ActivityManager: User switch timeout: from 10 to 0
+08-10 01:22:54.769   638  8064 W ActivityManager: Unbind failed: could not find connection for android.os.BinderProxy@7a3672b
+08-10 01:22:54.908   638   664 I ActivityManager: Override config changes=20005df8 {0.0 ?mcc?mnc ?localeList ?layoutDir sw800dp w800dp h1280dp 240dpi xlrg port ?uimode ?night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1200, 1920) mAppBounds=Rect(0, 0 - 1200, 1920) mWindowingMode=fullscreen mActivityType=undefined}} for displayId=5
+08-10 01:22:54.951   638   664 I ActivityManager: Override config changes=20005df8 {0.0 ?mcc?mnc ?localeList ?layoutDir sw800dp w800dp h1280dp 240dpi xlrg port ?uimode ?night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 1200, 1920) mAppBounds=Rect(0, 0 - 1200, 1920) mWindowingMode=fullscreen mActivityType=undefined}} for displayId=6
+08-10 01:22:56.409   638   658 I ActivityManager: Start proc 28135:com.amazon.identity.auth.device.authorization/u0a125 for service com.amazon.identity.auth.device.authorization/.AmazonCredentialManagerService
+08-10 01:22:57.102   638   658 I ActivityManager: Start proc 28195:com.amazon.alta.h2clientservice/u0a12 for service com.amazon.alta.h2clientservice/.H2ClientService
+08-10 01:22:59.370   638   658 I ActivityManager: Start proc 28240:com.amazon.adep/u0a132 for broadcast com.amazon.adep/.nimh.device.management.SecurityEventReceiver
+08-10 01:22:59.770   638   656 E ActivityManager: User switch timeout: from 10 to 0. Observers that didn't respond: {#3 MSM_MMFlagsChangeObs, #0 com.amazon.android.service.event.OnUserSwitchEvent}
+08-10 01:23:04.386   638   656 I ActivityManager: Waited long enough for: ServiceRecord{3af5e1f u0 com.google.android.gms/.chimera.GmsIntentOperationService}
+08-10 01:23:12.496   638   658 I ActivityManager: Start proc 28271:com.amazon.logan/u0a66 for broadcast com.amazon.logan/.fireos.ProfileReceiver
+--------- beginning of main
+08-10 01:23:57.941   638   656 W ActivityManager: Stopping service due to app idle: u0a121 -1m5s105ms com.amazon.cardinal/.event.EventRequestHandlingService
+08-10 01:29:05.579   638   658 I ActivityManager: Start proc 28354:com.amazon.sync.provider.ipc/u0a104 for service com.amazon.sync.provider.ipc/.ProviderService
+08-10 01:40:10.259   638   658 I ActivityManager: Start proc 28533:com.amazon.wifilocker/u0a69 for broadcast com.amazon.wifilocker/.receivers.WifiChangeReceiver
+08-10 01:40:15.146   638   658 I ActivityManager: Start proc 28584:com.android.providers.downloads/u0a14 for service com.android.providers.downloads/.DownloadMonitorService
+08-10 01:40:15.247   638 18101 I ActivityManager: Killing 24417:org.mozilla.firefox:crashhelper_disable_art_image_/u0a189 (adj 903): empty #33
+08-10 01:40:15.264   638  6945 W ActivityManager: Scheduling restart of crashed service org.mozilla.firefox/org.mozilla.gecko.crashhelper.CrashHelper in 1000ms
+08-10 01:40:16.288   638   658 I ActivityManager: Start proc 28607:org.mozilla.firefox:crashhelper_disable_art_image_/u0a189 for service org.mozilla.firefox/org.mozilla.gecko.crashhelper.CrashHelper
+08-10 01:40:16.358   638  6945 I ActivityManager: Killing 26287:org.mozilla.firefox/u0a189 (adj 903): empty #33
+08-10 01:45:29.249   638   658 I ActivityManager: Start proc 28704:com.amazon.device.software.ota/u0a17 for service com.amazon.device.software.ota/.OtaService
+08-10 01:45:29.537   638 18101 I ActivityManager: Killing 27118:com.amazon.providers.contentsupport/u0a138 (adj 903): empty #33
+08-10 01:45:29.572   638 18387 W ActivityManager: Unable to start service Intent { cmp=com.amazon.tv.csg.dnwstateservice/.DNWStateService } U=0: not found
+08-10 01:45:29.653   638 18387 E ActivityManager: Sending non-protected broadcast com.amazon.dcp.ota.action.OTA_BROADCAST from system 28704:com.amazon.device.software.ota/u0a17 pkg com.amazon.device.software.ota
+08-10 01:45:29.653   638 18387 E ActivityManager: java.lang.Throwable
+08-10 01:45:29.653   638 18387 E ActivityManager: 	at com.android.server.am.ActivityManagerService.checkBroadcastFromSystem(ActivityManagerService.java:21717)
+08-10 01:45:29.653   638 18387 E ActivityManager: 	at com.android.server.am.ActivityManagerService.broadcastIntentLocked(ActivityManagerService.java:22326)
+08-10 01:45:29.653   638 18387 E ActivityManager: 	at com.android.server.am.ActivityManagerService.broadcastIntent(ActivityManagerService.java:22468)
+08-10 01:45:29.653   638 18387 E ActivityManager: 	at android.app.IActivityManager$Stub.onTransact$broadcastIntent$(IActivityManager.java:10172)
+08-10 01:45:29.653   638 18387 E ActivityManager: 	at android.app.IActivityManager$Stub.onTransact(IActivityManager.java:167)
+08-10 01:45:29.653   638 18387 E ActivityManager: 	at com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3360)
+08-10 01:45:29.653   638 18387 E ActivityManager: 	at android.os.Binder.execTransact(Binder.java:731)
+08-10 01:46:18.847   638 18101 I ActivityManager: START u0 {flg=0x10000000 cmp=com.amazon.tahoe/.settings.household.HouseholdSettingsAddChildActivity} from uid 2000
+08-10 01:46:18.883   638   658 I ActivityManager: Start proc 28782:com.amazon.tahoe/u0a128 for activity com.amazon.tahoe/.settings.household.HouseholdSettingsAddChildActivity
