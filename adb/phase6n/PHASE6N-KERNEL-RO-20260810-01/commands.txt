@@ -1,0 +1,12 @@
+get_state: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT get-state
+identity: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell id
+security: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell getenforce; getprop ro.debuggable; getprop ro.secure; getprop ro.boot.verifiedbootstate; uname -a
+amazon_proc_modes: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell ls -lZ /proc/life_cycle_reason /proc/ged /proc/idme /proc/idme/mac_sec /proc/idme/bootmode /proc/idme/postmode /proc/idme/dev_flags /proc/idme/fos_flags /proc/idme/usr_flags /proc/idme/unlock_code /proc/idme/t_unlock_code /proc/idme/unlock_version
+life_cycle_read: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell head -n 20 /proc/life_cycle_reason
+ged_read: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell head -c 64 /proc/ged
+logger_modes: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell ls -lZ /dev/metrics /dev/vitals
+liquid_node: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell ls -ldZ /sys/devices/platform/odm/odm:ld; find /sys/devices/platform/odm/odm:ld -maxdepth 1 -type f -print
+liquid_module: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell ls -ldZ /sys/module/amzn_ld /sys/module/amzn_ld/parameters; ls -lZ /sys/module/amzn_ld/parameters
+debugfs_nodes: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell for p in /sys/kernel/debug /sys/kernel/debug/ged /sys/kernel/debug/usb_c /sys/kernel/debug/mmprofile; do ls -ldZ "$p"; done
+home_before: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.HOME
+fire_before: adb -s G001LT0511550CFT shell adb -s G001LT0511550CFT shell dumpsys package com.amazon.firelauncher
