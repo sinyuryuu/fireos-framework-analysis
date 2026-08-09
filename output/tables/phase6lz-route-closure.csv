@@ -1,0 +1,12 @@
+route,result,confidence,evidence,safe_disposition
+User-0 HOME resolver,Fire Launcher priority 50 remains selected,Confirmed,adb/phase6lz/PHASE6LZ-BASELINE-20260810-01/home_user0.stdout.txt; home_candidates_user0.stdout.txt,Do not repeat priority/preferred tests without a changed premise
+Ordinary preferred activity,set-home-activity record does not replace Fire,Confirmed,findings/home-preferred-state.md:46-85; existing Phase 3C evidence,No new equivalent mutation
+Fire package/component state,Protected-package rejection before state change,Confirmed,findings/package-protection.md:18-47; findings/phase-6fg-pms-protected-package-boundary.md,Do not repeat disable tests
+KFT launcher writer,Child/profile-scoped writer only,Confirmed,findings/phase-6ay-launcher-state-services.md:44-89; fosservices/disassembly.log:54297-54325,Static analysis only; no private transaction
+Amazon HOME callbacks,Delegation or null fallback; no Fire injection,Strong evidence,findings/phase-6al-home-resolve-callbacks.md:16-61; findings/phase-6ky-follow-up-closure.md,Host-only closure
+Amazon private Binder services,Not shell-reachable under saved enforcing state,Strong evidence,findings/phase-6l-binder-contract-audit.md; findings/phase-6bo-binder-contract-and-reachability-audit.md,Do not send unknown transactions
+CHANGE_COMPONENT_ENABLED_STATE holders,11 saved package blocks; grant is not a bypass,Confirmed,findings/phase-6lz-component-state-permission-audit.md; output/tables/phase6lz-component-state-permissions/result.json,Provenance review only
+PS7331 vendor drivers,No source edge to PMS/AMS/HOME,Strong evidence,findings/phase-6ga-p5-vendor-driver-closure.md; findings/phase-6is-selinux-driver-route-closure.md,No physical ioctl probe
+PS7331 OTA/OOBE,Fixed-target recovery writer and guarded setup path,Confirmed,findings/phase-6bp-ota-post-install-path-audit.md; findings/phase-6q-bootafter-system-ota.md,No OTA or OOBE trigger
+Futex/rtmutex,Static pre-fix markers; runtime exploitability unproven,Unknown,findings/phase-5n-exact-source-ghostlock-review.md; phase-6 kernel artifacts,No exploit construction or device trigger
+Foreground redirect,Temporary alternative rather than formal HOME,Disproved,findings/phase-5bd-evidence-index.md; findings/phase-6at-adb-home-monitor.md,Only user-visible bounded fallback
