@@ -1,0 +1,51 @@
+{
+  "analysis": "offline-only",
+  "fire_literal_rows": [
+    "com.amazon.venezia",
+    "com.amazon.firelauncher",
+    "com.amazon.mp3",
+    "com.amazon.frameworksettings",
+    "com.amazon.csapp",
+    "com.amazon.kindle.kso",
+    "com.amazon.kindle.otter.oobe",
+    "com.amazon.kor.demo",
+    "com.amazon.avod",
+    "com.amazon.kindle",
+    "com.amazon.avod"
+  ],
+  "holder_counts": {
+    "android.permission.CHANGE_COMPONENT_ENABLED_STATE": 12,
+    "android.permission.DELETE_PACKAGES": 8,
+    "android.permission.FORCE_STOP_PACKAGES": 3,
+    "android.permission.INSTALL_PACKAGES": 7,
+    "android.permission.MANAGE_USERS": 37,
+    "android.permission.WRITE_SECURE_SETTINGS": 45
+  },
+  "holder_rows": 60,
+  "home_literal_rows": [],
+  "input": "adb/phase6mc-permission-holders-20260810-01/package_dump.stdout.txt",
+  "input_sha256": "c5c14346075ffc6054aa8696f7ff577c54ce97fd96dff8a8ec044a8bdda4fa37",
+  "limitations": [
+    "A granted permission does not establish a protected-package bypass.",
+    "dumpsys package output is not a complete proof of code reachability or signing provenance.",
+    "Rows are package-state observations; writer behavior requires separate static evidence."
+  ],
+  "permission_input": "adb/phase6mc-permission-holders-20260810-01/permission_definitions.stdout.txt",
+  "permission_input_sha256": "62d133892d6488861e85bc7e9aeb9418e258e930e0cda507a695aac1e2e406cc",
+  "permission_protection": {
+    "android.permission.CHANGE_COMPONENT_ENABLED_STATE": "signature|privileged",
+    "android.permission.DELETE_PACKAGES": "signature|privileged",
+    "android.permission.FORCE_STOP_PACKAGES": "signature|privileged",
+    "android.permission.INSTALL_PACKAGES": "signature|privileged",
+    "android.permission.MANAGE_USERS": "signature|privileged",
+    "android.permission.WRITE_SECURE_SETTINGS": "signature|privileged|development"
+  },
+  "target_permissions": [
+    "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+    "android.permission.MANAGE_USERS",
+    "android.permission.WRITE_SECURE_SETTINGS",
+    "android.permission.INSTALL_PACKAGES",
+    "android.permission.DELETE_PACKAGES",
+    "android.permission.FORCE_STOP_PACKAGES"
+  ]
+}

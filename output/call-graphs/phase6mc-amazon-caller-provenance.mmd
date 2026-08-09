@@ -1,0 +1,18 @@
+flowchart TD
+    H2Client["Authorized H2 client"] --> H2Bind["H2ClientService.onBind\nBIND_SERVICE signature"]
+    H2Bind --> H2Api["IH2ClientService.addUser"]
+    H2Api --> H2Workflow["HouseholdController / CreateAndroidUserCommand"]
+    H2Workflow --> AUM["AmazonUserManager.createChildUser"]
+    AUM --> KFT["IAmazonUserManager tx3\nchild/KFT lifecycle"]
+    KFT --> ChildWriter["enableKftLauncherComponent(UserInfo)"]
+    ChildWriter --> ChildScope["Child user only:\nTahoe enabled; Fire/Launcher3 state 2"]
+
+    Tx4["IAmazonUserManager tx4"] --> Setup["setup settings only\nidentity cleared"]
+    Prewarm["AmazonActivityManager preWarmApplicationForUser"] --> Process["startProcessLocked / prewarm"]
+    OTA["AmazonPackageManagerService.onBootPhase(550)\nisUpgrade"] --> Broadcast["protected BOOT_AFTER_SYSTEM_OTA"]
+    Broadcast --> OOBE["BootAfterSystemOTAReceiver\nOOBE/setup state"]
+
+    ChildScope -. "no User-0 HOME sink observed" .-> Fire["Fire Launcher HOME"]
+    Setup -. "not package/HOME state" .-> Fire
+    Process -. "not HOME selection" .-> Fire
+    OOBE -. "lifecycle-bound; not shell selector" .-> Fire
