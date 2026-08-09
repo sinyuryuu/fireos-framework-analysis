@@ -1,0 +1,25 @@
+{
+  "tool": "audit_phase6kv_pms_home_callers.py",
+  "mode": "HOST_ONLY_READ_ONLY",
+  "inputs": [
+    {
+      "source_kind": "fosservices",
+      "path": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+      "sha256": "ecbe62fe8eb8bd575da8b2a73a155875df937073ccc2faa020ca592c0515151c"
+    },
+    {
+      "source_kind": "services",
+      "path": "decompiled/baksmali/vdexExtractor/services/disassembly.log",
+      "sha256": "373a51150fcb079da026b20e71d44380bc3d86e52be88c63ebd39cfd58a6ba53"
+    }
+  ],
+  "output": {
+    "artifact_path": "artifacts/phase6kv/pms-home-caller-closure-20260810-01/pms-home-callers.csv",
+    "artifact_sha256": "dc1a86ea85904e3775704944fa86364a9a89033f6146eed0dac8b324b7028382",
+    "canonical_path": "output/tables/phase6kv-pms-home-callers.csv",
+    "canonical_sha256": "dc1a86ea85904e3775704944fa86364a9a89033f6146eed0dac8b324b7028382"
+  },
+  "row_count": 25,
+  "target_count": 13,
+  "interpretation_limit": "Rows are exact disassembly invoke sites; they do not prove runtime reachability, shell access, or User-0 mutation."
+}

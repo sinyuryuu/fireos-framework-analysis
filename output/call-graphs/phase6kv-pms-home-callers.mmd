@@ -1,0 +1,22 @@
+flowchart LR
+  shell["ADB shell / pm / cmd package"] --> shellcmd["PackageManagerShellCommand.runSetEnabledSetting"]
+  shellcmd --> ipm["IPackageManager Binder"]
+  ipm --> pms["PackageManagerService state and preferred APIs"]
+  pms --> gate["PMS permission, protected-package, user and resolver gates"]
+  gate --> state["package/component state"]
+  gate --> preferred["ordinary preferred / HOME record"]
+
+  dpm["DevicePolicyManagerService"] --> pms
+  dpm -. "owner/policy-gated" .-> preferred
+
+  kft["AmazonUserManagerService.BinderService.enableKftLauncherComponent"] --> apm["AmazonPackageManager wrapper"]
+  apm --> kftstate["Tahoe / Fire / Launcher3 state for supplied UserInfo.id"]
+
+  policy["EnableDisableComponentAction"] --> apm
+  policy -. "fixed ProductPolicy inputs" .-> state
+  oobe["AppAdapterHandler / GeminiHandler / EspressoShotCallback"] --> state
+
+  private["Amazon private service names"] -. "service check: shell no handle" .-> kft
+
+  classDef evidence fill:#eef,stroke:#447;
+  class gate,pms,kftstate,preferred,state evidence;
