@@ -1,0 +1,59 @@
+   virtual_method #6539: startProfilePicker (I)V
+    access=0001 (PUBLIC)
+    codeOff=589c2 (362946)
+    quickening_size=0 (0)
+      0589c6: 2200 9000                              |0000: new-instance v0, Landroid/content/Intent; // type@0090
+      0589ca: 7010 6102 0000                         |0002: invoke-direct {v0}, Landroid/content/Intent;.<init>:()V // method@0261
+      0589d0: 1a01 774f                              |0005: const-string v1, "WAKE_UP_SOURCE" // string@4f77
+      0589d4: 6e30 7602 1005                         |0007: invoke-virtual {v0, v1, v5}, Landroid/content/Intent;.putExtra:(Ljava/lang/String;I)Landroid/content/Intent; // method@0276
+      0589da: 5441 b50c                              |000a: iget-object v1, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+      0589de: 7110 c019 0100                         |000c: invoke-static {v1}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$3000:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)Ljava/util/Map; // method@19c0
+      0589e4: 0c01                                   |000f: move-result-object v1
+      0589e6: 1a02 011e                              |0010: const-string v2, "KEY_PROFILE_PICKER_PACKAGE_NAME" // string@1e01
+      0589ea: 7220 d77c 2100                         |0012: invoke-interface {v1, v2}, Ljava/util/Map;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7cd7
+      0589f0: 0c01                                   |0015: move-result-object v1
+      0589f2: 1f01 7f12                              |0016: check-cast v1, Ljava/lang/String; // type@127f
+      0589f6: 5442 b50c                              |0018: iget-object v2, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+      0589fa: 7110 c019 0200                         |001a: invoke-static {v2}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$3000:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)Ljava/util/Map; // method@19c0
+      058a00: 0c02                                   |001d: move-result-object v2
+      058a02: 1a03 001e                              |001e: const-string v3, "KEY_PROFILE_PICKER_ACTIVITY_NAME" // string@1e00
+      058a06: 7220 d77c 3200                         |0020: invoke-interface {v2, v3}, Ljava/util/Map;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7cd7
+      058a0c: 0c02                                   |0023: move-result-object v2
+      058a0e: 1f02 7f12                              |0024: check-cast v2, Ljava/lang/String; // type@127f
+      058a12: 6e30 8202 1002                         |0026: invoke-virtual {v0, v1, v2}, Landroid/content/Intent;.setClassName:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent; // method@0282
+      058a18: 1501 0004                              |0029: const/high16 v1, #int 67108864 // #400
+      058a1c: 6e20 8502 1000                         |002b: invoke-virtual {v0, v1}, Landroid/content/Intent;.setFlags:(I)Landroid/content/Intent; // method@0285
+      058a22: 5441 b50c                              |002e: iget-object v1, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+      058a26: 7110 ba19 0100                         |0030: invoke-static {v1}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$2400:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)Landroid/content/Context; // method@19ba
+      058a2c: 0c01                                   |0033: move-result-object v1
+      058a2e: 7100 8e01 0000                         |0034: invoke-static {}, Landroid/app/ActivityManager;.getCurrentUser:()I // method@018e
+      058a34: 0a02                                   |0037: move-result v2
+      058a36: 7110 610c 0200                         |0038: invoke-static {v2}, Landroid/os/UserHandle;.of:(I)Landroid/os/UserHandle; // method@0c61
+      058a3c: 0c02                                   |003b: move-result-object v2
+      058a3e: 6e30 5902 0102                         |003c: invoke-virtual {v1, v0, v2}, Landroid/content/Context;.startActivityAsUser:(Landroid/content/Intent;Landroid/os/UserHandle;)V // method@0259
+      058a44: 2818                                   |003f: goto 0057 // +0018
+      058a46: 0d00                                   |0040: move-exception v0
+      058a48: 6201 190d                              |0041: sget-object v1, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.TAG:Ljava/lang/String; // field@0d19
+      058a4c: 2202 8112                              |0043: new-instance v2, Ljava/lang/StringBuilder; // type@1281
+      058a50: 7010 4a7a 0200                         |0045: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      058a56: 1a03 6816                              |0048: const-string v3, "Exception while attempting to launch profile picker activity. Message: " // string@1668
+      058a5a: 6e20 557a 3200                         |004a: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      058a60: 6e20 547a 0200                         |004d: invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      058a66: 6e10 5e7a 0200                         |0050: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      058a6c: 0c02                                   |0053: move-result-object v2
+      058a6e: 7120 1c0d 2100                         |0054: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      058a74: 0e00                                   |0057: return-void
+   virtual_method #6540: unregisterAccount (Ljava/lang/String;Ljava/lang/String;Z)I
+    access=0001 (PUBLIC)
+    codeOff=582e2 (361186)
+    quickening_size=0 (0)
+      0582e6: 5450 b50c                              |0000: iget-object v0, v5, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+      0582ea: 7110 d719 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$4900:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)V // method@19d7
+      0582f0: 3806 3d01                              |0005: if-eqz v6, 0142 // +013d
+      0582f4: 3907 0400                              |0007: if-nez v7, 000b // +0004
+      0582f8: 2900 3901                              |0009: goto/16 0142 // +0139
+      0582fc: 5450 b50c                              |000b: iget-object v0, v5, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+      058300: 7110 d519 0000                         |000d: invoke-static {v0}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$4700:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)Ljava/util/Map; // method@19d5
+      058306: 0c00                                   |0010: move-result-object v0
+      058308: 7220 de7c 7000                         |0011: invoke-interface {v0, v7}, Ljava/util/Map;.remove:(Ljava/lang/Object;)Ljava/lang/Object; // method@7cde
+      05830e: 5450 b50c                              |0014: iget-object v0, v5, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5

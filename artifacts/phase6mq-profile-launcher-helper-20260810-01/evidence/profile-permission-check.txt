@@ -1,0 +1,18 @@
+   direct_method #6671: enforceProfileInteractionPermissions ()V
+    access=0002 (PRIVATE)
+    codeOff=5aad6 (371414)
+    quickening_size=0 (0)
+      05aada: 5440 290d                              |0000: iget-object v0, v4, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.mContext:Landroid/content/Context; // field@0d29
+      05aade: 1a01 565c                              |0002: const-string v1, "com.amazon.device.permission.PROFILE_INTERACTION" // string@5c56
+      05aae2: 7010 1a1a 0400                         |0004: invoke-direct {v4}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.getProcessId:()I // method@1a1a
+      05aae8: 0a02                                   |0007: move-result v2
+      05aaea: 7010 1d1a 0400                         |0008: invoke-direct {v4}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.getUserId:()I // method@1a1d
+      05aaf0: 0a03                                   |000b: move-result v3
+      05aaf2: 6e40 3502 1032                         |000c: invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@0235
+      05aaf8: 0a00                                   |000f: move-result v0
+      05aafa: 3900 0300                              |0010: if-nez v0, 0013 // +0003
+      05aafe: 0e00                                   |0012: return-void
+      05ab00: 2200 7b12                              |0013: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      05ab04: 1a01 c944                              |0015: const-string v1, "Requires com.amazon.device.permission.PROFILE_INTERACTION permission" // string@44c9
+      05ab08: 7020 007a 1000                         |0017: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      05ab0e: 2700                                   |001a: throw v0

@@ -1,0 +1,20 @@
+   direct_method #3937: checkPermission (Ljava/lang/String;)V
+    access=0002 (PRIVATE)
+    codeOff=27034 (159796)
+    quickening_size=0 (0)
+      027038: 5430 dd04                              |0000: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      02703c: 6e20 3302 4000                         |0002: invoke-virtual {v0, v4}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      027042: 0a00                                   |0005: move-result v0
+      027044: 3900 0300                              |0006: if-nez v0, 0009 // +0003
+      027048: 0e00                                   |0008: return-void
+      02704a: 2200 7b12                              |0009: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      02704e: 2201 8112                              |000b: new-instance v1, Ljava/lang/StringBuilder; // type@1281
+      027052: 7010 4a7a 0100                         |000d: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      027058: 1a02 c144                              |0010: const-string v2, "Requires " // string@44c1
+      02705c: 6e20 557a 2100                         |0012: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      027062: 6e20 557a 4100                         |0015: invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      027068: 6e10 5e7a 0100                         |0018: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      02706e: 0c01                                   |001b: move-result-object v1
+      027070: 7020 007a 1000                         |001c: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      027076: 2700                                   |001f: throw v0
+   direct_method #3939: createNextKeyCodeRunnable (I)Ljava/lang/Runnable;

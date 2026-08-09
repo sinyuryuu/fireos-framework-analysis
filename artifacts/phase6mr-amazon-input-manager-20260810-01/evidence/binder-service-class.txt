@@ -1,0 +1,1350 @@
+  class #236: AmazonInputManagerService.BinderService ('Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;')
+   access=0000 ()
+   source_file=AmazonInputManagerService.java, class_data_off=241901 (2365697)
+   static_fields=0, instance_fields=1, direct_methods=2, virtual_methods=26
+   direct_method #3813: <init> (Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)V
+    access=10002 (PRIVATE CONSTRUCTOR)
+    codeOff=25242 (152130)
+    quickening_size=0 (0)
+      025246: 5b01 a104                              |0000: iput-object v1, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02524a: 7010 6f0e 0000                         |0002: invoke-direct {v0}, Lcom/amazon/android/internal/hardware/input/IAmazonInputManager$Stub;.<init>:()V // method@0e6f
+      025250: 0e00                                   |0005: return-void
+   direct_method #3814: <init> (Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Lcom/amazon/android/internal/server/input/AmazonInputManagerService$1;)V
+    access=11000 (SYNTHETIC CONSTRUCTOR)
+    codeOff=25252 (152146)
+    quickening_size=0 (0)
+      025256: 7020 e50e 1000                         |0000: invoke-direct {v0, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.<init>:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)V // method@0ee5
+      02525c: 0e00                                   |0003: return-void
+   virtual_method #3815: createKeyboardDevice ()Z
+    access=0001 (PUBLIC)
+    codeOff=24aa4 (150180)
+    quickening_size=0 (0)
+      024aa8: 5470 a104                              |0000: iget-object v0, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024aac: 5400 f304                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mLock:Ljava/lang/Object; // field@04f3
+      024ab0: 1d00                                   |0004: monitor-enter v0
+      024ab2: 5471 a104                              |0005: iget-object v1, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024ab6: 5211 d104                              |0007: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      024aba: 1212                                   |0009: const/4 v2, #int 1 // #1
+      024abc: 12f3                                   |000a: const/4 v3, #int -1 // #ff
+      024abe: 3213 0400                              |000b: if-eq v3, v1, 000f // +0004
+      024ac2: 1e00                                   |000d: monitor-exit v0
+      024ac4: 0f02                                   |000e: return v2
+      024ac6: 7100 ef0a 0000                         |000f: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      024acc: 0a01                                   |0012: move-result v1
+      024ace: 7100 f00a 0000                         |0013: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      024ad4: 0a04                                   |0016: move-result v4
+      024ad6: 5475 a104                              |0017: iget-object v5, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024ada: 7120 740f 4100                         |0019: invoke-static {v1, v4}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeCreateKeyboardDevice:(II)I // method@0f74
+      024ae0: 0a06                                   |001c: move-result v6
+      024ae2: 5956 d104                              |001d: iput v6, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      024ae6: 5475 a104                              |001f: iget-object v5, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024aea: 5255 d104                              |0021: iget v5, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      024aee: 3353 0500                              |0023: if-ne v3, v5, 0028 // +0005
+      024af2: 1202                                   |0025: const/4 v2, #int 0 // #0
+      024af4: 1e00                                   |0026: monitor-exit v0
+      024af6: 0f02                                   |0027: return v2
+      024af8: 1e00                                   |0028: monitor-exit v0
+      024afa: 0f02                                   |0029: return v2
+      024afc: 0d01                                   |002a: move-exception v1
+      024afe: 1e00                                   |002b: monitor-exit v0
+      024b00: 2701                                   |002c: throw v1
+   virtual_method #3816: createMouseDevice ()Z
+    access=0001 (PUBLIC)
+    codeOff=24b10 (150288)
+    quickening_size=0 (0)
+      024b14: 5470 a104                              |0000: iget-object v0, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024b18: 5400 f304                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mLock:Ljava/lang/Object; // field@04f3
+      024b1c: 1d00                                   |0004: monitor-enter v0
+      024b1e: 5471 a104                              |0005: iget-object v1, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024b22: 5211 d204                              |0007: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      024b26: 1212                                   |0009: const/4 v2, #int 1 // #1
+      024b28: 12f3                                   |000a: const/4 v3, #int -1 // #ff
+      024b2a: 3213 0400                              |000b: if-eq v3, v1, 000f // +0004
+      024b2e: 1e00                                   |000d: monitor-exit v0
+      024b30: 0f02                                   |000e: return v2
+      024b32: 7100 ef0a 0000                         |000f: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      024b38: 0a01                                   |0012: move-result v1
+      024b3a: 7100 f00a 0000                         |0013: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      024b40: 0a04                                   |0016: move-result v4
+      024b42: 5475 a104                              |0017: iget-object v5, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024b46: 7120 750f 4100                         |0019: invoke-static {v1, v4}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeCreateMouseDevice:(II)I // method@0f75
+      024b4c: 0a06                                   |001c: move-result v6
+      024b4e: 5956 d204                              |001d: iput v6, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      024b52: 5475 a104                              |001f: iget-object v5, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024b56: 5255 d204                              |0021: iget v5, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      024b5a: 3353 0500                              |0023: if-ne v3, v5, 0028 // +0005
+      024b5e: 1202                                   |0025: const/4 v2, #int 0 // #0
+      024b60: 1e00                                   |0026: monitor-exit v0
+      024b62: 0f02                                   |0027: return v2
+      024b64: 1e00                                   |0028: monitor-exit v0
+      024b66: 0f02                                   |0029: return v2
+      024b68: 0d01                                   |002a: move-exception v1
+      024b6a: 1e00                                   |002b: monitor-exit v0
+      024b6c: 2701                                   |002c: throw v1
+   virtual_method #3817: destroyKeyboardDevice ()Z
+    access=0001 (PUBLIC)
+    codeOff=24b7c (150396)
+    quickening_size=0 (0)
+      024b80: 5450 a104                              |0000: iget-object v0, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024b84: 5400 f304                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mLock:Ljava/lang/Object; // field@04f3
+      024b88: 1d00                                   |0004: monitor-enter v0
+      024b8a: 5451 a104                              |0005: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024b8e: 5211 d104                              |0007: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      024b92: 12f2                                   |0009: const/4 v2, #int -1 // #ff
+      024b94: 3312 0500                              |000a: if-ne v2, v1, 000f // +0005
+      024b98: 1201                                   |000c: const/4 v1, #int 0 // #0
+      024b9a: 1e00                                   |000d: monitor-exit v0
+      024b9c: 0f01                                   |000e: return v1
+      024b9e: 7100 ef0a 0000                         |000f: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      024ba4: 0a01                                   |0012: move-result v1
+      024ba6: 7100 f00a 0000                         |0013: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      024bac: 0a03                                   |0016: move-result v3
+      024bae: 5454 a104                              |0017: iget-object v4, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024bb2: 5244 d104                              |0019: iget v4, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      024bb6: 7130 770f 1403                         |001b: invoke-static {v4, v1, v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeDispose:(III)V // method@0f77
+      024bbc: 5454 a104                              |001e: iget-object v4, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024bc0: 5942 d104                              |0020: iput v2, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      024bc4: 1212                                   |0022: const/4 v2, #int 1 // #1
+      024bc6: 1e00                                   |0023: monitor-exit v0
+      024bc8: 0f02                                   |0024: return v2
+      024bca: 0d01                                   |0025: move-exception v1
+      024bcc: 1e00                                   |0026: monitor-exit v0
+      024bce: 2701                                   |0027: throw v1
+   virtual_method #3818: destroyMouseDevice ()Z
+    access=0001 (PUBLIC)
+    codeOff=24bdc (150492)
+    quickening_size=0 (0)
+      024be0: 5450 a104                              |0000: iget-object v0, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024be4: 5400 f304                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mLock:Ljava/lang/Object; // field@04f3
+      024be8: 1d00                                   |0004: monitor-enter v0
+      024bea: 5451 a104                              |0005: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024bee: 5211 d204                              |0007: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      024bf2: 12f2                                   |0009: const/4 v2, #int -1 // #ff
+      024bf4: 3312 0500                              |000a: if-ne v2, v1, 000f // +0005
+      024bf8: 1201                                   |000c: const/4 v1, #int 0 // #0
+      024bfa: 1e00                                   |000d: monitor-exit v0
+      024bfc: 0f01                                   |000e: return v1
+      024bfe: 7100 ef0a 0000                         |000f: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      024c04: 0a01                                   |0012: move-result v1
+      024c06: 7100 f00a 0000                         |0013: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      024c0c: 0a03                                   |0016: move-result v3
+      024c0e: 5454 a104                              |0017: iget-object v4, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024c12: 5244 d204                              |0019: iget v4, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      024c16: 7130 770f 1403                         |001b: invoke-static {v4, v1, v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeDispose:(III)V // method@0f77
+      024c1c: 5454 a104                              |001e: iget-object v4, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024c20: 5942 d204                              |0020: iput v2, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      024c24: 1212                                   |0022: const/4 v2, #int 1 // #1
+      024c26: 1e00                                   |0023: monitor-exit v0
+      024c28: 0f02                                   |0024: return v2
+      024c2a: 0d01                                   |0025: move-exception v1
+      024c2c: 1e00                                   |0026: monitor-exit v0
+      024c2e: 2701                                   |0027: throw v1
+   virtual_method #3819: dispatchKeyEventListenerCallbacks (Landroid/view/InputEvent;)V
+    access=0001 (PUBLIC)
+    codeOff=2525e (152158)
+    quickening_size=0 (0)
+      025262: 07a0                                   |0000: move-object v0, v10
+      025264: 1f00 b702                              |0001: check-cast v0, Landroid/view/KeyEvent; // type@02b7
+      025268: 6e10 690d 0000                         |0003: invoke-virtual {v0}, Landroid/view/KeyEvent;.getKeyCode:()I // method@0d69
+      02526e: 0a01                                   |0006: move-result v1
+      025270: 5492 a104                              |0007: iget-object v2, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025274: 7110 380f 0200                         |0009: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      02527a: 0c02                                   |000c: move-result-object v2
+      02527c: 1d02                                   |000d: monitor-enter v2
+      02527e: 5493 a104                              |000e: iget-object v3, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025282: 7110 380f 0300                         |0010: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025288: 0c03                                   |0013: move-result-object v3
+      02528a: 6e10 100f 0300                         |0014: invoke-virtual {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.beginBroadcast:()I // method@0f10
+      025290: 0a03                                   |0017: move-result v3
+      025292: 1204                                   |0018: const/4 v4, #int 0 // #0
+      025294: 0145                                   |0019: move v5, v4
+      025296: 3535 7300                              |001a: if-ge v5, v3, 008d // +0073
+      02529a: 5496 a104                              |001c: iget-object v6, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02529e: 5497 a104                              |001e: iget-object v7, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0252a2: 7110 380f 0700                         |0020: invoke-static {v7}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      0252a8: 0c07                                   |0023: move-result-object v7
+      0252aa: 6e20 120f 5700                         |0024: invoke-virtual {v7, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.getBroadcastItem:(I)Landroid/os/IInterface; // method@0f12
+      0252b0: 0c07                                   |0027: move-result-object v7
+      0252b2: 1f07 0503                              |0028: check-cast v7, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback; // type@0305
+      0252b6: 7130 430f 1607                         |002a: invoke-static {v6, v1, v7}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1900:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;ILcom/amazon/android/internal/hardware/input/IKeyEventCallback;)Z // method@0f43
+      0252bc: 0a06                                   |002d: move-result v6
+      0252be: 3806 5300                              |002e: if-eqz v6, 0081 // +0053
+      0252c2: 5496 a104                              |0030: iget-object v6, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0252c6: 7110 390f 0600                         |0032: invoke-static {v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      0252cc: 0c06                                   |0035: move-result-object v6
+      0252ce: 5497 a104                              |0036: iget-object v7, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0252d2: 7110 380f 0700                         |0038: invoke-static {v7}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      0252d8: 0c07                                   |003b: move-result-object v7
+      0252da: 6e20 120f 5700                         |003c: invoke-virtual {v7, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.getBroadcastItem:(I)Landroid/os/IInterface; // method@0f12
+      0252e0: 0c07                                   |003f: move-result-object v7
+      0252e2: 1f07 0503                              |0040: check-cast v7, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback; // type@0305
+      0252e6: 7210 720e 0700                         |0042: invoke-interface {v7}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      0252ec: 0c07                                   |0045: move-result-object v7
+      0252ee: 6e20 6e7c 7600                         |0046: invoke-virtual {v6, v7}, Ljava/util/HashMap;.containsKey:(Ljava/lang/Object;)Z // method@7c6e
+      0252f4: 0a06                                   |0049: move-result v6
+      0252f6: 3806 3700                              |004a: if-eqz v6, 0081 // +0037
+      0252fa: 5496 a104                              |004c: iget-object v6, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0252fe: 7110 390f 0600                         |004e: invoke-static {v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025304: 0c06                                   |0051: move-result-object v6
+      025306: 5497 a104                              |0052: iget-object v7, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02530a: 7110 380f 0700                         |0054: invoke-static {v7}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025310: 0c07                                   |0057: move-result-object v7
+      025312: 6e20 120f 5700                         |0058: invoke-virtual {v7, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.getBroadcastItem:(I)Landroid/os/IInterface; // method@0f12
+      025318: 0c07                                   |005b: move-result-object v7
+      02531a: 1f07 0503                              |005c: check-cast v7, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback; // type@0305
+      02531e: 7210 720e 0700                         |005e: invoke-interface {v7}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025324: 0c07                                   |0061: move-result-object v7
+      025326: 6e20 707c 7600                         |0062: invoke-virtual {v6, v7}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      02532c: 0c06                                   |0065: move-result-object v6
+      02532e: 1f06 fd12                              |0066: check-cast v6, Ljava/util/List; // type@12fd
+      025332: 7110 a479 0100                         |0068: invoke-static {v1}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      025338: 0c07                                   |006b: move-result-object v7
+      02533a: 7220 a57c 7600                         |006c: invoke-interface {v6, v7}, Ljava/util/List;.contains:(Ljava/lang/Object;)Z // method@7ca5
+      025340: 0a06                                   |006f: move-result v6
+      025342: 3806 1100                              |0070: if-eqz v6, 0081 // +0011
+      025346: 5496 a104                              |0072: iget-object v6, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02534a: 7110 380f 0600                         |0074: invoke-static {v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025350: 0c06                                   |0077: move-result-object v6
+      025352: 6e20 120f 5600                         |0078: invoke-virtual {v6, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.getBroadcastItem:(I)Landroid/os/IInterface; // method@0f12
+      025358: 0c06                                   |007b: move-result-object v6
+      02535a: 1f06 0503                              |007c: check-cast v6, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback; // type@0305
+      02535e: 7220 730e 0600                         |007e: invoke-interface {v6, v0}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.onKeyEvent:(Landroid/view/KeyEvent;)V // method@0e73
+      025364: 2809                                   |0081: goto 008a // +0009
+      025366: 0d06                                   |0082: move-exception v6
+      025368: 6207 ce04                              |0083: sget-object v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      02536c: 1a08 1511                              |0085: const-string v8, "Could not sendCallback" // string@1115
+      025370: 7120 1c0d 8700                         |0087: invoke-static {v7, v8}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025376: d805 0501                              |008a: add-int/lit8 v5, v5, #int 1 // #01
+      02537a: 288e                                   |008c: goto 001a // -0072
+      02537c: 5495 a104                              |008d: iget-object v5, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025380: 7110 380f 0500                         |008f: invoke-static {v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025386: 0c05                                   |0092: move-result-object v5
+      025388: 6e10 110f 0500                         |0093: invoke-virtual {v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.finishBroadcast:()V // method@0f11
+      02538e: 1e02                                   |0096: monitor-exit v2
+      025390: 5492 a104                              |0097: iget-object v2, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025394: 7110 440f 0200                         |0099: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/ArrayList; // method@0f44
+      02539a: 0c02                                   |009c: move-result-object v2
+      02539c: 7110 a479 0100                         |009d: invoke-static {v1}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      0253a2: 0c03                                   |00a0: move-result-object v3
+      0253a4: 6e20 c27b 3200                         |00a1: invoke-virtual {v2, v3}, Ljava/util/ArrayList;.contains:(Ljava/lang/Object;)Z // method@7bc2
+      0253aa: 0a02                                   |00a4: move-result v2
+      0253ac: 3802 3f00                              |00a5: if-eqz v2, 00e4 // +003f
+      0253b0: 5492 a104                              |00a7: iget-object v2, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0253b4: 7110 370f 0200                         |00a9: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f37
+      0253ba: 0c02                                   |00ac: move-result-object v2
+      0253bc: 1d02                                   |00ad: monitor-enter v2
+      0253be: 5493 a104                              |00ae: iget-object v3, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0253c2: 7110 370f 0300                         |00b0: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f37
+      0253c8: 0c03                                   |00b3: move-result-object v3
+      0253ca: 6e10 1c0c 0300                         |00b4: invoke-virtual {v3}, Landroid/os/RemoteCallbackList;.beginBroadcast:()I // method@0c1c
+      0253d0: 0a03                                   |00b7: move-result v3
+      0253d2: 0000                                   |00b8: nop // spacer
+[new] 0253d2: 0000                                   |00b8: nop // spacer
+      0253d4: 3534 1d00                              |00b9: if-ge v4, v3, 00d6 // +001d
+      0253d8: 5495 a104                              |00bb: iget-object v5, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0253dc: 7110 370f 0500                         |00bd: invoke-static {v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f37
+      0253e2: 0c05                                   |00c0: move-result-object v5
+      0253e4: 6e20 1f0c 4500                         |00c1: invoke-virtual {v5, v4}, Landroid/os/RemoteCallbackList;.getBroadcastItem:(I)Landroid/os/IInterface; // method@0c1f
+      0253ea: 0c05                                   |00c4: move-result-object v5
+      0253ec: 1f05 0503                              |00c5: check-cast v5, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback; // type@0305
+      0253f0: 7220 730e 0500                         |00c7: invoke-interface {v5, v0}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.onKeyEvent:(Landroid/view/KeyEvent;)V // method@0e73
+      0253f6: 2809                                   |00ca: goto 00d3 // +0009
+      0253f8: 0d05                                   |00cb: move-exception v5
+      0253fa: 6206 ce04                              |00cc: sget-object v6, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0253fe: 1a07 1511                              |00ce: const-string v7, "Could not sendCallback" // string@1115
+      025402: 7120 1c0d 7600                         |00d0: invoke-static {v6, v7}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025408: d804 0401                              |00d3: add-int/lit8 v4, v4, #int 1 // #01
+      02540c: 28e4                                   |00d5: goto 00b9 // -001c
+      02540e: 5494 a104                              |00d6: iget-object v4, v9, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025412: 7110 370f 0400                         |00d8: invoke-static {v4}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f37
+      025418: 0c04                                   |00db: move-result-object v4
+      02541a: 6e10 1d0c 0400                         |00dc: invoke-virtual {v4}, Landroid/os/RemoteCallbackList;.finishBroadcast:()V // method@0c1d
+      025420: 1e02                                   |00df: monitor-exit v2
+      025422: 2804                                   |00e0: goto 00e4 // +0004
+      025424: 0d03                                   |00e1: move-exception v3
+      025426: 1e02                                   |00e2: monitor-exit v2
+      025428: 2703                                   |00e3: throw v3
+      02542a: 0e00                                   |00e4: return-void
+      02542c: 0d03                                   |00e5: move-exception v3
+      02542e: 1e02                                   |00e6: monitor-exit v2
+      025430: 2703                                   |00e7: throw v3
+   virtual_method #3820: endVolumeAdjustment ()V
+    access=0001 (PUBLIC)
+    codeOff=25482 (152706)
+    quickening_size=0 (0)
+      025486: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02548a: 7110 5d0f 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$800:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler; // method@0f5d
+      025490: 0c00                                   |0005: move-result-object v0
+      025492: 1221                                   |0006: const/4 v1, #int 2 // #2
+      025494: 6e20 2d0f 1000                         |0007: invoke-virtual {v0, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler;.obtainMessage:(I)Landroid/os/Message; // method@0f2d
+      02549a: 0c00                                   |000a: move-result-object v0
+      02549c: 5421 a104                              |000b: iget-object v1, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0254a0: 7110 5d0f 0100                         |000d: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$800:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler; // method@0f5d
+      0254a6: 0c01                                   |0010: move-result-object v1
+      0254a8: 6e20 300f 0100                         |0011: invoke-virtual {v1, v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler;.sendMessageAtFrontOfQueue:(Landroid/os/Message;)Z // method@0f30
+      0254ae: 0e00                                   |0014: return-void
+   virtual_method #3821: getLastKeyEventTime ()J
+    access=0001 (PUBLIC)
+    codeOff=25230 (152112)
+    quickening_size=0 (0)
+      025234: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025238: 7110 5e0f 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$900:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)J // method@0f5e
+      02523e: 0b00                                   |0005: move-result-wide v0
+      025240: 1000                                   |0006: return-wide v0
+   virtual_method #3822: getToggleBitRegister ()B
+    access=0001 (PUBLIC)
+    codeOff=24efa (151290)
+    quickening_size=0 (0)
+      024efe: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024f02: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      024f06: 1a01 a95c                              |0004: const-string v1, "com.amazon.permission.ACCESS_EVENT_REGISTER" // string@5ca9
+      024f0a: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      024f10: 0a00                                   |0009: move-result v0
+      024f12: 3900 0700                              |000a: if-nez v0, 0011 // +0007
+      024f16: 7100 490f 0000                         |000c: invoke-static {}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2500:()B // method@0f49
+      024f1c: 0a00                                   |000f: move-result v0
+      024f1e: 0f00                                   |0010: return v0
+      024f20: 2200 7b12                              |0011: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      024f24: 1a01 073e                              |0013: const-string v1, "Missing permission to access event register!" // string@3e07
+      024f28: 7020 007a 1000                         |0015: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      024f2e: 2700                                   |0018: throw v0
+   virtual_method #3823: inject (IIII)I
+    access=0001 (PUBLIC)
+    codeOff=24f30 (151344)
+    quickening_size=0 (0)
+      024f34: 7100 ef0a 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      024f3a: 0a06                                   |0003: move-result v6
+      024f3c: 7100 f00a 0000                         |0004: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      024f42: 0a07                                   |0007: move-result v7
+      024f44: 6300 b704                              |0008: sget-boolean v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.DEBUG_LOG:Z // field@04b7
+      024f48: 3800 3e00                              |000a: if-eqz v0, 0048 // +003e
+      024f4c: 2200 8112                              |000c: new-instance v0, Ljava/lang/StringBuilder; // type@1281
+      024f50: 7010 4a7a 0000                         |000e: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      024f56: 1a01 5172                              |0011: const-string v1, "inject " // string@7251
+      024f5a: 6e20 557a 1000                         |0013: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024f60: 6e20 507a b000                         |0016: invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      024f66: 1a01 bf00                              |0019: const-string v1, " " // string@00bf
+      024f6a: 6e20 557a 1000                         |001b: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024f70: 6e20 507a c000                         |001e: invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      024f76: 1a01 bf00                              |0021: const-string v1, " " // string@00bf
+      024f7a: 6e20 557a 1000                         |0023: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024f80: 6e20 507a d000                         |0026: invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      024f86: 1a01 bf00                              |0029: const-string v1, " " // string@00bf
+      024f8a: 6e20 557a 1000                         |002b: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024f90: 6e20 507a e000                         |002e: invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      024f96: 1a01 be02                              |0031: const-string v1, " pid:" // string@02be
+      024f9a: 6e20 557a 1000                         |0033: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024fa0: 6e20 507a 6000                         |0036: invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      024fa6: 1a01 1003                              |0039: const-string v1, " uid:" // string@0310
+      024faa: 6e20 557a 1000                         |003b: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024fb0: 6e20 507a 7000                         |003e: invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      024fb6: 6e10 5e7a 0000                         |0041: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      024fbc: 0c00                                   |0044: move-result-object v0
+      024fbe: 7110 730f 0000                         |0045: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.logd:(Ljava/lang/String;)V // method@0f73
+      024fc4: 12f0                                   |0048: const/4 v0, #int -1 // #ff
+      024fc6: 390b 2400                              |0049: if-nez v11, 006d // +0024
+      024fca: 54a1 a104                              |004b: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024fce: 6e10 890f 0100                         |004d: invoke-virtual {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.tryCreateTouchscreenDevice:()V // method@0f89
+      024fd4: 54a1 a104                              |0050: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024fd8: 5211 d304                              |0052: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_touchscreen:I // field@04d3
+      024fdc: 3201 1000                              |0054: if-eq v1, v0, 0064 // +0010
+      024fe0: 54a0 a104                              |0056: iget-object v0, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024fe4: 5200 d304                              |0058: iget v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_touchscreen:I // field@04d3
+      024fe8: 01c1                                   |005a: move v1, v12
+      024fea: 01d2                                   |005b: move v2, v13
+      024fec: 01e3                                   |005c: move v3, v14
+      024fee: 0164                                   |005d: move v4, v6
+      024ff0: 0175                                   |005e: move v5, v7
+      024ff2: 7706 790f 0000                         |005f: invoke-static/range {v0, v1, v2, v3, v4, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeInject:(IIIIII)I // method@0f79
+      024ff8: 0a00                                   |0062: move-result v0
+      024ffa: 0f00                                   |0063: return v0
+      024ffc: 6201 ce04                              |0064: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025000: 1a02 2785                              |0066: const-string v2, "no touchscreen device." // string@8527
+      025004: 7120 1b0d 2100                         |0068: invoke-static {v1, v2}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      02500a: 2900 8900                              |006b: goto/16 00f4 // +0089
+      02500e: 1211                                   |006d: const/4 v1, #int 1 // #1
+      025010: 331b 1e00                              |006e: if-ne v11, v1, 008c // +001e
+      025014: 54a1 a104                              |0070: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025018: 5211 d204                              |0072: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      02501c: 3201 1000                              |0074: if-eq v1, v0, 0084 // +0010
+      025020: 54a0 a104                              |0076: iget-object v0, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025024: 5200 d204                              |0078: iget v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      025028: 01c1                                   |007a: move v1, v12
+      02502a: 01d2                                   |007b: move v2, v13
+      02502c: 01e3                                   |007c: move v3, v14
+      02502e: 0164                                   |007d: move v4, v6
+      025030: 0175                                   |007e: move v5, v7
+      025032: 7706 790f 0000                         |007f: invoke-static/range {v0, v1, v2, v3, v4, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeInject:(IIIIII)I // method@0f79
+      025038: 0a00                                   |0082: move-result v0
+      02503a: 0f00                                   |0083: return v0
+      02503c: 6201 ce04                              |0084: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025040: 1a02 2285                              |0086: const-string v2, "no mouse device." // string@8522
+      025044: 7120 1b0d 2100                         |0088: invoke-static {v1, v2}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      02504a: 2869                                   |008b: goto 00f4 // +0069
+      02504c: 1221                                   |008c: const/4 v1, #int 2 // #2
+      02504e: 331b 6700                              |008d: if-ne v11, v1, 00f4 // +0067
+      025052: 7110 710d 0d00                         |008f: invoke-static {v13}, Landroid/view/KeyEvent;.keyCodeToString:(I)Ljava/lang/String; // method@0d71
+      025058: 0c08                                   |0092: move-result-object v8
+      02505a: 54a1 a104                              |0093: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02505e: 7130 5a0f 810c                         |0095: invoke-static {v1, v8, v12}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$500:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Ljava/lang/String;I)I // method@0f5a
+      025064: 0a09                                   |0098: move-result v9
+      025066: 54a1 a104                              |0099: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02506a: 5211 d104                              |009b: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      02506e: 3201 5000                              |009d: if-eq v1, v0, 00ed // +0050
+      025072: 6300 b704                              |009f: sget-boolean v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.DEBUG_LOG:Z // field@04b7
+      025076: 3800 3e00                              |00a1: if-eqz v0, 00df // +003e
+      02507a: 2200 8112                              |00a3: new-instance v0, Ljava/lang/StringBuilder; // type@1281
+      02507e: 7010 4a7a 0000                         |00a5: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      025084: 1a01 5172                              |00a8: const-string v1, "inject " // string@7251
+      025088: 6e20 557a 1000                         |00aa: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      02508e: 6e20 507a b000                         |00ad: invoke-virtual {v0, v11}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      025094: 1a01 bf00                              |00b0: const-string v1, " " // string@00bf
+      025098: 6e20 557a 1000                         |00b2: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      02509e: 6e20 507a c000                         |00b5: invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0250a4: 1a01 bf00                              |00b8: const-string v1, " " // string@00bf
+      0250a8: 6e20 557a 1000                         |00ba: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0250ae: 6e20 507a 9000                         |00bd: invoke-virtual {v0, v9}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0250b4: 1a01 bf00                              |00c0: const-string v1, " " // string@00bf
+      0250b8: 6e20 557a 1000                         |00c2: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0250be: 6e20 507a e000                         |00c5: invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0250c4: 1a01 be02                              |00c8: const-string v1, " pid:" // string@02be
+      0250c8: 6e20 557a 1000                         |00ca: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0250ce: 6e20 507a 6000                         |00cd: invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0250d4: 1a01 1003                              |00d0: const-string v1, " uid:" // string@0310
+      0250d8: 6e20 557a 1000                         |00d2: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0250de: 6e20 507a 7000                         |00d5: invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0250e4: 6e10 5e7a 0000                         |00d8: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0250ea: 0c00                                   |00db: move-result-object v0
+      0250ec: 7110 730f 0000                         |00dc: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.logd:(Ljava/lang/String;)V // method@0f73
+      0250f2: 54a0 a104                              |00df: iget-object v0, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0250f6: 5200 d104                              |00e1: iget v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      0250fa: 01c1                                   |00e3: move v1, v12
+      0250fc: 0192                                   |00e4: move v2, v9
+      0250fe: 01e3                                   |00e5: move v3, v14
+      025100: 0164                                   |00e6: move v4, v6
+      025102: 0175                                   |00e7: move v5, v7
+      025104: 7706 790f 0000                         |00e8: invoke-static/range {v0, v1, v2, v3, v4, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeInject:(IIIIII)I // method@0f79
+      02510a: 0a00                                   |00eb: move-result v0
+      02510c: 0f00                                   |00ec: return v0
+      02510e: 6201 ce04                              |00ed: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025112: 1a02 2185                              |00ef: const-string v2, "no keyboard device." // string@8521
+      025116: 7120 1b0d 2100                         |00f1: invoke-static {v1, v2}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      02511c: 0f00                                   |00f4: return v0
+   virtual_method #3824: injectSequence (I[I[I[I[J)I
+    access=0001 (PUBLIC)
+    codeOff=2511e (151838)
+    quickening_size=0 (0)
+      025122: 7100 ef0a 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      025128: 0a07                                   |0003: move-result v7
+      02512a: 7100 f00a 0000                         |0004: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      025130: 0a08                                   |0007: move-result v8
+      025132: 12f0                                   |0008: const/4 v0, #int -1 // #ff
+      025134: 390b 2400                              |0009: if-nez v11, 002d // +0024
+      025138: 54a1 a104                              |000b: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02513c: 6e10 890f 0100                         |000d: invoke-virtual {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.tryCreateTouchscreenDevice:()V // method@0f89
+      025142: 54a1 a104                              |0010: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025146: 5211 d304                              |0012: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_touchscreen:I // field@04d3
+      02514a: 3201 1100                              |0014: if-eq v1, v0, 0025 // +0011
+      02514e: 54a0 a104                              |0016: iget-object v0, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025152: 5200 d304                              |0018: iget v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_touchscreen:I // field@04d3
+      025156: 07c1                                   |001a: move-object v1, v12
+      025158: 07d2                                   |001b: move-object v2, v13
+      02515a: 07e3                                   |001c: move-object v3, v14
+      02515c: 07f4                                   |001d: move-object v4, v15
+      02515e: 0175                                   |001e: move v5, v7
+      025160: 0186                                   |001f: move v6, v8
+      025162: 7707 7a0f 0000                         |0020: invoke-static/range {v0, v1, v2, v3, v4, v5, v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeInjectSequence:(I[I[I[I[JII)I // method@0f7a
+      025168: 0a00                                   |0023: move-result v0
+      02516a: 0f00                                   |0024: return v0
+      02516c: 6201 ce04                              |0025: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025170: 1a02 2785                              |0027: const-string v2, "no touchscreen device." // string@8527
+      025174: 7120 1b0d 2100                         |0029: invoke-static {v1, v2}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      02517a: 285a                                   |002c: goto 0086 // +005a
+      02517c: 1211                                   |002d: const/4 v1, #int 1 // #1
+      02517e: 331b 1f00                              |002e: if-ne v11, v1, 004d // +001f
+      025182: 54a1 a104                              |0030: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025186: 5211 d204                              |0032: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      02518a: 3201 1100                              |0034: if-eq v1, v0, 0045 // +0011
+      02518e: 54a0 a104                              |0036: iget-object v0, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025192: 5200 d204                              |0038: iget v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_mouse:I // field@04d2
+      025196: 07c1                                   |003a: move-object v1, v12
+      025198: 07d2                                   |003b: move-object v2, v13
+      02519a: 07e3                                   |003c: move-object v3, v14
+      02519c: 07f4                                   |003d: move-object v4, v15
+      02519e: 0175                                   |003e: move v5, v7
+      0251a0: 0186                                   |003f: move v6, v8
+      0251a2: 7707 7a0f 0000                         |0040: invoke-static/range {v0, v1, v2, v3, v4, v5, v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeInjectSequence:(I[I[I[I[JII)I // method@0f7a
+      0251a8: 0a00                                   |0043: move-result v0
+      0251aa: 0f00                                   |0044: return v0
+      0251ac: 6201 ce04                              |0045: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0251b0: 1a02 2285                              |0047: const-string v2, "no mouse device." // string@8522
+      0251b4: 7120 1b0d 2100                         |0049: invoke-static {v1, v2}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      0251ba: 283a                                   |004c: goto 0086 // +003a
+      0251bc: 1221                                   |004d: const/4 v1, #int 2 // #2
+      0251be: 331b 3800                              |004e: if-ne v11, v1, 0086 // +0038
+      0251c2: 54a1 a104                              |0050: iget-object v1, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0251c6: 5211 d104                              |0052: iget v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      0251ca: 3201 2b00                              |0054: if-eq v1, v0, 007f // +002b
+      0251ce: 21d0                                   |0056: array-length v0, v13
+      0251d0: 2309 a813                              |0057: new-array v9, v0, [I // type@13a8
+      0251d4: 1200                                   |0059: const/4 v0, #int 0 // #0
+      0251d6: 2191                                   |005a: array-length v1, v9
+      0251d8: 3510 1500                              |005b: if-ge v0, v1, 0070 // +0015
+      0251dc: 4401 0d00                              |005d: aget v1, v13, v0
+      0251e0: 7110 710d 0100                         |005f: invoke-static {v1}, Landroid/view/KeyEvent;.keyCodeToString:(I)Ljava/lang/String; // method@0d71
+      0251e6: 0c01                                   |0062: move-result-object v1
+      0251e8: 54a2 a104                              |0063: iget-object v2, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0251ec: 4403 0c00                              |0065: aget v3, v12, v0
+      0251f0: 7130 5a0f 1203                         |0067: invoke-static {v2, v1, v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$500:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Ljava/lang/String;I)I // method@0f5a
+      0251f6: 0a02                                   |006a: move-result v2
+      0251f8: 4b02 0900                              |006b: aput v2, v9, v0
+      0251fc: d800 0001                              |006d: add-int/lit8 v0, v0, #int 1 // #01
+      025200: 28eb                                   |006f: goto 005a // -0015
+      025202: 54a0 a104                              |0070: iget-object v0, v10, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025206: 5200 d104                              |0072: iget v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.fd_keyboard:I // field@04d1
+      02520a: 07c1                                   |0074: move-object v1, v12
+      02520c: 0792                                   |0075: move-object v2, v9
+      02520e: 07e3                                   |0076: move-object v3, v14
+      025210: 07f4                                   |0077: move-object v4, v15
+      025212: 0175                                   |0078: move v5, v7
+      025214: 0186                                   |0079: move v6, v8
+      025216: 7707 7a0f 0000                         |007a: invoke-static/range {v0, v1, v2, v3, v4, v5, v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.nativeInjectSequence:(I[I[I[I[JII)I // method@0f7a
+      02521c: 0a00                                   |007d: move-result v0
+      02521e: 0f00                                   |007e: return v0
+      025220: 6201 ce04                              |007f: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025224: 1a02 2185                              |0081: const-string v2, "no keyboard device." // string@8521
+      025228: 7120 1b0d 2100                         |0083: invoke-static {v1, v2}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      02522e: 0f00                                   |0086: return v0
+   virtual_method #3825: postInputEventCallback (Landroid/view/InputEvent;)V
+    access=0001 (PUBLIC)
+    codeOff=254b0 (152752)
+    quickening_size=0 (0)
+      0254b4: 2080 b702                              |0000: instance-of v0, v8, Landroid/view/KeyEvent; // type@02b7
+      0254b8: 3900 0300                              |0002: if-nez v0, 0005 // +0003
+      0254bc: 0e00                                   |0004: return-void
+      0254be: 0780                                   |0005: move-object v0, v8
+      0254c0: 1f00 b702                              |0006: check-cast v0, Landroid/view/KeyEvent; // type@02b7
+      0254c4: 6e10 690d 0000                         |0008: invoke-virtual {v0}, Landroid/view/KeyEvent;.getKeyCode:()I // method@0d69
+      0254ca: 0a01                                   |000b: move-result v1
+      0254cc: 1202                                   |000c: const/4 v2, #int 0 // #0
+      0254ce: 6e20 eb0e 8700                         |000d: invoke-virtual {v7, v8}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.dispatchKeyEventListenerCallbacks:(Landroid/view/InputEvent;)V // method@0eeb
+      0254d4: 6e10 620d 0000                         |0010: invoke-virtual {v0}, Landroid/view/KeyEvent;.getAction:()I // method@0d62
+      0254da: 0a03                                   |0013: move-result v3
+      0254dc: 1214                                   |0014: const/4 v4, #int 1 // #1
+      0254de: 3343 5800                              |0015: if-ne v3, v4, 006d // +0058
+      0254e2: 5473 a104                              |0017: iget-object v3, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0254e6: 7120 450f 0300                         |0019: invoke-static {v3, v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Landroid/view/KeyEvent;)V // method@0f45
+      0254ec: 5473 a104                              |001c: iget-object v3, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0254f0: 7100 3c0c 0000                         |001e: invoke-static {}, Landroid/os/SystemClock;.elapsedRealtime:()J // method@0c3c
+      0254f6: 0b04                                   |0021: move-result-wide v4
+      0254f8: 7130 5f0f 4305                         |0022: invoke-static {v3, v4, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$902:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;J)J // method@0f5f
+      0254fe: 5473 a104                              |0025: iget-object v3, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025502: 7110 3e0f 0300                         |0027: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1600:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)[I // method@0f3e
+      025508: 0c03                                   |002a: move-result-object v3
+      02550a: 3803 1500                              |002b: if-eqz v3, 0040 // +0015
+      02550e: 5473 a104                              |002d: iget-object v3, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025512: 7110 3e0f 0300                         |002f: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1600:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)[I // method@0f3e
+      025518: 0c03                                   |0032: move-result-object v3
+      02551a: 2134                                   |0033: array-length v4, v3
+      02551c: 1205                                   |0034: const/4 v5, #int 0 // #0
+      02551e: 3545 0b00                              |0035: if-ge v5, v4, 0040 // +000b
+      025522: 4406 0305                              |0037: aget v6, v3, v5
+      025526: 3316 0400                              |0039: if-ne v6, v1, 003d // +0004
+      02552a: 1212                                   |003b: const/4 v2, #int 1 // #1
+      02552c: 2804                                   |003c: goto 0040 // +0004
+      02552e: d805 0501                              |003d: add-int/lit8 v5, v5, #int 1 // #01
+      025532: 28f6                                   |003f: goto 0035 // -000a
+      025534: 3902 1d00                              |0040: if-nez v2, 005d // +001d
+      025538: 5473 a104                              |0042: iget-object v3, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02553c: 5433 e204                              |0044: iget-object v3, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mHandler:Landroid/os/Handler; // field@04e2
+      025540: 1204                                   |0046: const/4 v4, #int 0 // #0
+      025542: 6e20 340b 4300                         |0047: invoke-virtual {v3, v4}, Landroid/os/Handler;.removeCallbacksAndMessages:(Ljava/lang/Object;)V // method@0b34
+      025548: 5473 a104                              |004a: iget-object v3, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02554c: 5433 e204                              |004c: iget-object v3, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mHandler:Landroid/os/Handler; // field@04e2
+      025550: 5474 a104                              |004e: iget-object v4, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025554: 7110 420f 0400                         |0050: invoke-static {v4}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1800:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/lang/Runnable; // method@0f42
+      02555a: 0c04                                   |0053: move-result-object v4
+      02555c: 5475 a104                              |0054: iget-object v5, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025560: 7110 400f 0500                         |0056: invoke-static {v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1700:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)J // method@0f40
+      025566: 0b05                                   |0059: move-result-wide v5
+      025568: 6e40 320b 4365                         |005a: invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;.postDelayed:(Ljava/lang/Runnable;J)Z // method@0b32
+      02556e: 1202                                   |005d: const/4 v2, #int 0 // #0
+      025570: 5473 a104                              |005e: iget-object v3, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025574: 7120 460f 1300                         |0060: invoke-static {v3, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;I)Ljava/lang/Runnable; // method@0f46
+      02557a: 0c03                                   |0063: move-result-object v3
+      02557c: 5474 a104                              |0064: iget-object v4, v7, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025580: 7110 470f 0400                         |0066: invoke-static {v4}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2300:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/Handler; // method@0f47
+      025586: 0c04                                   |0069: move-result-object v4
+      025588: 6e20 310b 3400                         |006a: invoke-virtual {v4, v3}, Landroid/os/Handler;.post:(Ljava/lang/Runnable;)Z // method@0b31
+      02558e: 0e00                                   |006d: return-void
+   virtual_method #3826: registerKeyEventIdleTimeListener (Lcom/amazon/android/internal/hardware/input/IKeyEventIdleCallback;J[I)V
+    access=0001 (PUBLIC)
+    codeOff=25590 (152976)
+    quickening_size=0 (0)
+      025594: 5450 a104                              |0000: iget-object v0, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025598: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      02559c: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      0255a0: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      0255a6: 0a00                                   |0009: move-result v0
+      0255a8: 3900 4a00                              |000a: if-nez v0, 0054 // +004a
+      0255ac: 3806 4700                              |000c: if-eqz v6, 0053 // +0047
+      0255b0: 5450 a104                              |000e: iget-object v0, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0255b4: 7110 350f 0000                         |0010: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f35
+      0255ba: 0c00                                   |0013: move-result-object v0
+      0255bc: 6e20 220c 6000                         |0014: invoke-virtual {v0, v6}, Landroid/os/RemoteCallbackList;.register:(Landroid/os/IInterface;)Z // method@0c22
+      0255c2: 0a00                                   |0017: move-result v0
+      0255c4: 3900 0a00                              |0018: if-nez v0, 0022 // +000a
+      0255c8: 6200 ce04                              |001a: sget-object v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0255cc: 1a01 0f11                              |001c: const-string v1, "Could not register callback" // string@110f
+      0255d0: 7120 1c0d 1000                         |001e: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0255d6: 0e00                                   |0021: return-void
+      0255d8: 5450 a104                              |0022: iget-object v0, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0255dc: 7110 350f 0000                         |0024: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f35
+      0255e2: 0c00                                   |0027: move-result-object v0
+      0255e4: 1d00                                   |0028: monitor-enter v0
+      0255e6: 5451 a104                              |0029: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0255ea: 7120 3f0f 9100                         |002b: invoke-static {v1, v9}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1602:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;[I)[I // method@0f3f
+      0255f0: 5451 a104                              |002e: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0255f4: 5411 e204                              |0030: iget-object v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mHandler:Landroid/os/Handler; // field@04e2
+      0255f8: 1202                                   |0032: const/4 v2, #int 0 // #0
+      0255fa: 6e20 340b 2100                         |0033: invoke-virtual {v1, v2}, Landroid/os/Handler;.removeCallbacksAndMessages:(Ljava/lang/Object;)V // method@0b34
+      025600: 5451 a104                              |0036: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025604: 7130 410f 7108                         |0038: invoke-static {v1, v7, v8}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1702:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;J)J // method@0f41
+      02560a: 5451 a104                              |003b: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02560e: 5411 e204                              |003d: iget-object v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mHandler:Landroid/os/Handler; // field@04e2
+      025612: 5452 a104                              |003f: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025616: 7110 420f 0200                         |0041: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1800:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/lang/Runnable; // method@0f42
+      02561c: 0c02                                   |0044: move-result-object v2
+      02561e: 5453 a104                              |0045: iget-object v3, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025622: 7110 400f 0300                         |0047: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1700:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)J // method@0f40
+      025628: 0b03                                   |004a: move-result-wide v3
+      02562a: 6e40 320b 2143                         |004b: invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;.postDelayed:(Ljava/lang/Runnable;J)Z // method@0b32
+      025630: 1e00                                   |004e: monitor-exit v0
+      025632: 2804                                   |004f: goto 0053 // +0004
+      025634: 0d01                                   |0050: move-exception v1
+      025636: 1e00                                   |0051: monitor-exit v0
+      025638: 2701                                   |0052: throw v1
+      02563a: 0e00                                   |0053: return-void
+      02563c: 2200 7b12                              |0054: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      025640: 1a01 c344                              |0056: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      025644: 7020 007a 1000                         |0058: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      02564a: 2700                                   |005b: throw v0
+   virtual_method #3827: registerKeyEventInterceptor (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;[IZZ)Z
+    access=0001 (PUBLIC)
+    codeOff=24c3e (150590)
+    quickening_size=0 (0)
+      024c42: 0801 1100                              |0000: move-object/from16 v1, v17
+      024c46: 0808 1200                              |0002: move-object/from16 v8, v18
+      024c4a: 0809 1300                              |0004: move-object/from16 v9, v19
+      024c4e: 5410 a104                              |0006: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024c52: 5400 dd04                              |0008: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      024c56: 1a02 c35c                              |000a: const-string v2, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      024c5a: 6e20 3302 2000                         |000c: invoke-virtual {v0, v2}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      024c60: 0a00                                   |000f: move-result v0
+      024c62: 3900 2201                              |0010: if-nez v0, 0132 // +0122
+      024c66: 7100 f00a 0000                         |0012: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      024c6c: 0a0a                                   |0015: move-result v10
+      024c6e: 5410 a104                              |0016: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024c72: 5400 dd04                              |0018: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      024c76: 6e10 4002 0000                         |001a: invoke-virtual {v0}, Landroid/content/Context;.getPackageManager:()Landroid/content/pm/PackageManager; // method@0240
+      024c7c: 0c0b                                   |001d: move-result-object v11
+      024c7e: 1200                                   |001e: const/4 v0, #int 0 // #0
+      024c80: 390b 0a00                              |001f: if-nez v11, 0029 // +000a
+      024c84: 6202 ce04                              |0021: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      024c88: 1a03 d841                              |0023: const-string v3, "Package Manager is null" // string@41d8
+      024c8c: 7120 1c0d 3200                         |0025: invoke-static {v2, v3}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      024c92: 0f00                                   |0028: return v0
+      024c94: 6e20 ca02 ab00                         |0029: invoke-virtual {v11, v10}, Landroid/content/pm/PackageManager;.getPackagesForUid:(I)[Ljava/lang/String; // method@02ca
+      024c9a: 0c0c                                   |002c: move-result-object v12
+      024c9c: 380c fd00                              |002d: if-eqz v12, 012a // +00fd
+      024ca0: 4602 0c00                              |002f: aget-object v2, v12, v0
+      024ca4: 3902 0400                              |0031: if-nez v2, 0035 // +0004
+      024ca8: 2900 f700                              |0033: goto/16 012a // +00f7
+      024cac: 460d 0c00                              |0035: aget-object v13, v12, v0
+      024cb0: 5412 a104                              |0037: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024cb4: 7110 3a0f 0200                         |0039: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1300:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3a
+      024cba: 0c02                                   |003c: move-result-object v2
+      024cbc: 6e20 6e7c d200                         |003d: invoke-virtual {v2, v13}, Ljava/util/HashMap;.containsKey:(Ljava/lang/Object;)Z // method@7c6e
+      024cc2: 0a02                                   |0040: move-result v2
+      024cc4: 3902 1e00                              |0041: if-nez v2, 005f // +001e
+      024cc8: 6202 ce04                              |0043: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      024ccc: 2203 8112                              |0045: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+      024cd0: 7010 4a7a 0300                         |0047: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      024cd6: 1a04 ae88                              |004a: const-string v4, "package name: " // string@88ae
+      024cda: 6e20 557a 4300                         |004c: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024ce0: 6e20 557a d300                         |004f: invoke-virtual {v3, v13}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024ce6: 1a04 6002                              |0052: const-string v4, " is not in whitelist" // string@0260
+      024cea: 6e20 557a 4300                         |0054: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      024cf0: 6e10 5e7a 0300                         |0057: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      024cf6: 0c03                                   |005a: move-result-object v3
+      024cf8: 7120 210d 3200                         |005b: invoke-static {v2, v3}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      024cfe: 0f00                                   |005e: return v0
+      024d00: 3915 1600                              |005f: if-nez v21, 0075 // +0016
+      024d04: 5412 a104                              |0061: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024d08: 7110 3b0f 0200                         |0063: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1400:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/lang/String; // method@0f3b
+      024d0e: 0c02                                   |0066: move-result-object v2
+      024d10: 6e20 177a d200                         |0067: invoke-virtual {v2, v13}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      024d16: 0a02                                   |006a: move-result v2
+      024d18: 3902 0a00                              |006b: if-nez v2, 0075 // +000a
+      024d1c: 6202 ce04                              |006d: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      024d20: 1a03 225a                              |006f: const-string v3, "can't register if not in foreground!" // string@5a22
+      024d24: 7120 1c0d 3200                         |0071: invoke-static {v2, v3}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      024d2a: 0f00                                   |0074: return v0
+      024d2c: 5412 a104                              |0075: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024d30: 7110 380f 0200                         |0077: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      024d36: 0c0e                                   |007a: move-result-object v14
+      024d38: 1d0e                                   |007b: monitor-enter v14
+      024d3a: 0102                                   |007c: move v2, v0
+      024d3c: 2193                                   |007d: array-length v3, v9
+      024d3e: 3532 4100                              |007e: if-ge v2, v3, 00bf // +0041
+      024d42: 5413 a104                              |0080: iget-object v3, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024d46: 7110 3d0f 0300                         |0082: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1500:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3d
+      024d4c: 0c03                                   |0085: move-result-object v3
+      024d4e: 4404 0902                              |0086: aget v4, v9, v2
+      024d52: 7110 a479 0400                         |0088: invoke-static {v4}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      024d58: 0c04                                   |008b: move-result-object v4
+      024d5a: 6e20 6e7c 4300                         |008c: invoke-virtual {v3, v4}, Ljava/util/HashMap;.containsKey:(Ljava/lang/Object;)Z // method@7c6e
+      024d60: 0a03                                   |008f: move-result v3
+      024d62: 3803 0b00                              |0090: if-eqz v3, 009b // +000b
+      024d66: 6203 ce04                              |0092: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      024d6a: 1a04 1b40                              |0094: const-string v4, "One of the keyevents is already intercepted" // string@401b
+      024d6e: 7120 210d 4300                         |0096: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      024d74: 1e0e                                   |0099: monitor-exit v14
+      024d76: 0f00                                   |009a: return v0
+      024d78: 5413 a104                              |009b: iget-object v3, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024d7c: 7110 3a0f 0300                         |009d: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1300:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3a
+      024d82: 0c03                                   |00a0: move-result-object v3
+      024d84: 6e20 707c d300                         |00a1: invoke-virtual {v3, v13}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      024d8a: 0c03                                   |00a4: move-result-object v3
+      024d8c: 1f03 fd12                              |00a5: check-cast v3, Ljava/util/List; // type@12fd
+      024d90: 4404 0902                              |00a7: aget v4, v9, v2
+      024d94: 7110 a479 0400                         |00a9: invoke-static {v4}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      024d9a: 0c04                                   |00ac: move-result-object v4
+      024d9c: 7220 a57c 4300                         |00ad: invoke-interface {v3, v4}, Ljava/util/List;.contains:(Ljava/lang/Object;)Z // method@7ca5
+      024da2: 0a03                                   |00b0: move-result v3
+      024da4: 3903 0b00                              |00b1: if-nez v3, 00bc // +000b
+      024da8: 6203 ce04                              |00b3: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      024dac: 1a04 e787                              |00b5: const-string v4, "one of the keys being intercepted is not whitelisted" // string@87e7
+      024db0: 7120 210d 4300                         |00b7: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      024db6: 1e0e                                   |00ba: monitor-exit v14
+      024db8: 0f00                                   |00bb: return v0
+      024dba: d802 0201                              |00bc: add-int/lit8 v2, v2, #int 1 // #01
+      024dbe: 28bf                                   |00be: goto 007d // -0041
+      024dc0: 5412 a104                              |00bf: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024dc4: 7110 380f 0200                         |00c1: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      024dca: 0c02                                   |00c4: move-result-object v2
+      024dcc: 6e10 130f 0200                         |00c5: invoke-virtual {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.getRegisteredCallbackCount:()I // method@0f13
+      024dd2: 0a02                                   |00c8: move-result v2
+      024dd4: 012f                                   |00c9: move v15, v2
+      024dd6: 3808 5b00                              |00ca: if-eqz v8, 0125 // +005b
+      024dda: 5412 a104                              |00cc: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024dde: 7110 380f 0200                         |00ce: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      024de4: 0c02                                   |00d1: move-result-object v2
+      024de6: 6e20 160f 8200                         |00d2: invoke-virtual {v2, v8}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.register:(Landroid/os/IInterface;)Z // method@0f16
+      024dec: 0a02                                   |00d5: move-result v2
+      024dee: 3902 0b00                              |00d6: if-nez v2, 00e1 // +000b
+      024df2: 6202 ce04                              |00d8: sget-object v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      024df6: 1a03 1011                              |00da: const-string v3, "Could not register callback " // string@1110
+      024dfa: 7120 1c0d 3200                         |00dc: invoke-static {v2, v3}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      024e00: 1e0e                                   |00df: monitor-exit v14
+      024e02: 0f00                                   |00e0: return v0
+      024e04: 5412 a104                              |00e1: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024e08: 7110 390f 0200                         |00e3: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      024e0e: 0c02                                   |00e6: move-result-object v2
+      024e10: 7801 720e 1200                         |00e7: invoke-interface/range {v18}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      024e16: 0c03                                   |00ea: move-result-object v3
+      024e18: 5414 a104                              |00eb: iget-object v4, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024e1c: 6e20 620f 9400                         |00ed: invoke-virtual {v4, v9}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.convertToList:([I)Ljava/util/List; // method@0f62
+      024e22: 0c04                                   |00f0: move-result-object v4
+      024e24: 6e30 747c 3204                         |00f1: invoke-virtual {v2, v3, v4}, Ljava/util/HashMap;.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@7c74
+      024e2a: 0000                                   |00f4: nop // spacer
+[new] 024e2a: 0000                                   |00f4: nop // spacer
+      024e2c: 2192                                   |00f5: array-length v2, v9
+      024e2e: 3520 2c00                              |00f6: if-ge v0, v2, 0122 // +002c
+      024e32: 5412 a104                              |00f8: iget-object v2, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024e36: 7110 3d0f 0200                         |00fa: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1500:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3d
+      024e3c: 0c07                                   |00fd: move-result-object v7
+      024e3e: 2206 6612                              |00fe: new-instance v6, Ljava/lang/Integer; // type@1266
+      024e42: 4402 0900                              |0100: aget v2, v9, v0
+      024e46: 7020 9179 2600                         |0102: invoke-direct {v6, v2}, Ljava/lang/Integer;.<init>:(I)V // method@7991
+      024e4c: 2205 2203                              |0105: new-instance v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventInterceptorCallback; // type@0322
+      024e50: 5413 a104                              |0107: iget-object v3, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024e54: 0752                                   |0109: move-object v2, v5
+      024e56: 0784                                   |010a: move-object v4, v8
+      024e58: 0751                                   |010b: move-object v1, v5
+      024e5a: 0205 1400                              |010c: move/from16 v5, v20
+      024e5e: 0768                                   |010e: move-object v8, v6
+      024e60: 0206 1500                              |010f: move/from16 v6, v21
+      024e64: 0779                                   |0111: move-object v9, v7
+      024e66: 07d7                                   |0112: move-object v7, v13
+      024e68: 7606 180f 0200                         |0113: invoke-direct/range {v2, v3, v4, v5, v6, v7}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventInterceptorCallback;.<init>:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;ZZLjava/lang/String;)V // method@0f18
+      024e6e: 6e30 747c 8901                         |0116: invoke-virtual {v9, v8, v1}, Ljava/util/HashMap;.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@7c74
+      024e74: d800 0001                              |0119: add-int/lit8 v0, v0, #int 1 // #01
+      024e78: 0801 1100                              |011b: move-object/from16 v1, v17
+      024e7c: 0808 1200                              |011d: move-object/from16 v8, v18
+      024e80: 0809 1300                              |011f: move-object/from16 v9, v19
+      024e84: 28d4                                   |0121: goto 00f5 // -002c
+      024e86: 1e0e                                   |0122: monitor-exit v14
+      024e88: 1210                                   |0123: const/4 v0, #int 1 // #1
+      024e8a: 0f00                                   |0124: return v0
+      024e8c: 1e0e                                   |0125: monitor-exit v14
+      024e8e: 0f00                                   |0126: return v0
+      024e90: 0d00                                   |0127: move-exception v0
+      024e92: 1e0e                                   |0128: monitor-exit v14
+      024e94: 2700                                   |0129: throw v0
+      024e96: 6201 ce04                              |012a: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      024e9a: 1a02 475a                              |012c: const-string v2, "cannot find package from uid" // string@5a47
+      024e9e: 7120 1c0d 2100                         |012e: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      024ea4: 0f00                                   |0131: return v0
+      024ea6: 2200 7b12                              |0132: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      024eaa: 1a01 c344                              |0134: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      024eae: 7020 007a 1000                         |0136: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      024eb4: 2700                                   |0139: throw v0
+   virtual_method #3828: registerKeyEventListListener (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;[I)V
+    access=0001 (PUBLIC)
+    codeOff=25658 (153176)
+    quickening_size=0 (0)
+      02565c: 5440 a104                              |0000: iget-object v0, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025660: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      025664: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      025668: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      02566e: 0a00                                   |0009: move-result v0
+      025670: 3900 4100                              |000a: if-nez v0, 004b // +0041
+      025674: 5440 a104                              |000c: iget-object v0, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025678: 7110 380f 0000                         |000e: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      02567e: 0c00                                   |0011: move-result-object v0
+      025680: 6e10 130f 0000                         |0012: invoke-virtual {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.getRegisteredCallbackCount:()I // method@0f13
+      025686: 5440 a104                              |0015: iget-object v0, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02568a: 7110 380f 0000                         |0017: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025690: 0c00                                   |001a: move-result-object v0
+      025692: 1d00                                   |001b: monitor-enter v0
+      025694: 3805 2b00                              |001c: if-eqz v5, 0047 // +002b
+      025698: 5441 a104                              |001e: iget-object v1, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02569c: 7110 380f 0100                         |0020: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      0256a2: 0c01                                   |0023: move-result-object v1
+      0256a4: 6e20 160f 5100                         |0024: invoke-virtual {v1, v5}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.register:(Landroid/os/IInterface;)Z // method@0f16
+      0256aa: 0a01                                   |0027: move-result v1
+      0256ac: 3901 0900                              |0028: if-nez v1, 0031 // +0009
+      0256b0: 6201 ce04                              |002a: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0256b4: 1a02 1011                              |002c: const-string v2, "Could not register callback " // string@1110
+      0256b8: 7120 1c0d 2100                         |002e: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0256be: 5441 a104                              |0031: iget-object v1, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0256c2: 7110 390f 0100                         |0033: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      0256c8: 0c01                                   |0036: move-result-object v1
+      0256ca: 7210 720e 0500                         |0037: invoke-interface {v5}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      0256d0: 0c02                                   |003a: move-result-object v2
+      0256d2: 5443 a104                              |003b: iget-object v3, v4, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0256d6: 6e20 620f 6300                         |003d: invoke-virtual {v3, v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.convertToList:([I)Ljava/util/List; // method@0f62
+      0256dc: 0c03                                   |0040: move-result-object v3
+      0256de: 6e30 747c 2103                         |0041: invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object; // method@7c74
+      0256e4: 2803                                   |0044: goto 0047 // +0003
+      0256e6: 0d01                                   |0045: move-exception v1
+      0256e8: 2803                                   |0046: goto 0049 // +0003
+      0256ea: 1e00                                   |0047: monitor-exit v0
+      0256ec: 0e00                                   |0048: return-void
+      0256ee: 1e00                                   |0049: monitor-exit v0
+      0256f0: 2701                                   |004a: throw v1
+      0256f2: 2200 7b12                              |004b: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      0256f6: 1a01 c344                              |004d: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      0256fa: 7020 007a 1000                         |004f: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      025700: 2700                                   |0052: throw v0
+   virtual_method #3829: registerKeyEventListener (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;)V
+    access=0001 (PUBLIC)
+    codeOff=25710 (153360)
+    quickening_size=0 (0)
+      025714: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025718: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      02571c: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      025720: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      025726: 0a00                                   |0009: move-result v0
+      025728: 3900 2100                              |000a: if-nez v0, 002b // +0021
+      02572c: 5420 a104                              |000c: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025730: 7110 370f 0000                         |000e: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f37
+      025736: 0c00                                   |0011: move-result-object v0
+      025738: 6e10 200c 0000                         |0012: invoke-virtual {v0}, Landroid/os/RemoteCallbackList;.getRegisteredCallbackCount:()I // method@0c20
+      02573e: 3803 1500                              |0015: if-eqz v3, 002a // +0015
+      025742: 5420 a104                              |0017: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025746: 7110 370f 0000                         |0019: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f37
+      02574c: 0c00                                   |001c: move-result-object v0
+      02574e: 6e20 220c 3000                         |001d: invoke-virtual {v0, v3}, Landroid/os/RemoteCallbackList;.register:(Landroid/os/IInterface;)Z // method@0c22
+      025754: 0a00                                   |0020: move-result v0
+      025756: 3900 0900                              |0021: if-nez v0, 002a // +0009
+      02575a: 6200 ce04                              |0023: sget-object v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      02575e: 1a01 0f11                              |0025: const-string v1, "Could not register callback" // string@110f
+      025762: 7120 1c0d 1000                         |0027: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025768: 0e00                                   |002a: return-void
+      02576a: 2200 7b12                              |002b: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      02576e: 1a01 c344                              |002d: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      025772: 7020 007a 1000                         |002f: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      025778: 2700                                   |0032: throw v0
+   virtual_method #3830: registerNextKeyEventListener (Lcom/amazon/android/internal/hardware/input/IKeyEventNextCallback;)V
+    access=0001 (PUBLIC)
+    codeOff=2577a (153466)
+    quickening_size=0 (0)
+      02577e: 5430 a104                              |0000: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025782: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      025786: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      02578a: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      025790: 0a00                                   |0009: move-result v0
+      025792: 3900 2400                              |000a: if-nez v0, 002e // +0024
+      025796: 3804 2100                              |000c: if-eqz v4, 002d // +0021
+      02579a: 5430 a104                              |000e: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02579e: 5400 f804                              |0010: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mNextKeyListCallbackLock:Ljava/lang/Object; // field@04f8
+      0257a2: 1d00                                   |0012: monitor-enter v0
+      0257a4: 5431 a104                              |0013: iget-object v1, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0257a8: 7110 360f 0100                         |0015: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f36
+      0257ae: 0c01                                   |0018: move-result-object v1
+      0257b0: 6e20 220c 4100                         |0019: invoke-virtual {v1, v4}, Landroid/os/RemoteCallbackList;.register:(Landroid/os/IInterface;)Z // method@0c22
+      0257b6: 0a01                                   |001c: move-result v1
+      0257b8: 3901 0b00                              |001d: if-nez v1, 0028 // +000b
+      0257bc: 6201 ce04                              |001f: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0257c0: 1a02 0f11                              |0021: const-string v2, "Could not register callback" // string@110f
+      0257c4: 7120 1c0d 2100                         |0023: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0257ca: 1e00                                   |0026: monitor-exit v0
+      0257cc: 0e00                                   |0027: return-void
+      0257ce: 1e00                                   |0028: monitor-exit v0
+      0257d0: 2804                                   |0029: goto 002d // +0004
+      0257d2: 0d01                                   |002a: move-exception v1
+      0257d4: 1e00                                   |002b: monitor-exit v0
+      0257d6: 2701                                   |002c: throw v1
+      0257d8: 0e00                                   |002d: return-void
+      0257da: 2200 7b12                              |002e: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      0257de: 1a01 c344                              |0030: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      0257e2: 7020 007a 1000                         |0032: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      0257e8: 2700                                   |0035: throw v0
+   virtual_method #3831: setInputFilter (Landroid/view/IInputFilter;)V
+    access=0001 (PUBLIC)
+    codeOff=257f8 (153592)
+    quickening_size=0 (0)
+      0257fc: 5410 a104                              |0000: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025800: 7110 5b0f 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$600:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)V // method@0f5b
+      025806: 5410 a104                              |0005: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02580a: 7110 5c0f 0000                         |0007: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$700:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/android/server/input/InputManagerService; // method@0f5c
+      025810: 0c00                                   |000a: move-result-object v0
+      025812: 6e20 3c36 2000                         |000b: invoke-virtual {v0, v2}, Lcom/android/server/input/InputManagerService;.registerSecondaryInputFilter:(Landroid/view/IInputFilter;)V // method@363c
+      025818: 0e00                                   |000e: return-void
+   virtual_method #3832: setLedState (IIZ)V
+    access=0001 (PUBLIC)
+    codeOff=2581a (153626)
+    quickening_size=0 (0)
+      02581e: 5410 a104                              |0000: iget-object v0, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025822: 7140 480f 2043                         |0002: invoke-static {v0, v2, v3, v4}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2400:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;IIZ)V // method@0f48
+      025828: 0e00                                   |0005: return-void
+   virtual_method #3833: setToggleBitButtonMap (Lcom/amazon/android/internal/hardware/input/ToggleBitButtonMap;)V
+    access=0001 (PUBLIC)
+    codeOff=2582a (153642)
+    quickening_size=0 (0)
+      02582e: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025832: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      025836: 1a01 a95c                              |0004: const-string v1, "com.amazon.permission.ACCESS_EVENT_REGISTER" // string@5ca9
+      02583a: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      025840: 0a00                                   |0009: move-result v0
+      025842: 3900 1e00                              |000a: if-nez v0, 0028 // +001e
+      025846: 5420 a104                              |000c: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02584a: 6e10 770e 0300                         |000e: invoke-virtual {v3}, Lcom/amazon/android/internal/hardware/input/ToggleBitButtonMap;.getBitButtonMap:()Ljava/util/HashMap; // method@0e77
+      025850: 0c01                                   |0011: move-result-object v1
+      025852: 7120 4c0f 1000                         |0012: invoke-static {v0, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2602:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Ljava/util/HashMap;)Ljava/util/HashMap; // method@0f4c
+      025858: 5420 a104                              |0015: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02585c: 5421 a104                              |0017: iget-object v1, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025860: 7110 4b0f 0100                         |0019: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2600:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f4b
+      025866: 0c01                                   |001c: move-result-object v1
+      025868: 7120 4d0f 1000                         |001d: invoke-static {v0, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2700:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Ljava/util/HashMap;)V // method@0f4d
+      02586e: 6200 ce04                              |0020: sget-object v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025872: 1a01 0a4c                              |0022: const-string v1, "Toggle Bit to Button mapping completed and saved." // string@4c0a
+      025876: 7120 1e0d 1000                         |0024: invoke-static {v0, v1}, Landroid/util/Slog;.i:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1e
+      02587c: 0e00                                   |0027: return-void
+      02587e: 2200 7b12                              |0028: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      025882: 1a01 073e                              |002a: const-string v1, "Missing permission to access event register!" // string@3e07
+      025886: 7020 007a 1000                         |002c: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      02588c: 2700                                   |002f: throw v0
+   virtual_method #3834: setToggleBitRegister (B)Z
+    access=0001 (PUBLIC)
+    codeOff=24ec4 (151236)
+    quickening_size=0 (0)
+      024ec8: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      024ecc: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      024ed0: 1a01 a95c                              |0004: const-string v1, "com.amazon.permission.ACCESS_EVENT_REGISTER" // string@5ca9
+      024ed4: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      024eda: 0a00                                   |0009: move-result v0
+      024edc: 3900 0700                              |000a: if-nez v0, 0011 // +0007
+      024ee0: 7110 4a0f 0300                         |000c: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$2502:(B)B // method@0f4a
+      024ee6: 1210                                   |000f: const/4 v0, #int 1 // #1
+      024ee8: 0f00                                   |0010: return v0
+      024eea: 2200 7b12                              |0011: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      024eee: 1a01 073e                              |0013: const-string v1, "Missing permission to access event register!" // string@3e07
+      024ef2: 7020 007a 1000                         |0015: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      024ef8: 2700                                   |0018: throw v0
+   virtual_method #3835: startVolumeAdjustment (II)V
+    access=0001 (PUBLIC)
+    codeOff=2588e (153742)
+    quickening_size=0 (0)
+      025892: 1300 1800                              |0000: const/16 v0, #int 24 // #18
+      025896: 3206 0e00                              |0002: if-eq v6, v0, 0010 // +000e
+      02589a: 1300 1900                              |0004: const/16 v0, #int 25 // #19
+      02589e: 3206 0a00                              |0006: if-eq v6, v0, 0010 // +000a
+      0258a2: 6200 ce04                              |0008: sget-object v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0258a6: 1a01 0c73                              |000a: const-string v1, "invalid keycode" // string@730c
+      0258aa: 7120 210d 1000                         |000c: invoke-static {v0, v1}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      0258b0: 0e00                                   |000f: return-void
+      0258b2: 7100 3c03 0000                         |0010: invoke-static {}, Landroid/hardware/input/InputManager;.getInstance:()Landroid/hardware/input/InputManager; // method@033c
+      0258b8: 0c00                                   |0013: move-result-object v0
+      0258ba: 6e20 3a03 7000                         |0014: invoke-virtual {v0, v7}, Landroid/hardware/input/InputManager;.getInputDevice:(I)Landroid/view/InputDevice; // method@033a
+      0258c0: 0c00                                   |0017: move-result-object v0
+      0258c2: 3900 0a00                              |0018: if-nez v0, 0022 // +000a
+      0258c6: 6201 ce04                              |001a: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0258ca: 1a02 0473                              |001c: const-string v2, "invalid deviceId" // string@7304
+      0258ce: 7120 210d 2100                         |001e: invoke-static {v1, v2}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      0258d4: 0e00                                   |0021: return-void
+      0258d6: 6e10 590d 0000                         |0022: invoke-virtual {v0}, Landroid/view/InputDevice;.getVendorId:()I // method@0d59
+      0258dc: 0a01                                   |0025: move-result v1
+      0258de: 1302 4919                              |0026: const/16 v2, #int 6473 // #1949
+      0258e2: 3321 6300                              |0028: if-ne v1, v2, 008b // +0063
+      0258e6: 6e10 560d 0000                         |002a: invoke-virtual {v0}, Landroid/view/InputDevice;.getProductId:()I // method@0d56
+      0258ec: 0a01                                   |002d: move-result v1
+      0258ee: 1302 0604                              |002e: const/16 v2, #int 1030 // #406
+      0258f2: 3221 0300                              |0030: if-eq v1, v2, 0033 // +0003
+      0258f6: 2859                                   |0032: goto 008b // +0059
+      0258f8: 6e10 580d 0000                         |0033: invoke-virtual {v0}, Landroid/view/InputDevice;.getUniqueId:()Ljava/lang/String; // method@0d58
+      0258fe: 0c01                                   |0036: move-result-object v1
+      025900: 5452 a104                              |0037: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025904: 7110 500f 0200                         |0039: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$300:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/lang/Object; // method@0f50
+      02590a: 0c02                                   |003c: move-result-object v2
+      02590c: 1d02                                   |003d: monitor-enter v2
+      02590e: 3901 0d00                              |003e: if-nez v1, 004b // +000d
+      025912: 6203 ce04                              |0040: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025916: 1a04 1773                              |0042: const-string v4, "invalid uniqueId" // string@7317
+      02591a: 7120 210d 4300                         |0044: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      025920: 1e02                                   |0047: monitor-exit v2
+      025922: 0e00                                   |0048: return-void
+      025924: 0d03                                   |0049: move-exception v3
+      025926: 283f                                   |004a: goto 0089 // +003f
+      025928: 5453 a104                              |004b: iget-object v3, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02592c: 7110 550f 0300                         |004d: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$400:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/lang/String; // method@0f55
+      025932: 0c03                                   |0050: move-result-object v3
+      025934: 3903 0b00                              |0051: if-nez v3, 005c // +000b
+      025938: 6203 ce04                              |0053: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      02593c: 1a04 d170                              |0055: const-string v4, "headset not connected" // string@70d1
+      025940: 7120 210d 4300                         |0057: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      025946: 1e02                                   |005a: monitor-exit v2
+      025948: 0e00                                   |005b: return-void
+      02594a: 5453 a104                              |005c: iget-object v3, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02594e: 7110 550f 0300                         |005e: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$400:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/lang/String; // method@0f55
+      025954: 0c03                                   |0061: move-result-object v3
+      025956: 6e20 177a 3100                         |0062: invoke-virtual {v1, v3}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      02595c: 0a03                                   |0065: move-result v3
+      02595e: 3903 0b00                              |0066: if-nez v3, 0071 // +000b
+      025962: 6203 ce04                              |0068: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025966: 1a04 5d85                              |006a: const-string v4, "not active controller" // string@855d
+      02596a: 7120 210d 4300                         |006c: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      025970: 1e02                                   |006f: monitor-exit v2
+      025972: 0e00                                   |0070: return-void
+      025974: 1e02                                   |0071: monitor-exit v2
+      025976: 5452 a104                              |0072: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      02597a: 7110 5d0f 0200                         |0074: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$800:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler; // method@0f5d
+      025980: 0c02                                   |0077: move-result-object v2
+      025982: 1213                                   |0078: const/4 v3, #int 1 // #1
+      025984: 6e20 2d0f 3200                         |0079: invoke-virtual {v2, v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler;.obtainMessage:(I)Landroid/os/Message; // method@0f2d
+      02598a: 0c02                                   |007c: move-result-object v2
+      02598c: 5926 b903                              |007d: iput v6, v2, Landroid/os/Message;.arg1:I // field@03b9
+      025990: 5453 a104                              |007f: iget-object v3, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025994: 7110 5d0f 0300                         |0081: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$800:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler; // method@0f5d
+      02599a: 0c03                                   |0084: move-result-object v3
+      02599c: 6e20 2f0f 2300                         |0085: invoke-virtual {v3, v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$VolumeAdjustmentHandler;.sendMessage:(Landroid/os/Message;)Z // method@0f2f
+      0259a2: 0e00                                   |0088: return-void
+      0259a4: 1e02                                   |0089: monitor-exit v2
+      0259a6: 2703                                   |008a: throw v3
+      0259a8: 6201 ce04                              |008b: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0259ac: 1a02 0073                              |008d: const-string v2, "invalid controller" // string@7300
+      0259b0: 7120 210d 2100                         |008f: invoke-static {v1, v2}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      0259b6: 0e00                                   |0092: return-void
+   virtual_method #3836: unRegisterKeyEventIdleTimeListener (Lcom/amazon/android/internal/hardware/input/IKeyEventIdleCallback;)V
+    access=0001 (PUBLIC)
+    codeOff=259cc (154060)
+    quickening_size=0 (0)
+      0259d0: 5430 a104                              |0000: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0259d4: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      0259d8: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      0259dc: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      0259e2: 0a00                                   |0009: move-result v0
+      0259e4: 3900 2c00                              |000a: if-nez v0, 0036 // +002c
+      0259e8: 3804 2900                              |000c: if-eqz v4, 0035 // +0029
+      0259ec: 5430 a104                              |000e: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0259f0: 7110 350f 0000                         |0010: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f35
+      0259f6: 0c00                                   |0013: move-result-object v0
+      0259f8: 1d00                                   |0014: monitor-enter v0
+      0259fa: 5431 a104                              |0015: iget-object v1, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      0259fe: 5411 e204                              |0017: iget-object v1, v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mHandler:Landroid/os/Handler; // field@04e2
+      025a02: 1202                                   |0019: const/4 v2, #int 0 // #0
+      025a04: 6e20 340b 2100                         |001a: invoke-virtual {v1, v2}, Landroid/os/Handler;.removeCallbacksAndMessages:(Ljava/lang/Object;)V // method@0b34
+      025a0a: 5431 a104                              |001d: iget-object v1, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025a0e: 7110 350f 0100                         |001f: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f35
+      025a14: 0c01                                   |0022: move-result-object v1
+      025a16: 6e20 240c 4100                         |0023: invoke-virtual {v1, v4}, Landroid/os/RemoteCallbackList;.unregister:(Landroid/os/IInterface;)Z // method@0c24
+      025a1c: 0a01                                   |0026: move-result v1
+      025a1e: 3901 0900                              |0027: if-nez v1, 0030 // +0009
+      025a22: 6201 ce04                              |0029: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025a26: 1a02 2111                              |002b: const-string v2, "Could not unregister callback" // string@1121
+      025a2a: 7120 1c0d 2100                         |002d: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025a30: 1e00                                   |0030: monitor-exit v0
+      025a32: 2804                                   |0031: goto 0035 // +0004
+      025a34: 0d01                                   |0032: move-exception v1
+      025a36: 1e00                                   |0033: monitor-exit v0
+      025a38: 2701                                   |0034: throw v1
+      025a3a: 0e00                                   |0035: return-void
+      025a3c: 2200 7b12                              |0036: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      025a40: 1a01 c344                              |0038: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      025a44: 7020 007a 1000                         |003a: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      025a4a: 2700                                   |003d: throw v0
+   virtual_method #3837: unRegisterKeyEventInterceptor (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;[I)V
+    access=0001 (PUBLIC)
+    codeOff=25a58 (154200)
+    quickening_size=0 (0)
+      025a5c: 5450 a104                              |0000: iget-object v0, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025a60: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      025a64: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      025a68: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      025a6e: 0a00                                   |0009: move-result v0
+      025a70: 3900 0d01                              |000a: if-nez v0, 0117 // +010d
+      025a74: 6200 ce04                              |000c: sget-object v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025a78: 1a01 359e                              |000e: const-string v1, "unregistering key events interceptor" // string@9e35
+      025a7c: 7120 1e0d 1000                         |0010: invoke-static {v0, v1}, Landroid/util/Slog;.i:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1e
+      025a82: 3906 0300                              |0013: if-nez v6, 0016 // +0003
+      025a86: 0e00                                   |0015: return-void
+      025a88: 5450 a104                              |0016: iget-object v0, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025a8c: 7110 380f 0000                         |0018: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025a92: 0c00                                   |001b: move-result-object v0
+      025a94: 1d00                                   |001c: monitor-enter v0
+      025a96: 1201                                   |001d: const/4 v1, #int 0 // #0
+      025a98: 3907 6f00                              |001e: if-nez v7, 008d // +006f
+      025a9c: 5452 a104                              |0020: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025aa0: 7110 390f 0200                         |0022: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025aa6: 0c02                                   |0025: move-result-object v2
+      025aa8: 7210 720e 0600                         |0026: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025aae: 0c03                                   |0029: move-result-object v3
+      025ab0: 6e20 707c 3200                         |002a: invoke-virtual {v2, v3}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      025ab6: 0c02                                   |002d: move-result-object v2
+      025ab8: 3802 5a00                              |002e: if-eqz v2, 0088 // +005a
+      025abc: 5452 a104                              |0030: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025ac0: 7110 380f 0200                         |0032: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025ac6: 0c02                                   |0035: move-result-object v2
+      025ac8: 6e20 170f 6200                         |0036: invoke-virtual {v2, v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.unregister:(Landroid/os/IInterface;)Z // method@0f17
+      025ace: 0a02                                   |0039: move-result v2
+      025ad0: 3902 0a00                              |003a: if-nez v2, 0044 // +000a
+      025ad4: 6201 ce04                              |003c: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025ad8: 1a02 2211                              |003e: const-string v2, "Could not unregister callback " // string@1122
+      025adc: 7120 1c0d 2100                         |0040: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025ae2: 2845                                   |0043: goto 0088 // +0045
+      025ae4: 0000                                   |0044: nop // spacer
+[new] 025ae4: 0000                                   |0044: nop // spacer
+      025ae6: 5452 a104                              |0045: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025aea: 7110 390f 0200                         |0047: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025af0: 0c02                                   |004a: move-result-object v2
+      025af2: 7210 720e 0600                         |004b: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025af8: 0c03                                   |004e: move-result-object v3
+      025afa: 6e20 707c 3200                         |004f: invoke-virtual {v2, v3}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      025b00: 0c02                                   |0052: move-result-object v2
+      025b02: 1f02 fd12                              |0053: check-cast v2, Ljava/util/List; // type@12fd
+      025b06: 7210 b37c 0200                         |0055: invoke-interface {v2}, Ljava/util/List;.size:()I // method@7cb3
+      025b0c: 0a02                                   |0058: move-result v2
+      025b0e: 3521 2200                              |0059: if-ge v1, v2, 007b // +0022
+      025b12: 5452 a104                              |005b: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025b16: 7110 3d0f 0200                         |005d: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1500:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3d
+      025b1c: 0c02                                   |0060: move-result-object v2
+      025b1e: 5453 a104                              |0061: iget-object v3, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025b22: 7110 390f 0300                         |0063: invoke-static {v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025b28: 0c03                                   |0066: move-result-object v3
+      025b2a: 7210 720e 0600                         |0067: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025b30: 0c04                                   |006a: move-result-object v4
+      025b32: 6e20 707c 4300                         |006b: invoke-virtual {v3, v4}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      025b38: 0c03                                   |006e: move-result-object v3
+      025b3a: 1f03 fd12                              |006f: check-cast v3, Ljava/util/List; // type@12fd
+      025b3e: 7220 a87c 1300                         |0071: invoke-interface {v3, v1}, Ljava/util/List;.get:(I)Ljava/lang/Object; // method@7ca8
+      025b44: 0c03                                   |0074: move-result-object v3
+      025b46: 6e20 757c 3200                         |0075: invoke-virtual {v2, v3}, Ljava/util/HashMap;.remove:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c75
+      025b4c: d801 0101                              |0078: add-int/lit8 v1, v1, #int 1 // #01
+      025b50: 28cb                                   |007a: goto 0045 // -0035
+      025b52: 5451 a104                              |007b: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025b56: 7110 390f 0100                         |007d: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025b5c: 0c01                                   |0080: move-result-object v1
+      025b5e: 7210 720e 0600                         |0081: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025b64: 0c02                                   |0084: move-result-object v2
+      025b66: 6e20 757c 2100                         |0085: invoke-virtual {v1, v2}, Ljava/util/HashMap;.remove:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c75
+      025b6c: 1e00                                   |0088: monitor-exit v0
+      025b6e: 0e00                                   |0089: return-void
+      025b70: 0d01                                   |008a: move-exception v1
+      025b72: 2900 8a00                              |008b: goto/16 0115 // +008a
+      025b76: 0000                                   |008d: nop // spacer
+[new] 025b76: 0000                                   |008d: nop // spacer
+      025b78: 2172                                   |008e: array-length v2, v7
+      025b7a: 3521 3e00                              |008f: if-ge v1, v2, 00cd // +003e
+      025b7e: 5452 a104                              |0091: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025b82: 7110 390f 0200                         |0093: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025b88: 0c02                                   |0096: move-result-object v2
+      025b8a: 7210 720e 0600                         |0097: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025b90: 0c03                                   |009a: move-result-object v3
+      025b92: 6e20 707c 3200                         |009b: invoke-virtual {v2, v3}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      025b98: 0c02                                   |009e: move-result-object v2
+      025b9a: 3802 1b00                              |009f: if-eqz v2, 00ba // +001b
+      025b9e: 5452 a104                              |00a1: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025ba2: 7110 390f 0200                         |00a3: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025ba8: 0c02                                   |00a6: move-result-object v2
+      025baa: 7210 720e 0600                         |00a7: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025bb0: 0c03                                   |00aa: move-result-object v3
+      025bb2: 6e20 707c 3200                         |00ab: invoke-virtual {v2, v3}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      025bb8: 0c02                                   |00ae: move-result-object v2
+      025bba: 1f02 fd12                              |00af: check-cast v2, Ljava/util/List; // type@12fd
+      025bbe: 4403 0701                              |00b1: aget v3, v7, v1
+      025bc2: 7110 a479 0300                         |00b3: invoke-static {v3}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      025bc8: 0c03                                   |00b6: move-result-object v3
+      025bca: 7220 b17c 3200                         |00b7: invoke-interface {v2, v3}, Ljava/util/List;.remove:(Ljava/lang/Object;)Z // method@7cb1
+      025bd0: 5452 a104                              |00ba: iget-object v2, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025bd4: 7110 3d0f 0200                         |00bc: invoke-static {v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1500:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f3d
+      025bda: 0c02                                   |00bf: move-result-object v2
+      025bdc: 2203 6612                              |00c0: new-instance v3, Ljava/lang/Integer; // type@1266
+      025be0: 4404 0701                              |00c2: aget v4, v7, v1
+      025be4: 7020 9179 4300                         |00c4: invoke-direct {v3, v4}, Ljava/lang/Integer;.<init>:(I)V // method@7991
+      025bea: 6e20 757c 3200                         |00c7: invoke-virtual {v2, v3}, Ljava/util/HashMap;.remove:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c75
+      025bf0: d801 0101                              |00ca: add-int/lit8 v1, v1, #int 1 // #01
+      025bf4: 28c2                                   |00cc: goto 008e // -003e
+      025bf6: 5451 a104                              |00cd: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025bfa: 7110 390f 0100                         |00cf: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025c00: 0c01                                   |00d2: move-result-object v1
+      025c02: 7210 720e 0600                         |00d3: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025c08: 0c02                                   |00d6: move-result-object v2
+      025c0a: 6e20 707c 2100                         |00d7: invoke-virtual {v1, v2}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      025c10: 0c01                                   |00da: move-result-object v1
+      025c12: 3801 3800                              |00db: if-eqz v1, 0113 // +0038
+      025c16: 5451 a104                              |00dd: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025c1a: 7110 390f 0100                         |00df: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025c20: 0c01                                   |00e2: move-result-object v1
+      025c22: 7210 720e 0600                         |00e3: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025c28: 0c02                                   |00e6: move-result-object v2
+      025c2a: 6e20 707c 2100                         |00e7: invoke-virtual {v1, v2}, Ljava/util/HashMap;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c70
+      025c30: 0c01                                   |00ea: move-result-object v1
+      025c32: 1f01 fd12                              |00eb: check-cast v1, Ljava/util/List; // type@12fd
+      025c36: 7210 b37c 0100                         |00ed: invoke-interface {v1}, Ljava/util/List;.size:()I // method@7cb3
+      025c3c: 0a01                                   |00f0: move-result v1
+      025c3e: 3901 2200                              |00f1: if-nez v1, 0113 // +0022
+      025c42: 5451 a104                              |00f3: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025c46: 7110 390f 0100                         |00f5: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025c4c: 0c01                                   |00f8: move-result-object v1
+      025c4e: 7210 720e 0600                         |00f9: invoke-interface {v6}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025c54: 0c02                                   |00fc: move-result-object v2
+      025c56: 6e20 757c 2100                         |00fd: invoke-virtual {v1, v2}, Ljava/util/HashMap;.remove:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c75
+      025c5c: 5451 a104                              |0100: iget-object v1, v5, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025c60: 7110 380f 0100                         |0102: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025c66: 0c01                                   |0105: move-result-object v1
+      025c68: 6e20 170f 6100                         |0106: invoke-virtual {v1, v6}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.unregister:(Landroid/os/IInterface;)Z // method@0f17
+      025c6e: 0a01                                   |0109: move-result v1
+      025c70: 3901 0900                              |010a: if-nez v1, 0113 // +0009
+      025c74: 6201 ce04                              |010c: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025c78: 1a02 2211                              |010e: const-string v2, "Could not unregister callback " // string@1122
+      025c7c: 7120 1c0d 2100                         |0110: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025c82: 1e00                                   |0113: monitor-exit v0
+      025c84: 0e00                                   |0114: return-void
+      025c86: 1e00                                   |0115: monitor-exit v0
+      025c88: 2701                                   |0116: throw v1
+      025c8a: 2200 7b12                              |0117: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      025c8e: 1a01 c344                              |0119: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      025c92: 7020 007a 1000                         |011b: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      025c98: 2700                                   |011e: throw v0
+   virtual_method #3838: unRegisterKeyEventListListener (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;)V
+    access=0001 (PUBLIC)
+    codeOff=25ca8 (154792)
+    quickening_size=0 (0)
+      025cac: 5430 a104                              |0000: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025cb0: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      025cb4: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      025cb8: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      025cbe: 0a00                                   |0009: move-result v0
+      025cc0: 3900 3200                              |000a: if-nez v0, 003c // +0032
+      025cc4: 5430 a104                              |000c: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025cc8: 7110 380f 0000                         |000e: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025cce: 0c00                                   |0011: move-result-object v0
+      025cd0: 1d00                                   |0012: monitor-enter v0
+      025cd2: 3804 2500                              |0013: if-eqz v4, 0038 // +0025
+      025cd6: 5431 a104                              |0015: iget-object v1, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025cda: 7110 380f 0100                         |0017: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper; // method@0f38
+      025ce0: 0c01                                   |001a: move-result-object v1
+      025ce2: 6e20 170f 4100                         |001b: invoke-virtual {v1, v4}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventCallbackListWrapper;.unregister:(Landroid/os/IInterface;)Z // method@0f17
+      025ce8: 0a01                                   |001e: move-result v1
+      025cea: 3901 0900                              |001f: if-nez v1, 0028 // +0009
+      025cee: 6201 ce04                              |0021: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025cf2: 1a02 2211                              |0023: const-string v2, "Could not unregister callback " // string@1122
+      025cf6: 7120 1c0d 2100                         |0025: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025cfc: 5431 a104                              |0028: iget-object v1, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025d00: 7110 390f 0100                         |002a: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1200:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Ljava/util/HashMap; // method@0f39
+      025d06: 0c01                                   |002d: move-result-object v1
+      025d08: 7210 720e 0400                         |002e: invoke-interface {v4}, Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;.asBinder:()Landroid/os/IBinder; // method@0e72
+      025d0e: 0c02                                   |0031: move-result-object v2
+      025d10: 6e20 757c 2100                         |0032: invoke-virtual {v1, v2}, Ljava/util/HashMap;.remove:(Ljava/lang/Object;)Ljava/lang/Object; // method@7c75
+      025d16: 2803                                   |0035: goto 0038 // +0003
+      025d18: 0d01                                   |0036: move-exception v1
+      025d1a: 2803                                   |0037: goto 003a // +0003
+      025d1c: 1e00                                   |0038: monitor-exit v0
+      025d1e: 0e00                                   |0039: return-void
+      025d20: 1e00                                   |003a: monitor-exit v0
+      025d22: 2701                                   |003b: throw v1
+      025d24: 2200 7b12                              |003c: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      025d28: 1a01 c344                              |003e: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      025d2c: 7020 007a 1000                         |0040: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      025d32: 2700                                   |0043: throw v0
+   virtual_method #3839: unRegisterKeyEventListener (Lcom/amazon/android/internal/hardware/input/IKeyEventCallback;)V
+    access=0001 (PUBLIC)
+    codeOff=25d40 (154944)
+    quickening_size=0 (0)
+      025d44: 5420 a104                              |0000: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025d48: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      025d4c: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      025d50: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      025d56: 0a00                                   |0009: move-result v0
+      025d58: 3900 1800                              |000a: if-nez v0, 0022 // +0018
+      025d5c: 3803 1500                              |000c: if-eqz v3, 0021 // +0015
+      025d60: 5420 a104                              |000e: iget-object v0, v2, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025d64: 7110 370f 0000                         |0010: invoke-static {v0}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$1000:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f37
+      025d6a: 0c00                                   |0013: move-result-object v0
+      025d6c: 6e20 240c 3000                         |0014: invoke-virtual {v0, v3}, Landroid/os/RemoteCallbackList;.unregister:(Landroid/os/IInterface;)Z // method@0c24
+      025d72: 0a00                                   |0017: move-result v0
+      025d74: 3900 0900                              |0018: if-nez v0, 0021 // +0009
+      025d78: 6200 ce04                              |001a: sget-object v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025d7c: 1a01 2111                              |001c: const-string v1, "Could not unregister callback" // string@1121
+      025d80: 7120 1c0d 1000                         |001e: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025d86: 0e00                                   |0021: return-void
+      025d88: 2200 7b12                              |0022: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      025d8c: 1a01 c344                              |0024: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      025d90: 7020 007a 1000                         |0026: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      025d96: 2700                                   |0029: throw v0
+   virtual_method #3840: unRegisterNextKeyEventListener (Lcom/amazon/android/internal/hardware/input/IKeyEventNextCallback;)V
+    access=0001 (PUBLIC)
+    codeOff=25d98 (155032)
+    quickening_size=0 (0)
+      025d9c: 5430 a104                              |0000: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025da0: 5400 dd04                              |0002: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      025da4: 1a01 c35c                              |0004: const-string v1, "com.amazon.permission.GET_KEYEVENTS" // string@5cc3
+      025da8: 6e20 3302 1000                         |0006: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      025dae: 0a00                                   |0009: move-result v0
+      025db0: 3900 2200                              |000a: if-nez v0, 002c // +0022
+      025db4: 3804 1f00                              |000c: if-eqz v4, 002b // +001f
+      025db8: 5430 a104                              |000e: iget-object v0, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025dbc: 5400 f804                              |0010: iget-object v0, v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mNextKeyListCallbackLock:Ljava/lang/Object; // field@04f8
+      025dc0: 1d00                                   |0012: monitor-enter v0
+      025dc2: 5431 a104                              |0013: iget-object v1, v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.this$0:Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // field@04a1
+      025dc6: 7110 360f 0100                         |0015: invoke-static {v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.access$100:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;)Landroid/os/RemoteCallbackList; // method@0f36
+      025dcc: 0c01                                   |0018: move-result-object v1
+      025dce: 6e20 240c 4100                         |0019: invoke-virtual {v1, v4}, Landroid/os/RemoteCallbackList;.unregister:(Landroid/os/IInterface;)Z // method@0c24
+      025dd4: 0a01                                   |001c: move-result v1
+      025dd6: 3901 0900                              |001d: if-nez v1, 0026 // +0009
+      025dda: 6201 ce04                              |001f: sget-object v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      025dde: 1a02 2111                              |0021: const-string v2, "Could not unregister callback" // string@1121
+      025de2: 7120 1c0d 2100                         |0023: invoke-static {v1, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      025de8: 1e00                                   |0026: monitor-exit v0
+      025dea: 2804                                   |0027: goto 002b // +0004
+      025dec: 0d01                                   |0028: move-exception v1
+      025dee: 1e00                                   |0029: monitor-exit v0
+      025df0: 2701                                   |002a: throw v1
+      025df2: 0e00                                   |002b: return-void
+      025df4: 2200 7b12                              |002c: new-instance v0, Ljava/lang/SecurityException; // type@127b
+      025df8: 1a01 c344                              |002e: const-string v1, "Requires GET_KEYEVENTS permission" // string@44c3
+      025dfc: 7020 007a 1000                         |0030: invoke-direct {v0, v1}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      025e02: 2700                                   |0033: throw v0
+  class #237: AmazonInputManagerService.GestureRunnable ('Lcom/amazon/android/internal/server/input/AmazonInputManagerService$GestureRunnable;')

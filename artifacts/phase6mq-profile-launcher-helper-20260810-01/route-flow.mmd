@@ -1,0 +1,17 @@
+flowchart TD
+  A["BinderService.initiateLauncher()"] --> B["access$6400()"]
+  B --> C["enforceProfileInteractionPermissions()"]
+  C -->|"checkPermission(PROFILE_INTERACTION, processId, userId)"| D{Allowed?}
+  D -->|"no"| E["SecurityException"]
+  D -->|"yes"| F["Slog: Initiate launcher"]
+  F --> G["return AmazonProfileManager.SUCCESS"]
+
+  H["BinderService.startProfilePicker(wakeUpSource)"] --> I["read configured package/activity"]
+  I --> J["Intent.setClassName(package, activity)"]
+  J --> K["ActivityManager.getCurrentUser()"]
+  K --> L["Context.startActivityAsUser(profile-picker, current user)"]
+  L --> M["profile picker path; not HOME resolver"]
+
+  N["AmazonProfileService.onStart()"] --> O["publishBinderService(amazonprofileservice)"]
+  N --> P["publishLocalService(AmazonProfileService)"]
+  N --> Q["registerPackageInstalledReceived()"]

@@ -1,0 +1,11 @@
+   virtual_method #6710: onStart ()V
+    access=0001 (PUBLIC)
+    codeOff=5b4d2 (373970)
+    quickening_size=0 (0)
+      05b4d6: 1a00 ec55                              |0000: const-string v0, "amazonprofileservice" // string@55ec
+      05b4da: 5421 250d                              |0002: iget-object v1, v2, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.mBinder:Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService; // field@0d25
+      05b4de: 6e30 381a 0201                         |0004: invoke-virtual {v2, v0, v1}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@1a38
+      05b4e4: 1c00 d404                              |0007: const-class v0, Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // type@04d4
+      05b4e8: 6e30 391a 0202                         |0009: invoke-virtual {v2, v0, v2}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.publishLocalService:(Ljava/lang/Class;Ljava/lang/Object;)V // method@1a39
+      05b4ee: 7010 3c1a 0200                         |000c: invoke-direct {v2}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.registerPackageInstalledReceived:()V // method@1a3c
+      05b4f4: 0e00                                   |000f: return-void

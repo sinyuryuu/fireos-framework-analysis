@@ -1,0 +1,17 @@
+   virtual_method #3964: onStart ()V
+    access=0001 (PUBLIC)
+    codeOff=27636 (161334)
+    quickening_size=0 (0)
+      02763a: 1a00 ce55                              |0000: const-string v0, "amazon_input" // string@55ce
+      02763e: 2201 1e03                              |0002: new-instance v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService; // type@031e
+      027642: 1202                                   |0004: const/4 v2, #int 0 // #0
+      027644: 7030 e60e 3102                         |0005: invoke-direct {v1, v3, v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$BinderService;.<init>:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Lcom/amazon/android/internal/server/input/AmazonInputManagerService$1;)V // method@0ee6
+      02764a: 6e30 7e0f 0301                         |0008: invoke-virtual {v3, v0, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@0f7e
+      027650: 1a00 cf55                              |000b: const-string v0, "amazon_keyevent" // string@55cf
+      027654: 2201 2003                              |000d: new-instance v1, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventBinderService; // type@0320
+      027658: 7030 040f 3102                         |000f: invoke-direct {v1, v3, v2}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService$KeyEventBinderService;.<init>:(Lcom/amazon/android/internal/server/input/AmazonInputManagerService;Lcom/amazon/android/internal/server/input/AmazonInputManagerService$1;)V // method@0f04
+      02765e: 6e30 7e0f 0301                         |0012: invoke-virtual {v3, v0, v1}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@0f7e
+      027664: 1c00 2503                              |0015: const-class v0, Lcom/amazon/android/internal/server/input/AmazonInputManagerService; // type@0325
+      027668: 6e30 7f0f 0303                         |0017: invoke-virtual {v3, v0, v3}, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.publishLocalService:(Ljava/lang/Class;Ljava/lang/Object;)V // method@0f7f
+      02766e: 0e00                                   |001a: return-void
+   virtual_method #3972: setShouldBlockKeyEvent (Z)V

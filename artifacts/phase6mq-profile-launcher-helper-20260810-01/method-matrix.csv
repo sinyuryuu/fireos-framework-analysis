@@ -1,0 +1,7 @@
+evidence_id,method,line_range,sink,home_or_package_state_writer,classification
+6MQ-E01,AmazonProfileService.BinderService.initiateLauncher,76246-76256,permission check; log; SUCCESS return,NO,Confirmed
+6MQ-E02,AmazonProfileService.access$6400,78685-78691,enforceProfileInteractionPermissions,NO,Confirmed
+6MQ-E03,AmazonProfileService.enforceProfileInteractionPermissions,78949-78966,"Context.checkPermission(PROFILE_INTERACTION, processId, userId)",NO,Confirmed
+6MQ-E04,AmazonProfileService.BinderService.startProfilePicker,77222-77280,explicit configured profile picker via startActivityAsUser,NO,Confirmed
+6MQ-E05,AmazonProfileService.onStart,80813-80823,publish Binder/local services; register package receiver,NO,Confirmed
+6MQ-E06,BinderService bounded class scan,74942-77607,no HOME/preferred/package-state tokens; profile picker is the only startActivityAsUser hit,NO (bounded),Strong evidence

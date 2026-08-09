@@ -1,0 +1,59 @@
+   direct_method #3936: checkInjectEventsPermission (II)Z
+    access=0002 (PRIVATE)
+    codeOff=2667a (157306)
+    quickening_size=0 (0)
+      02667e: 7100 ef0a 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      026684: 0a00                                   |0003: move-result v0
+      026686: 7100 f00a 0000                         |0004: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      02668c: 0a01                                   |0007: move-result v1
+      02668e: 1202                                   |0008: const/4 v2, #int 0 // #0
+      026690: 3370 4800                              |0009: if-ne v0, v7, 0051 // +0048
+      026694: 3281 0300                              |000b: if-eq v1, v8, 000e // +0003
+      026698: 2844                                   |000d: goto 0051 // +0044
+      02669a: 5463 dd04                              |000e: iget-object v3, v6, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      02669e: 1a04 6d56                              |0010: const-string v4, "android.permission.INJECT_EVENTS" // string@566d
+      0266a2: 6e40 3502 4387                         |0012: invoke-virtual {v3, v4, v7, v8}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@0235
+      0266a8: 0a03                                   |0015: move-result v3
+      0266aa: 3803 3900                              |0016: if-eqz v3, 004f // +0039
+      0266ae: 5463 dd04                              |0018: iget-object v3, v6, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.mContext:Landroid/content/Context; // field@04dd
+      0266b2: 1a04 cd5c                              |001a: const-string v4, "com.amazon.permission.INJECT_EVENTS" // string@5ccd
+      0266b6: 6e40 3502 4387                         |001c: invoke-virtual {v3, v4, v7, v8}, Landroid/content/Context;.checkPermission:(Ljava/lang/String;II)I // method@0235
+      0266bc: 0a03                                   |001f: move-result v3
+      0266be: 3803 2f00                              |0020: if-eqz v3, 004f // +002f
+      0266c2: 1303 e803                              |0022: const/16 v3, #int 1000 // #3e8
+      0266c6: 3338 0300                              |0024: if-ne v8, v3, 0027 // +0003
+      0266ca: 2829                                   |0026: goto 004f // +0029
+      0266cc: 6303 b704                              |0027: sget-boolean v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.DEBUG_LOG:Z // field@04b7
+      0266d0: 3803 2500                              |0029: if-eqz v3, 004e // +0025
+      0266d4: 6203 ce04                              |002b: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      0266d8: 2204 8112                              |002d: new-instance v4, Ljava/lang/StringBuilder; // type@1281
+      0266dc: 7010 4a7a 0400                         |002f: invoke-direct {v4}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0266e2: 1a05 ea8f                              |0032: const-string v5, "request for injecting events for {pid:" // string@8fea
+      0266e6: 6e20 557a 5400                         |0034: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0266ec: 6e20 507a 7400                         |0037: invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0266f2: 1a05 ac05                              |003a: const-string v5, ", uid:" // string@05ac
+      0266f6: 6e20 557a 5400                         |003c: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0266fc: 6e20 507a 8400                         |003f: invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      026702: 1a05 64a3                              |0042: const-string v5, "} denied." // string@a364
+      026706: 6e20 557a 5400                         |0044: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      02670c: 6e10 5e7a 0400                         |0047: invoke-virtual {v4}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      026712: 0c04                                   |004a: move-result-object v4
+      026714: 7120 210d 4300                         |004b: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      02671a: 0f02                                   |004e: return v2
+      02671c: 1212                                   |004f: const/4 v2, #int 1 // #1
+      02671e: 0f02                                   |0050: return v2
+      026720: 6203 ce04                              |0051: sget-object v3, Lcom/amazon/android/internal/server/input/AmazonInputManagerService;.TAG:Ljava/lang/String; // field@04ce
+      026724: 2204 8112                              |0053: new-instance v4, Ljava/lang/StringBuilder; // type@1281
+      026728: 7010 4a7a 0400                         |0055: invoke-direct {v4}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      02672e: 1a05 5272                              |0058: const-string v5, "inject-events request denied for pid: " // string@7252
+      026732: 6e20 557a 5400                         |005a: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      026738: 6e20 507a 0400                         |005d: invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      02673e: 1a05 1103                              |0060: const-string v5, " uid: " // string@0311
+      026742: 6e20 557a 5400                         |0062: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      026748: 6e20 507a 1400                         |0065: invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      02674e: 6e10 5e7a 0400                         |0068: invoke-virtual {v4}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      026754: 0c04                                   |006b: move-result-object v4
+      026756: 7120 210d 4300                         |006c: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      02675c: 0f02                                   |006f: return v2
+   direct_method #3937: checkPermission (Ljava/lang/String;)V
+    access=0002 (PRIVATE)

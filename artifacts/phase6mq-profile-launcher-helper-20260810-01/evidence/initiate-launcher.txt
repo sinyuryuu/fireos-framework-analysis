@@ -1,0 +1,11 @@
+   virtual_method #6514: initiateLauncher ()I
+    access=0001 (PUBLIC)
+    codeOff=579ca (358858)
+    quickening_size=0 (0)
+      0579ce: 5420 b50c                              |0000: iget-object v0, v2, Lcom/amazon/android/service/amazonprofile/AmazonProfileService$BinderService;.this$0:Lcom/amazon/android/service/amazonprofile/AmazonProfileService; // field@0cb5
+      0579d2: 7110 ec19 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.access$6400:(Lcom/amazon/android/service/amazonprofile/AmazonProfileService;)V // method@19ec
+      0579d8: 6200 190d                              |0005: sget-object v0, Lcom/amazon/android/service/amazonprofile/AmazonProfileService;.TAG:Ljava/lang/String; // field@0d19
+      0579dc: 1a01 391c                              |0007: const-string v1, "Initiate launcher" // string@1c39
+      0579e0: 7120 1e0d 1000                         |0009: invoke-static {v0, v1}, Landroid/util/Slog;.i:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1e
+      0579e6: 6000 1f04                              |000c: sget v0, Lcom/amazon/android/amazonprofile/AmazonProfileManager;.SUCCESS:I // field@041f
+      0579ea: 0f00                                   |000e: return v0

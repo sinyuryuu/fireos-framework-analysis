@@ -1,0 +1,17 @@
+flowchart TD
+  P["IAmazonInputManager.Stub.Proxy
+28 virtual methods
+26 remote + 2 inherited"] -->|"Binder transact"| S["published service: amazon_input"]
+  S --> B["AmazonInputManagerService.BinderService"]
+  B --> I["inject / injectSequence
+Binder calling pid+uid"]
+  I --> N["nativeInject*
+Java/native enforcement unresolved"]
+  B --> K["register key listeners/interceptor"]
+  K --> G["GET_KEYEVENTS + system-app/whitelist/foreground checks"]
+  G --> C["callback / interceptor state"]
+  B --> D["create/destroy virtual input devices"]
+  D --> F["nativeCreate* / nativeDispose"]
+  B --> E["event-register methods"]
+  E --> Q["ACCESS_EVENT_REGISTER"]
+  B -.-> H["No direct HOME resolver, preferred-activity, or Fire Launcher writer in bounded BinderService slice"]
