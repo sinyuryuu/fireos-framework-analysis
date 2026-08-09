@@ -1,0 +1,12 @@
+surface,observation,confidence,evidence,safe_next_step
+PS7331 package deny-list,Raw package_manager_deny_list.json contains com.amazon.firelauncher,Confirmed,artifacts/phase6ap/denylist-resource-closure-20260805-01/res/raw/package_manager_deny_list.json:2-7,Host-only provenance review
+Resource mapping,0x7e05000a maps to amazon.fireos:raw/package_manager_deny_list,Confirmed,artifacts/phase6ap/denylist-resource-closure-20260805-01/summary.json,No device mutation
+PackageManager registration,ControlProtectedPackagesCallback registered as SYSTEMSERVER,Confirmed,artifacts/phase6jd-fosinit-20260808-01/system/fireos/etc/init/amazonpackagemanager_fosinit.xml:9-31,Static caller tracing
+Amazon PM service visibility,Service names present but shell service handle unavailable and SELinux find denied,Strong evidence,artifacts/phase6aq/public-summary-20260805-01/service-check-results.txt; amazon-service-avc.txt,Do not send private transactions
+KFT state writer,Per-UserInfo.id writer disables Fire and enables Tahoe child launcher,Confirmed,decompiled/baksmali/vdexExtractor/fosservices/disassembly.log:54297-54325,Trace trusted callers only
+KFT User-10 runtime,Existing profile lifecycle rolled back to User 0; no User-0 HOME change,Confirmed,findings/phase-6bk-kft-runtime.md; adb/phase6bk/PHASE6BK-KFT-RUNTIME-20260810-01,Do not repeat closed lifecycle test
+KFT create-child workflow,UI workflow reached but new Android user creation unproven,Probable,findings/phase-6bk-followup-20260810.md,Host-only Tahoe control-flow analysis
+Native HOME scan,Selected system/vendor native artifacts contained zero HOME/state-setter literals,Strong evidence,artifacts/phase6je-native-overlay-20260808-01/native-scan-summary.tsv,Bounded completeness only
+OTA/OOBE,Fixed-target and guarded setup writers; no normal shell HOME route,Confirmed,findings/phase-6bp-ota-post-install-path-audit.md; findings/phase-6q-bootafter-system-ota.md,No OTA trigger
+Futex/CMDQ,Static or unconfirmed kernel candidates without HOME sink or privilege proof,Unknown,findings/phase-5n-exact-source-ghostlock-review.md; findings/phase-6ga-p5-vendor-driver-closure.md,No device exploit probe
+Formal User-0 replacement,No shell-reachable route found,Strong evidence,findings/phase-6lz-live-baseline-and-route-closure.md; current HOME baseline,Continue host-only closure

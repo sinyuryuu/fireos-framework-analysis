@@ -1,0 +1,351 @@
+{
+  "activities_started": false,
+  "binder_transactions_invoked": false,
+  "commands": [
+    {
+      "argv": [
+        "adb",
+        "devices",
+        "-l"
+      ],
+      "command": "adb devices -l",
+      "id": "adb_devices_l",
+      "returncode": 0,
+      "stderr": "adb_devices_l.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "adb_devices_l.stdout.txt",
+      "stdout_sha256": "f8e3b76c6037a99438caf29981262c40d2a240d5aa08c12bc525944eb261e14d"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "get-state"
+      ],
+      "command": "adb -s G001LT0511550CFT get-state",
+      "id": "target_state",
+      "returncode": 0,
+      "stderr": "target_state.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "target_state.stdout.txt",
+      "stdout_sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "command": "adb -s G001LT0511550CFT shell getprop ro.build.fingerprint",
+      "id": "build_fingerprint",
+      "returncode": 0,
+      "stderr": "build_fingerprint.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "build_fingerprint.stdout.txt",
+      "stdout_sha256": "15efeeb538e9463865e2851c32dc3142d71c8412b8b55447506b1d65db402e4b"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.version.incremental"
+      ],
+      "command": "adb -s G001LT0511550CFT shell getprop ro.build.version.incremental",
+      "id": "build_incremental",
+      "returncode": 0,
+      "stderr": "build_incremental.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "build_incremental.stdout.txt",
+      "stdout_sha256": "e2599e823098067498ab66f3ebc5e6d62b1a701b66ef0f579d501b30dda495d4"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.version.security_patch"
+      ],
+      "command": "adb -s G001LT0511550CFT shell getprop ro.build.version.security_patch",
+      "id": "security_patch",
+      "returncode": 0,
+      "stderr": "security_patch.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "security_patch.stdout.txt",
+      "stdout_sha256": "146fcd22e1a265ff912fc7af036d927b2916cc2cf5bc72fa975e9e6c8528c501"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "id"
+      ],
+      "command": "adb -s G001LT0511550CFT shell id",
+      "id": "target_id",
+      "returncode": 0,
+      "stderr": "target_id.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "target_id.stdout.txt",
+      "stdout_sha256": "7bb4a293663f02c546ed9222fac711bbc22aa451bbfdada564d7019e8e4daff8"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getenforce"
+      ],
+      "command": "adb -s G001LT0511550CFT shell getenforce",
+      "id": "selinux",
+      "returncode": 0,
+      "stderr": "selinux.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "selinux.stdout.txt",
+      "stdout_sha256": "4fefafd0dcddf54b31a0fef448083e7b77576d86a9ec97c14bfd92479c404290"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "user",
+        "list"
+      ],
+      "command": "adb -s G001LT0511550CFT shell cmd user list",
+      "id": "users_list",
+      "returncode": 0,
+      "stderr": "users_list.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "users_list.stdout.txt",
+      "stdout_sha256": "77c85e86968506e429692543f91390524d8450a2cb2426458a01146a6ae5f044"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "user"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys user",
+      "id": "users_dump",
+      "returncode": 0,
+      "stderr": "users_dump.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "users_dump.stdout.txt",
+      "stdout_sha256": "07fa1220e07ef7eecd4cd4a3d0c185b0cd24900a0de55eb3d6e1770ff47742e0"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "device_policy"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys device_policy",
+      "id": "device_policy",
+      "returncode": 0,
+      "stderr": "device_policy.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "device_policy.stdout.txt",
+      "stdout_sha256": "83a8a24fcff44629cb2e1c9816abf5a8df94f3389216a68e101991a735e99fef"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "service",
+        "check",
+        "amazonusermanagerservice"
+      ],
+      "command": "adb -s G001LT0511550CFT shell service check amazonusermanagerservice",
+      "id": "amazon_user_manager_check",
+      "returncode": 0,
+      "stderr": "amazon_user_manager_check.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "amazon_user_manager_check.stdout.txt",
+      "stdout_sha256": "8902751dde38ba27b52dbd74d314ef5c39b341c0dfcde9bda6e1de5ecd67dcd1"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "service",
+        "list"
+      ],
+      "command": "adb -s G001LT0511550CFT shell service list",
+      "id": "service_list",
+      "returncode": 0,
+      "stderr": "service_list.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "service_list.stdout.txt",
+      "stdout_sha256": "137d57c64fc2e05345fc219f661ca39b4f10f756d83e755d8a5d50f12ca6c4b0"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "command": "adb -s G001LT0511550CFT shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME",
+      "id": "home_resolve",
+      "returncode": 0,
+      "stderr": "home_resolve.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "home_resolve.stdout.txt",
+      "stdout_sha256": "d65b3f8990fb3a8907405d3785dd8cf2826570b92baccb5477f3502df47608f6"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "query-activities",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "command": "adb -s G001LT0511550CFT shell cmd package query-activities -a android.intent.action.MAIN -c android.intent.category.HOME",
+      "id": "home_candidates",
+      "returncode": 0,
+      "stderr": "home_candidates.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "home_candidates.stdout.txt",
+      "stdout_sha256": "e85ea12c0b49b54392725c6f2f440f7c2b84ae4fdf47f604b9571c17427957e6"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "preferred-activities"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package preferred-activities",
+      "id": "preferred_activities",
+      "returncode": 0,
+      "stderr": "preferred_activities.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "preferred_activities.stdout.txt",
+      "stdout_sha256": "d59d13f5fd5805ac4fee59dc05be9b5e7e71c4217e304226d3ee47dd3c730376"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.firelauncher"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package com.amazon.firelauncher",
+      "id": "firelauncher_package",
+      "returncode": 0,
+      "stderr": "firelauncher_package.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "firelauncher_package.stdout.txt",
+      "stdout_sha256": "911549eb04b6fb5b6f1c2c091aae253568041468680073eb227e3fed51639df7"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.tahoe"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package com.amazon.tahoe",
+      "id": "tahoe_package",
+      "returncode": 0,
+      "stderr": "tahoe_package.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "tahoe_package.stdout.txt",
+      "stdout_sha256": "9d0c9dafaa9a3510eec8e8afee355d09ff160e786ec0d1275be6aeb4b5624005"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "activity",
+        "activities"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys activity activities",
+      "id": "activity_state",
+      "returncode": 0,
+      "stderr": "activity_state.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "activity_state.stdout.txt",
+      "stdout_sha256": "3cee1a1039bb7b7fef93cf7b6f08bfd040fe84d3f725be5608ad87be94bc2976"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "window",
+        "windows"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys window windows",
+      "id": "window_state",
+      "returncode": 0,
+      "stderr": "window_state.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "window_state.stdout.txt",
+      "stdout_sha256": "1ed90430c7281a45f3c643d7b9ccb6bffcf4a01089a4ccb667b25683e63fc8f1"
+    }
+  ],
+  "device_serial": "G001LT0511550CFT",
+  "generated_at_utc": "2026-08-09T17:20:54.405344+00:00",
+  "mutating_commands": false,
+  "ota_or_oobe_triggered": false,
+  "package_state_changed": false,
+  "phase": "KFT-PREFLIGHT",
+  "purpose": "Determine whether a safe, isolated KFT test user and service route exist before any state-changing experiment.",
+  "reboot_requested": false,
+  "schema": 1,
+  "settings_changed": false,
+  "users_created_or_removed": false
+}
