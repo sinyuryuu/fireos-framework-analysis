@@ -1,0 +1,303 @@
+{
+  "classification": "host-only IPC and native updater boundary",
+  "confidence": "Strong evidence",
+  "execution_policy": {
+    "adb": false,
+    "apk_execution": false,
+    "binder": false,
+    "native_execution": false,
+    "ota_or_recovery": false,
+    "partition_write": false
+  },
+  "findings": [
+    "Ordinary-app prewarm is a confirmed process/resource confused deputy, but its sink is startProcessLocked rather than HOME/package state.",
+    "The KFT tx3 path reaches standard PMS setters and is blocked by cross-user or component-state gates in the preserved runtime evidence.",
+    "The private Amazon PackageManager interface does not expose a HOME or package-state setter.",
+    "The native updater registers data-driven handlers and contains partition I/O, but recovery caller provenance and verification remain outside this bounded audit."
+  ],
+  "inputs": {
+    "call_edges": {
+      "path": "artifacts/phase6s/ota-call-edges-20260805-01/call-edges.csv",
+      "sha256": "ede44312f2f667adff552475866de0b17c06b96161854c35a17a3a1c361eaa75",
+      "size": 184968
+    },
+    "focus_disassembly": {
+      "path": "artifacts/phase6s/ota-cfg-focus-20260805-01/focus-disassembly.txt",
+      "sha256": "0e780e51ced6f7b000bf0a821ffe6cfe81bc0108e6073174b7fa0cb0b94abdcd",
+      "size": 324857
+    },
+    "function_symbols": {
+      "path": "artifacts/phase6s/ota-debugdata-audit-20260805-01/debugdata-function-symbols.csv",
+      "sha256": "6a667275ea88bc33e3f2297077255a8f12a87f3e08318cf6d9704032e6024eca",
+      "size": 174437
+    },
+    "phase6er_report": {
+      "path": "findings/phase-6er-amazon-prewarm-confused-deputy.md",
+      "sha256": "e3f940fa236a80865d505a3c852ab5030c3265dafa8126d59f58727d949fd548",
+      "size": 8738
+    },
+    "phase6fi_fk_report": {
+      "path": "findings/phase-6fi-fk-amazon-user-manager-tx-boundary.md",
+      "sha256": "23dd37d17af700752faeae35aeaea542e9e7a3ee39ca9eb55c619b34e07f3c08",
+      "size": 9940
+    },
+    "phase6ia_report": {
+      "path": "findings/phase-6ia-amazon-package-manager-closure.md",
+      "sha256": "9169af04fe4ebee3e1645d4b097bd07c63cb6d5d3a1329bfc46c6f2421a3f500",
+      "size": 7876
+    },
+    "phase6kt_report": {
+      "path": "findings/phase-6kt-recovery-verifier-provenance.md",
+      "sha256": "484273958f44898c6b94a208da4e144936df09a191e03efe6316c18d167fe732",
+      "size": 7935
+    },
+    "phase6p_report": {
+      "path": "findings/phase-6p-native-updater-closure.md",
+      "sha256": "5c189b56c5cd9f79a47254368c9737a95a4ba72bd34365ae7d867beea654474e",
+      "size": 3679
+    },
+    "update_binary": {
+      "path": "firmware/extracted/PS7331/META-INF/com/google/android/update-binary",
+      "sha256": "02643fa987778361742a5ecaa601034b7f20a55df9bacc58ec8bbcdcd8ac896b",
+      "size": 1749792
+    },
+    "updater_script": {
+      "path": "firmware/extracted/PS7331/META-INF/com/google/android/updater-script",
+      "sha256": "4a61d66754187a5b84f173ad7bc50216b00969743ce3193346762613615ac248",
+      "size": 2104
+    }
+  },
+  "phase": "6KU",
+  "register_install_functions": {
+    "address": "0x406978",
+    "dispatch_table": [
+      {
+        "edify_name": "mount",
+        "got_address": "0x5af5a8",
+        "handler_address": "0x403268",
+        "handler_symbol": "_Z7MountFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 1,
+        "registration_instruction": "0x4069cc",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "is_mounted",
+        "got_address": "0x5af5b0",
+        "handler_address": "0x4035c8",
+        "handler_symbol": "_Z11IsMountedFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 2,
+        "registration_instruction": "0x406a18",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "unmount",
+        "got_address": "0x5af5b8",
+        "handler_address": "0x403758",
+        "handler_symbol": "_Z9UnmountFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 3,
+        "registration_instruction": "0x406a5c",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "format",
+        "got_address": "0x5af5c0",
+        "handler_address": "0x403948",
+        "handler_symbol": "_Z8FormatFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 4,
+        "registration_instruction": "0x406aa0",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "show_progress",
+        "got_address": "0x5af5c8",
+        "handler_address": "0x404450",
+        "handler_symbol": "_Z14ShowProgressFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 5,
+        "registration_instruction": "0x406aec",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "set_progress",
+        "got_address": "0x5af5d0",
+        "handler_address": "0x4046f8",
+        "handler_symbol": "_Z13SetProgressFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 6,
+        "registration_instruction": "0x406b3c",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "package_extract_file",
+        "got_address": "0x5af5d8",
+        "handler_address": "0x401fb8",
+        "handler_symbol": "_Z20PackageExtractFileFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 7,
+        "registration_instruction": "0x406b8c",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "getprop",
+        "got_address": "0x5af5e0",
+        "handler_address": "0x4048d8",
+        "handler_symbol": "_Z9GetPropFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 8,
+        "registration_instruction": "0x406bd0",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "file_getprop",
+        "got_address": "0x5af5e8",
+        "handler_address": "0x4049d8",
+        "handler_symbol": "_Z13FileGetPropFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 9,
+        "registration_instruction": "0x406c20",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "apply_patch",
+        "got_address": "0x5af5f0",
+        "handler_address": "0x402788",
+        "handler_symbol": "_Z12ApplyPatchFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 10,
+        "registration_instruction": "0x406c6c",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "apply_patch_check",
+        "got_address": "0x5af5f8",
+        "handler_address": "0x402c78",
+        "handler_symbol": "_Z17ApplyPatchCheckFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 11,
+        "registration_instruction": "0x406cb4",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "apply_patch_space",
+        "got_address": "0x5af600",
+        "handler_address": "0x404fe0",
+        "handler_symbol": "_Z17ApplyPatchSpaceFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 12,
+        "registration_instruction": "0x406cf8",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "wipe_block_device",
+        "got_address": "0x5af608",
+        "handler_address": "0x406508",
+        "handler_symbol": "_Z17WipeBlockDeviceFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 13,
+        "registration_instruction": "0x406d38",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "read_file",
+        "got_address": "0x5af610",
+        "handler_address": "0x405640",
+        "handler_symbol": "_Z10ReadFileFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 14,
+        "registration_instruction": "0x406d7c",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "sha1_check",
+        "got_address": "0x5af618",
+        "handler_address": "0x402e88",
+        "handler_symbol": "_Z11Sha1CheckFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 15,
+        "registration_instruction": "0x406dc4",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "write_value",
+        "got_address": "0x5af620",
+        "handler_address": "0x405918",
+        "handler_symbol": "_Z12WriteValueFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 16,
+        "registration_instruction": "0x406e0c",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "wipe_cache",
+        "got_address": "0x5af628",
+        "handler_address": "0x4051e0",
+        "handler_symbol": "_Z11WipeCacheFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 17,
+        "registration_instruction": "0x406e54",
+        "string_source": ".rodata:0x51fadd"
+      },
+      {
+        "edify_name": "ui_print",
+        "got_address": "0x5af630",
+        "handler_address": "0x401cd8",
+        "handler_symbol": "_Z9UIPrintFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 18,
+        "registration_instruction": "0x406e9c",
+        "string_source": "inline AArch64 immediate at 0x406e68-0x406e94"
+      },
+      {
+        "edify_name": "run_program",
+        "got_address": "0x5af638",
+        "handler_address": "0x405248",
+        "handler_symbol": "_Z12RunProgramFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 19,
+        "registration_instruction": "0x406ee4",
+        "string_source": ".rodata:0x51fbb0"
+      },
+      {
+        "edify_name": "reboot_now",
+        "got_address": "0x5af640",
+        "handler_address": "0x405b48",
+        "handler_symbol": "_Z11RebootNowFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 20,
+        "registration_instruction": "0x406f2c",
+        "string_source": ".rodata:0x51fbb0"
+      },
+      {
+        "edify_name": "get_stage",
+        "got_address": "0x5af648",
+        "handler_address": "0x4062a8",
+        "handler_symbol": "_Z10GetStageFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 21,
+        "registration_instruction": "0x406f6c",
+        "string_source": ".rodata:0x51fbb0"
+      },
+      {
+        "edify_name": "set_stage",
+        "got_address": "0x5af650",
+        "handler_address": "0x405fa0",
+        "handler_symbol": "_Z10SetStageFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 22,
+        "registration_instruction": "0x406fac",
+        "string_source": ".rodata:0x51fbb0"
+      },
+      {
+        "edify_name": "enable_reboot",
+        "got_address": "0x5af658",
+        "handler_address": "0x406728",
+        "handler_symbol": "_Z14EnableRebootFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 23,
+        "registration_instruction": "0x406ff4",
+        "string_source": ".rodata:0x51fbb0"
+      },
+      {
+        "edify_name": "tune2fs",
+        "got_address": "0x5af660",
+        "handler_address": "0x406790",
+        "handler_symbol": "_Z9Tune2FsFnPKcP5StateRKNSt3__16vectorINS3_10unique_ptrI4ExprNS3_14default_deleteIS6_EEEENS3_9allocatorIS9_EEEE",
+        "ordinal": 24,
+        "registration_instruction": "0x407038",
+        "string_source": ".rodata:0x51fbb0"
+      }
+    ],
+    "end": "0x407078",
+    "registration_count": 24,
+    "string_prefix_address": "0x51fadd",
+    "string_suffix_address": "0x51fbb0"
+  },
+  "unresolved": [
+    "recovery verifier to update-binary end-to-end caller provenance",
+    "indirect function-pointer dispatch outside the recovered direct call edges",
+    "complete platform/native staging canonicalization",
+    "a low-privilege User-0 HOME/package-state writer"
+  ],
+  "updater_script_command_count": 17
+}

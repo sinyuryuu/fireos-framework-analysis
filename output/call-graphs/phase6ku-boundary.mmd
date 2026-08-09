@@ -1,0 +1,17 @@
+graph LR
+  A[ordinary APK] --> B[AmazonActivityManager tx1]
+  B --> C[preWarmApplicationForUser]
+  C --> D[startProcessLocked prewarm]
+  B -. no HOME or package sink .-> Z[HOME unchanged]
+  E[ordinary APK] --> F[IAmazonUserManager tx3]
+  F --> G[KFT launcher writer]
+  G --> H[standard PMS setter]
+  H --> I{cross-user or component gate}
+  I --> J[rejected before mutation]
+  K[shell] -. service lookup blocked .-> L[private Amazon PM]
+  L -. no HOME/package setter .-> Z
+  M[recovery-accepted context] --> N[update-binary main]
+  N --> O[RegisterInstallFunctions 24 callbacks]
+  O --> P[Evaluate updater-script]
+  P --> Q[fixed partition targets]
+  M -. provenance unresolved .-> N
