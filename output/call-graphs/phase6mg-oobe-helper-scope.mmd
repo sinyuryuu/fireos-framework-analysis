@@ -1,0 +1,8 @@
+flowchart LR
+  B[BootAfterSystemOTAReceiver] --> E[enableIncrementalFlow]
+  E --> P[PackageHelper.enableComponent]
+  P --> C[setComponentEnabledSetting state=1 flags=1]
+  E --> A[OOBEActivationHelper.activateOOBEIF]
+  A --> S[SettingsDBUtils.setSettingSecurePutIntFG]
+  S --> U[Settings.Secure.putInt ContentResolver key value]
+  U -. context-bound scope; exact user mapping pending .-> D[Context-bound user scope]

@@ -1,0 +1,11 @@
+flowchart LR
+  S[PS7331 services/fosservices disassembly] --> I[setter callsite inventory]
+  I --> K[KFT child/profile writer]
+  I --> P[Product policy action]
+  I --> E[Espresso boot receiver toggler]
+  I --> G[standard shell/PMS path]
+  P -. signed /system/etc policy input .-> U[user list and policy components]
+  K -. UserInfo.id .-> C[child/profile scope]
+  E -. boot-complete metadata gate .-> B[receiver components]
+  G --> X[standard PMS protected/caller gates]
+  I -. no direct HOME/Fire target proven by inventory .-> H[HOME objective]
