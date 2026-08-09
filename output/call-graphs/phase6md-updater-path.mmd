@@ -1,0 +1,13 @@
+flowchart LR
+    Script["updater-script"] --> Extract["package_extract_file"]
+    Script --> Block["block_image_update"]
+    Extract --> ExtractFn["PackageExtractFileFn"]
+    Block --> BlockFn["PerformBlockImageUpdate"]
+    ExtractFn --> Open["ota_open / open"]
+    ExtractFn --> Zip["ExtractEntryToFile"]
+    BlockFn --> Open
+    BlockFn --> Rename["rename"]
+    BlockFn --> Chown["chown"]
+    Write["WriteToPartition"] --> Open
+    Write --> WriteSink["ota_write / write"]
+    Guard["readlink/readlinkat/realpath markers"] -."no direct edge in selected graph".-> Open

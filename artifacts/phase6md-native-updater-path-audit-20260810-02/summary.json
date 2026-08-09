@@ -1,0 +1,58 @@
+{
+  "analysis": "host-only native OTA updater path/write correlation",
+  "device_contacted": false,
+  "direct_path_guard_edge_count": 0,
+  "direct_write_edge_count": 16,
+  "generated_at_utc": "2026-08-09T20:24:05.234975+00:00",
+  "host_only": true,
+  "inputs": {
+    "artifacts/phase6p/callback-ota-audit-20260805-02/native/strings-matched.txt": "172a57cdd82eb2891c585d8c9c31bd642ffa23733cda9a8c599b3c42e896a70e",
+    "artifacts/phase6s/ota-call-edges-20260805-01/call-edges.csv": "ede44312f2f667adff552475866de0b17c06b96161854c35a17a3a1c361eaa75",
+    "artifacts/phase6s/ota-cfg-focus-20260805-01/focus-disassembly.txt": "0e780e51ced6f7b000bf0a821ffe6cfe81bc0108e6073174b7fa0cb0b94abdcd",
+    "artifacts/phase6s/ota-debugdata-audit-20260805-01/debugdata-function-symbols.csv": "6a667275ea88bc33e3f2297077255a8f12a87f3e08318cf6d9704032e6024eca",
+    "firmware/extracted/PS7331/META-INF/com/google/android/update-binary": "02643fa987778361742a5ecaa601034b7f20a55df9bacc58ec8bbcdcd8ac896b",
+    "firmware/extracted/PS7331/META-INF/com/google/android/updater-script": "4a61d66754187a5b84f173ad7bc50216b00969743ce3193346762613615ac248"
+  },
+  "interpretation": [
+    "The updater has symbolized privileged extraction and partition-write sinks.",
+    "Path canonicalization names are present in the binary strings, but no direct path-canonicalization edge was found in the selected direct-BL graph.",
+    "This is not proof that no indirect call or unselected function performs canonicalization; complete CFG/dataflow remains unresolved.",
+    "The updater-script explicitly targets protected block-device paths; it is not an ADB-level launcher selector."
+  ],
+  "observations": {
+    "block_update_has_open_rename_or_chown": true,
+    "canonicalization_strings_present": true,
+    "direct_canonicalization_edge_in_selected_graph": false,
+    "extract_path_reaches_file_extraction": true,
+    "extract_path_reaches_ota_open": true,
+    "low_privilege_entry_proven": false,
+    "partition_write_handler_present": true
+  },
+  "partition_written": false,
+  "path_marker_string_count": 14,
+  "phase": "6MD",
+  "recovery_executed": false,
+  "rejected_operations": [
+    "Executing update-binary or recovery",
+    "Sending or modifying OTA packages",
+    "Symlink/path-traversal or malformed-input testing",
+    "Fastboot, sideload, partition write, or device mutation"
+  ],
+  "selected_edge_count": 23,
+  "updater_executed": false,
+  "updater_script_operation_count": 13,
+  "updater_script_partition_targets": [
+    "/dev/block/platform/bootdevice/by-name/boot",
+    "/dev/block/platform/bootdevice/by-name/cam_vpu1",
+    "/dev/block/platform/bootdevice/by-name/cam_vpu2",
+    "/dev/block/platform/bootdevice/by-name/cam_vpu3",
+    "/dev/block/platform/bootdevice/by-name/lk",
+    "/dev/block/platform/bootdevice/by-name/preloader",
+    "/dev/block/platform/bootdevice/by-name/spmfw",
+    "/dev/block/platform/bootdevice/by-name/sspm_1",
+    "/dev/block/platform/bootdevice/by-name/system",
+    "/dev/block/platform/bootdevice/by-name/tee1",
+    "/dev/block/platform/bootdevice/by-name/tee2",
+    "/dev/block/platform/bootdevice/by-name/vendor"
+  ]
+}
