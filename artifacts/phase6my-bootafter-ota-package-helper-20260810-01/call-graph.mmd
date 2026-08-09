@@ -1,0 +1,10 @@
+flowchart LR
+  S["AmazonPackageManagerService.onBootPhase(550)\nPackageManagerService.isUpgrade()"] -->|protected explicit broadcast| R["BootAfterSystemOTAReceiver.onReceive"]
+  R -->|guarded branch| E["enableIncrementalFlow(context)"]
+  E --> P["PackageHelper.enableComponent"]
+  P -->|state=1 flags=1| O["OobeHomeActivity"]
+  E --> A["OOBEActivationHelper.activateOOBEIF"]
+  A --> U["SettingsDBUtils / OOBE setup keys"]
+  U -. context-derived user .-> C["ContextImpl.mUser / provider user mapping"]
+  R -. exception only, state=2 .-> X["self-disable receiver"]
+  P -. no Fire literal in bounded chain .-> F["Fire Launcher HOME writer not established"]

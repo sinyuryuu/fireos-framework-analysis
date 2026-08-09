@@ -1,0 +1,6 @@
+subject,observed,scope,classification,confidence
+Fire Launcher literal in reviewed receiver/helper chain,False,four OOBE source files and direct helper chain,BOUNDED_NEGATIVE,CONFIRMED_WITHIN_SCOPE
+ordinary setHomeActivity/addPreferredActivity/replacePreferredActivity,False,"BootAfterSystemOTAReceiver, OOBEActivationHelper, PackageHelper, SettingsDBUtils",BOUNDED_NEGATIVE,CONFIRMED_WITHIN_SCOPE
+OobeHomeActivity HOME relevance,True,manifest OobeHomeActivity priority 100 and MANAGE_USERS,SETUP_WIZARD_HOME_ONLY,CONFIRMED_STATIC
+exact numeric user receiving post-OTA state changes,False,preserved sender/context path,UNRESOLVED_CONTEXT_USER,PENDING
+safe live replay of BOOT_AFTER_SYSTEM_OTA,False,device operation,RISK_REJECTED,CONFIRMED_SAFETY_BOUNDARY
