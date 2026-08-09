@@ -1,0 +1,19 @@
+flowchart TD
+    A[Pending OTA] --> B[OSUpdateValidator.validateOSUpdate]
+    B --> C[Helper.assertHash]
+    C --> D[RecoverySystemWrapper.verifyPackage]
+    D --> E[Android RecoverySystem.verifyPackage]
+    B --> F[OSUpdatePropertiesValidator]
+
+    G[SideloadInstaller.installSideload] --> H[SideloadVerifier metadata/sanity]
+    H --> I[SideloadMover basename staging]
+    I --> J[UpdateSystemWrapper.install]
+    J --> K[UpdateSystem.install]
+    K -. privileged recovery/native handoff .-> L[update-binary]
+    L --> M[PackageExtractFileFn]
+    L --> N[WriteToPartition]
+    M --> O[fixed by-name targets]
+    N --> O
+
+    E -. verifier implementation not preserved in Java set .-> P[UNRESOLVED PROVENANCE]
+    K -. no shell/ordinary-app caller demonstrated .-> Q[LOW-PRIVILEGE ROUTE UNPROVEN]

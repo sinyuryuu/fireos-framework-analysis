@@ -1,0 +1,9 @@
+evidence_id,stage,source_location,observed,classification,confidence
+6KT-VERIFY-001,wrapper,RecoverySystemWrapper.java:21-22,delegates to RecoverySystem.verifyPackage,platform verifier boundary,Confirmed
+6KT-VERIFY-002,validation,OSUpdateValidator.java:42-48;72-77,hash then recovery verification then property validation,pre-handoff validation,Confirmed
+6KT-VERIFY-003,sideload,SideloadVerifier.java:55-58,metadata/sanity then recovery verification,sideload validation,Confirmed
+6KT-STAGE-001,staging,SideloadMover.java:29-43,basename destination and moveFile; no Java canonical/no-follow marker observed,helper/native staging unknown,Hypothesis
+6KT-HANDOFF-001,installation,SideloadInstaller.java:65-74;UpdateSystemWrapper.java:32-43,UpdateSystem.install handoff after staging,privileged handoff,Confirmed
+6KT-ELF-001,native updater,update-binary offsets from Phase 6P,partition write and block verification capability,high-privilege capability,Confirmed
+6KT-TARGET-001,script,updater-script:6;10;13;15-23,fixed named by-name targets,explicit target set,Confirmed
+6KT-REACH-001,caller provenance,Phase 6O/6P reports,no shell or ordinary-app updater caller established,low-privilege route absent from evidence,Strong evidence

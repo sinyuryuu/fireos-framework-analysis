@@ -1,0 +1,446 @@
+{
+  "binary_markers": {
+    "update_binary": [
+      {
+        "offset": 1178392,
+        "pattern": "package_extract_file"
+      },
+      {
+        "offset": 1179390,
+        "pattern": "block_image_verify"
+      },
+      {
+        "offset": 1179409,
+        "pattern": "block_image_update"
+      },
+      {
+        "offset": 1202906,
+        "pattern": "/dev/block/by-name"
+      },
+      {
+        "offset": 1250026,
+        "pattern": "readlink"
+      },
+      {
+        "offset": -1,
+        "pattern": "ota_open"
+      }
+    ]
+  },
+  "classification": "host-only-static-provenance",
+  "confidence": "Strong evidence",
+  "execution_policy": {
+    "adb": false,
+    "binder": false,
+    "native_execution": false,
+    "ota_install": false,
+    "partition_write": false,
+    "recovery": false
+  },
+  "findings": [
+    "RecoverySystemWrapper delegates to the Android RecoverySystem verification API.",
+    "The Java OTA path performs metadata/sanity and recovery verification before the update handoff.",
+    "SideloadMover derives a destination from the basename; no Java canonical-path or NOFOLLOW marker was found by this bounded scan.",
+    "The preserved native updater has high-privilege image-write capability, but this audit does not establish an untrusted caller or recovery provenance path."
+  ],
+  "fixed_partition_targets": [
+    {
+      "line": 6,
+      "target": "/dev/block/platform/bootdevice/by-name/system",
+      "text": "block_image_update(\"/dev/block/platform/bootdevice/by-name/system\", package_extract_file(\"system.transfer.list\"), \"system.new.dat.br\", \"system.patch.dat\") ||"
+    },
+    {
+      "line": 10,
+      "target": "/dev/block/platform/bootdevice/by-name/vendor",
+      "text": "block_image_update(\"/dev/block/platform/bootdevice/by-name/vendor\", package_extract_file(\"vendor.transfer.list\"), \"vendor.new.dat.br\", \"vendor.patch.dat\") ||"
+    },
+    {
+      "line": 13,
+      "target": "/dev/block/platform/bootdevice/by-name/boot",
+      "text": "package_extract_file(\"boot.img\", \"/dev/block/platform/bootdevice/by-name/boot\");"
+    },
+    {
+      "line": 15,
+      "target": "/dev/block/platform/bootdevice/by-name/preloader",
+      "text": "package_extract_file(\"images/preloader.img\", \"/dev/block/platform/bootdevice/by-name/preloader\");"
+    },
+    {
+      "line": 16,
+      "target": "/dev/block/platform/bootdevice/by-name/lk",
+      "text": "package_extract_file(\"images/lk.img\", \"/dev/block/platform/bootdevice/by-name/lk\");"
+    },
+    {
+      "line": 17,
+      "target": "/dev/block/platform/bootdevice/by-name/tee1",
+      "text": "package_extract_file(\"images/tee.img\", \"/dev/block/platform/bootdevice/by-name/tee1\");"
+    },
+    {
+      "line": 18,
+      "target": "/dev/block/platform/bootdevice/by-name/tee2",
+      "text": "package_extract_file(\"images/tee.img\", \"/dev/block/platform/bootdevice/by-name/tee2\");"
+    },
+    {
+      "line": 19,
+      "target": "/dev/block/platform/bootdevice/by-name/spmfw",
+      "text": "package_extract_file(\"images/spmfw.img\", \"/dev/block/platform/bootdevice/by-name/spmfw\");"
+    },
+    {
+      "line": 20,
+      "target": "/dev/block/platform/bootdevice/by-name/sspm_1",
+      "text": "package_extract_file(\"images/sspm.img\", \"/dev/block/platform/bootdevice/by-name/sspm_1\");"
+    },
+    {
+      "line": 21,
+      "target": "/dev/block/platform/bootdevice/by-name/cam_vpu1",
+      "text": "package_extract_file(\"images/cam_vpu1.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu1\");"
+    },
+    {
+      "line": 22,
+      "target": "/dev/block/platform/bootdevice/by-name/cam_vpu2",
+      "text": "package_extract_file(\"images/cam_vpu2.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu2\");"
+    },
+    {
+      "line": 23,
+      "target": "/dev/block/platform/bootdevice/by-name/cam_vpu3",
+      "text": "package_extract_file(\"images/cam_vpu3.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu3\");"
+    }
+  ],
+  "inputs": {
+    "os_update_validator": {
+      "path": "artifacts/phase6j/phase6j-ota-apk-jadx-ps7331-20260805-01/sources/com/amazon/device/software/ota/tasks/validate/OSUpdateValidator.java",
+      "sha256": "36fca220ec2332bee5e5af3c9c2317056a425b90507951345d5b729c76c6f256",
+      "size": 4880
+    },
+    "ota_certificate": {
+      "path": "artifacts/phase5/ps7331-ota-metadata-inspection-20260804-01/otacert.pem",
+      "sha256": "5d52405362dcc9e755a4d972074ac7f886a5450e18fb6a6c2c2dad2b55730fe1",
+      "size": 1452
+    },
+    "recovery_wrapper": {
+      "path": "artifacts/phase6j/phase6j-ota-apk-jadx-ps7331-20260805-01/sources/com/amazon/android/os/RecoverySystemWrapper.java",
+      "sha256": "5cea16a23aadebf9c043791fffb80c4e3a78ca629e8f7c64c82a366983790287",
+      "size": 816
+    },
+    "sideload_installer": {
+      "path": "artifacts/phase6j/phase6j-ota-apk-jadx-ps7331-20260805-01/sources/com/amazon/dcp/ota/SideloadInstaller.java",
+      "sha256": "98fe15a329e96ec793fc3f50172d945d9d409b734efce084af38bbef49248e4a",
+      "size": 4732
+    },
+    "sideload_mover": {
+      "path": "artifacts/phase6j/phase6j-ota-apk-jadx-ps7331-20260805-01/sources/com/amazon/dcp/ota/SideloadMover.java",
+      "sha256": "59131cf032d8544cd44ea839ad63eb37993d2853b4925bf56d10ede721693f63",
+      "size": 2344
+    },
+    "sideload_verifier": {
+      "path": "artifacts/phase6j/phase6j-ota-apk-jadx-ps7331-20260805-01/sources/com/amazon/dcp/ota/SideloadVerifier.java",
+      "sha256": "4ba31d323419575c4f9294d430bd6e758b38db68b7ff67405150a697cd549eea",
+      "size": 4126
+    },
+    "update_binary": {
+      "path": "firmware/extracted/PS7331/META-INF/com/google/android/update-binary",
+      "sha256": "02643fa987778361742a5ecaa601034b7f20a55df9bacc58ec8bbcdcd8ac896b",
+      "size": 1749792
+    },
+    "update_system_wrapper": {
+      "path": "artifacts/phase6j/phase6j-ota-apk-jadx-ps7331-20260805-01/sources/com/amazon/device/framework/UpdateSystemWrapper.java",
+      "sha256": "c99f6884fa298546b18722a5addb46ae35aff4c9f6003d8ad3ccaebe2edfdbd9",
+      "size": 2096
+    },
+    "updater_script": {
+      "path": "firmware/extracted/PS7331/META-INF/com/google/android/updater-script",
+      "sha256": "4a61d66754187a5b84f173ad7bc50216b00969743ce3193346762613615ac248",
+      "size": 2104
+    }
+  },
+  "source_markers": {
+    "os_update_validator": [
+      {
+        "line": 42,
+        "pattern": "assertRecoverySystemVerifiesPackage",
+        "text": "private void assertRecoverySystemVerifiesPackage(File file) throws ValidateUpdatesTask.UpdateValidationException {"
+      },
+      {
+        "line": 45,
+        "pattern": "verifyPackage",
+        "text": "this.mRecoverySystemWrapper.verifyPackage(file, null, null);"
+      },
+      {
+        "line": 74,
+        "pattern": "assertHash",
+        "text": "this.mHelper.assertHash(pendingUpdate);"
+      },
+      {
+        "line": 76,
+        "pattern": "assertRecoverySystemVerifiesPackage",
+        "text": "assertRecoverySystemVerifiesPackage(fileCreate);"
+      },
+      {
+        "line": 77,
+        "pattern": "assertUpdatePropertiesValid",
+        "text": "this.mOSUpdatePropertiesValidator.assertUpdatePropertiesValid(pendingUpdate, fileCreate);"
+      }
+    ],
+    "recovery_wrapper": [
+      {
+        "line": 21,
+        "pattern": "verifyPackage",
+        "text": "public void verifyPackage(File file, RecoverySystem.ProgressListener progressListener, File file2) throws GeneralSecurityException, IOException {"
+      },
+      {
+        "line": 22,
+        "pattern": "RecoverySystem\\.verifyPackage",
+        "text": "RecoverySystem.verifyPackage(file, progressListener, file2);"
+      },
+      {
+        "line": 22,
+        "pattern": "verifyPackage",
+        "text": "RecoverySystem.verifyPackage(file, progressListener, file2);"
+      }
+    ],
+    "sideload_installer": [
+      {
+        "line": 44,
+        "pattern": "mUpdateSystemWrapper\\.install",
+        "text": "this.mUpdateSystemWrapper.install(sideload.getFile().getAbsolutePath(), false);"
+      },
+      {
+        "line": 73,
+        "pattern": "verifySideloadWithoutRecoveryCheck",
+        "text": "this.mSideloadVerifier.verifySideloadWithoutRecoveryCheck(sideload);"
+      },
+      {
+        "line": 74,
+        "pattern": "maybeMoveSideloadFile",
+        "text": "installOSUpdate(this.mSideloadMover.maybeMoveSideloadFile(sideload));"
+      }
+    ],
+    "sideload_mover": [
+      {
+        "line": 39,
+        "pattern": "getAbsolutePath",
+        "text": "String[] strArrSplit = file.getAbsolutePath().split(\"/\");"
+      },
+      {
+        "line": 39,
+        "pattern": "split\\(\\\"/\\\"\\)",
+        "text": "String[] strArrSplit = file.getAbsolutePath().split(\"/\");"
+      },
+      {
+        "line": 40,
+        "pattern": "getAbsolutePath",
+        "text": "File fileCreate = this.mFileFactory.create(this.mOTADataDirectory.getExternalDataDirectory().getAbsolutePath() + \"/\" + strArrSplit[strArrSplit.length - 1]);"
+      },
+      {
+        "line": 40,
+        "pattern": "getExternalDataDirectory",
+        "text": "File fileCreate = this.mFileFactory.create(this.mOTADataDirectory.getExternalDataDirectory().getAbsolutePath() + \"/\" + strArrSplit[strArrSplit.length - 1]);"
+      },
+      {
+        "line": 41,
+        "pattern": "moveFile",
+        "text": "if (this.mFileHelper.moveFile(file, fileCreate)) {"
+      }
+    ],
+    "sideload_verifier": [
+      {
+        "line": 15,
+        "pattern": "mRecoverySystemWrapper",
+        "text": "private final RecoverySystemWrapper mRecoverySystemWrapper;"
+      },
+      {
+        "line": 25,
+        "pattern": "mRecoverySystemWrapper",
+        "text": "this.mRecoverySystemWrapper = recoverySystemWrapper;"
+      },
+      {
+        "line": 31,
+        "pattern": "verifySideloadMetadata",
+        "text": "private void verifySideloadMetadata(Sideload sideload) throws OTASideloadException, OTASideloadExceptionUnrecoverable {"
+      },
+      {
+        "line": 37,
+        "pattern": "verifySideloadPackage",
+        "text": "private void verifySideloadPackage(Sideload sideload) throws Throwable {"
+      },
+      {
+        "line": 42,
+        "pattern": "mRecoverySystemWrapper",
+        "text": "this.mRecoverySystemWrapper.verifyPackage(file, null, null);"
+      },
+      {
+        "line": 55,
+        "pattern": "verifySideloadWithRecoveryCheck",
+        "text": "void verifySideloadWithRecoveryCheck(Sideload sideload) throws Throwable {"
+      },
+      {
+        "line": 56,
+        "pattern": "verifySideloadMetadata",
+        "text": "verifySideloadMetadata(sideload);"
+      },
+      {
+        "line": 57,
+        "pattern": "verifySideloadPackage",
+        "text": "verifySideloadPackage(sideload);"
+      },
+      {
+        "line": 66,
+        "pattern": "verifySideloadMetadata",
+        "text": "verifySideloadMetadata(sideload);"
+      }
+    ],
+    "update_system_wrapper": [
+      {
+        "line": 34,
+        "pattern": "replaceFirst",
+        "text": "String strReplaceFirst = str.replaceFirst(this.mEnvironmentWrapper.getExternalStorageDirectory().getAbsolutePath(), this.mEnvironmentWrapper.getMediaStorageDirectory().getAbsolutePath());"
+      },
+      {
+        "line": 36,
+        "pattern": "persist\\.sys\\.ota\\.isScreenOffBeforeOTA",
+        "text": "this.mSettingsGlobalWrapper.putString(\"persist.sys.ota.isScreenOffBeforeOTA\", Boolean.toString(z2));"
+      },
+      {
+        "line": 43,
+        "pattern": "replaceFirst",
+        "text": "UpdateSystem.install(this.mContext, strReplaceFirst, j, Collections.emptyMap());"
+      },
+      {
+        "line": 43,
+        "pattern": "UpdateSystem\\.install",
+        "text": "UpdateSystem.install(this.mContext, strReplaceFirst, j, Collections.emptyMap());"
+      },
+      {
+        "line": 43,
+        "pattern": "Collections\\.emptyMap",
+        "text": "UpdateSystem.install(this.mContext, strReplaceFirst, j, Collections.emptyMap());"
+      }
+    ],
+    "updater_script": [
+      {
+        "line": 6,
+        "pattern": "block_image_update",
+        "text": "block_image_update(\"/dev/block/platform/bootdevice/by-name/system\", package_extract_file(\"system.transfer.list\"), \"system.new.dat.br\", \"system.patch.dat\") ||"
+      },
+      {
+        "line": 6,
+        "pattern": "package_extract_file",
+        "text": "block_image_update(\"/dev/block/platform/bootdevice/by-name/system\", package_extract_file(\"system.transfer.list\"), \"system.new.dat.br\", \"system.patch.dat\") ||"
+      },
+      {
+        "line": 10,
+        "pattern": "block_image_update",
+        "text": "block_image_update(\"/dev/block/platform/bootdevice/by-name/vendor\", package_extract_file(\"vendor.transfer.list\"), \"vendor.new.dat.br\", \"vendor.patch.dat\") ||"
+      },
+      {
+        "line": 10,
+        "pattern": "package_extract_file",
+        "text": "block_image_update(\"/dev/block/platform/bootdevice/by-name/vendor\", package_extract_file(\"vendor.transfer.list\"), \"vendor.new.dat.br\", \"vendor.patch.dat\") ||"
+      },
+      {
+        "line": 13,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"boot.img\", \"/dev/block/platform/bootdevice/by-name/boot\");"
+      },
+      {
+        "line": 13,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"boot.img\", \"/dev/block/platform/bootdevice/by-name/boot\");"
+      },
+      {
+        "line": 15,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/preloader.img\", \"/dev/block/platform/bootdevice/by-name/preloader\");"
+      },
+      {
+        "line": 15,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/preloader.img\", \"/dev/block/platform/bootdevice/by-name/preloader\");"
+      },
+      {
+        "line": 16,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/lk.img\", \"/dev/block/platform/bootdevice/by-name/lk\");"
+      },
+      {
+        "line": 16,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/lk.img\", \"/dev/block/platform/bootdevice/by-name/lk\");"
+      },
+      {
+        "line": 17,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/tee.img\", \"/dev/block/platform/bootdevice/by-name/tee1\");"
+      },
+      {
+        "line": 17,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/tee.img\", \"/dev/block/platform/bootdevice/by-name/tee1\");"
+      },
+      {
+        "line": 18,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/tee.img\", \"/dev/block/platform/bootdevice/by-name/tee2\");"
+      },
+      {
+        "line": 18,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/tee.img\", \"/dev/block/platform/bootdevice/by-name/tee2\");"
+      },
+      {
+        "line": 19,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/spmfw.img\", \"/dev/block/platform/bootdevice/by-name/spmfw\");"
+      },
+      {
+        "line": 19,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/spmfw.img\", \"/dev/block/platform/bootdevice/by-name/spmfw\");"
+      },
+      {
+        "line": 20,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/sspm.img\", \"/dev/block/platform/bootdevice/by-name/sspm_1\");"
+      },
+      {
+        "line": 20,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/sspm.img\", \"/dev/block/platform/bootdevice/by-name/sspm_1\");"
+      },
+      {
+        "line": 21,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/cam_vpu1.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu1\");"
+      },
+      {
+        "line": 21,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/cam_vpu1.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu1\");"
+      },
+      {
+        "line": 22,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/cam_vpu2.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu2\");"
+      },
+      {
+        "line": 22,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/cam_vpu2.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu2\");"
+      },
+      {
+        "line": 23,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"images/cam_vpu3.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu3\");"
+      },
+      {
+        "line": 23,
+        "pattern": "\\.img",
+        "text": "package_extract_file(\"images/cam_vpu3.img\", \"/dev/block/platform/bootdevice/by-name/cam_vpu3\");"
+      },
+      {
+        "line": 24,
+        "pattern": "package_extract_file",
+        "text": "package_extract_file(\"META-INF/com/amazon/android/target.blocklist\", \"/cache/recovery/last_blocklist\");"
+      }
+    ]
+  }
+}
