@@ -1,0 +1,7 @@
+flowchart TD
+  A["read-only ADB capture"] --> B["PMS HOME resolve"]
+  B --> C["com.amazon.firelauncher/.Launcher"]
+  A --> D["service list"]
+  D --> E["private Amazon names listed"]
+  E -.-> F["service check: not found for shell"]
+  G["User 10 child state"] -.-> H["not User 0 HOME"]
