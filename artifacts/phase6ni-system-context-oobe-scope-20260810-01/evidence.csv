@@ -1,0 +1,13 @@
+evidence_id,label,needle,present,source
+6NI-OOBE-001,Amazon PM service stores mContext,Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mContext,True,fosservices
+6NI-OOBE-002,Amazon PM onBootPhase exists,virtual_method #7558: onBootPhase (I)V,True,fosservices
+6NI-OOBE-003,sender uses Context.sendBroadcast with permission,Context;.sendBroadcast:(Landroid/content/Intent;Ljava/lang/String;),True,services
+6NI-OOBE-004,sender has upgrade guard,isUpgrade,True,services
+6NI-OOBE-005,SystemServer creates system context,SystemServer;.createSystemContext,True,services
+6NI-OOBE-006,system context starts from ActivityThread.systemMain,direct_method #3345: systemMain ()Landroid/app/ActivityThread;,True,boot-framework
+6NI-OOBE-007,SystemServer obtains ActivityThread system context,virtual_method #3240: getSystemContext ()Landroid/app/ContextImpl;,True,boot-framework
+6NI-OOBE-008,ContextImpl system-context constructor path,ContextImpl;.createSystemContext,True,boot-framework
+6NI-OOBE-009,ContextImpl stores mUser,ContextImpl;.mUser,True,boot-framework
+6NI-OOBE-010,null ContextImpl user defaults to process user,Process;.myUserHandle,True,services
+6NI-OOBE-011,Process.myUserHandle derives from process UID,Process;.myUid,True,services
+6NI-OOBE-012,fosinit publishes Amazon PM service,AmazonPackageManagerService,True,fosservices

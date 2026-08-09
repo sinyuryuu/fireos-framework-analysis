@@ -1,0 +1,7 @@
+flowchart TD
+  XML[Collected fosinit XML] --> C[Supervisor callback registrations]
+  C --> V[Collected services/fosservices VDEX class inventory]
+  V --> R[resolveIntent override and return-shape audit]
+  R --> P[AppCompat: IPackageManager.resolveIntent + filter]
+  R --> N[Eve/base: no concrete resolver override / null path]
+  R -.-> U[Unknown: artifacts not preserved in this workspace]

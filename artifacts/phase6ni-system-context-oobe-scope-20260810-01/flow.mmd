@@ -1,0 +1,7 @@
+flowchart TD
+  SS[SystemServer.createSystemContext] --> CT[ContextImpl.mUser]
+  CT --> PM[AmazonPackageManagerService.mContext]
+  PM --> GU[onBootPhase + isUpgrade guard]
+  GU --> BC[permission-protected BOOT_AFTER_SYSTEM_OTA broadcast]
+  BC --> RC[receiver context-derived user scope]
+  RC -. no formal HOME setter in reviewed OOBE source .-> H[HOME resolver]
