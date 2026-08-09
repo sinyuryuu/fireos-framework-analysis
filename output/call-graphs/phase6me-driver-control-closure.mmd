@@ -1,0 +1,7 @@
+flowchart LR
+  S["PS7331 selected source"] --> R["driver registration / fops"]
+  R --> U["user-copy / ioctl / proc / sysfs boundary"]
+  U --> G["local gate markers"]
+  U --> H["hardware / telemetry / DMA / secure-world candidates"]
+  U -. no direct literal observed .-> F["AMS / ATMS / PMS / HOME"]
+  F -.-> L["Fire Launcher"]
