@@ -1,0 +1,15 @@
+flowchart TD
+    H["HOME implicit Intent<br/>MAIN + CATEGORY_HOME"] --> S["ActivityStackSupervisor.resolveIntent"]
+    S --> C["VendorActivityStackSupervisorCallback.callResolveIntent"]
+    C --> A["AppCompatActivityStackSupervisorCallback.resolveIntent"]
+    A --> P["IPackageManager.resolveIntent"]
+    A --> F["isUninstalledApp filter"]
+    C --> E["EveActivityStackSupervisorCallback"]
+    E --> N["inherits base resolveIntent -> null"]
+    C --> Z["all callbacks null"]
+    Z --> Q["PackageManagerInternal.resolveIntent"]
+    P --> R["ResolveInfo or null"]
+    Q --> R
+    R --> H2["Activity launch path"]
+    classDef boundary fill:#fff4cc,stroke:#8a6d1d,color:#222;
+    class C,A,E,N,Z boundary;

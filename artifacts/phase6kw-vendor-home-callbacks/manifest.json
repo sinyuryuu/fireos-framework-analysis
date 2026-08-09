@@ -1,0 +1,45 @@
+{
+  "inputs": {
+    "fosinit_dir": "artifacts/amazon-services",
+    "fosservices": "decompiled/baksmali/vdexExtractor/fosservices/disassembly.log",
+    "fosservices_sha256": "ecbe62fe8eb8bd575da8b2a73a155875df937073ccc2faa020ca592c0515151c",
+    "services": "decompiled/baksmali/vdexExtractor/services/disassembly.log",
+    "services_sha256": "373a51150fcb079da026b20e71d44380bc3d86e52be88c63ebd39cfd58a6ba53"
+  },
+  "registered_callback_count": 2,
+  "rows": [
+    {
+      "base": "com.android.server.am.VendorActivityStackSupervisorCallback",
+      "class_declaration": "  class #377: AppCompatActivityStackSupervisorCallback ('Lcom/amazon/android/server/am/AppCompatActivityStackSupervisorCallback;')",
+      "class_found": "yes",
+      "confidence": "Confirmed",
+      "direct_ipm_resolve": "yes",
+      "fosinit_sha256": "e89888106c2cdde0b39f2c97e3ebefde7502919adf688cd5c2b9db458302ee8e",
+      "hardcoded_fire_literal": "no",
+      "implementation": "com.amazon.android.server.am.AppCompatActivityStackSupervisorCallback",
+      "observed_behavior": "delegates to IPackageManager.resolveIntent, then applies isUninstalledApp filter",
+      "registered": "yes",
+      "resolve_line": "41123",
+      "resolve_override": "yes",
+      "returns_null_shape": "no",
+      "source": "artifacts/amazon-services/appcompatsupport_fosinit.xml"
+    },
+    {
+      "base": "com.android.server.am.VendorActivityStackSupervisorCallback",
+      "class_declaration": "  class #1483: EveActivityStackSupervisorCallback ('Lcom/fireos/eve/EveActivityStackSupervisorCallback;')",
+      "class_found": "yes",
+      "confidence": "Confirmed",
+      "direct_ipm_resolve": "no",
+      "fosinit_sha256": "95f31591f3fd288565bb6901b3e9cb59a13ae782fc3de3f66ad48020a9b22efd",
+      "hardcoded_fire_literal": "no",
+      "implementation": "com.fireos.eve.EveActivityStackSupervisorCallback",
+      "observed_behavior": "no concrete resolveIntent override; inherited base returns null",
+      "registered": "yes",
+      "resolve_line": "",
+      "resolve_override": "no",
+      "returns_null_shape": "no",
+      "source": "artifacts/amazon-services/eve_launch_time_fosinit.xml"
+    }
+  ],
+  "scope": "host-only; no device interaction"
+}
