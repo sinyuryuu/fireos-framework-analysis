@@ -1,0 +1,12 @@
+evidence_id,source_member,line,matched,interpretation
+6NB-S01,device/amazon/kernel/driver/Kconfig,65,config AMZN_DRV_TEST,Kconfig declares the test-driver option.
+6NB-S02,device/amazon/kernel/driver/Kconfig,"43,67",depends on AMZN_METRICS_LOG | depends on AMZN_METRICS_LOG && AMZN_SIGN_OF_LIFE && AMZN_IDME,"The option depends on metrics logging, sign-of-life, and IDME options."
+6NB-S03,device/amazon/kernel/driver/Makefile,28,obj-$(CONFIG_AMZN_DRV_TEST) 		+= amzn_drv_test.o,The object is conditionally mapped from CONFIG_AMZN_DRV_TEST.
+6NB-S04,kernel/mediatek/mt8183/4.4/arch/arm64/configs/trona_defconfig,NOT_FOUND,,The selected trona_defconfig either selects or omits the test option.
+6NB-S05,device/amazon/kernel/driver/amzn_drv_test.c,32,"#define AMZN_DRIVERS	        ""amzn_drvs""",The source names the proc root amzn_drvs.
+6NB-S06,device/amazon/kernel/driver/amzn_drv_test.c,797,"proc_amzn_drv = proc_mkdir(AMZN_DRIVERS, NULL);",Initialization creates the intended /proc/amzn_drvs root when present.
+6NB-S07,device/amazon/kernel/driver/amzn_drv_test.c,"811,825,840","proc_create_data(life_data->test_item, S_IRUGO|S_IWUSR, proc_amzn_drv, | proc_create_data(idme_data->test_item, S_IRUGO|S_IWUSR, proc_amzn_drv, | proc_create_data(logger_data->test_item, S_IRUGO|S_IWUSR, proc_amzn_drv,",Three child proc entries are wired through the shared file operations.
+6NB-S08,device/amazon/kernel/driver/amzn_drv_test.c,789,".write = proc_write,",The shared proc file operations expose a write callback.
+6NB-S09,device/amazon/kernel/driver/amzn_drv_test.c,769,"argc = sscanf(input, ""%d"", &pdata->test_index);","The source parses one decimal index, subject to the surrounding length and copy checks."
+6NB-S10,device/amazon/kernel/driver/amzn_drv_test.c,"225,456,605,708,712,716",static void sign_of_life_test(struct drv_test_data *pdata) | static void idme_test(struct drv_test_data *pdata) | static void logger_test(struct drv_test_data *pdata) | sign_of_life_test(pdata);,The dispatch and test bodies are present in source; runtime reachability is not implied.
+6NB-S11,device/amazon/kernel/driver/amzn_drv_test.c,"811,825,840","proc_create_data(life_data->test_item, S_IRUGO|S_IWUSR, proc_amzn_drv, | proc_create_data(idme_data->test_item, S_IRUGO|S_IWUSR, proc_amzn_drv, | proc_create_data(logger_data->test_item, S_IRUGO|S_IWUSR, proc_amzn_drv,",The source requests owner read/write and group/other read for child entries.

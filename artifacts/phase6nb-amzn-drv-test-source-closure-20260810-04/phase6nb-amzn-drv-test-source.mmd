@@ -1,0 +1,14 @@
+flowchart TD
+  K[Kconfig: CONFIG_AMZN_DRV_TEST] --> M[Makefile: amzn_drv_test.o]
+  M --> I[driver init]
+  I --> R[/proc/amzn_drvs]
+  R --> S[/proc/amzn_drvs/sign_of_life]
+  R --> D[/proc/amzn_drvs/idme]
+  R --> L[/proc/amzn_drvs/logger]
+  S --> F[test_fops.write -> proc_write]
+  D --> F
+  L --> F
+  F --> P[parse decimal index]
+  P --> T[dispatch to source test routine]
+  C[trona_defconfig: dependencies selected; AMZN_DRV_TEST absent] -. negative config evidence .-> K
+  X[Final image, procfs, SELinux, caller and runtime] -. unproven .-> R
