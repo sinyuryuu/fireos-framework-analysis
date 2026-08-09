@@ -1,0 +1,15 @@
+%% Phase 6MN host-only provenance closure; no live Binder or device action
+flowchart LR
+    A["Ordinary app / shell entry"] -->|"permission + service boundary"| B["Amazon Binder service"]
+    B -->|"clearCallingIdentity where observed"| C["Privileged implementation"]
+    C --> D{"State sink and user scope"}
+    D -->|"tx4"| E["setup settings only; no HOME"]
+    D -->|"tx3"| F["KFT launcher state for supplied child UserInfo.id"]
+    D -->|"prewarm"| G["process start only; no HOME"]
+    D -->|"OOBE"| H["context-bound setup/OobeHome state"]
+    D -->|"PMS internal"| I["formal package/preferred writers; trusted path"]
+    J["Vendor HOME callback"] -->|"delegates to IPackageManager.resolveIntent"| K["standard resolver + uninstalled filter"]
+    F -.->|"no User-0 selector evidence"| L["Fire Launcher remains formal HOME"]
+    E -.->|"no package/HOME sink"| L
+    G -.->|"no component selection"| L
+    K -.->|"no Fire literal / override in selected callback"| L

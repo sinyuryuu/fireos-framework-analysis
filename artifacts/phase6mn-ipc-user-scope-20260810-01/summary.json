@@ -1,0 +1,88 @@
+{
+  "analysis": "Phase 6MN IPC/OOBE caller-to-user-scope closure",
+  "binder_or_service_call": false,
+  "bounded_negative": "No selected untrusted-to-Amazon route reaches a proven User-0 HOME/package-state sink; tx4 is settings-only and tx3 is child-scoped.",
+  "classification_counts": {
+    "CHILD_PROFILE_ONLY_NO_USER0_HOME": 1,
+    "CHILD_SCOPED_PACKAGE_STATE_NO_USER0_HOME": 4,
+    "DEVICE_POLICY_TRUSTED_WRITER": 2,
+    "FORMAL_HOME_INTERNAL_WRITER": 5,
+    "FORMAL_PACKAGE_STATE_FRONTEND_GATED": 2,
+    "GENERIC_STATE_WRITER_NO_HOME_EVIDENCE": 1,
+    "LOW_PRIVILEGE_SETTINGS_ONLY_NO_HOME": 1,
+    "NO_CONCRETE_HOME_CALLBACK_OVERRIDE": 1,
+    "OOBE_COMPONENT_STATE_WRITER_CONTEXT_BOUND": 2,
+    "OOBE_COMPONENT_WRITER": 1,
+    "OOBE_GLOBAL_SETUP_STATE_WRITER_CONTEXT_BOUND": 1,
+    "OOBE_HELPER_DELEGATED_SCOPE_UNKNOWN": 2,
+    "OOBE_SECURE_SETUP_STATE_WRITER_CONTEXT_BOUND": 3,
+    "OTHER_SYSTEM_STATE_WRITER": 12,
+    "PREWARM_PROCESS_START_NO_HOME": 1,
+    "STANDARD_RESOLVER_DELEGATION_NO_FIRE_OVERRIDE": 1,
+    "SYSTEM_LIFECYCLE_OOBE_NOT_SHELL_RELAY": 1,
+    "TRUSTED_PROFILE_LIFECYCLE_NO_HOME": 1
+  },
+  "device_contacted": false,
+  "generated_at_utc": "2026-08-09T21:27:00.578206+00:00",
+  "input_manifest": [
+    {
+      "bytes": 4767,
+      "path": "artifacts/phase6mc-caller-provenance-20260810-01/caller-provenance.csv",
+      "sha256": "fbb4f21dad1c3948bb3748fe7bcf652b6b136a6fb07e62cb4e7d7e6d51e1b11d"
+    },
+    {
+      "bytes": 8350,
+      "path": "artifacts/phase6kv/pms-home-caller-closure-20260810-01/pms-home-callers.csv",
+      "sha256": "dc1a86ea85904e3775704944fa86364a9a89033f6146eed0dac8b324b7028382"
+    },
+    {
+      "bytes": 1135,
+      "path": "artifacts/phase6kw-vendor-home-callbacks/vendor-home-callbacks.csv",
+      "sha256": "638c1a8ae1bae66cb24ebede74a8afcb48e26fd09f0028d87a8d2fef6ac3bc3d"
+    },
+    {
+      "bytes": 11016,
+      "path": "artifacts/phase6mg-oobe-helper-scope-20260810-01/helper-scope.csv",
+      "sha256": "0c144bb1b79b359bc00cb52daca41faa23cb3a61f763491c11655df3010d457d"
+    },
+    {
+      "bytes": 68217,
+      "path": "artifacts/phase6bk/ipc-ota-closure-20260810-02/method-map.csv",
+      "sha256": "b487531c8ae8dbf55812feb463f666810eb63acca98d3ce57dbffddf37567acf"
+    },
+    {
+      "bytes": 9471,
+      "path": "findings/phase-6kv-pms-home-caller-closure.md",
+      "sha256": "a3c3d90315895c8295c8cee73f889f020b96f31cded80fa9e1672dc9ae598ef1"
+    },
+    {
+      "bytes": 3727,
+      "path": "findings/phase-6mg-oobe-helper-scope.md",
+      "sha256": "68c931fa0606d4b0fa4c094e0e63683b263caadcebae9b10f7ef5359adc49903"
+    },
+    {
+      "bytes": 10885,
+      "path": "findings/phase-6gv-amazon-user-manager-tx4-settings-deputy.md",
+      "sha256": "2c6c5ab757dab503fb6a295bbb823e446cb41d69a4378abb5f91a8c10664b8cf"
+    },
+    {
+      "bytes": 8738,
+      "path": "findings/phase-6er-amazon-prewarm-confused-deputy.md",
+      "sha256": "e3f940fa236a80865d505a3c852ab5030c3265dafa8126d59f58727d949fd548"
+    },
+    {
+      "bytes": 6940,
+      "path": "findings/phase-6r-bootafter-system-ota-authorization.md",
+      "sha256": "4c2edb6e43b39bfbe615fd8779f49026f3694cad884ebab50103f0cfbd701fbc"
+    }
+  ],
+  "ioctl": false,
+  "mode": "host-only; preserved evidence only",
+  "mutation": false,
+  "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+  "python": "3.14.6",
+  "reboot": false,
+  "repository_head": "not resolved by this script; see git metadata",
+  "route_count": 42,
+  "scope_limit": "This is a selected-artifact provenance closure, not a binary-wide proof of absence."
+}
