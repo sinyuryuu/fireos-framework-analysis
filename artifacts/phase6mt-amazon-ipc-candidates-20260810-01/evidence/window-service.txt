@@ -1,0 +1,109 @@
+  class #444: AmazonWindowManagerService.BinderService ('Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;')
+   access=0001 (PUBLIC)
+   source_file=AmazonWindowManagerService.java, class_data_off=244cbd (2378941)
+   static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=6
+   direct_method #5689: <init> (Lcom/amazon/android/server/wm/AmazonWindowManagerService;)V
+    access=10001 (PUBLIC CONSTRUCTOR)
+    codeOff=44890 (280720)
+    quickening_size=0 (0)
+      044894: 5b01 cb09                              |0000: iput-object v1, v0, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      044898: 7010 4916 0000                         |0002: invoke-direct {v0}, Lcom/amazon/android/server/wm/IAmazonWindowManager$Stub;.<init>:()V // method@1649
+      04489e: 0e00                                   |0005: return-void
+   virtual_method #5690: getLidState ()I
+    access=0001 (PUBLIC)
+    codeOff=44850 (280656)
+    quickening_size=0 (0)
+      044854: 5420 cb09                              |0000: iget-object v0, v2, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      044858: 7110 4216 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$000:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)Lcom/android/server/wm/WindowManagerService; // method@1642
+      04485e: 0c00                                   |0005: move-result-object v0
+      044860: 3900 0d00                              |0006: if-nez v0, 0013 // +000d
+      044864: 7100 4316 0000                         |0008: invoke-static {}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$100:()Ljava/lang/String; // method@1643
+      04486a: 0c00                                   |000b: move-result-object v0
+      04486c: 1a01 7850                              |000c: const-string v1, "WindowManagerService null" // string@5078
+      044870: 7120 1c0d 1000                         |000e: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      044876: 12f0                                   |0011: const/4 v0, #int -1 // #ff
+      044878: 0f00                                   |0012: return v0
+      04487a: 5420 cb09                              |0013: iget-object v0, v2, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      04487e: 7110 4216 0000                         |0015: invoke-static {v0}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$000:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)Lcom/android/server/wm/WindowManagerService; // method@1642
+      044884: 0c00                                   |0018: move-result-object v0
+      044886: 6e10 3439 0000                         |0019: invoke-virtual {v0}, Lcom/android/server/wm/WindowManagerService;.getLidState:()I // method@3934
+      04488c: 0a00                                   |001c: move-result v0
+      04488e: 0f00                                   |001d: return v0
+   virtual_method #5691: isPipActive ()Z
+    access=0001 (PUBLIC)
+    codeOff=4483e (280638)
+    quickening_size=0 (0)
+      044842: 5410 cb09                              |0000: iget-object v0, v1, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      044846: 7110 4416 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$200:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)Z // method@1644
+      04484c: 0a00                                   |0005: move-result v0
+      04484e: 0f00                                   |0006: return v0
+   virtual_method #5692: lockNow (Landroid/os/Bundle;)V
+    access=0001 (PUBLIC)
+    codeOff=448a0 (280736)
+    quickening_size=0 (0)
+      0448a4: 5420 cb09                              |0000: iget-object v0, v2, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      0448a8: 7110 4216 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$000:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)Lcom/android/server/wm/WindowManagerService; // method@1642
+      0448ae: 0c00                                   |0005: move-result-object v0
+      0448b0: 3900 0c00                              |0006: if-nez v0, 0012 // +000c
+      0448b4: 7100 4316 0000                         |0008: invoke-static {}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$100:()Ljava/lang/String; // method@1643
+      0448ba: 0c00                                   |000b: move-result-object v0
+      0448bc: 1a01 7850                              |000c: const-string v1, "WindowManagerService null" // string@5078
+      0448c0: 7120 1c0d 1000                         |000e: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0448c6: 0e00                                   |0011: return-void
+      0448c8: 5420 cb09                              |0012: iget-object v0, v2, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      0448cc: 7110 4216 0000                         |0014: invoke-static {v0}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$000:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)Lcom/android/server/wm/WindowManagerService; // method@1642
+      0448d2: 0c00                                   |0017: move-result-object v0
+      0448d4: 6e20 3539 3000                         |0018: invoke-virtual {v0, v3}, Lcom/android/server/wm/WindowManagerService;.lockNow:(Landroid/os/Bundle;)V // method@3935
+      0448da: 0e00                                   |001b: return-void
+   virtual_method #5693: setOverscan (IIIII)V
+    access=0001 (PUBLIC)
+    codeOff=448dc (280796)
+    quickening_size=0 (0)
+      0448e0: 5470 cb09                              |0000: iget-object v0, v7, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      0448e4: 7110 4216 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$000:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)Lcom/android/server/wm/WindowManagerService; // method@1642
+      0448ea: 0c00                                   |0005: move-result-object v0
+      0448ec: 3900 0c00                              |0006: if-nez v0, 0012 // +000c
+      0448f0: 7100 4316 0000                         |0008: invoke-static {}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$100:()Ljava/lang/String; // method@1643
+      0448f6: 0c00                                   |000b: move-result-object v0
+      0448f8: 1a01 7850                              |000c: const-string v1, "WindowManagerService null" // string@5078
+      0448fc: 7120 1c0d 1000                         |000e: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      044902: 0e00                                   |0011: return-void
+      044904: 5470 cb09                              |0012: iget-object v0, v7, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      044908: 7110 4216 0000                         |0014: invoke-static {v0}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$000:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)Lcom/android/server/wm/WindowManagerService; // method@1642
+      04490e: 0c01                                   |0017: move-result-object v1
+      044910: 0182                                   |0018: move v2, v8
+      044912: 0193                                   |0019: move v3, v9
+      044914: 01a4                                   |001a: move v4, v10
+      044916: 01b5                                   |001b: move v5, v11
+      044918: 01c6                                   |001c: move v6, v12
+      04491a: 7406 3639 0100                         |001d: invoke-virtual/range {v1, v2, v3, v4, v5, v6}, Lcom/android/server/wm/WindowManagerService;.setOverscan:(IIIII)V // method@3936
+      044920: 0e00                                   |0020: return-void
+   virtual_method #5694: setPipVisibility (Z)V
+    access=0001 (PUBLIC)
+    codeOff=44922 (280866)
+    quickening_size=0 (0)
+      044926: 5410 cb09                              |0000: iget-object v0, v1, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.this$0:Lcom/amazon/android/server/wm/AmazonWindowManagerService; // field@09cb
+      04492a: 7120 4516 2000                         |0002: invoke-static {v0, v2}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$202:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;Z)Z // method@1645
+      044930: 0e00                                   |0005: return-void
+   virtual_method #5695: stopAppPinningMode ()V
+    access=0001 (PUBLIC)
+    codeOff=44932 (280882)
+    quickening_size=0 (0)
+      044936: 2200 3600                              |0000: new-instance v0, Lamazon/internal/SystemJumpTable$StatusBarManagerService; // type@0036
+      04493a: 1a01 db99                              |0002: const-string v1, "statusbar" // string@99db
+      04493e: 7110 330c 0100                         |0004: invoke-static {v1}, Landroid/os/ServiceManager;.getService:(Ljava/lang/String;)Landroid/os/IBinder; // method@0c33
+      044944: 0c01                                   |0007: move-result-object v1
+      044946: 1f01 d109                              |0008: check-cast v1, Lcom/android/server/statusbar/StatusBarManagerService; // type@09d1
+      04494a: 7020 c700 1000                         |000a: invoke-direct {v0, v1}, Lamazon/internal/SystemJumpTable$StatusBarManagerService;.<init>:(Lcom/android/server/statusbar/StatusBarManagerService;)V // method@00c7
+      044950: 6e10 c800 0000                         |000d: invoke-virtual {v0}, Lamazon/internal/SystemJumpTable$StatusBarManagerService;.enforceStatusBar:()V // method@00c8
+      044956: 6e10 c900 0000                         |0010: invoke-virtual {v0}, Lamazon/internal/SystemJumpTable$StatusBarManagerService;.get_mBar:()Lcom/android/internal/statusbar/IStatusBar; // method@00c9
+      04495c: 0c01                                   |0013: move-result-object v1
+      04495e: 3801 1000                              |0014: if-eqz v1, 0024 // +0010
+      044962: 7210 d132 0100                         |0016: invoke-interface {v1}, Lcom/android/internal/statusbar/IStatusBar;.stopAppPinningMode:()V // method@32d1
+      044968: 280b                                   |0019: goto 0024 // +000b
+      04496a: 0d02                                   |001a: move-exception v2
+      04496c: 7100 4316 0000                         |001b: invoke-static {}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.access$100:()Ljava/lang/String; // method@1643
+      044972: 0c03                                   |001e: move-result-object v3
+      044974: 1a04 1f11                              |001f: const-string v4, "Could not stop app pinning mode" // string@111f
+      044978: 7130 1d0d 4302                         |0021: invoke-static {v3, v4, v2}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I // method@0d1d
+      04497e: 0e00                                   |0024: return-void

@@ -1,0 +1,7 @@
+    quickening_size=0 (0)
+      069a88: 7100 851d 0000                         |0000: invoke-static {}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.getSystemServiceName:()Ljava/lang/String; // method@1d85
+      069a8e: 0c00                                   |0003: move-result-object v0
+      069a90: 2201 3b05                              |0004: new-instance v1, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService; // type@053b
+      069a94: 7020 741d 2100                         |0006: invoke-direct {v1, v2}, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.<init>:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)V // method@1d74
+      069a9a: 6e30 881d 0201                         |0009: invoke-virtual {v2, v0, v1}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@1d88
+      069aa0: 0e00                                   |000c: return-void

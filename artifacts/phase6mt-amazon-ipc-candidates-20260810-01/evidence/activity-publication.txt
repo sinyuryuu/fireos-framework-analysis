@@ -1,0 +1,7 @@
+      037830: 7020 6a13 2000                         |0002: invoke-direct {v0, v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.<init>:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)V // method@136a
+      037836: 5b20 9d07                              |0005: iput-object v0, v2, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mBinderService:Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService; // field@079d
+      03783a: 7100 9613 0000                         |0007: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.getSystemServiceName:()Ljava/lang/String; // method@1396
+      037840: 0c00                                   |000a: move-result-object v0
+      037842: 5421 9d07                              |000b: iget-object v1, v2, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mBinderService:Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService; // field@079d
+      037846: 6e30 9b13 0201                         |000d: invoke-virtual {v2, v0, v1}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@139b
+      03784c: 0e00                                   |0010: return-void

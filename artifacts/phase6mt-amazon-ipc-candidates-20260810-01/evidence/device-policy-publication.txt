@@ -1,0 +1,16 @@
+   direct_method #5264: getSystemServiceName ()Ljava/lang/String;
+    access=0009 (PUBLIC STATIC)
+    codeOff=3c01c (245788)
+    quickening_size=0 (0)
+      03c020: 1a00 e255                              |0000: const-string v0, "amazondevicepolicymanager" // string@55e2
+      03c024: 1100                                   |0002: return-object v0
+   virtual_method #5265: onStart ()V
+    access=0001 (PUBLIC)
+    codeOff=3c062 (245858)
+    quickening_size=0 (0)
+      03c066: 7100 9014 0000                         |0000: invoke-static {}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;.getSystemServiceName:()Ljava/lang/String; // method@1490
+      03c06c: 0c00                                   |0003: move-result-object v0
+      03c06e: 2201 0704                              |0004: new-instance v1, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService; // type@0407
+      03c072: 7020 8514 2100                         |0006: invoke-direct {v1, v2}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.<init>:(Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;)V // method@1485
+      03c078: 6e30 9214 0201                         |0009: invoke-virtual {v2, v0, v1}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@1492
+      03c07e: 0e00                                   |000c: return-void

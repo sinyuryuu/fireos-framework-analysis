@@ -1,0 +1,502 @@
+  class #2259: IAmazonActivityManager.Stub.Proxy ('Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;')
+   access=0000 ()
+   source_file=IAmazonActivityManager.java, class_data_off=28f09d (2683037)
+   static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=16
+   direct_method #6620: <init> (Landroid/os/IBinder;)V
+    access=10000 (CONSTRUCTOR)
+    codeOff=a2732 (665394)
+    quickening_size=3 (3)
+      0a2736: 7010 a066 0000                         |0000: invoke-direct {v0}, Ljava/lang/Object;.<init>:()V // method@66a0
+      0a273c: e801 0800                              |0003: iput-object-quick v1, v0, [obj+0008]
+[new] 0a273c: 5b01 5f0e                              |0003: iput-object v1, v0, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a2740: 7300                                   |0005: return-void-no-barrier
+[new] 0a2740: 0e00                                   |0005: return-void
+   virtual_method #6621: asBinder ()Landroid/os/IBinder;
+    access=0001 (PUBLIC)
+    codeOff=a2540 (664896)
+    quickening_size=3 (3)
+      0a2544: e510 0800                              |0000: iget-object-quick v0, v1, [obj+0008]
+[new] 0a2544: 5410 5f0e                              |0000: iget-object v0, v1, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a2548: 1100                                   |0002: return-object v0
+   virtual_method #6622: checkKillAppGoingIntoBg (Ljava/lang/String;I)Z
+    access=0001 (PUBLIC)
+    codeOff=a254a (664906)
+    quickening_size=1b (27)
+      0a254e: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a2554: 0c00                                   |0003: move-result-object v0
+      0a2556: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a255c: 0c01                                   |0007: move-result-object v1
+      0a255e: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a2562: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a2562: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a2568: e920 9d00 6000                         |000d: invoke-virtual-quick {v0, v6}, [009d] // vtable #009d
+[new] 0a2568: 6e20 d40b 6000                         |000d: invoke-virtual {v0, v6}, Landroid/os/Parcel;.writeString:(Ljava/lang/String;)V // method@0bd4
+      0a256e: e920 8700 7000                         |0010: invoke-virtual-quick {v0, v7}, [0087] // vtable #0087
+[new] 0a256e: 6e20 c80b 7000                         |0010: invoke-virtual {v0, v7}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      0a2574: e552 0800                              |0013: iget-object-quick v2, v5, [obj+0008]
+[new] 0a2574: 5452 5f0e                              |0013: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a2578: 1233                                   |0015: const/4 v3, #int 3 // #3
+      0a257a: 1204                                   |0016: const/4 v4, #int 0 // #0
+      0a257c: 7254 840b 3210                         |0017: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a2582: e910 3f00 0100                         |001a: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a2582: 6e10 af0b 0100                         |001a: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a2588: e910 4600 0100                         |001d: invoke-virtual-quick {v1}, [0046] // vtable #0046
+[new] 0a2588: 6e10 b20b 0100                         |001d: invoke-virtual {v1}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+      0a258e: 0a02                                   |0020: move-result v2
+      0a2590: 3802 0400                              |0021: if-eqz v2, 0025 // +0004
+      0a2594: 1214                                   |0023: const/4 v4, #int 1 // #1
+      0a2596: 0000                                   |0024: nop // spacer
+      0a2598: 0142                                   |0025: move v2, v4
+      0a259a: e910 6700 0100                         |0026: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a259a: 6e10 bd0b 0100                         |0026: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a25a0: e910 6700 0000                         |0029: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a25a0: 6e10 bd0b 0000                         |0029: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a25a6: 0000                                   |002c: nop // spacer
+      0a25a8: 0000                                   |002d: nop // spacer
+      0a25aa: 0f02                                   |002e: return v2
+      0a25ac: 0d02                                   |002f: move-exception v2
+      0a25ae: e910 6700 0100                         |0030: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a25ae: 6e10 bd0b 0100                         |0030: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a25b4: e910 6700 0000                         |0033: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a25b4: 6e10 bd0b 0000                         |0033: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a25ba: 2702                                   |0036: throw v2
+   virtual_method #6623: disablePipWindows ()V
+    access=0001 (PUBLIC)
+    codeOff=a2742 (665410)
+    quickening_size=11 (17)
+      0a2746: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a274c: 0c00                                   |0003: move-result-object v0
+      0a274e: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a2754: 0c01                                   |0007: move-result-object v1
+      0a2756: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a275a: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a275a: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a2760: e552 0800                              |000d: iget-object-quick v2, v5, [obj+0008]
+[new] 0a2760: 5452 5f0e                              |000d: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a2764: 1303 0d00                              |000f: const/16 v3, #int 13 // #d
+      0a2768: 1204                                   |0011: const/4 v4, #int 0 // #0
+      0a276a: 7254 840b 3210                         |0012: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a2770: e910 3f00 0100                         |0015: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a2770: 6e10 af0b 0100                         |0015: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a2776: e910 6700 0100                         |0018: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2776: 6e10 bd0b 0100                         |0018: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a277c: e910 6700 0000                         |001b: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a277c: 6e10 bd0b 0000                         |001b: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2782: 0000                                   |001e: nop // spacer
+      0a2784: 7300                                   |001f: return-void-no-barrier
+[new] 0a2784: 0e00                                   |001f: return-void
+      0a2786: 0d02                                   |0020: move-exception v2
+      0a2788: e910 6700 0100                         |0021: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2788: 6e10 bd0b 0100                         |0021: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a278e: e910 6700 0000                         |0024: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a278e: 6e10 bd0b 0000                         |0024: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2794: 2702                                   |0027: throw v2
+   virtual_method #6624: dismissMultiWindow ()V
+    access=0001 (PUBLIC)
+    codeOff=a27a4 (665508)
+    quickening_size=b (11)
+      0a27a8: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a27ae: 0c00                                   |0003: move-result-object v0
+      0a27b0: 1a01 6c61                              |0004: const-string v1, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a27b4: e920 8900 1000                         |0006: invoke-virtual-quick {v0, v1}, [0089] // vtable #0089
+[new] 0a27b4: 6e20 ca0b 1000                         |0006: invoke-virtual {v0, v1}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a27ba: e551 0800                              |0009: iget-object-quick v1, v5, [obj+0008]
+[new] 0a27ba: 5451 5f0e                              |0009: iget-object v1, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a27be: 1302 0b00                              |000b: const/16 v2, #int 11 // #b
+      0a27c2: 1203                                   |000d: const/4 v3, #int 0 // #0
+      0a27c4: 1214                                   |000e: const/4 v4, #int 1 // #1
+      0a27c6: 7254 840b 2130                         |000f: invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a27cc: e910 6700 0000                         |0012: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a27cc: 6e10 bd0b 0000                         |0012: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a27d2: 0000                                   |0015: nop // spacer
+      0a27d4: 7300                                   |0016: return-void-no-barrier
+[new] 0a27d4: 0e00                                   |0016: return-void
+      0a27d6: 0d01                                   |0017: move-exception v1
+      0a27d8: e910 6700 0000                         |0018: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a27d8: 6e10 bd0b 0000                         |0018: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a27de: 2701                                   |001b: throw v1
+   virtual_method #6625: dismissPipWindow ()V
+    access=0001 (PUBLIC)
+    codeOff=a27ec (665580)
+    quickening_size=b (11)
+      0a27f0: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a27f6: 0c00                                   |0003: move-result-object v0
+      0a27f8: 1a01 6c61                              |0004: const-string v1, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a27fc: e920 8900 1000                         |0006: invoke-virtual-quick {v0, v1}, [0089] // vtable #0089
+[new] 0a27fc: 6e20 ca0b 1000                         |0006: invoke-virtual {v0, v1}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a2802: e551 0800                              |0009: iget-object-quick v1, v5, [obj+0008]
+[new] 0a2802: 5451 5f0e                              |0009: iget-object v1, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a2806: 1302 0c00                              |000b: const/16 v2, #int 12 // #c
+      0a280a: 1203                                   |000d: const/4 v3, #int 0 // #0
+      0a280c: 1214                                   |000e: const/4 v4, #int 1 // #1
+      0a280e: 7254 840b 2130                         |000f: invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a2814: e910 6700 0000                         |0012: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2814: 6e10 bd0b 0000                         |0012: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a281a: 0000                                   |0015: nop // spacer
+      0a281c: 7300                                   |0016: return-void-no-barrier
+[new] 0a281c: 0e00                                   |0016: return-void
+      0a281e: 0d01                                   |0017: move-exception v1
+      0a2820: e910 6700 0000                         |0018: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2820: 6e10 bd0b 0000                         |0018: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2826: 2701                                   |001b: throw v1
+   virtual_method #6626: enablePipWindows ()V
+    access=0001 (PUBLIC)
+    codeOff=a2834 (665652)
+    quickening_size=11 (17)
+      0a2838: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a283e: 0c00                                   |0003: move-result-object v0
+      0a2840: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a2846: 0c01                                   |0007: move-result-object v1
+      0a2848: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a284c: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a284c: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a2852: e552 0800                              |000d: iget-object-quick v2, v5, [obj+0008]
+[new] 0a2852: 5452 5f0e                              |000d: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a2856: 1303 0e00                              |000f: const/16 v3, #int 14 // #e
+      0a285a: 1204                                   |0011: const/4 v4, #int 0 // #0
+      0a285c: 7254 840b 3210                         |0012: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a2862: e910 3f00 0100                         |0015: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a2862: 6e10 af0b 0100                         |0015: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a2868: e910 6700 0100                         |0018: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2868: 6e10 bd0b 0100                         |0018: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a286e: e910 6700 0000                         |001b: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a286e: 6e10 bd0b 0000                         |001b: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2874: 0000                                   |001e: nop // spacer
+      0a2876: 7300                                   |001f: return-void-no-barrier
+[new] 0a2876: 0e00                                   |001f: return-void
+      0a2878: 0d02                                   |0020: move-exception v2
+      0a287a: e910 6700 0100                         |0021: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a287a: 6e10 bd0b 0100                         |0021: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2880: e910 6700 0000                         |0024: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2880: 6e10 bd0b 0000                         |0024: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2886: 2702                                   |0027: throw v2
+   virtual_method #6627: getCpuLoad ()F
+    access=0001 (PUBLIC)
+    codeOff=a263c (665148)
+    quickening_size=15 (21)
+      0a2640: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a2646: 0c00                                   |0003: move-result-object v0
+      0a2648: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a264e: 0c01                                   |0007: move-result-object v1
+      0a2650: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a2654: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a2654: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a265a: e552 0800                              |000d: iget-object-quick v2, v5, [obj+0008]
+[new] 0a265a: 5452 5f0e                              |000d: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a265e: 1303 0800                              |000f: const/16 v3, #int 8 // #8
+      0a2662: 1204                                   |0011: const/4 v4, #int 0 // #0
+      0a2664: 7254 840b 3210                         |0012: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a266a: e910 3f00 0100                         |0015: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a266a: 6e10 af0b 0100                         |0015: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a2670: e910 4300 0100                         |0018: invoke-virtual-quick {v1}, [0043] // vtable #0043
+[new] 0a2670: 6e10 b00b 0100                         |0018: invoke-virtual {v1}, Landroid/os/Parcel;.readFloat:()F // method@0bb0
+      0a2676: 0a02                                   |001b: move-result v2
+      0a2678: e910 6700 0100                         |001c: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2678: 6e10 bd0b 0100                         |001c: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a267e: e910 6700 0000                         |001f: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a267e: 6e10 bd0b 0000                         |001f: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2684: 0000                                   |0022: nop // spacer
+      0a2686: 0000                                   |0023: nop // spacer
+      0a2688: 0f02                                   |0024: return v2
+      0a268a: 0d02                                   |0025: move-exception v2
+      0a268c: e910 6700 0100                         |0026: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a268c: 6e10 bd0b 0100                         |0026: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2692: e910 6700 0000                         |0029: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2692: 6e10 bd0b 0000                         |0029: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2698: 2702                                   |002c: throw v2
+   virtual_method #6628: getInterfaceDescriptor ()Ljava/lang/String;
+    access=0001 (PUBLIC)
+    codeOff=a2728 (665384)
+    quickening_size=1 (1)
+      0a272c: 1a00 6c61                              |0000: const-string v0, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a2730: 1100                                   |0002: return-object v0
+   virtual_method #6629: getRecentCrashes ()[Lamazon/app/CrashDescription;
+    access=0001 (PUBLIC)
+    codeOff=a24ce (664782)
+    quickening_size=15 (21)
+      0a24d2: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a24d8: 0c00                                   |0003: move-result-object v0
+      0a24da: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a24e0: 0c01                                   |0007: move-result-object v1
+      0a24e2: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a24e6: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a24e6: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a24ec: e552 0800                              |000d: iget-object-quick v2, v5, [obj+0008]
+[new] 0a24ec: 5452 5f0e                              |000d: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a24f0: 1243                                   |000f: const/4 v3, #int 4 // #4
+      0a24f2: 1204                                   |0010: const/4 v4, #int 0 // #0
+      0a24f4: 7254 840b 3210                         |0011: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a24fa: e910 3f00 0100                         |0014: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a24fa: 6e10 af0b 0100                         |0014: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a2500: 6202 7b00                              |0017: sget-object v2, Lamazon/app/CrashDescription;.CREATOR:Landroid/os/Parcelable$Creator; // field@007b
+      0a2504: e920 1b00 2100                         |0019: invoke-virtual-quick {v1, v2}, [001b] // vtable #001b
+[new] 0a2504: 6e20 a10b 2100                         |0019: invoke-virtual {v1, v2}, Landroid/os/Parcel;.createTypedArray:(Landroid/os/Parcelable$Creator;)[Ljava/lang/Object; // method@0ba1
+      0a250a: 0c02                                   |001c: move-result-object v2
+      0a250c: 1f02 430f                              |001d: check-cast v2, [Lamazon/app/CrashDescription; // type@0f43
+      0a2510: e910 6700 0100                         |001f: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2510: 6e10 bd0b 0100                         |001f: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2516: e910 6700 0000                         |0022: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2516: 6e10 bd0b 0000                         |0022: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a251c: 0000                                   |0025: nop // spacer
+      0a251e: 0000                                   |0026: nop // spacer
+      0a2520: 1102                                   |0027: return-object v2
+      0a2522: 0d02                                   |0028: move-exception v2
+      0a2524: e910 6700 0100                         |0029: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2524: 6e10 bd0b 0100                         |0029: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a252a: e910 6700 0000                         |002c: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a252a: 6e10 bd0b 0000                         |002c: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2530: 2702                                   |002f: throw v2
+   virtual_method #6630: isOnHomeStack ()Z
+    access=0001 (PUBLIC)
+    codeOff=a25c8 (665032)
+    quickening_size=17 (23)
+      0a25cc: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a25d2: 0c00                                   |0003: move-result-object v0
+      0a25d4: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a25da: 0c01                                   |0007: move-result-object v1
+      0a25dc: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a25e0: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a25e0: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a25e6: e552 0800                              |000d: iget-object-quick v2, v5, [obj+0008]
+[new] 0a25e6: 5452 5f0e                              |000d: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a25ea: 1303 0900                              |000f: const/16 v3, #int 9 // #9
+      0a25ee: 1204                                   |0011: const/4 v4, #int 0 // #0
+      0a25f0: 7254 840b 3210                         |0012: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a25f6: e910 3f00 0100                         |0015: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a25f6: 6e10 af0b 0100                         |0015: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a25fc: e910 4600 0100                         |0018: invoke-virtual-quick {v1}, [0046] // vtable #0046
+[new] 0a25fc: 6e10 b20b 0100                         |0018: invoke-virtual {v1}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+      0a2602: 0a02                                   |001b: move-result v2
+      0a2604: 3802 0400                              |001c: if-eqz v2, 0020 // +0004
+      0a2608: 1214                                   |001e: const/4 v4, #int 1 // #1
+      0a260a: 0000                                   |001f: nop // spacer
+      0a260c: 0142                                   |0020: move v2, v4
+      0a260e: e910 6700 0100                         |0021: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a260e: 6e10 bd0b 0100                         |0021: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2614: e910 6700 0000                         |0024: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2614: 6e10 bd0b 0000                         |0024: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a261a: 0000                                   |0027: nop // spacer
+      0a261c: 0000                                   |0028: nop // spacer
+      0a261e: 0f02                                   |0029: return v2
+      0a2620: 0d02                                   |002a: move-exception v2
+      0a2622: e910 6700 0100                         |002b: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2622: 6e10 bd0b 0100                         |002b: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2628: e910 6700 0000                         |002e: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2628: 6e10 bd0b 0000                         |002e: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a262e: 2702                                   |0031: throw v2
+   virtual_method #6631: onActivityResume (Landroid/content/ComponentName;)V
+    access=0001 (PUBLIC)
+    codeOff=a2894 (665748)
+    quickening_size=17 (23)
+      0a2898: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a289e: 0c00                                   |0003: move-result-object v0
+      0a28a0: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a28a6: 0c01                                   |0007: move-result-object v1
+      0a28a8: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a28ac: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a28ac: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a28b2: 1202                                   |000d: const/4 v2, #int 0 // #0
+      0a28b4: 3806 0a00                              |000e: if-eqz v6, 0018 // +000a
+      0a28b8: 1213                                   |0010: const/4 v3, #int 1 // #1
+      0a28ba: e920 8700 3000                         |0011: invoke-virtual-quick {v0, v3}, [0087] // vtable #0087
+[new] 0a28ba: 6e20 c80b 3000                         |0011: invoke-virtual {v0, v3}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      0a28c0: e930 1600 0602                         |0014: invoke-virtual-quick {v6, v0, v2}, [0016] // vtable #0016
+[new] 0a28c0: 6e30 9107 0602                         |0014: invoke-virtual {v6, v0, v2}, Landroid/content/ComponentName;.writeToParcel:(Landroid/os/Parcel;I)V // method@0791
+      0a28c6: 2804                                   |0017: goto 001b // +0004
+      0a28c8: e920 8700 2000                         |0018: invoke-virtual-quick {v0, v2}, [0087] // vtable #0087
+[new] 0a28c8: 6e20 c80b 2000                         |0018: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      0a28ce: e553 0800                              |001b: iget-object-quick v3, v5, [obj+0008]
+[new] 0a28ce: 5453 5f0e                              |001b: iget-object v3, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a28d2: 1274                                   |001d: const/4 v4, #int 7 // #7
+      0a28d4: 7252 840b 4310                         |001e: invoke-interface {v3, v4, v0, v1, v2}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a28da: e910 3f00 0100                         |0021: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a28da: 6e10 af0b 0100                         |0021: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a28e0: e910 6700 0100                         |0024: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a28e0: 6e10 bd0b 0100                         |0024: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a28e6: e910 6700 0000                         |0027: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a28e6: 6e10 bd0b 0000                         |0027: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a28ec: 0000                                   |002a: nop // spacer
+      0a28ee: 7300                                   |002b: return-void-no-barrier
+[new] 0a28ee: 0e00                                   |002b: return-void
+      0a28f0: 0d02                                   |002c: move-exception v2
+      0a28f2: e910 6700 0100                         |002d: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a28f2: 6e10 bd0b 0100                         |002d: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a28f8: e910 6700 0000                         |0030: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a28f8: 6e10 bd0b 0000                         |0030: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a28fe: 2702                                   |0033: throw v2
+   virtual_method #6632: packageLifetimeHint (Ljava/lang/String;FZI)I
+    access=0001 (PUBLIC)
+    codeOff=a26a8 (665256)
+    quickening_size=1d (29)
+      0a26ac: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a26b2: 0c00                                   |0003: move-result-object v0
+      0a26b4: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a26ba: 0c01                                   |0007: move-result-object v1
+      0a26bc: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a26c0: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a26c0: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a26c6: e920 9d00 6000                         |000d: invoke-virtual-quick {v0, v6}, [009d] // vtable #009d
+[new] 0a26c6: 6e20 d40b 6000                         |000d: invoke-virtual {v0, v6}, Landroid/os/Parcel;.writeString:(Ljava/lang/String;)V // method@0bd4
+      0a26cc: e920 8500 7000                         |0010: invoke-virtual-quick {v0, v7}, [0085] // vtable #0085
+[new] 0a26cc: 6e20 c70b 7000                         |0010: invoke-virtual {v0, v7}, Landroid/os/Parcel;.writeFloat:(F)V // method@0bc7
+      0a26d2: e920 8700 8000                         |0013: invoke-virtual-quick {v0, v8}, [0087] // vtable #0087
+[new] 0a26d2: 6e20 c80b 8000                         |0013: invoke-virtual {v0, v8}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      0a26d8: e920 8700 9000                         |0016: invoke-virtual-quick {v0, v9}, [0087] // vtable #0087
+[new] 0a26d8: 6e20 c80b 9000                         |0016: invoke-virtual {v0, v9}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      0a26de: e552 0800                              |0019: iget-object-quick v2, v5, [obj+0008]
+[new] 0a26de: 5452 5f0e                              |0019: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a26e2: 1223                                   |001b: const/4 v3, #int 2 // #2
+      0a26e4: 1204                                   |001c: const/4 v4, #int 0 // #0
+      0a26e6: 7254 840b 3210                         |001d: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a26ec: e910 3f00 0100                         |0020: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a26ec: 6e10 af0b 0100                         |0020: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a26f2: e910 4600 0100                         |0023: invoke-virtual-quick {v1}, [0046] // vtable #0046
+[new] 0a26f2: 6e10 b20b 0100                         |0023: invoke-virtual {v1}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+      0a26f8: 0a02                                   |0026: move-result v2
+      0a26fa: e910 6700 0100                         |0027: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a26fa: 6e10 bd0b 0100                         |0027: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2700: e910 6700 0000                         |002a: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2700: 6e10 bd0b 0000                         |002a: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2706: 0000                                   |002d: nop // spacer
+      0a2708: 0000                                   |002e: nop // spacer
+      0a270a: 0f02                                   |002f: return v2
+      0a270c: 0d02                                   |0030: move-exception v2
+      0a270e: e910 6700 0100                         |0031: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a270e: 6e10 bd0b 0100                         |0031: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2714: e910 6700 0000                         |0034: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a2714: 6e10 bd0b 0000                         |0034: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a271a: 2702                                   |0037: throw v2
+   virtual_method #6633: preWarmApplicationForUser (Ljava/lang/String;II)I
+    access=0001 (PUBLIC)
+    codeOff=6448 (25672)
+    quickening_size=0 (0)
+      00644c: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      006452: 0c00                                   |0003: move-result-object v0
+      006454: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      00645a: 0c01                                   |0007: move-result-object v1
+      00645c: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      006460: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      006466: 6e20 d40b 6000                         |000d: invoke-virtual {v0, v6}, Landroid/os/Parcel;.writeString:(Ljava/lang/String;)V // method@0bd4
+      00646c: 6e20 c80b 7000                         |0010: invoke-virtual {v0, v7}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      006472: 6e20 c80b 8000                         |0013: invoke-virtual {v0, v8}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      006478: 5452 5f0e                              |0016: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      00647c: 1213                                   |0018: const/4 v3, #int 1 // #1
+      00647e: 1204                                   |0019: const/4 v4, #int 0 // #0
+      006480: 7254 840b 3210                         |001a: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      006486: 6e10 af0b 0100                         |001d: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      00648c: 6e10 b20b 0100                         |0020: invoke-virtual {v1}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+      006492: 0a02                                   |0023: move-result v2
+      006494: 6e10 bd0b 0100                         |0024: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      00649a: 6e10 bd0b 0000                         |0027: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0064a0: 0000                                   |002a: nop // spacer
+[new] 0064a0: 0000                                   |002a: nop // spacer
+      0064a2: 0000                                   |002b: nop // spacer
+[new] 0064a2: 0000                                   |002b: nop // spacer
+      0064a4: 0f02                                   |002c: return v2
+      0064a6: 0d02                                   |002d: move-exception v2
+      0064a8: 6e10 bd0b 0100                         |002e: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0064ae: 6e10 bd0b 0000                         |0031: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0064b4: 2702                                   |0034: throw v2
+   virtual_method #6634: registerActivitySwitchObserver (Lamazon/app/IAmazonActivitySwitchObserver;)V
+    access=0001 (PUBLIC)
+    codeOff=64c4 (25796)
+    quickening_size=0 (0)
+      0064c8: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0064ce: 0c00                                   |0003: move-result-object v0
+      0064d0: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0064d6: 0c01                                   |0007: move-result-object v1
+      0064d8: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0064dc: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0064e2: 3806 0700                              |000d: if-eqz v6, 0014 // +0007
+      0064e6: 7210 9e00 0600                         |000f: invoke-interface {v6}, Lamazon/app/IAmazonActivitySwitchObserver;.asBinder:()Landroid/os/IBinder; // method@009e
+      0064ec: 0c02                                   |0012: move-result-object v2
+      0064ee: 2802                                   |0013: goto 0015 // +0002
+      0064f0: 1202                                   |0014: const/4 v2, #int 0 // #0
+      0064f2: 6e20 d70b 2000                         |0015: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeStrongBinder:(Landroid/os/IBinder;)V // method@0bd7
+      0064f8: 5452 5f0e                              |0018: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0064fc: 1253                                   |001a: const/4 v3, #int 5 // #5
+      0064fe: 1204                                   |001b: const/4 v4, #int 0 // #0
+      006500: 7254 840b 3210                         |001c: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      006506: 6e10 af0b 0100                         |001f: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      00650c: 6e10 bd0b 0100                         |0022: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      006512: 6e10 bd0b 0000                         |0025: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      006518: 0000                                   |0028: nop // spacer
+[new] 006518: 0000                                   |0028: nop // spacer
+      00651a: 0e00                                   |0029: return-void
+      00651c: 0d02                                   |002a: move-exception v2
+      00651e: 6e10 bd0b 0100                         |002b: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      006524: 6e10 bd0b 0000                         |002e: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      00652a: 2702                                   |0031: throw v2
+   virtual_method #6635: requestCpuBoost (II)Z
+    access=0001 (PUBLIC)
+    codeOff=63c8 (25544)
+    quickening_size=0 (0)
+      0063cc: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0063d2: 0c00                                   |0003: move-result-object v0
+      0063d4: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0063da: 0c01                                   |0007: move-result-object v1
+      0063dc: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0063e0: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0063e6: 6e20 c80b 6000                         |000d: invoke-virtual {v0, v6}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      0063ec: 6e20 c80b 7000                         |0010: invoke-virtual {v0, v7}, Landroid/os/Parcel;.writeInt:(I)V // method@0bc8
+      0063f2: 5452 5f0e                              |0013: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0063f6: 1303 0a00                              |0015: const/16 v3, #int 10 // #a
+      0063fa: 1204                                   |0017: const/4 v4, #int 0 // #0
+      0063fc: 7254 840b 3210                         |0018: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      006402: 6e10 af0b 0100                         |001b: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      006408: 6e10 b20b 0100                         |001e: invoke-virtual {v1}, Landroid/os/Parcel;.readInt:()I // method@0bb2
+      00640e: 0a02                                   |0021: move-result v2
+      006410: 3802 0400                              |0022: if-eqz v2, 0026 // +0004
+      006414: 1214                                   |0024: const/4 v4, #int 1 // #1
+      006416: 0000                                   |0025: nop // spacer
+[new] 006416: 0000                                   |0025: nop // spacer
+      006418: 0142                                   |0026: move v2, v4
+      00641a: 6e10 bd0b 0100                         |0027: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      006420: 6e10 bd0b 0000                         |002a: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      006426: 0000                                   |002d: nop // spacer
+[new] 006426: 0000                                   |002d: nop // spacer
+      006428: 0000                                   |002e: nop // spacer
+[new] 006428: 0000                                   |002e: nop // spacer
+      00642a: 0f02                                   |002f: return v2
+      00642c: 0d02                                   |0030: move-exception v2
+      00642e: 6e10 bd0b 0100                         |0031: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      006434: 6e10 bd0b 0000                         |0034: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      00643a: 2702                                   |0037: throw v2
+   virtual_method #6636: unregisterActivitySwitchObserver (Lamazon/app/IAmazonActivitySwitchObserver;)V
+    access=0001 (PUBLIC)
+    codeOff=a290c (665868)
+    quickening_size=13 (19)
+      0a2910: 7100 a80b 0000                         |0000: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a2916: 0c00                                   |0003: move-result-object v0
+      0a2918: 7100 a80b 0000                         |0004: invoke-static {}, Landroid/os/Parcel;.obtain:()Landroid/os/Parcel; // method@0ba8
+      0a291e: 0c01                                   |0007: move-result-object v1
+      0a2920: 1a02 6c61                              |0008: const-string v2, "com.amazon.android.server.am.IAmazonActivityManager" // string@616c
+      0a2924: e920 8900 2000                         |000a: invoke-virtual-quick {v0, v2}, [0089] // vtable #0089
+[new] 0a2924: 6e20 ca0b 2000                         |000a: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeInterfaceToken:(Ljava/lang/String;)V // method@0bca
+      0a292a: 3806 0700                              |000d: if-eqz v6, 0014 // +0007
+      0a292e: 7210 9e00 0600                         |000f: invoke-interface {v6}, Lamazon/app/IAmazonActivitySwitchObserver;.asBinder:()Landroid/os/IBinder; // method@009e
+      0a2934: 0c02                                   |0012: move-result-object v2
+      0a2936: 2802                                   |0013: goto 0015 // +0002
+      0a2938: 1202                                   |0014: const/4 v2, #int 0 // #0
+      0a293a: e920 a100 2000                         |0015: invoke-virtual-quick {v0, v2}, [00a1] // vtable #00a1
+[new] 0a293a: 6e20 d70b 2000                         |0015: invoke-virtual {v0, v2}, Landroid/os/Parcel;.writeStrongBinder:(Landroid/os/IBinder;)V // method@0bd7
+      0a2940: e552 0800                              |0018: iget-object-quick v2, v5, [obj+0008]
+[new] 0a2940: 5452 5f0e                              |0018: iget-object v2, v5, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub$Proxy;.mRemote:Landroid/os/IBinder; // field@0e5f
+      0a2944: 1263                                   |001a: const/4 v3, #int 6 // #6
+      0a2946: 1204                                   |001b: const/4 v4, #int 0 // #0
+      0a2948: 7254 840b 3210                         |001c: invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;.transact:(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z // method@0b84
+      0a294e: e910 3f00 0100                         |001f: invoke-virtual-quick {v1}, [003f] // vtable #003f
+[new] 0a294e: 6e10 af0b 0100                         |001f: invoke-virtual {v1}, Landroid/os/Parcel;.readException:()V // method@0baf
+      0a2954: e910 6700 0100                         |0022: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2954: 6e10 bd0b 0100                         |0022: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a295a: e910 6700 0000                         |0025: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a295a: 6e10 bd0b 0000                         |0025: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2960: 0000                                   |0028: nop // spacer
+      0a2962: 7300                                   |0029: return-void-no-barrier
+[new] 0a2962: 0e00                                   |0029: return-void
+      0a2964: 0d02                                   |002a: move-exception v2
+      0a2966: e910 6700 0100                         |002b: invoke-virtual-quick {v1}, [0067] // vtable #0067
+[new] 0a2966: 6e10 bd0b 0100                         |002b: invoke-virtual {v1}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a296c: e910 6700 0000                         |002e: invoke-virtual-quick {v0}, [0067] // vtable #0067
+[new] 0a296c: 6e10 bd0b 0000                         |002e: invoke-virtual {v0}, Landroid/os/Parcel;.recycle:()V // method@0bbd
+      0a2972: 2702                                   |0031: throw v2

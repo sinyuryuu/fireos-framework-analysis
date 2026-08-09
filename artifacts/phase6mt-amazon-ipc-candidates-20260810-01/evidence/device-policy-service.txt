@@ -1,0 +1,173 @@
+  class #401: AmazonDevicePolicyManagerService.BinderService ('Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;')
+   access=0010 (FINAL)
+   source_file=AmazonDevicePolicyManagerService.java, class_data_off=243f7b (2375547)
+   static_fields=0, instance_fields=1, direct_methods=5, virtual_methods=3
+   direct_method #5253: <init> (Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;)V
+    access=10000 (CONSTRUCTOR)
+    codeOff=3bee0 (245472)
+    quickening_size=0 (0)
+      03bee4: 5b01 4a08                              |0000: iput-object v1, v0, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.this$0:Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService; // field@084a
+      03bee8: 7010 a014 0000                         |0002: invoke-direct {v0}, Lcom/amazon/android/server/devicepolicy/IAmazonDevicePolicyManager$Stub;.<init>:()V // method@14a0
+      03beee: 0e00                                   |0005: return-void
+   direct_method #5254: checkPermission (Ljava/lang/String;Ljava/lang/String;)V
+    access=0012 (PRIVATE FINAL)
+    codeOff=3bef0 (245488)
+    quickening_size=0 (0)
+      03bef4: 7100 f00a 0000                         |0000: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      03befa: 0a00                                   |0003: move-result v0
+      03befc: 1301 e803                              |0004: const/16 v1, #int 1000 // #3e8
+      03bf00: 3210 2c00                              |0006: if-eq v0, v1, 0032 // +002c
+      03bf04: 3800 2a00                              |0008: if-eqz v0, 0032 // +002a
+      03bf08: 12f1                                   |000a: const/4 v1, #int -1 // #ff
+      03bf0a: 1212                                   |000b: const/4 v2, #int 1 // #1
+      03bf0c: 7140 8d01 0521                         |000c: invoke-static {v5, v0, v1, v2}, Landroid/app/ActivityManager;.checkComponentPermission:(Ljava/lang/String;IIZ)I // method@018d
+      03bf12: 0a01                                   |000f: move-result v1
+      03bf14: 3901 0300                              |0010: if-nez v1, 0013 // +0003
+      03bf18: 2820                                   |0012: goto 0032 // +0020
+      03bf1a: 2201 7b12                              |0013: new-instance v1, Ljava/lang/SecurityException; // type@127b
+      03bf1e: 2202 8112                              |0015: new-instance v2, Ljava/lang/StringBuilder; // type@1281
+      03bf22: 7010 4a7a 0200                         |0017: invoke-direct {v2}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      03bf28: 1a03 d950                              |001a: const-string v3, "You need " // string@50d9
+      03bf2c: 6e20 557a 3200                         |001c: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03bf32: 6e20 557a 5200                         |001f: invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03bf38: 1a03 0903                              |0022: const-string v3, " to: " // string@0309
+      03bf3c: 6e20 557a 3200                         |0024: invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03bf42: 6e20 557a 6200                         |0027: invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03bf48: 6e10 5e7a 0200                         |002a: invoke-virtual {v2}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      03bf4e: 0c02                                   |002d: move-result-object v2
+      03bf50: 7020 007a 2100                         |002e: invoke-direct {v1, v2}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      03bf56: 2701                                   |0031: throw v1
+      03bf58: 0e00                                   |0032: return-void
+   direct_method #5257: isAmazonRestriction (Ljava/lang/String;)Z
+    access=0002 (PRIVATE)
+    codeOff=3bd96 (245142)
+    quickening_size=0 (0)
+      03bd9a: 6200 1000                              |0000: sget-object v0, Lamazon/app/admin/AmazonDevicePolicyManagerImpl;.AMAZON_RESTRICTIONS:Ljava/util/Map; // field@0010
+      03bd9e: 7220 d27c 2000                         |0002: invoke-interface {v0, v2}, Ljava/util/Map;.containsKey:(Ljava/lang/Object;)Z // method@7cd2
+      03bda4: 0a00                                   |0005: move-result v0
+      03bda6: 0f00                                   |0006: return v0
+   direct_method #5258: makeJournaledFileTmp (I)Lcom/android/internal/util/JournaledFile;
+    access=0002 (PRIVATE)
+    codeOff=3be72 (245362)
+    quickening_size=0 (0)
+      03be76: 3907 0500                              |0000: if-nez v7, 0005 // +0005
+      03be7a: 1a00 bf06                              |0002: const-string v0, "/data/system/device_policies_tmp.xml" // string@06bf
+      03be7e: 2810                                   |0004: goto 0014 // +0010
+      03be80: 2200 2b12                              |0005: new-instance v0, Ljava/io/File; // type@122b
+      03be84: 7110 1f0b 0700                         |0007: invoke-static {v7}, Landroid/os/Environment;.getUserSystemDirectory:(I)Ljava/io/File; // method@0b1f
+      03be8a: 0c01                                   |000a: move-result-object v1
+      03be8c: 1a02 d261                              |000b: const-string v2, "device_policies_tmp.xml" // string@61d2
+      03be90: 7030 6b78 1002                         |000d: invoke-direct {v0, v1, v2}, Ljava/io/File;.<init>:(Ljava/io/File;Ljava/lang/String;)V // method@786b
+      03be96: 6e10 7778 0000                         |0010: invoke-virtual {v0}, Ljava/io/File;.getAbsolutePath:()Ljava/lang/String; // method@7877
+      03be9c: 0c00                                   |0013: move-result-object v0
+      03be9e: 2201 7f08                              |0014: new-instance v1, Lcom/android/internal/util/JournaledFile; // type@087f
+      03bea2: 2202 2b12                              |0016: new-instance v2, Ljava/io/File; // type@122b
+      03bea6: 7020 6c78 0200                         |0018: invoke-direct {v2, v0}, Ljava/io/File;.<init>:(Ljava/lang/String;)V // method@786c
+      03beac: 2203 2b12                              |001b: new-instance v3, Ljava/io/File; // type@122b
+      03beb0: 2204 8112                              |001d: new-instance v4, Ljava/lang/StringBuilder; // type@1281
+      03beb4: 7010 4a7a 0400                         |001f: invoke-direct {v4}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      03beba: 6e20 557a 0400                         |0022: invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03bec0: 1a05 8e06                              |0025: const-string v5, ".tmp" // string@068e
+      03bec4: 6e20 557a 5400                         |0027: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03beca: 6e10 5e7a 0400                         |002a: invoke-virtual {v4}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      03bed0: 0c04                                   |002d: move-result-object v4
+      03bed2: 7020 6c78 4300                         |002e: invoke-direct {v3, v4}, Ljava/io/File;.<init>:(Ljava/lang/String;)V // method@786c
+      03bed8: 7030 de32 2103                         |0031: invoke-direct {v1, v2, v3}, Lcom/android/internal/util/JournaledFile;.<init>:(Ljava/io/File;Ljava/io/File;)V // method@32de
+      03bede: 1101                                   |0034: return-object v1
+   direct_method #5260: setUserRestrictionForUser (Landroid/content/ComponentName;Ljava/lang/String;ZI)V
+    access=0002 (PRIVATE)
+    codeOff=3bf76 (245622)
+    quickening_size=0 (0)
+      03bf7a: 7020 8914 7500                         |0000: invoke-direct {v5, v7}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.isAmazonRestriction:(Ljava/lang/String;)Z // method@1489
+      03bf80: 0a00                                   |0003: move-result v0
+      03bf82: 3900 1100                              |0004: if-nez v0, 0015 // +0011
+      03bf86: 5450 4a08                              |0006: iget-object v0, v5, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.this$0:Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService; // field@084a
+      03bf8a: 7110 8e14 0000                         |0008: invoke-static {v0}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;.access$000:(Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;)Lcom/android/server/devicepolicy/DevicePolicyManagerService; // method@148e
+      03bf90: 0c00                                   |000b: move-result-object v0
+      03bf92: 2201 4002                              |000c: new-instance v1, Landroid/os/UserHandle; // type@0240
+      03bf96: 7020 590c 9100                         |000e: invoke-direct {v1, v9}, Landroid/os/UserHandle;.<init>:(I)V // method@0c59
+      03bf9c: 6e51 1536 6087                         |0011: invoke-virtual {v0, v6, v7, v8, v1}, Lcom/android/server/devicepolicy/DevicePolicyManagerService;.setUserRestrictionForUser:(Landroid/content/ComponentName;Ljava/lang/String;ZLandroid/os/UserHandle;)V // method@3615
+      03bfa2: 2826                                   |0014: goto 003a // +0026
+      03bfa4: 6200 1000                              |0015: sget-object v0, Lamazon/app/admin/AmazonDevicePolicyManagerImpl;.AMAZON_RESTRICTIONS:Ljava/util/Map; // field@0010
+      03bfa8: 7220 d77c 7000                         |0017: invoke-interface {v0, v7}, Ljava/util/Map;.get:(Ljava/lang/Object;)Ljava/lang/Object; // method@7cd7
+      03bfae: 0c00                                   |001a: move-result-object v0
+      03bfb0: 1f00 7f12                              |001b: check-cast v0, Ljava/lang/String; // type@127f
+      03bfb4: 3800 0700                              |001d: if-eqz v0, 0024 // +0007
+      03bfb8: 1a01 559e                              |001f: const-string v1, "update user restrictions" // string@9e55
+      03bfbc: 7030 8614 0501                         |0021: invoke-direct {v5, v0, v1}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.checkPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@1486
+      03bfc2: 7100 ed0a 0000                         |0024: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@0aed
+      03bfc8: 0b01                                   |0027: move-result-wide v1
+      03bfca: 5453 4a08                              |0028: iget-object v3, v5, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.this$0:Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService; // field@084a
+      03bfce: 7110 8f14 0300                         |002a: invoke-static {v3}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;.access$100:(Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService;)Landroid/os/UserManager; // method@148f
+      03bfd4: 0c03                                   |002d: move-result-object v3
+      03bfd6: 2204 4002                              |002e: new-instance v4, Landroid/os/UserHandle; // type@0240
+      03bfda: 7020 590c 9400                         |0030: invoke-direct {v4, v9}, Landroid/os/UserHandle;.<init>:(I)V // method@0c59
+      03bfe0: 6e40 670c 7348                         |0033: invoke-virtual {v3, v7, v8, v4}, Landroid/os/UserManager;.setUserRestriction:(Ljava/lang/String;ZLandroid/os/UserHandle;)V // method@0c67
+      03bfe6: 7120 f30a 2100                         |0036: invoke-static {v1, v2}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      03bfec: 0000                                   |0039: nop // spacer
+[new] 03bfec: 0000                                   |0039: nop // spacer
+      03bfee: 0e00                                   |003a: return-void
+      03bff0: 0d03                                   |003b: move-exception v3
+      03bff2: 7120 f30a 2100                         |003c: invoke-static {v1, v2}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      03bff8: 2703                                   |003f: throw v3
+   virtual_method #5255: clearRestrictionForUser (Landroid/content/ComponentName;Ljava/lang/String;I)V
+    access=0001 (PUBLIC)
+    codeOff=3bf5a (245594)
+    quickening_size=0 (0)
+      03bf5e: 1200                                   |0000: const/4 v0, #int 0 // #0
+      03bf60: 7054 8c14 2103                         |0001: invoke-direct {v1, v2, v3, v0, v4}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.setUserRestrictionForUser:(Landroid/content/ComponentName;Ljava/lang/String;ZI)V // method@148c
+      03bf66: 0e00                                   |0004: return-void
+   virtual_method #5256: getBackedUpPoliciesFile ()[B
+    access=0001 (PUBLIC)
+    codeOff=3bda8 (245160)
+    quickening_size=0 (0)
+      03bdac: 1a00 6f56                              |0000: const-string v0, "android.permission.MANAGE_USERS" // string@566f
+      03bdb0: 1a01 f23e                              |0002: const-string v1, "Need to have MANAGE_USERS permission in Manifest" // string@3ef2
+      03bdb4: 7030 8614 0901                         |0004: invoke-direct {v9, v0, v1}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.checkPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@1486
+      03bdba: 7100 5c0c 0000                         |0007: invoke-static {}, Landroid/os/UserHandle;.getCallingUserId:()I // method@0c5c
+      03bdc0: 0a00                                   |000a: move-result v0
+      03bdc2: 7020 8a14 0900                         |000b: invoke-direct {v9, v0}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.makeJournaledFileTmp:(I)Lcom/android/internal/util/JournaledFile; // method@148a
+      03bdc8: 0c01                                   |000e: move-result-object v1
+      03bdca: 6e10 df32 0100                         |000f: invoke-virtual {v1}, Lcom/android/internal/util/JournaledFile;.chooseForRead:()Ljava/io/File; // method@32df
+      03bdd0: 0c02                                   |0012: move-result-object v2
+      03bdd2: 1203                                   |0013: const/4 v3, #int 0 // #0
+      03bdd4: 0734                                   |0014: move-object v4, v3
+      03bdd6: 2205 2712                              |0015: new-instance v5, Ljava/io/DataInputStream; // type@1227
+      03bdda: 2206 1f12                              |0017: new-instance v6, Ljava/io/BufferedInputStream; // type@121f
+      03bdde: 2207 2d12                              |0019: new-instance v7, Ljava/io/FileInputStream; // type@122d
+      03bde2: 7020 8b78 2700                         |001b: invoke-direct {v7, v2}, Ljava/io/FileInputStream;.<init>:(Ljava/io/File;)V // method@788b
+      03bde8: 7020 2a78 7600                         |001e: invoke-direct {v6, v7}, Ljava/io/BufferedInputStream;.<init>:(Ljava/io/InputStream;)V // method@782a
+      03bdee: 7020 4b78 6500                         |0021: invoke-direct {v5, v6}, Ljava/io/DataInputStream;.<init>:(Ljava/io/InputStream;)V // method@784b
+      03bdf4: 0754                                   |0024: move-object v4, v5
+      03bdf6: 6e10 4c78 0400                         |0025: invoke-virtual {v4}, Ljava/io/DataInputStream;.available:()I // method@784c
+      03bdfc: 0a05                                   |0028: move-result v5
+      03bdfe: 2356 a413                              |0029: new-array v6, v5, [B // type@13a4
+      03be02: 6e20 5078 6400                         |002b: invoke-virtual {v4, v6}, Ljava/io/DataInputStream;.readFully:([B)V // method@7850
+      03be08: 6e10 4d78 0400                         |002e: invoke-virtual {v4}, Ljava/io/DataInputStream;.close:()V // method@784d
+      03be0e: 1a07 fc0b                              |0031: const-string v7, "AmznDevicePolicyManager" // string@0bfc
+      03be12: 7120 9614 7200                         |0033: invoke-static {v2, v7}, Lcom/amazon/android/server/devicepolicy/DevicePolicyMetrics;.recordMetricsIfContainsWhiteListedTag:(Ljava/io/File;Ljava/lang/String;)V // method@1496
+      03be18: 1106                                   |0036: return-object v6
+      03be1a: 0d05                                   |0037: move-exception v5
+      03be1c: 1a06 fc0b                              |0038: const-string v6, "AmznDevicePolicyManager" // string@0bfc
+      03be20: 1a07 7e1b                              |003a: const-string v7, "IOException: Unable to read from file." // string@1b7e
+      03be24: 7130 060d 7605                         |003c: invoke-static {v6, v7, v5}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I // method@0d06
+      03be2a: 3804 0f00                              |003f: if-eqz v4, 004e // +000f
+      03be2e: 6e10 4d78 0400                         |0041: invoke-virtual {v4}, Ljava/io/DataInputStream;.close:()V // method@784d
+      03be34: 280a                                   |0044: goto 004e // +000a
+      03be36: 0d06                                   |0045: move-exception v6
+      03be38: 1a07 fc0b                              |0046: const-string v7, "AmznDevicePolicyManager" // string@0bfc
+      03be3c: 1a08 7d1b                              |0048: const-string v8, "IOException: Unable to close stream." // string@1b7d
+      03be40: 7130 060d 8706                         |004a: invoke-static {v7, v8, v6}, Landroid/util/Log;.e:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I // method@0d06
+      03be46: 2802                                   |004d: goto 004f // +0002
+      03be48: 0000                                   |004e: nop // spacer
+[new] 03be48: 0000                                   |004e: nop // spacer
+      03be4a: 1a06 fc0b                              |004f: const-string v6, "AmznDevicePolicyManager" // string@0bfc
+      03be4e: 7110 9414 0600                         |0051: invoke-static {v6}, Lcom/amazon/android/server/devicepolicy/DevicePolicyMetrics;.recordFailure:(Ljava/lang/String;)V // method@1494
+      03be54: 1103                                   |0054: return-object v3
+   virtual_method #5259: setRestrictionForUser (Landroid/content/ComponentName;Ljava/lang/String;I)V
+    access=0001 (PUBLIC)
+    codeOff=3bf68 (245608)
+    quickening_size=0 (0)
+      03bf6c: 1210                                   |0000: const/4 v0, #int 1 // #1
+      03bf6e: 7054 8c14 2103                         |0001: invoke-direct {v1, v2, v3, v0, v4}, Lcom/amazon/android/server/devicepolicy/AmazonDevicePolicyManagerService$BinderService;.setUserRestrictionForUser:(Landroid/content/ComponentName;Ljava/lang/String;ZI)V // method@148c
+      03bf74: 0e00                                   |0004: return-void

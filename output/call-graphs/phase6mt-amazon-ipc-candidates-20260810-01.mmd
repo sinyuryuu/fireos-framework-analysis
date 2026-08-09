@@ -1,0 +1,7 @@
+flowchart TD
+  P["Amazon AIDL Stub.Proxy"] -->|"IBinder.transact(code)"| E["published Amazon service"]
+  E --> B["BinderService method"]
+  B --> G["permission / caller identity markers"]
+  B --> S["bounded sink or state access"]
+  B -.-> H["No direct HOME selector in candidate slices"]
+  B -.-> U["runtime handle, SELinux, native and UID reachability unresolved"]

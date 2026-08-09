@@ -1,0 +1,171 @@
+  class #651: AmazonPackageManagerService.BinderService ('Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;')
+   access=0010 (FINAL)
+   source_file=AmazonPackageManagerService.java, class_data_off=248039 (2392121)
+   static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=11
+   direct_method #7540: <init> (Lcom/amazon/android/service/pm/AmazonPackageManagerService;)V
+    access=10000 (CONSTRUCTOR)
+    codeOff=69876 (432246)
+    quickening_size=0 (0)
+      06987a: 5b01 8c0f                              |0000: iput-object v1, v0, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      06987e: 7010 cb1d 0000                         |0002: invoke-direct {v0}, Lcom/amazon/android/service/pm/IAmazonPackageManager$Stub;.<init>:()V // method@1dcb
+      069884: 0e00                                   |0005: return-void
+   virtual_method #7541: deregisterProxyReceiver (Landroid/content/Intent;)Z
+    access=0001 (PUBLIC)
+    codeOff=69782 (432002)
+    quickening_size=0 (0)
+      069786: 7100 e01d 0000                         |0000: invoke-static {}, Lcom/amazon/android/service/pm/ProxyReceiver;.getInstance:()Lcom/amazon/android/service/pm/ProxyReceiver; // method@1de0
+      06978c: 0c00                                   |0003: move-result-object v0
+      06978e: 5421 8c0f                              |0004: iget-object v1, v2, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      069792: 7110 821d 0100                         |0006: invoke-static {v1}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$000:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)Landroid/content/Context; // method@1d82
+      069798: 0c01                                   |0009: move-result-object v1
+      06979a: 6e30 df1d 3001                         |000a: invoke-virtual {v0, v3, v1}, Lcom/amazon/android/service/pm/ProxyReceiver;.deregisterProxyReceiver:(Landroid/content/Intent;Landroid/content/Context;)Z // method@1ddf
+      0697a0: 0a00                                   |000d: move-result v0
+      0697a2: 0f00                                   |000e: return v0
+   virtual_method #7542: getAmazonFlagsForUser (Ljava/lang/String;I)I
+    access=0001 (PUBLIC)
+    codeOff=69868 (432232)
+    quickening_size=0 (0)
+      06986c: 7120 5e1d 3200                         |0000: invoke-static {v2, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.getAmazonFlagsForUser:(Ljava/lang/String;I)I // method@1d5e
+      069872: 0a00                                   |0003: move-result v0
+      069874: 0f00                                   |0004: return v0
+   virtual_method #7543: getConfigurationHelper ()Lcom/amazon/android/service/pm/ConfigurationHelper;
+    access=0001 (PUBLIC)
+    codeOff=697fe (432126)
+    quickening_size=0 (0)
+      069802: 7100 a21d 0000                         |0000: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getDisplayMetricsWidthPixels:()I // method@1da2
+      069808: 0a0b                                   |0003: move-result v11
+      06980a: 7100 a11d 0000                         |0004: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getDisplayMetricsHeightPixels:()I // method@1da1
+      069810: 0a0c                                   |0007: move-result v12
+      069812: 82b0                                   |0008: int-to-float v0, v11
+      069814: 82c1                                   |0009: int-to-float v1, v12
+      069816: a90d 0001                              |000a: div-float v13, v0, v1
+      06981a: 7100 a81d 0000                         |000c: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getSurfaceRotation:()I // method@1da8
+      069820: 0a0e                                   |000f: move-result v14
+      069822: 220f 4405                              |0010: new-instance v15, Lcom/amazon/android/service/pm/ConfigurationHelper; // type@0544
+      069826: 7100 a01d 0000                         |0012: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getDensityDpi:()I // method@1da0
+      06982c: 0a01                                   |0015: move-result v1
+      06982e: 7100 9f1d 0000                         |0016: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getDensity:()F // method@1d9f
+      069834: 0a02                                   |0019: move-result v2
+      069836: 7100 a51d 0000                         |001a: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getScreenLayout:()I // method@1da5
+      06983c: 0a03                                   |001d: move-result v3
+      06983e: 7100 a71d 0000                         |001e: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getSmallestScreenWidthDp:()I // method@1da7
+      069844: 0a04                                   |0021: move-result v4
+      069846: 7100 a61d 0000                         |0022: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getScreenWidthDp:()I // method@1da6
+      06984c: 0a05                                   |0025: move-result v5
+      06984e: 7100 a41d 0000                         |0026: invoke-static {}, Lcom/amazon/android/service/pm/AppPackageHelper;.getScreenHeightDp:()I // method@1da4
+      069854: 0a06                                   |0029: move-result v6
+      069856: 07f0                                   |002a: move-object v0, v15
+      069858: 01b7                                   |002b: move v7, v11
+      06985a: 01c8                                   |002c: move v8, v12
+      06985c: 01d9                                   |002d: move v9, v13
+      06985e: 01ea                                   |002e: move v10, v14
+      069860: 760b b11d 0000                         |002f: invoke-direct/range {v0, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10}, Lcom/amazon/android/service/pm/ConfigurationHelper;.<init>:(IFIIIIIIFI)V // method@1db1
+      069866: 110f                                   |0032: return-object v15
+   virtual_method #7544: isFtvSpecApp (Ljava/lang/String;)Z
+    access=0001 (PUBLIC)
+    codeOff=697a4 (432036)
+    quickening_size=0 (0)
+      0697a8: 7110 a91d 0200                         |0000: invoke-static {v2}, Lcom/amazon/android/service/pm/AppPackageHelper;.isFtvSpecApp:(Ljava/lang/String;)Z // method@1da9
+      0697ae: 0a00                                   |0003: move-result v0
+      0697b0: 0f00                                   |0004: return v0
+   virtual_method #7545: isPreInstalledAppWithFtvSpec (Ljava/lang/String;)Z
+    access=0001 (PUBLIC)
+    codeOff=697b2 (432050)
+    quickening_size=0 (0)
+      0697b6: 7110 aa1d 0200                         |0000: invoke-static {v2}, Lcom/amazon/android/service/pm/AppPackageHelper;.isPreInstalledAppWithFtvSpec:(Ljava/lang/String;)Z // method@1daa
+      0697bc: 0a00                                   |0003: move-result v0
+      0697be: 0f00                                   |0004: return v0
+   virtual_method #7546: registerProxyReceiver (Landroid/content/Intent;Landroid/app/PendingIntent;)Z
+    access=0001 (PUBLIC)
+    codeOff=697c0 (432064)
+    quickening_size=0 (0)
+      0697c4: 7100 e01d 0000                         |0000: invoke-static {}, Lcom/amazon/android/service/pm/ProxyReceiver;.getInstance:()Lcom/amazon/android/service/pm/ProxyReceiver; // method@1de0
+      0697ca: 0c00                                   |0003: move-result-object v0
+      0697cc: 5421 8c0f                              |0004: iget-object v1, v2, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      0697d0: 7110 821d 0100                         |0006: invoke-static {v1}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$000:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)Landroid/content/Context; // method@1d82
+      0697d6: 0c01                                   |0009: move-result-object v1
+      0697d8: 6e40 e11d 3014                         |000a: invoke-virtual {v0, v3, v4, v1}, Lcom/amazon/android/service/pm/ProxyReceiver;.registerProxyReceiver:(Landroid/content/Intent;Landroid/app/PendingIntent;Landroid/content/Context;)Z // method@1de1
+      0697de: 0a00                                   |000d: move-result v0
+      0697e0: 0f00                                   |000e: return v0
+   virtual_method #7547: removeAmazonFlagsForUser (Ljava/util/List;II)V
+    access=0001 (PUBLIC)
+    codeOff=69886 (432262)
+    quickening_size=0 (0)
+      06988a: 5420 8c0f                              |0000: iget-object v0, v2, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      06988e: 7110 821d 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$000:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)Landroid/content/Context; // method@1d82
+      069894: 0c00                                   |0005: move-result-object v0
+      069896: 1a01 ac55                              |0006: const-string v1, "amazon.permission.ADD_RM_PKG_METADATA" // string@55ac
+      06989a: 6e20 3302 1000                         |0008: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      0698a0: 0a00                                   |000b: move-result v0
+      0698a2: 3800 0c00                              |000c: if-eqz v0, 0018 // +000c
+      0698a6: 7100 831d 0000                         |000e: invoke-static {}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$100:()Ljava/lang/String; // method@1d83
+      0698ac: 0c00                                   |0011: move-result-object v0
+      0698ae: 1a01 6a42                              |0012: const-string v1, "Permission denied to remove amazon flags." // string@426a
+      0698b2: 7120 1c0d 1000                         |0014: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0698b8: 0e00                                   |0017: return-void
+      0698ba: 7130 641d 4305                         |0018: invoke-static {v3, v4, v5}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.removeAmazonFlagsForUser:(Ljava/util/List;II)V // method@1d64
+      0698c0: 0e00                                   |001b: return-void
+   virtual_method #7548: removeAmazonMetadataForUser (Ljava/lang/String;Ljava/util/List;I)V
+    access=0001 (PUBLIC)
+    codeOff=698c2 (432322)
+    quickening_size=0 (0)
+      0698c6: 5420 8c0f                              |0000: iget-object v0, v2, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      0698ca: 7110 821d 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$000:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)Landroid/content/Context; // method@1d82
+      0698d0: 0c00                                   |0005: move-result-object v0
+      0698d2: 1a01 ac55                              |0006: const-string v1, "amazon.permission.ADD_RM_PKG_METADATA" // string@55ac
+      0698d6: 6e20 3302 1000                         |0008: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      0698dc: 0a00                                   |000b: move-result v0
+      0698de: 3800 0c00                              |000c: if-eqz v0, 0018 // +000c
+      0698e2: 7100 831d 0000                         |000e: invoke-static {}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$100:()Ljava/lang/String; // method@1d83
+      0698e8: 0c00                                   |0011: move-result-object v0
+      0698ea: 1a01 6c42                              |0012: const-string v1, "Permission denied." // string@426c
+      0698ee: 7120 1c0d 1000                         |0014: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0698f4: 0e00                                   |0017: return-void
+      0698f6: 7130 651d 4305                         |0018: invoke-static {v3, v4, v5}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.removeAmazonMetadataForUser:(Ljava/lang/String;Ljava/util/List;I)V // method@1d65
+      0698fc: 0e00                                   |001b: return-void
+   virtual_method #7549: setAmazonFlagsForUser (Ljava/util/List;II)V
+    access=0001 (PUBLIC)
+    codeOff=698fe (432382)
+    quickening_size=0 (0)
+      069902: 5420 8c0f                              |0000: iget-object v0, v2, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      069906: 7110 821d 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$000:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)Landroid/content/Context; // method@1d82
+      06990c: 0c00                                   |0005: move-result-object v0
+      06990e: 1a01 ac55                              |0006: const-string v1, "amazon.permission.ADD_RM_PKG_METADATA" // string@55ac
+      069912: 6e20 3302 1000                         |0008: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      069918: 0a00                                   |000b: move-result v0
+      06991a: 3800 0c00                              |000c: if-eqz v0, 0018 // +000c
+      06991e: 7100 831d 0000                         |000e: invoke-static {}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$100:()Ljava/lang/String; // method@1d83
+      069924: 0c00                                   |0011: move-result-object v0
+      069926: 1a01 6b42                              |0012: const-string v1, "Permission denied to set amazon flags." // string@426b
+      06992a: 7120 1c0d 1000                         |0014: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      069930: 0e00                                   |0017: return-void
+      069932: 7130 681d 4305                         |0018: invoke-static {v3, v4, v5}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setAmazonFlagsForUser:(Ljava/util/List;II)V // method@1d68
+      069938: 0e00                                   |001b: return-void
+   virtual_method #7550: setAmazonMetadataForUser (Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V
+    access=0001 (PUBLIC)
+    codeOff=6993a (432442)
+    quickening_size=0 (0)
+      06993e: 5420 8c0f                              |0000: iget-object v0, v2, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      069942: 7110 821d 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$000:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)Landroid/content/Context; // method@1d82
+      069948: 0c00                                   |0005: move-result-object v0
+      06994a: 1a01 ac55                              |0006: const-string v1, "amazon.permission.ADD_RM_PKG_METADATA" // string@55ac
+      06994e: 6e20 3302 1000                         |0008: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      069954: 0a00                                   |000b: move-result v0
+      069956: 3800 0c00                              |000c: if-eqz v0, 0018 // +000c
+      06995a: 7100 831d 0000                         |000e: invoke-static {}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$100:()Ljava/lang/String; // method@1d83
+      069960: 0c00                                   |0011: move-result-object v0
+      069962: 1a01 6c42                              |0012: const-string v1, "Permission denied." // string@426c
+      069966: 7120 1c0d 1000                         |0014: invoke-static {v0, v1}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      06996c: 0e00                                   |0017: return-void
+      06996e: 7140 691d 4365                         |0018: invoke-static {v3, v4, v5, v6}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setAmazonMetadataForUser:(Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V // method@1d69
+      069974: 0e00                                   |001b: return-void
+   virtual_method #7551: shouldAllowMicAccess (Ljava/lang/String;)Z
+    access=0001 (PUBLIC)
+    codeOff=697e2 (432098)
+    quickening_size=0 (0)
+      0697e6: 5410 8c0f                              |0000: iget-object v0, v1, Lcom/amazon/android/service/pm/AmazonPackageManagerService$BinderService;.this$0:Lcom/amazon/android/service/pm/AmazonPackageManagerService; // field@0f8c
+      0697ea: 7110 841d 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.access$200:(Lcom/amazon/android/service/pm/AmazonPackageManagerService;)Lcom/amazon/android/service/audio/AudioRecordPermissionEnforcer; // method@1d84
+      0697f0: 0c00                                   |0005: move-result-object v0
+      0697f2: 6e20 021b 2000                         |0006: invoke-virtual {v0, v2}, Lcom/amazon/android/service/audio/AudioRecordPermissionEnforcer;.shouldAllowMicAccess:(Ljava/lang/String;)Z // method@1b02
+      0697f8: 0a00                                   |0009: move-result v0
+      0697fa: 0f00                                   |000a: return v0

@@ -1,0 +1,72 @@
+{
+  "binder_or_service_call": false,
+  "candidate_count": 5,
+  "candidate_summaries": [
+    {
+      "candidate": "accessibility",
+      "interface": "IAmazonAccessibilityManager",
+      "proxy_range": "394117-394235",
+      "proxy_remote_method_count": 3,
+      "publication_range": "35427-35435",
+      "published_service": "amazonaccessibilitymanager",
+      "service_method_count": 3,
+      "service_range": "35287-35344",
+      "unmatched_proxy_methods": []
+    },
+    {
+      "candidate": "activity",
+      "interface": "IAmazonActivityManager",
+      "proxy_range": "394353-394854",
+      "proxy_remote_method_count": 14,
+      "publication_range": "41078-41084",
+      "published_service": "amazonactivitymanager",
+      "service_method_count": 18,
+      "service_range": "39645-40680",
+      "unmatched_proxy_methods": []
+    },
+    {
+      "candidate": "device-policy",
+      "interface": "IAmazonDevicePolicyManager",
+      "proxy_range": "397105-397251",
+      "proxy_remote_method_count": 3,
+      "publication_range": "46142-46157",
+      "published_service": "amazondevicepolicymanager",
+      "service_method_count": 7,
+      "service_range": "45935-46107",
+      "unmatched_proxy_methods": []
+    },
+    {
+      "candidate": "window",
+      "interface": "IAmazonWindowManager",
+      "proxy_range": "400006-400233",
+      "proxy_remote_method_count": 6,
+      "publication_range": "56240-56245",
+      "published_service": "amazonwindowmanager",
+      "service_method_count": 6,
+      "service_range": "56070-56178",
+      "unmatched_proxy_methods": []
+    },
+    {
+      "candidate": "package",
+      "interface": "IAmazonPackageManager",
+      "proxy_range": "402917-403367",
+      "proxy_remote_method_count": 11,
+      "publication_range": "96131-96137",
+      "published_service": "amazonpackagemanager",
+      "service_method_count": 11,
+      "service_range": "95866-96036",
+      "unmatched_proxy_methods": []
+    }
+  ],
+  "conclusion": "Five Amazon IPC proxy/publication surfaces are mapped to bounded BinderService methods; no candidate is proven to be a shell-accessible HOME or Fire Launcher state writer from this static corpus alone",
+  "device_contacted": false,
+  "generated_date": "2026-08-10",
+  "input_injection": false,
+  "ioctl": false,
+  "mutation": false,
+  "reboot": false,
+  "remote_method_count": 37,
+  "root_or_exploit": false,
+  "schema": "phase6mt-amazon-ipc-candidates-v1",
+  "scope": "host-only preserved disassembly audit"
+}

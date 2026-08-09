@@ -1,0 +1,10 @@
+flowchart TD
+  B["IAmazonPackageManager BinderService mutators"] -->|"permission + package list + userId"| F["AmazonApplicationFlags"]
+  F --> M["SparseArray<UserId, package flags/metadata>"]
+  F --> W["writeToFile()"]
+  W --> X["/data/system/amazon_package_flags.xml"]
+  X --> R["readFromFile() during init"]
+  F --> C1["PackageRecencyUtils.shouldSendBroadcast"]
+  F --> C2["GameModeHelper.isGamingApp: bit 2"]
+  F --> C3["AppCompatActivityManagerServiceCallback.isIncompatiblePackage: bit 1"]
+  F -.-> H["No direct HOME/preferred/Fire Launcher writer in bounded corpus"]

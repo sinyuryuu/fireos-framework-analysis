@@ -1,0 +1,6 @@
+      044a04: 7100 4616 0000                         |0000: invoke-static {}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.getSystemServiceName:()Ljava/lang/String; // method@1646
+      044a0a: 0c00                                   |0003: move-result-object v0
+      044a0c: 2201 3504                              |0004: new-instance v1, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService; // type@0435
+      044a10: 7020 3916 2100                         |0006: invoke-direct {v1, v2}, Lcom/amazon/android/server/wm/AmazonWindowManagerService$BinderService;.<init>:(Lcom/amazon/android/server/wm/AmazonWindowManagerService;)V // method@1639
+      044a16: 6e30 4816 0201                         |0009: invoke-virtual {v2, v0, v1}, Lcom/amazon/android/server/wm/AmazonWindowManagerService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@1648
+      044a1c: 0e00                                   |000c: return-void

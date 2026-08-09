@@ -1,0 +1,1036 @@
+  class #374: AmazonActivityManagerService.BinderService ('Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;')
+   access=0001 (PUBLIC)
+   source_file=AmazonActivityManagerService.java, class_data_off=2437e7 (2373607)
+   static_fields=0, instance_fields=1, direct_methods=2, virtual_methods=17
+   direct_method #4970: <init> (Lcom/amazon/android/server/am/AmazonActivityManagerService;)V
+    access=10001 (PUBLIC CONSTRUCTOR)
+    codeOff=3705e (225374)
+    quickening_size=0 (0)
+      037062: 5b01 8d07                              |0000: iput-object v1, v0, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037066: 7010 a313 0000                         |0002: invoke-direct {v0}, Lcom/amazon/android/server/am/IAmazonActivityManager$Stub;.<init>:()V // method@13a3
+      03706c: 0e00                                   |0005: return-void
+   direct_method #4984: packageLifetimeHintLocked (Ljava/lang/String;FZI)I
+    access=0002 (PRIVATE)
+    codeOff=36ca8 (224424)
+    quickening_size=0 (0)
+      036cac: 12f0                                   |0000: const/4 v0, #int -1 // #ff
+      036cae: 380a 1d01                              |0001: if-eqz v10, 011e // +011d
+      036cb2: 1201                                   |0003: const/4 v1, #int 0 // #0
+      036cb4: 2e01 0b01                              |0004: cmpg-float v1, v11, v1
+      036cb8: 3a01 1801                              |0006: if-ltz v1, 011e // +0118
+      036cbc: 1501 803f                              |0008: const/high16 v1, #int 1065353216 // #3f80
+      036cc0: 2d01 0b01                              |000a: cmpl-float v1, v11, v1
+      036cc4: 3c01 1201                              |000c: if-gtz v1, 011e // +0112
+      036cc8: 3b0d 0400                              |000e: if-gez v13, 0012 // +0004
+      036ccc: 2900 0e01                              |0010: goto/16 011e // +010e
+      036cd0: 5491 8d07                              |0012: iget-object v1, v9, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036cd4: 7110 8d13 0100                         |0014: invoke-static {v1}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      036cda: 0c01                                   |0017: move-result-object v1
+      036cdc: 6e10 5700 0100                         |0018: invoke-virtual {v1}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.getMLruProcessServiceStart:()I // method@0057
+      036ce2: 0a01                                   |001b: move-result v1
+      036ce4: 3c01 0c00                              |001c: if-gtz v1, 0028 // +000c
+      036ce8: 7100 8713 0000                         |001e: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036cee: 0c02                                   |0021: move-result-object v2
+      036cf0: 1a03 c888                              |0022: const-string v3, "packageLifetimeHint: LRU list invalid" // string@88c8
+      036cf4: 7120 210d 3200                         |0024: invoke-static {v2, v3}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036cfa: 0f00                                   |0027: return v0
+      036cfc: 1202                                   |0028: const/4 v2, #int 0 // #0
+      036cfe: 5493 8d07                              |0029: iget-object v3, v9, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036d02: 7110 8b13 0300                         |002b: invoke-static {v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+      036d08: 0c03                                   |002e: move-result-object v3
+      036d0a: 6e10 4002 0300                         |002f: invoke-virtual {v3}, Landroid/content/Context;.getPackageManager:()Landroid/content/pm/PackageManager; // method@0240
+      036d10: 0c03                                   |0032: move-result-object v3
+      036d12: 1304 0004                              |0033: const/16 v4, #int 1024 // #400
+      036d16: 6e30 bf02 a304                         |0035: invoke-virtual {v3, v10, v4}, Landroid/content/pm/PackageManager;.getApplicationInfo:(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo; // method@02bf
+      036d1c: 0c03                                   |0038: move-result-object v3
+      036d1e: 0732                                   |0039: move-object v2, v3
+      036d20: 0000                                   |003a: nop // spacer
+[new] 036d20: 0000                                   |003a: nop // spacer
+      036d22: 3902 1b00                              |003b: if-nez v2, 0056 // +001b
+      036d26: 7100 8713 0000                         |003d: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036d2c: 0c03                                   |0040: move-result-object v3
+      036d2e: 2204 8112                              |0041: new-instance v4, Ljava/lang/StringBuilder; // type@1281
+      036d32: 7010 4a7a 0400                         |0043: invoke-direct {v4}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036d38: 1a05 c788                              |0046: const-string v5, "packageLifetimeHint: ApplicationInfo not found for " // string@88c7
+      036d3c: 6e20 557a 5400                         |0048: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036d42: 6e20 557a a400                         |004b: invoke-virtual {v4, v10}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036d48: 6e10 5e7a 0400                         |004e: invoke-virtual {v4}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036d4e: 0c04                                   |0051: move-result-object v4
+      036d50: 7120 210d 4300                         |0052: invoke-static {v3, v4}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036d56: 0f00                                   |0055: return v0
+      036d58: 5493 8d07                              |0056: iget-object v3, v9, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036d5c: 7110 8d13 0300                         |0058: invoke-static {v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      036d62: 0c03                                   |005b: move-result-object v3
+      036d64: 5224 0e01                              |005c: iget v4, v2, Landroid/content/pm/ApplicationInfo;.uid:I // field@010e
+      036d68: 1215                                   |005e: const/4 v5, #int 1 // #1
+      036d6a: 6e40 5d00 a354                         |005f: invoke-virtual {v3, v10, v4, v5}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.getProcessRecordLocked:(Ljava/lang/String;IZ)Lamazon/internal/SystemJumpTable$ProcessRecord; // method@005d
+      036d70: 0c03                                   |0062: move-result-object v3
+      036d72: 3903 0c00                              |0063: if-nez v3, 006f // +000c
+      036d76: 7100 8713 0000                         |0065: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036d7c: 0c04                                   |0068: move-result-object v4
+      036d7e: 1a05 ca88                              |0069: const-string v5, "packageLifetimeHint: app not found. Is it alive?" // string@88ca
+      036d82: 7120 210d 5400                         |006b: invoke-static {v4, v5}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036d88: 0f00                                   |006e: return v0
+      036d8a: 5494 8d07                              |006f: iget-object v4, v9, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036d8e: 7110 8d13 0400                         |0071: invoke-static {v4}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      036d94: 0c04                                   |0074: move-result-object v4
+      036d96: 6e10 5800 0400                         |0075: invoke-virtual {v4}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.getMLruProcesses:()Ljava/util/ArrayList; // method@0058
+      036d9c: 0c04                                   |0078: move-result-object v4
+      036d9e: 6e10 bb00 0300                         |0079: invoke-virtual {v3}, Lamazon/internal/SystemJumpTable$ProcessRecord;.getRecord:()Ljava/lang/Object; // method@00bb
+      036da4: 0c05                                   |007c: move-result-object v5
+      036da6: 6e20 c77b 5400                         |007d: invoke-virtual {v4, v5}, Ljava/util/ArrayList;.lastIndexOf:(Ljava/lang/Object;)I // method@7bc7
+      036dac: 0a05                                   |0080: move-result v5
+      036dae: 3b05 2000                              |0081: if-gez v5, 00a1 // +0020
+      036db2: 7100 8713 0000                         |0083: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036db8: 0c06                                   |0086: move-result-object v6
+      036dba: 2207 8112                              |0087: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      036dbe: 7010 4a7a 0700                         |0089: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036dc4: 1a08 c688                              |008c: const-string v8, "packageLifetimeHint: " // string@88c6
+      036dc8: 6e20 557a 8700                         |008e: invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036dce: 6e20 547a 3700                         |0091: invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      036dd4: 1a08 9e02                              |0094: const-string v8, " not on LRU list" // string@029e
+      036dd8: 6e20 557a 8700                         |0096: invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036dde: 6e10 5e7a 0700                         |0099: invoke-virtual {v7}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036de4: 0c07                                   |009c: move-result-object v7
+      036de6: 7120 210d 7600                         |009d: invoke-static {v6, v7}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036dec: 0f00                                   |00a0: return v0
+      036dee: 3415 2000                              |00a1: if-lt v5, v1, 00c1 // +0020
+      036df2: 7100 8713 0000                         |00a3: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036df8: 0c06                                   |00a6: move-result-object v6
+      036dfa: 2207 8112                              |00a7: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      036dfe: 7010 4a7a 0700                         |00a9: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036e04: 1a08 c688                              |00ac: const-string v8, "packageLifetimeHint: " // string@88c6
+      036e08: 6e20 557a 8700                         |00ae: invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036e0e: 6e20 547a 3700                         |00b1: invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      036e14: 1a08 5402                              |00b4: const-string v8, " is active, cannot move" // string@0254
+      036e18: 6e20 557a 8700                         |00b6: invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036e1e: 6e10 5e7a 0700                         |00b9: invoke-virtual {v7}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036e24: 0c07                                   |00bc: move-result-object v7
+      036e26: 7120 210d 7600                         |00bd: invoke-static {v6, v7}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036e2c: 0f00                                   |00c0: return v0
+      036e2e: 0150                                   |00c1: move v0, v5
+      036e30: 380c 2200                              |00c2: if-eqz v12, 00e4 // +0022
+      036e34: d806 01ff                              |00c4: add-int/lit8 v6, v1, #int -1 // #ff
+      036e38: 9107 0605                              |00c6: sub-int v7, v6, v5
+      036e3c: 8277                                   |00c8: int-to-float v7, v7
+      036e3e: c8b7                                   |00c9: mul-float/2addr v7, v11
+      036e40: 7110 cd79 0700                         |00ca: invoke-static {v7}, Ljava/lang/Math;.round:(F)I // method@79cd
+      036e46: 0a07                                   |00cd: move-result v7
+      036e48: b057                                   |00ce: add-int/2addr v7, v5
+      036e4a: 3a07 1400                              |00cf: if-ltz v7, 00e3 // +0014
+      036e4e: 3757 1200                              |00d1: if-le v7, v5, 00e3 // +0012
+      036e52: 6e10 cc7b 0400                         |00d3: invoke-virtual {v4}, Ljava/util/ArrayList;.size:()I // method@7bcc
+      036e58: 0a00                                   |00d6: move-result v0
+      036e5a: 3507 0c00                              |00d7: if-ge v7, v0, 00e3 // +000c
+      036e5e: 6e20 c87b 5400                         |00d9: invoke-virtual {v4, v5}, Ljava/util/ArrayList;.remove:(I)Ljava/lang/Object; // method@7bc8
+      036e64: 6e10 bb00 0300                         |00dc: invoke-virtual {v3}, Lamazon/internal/SystemJumpTable$ProcessRecord;.getRecord:()Ljava/lang/Object; // method@00bb
+      036e6a: 0c00                                   |00df: move-result-object v0
+      036e6c: 6e30 bd7b 7400                         |00e0: invoke-virtual {v4, v7, v0}, Ljava/util/ArrayList;.add:(ILjava/lang/Object;)V // method@7bbd
+      036e72: 2820                                   |00e3: goto 0103 // +0020
+      036e74: 1206                                   |00e4: const/4 v6, #int 0 // #0
+      036e76: 9107 0506                              |00e5: sub-int v7, v5, v6
+      036e7a: 8277                                   |00e7: int-to-float v7, v7
+      036e7c: c8b7                                   |00e8: mul-float/2addr v7, v11
+      036e7e: 7110 cd79 0700                         |00e9: invoke-static {v7}, Ljava/lang/Math;.round:(F)I // method@79cd
+      036e84: 0a07                                   |00ec: move-result v7
+      036e86: 9107 0507                              |00ed: sub-int v7, v5, v7
+      036e8a: 3a07 1400                              |00ef: if-ltz v7, 0103 // +0014
+      036e8e: 3557 1200                              |00f1: if-ge v7, v5, 0103 // +0012
+      036e92: 6e10 cc7b 0400                         |00f3: invoke-virtual {v4}, Ljava/util/ArrayList;.size:()I // method@7bcc
+      036e98: 0a00                                   |00f6: move-result v0
+      036e9a: 3507 0c00                              |00f7: if-ge v7, v0, 0103 // +000c
+      036e9e: 6e20 c87b 5400                         |00f9: invoke-virtual {v4, v5}, Ljava/util/ArrayList;.remove:(I)Ljava/lang/Object; // method@7bc8
+      036ea4: 6e10 bb00 0300                         |00fc: invoke-virtual {v3}, Lamazon/internal/SystemJumpTable$ProcessRecord;.getRecord:()Ljava/lang/Object; // method@00bb
+      036eaa: 0c00                                   |00ff: move-result-object v0
+      036eac: 6e30 bd7b 7400                         |0100: invoke-virtual {v4, v7, v0}, Ljava/util/ArrayList;.add:(ILjava/lang/Object;)V // method@7bbd
+      036eb2: 0f07                                   |0103: return v7
+      036eb4: 0d03                                   |0104: move-exception v3
+      036eb6: 7100 8713 0000                         |0105: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036ebc: 0c04                                   |0108: move-result-object v4
+      036ebe: 2205 8112                              |0109: new-instance v5, Ljava/lang/StringBuilder; // type@1281
+      036ec2: 7010 4a7a 0500                         |010b: invoke-direct {v5}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036ec8: 1a06 c988                              |010e: const-string v6, "packageLifetimeHint: NameNotFoundException pkgName=" // string@88c9
+      036ecc: 6e20 557a 6500                         |0110: invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036ed2: 6e20 557a a500                         |0113: invoke-virtual {v5, v10}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036ed8: 6e10 5e7a 0500                         |0116: invoke-virtual {v5}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036ede: 0c05                                   |0119: move-result-object v5
+      036ee0: 7120 210d 5400                         |011a: invoke-static {v4, v5}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036ee6: 0f00                                   |011d: return v0
+      036ee8: 7100 8713 0000                         |011e: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036eee: 0c01                                   |0121: move-result-object v1
+      036ef0: 1a02 cb88                              |0122: const-string v2, "packageLifetimeHint: invalid parameters, early return" // string@88cb
+      036ef4: 7120 210d 2100                         |0124: invoke-static {v1, v2}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036efa: 0f00                                   |0127: return v0
+   virtual_method #4971: checkKillAppGoingIntoBg (Ljava/lang/String;I)Z
+    access=0001 (PUBLIC)
+    codeOff=367c0 (223168)
+    quickening_size=0 (0)
+      0367c4: 1200                                   |0000: const/4 v0, #int 0 // #0
+      0367c6: 5431 8d07                              |0001: iget-object v1, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0367ca: 7110 8613 0100                         |0003: invoke-static {v1}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$000:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lcom/android/server/am/ActivityManagerService; // method@1386
+      0367d0: 0c01                                   |0006: move-result-object v1
+      0367d2: 1d01                                   |0007: monitor-enter v1
+      0367d4: 6e30 6c13 4305                         |0008: invoke-virtual {v3, v4, v5}, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.checkKillAppGoingIntoBgLocked:(Ljava/lang/String;I)Z // method@136c
+      0367da: 0a02                                   |000b: move-result v2
+      0367dc: 0120                                   |000c: move v0, v2
+      0367de: 1e01                                   |000d: monitor-exit v1
+      0367e0: 0f00                                   |000e: return v0
+      0367e2: 0d02                                   |000f: move-exception v2
+      0367e4: 1e01                                   |0010: monitor-exit v1
+      0367e6: 2702                                   |0011: throw v2
+   virtual_method #4972: checkKillAppGoingIntoBgLocked (Ljava/lang/String;I)Z
+    access=0000 ()
+    codeOff=367f4 (223220)
+    quickening_size=0 (0)
+      0367f8: 54b0 8d07                              |0000: iget-object v0, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0367fc: 7110 8d13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      036802: 0c00                                   |0005: move-result-object v0
+      036804: 6e10 5600 0000                         |0006: invoke-virtual {v0}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.getMHomeProcess:()Lamazon/internal/SystemJumpTable$ProcessRecord; // method@0056
+      03680a: 0c00                                   |0009: move-result-object v0
+      03680c: 1201                                   |000a: const/4 v1, #int 0 // #0
+      03680e: 3800 0e00                              |000b: if-eqz v0, 0019 // +000e
+      036812: 6e10 bb00 0000                         |000d: invoke-virtual {v0}, Lamazon/internal/SystemJumpTable$ProcessRecord;.getRecord:()Ljava/lang/Object; // method@00bb
+      036818: 0c02                                   |0010: move-result-object v2
+      03681a: 3802 0800                              |0011: if-eqz v2, 0019 // +0008
+      03681e: 6e10 be00 0000                         |0013: invoke-virtual {v0}, Lamazon/internal/SystemJumpTable$ProcessRecord;.hasShownUi:()Z // method@00be
+      036824: 0a02                                   |0016: move-result v2
+      036826: 3902 cf00                              |0017: if-nez v2, 00e6 // +00cf
+      03682a: 54b2 8d07                              |0019: iget-object v2, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03682e: 5422 a207                              |001b: iget-object v2, v2, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mHelper:Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper; // field@07a2
+      036832: 6e30 8313 c20d                         |001d: invoke-virtual {v2, v12, v13}, Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper;.retrieveAppInfo:(Ljava/lang/String;I)Z // method@1383
+      036838: 0a02                                   |0020: move-result v2
+      03683a: 3902 1b00                              |0021: if-nez v2, 003c // +001b
+      03683e: 7100 8713 0000                         |0023: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036844: 0c02                                   |0026: move-result-object v2
+      036846: 2203 8112                              |0027: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+      03684a: 7010 4a7a 0300                         |0029: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036850: 1a04 065b                              |002c: const-string v4, "checkKillAppGoingIntoBgLocked: Remote exception pkgName=" // string@5b06
+      036854: 6e20 557a 4300                         |002e: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03685a: 6e20 557a c300                         |0031: invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036860: 6e10 5e7a 0300                         |0034: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036866: 0c03                                   |0037: move-result-object v3
+      036868: 7120 1c0d 3200                         |0038: invoke-static {v2, v3}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      03686e: 0f01                                   |003b: return v1
+      036870: 54b2 8d07                              |003c: iget-object v2, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036874: 5422 a207                              |003e: iget-object v2, v2, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mHelper:Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper; // field@07a2
+      036878: 6e10 7e13 0200                         |0040: invoke-virtual {v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper;.getAppInfo:()Landroid/content/pm/ApplicationInfo; // method@137e
+      03687e: 0c02                                   |0043: move-result-object v2
+      036880: 3902 1b00                              |0044: if-nez v2, 005f // +001b
+      036884: 7100 8713 0000                         |0046: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      03688a: 0c03                                   |0049: move-result-object v3
+      03688c: 2204 8112                              |004a: new-instance v4, Ljava/lang/StringBuilder; // type@1281
+      036890: 7010 4a7a 0400                         |004c: invoke-direct {v4}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036896: 1a05 035b                              |004f: const-string v5, "checkKillAppGoingIntoBgLocked: ApplicationInfo not found for " // string@5b03
+      03689a: 6e20 557a 5400                         |0051: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0368a0: 6e20 557a c400                         |0054: invoke-virtual {v4, v12}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0368a6: 6e10 5e7a 0400                         |0057: invoke-virtual {v4}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0368ac: 0c04                                   |005a: move-result-object v4
+      0368ae: 7120 1c0d 4300                         |005b: invoke-static {v3, v4}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0368b4: 0f01                                   |005e: return v1
+      0368b6: 54b3 8d07                              |005f: iget-object v3, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0368ba: 5433 a207                              |0061: iget-object v3, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mHelper:Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper; // field@07a2
+      0368be: 6e20 8113 2300                         |0063: invoke-virtual {v3, v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper;.isPersistApp:(Landroid/content/pm/ApplicationInfo;)Z // method@1381
+      0368c4: 0a03                                   |0066: move-result v3
+      0368c6: 3803 1b00                              |0067: if-eqz v3, 0082 // +001b
+      0368ca: 7100 8713 0000                         |0069: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      0368d0: 0c03                                   |006c: move-result-object v3
+      0368d2: 2204 8112                              |006d: new-instance v4, Ljava/lang/StringBuilder; // type@1281
+      0368d6: 7010 4a7a 0400                         |006f: invoke-direct {v4}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0368dc: 1a05 055b                              |0072: const-string v5, "checkKillAppGoingIntoBgLocked: Ignoring persistent app: " // string@5b05
+      0368e0: 6e20 557a 5400                         |0074: invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0368e6: 6e20 557a c400                         |0077: invoke-virtual {v4, v12}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0368ec: 6e10 5e7a 0400                         |007a: invoke-virtual {v4}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0368f2: 0c04                                   |007d: move-result-object v4
+      0368f4: 7120 1e0d 4300                         |007e: invoke-static {v3, v4}, Landroid/util/Slog;.i:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1e
+      0368fa: 0f01                                   |0081: return v1
+      0368fc: 54b3 8d07                              |0082: iget-object v3, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036900: 5433 a207                              |0084: iget-object v3, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mHelper:Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper; // field@07a2
+      036904: 6e10 7f13 0300                         |0086: invoke-virtual {v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper;.getAvailableMem:()J // method@137f
+      03690a: 0b03                                   |0089: move-result-wide v3
+      03690c: 54b5 8d07                              |008a: iget-object v5, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036910: 7110 8e13 0500                         |008c: invoke-static {v5}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$500:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)J // method@138e
+      036916: 0b05                                   |008f: move-result-wide v5
+      036918: 3105 0305                              |0090: cmp-long v5, v3, v5
+      03691c: 3b05 3800                              |0092: if-gez v5, 00ca // +0038
+      036920: 54b5 8d07                              |0094: iget-object v5, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036924: 5455 a207                              |0096: iget-object v5, v5, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mHelper:Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper; // field@07a2
+      036928: 5226 0e01                              |0098: iget v6, v2, Landroid/content/pm/ApplicationInfo;.uid:I // field@010e
+      03692c: 6e30 8013 c506                         |009a: invoke-virtual {v5, v12, v6}, Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper;.getPkgPid:(Ljava/lang/String;I)I // method@1380
+      036932: 0a05                                   |009d: move-result v5
+      036934: 1a06 9482                              |009e: const-string v6, "mem pressure detected - checkKillAppGoingIntoBg triggered" // string@8294
+      036938: 1307 4775                              |00a0: const/16 v7, #int 30023 // #7547
+      03693c: 1258                                   |00a2: const/4 v8, #int 5 // #5
+      03693e: 2388 4714                              |00a3: new-array v8, v8, [Ljava/lang/Object; // type@1447
+      036942: 7110 a479 0d00                         |00a5: invoke-static {v13}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      036948: 0c09                                   |00a8: move-result-object v9
+      03694a: 4d09 0801                              |00a9: aput-object v9, v8, v1
+      03694e: 7110 a479 0500                         |00ab: invoke-static {v5}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      036954: 0c09                                   |00ae: move-result-object v9
+      036956: 121a                                   |00af: const/4 v10, #int 1 // #1
+      036958: 4d09 080a                              |00b0: aput-object v9, v8, v10
+      03695c: 1229                                   |00b2: const/4 v9, #int 2 // #2
+      03695e: 4d0c 0809                              |00b3: aput-object v12, v8, v9
+      036962: 1239                                   |00b5: const/4 v9, #int 3 // #3
+      036964: 7110 a479 0100                         |00b6: invoke-static {v1}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      03696a: 0c01                                   |00b9: move-result-object v1
+      03696c: 4d01 0809                              |00ba: aput-object v1, v8, v9
+      036970: 1241                                   |00bc: const/4 v1, #int 4 // #4
+      036972: 4d06 0801                              |00bd: aput-object v6, v8, v1
+      036976: 7120 020d 8700                         |00bf: invoke-static {v7, v8}, Landroid/util/EventLog;.writeEvent:(I[Ljava/lang/Object;)I // method@0d02
+      03697c: 54b1 8d07                              |00c2: iget-object v1, v11, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036980: 5411 a207                              |00c4: iget-object v1, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService;.mHelper:Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper; // field@07a2
+      036984: 6e30 8213 c10d                         |00c6: invoke-virtual {v1, v12, v13}, Lcom/amazon/android/server/am/AmazonActivityManagerService$TestHelper;.killApp:(Ljava/lang/String;I)V // method@1382
+      03698a: 0f0a                                   |00c9: return v10
+      03698c: 7100 8713 0000                         |00ca: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036992: 0c05                                   |00cd: move-result-object v5
+      036994: 2206 8112                              |00ce: new-instance v6, Ljava/lang/StringBuilder; // type@1281
+      036998: 7010 4a7a 0600                         |00d0: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      03699e: 1a07 045b                              |00d3: const-string v7, "checkKillAppGoingIntoBgLocked: Conditions didn't match for kill! System Available memory is " // string@5b04
+      0369a2: 6e20 557a 7600                         |00d5: invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0369a8: 7120 3e7a 4300                         |00d8: invoke-static {v3, v4}, Ljava/lang/String;.valueOf:(J)Ljava/lang/String; // method@7a3e
+      0369ae: 0c07                                   |00db: move-result-object v7
+      0369b0: 6e20 557a 7600                         |00dc: invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0369b6: 6e10 5e7a 0600                         |00df: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0369bc: 0c06                                   |00e2: move-result-object v6
+      0369be: 7120 1b0d 6500                         |00e3: invoke-static {v5, v6}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      0369c4: 0f01                                   |00e6: return v1
+   virtual_method #4973: disablePipWindows ()V
+    access=0001 (PUBLIC)
+    codeOff=3706e (225390)
+    quickening_size=0 (0)
+      037072: 5440 8d07                              |0000: iget-object v0, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037076: 7110 8b13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+      03707c: 0c00                                   |0005: move-result-object v0
+      03707e: 1a01 b85c                              |0006: const-string v1, "com.amazon.permission.CONTROL_PIP_WINDOW" // string@5cb8
+      037082: 1a02 cc44                              |0008: const-string v2, "Requires com.amazon.permission.CONTROL_PIP_WINDOW permission" // string@44cc
+      037086: 6e30 3802 1002                         |000a: invoke-virtual {v0, v1, v2}, Landroid/content/Context;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@0238
+      03708c: 7100 ed0a 0000                         |000d: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@0aed
+      037092: 0b00                                   |0010: move-result-wide v0
+      037094: 5442 8d07                              |0011: iget-object v2, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037098: 7110 8813 0200                         |0013: invoke-static {v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$1000:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Ljava/util/Set; // method@1388
+      03709e: 0c02                                   |0016: move-result-object v2
+      0370a0: 5443 8d07                              |0017: iget-object v3, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0370a4: 7110 9313 0300                         |0019: invoke-static {v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$900:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)I // method@1393
+      0370aa: 0a03                                   |001c: move-result v3
+      0370ac: 7110 a479 0300                         |001d: invoke-static {v3}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      0370b2: 0c03                                   |0020: move-result-object v3
+      0370b4: 7220 3f7d 3200                         |0021: invoke-interface {v2, v3}, Ljava/util/Set;.contains:(Ljava/lang/Object;)Z // method@7d3f
+      0370ba: 0a02                                   |0024: move-result v2
+      0370bc: 3802 0f00                              |0025: if-eqz v2, 0034 // +000f
+      0370c0: 7100 8713 0000                         |0027: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      0370c6: 0c02                                   |002a: move-result-object v2
+      0370c8: 1a03 7e42                              |002b: const-string v3, "PiP Windows are already restricted for the current user" // string@427e
+      0370cc: 7120 210d 3200                         |002d: invoke-static {v2, v3}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      0370d2: 7120 f30a 1000                         |0030: invoke-static {v0, v1}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      0370d8: 0e00                                   |0033: return-void
+      0370da: 6e10 6f13 0400                         |0034: invoke-virtual {v4}, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.dismissPipWindow:()V // method@136f
+      0370e0: 5442 8d07                              |0037: iget-object v2, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0370e4: 1213                                   |0039: const/4 v3, #int 1 // #1
+      0370e6: 7120 8913 3200                         |003a: invoke-static {v2, v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$1100:(Lcom/amazon/android/server/am/AmazonActivityManagerService;Z)V // method@1389
+      0370ec: 7120 f30a 1000                         |003d: invoke-static {v0, v1}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      0370f2: 0000                                   |0040: nop // spacer
+[new] 0370f2: 0000                                   |0040: nop // spacer
+      0370f4: 0e00                                   |0041: return-void
+      0370f6: 0d02                                   |0042: move-exception v2
+      0370f8: 7120 f30a 1000                         |0043: invoke-static {v0, v1}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      0370fe: 2702                                   |0046: throw v2
+   virtual_method #4974: dismissMultiWindow ()V
+    access=0001 (PUBLIC)
+    codeOff=37114 (225556)
+    quickening_size=0 (0)
+      037118: 5430 8d07                              |0000: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03711c: 7110 8d13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      037122: 0c00                                   |0005: move-result-object v0
+      037124: 1a01 ba5c                              |0006: const-string v1, "com.amazon.permission.DISMISS_MULTIWINDOW" // string@5cba
+      037128: 1a02 4a62                              |0008: const-string v2, "dismissMultiWindow()" // string@624a
+      03712c: 6e30 5400 1002                         |000a: invoke-virtual {v0, v1, v2}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.enforceCallingPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@0054
+      037132: 6e10 6f13 0300                         |000d: invoke-virtual {v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.dismissPipWindow:()V // method@136f
+      037138: 7100 f238 0000                         |0010: invoke-static {}, Lcom/android/server/wm/AmazonWindowManagerUtils;.dismissApplicationOverlays:()V // method@38f2
+      03713e: 0e00                                   |0013: return-void
+   virtual_method #4975: dismissPipWindow ()V
+    access=0001 (PUBLIC)
+    codeOff=37140 (225600)
+    quickening_size=0 (0)
+      037144: 5440 8d07                              |0000: iget-object v0, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037148: 7110 8613 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$000:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lcom/android/server/am/ActivityManagerService; // method@1386
+      03714e: 0c00                                   |0005: move-result-object v0
+      037150: 1211                                   |0006: const/4 v1, #int 1 // #1
+      037152: 2311 a813                              |0007: new-array v1, v1, [I // type@13a8
+      037156: 1202                                   |0009: const/4 v2, #int 0 // #0
+      037158: 1223                                   |000a: const/4 v3, #int 2 // #2
+      03715a: 4b03 0102                              |000b: aput v3, v1, v2
+      03715e: 6e20 7434 1000                         |000d: invoke-virtual {v0, v1}, Lcom/android/server/am/ActivityManagerService;.removeStacksInWindowingModes:([I)V // method@3474
+      037164: 0e00                                   |0010: return-void
+   virtual_method #4976: dump (Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+    access=0004 (PROTECTED)
+    codeOff=37166 (225638)
+    quickening_size=0 (0)
+      03716a: 5440 8d07                              |0000: iget-object v0, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03716e: 7110 8b13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+      037174: 0c00                                   |0005: move-result-object v0
+      037176: 1a01 6c56                              |0006: const-string v1, "android.permission.DUMP" // string@566c
+      03717a: 6e20 3302 1000                         |0008: invoke-virtual {v0, v1}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      037180: 0a00                                   |000b: move-result v0
+      037182: 3800 2700                              |000c: if-eqz v0, 0033 // +0027
+      037186: 2200 8112                              |000e: new-instance v0, Ljava/lang/StringBuilder; // type@1281
+      03718a: 7010 4a7a 0000                         |0010: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      037190: 1a01 5a42                              |0013: const-string v1, "Permission Denial: can't dump AmazonActivityManagerService from frompid=" // string@425a
+      037194: 6e20 557a 1000                         |0015: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03719a: 7100 ef0a 0000                         |0018: invoke-static {}, Landroid/os/Binder;.getCallingPid:()I // method@0aef
+      0371a0: 0a01                                   |001b: move-result v1
+      0371a2: 6e20 507a 1000                         |001c: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0371a8: 1a01 ae05                              |001f: const-string v1, ", uid=" // string@05ae
+      0371ac: 6e20 557a 1000                         |0021: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0371b2: 7100 f00a 0000                         |0024: invoke-static {}, Landroid/os/Binder;.getCallingUid:()I // method@0af0
+      0371b8: 0a01                                   |0027: move-result v1
+      0371ba: 6e20 507a 1000                         |0028: invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      0371c0: 6e10 5e7a 0000                         |002b: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0371c6: 0c00                                   |002e: move-result-object v0
+      0371c8: 6e20 e078 0600                         |002f: invoke-virtual {v6, v0}, Ljava/io/PrintWriter;.println:(Ljava/lang/String;)V // method@78e0
+      0371ce: 0e00                                   |0032: return-void
+      0371d0: 1a00 ff08                              |0033: const-string v0, "AMAZON ACTIVITY MANAGER SERVICE (dumpsys amazonactivitymanager)
+" // string@08ff
+      0371d4: 6e20 e078 0600                         |0035: invoke-virtual {v6, v0}, Ljava/io/PrintWriter;.println:(Ljava/lang/String;)V // method@78e0
+      0371da: 1a00 7f42                              |0038: const-string v0, "PiP window restriction state:" // string@427f
+      0371de: 6e20 e078 0600                         |003a: invoke-virtual {v6, v0}, Ljava/io/PrintWriter;.println:(Ljava/lang/String;)V // method@78e0
+      0371e4: 5440 8d07                              |003d: iget-object v0, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0371e8: 7110 9313 0000                         |003f: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$900:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)I // method@1393
+      0371ee: 0a00                                   |0042: move-result v0
+      0371f0: 2201 8112                              |0043: new-instance v1, Ljava/lang/StringBuilder; // type@1281
+      0371f4: 7010 4a7a 0100                         |0045: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0371fa: 1a02 7e11                              |0048: const-string v2, "Current userId=u" // string@117e
+      0371fe: 6e20 557a 2100                         |004a: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      037204: 6e20 507a 0100                         |004d: invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      03720a: 1a02 9705                              |0050: const-string v2, ", restricted=" // string@0597
+      03720e: 6e20 557a 2100                         |0052: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      037214: 5442 8d07                              |0055: iget-object v2, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037218: 7110 8813 0200                         |0057: invoke-static {v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$1000:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Ljava/util/Set; // method@1388
+      03721e: 0c02                                   |005a: move-result-object v2
+      037220: 7110 a479 0000                         |005b: invoke-static {v0}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      037226: 0c03                                   |005e: move-result-object v3
+      037228: 7220 3f7d 3200                         |005f: invoke-interface {v2, v3}, Ljava/util/Set;.contains:(Ljava/lang/Object;)Z // method@7d3f
+      03722e: 0a02                                   |0062: move-result v2
+      037230: 6e20 567a 2100                         |0063: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Z)Ljava/lang/StringBuilder; // method@7a56
+      037236: 6e10 5e7a 0100                         |0066: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      03723c: 0c01                                   |0069: move-result-object v1
+      03723e: 6e20 e078 1600                         |006a: invoke-virtual {v6, v1}, Ljava/io/PrintWriter;.println:(Ljava/lang/String;)V // method@78e0
+      037244: 2201 8112                              |006d: new-instance v1, Ljava/lang/StringBuilder; // type@1281
+      037248: 7010 4a7a 0100                         |006f: invoke-direct {v1}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      03724e: 1a02 7c42                              |0072: const-string v2, "PiP Restricted for userIds: " // string@427c
+      037252: 6e20 557a 2100                         |0074: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      037258: 5442 8d07                              |0077: iget-object v2, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03725c: 7110 8813 0200                         |0079: invoke-static {v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$1000:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Ljava/util/Set; // method@1388
+      037262: 0c02                                   |007c: move-result-object v2
+      037264: 6e20 547a 2100                         |007d: invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      03726a: 6e10 5e7a 0100                         |0080: invoke-virtual {v1}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      037270: 0c01                                   |0083: move-result-object v1
+      037272: 6e20 e078 1600                         |0084: invoke-virtual {v6, v1}, Ljava/io/PrintWriter;.println:(Ljava/lang/String;)V // method@78e0
+      037278: 6e10 dc78 0600                         |0087: invoke-virtual {v6}, Ljava/io/PrintWriter;.println:()V // method@78dc
+      03727e: 0e00                                   |008a: return-void
+   virtual_method #4977: enablePipWindows ()V
+    access=0001 (PUBLIC)
+    codeOff=37280 (225920)
+    quickening_size=0 (0)
+      037284: 5440 8d07                              |0000: iget-object v0, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037288: 7110 8b13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+      03728e: 0c00                                   |0005: move-result-object v0
+      037290: 1a01 b85c                              |0006: const-string v1, "com.amazon.permission.CONTROL_PIP_WINDOW" // string@5cb8
+      037294: 1a02 cc44                              |0008: const-string v2, "Requires com.amazon.permission.CONTROL_PIP_WINDOW permission" // string@44cc
+      037298: 6e30 3802 1002                         |000a: invoke-virtual {v0, v1, v2}, Landroid/content/Context;.enforceCallingOrSelfPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@0238
+      03729e: 7100 ed0a 0000                         |000d: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@0aed
+      0372a4: 0b00                                   |0010: move-result-wide v0
+      0372a6: 5442 8d07                              |0011: iget-object v2, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0372aa: 7110 8813 0200                         |0013: invoke-static {v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$1000:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Ljava/util/Set; // method@1388
+      0372b0: 0c02                                   |0016: move-result-object v2
+      0372b2: 5443 8d07                              |0017: iget-object v3, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0372b6: 7110 9313 0300                         |0019: invoke-static {v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$900:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)I // method@1393
+      0372bc: 0a03                                   |001c: move-result v3
+      0372be: 7110 a479 0300                         |001d: invoke-static {v3}, Ljava/lang/Integer;.valueOf:(I)Ljava/lang/Integer; // method@79a4
+      0372c4: 0c03                                   |0020: move-result-object v3
+      0372c6: 7220 3f7d 3200                         |0021: invoke-interface {v2, v3}, Ljava/util/Set;.contains:(Ljava/lang/Object;)Z // method@7d3f
+      0372cc: 0a02                                   |0024: move-result v2
+      0372ce: 3902 0f00                              |0025: if-nez v2, 0034 // +000f
+      0372d2: 7100 8713 0000                         |0027: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      0372d8: 0c02                                   |002a: move-result-object v2
+      0372da: 1a03 7d42                              |002b: const-string v3, "PiP Windows are already permitted for the current user" // string@427d
+      0372de: 7120 210d 3200                         |002d: invoke-static {v2, v3}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      0372e4: 7120 f30a 1000                         |0030: invoke-static {v0, v1}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      0372ea: 0e00                                   |0033: return-void
+      0372ec: 5442 8d07                              |0034: iget-object v2, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0372f0: 1203                                   |0036: const/4 v3, #int 0 // #0
+      0372f2: 7120 8913 3200                         |0037: invoke-static {v2, v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$1100:(Lcom/amazon/android/server/am/AmazonActivityManagerService;Z)V // method@1389
+      0372f8: 7120 f30a 1000                         |003a: invoke-static {v0, v1}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      0372fe: 0000                                   |003d: nop // spacer
+[new] 0372fe: 0000                                   |003d: nop // spacer
+      037300: 0e00                                   |003e: return-void
+      037302: 0d02                                   |003f: move-exception v2
+      037304: 7120 f30a 1000                         |0040: invoke-static {v0, v1}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      03730a: 2702                                   |0043: throw v2
+   virtual_method #4978: getCpuLoad ()F
+    access=0001 (PUBLIC)
+    codeOff=36bd4 (224212)
+    quickening_size=0 (0)
+      036bd8: 5440 8d07                              |0000: iget-object v0, v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036bdc: 7110 8d13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      036be2: 0c00                                   |0005: move-result-object v0
+      036be4: 6e10 5b00 0000                         |0006: invoke-virtual {v0}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.getProcessCpuTracker:()Lcom/android/internal/os/ProcessCpuTracker; // method@005b
+      036bea: 0c00                                   |0009: move-result-object v0
+      036bec: 1d00                                   |000a: monitor-enter v0
+      036bee: 6e10 cf32 0000                         |000b: invoke-virtual {v0}, Lcom/android/internal/os/ProcessCpuTracker;.getTotalCpuPercent:()F // method@32cf
+      036bf4: 0a01                                   |000e: move-result v1
+      036bf6: 8711                                   |000f: float-to-int v1, v1
+      036bf8: 1e00                                   |0010: monitor-exit v0
+      036bfa: 8212                                   |0011: int-to-float v2, v1
+      036bfc: 1503 c842                              |0012: const/high16 v3, #int 1120403456 // #42c8
+      036c00: c932                                   |0014: div-float/2addr v2, v3
+      036c02: 0f02                                   |0015: return v2
+      036c04: 0d01                                   |0016: move-exception v1
+      036c06: 1e00                                   |0017: monitor-exit v0
+      036c08: 2701                                   |0018: throw v1
+   virtual_method #4979: getRecentCrashes ()[Lamazon/app/CrashDescription;
+    access=0001 (PUBLIC)
+    codeOff=36478 (222328)
+    quickening_size=0 (0)
+      03647c: 1a00 8260                              |0000: const-string v0, "dalvik.vm.stack-trace-file" // string@6082
+      036480: 1201                                   |0002: const/4 v1, #int 0 // #0
+      036482: 7120 420c 1000                         |0003: invoke-static {v0, v1}, Landroid/os/SystemProperties;.get:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@0c42
+      036488: 0c02                                   |0006: move-result-object v2
+      03648a: 1200                                   |0007: const/4 v0, #int 0 // #0
+      03648c: 1203                                   |0008: const/4 v3, #int 0 // #0
+      03648e: 1204                                   |0009: const/4 v4, #int 0 // #0
+      036490: 3802 6801                              |000a: if-eqz v2, 0172 // +0168
+      036494: 6e10 277a 0200                         |000c: invoke-virtual {v2}, Ljava/lang/String;.length:()I // method@7a27
+      03649a: 0a05                                   |000f: move-result v5
+      03649c: 3905 0400                              |0010: if-nez v5, 0014 // +0004
+      0364a0: 2900 6001                              |0012: goto/16 0172 // +0160
+      0364a4: 1a05 5a06                              |0014: const-string v5, "." // string@065a
+      0364a8: 6e20 267a 5200                         |0016: invoke-virtual {v2, v5}, Ljava/lang/String;.lastIndexOf:(Ljava/lang/String;)I // method@7a26
+      0364ae: 0a05                                   |0019: move-result v5
+      0364b0: 12f6                                   |001a: const/4 v6, #int -1 // #ff
+      0364b2: 1207                                   |001b: const/4 v7, #int 0 // #0
+      0364b4: 3256 2000                              |001c: if-eq v6, v5, 003c // +0020
+      0364b8: 2206 8112                              |001e: new-instance v6, Ljava/lang/StringBuilder; // type@1281
+      0364bc: 7010 4a7a 0600                         |0020: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0364c2: 6e30 347a 7205                         |0023: invoke-virtual {v2, v7, v5}, Ljava/lang/String;.substring:(II)Ljava/lang/String; // method@7a34
+      0364c8: 0c08                                   |0026: move-result-object v8
+      0364ca: 6e20 557a 8600                         |0027: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0364d0: 1a08 a152                              |002a: const-string v8, "_commonlog" // string@52a1
+      0364d4: 6e20 557a 8600                         |002c: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0364da: 6e20 337a 5200                         |002f: invoke-virtual {v2, v5}, Ljava/lang/String;.substring:(I)Ljava/lang/String; // method@7a33
+      0364e0: 0c08                                   |0032: move-result-object v8
+      0364e2: 6e20 557a 8600                         |0033: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0364e8: 6e10 5e7a 0600                         |0036: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0364ee: 0c00                                   |0039: move-result-object v0
+      0364f0: 0706                                   |003a: move-object v6, v0
+      0364f2: 2813                                   |003b: goto 004e // +0013
+      0364f4: 2206 8112                              |003c: new-instance v6, Ljava/lang/StringBuilder; // type@1281
+      0364f8: 7010 4a7a 0600                         |003e: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0364fe: 6e20 557a 2600                         |0041: invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036504: 1a08 a152                              |0044: const-string v8, "_commonlog" // string@52a1
+      036508: 6e20 557a 8600                         |0046: invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03650e: 6e10 5e7a 0600                         |0049: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036514: 0c00                                   |004c: move-result-object v0
+      036516: 28ed                                   |004d: goto 003a // -0013
+      036518: 2200 2b12                              |004e: new-instance v0, Ljava/io/File; // type@122b
+      03651c: 7020 6c78 6000                         |0050: invoke-direct {v0, v6}, Ljava/io/File;.<init>:(Ljava/lang/String;)V // method@786c
+      036522: 0708                                   |0053: move-object v8, v0
+      036524: 6e10 7578 0800                         |0054: invoke-virtual {v8}, Ljava/io/File;.exists:()Z // method@7875
+      03652a: 0a00                                   |0057: move-result v0
+      03652c: 3900 0300                              |0058: if-nez v0, 005b // +0003
+      036530: 1101                                   |005a: return-object v1
+      036532: 2200 e712                              |005b: new-instance v0, Ljava/util/ArrayList; // type@12e7
+      036536: 7010 ba7b 0000                         |005d: invoke-direct {v0}, Ljava/util/ArrayList;.<init>:()V // method@7bba
+      03653c: 0704                                   |0060: move-object v4, v0
+      03653e: 2200 2112                              |0061: new-instance v0, Ljava/io/BufferedReader; // type@1221
+      036542: 2209 3012                              |0063: new-instance v9, Ljava/io/FileReader; // type@1230
+      036546: 7020 a078 6900                         |0065: invoke-direct {v9, v6}, Ljava/io/FileReader;.<init>:(Ljava/lang/String;)V // method@78a0
+      03654c: 7020 2e78 9000                         |0068: invoke-direct {v0, v9}, Ljava/io/BufferedReader;.<init>:(Ljava/io/Reader;)V // method@782e
+      036552: 0703                                   |006b: move-object v3, v0
+      036554: 0000                                   |006c: nop // spacer
+[new] 036554: 0000                                   |006c: nop // spacer
+      036556: 0710                                   |006d: move-object v0, v1
+      036558: 6e10 3078 0300                         |006e: invoke-virtual {v3}, Ljava/io/BufferedReader;.readLine:()Ljava/lang/String; // method@7830
+      03655e: 0c01                                   |0071: move-result-object v1
+      036560: 0710                                   |0072: move-object v0, v1
+      036562: 3801 4500                              |0073: if-eqz v1, 00b8 // +0045
+      036566: 6e10 277a 0000                         |0075: invoke-virtual {v0}, Ljava/lang/String;.length:()I // method@7a27
+      03656c: 0a01                                   |0078: move-result v1
+      03656e: 1219                                   |0079: const/4 v9, #int 1 // #1
+      036570: b191                                   |007a: sub-int/2addr v1, v9
+      036572: 6e30 347a 9001                         |007b: invoke-virtual {v0, v9, v1}, Ljava/lang/String;.substring:(II)Ljava/lang/String; // method@7a34
+      036578: 0c01                                   |007e: move-result-object v1
+      03657a: 1a0a f904                              |007f: const-string v10, "," // string@04f9
+      03657e: 6e20 2e7a a100                         |0081: invoke-virtual {v1, v10}, Ljava/lang/String;.split:(Ljava/lang/String;)[Ljava/lang/String; // method@7a2e
+      036584: 0c0a                                   |0084: move-result-object v10
+      036586: 21ab                                   |0085: array-length v11, v10
+      036588: 125c                                   |0086: const/4 v12, #int 5 // #5
+      03658a: 32cb 0c00                              |0087: if-eq v11, v12, 0093 // +000c
+      03658e: 7100 8713 0000                         |0089: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036594: 0c09                                   |008c: move-result-object v9
+      036596: 1a0b 2e4c                              |008d: const-string v11, "Trace file is ill formatted. Will read next log" // string@4c2e
+      03659a: 7120 1c0d b900                         |008f: invoke-static {v9, v11}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0365a0: 2823                                   |0092: goto 00b5 // +0023
+      0365a2: 220b 0700                              |0093: new-instance v11, Lamazon/app/CrashDescription; // type@0007
+      0365a6: 7010 0400 0b00                         |0095: invoke-direct {v11}, Lamazon/app/CrashDescription;.<init>:()V // method@0004
+      0365ac: 460d 0a07                              |0098: aget-object v13, v10, v7
+      0365b0: 460e 0a09                              |009a: aget-object v14, v10, v9
+      0365b4: 1229                                   |009c: const/4 v9, #int 2 // #2
+      0365b6: 460f 0a09                              |009d: aget-object v15, v10, v9
+      0365ba: 1239                                   |009f: const/4 v9, #int 3 // #3
+      0365bc: 4610 0a09                              |00a0: aget-object v16, v10, v9
+      0365c0: 1249                                   |00a2: const/4 v9, #int 4 // #4
+      0365c2: 4609 0a09                              |00a3: aget-object v9, v10, v9
+      0365c6: 7110 b679 0900                         |00a5: invoke-static {v9}, Ljava/lang/Long;.valueOf:(Ljava/lang/String;)Ljava/lang/Long; // method@79b6
+      0365cc: 0c09                                   |00a8: move-result-object v9
+      0365ce: 6e10 ab79 0900                         |00a9: invoke-virtual {v9}, Ljava/lang/Long;.longValue:()J // method@79ab
+      0365d4: 0b11                                   |00ac: move-result-wide v17
+      0365d6: 07bc                                   |00ad: move-object v12, v11
+      0365d8: 7407 0500 0c00                         |00ae: invoke-virtual/range {v12, v13, v14, v15, v16, v17, v18}, Lamazon/app/CrashDescription;.setParams:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V // method@0005
+      0365de: 0000                                   |00b1: nop // spacer
+[new] 0365de: 0000                                   |00b1: nop // spacer
+      0365e0: 6e20 be7b b400                         |00b2: invoke-virtual {v4, v11}, Ljava/util/ArrayList;.add:(Ljava/lang/Object;)Z // method@7bbe
+      0365e6: 0000                                   |00b5: nop // spacer
+[new] 0365e6: 0000                                   |00b5: nop // spacer
+      0365e8: 0701                                   |00b6: move-object v1, v0
+      0365ea: 28b6                                   |00b7: goto 006d // -004a
+      0365ec: 0000                                   |00b8: nop // spacer
+[new] 0365ec: 0000                                   |00b8: nop // spacer
+      0365ee: 6e10 2f78 0300                         |00b9: invoke-virtual {v3}, Ljava/io/BufferedReader;.close:()V // method@782f
+      0365f4: 1203                                   |00bc: const/4 v3, #int 0 // #0
+      0365f6: 2900 8200                              |00bd: goto/16 013f // +0082
+      0365fa: 0d00                                   |00bf: move-exception v0
+      0365fc: 0701                                   |00c0: move-object v1, v0
+      0365fe: 7100 8713 0000                         |00c1: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036604: 0c01                                   |00c4: move-result-object v1
+      036606: 2207 8112                              |00c5: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      03660a: 7010 4a7a 0700                         |00c7: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036610: 1a09 801b                              |00ca: const-string v9, "IOExceptionException in closing reader in AmazonActivityManagerService " // string@1b80
+      036614: 6e20 557a 9700                         |00cc: invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03661a: 6e10 b378 0000                         |00cf: invoke-virtual {v0}, Ljava/io/IOException;.toString:()Ljava/lang/String; // method@78b3
+      036620: 0c09                                   |00d2: move-result-object v9
+      036622: 6e20 557a 9700                         |00d3: invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036628: 6e10 5e7a 0700                         |00d6: invoke-virtual {v7}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      03662e: 0c07                                   |00d9: move-result-object v7
+      036630: 7120 1c0d 7100                         |00da: invoke-static {v1, v7}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      036636: 28e0                                   |00dd: goto 00bd // -0020
+      036638: 0d00                                   |00de: move-exception v0
+      03663a: 0701                                   |00df: move-object v1, v0
+      03663c: 286c                                   |00e0: goto 014c // +006c
+      03663e: 0d00                                   |00e1: move-exception v0
+      036640: 7100 8713 0000                         |00e2: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036646: 0c01                                   |00e5: move-result-object v1
+      036648: 2207 8112                              |00e6: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      03664c: 7010 4a7a 0700                         |00e8: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036652: 1a09 7f1b                              |00eb: const-string v9, "IOExceptionException in AmazonActivityManagerService " // string@1b7f
+      036656: 6e20 557a 9700                         |00ed: invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03665c: 6e10 b378 0000                         |00f0: invoke-virtual {v0}, Ljava/io/IOException;.toString:()Ljava/lang/String; // method@78b3
+      036662: 0c09                                   |00f3: move-result-object v9
+      036664: 6e20 557a 9700                         |00f4: invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03666a: 6e10 5e7a 0700                         |00f7: invoke-virtual {v7}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036670: 0c07                                   |00fa: move-result-object v7
+      036672: 7120 1c0d 7100                         |00fb: invoke-static {v1, v7}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      036678: 3803 4100                              |00fe: if-eqz v3, 013f // +0041
+      03667c: 6e10 2f78 0300                         |0100: invoke-virtual {v3}, Ljava/io/BufferedReader;.close:()V // method@782f
+      036682: 28b9                                   |0103: goto 00bc // -0047
+      036684: 0d00                                   |0104: move-exception v0
+      036686: 0701                                   |0105: move-object v1, v0
+      036688: 7100 8713 0000                         |0106: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      03668e: 0c01                                   |0109: move-result-object v1
+      036690: 2207 8112                              |010a: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      036694: 7010 4a7a 0700                         |010c: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      03669a: 28bb                                   |010f: goto 00ca // -0045
+      03669c: 0d00                                   |0110: move-exception v0
+      03669e: 7100 8713 0000                         |0111: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      0366a4: 0c01                                   |0114: move-result-object v1
+      0366a6: 2207 8112                              |0115: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      0366aa: 7010 4a7a 0700                         |0117: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0366b0: 1a09 4c18                              |011a: const-string v9, "FileNotFoundException in AmazonActivityManagerService " // string@184c
+      0366b4: 6e20 557a 9700                         |011c: invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0366ba: 6e10 9678 0000                         |011f: invoke-virtual {v0}, Ljava/io/FileNotFoundException;.toString:()Ljava/lang/String; // method@7896
+      0366c0: 0c09                                   |0122: move-result-object v9
+      0366c2: 6e20 557a 9700                         |0123: invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      0366c8: 6e10 5e7a 0700                         |0126: invoke-virtual {v7}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      0366ce: 0c07                                   |0129: move-result-object v7
+      0366d0: 7120 1c0d 7100                         |012a: invoke-static {v1, v7}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      0366d6: 3803 1200                              |012d: if-eqz v3, 013f // +0012
+      0366da: 6e10 2f78 0300                         |012f: invoke-virtual {v3}, Ljava/io/BufferedReader;.close:()V // method@782f
+      0366e0: 288a                                   |0132: goto 00bc // -0076
+      0366e2: 0d00                                   |0133: move-exception v0
+      0366e4: 0701                                   |0134: move-object v1, v0
+      0366e6: 7100 8713 0000                         |0135: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      0366ec: 0c01                                   |0138: move-result-object v1
+      0366ee: 2207 8112                              |0139: new-instance v7, Ljava/lang/StringBuilder; // type@1281
+      0366f2: 7010 4a7a 0700                         |013b: invoke-direct {v7}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      0366f8: 288c                                   |013e: goto 00ca // -0074
+      0366fa: 6e10 cc7b 0400                         |013f: invoke-virtual {v4}, Ljava/util/ArrayList;.size:()I // method@7bcc
+      036700: 0a00                                   |0142: move-result v0
+      036702: 2300 aa13                              |0143: new-array v0, v0, [Lamazon/app/CrashDescription; // type@13aa
+      036706: 6e20 d07b 0400                         |0145: invoke-virtual {v4, v0}, Ljava/util/ArrayList;.toArray:([Ljava/lang/Object;)[Ljava/lang/Object; // method@7bd0
+      03670c: 0c00                                   |0148: move-result-object v0
+      03670e: 1f00 aa13                              |0149: check-cast v0, [Lamazon/app/CrashDescription; // type@13aa
+      036712: 1100                                   |014b: return-object v0
+      036714: 3803 2500                              |014c: if-eqz v3, 0171 // +0025
+      036718: 6e10 2f78 0300                         |014e: invoke-virtual {v3}, Ljava/io/BufferedReader;.close:()V // method@782f
+      03671e: 1203                                   |0151: const/4 v3, #int 0 // #0
+      036720: 281f                                   |0152: goto 0171 // +001f
+      036722: 0d00                                   |0153: move-exception v0
+      036724: 0707                                   |0154: move-object v7, v0
+      036726: 7100 8713 0000                         |0155: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      03672c: 0c07                                   |0158: move-result-object v7
+      03672e: 2209 8112                              |0159: new-instance v9, Ljava/lang/StringBuilder; // type@1281
+      036732: 7010 4a7a 0900                         |015b: invoke-direct {v9}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036738: 1a0a 801b                              |015e: const-string v10, "IOExceptionException in closing reader in AmazonActivityManagerService " // string@1b80
+      03673c: 6e20 557a a900                         |0160: invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036742: 6e10 b378 0000                         |0163: invoke-virtual {v0}, Ljava/io/IOException;.toString:()Ljava/lang/String; // method@78b3
+      036748: 0c0a                                   |0166: move-result-object v10
+      03674a: 6e20 557a a900                         |0167: invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036750: 6e10 5e7a 0900                         |016a: invoke-virtual {v9}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036756: 0c09                                   |016d: move-result-object v9
+      036758: 7120 1c0d 9700                         |016e: invoke-static {v7, v9}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      03675e: 2701                                   |0171: throw v1
+      036760: 1101                                   |0172: return-object v1
+   virtual_method #4980: isOnHomeStack ()Z
+    access=0001 (PUBLIC)
+    codeOff=369c6 (223686)
+    quickening_size=0 (0)
+      0369ca: 7100 ed0a 0000                         |0000: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@0aed
+      0369d0: 0b00                                   |0003: move-result-wide v0
+      0369d2: 1202                                   |0004: const/4 v2, #int 0 // #0
+      0369d4: 7100 9101 0000                         |0005: invoke-static {}, Landroid/app/ActivityManager;.getService:()Landroid/app/IActivityManager; // method@0191
+      0369da: 0c03                                   |0008: move-result-object v3
+      0369dc: 7210 bb01 0300                         |0009: invoke-interface {v3}, Landroid/app/IActivityManager;.getFocusedStackInfo:()Landroid/app/ActivityManager$StackInfo; // method@01bb
+      0369e2: 0c03                                   |000c: move-result-object v3
+      0369e4: 3803 1000                              |000d: if-eqz v3, 001d // +0010
+      0369e8: 5434 f100                              |000f: iget-object v4, v3, Landroid/app/ActivityManager$StackInfo;.configuration:Landroid/content/res/Configuration; // field@00f1
+      0369ec: 5444 2e01                              |0011: iget-object v4, v4, Landroid/content/res/Configuration;.windowConfiguration:Landroid/app/WindowConfiguration; // field@012e
+      0369f0: 6e10 ec01 0400                         |0013: invoke-virtual {v4}, Landroid/app/WindowConfiguration;.getActivityType:()I // method@01ec
+      0369f6: 0a04                                   |0016: move-result v4
+      0369f8: 1225                                   |0017: const/4 v5, #int 2 // #2
+      0369fa: 3354 0400                              |0018: if-ne v4, v5, 001c // +0004
+      0369fe: 1212                                   |001a: const/4 v2, #int 1 // #1
+      036a00: 0000                                   |001b: nop // spacer
+[new] 036a00: 0000                                   |001b: nop // spacer
+      036a02: 0f02                                   |001c: return v2
+      036a04: 0000                                   |001d: nop // spacer
+[new] 036a04: 0000                                   |001d: nop // spacer
+      036a06: 7120 f30a 1000                         |001e: invoke-static {v0, v1}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      036a0c: 0f02                                   |0021: return v2
+      036a0e: 0d03                                   |0022: move-exception v3
+      036a10: 7100 8713 0000                         |0023: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036a16: 0c04                                   |0026: move-result-object v4
+      036a18: 2205 8112                              |0027: new-instance v5, Ljava/lang/StringBuilder; // type@1281
+      036a1c: 7010 4a7a 0500                         |0029: invoke-direct {v5}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036a22: 1a06 b764                              |002c: const-string v6, "error getting stack info " // string@64b7
+      036a26: 6e20 557a 6500                         |002e: invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036a2c: 6e20 547a 3500                         |0031: invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      036a32: 6e10 5e7a 0500                         |0034: invoke-virtual {v5}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036a38: 0c05                                   |0037: move-result-object v5
+      036a3a: 7120 1c0d 5400                         |0038: invoke-static {v4, v5}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      036a40: 0f02                                   |003b: return v2
+   virtual_method #4981: notifyActivitySwitch (Landroid/content/ComponentName;)V
+    access=0000 ()
+    codeOff=37320 (226080)
+    quickening_size=0 (0)
+      037324: 5430 8d07                              |0000: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037328: 7110 8f13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$600:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/os/RemoteCallbackList; // method@138f
+      03732e: 0c00                                   |0005: move-result-object v0
+      037330: 6e10 1c0c 0000                         |0006: invoke-virtual {v0}, Landroid/os/RemoteCallbackList;.beginBroadcast:()I // method@0c1c
+      037336: 0a00                                   |0009: move-result v0
+      037338: 1201                                   |000a: const/4 v1, #int 0 // #0
+      03733a: 3501 1600                              |000b: if-ge v1, v0, 0021 // +0016
+      03733e: 5432 8d07                              |000d: iget-object v2, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037342: 7110 8f13 0200                         |000f: invoke-static {v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$600:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/os/RemoteCallbackList; // method@138f
+      037348: 0c02                                   |0012: move-result-object v2
+      03734a: 6e20 1f0c 1200                         |0013: invoke-virtual {v2, v1}, Landroid/os/RemoteCallbackList;.getBroadcastItem:(I)Landroid/os/IInterface; // method@0c1f
+      037350: 0c02                                   |0016: move-result-object v2
+      037352: 1f02 0900                              |0017: check-cast v2, Lamazon/app/IAmazonActivitySwitchObserver; // type@0009
+      037356: 7220 0700 4200                         |0019: invoke-interface {v2, v4}, Lamazon/app/IAmazonActivitySwitchObserver;.onActivityResume:(Landroid/content/ComponentName;)V // method@0007
+      03735c: 2802                                   |001c: goto 001e // +0002
+      03735e: 0d02                                   |001d: move-exception v2
+      037360: d801 0101                              |001e: add-int/lit8 v1, v1, #int 1 // #01
+      037364: 28eb                                   |0020: goto 000b // -0015
+      037366: 5431 8d07                              |0021: iget-object v1, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03736a: 7110 8f13 0100                         |0023: invoke-static {v1}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$600:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/os/RemoteCallbackList; // method@138f
+      037370: 0c01                                   |0026: move-result-object v1
+      037372: 6e10 1d0c 0100                         |0027: invoke-virtual {v1}, Landroid/os/RemoteCallbackList;.finishBroadcast:()V // method@0c1d
+      037378: 0e00                                   |002a: return-void
+   virtual_method #4982: onActivityResume (Landroid/content/ComponentName;)V
+    access=0001 (PUBLIC)
+    codeOff=3738a (226186)
+    quickening_size=0 (0)
+      03738e: 7100 e40b 0000                         |0000: invoke-static {}, Landroid/os/Message;.obtain:()Landroid/os/Message; // method@0be4
+      037394: 0c00                                   |0003: move-result-object v0
+      037396: 1211                                   |0004: const/4 v1, #int 1 // #1
+      037398: 5901 bc03                              |0005: iput v1, v0, Landroid/os/Message;.what:I // field@03bc
+      03739c: 5b03 bb03                              |0007: iput-object v3, v0, Landroid/os/Message;.obj:Ljava/lang/Object; // field@03bb
+      0373a0: 5421 8d07                              |0009: iget-object v1, v2, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0373a4: 7120 9113 3100                         |000b: invoke-static {v1, v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$702:(Lcom/amazon/android/server/am/AmazonActivityManagerService;Landroid/content/ComponentName;)Landroid/content/ComponentName; // method@1391
+      0373aa: 5421 8d07                              |000e: iget-object v1, v2, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0373ae: 7110 9213 0100                         |0010: invoke-static {v1}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$800:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lcom/amazon/android/server/am/AmazonActivityManagerService$ActivitySwitchHandler; // method@1392
+      0373b4: 0c01                                   |0013: move-result-object v1
+      0373b6: 6e20 6913 0100                         |0014: invoke-virtual {v1, v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService$ActivitySwitchHandler;.sendMessage:(Landroid/os/Message;)Z // method@1369
+      0373bc: 0e00                                   |0017: return-void
+   virtual_method #4983: packageLifetimeHint (Ljava/lang/String;FZI)I
+    access=0001 (PUBLIC)
+    codeOff=36c18 (224280)
+    quickening_size=0 (0)
+      036c1c: 1a00 c588                              |0000: const-string v0, "packageLifetimeHint" // string@88c5
+      036c20: 1601 4000                              |0002: const-wide/16 v1, #int 64 // #40
+      036c24: 7130 4e0c 2100                         |0004: invoke-static {v1, v2, v0}, Landroid/os/Trace;.traceBegin:(JLjava/lang/String;)V // method@0c4e
+      036c2a: 12f0                                   |0007: const/4 v0, #int -1 // #ff
+      036c2c: 5473 8d07                              |0008: iget-object v3, v7, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036c30: 7110 8b13 0300                         |000a: invoke-static {v3}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+      036c36: 0c03                                   |000d: move-result-object v3
+      036c38: 1a04 df5c                              |000e: const-string v4, "com.amazon.permission.SMARTOOM_HINTING" // string@5cdf
+      036c3c: 6e20 3302 4300                         |0010: invoke-virtual {v3, v4}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      036c42: 0a03                                   |0013: move-result v3
+      036c44: 3803 0c00                              |0014: if-eqz v3, 0020 // +000c
+      036c48: 7100 8713 0000                         |0016: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036c4e: 0c01                                   |0019: move-result-object v1
+      036c50: 1a02 573f                              |001a: const-string v2, "No permission to call packageLifetimeHint" // string@3f57
+      036c54: 7120 210d 2100                         |001c: invoke-static {v1, v2}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      036c5a: 0f00                                   |001f: return v0
+      036c5c: 7100 ed0a 0000                         |0020: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@0aed
+      036c62: 0b03                                   |0023: move-result-wide v3
+      036c64: 5475 8d07                              |0024: iget-object v5, v7, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036c68: 7110 8613 0500                         |0026: invoke-static {v5}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$000:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lcom/android/server/am/ActivityManagerService; // method@1386
+      036c6e: 0c05                                   |0029: move-result-object v5
+      036c70: 1d05                                   |002a: monitor-enter v5
+      036c72: 705b 7813 87a9                         |002b: invoke-direct {v7, v8, v9, v10, v11}, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.packageLifetimeHintLocked:(Ljava/lang/String;FZI)I // method@1378
+      036c78: 0a06                                   |002e: move-result v6
+      036c7a: 0160                                   |002f: move v0, v6
+      036c7c: 1e05                                   |0030: monitor-exit v5
+      036c7e: 7120 f30a 4300                         |0031: invoke-static {v3, v4}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      036c84: 7120 500c 2100                         |0034: invoke-static {v1, v2}, Landroid/os/Trace;.traceEnd:(J)V // method@0c50
+      036c8a: 0f00                                   |0037: return v0
+      036c8c: 0d01                                   |0038: move-exception v1
+      036c8e: 1e05                                   |0039: monitor-exit v5
+      036c90: 2701                                   |003a: throw v1
+   virtual_method #4985: preWarmApplicationForUser (Ljava/lang/String;II)I
+    access=0001 (PUBLIC)
+    codeOff=36f0c (225036)
+    quickening_size=0 (0)
+      036f10: 0801 1500                              |0000: move-object/from16 v1, v21
+      036f14: 0802 1600                              |0002: move-object/from16 v2, v22
+      036f18: 2200 8112                              |0004: new-instance v0, Ljava/lang/StringBuilder; // type@1281
+      036f1c: 7010 4a7a 0000                         |0006: invoke-direct {v0}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036f22: 1a03 348b                              |0009: const-string v3, "preWarmApplication: " // string@8b34
+      036f26: 6e20 557a 3000                         |000b: invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036f2c: 6e20 557a 2000                         |000e: invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036f32: 6e10 5e7a 0000                         |0011: invoke-virtual {v0}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036f38: 0c00                                   |0014: move-result-object v0
+      036f3a: 1603 4000                              |0015: const-wide/16 v3, #int 64 // #40
+      036f3e: 7130 4e0c 4300                         |0017: invoke-static {v3, v4, v0}, Landroid/os/Trace;.traceBegin:(JLjava/lang/String;)V // method@0c4e
+      036f44: 12f5                                   |001a: const/4 v5, #int -1 // #ff
+      036f46: 5410 8d07                              |001b: iget-object v0, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036f4a: 7110 8b13 0000                         |001d: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+      036f50: 0c00                                   |0020: move-result-object v0
+      036f52: 1a06 b05c                              |0021: const-string v6, "com.amazon.permission.APP_PREWARM" // string@5cb0
+      036f56: 6e20 3402 6000                         |0023: invoke-virtual {v0, v6}, Landroid/content/Context;.checkCallingPermission:(Ljava/lang/String;)I // method@0234
+      036f5c: 7100 ed0a 0000                         |0026: invoke-static {}, Landroid/os/Binder;.clearCallingIdentity:()J // method@0aed
+      036f62: 0b06                                   |0029: move-result-wide v6
+      036f64: 3802 6100                              |002a: if-eqz v2, 008b // +0061
+      036f68: 3917 5f00                              |002c: if-nez v23, 008b // +005f
+      036f6c: 5418 8d07                              |002e: iget-object v8, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036f70: 1d08                                   |0030: monitor-enter v8
+      036f72: 7100 b001 0000                         |0031: invoke-static {}, Landroid/app/AppGlobals;.getPackageManager:()Landroid/content/pm/IPackageManager; // method@01b0
+      036f78: 0c00                                   |0034: move-result-object v0
+      036f7a: 1309 0004                              |0035: const/16 v9, #int 1024 // #400
+      036f7e: 020a 1800                              |0037: move/from16 v10, v24
+      036f82: 7240 ae02 20a9                         |0039: invoke-interface {v0, v2, v9, v10}, Landroid/content/pm/IPackageManager;.getApplicationInfo:(Ljava/lang/String;II)Landroid/content/pm/ApplicationInfo; // method@02ae
+      036f88: 0c00                                   |003c: move-result-object v0
+      036f8a: 3800 2600                              |003d: if-eqz v0, 0063 // +0026
+      036f8e: 5419 8d07                              |003f: iget-object v9, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036f92: 7110 8c13 0900                         |0041: invoke-static {v9}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$300:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lcom/amazon/android/server/am/PreWarmCacheHelper; // method@138c
+      036f98: 0c09                                   |0044: move-result-object v9
+      036f9a: 6e20 ae13 2900                         |0045: invoke-virtual {v9, v2}, Lcom/amazon/android/server/am/PreWarmCacheHelper;.getKeepIfLargeValue:(Ljava/lang/String;)Z // method@13ae
+      036fa0: 0a14                                   |0048: move-result v20
+      036fa2: 5419 8d07                              |0049: iget-object v9, v1, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036fa6: 7110 8d13 0900                         |004b: invoke-static {v9}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      036fac: 0c0b                                   |004e: move-result-object v11
+      036fae: 540c 0a01                              |004f: iget-object v12, v0, Landroid/content/pm/ApplicationInfo;.processName:Ljava/lang/String; // field@010a
+      036fb2: 120e                                   |0051: const/4 v14, #int 0 // #0
+      036fb4: 120f                                   |0052: const/4 v15, #int 0 // #0
+      036fb6: 1a10 718b                              |0053: const-string v16, "prewarm" // string@8b71
+      036fba: 1311 0000                              |0055: const/16 v17, #int 0 // #0
+      036fbe: 1312 0000                              |0057: const/16 v18, #int 0 // #0
+      036fc2: 1313 0000                              |0059: const/16 v19, #int 0 // #0
+      036fc6: 070d                                   |005b: move-object v13, v0
+      036fc8: 740a 6100 0b00                         |005c: invoke-virtual/range {v11, v12, v13, v14, v15, v16, v17, v18, v19, v20}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.startProcessLocked:(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZ)Lamazon/internal/SystemJumpTable$ProcessRecord; // method@0061
+      036fce: 0c09                                   |005f: move-result-object v9
+      036fd0: 3809 0300                              |0060: if-eqz v9, 0063 // +0003
+      036fd4: 1205                                   |0062: const/4 v5, #int 0 // #0
+      036fd6: 2824                                   |0063: goto 0087 // +0024
+      036fd8: 0d00                                   |0064: move-exception v0
+      036fda: 2824                                   |0065: goto 0089 // +0024
+      036fdc: 0d00                                   |0066: move-exception v0
+      036fde: 2808                                   |0067: goto 006f // +0008
+      036fe0: 0d00                                   |0068: move-exception v0
+      036fe2: 020a 1800                              |0069: move/from16 v10, v24
+      036fe6: 281e                                   |006b: goto 0089 // +001e
+      036fe8: 0d00                                   |006c: move-exception v0
+      036fea: 020a 1800                              |006d: move/from16 v10, v24
+      036fee: 7100 8713 0000                         |006f: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036ff4: 0c09                                   |0072: move-result-object v9
+      036ff6: 220b 8112                              |0073: new-instance v11, Ljava/lang/StringBuilder; // type@1281
+      036ffa: 7010 4a7a 0b00                         |0075: invoke-direct {v11}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      037000: 1a0c 9644                              |0078: const-string v12, "Remote exception trying to prewarm application " // string@4496
+      037004: 6e20 557a cb00                         |007a: invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      03700a: 6e20 557a 2b00                         |007d: invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      037010: 6e10 5e7a 0b00                         |0080: invoke-virtual {v11}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      037016: 0c0b                                   |0083: move-result-object v11
+      037018: 7120 1c0d b900                         |0084: invoke-static {v9, v11}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      03701e: 1e08                                   |0087: monitor-exit v8
+      037020: 2805                                   |0088: goto 008d // +0005
+      037022: 1e08                                   |0089: monitor-exit v8
+      037024: 2700                                   |008a: throw v0
+      037026: 020a 1800                              |008b: move/from16 v10, v24
+      03702a: 7120 f30a 7600                         |008d: invoke-static {v6, v7}, Landroid/os/Binder;.restoreCallingIdentity:(J)V // method@0af3
+      037030: 7120 500c 4300                         |0090: invoke-static {v3, v4}, Landroid/os/Trace;.traceEnd:(J)V // method@0c50
+      037036: 0f05                                   |0093: return v5
+   virtual_method #4986: registerActivitySwitchObserver (Lamazon/app/IAmazonActivitySwitchObserver;)V
+    access=0001 (PUBLIC)
+    codeOff=373be (226238)
+    quickening_size=0 (0)
+      0373c2: 5430 8d07                              |0000: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0373c6: 7110 8d13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      0373cc: 0c00                                   |0005: move-result-object v0
+      0373ce: 1a01 aa5c                              |0006: const-string v1, "com.amazon.permission.ACTIVITY_SWITCH_WATCHER" // string@5caa
+      0373d2: 1a02 7c8e                              |0008: const-string v2, "registerActivitySwitchObserver()" // string@8e7c
+      0373d6: 6e30 5400 1002                         |000a: invoke-virtual {v0, v1, v2}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.enforceCallingPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@0054
+      0373dc: 5430 8d07                              |000d: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      0373e0: 7110 8f13 0000                         |000f: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$600:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/os/RemoteCallbackList; // method@138f
+      0373e6: 0c00                                   |0012: move-result-object v0
+      0373e8: 6e20 220c 4000                         |0013: invoke-virtual {v0, v4}, Landroid/os/RemoteCallbackList;.register:(Landroid/os/IInterface;)Z // method@0c22
+      0373ee: 0a00                                   |0016: move-result v0
+      0373f0: 3900 0c00                              |0017: if-nez v0, 0023 // +000c
+      0373f4: 7100 8713 0000                         |0019: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      0373fa: 0c00                                   |001c: move-result-object v0
+      0373fc: 1a01 0e66                              |001d: const-string v1, "failed to register activity switch observer" // string@660e
+      037400: 7120 210d 1000                         |001f: invoke-static {v0, v1}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      037406: 2812                                   |0022: goto 0034 // +0012
+      037408: 5430 8d07                              |0023: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03740c: 7110 9013 0000                         |0025: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$700:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/ComponentName; // method@1390
+      037412: 0c00                                   |0028: move-result-object v0
+      037414: 3800 0b00                              |0029: if-eqz v0, 0034 // +000b
+      037418: 5430 8d07                              |002b: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03741c: 7110 9013 0000                         |002d: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$700:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/ComponentName; // method@1390
+      037422: 0c00                                   |0030: move-result-object v0
+      037424: 7220 0700 0400                         |0031: invoke-interface {v4, v0}, Lamazon/app/IAmazonActivitySwitchObserver;.onActivityResume:(Landroid/content/ComponentName;)V // method@0007
+      03742a: 0e00                                   |0034: return-void
+   virtual_method #4987: requestCpuBoost (II)Z
+    access=0001 (PUBLIC)
+    codeOff=36a54 (223828)
+    quickening_size=0 (0)
+      036a58: 6200 0900                              |0000: sget-object v0, Lamazon/app/PerfBoostBase$Status;.REQUEST_FAILED:Lamazon/app/PerfBoostBase$Status; // field@0009
+      036a5c: 1211                                   |0002: const/4 v1, #int 1 // #1
+      036a5e: 5472 8d07                              |0003: iget-object v2, v7, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      036a62: 7110 8b13 0200                         |0005: invoke-static {v2}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$200:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/content/Context; // method@138b
+      036a68: 0c02                                   |0008: move-result-object v2
+      036a6a: 1a03 e55c                              |0009: const-string v3, "com.amazon.permission.USE_PERFBOOST" // string@5ce5
+      036a6e: 6e20 3302 3200                         |000b: invoke-virtual {v2, v3}, Landroid/content/Context;.checkCallingOrSelfPermission:(Ljava/lang/String;)I // method@0233
+      036a74: 0a02                                   |000e: move-result v2
+      036a76: 3902 9a00                              |000f: if-nez v2, 00a9 // +009a
+      036a7a: 3d08 7800                              |0011: if-lez v8, 0089 // +0078
+      036a7e: 6002 0100                              |0013: sget v2, Lamazon/app/AmazonActivityManager;.PERFBOOST_DURATION:I // field@0001
+      036a82: 3628 7400                              |0015: if-gt v8, v2, 0089 // +0074
+      036a86: 7110 0800 0900                         |0017: invoke-static {v9}, Lamazon/app/PerfBoostBase$Mode;.fromModeValue:(I)Lamazon/app/PerfBoostBase$Mode; // method@0008
+      036a8c: 0c02                                   |001a: move-result-object v2
+      036a8e: 1c03 0c00                              |001b: const-class v3, Lamazon/app/PerfBoostBase; // type@000c
+      036a92: 1204                                   |001d: const/4 v4, #int 0 // #0
+      036a94: 7130 aa27 4304                         |001e: invoke-static {v3, v4, v4}, Lcom/amazon/fireos/FireOSInit;.getInstance:(Ljava/lang/Class;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object; // method@27aa
+      036a9a: 0c03                                   |0021: move-result-object v3
+      036a9c: 1f03 0c00                              |0022: check-cast v3, Lamazon/app/PerfBoostBase; // type@000c
+      036aa0: 3803 5d00                              |0024: if-eqz v3, 0081 // +005d
+      036aa4: 3802 4200                              |0026: if-eqz v2, 0068 // +0042
+      036aa8: 6204 8b07                              |0028: sget-object v4, Lcom/amazon/android/server/am/AmazonActivityManagerService$1;.$SwitchMap$amazon$app$PerfBoostBase$Mode:[I // field@078b
+      036aac: 6e10 0900 0200                         |002a: invoke-virtual {v2}, Lamazon/app/PerfBoostBase$Mode;.ordinal:()I // method@0009
+      036ab2: 0a05                                   |002d: move-result v5
+      036ab4: 4404 0405                              |002e: aget v4, v4, v5
+      036ab8: 2b04 8200 0000                         |0030: packed-switch v4, 000000b2 // +00000004
+      036abe: 7100 8713 0000                         |0033: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036ac4: 0c04                                   |0036: move-result-object v4
+      036ac6: 2205 8112                              |0037: new-instance v5, Ljava/lang/StringBuilder; // type@1281
+      036aca: 7010 4a7a 0500                         |0039: invoke-direct {v5}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036ad0: 1a06 f18f                              |003c: const-string v6, "requestCpuBoost failed. Wrong mode = " // string@8ff1
+      036ad4: 6e20 557a 6500                         |003e: invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036ada: 6e20 507a 9500                         |0041: invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      036ae0: 6e10 5e7a 0500                         |0044: invoke-virtual {v5}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036ae6: 0c05                                   |0047: move-result-object v5
+      036ae8: 7120 1b0d 5400                         |0048: invoke-static {v4, v5}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      036aee: 2835                                   |004b: goto 0080 // +0035
+      036af0: 6204 0600                              |004c: sget-object v4, Lamazon/app/PerfBoostBase$Mode;.MODE_LAUNCHER_SCROLL:Lamazon/app/PerfBoostBase$Mode; // field@0006
+      036af4: 7230 0c00 8304                         |004e: invoke-interface {v3, v8, v4}, Lamazon/app/PerfBoostBase;.requestCpuBoost:(ILamazon/app/PerfBoostBase$Mode;)Lamazon/app/PerfBoostBase$Status; // method@000c
+      036afa: 0c00                                   |0051: move-result-object v0
+      036afc: 282e                                   |0052: goto 0080 // +002e
+      036afe: 6204 0500                              |0053: sget-object v4, Lamazon/app/PerfBoostBase$Mode;.MODE_BROWSER_PAGE_LOAD:Lamazon/app/PerfBoostBase$Mode; // field@0005
+      036b02: 7230 0c00 8304                         |0055: invoke-interface {v3, v8, v4}, Lamazon/app/PerfBoostBase;.requestCpuBoost:(ILamazon/app/PerfBoostBase$Mode;)Lamazon/app/PerfBoostBase$Status; // method@000c
+      036b08: 0c00                                   |0058: move-result-object v0
+      036b0a: 2827                                   |0059: goto 0080 // +0027
+      036b0c: 6204 0200                              |005a: sget-object v4, Lamazon/app/PerfBoostBase$Mode;.APPLICATION_START:Lamazon/app/PerfBoostBase$Mode; // field@0002
+      036b10: 7230 0c00 8304                         |005c: invoke-interface {v3, v8, v4}, Lamazon/app/PerfBoostBase;.requestCpuBoost:(ILamazon/app/PerfBoostBase$Mode;)Lamazon/app/PerfBoostBase$Status; // method@000c
+      036b16: 0c00                                   |005f: move-result-object v0
+      036b18: 2820                                   |0060: goto 0080 // +0020
+      036b1a: 6204 0300                              |0061: sget-object v4, Lamazon/app/PerfBoostBase$Mode;.DEVICE_ROTATION:Lamazon/app/PerfBoostBase$Mode; // field@0003
+      036b1e: 7230 0c00 8304                         |0063: invoke-interface {v3, v8, v4}, Lamazon/app/PerfBoostBase;.requestCpuBoost:(ILamazon/app/PerfBoostBase$Mode;)Lamazon/app/PerfBoostBase$Status; // method@000c
+      036b24: 0c00                                   |0066: move-result-object v0
+      036b26: 2819                                   |0067: goto 0080 // +0019
+      036b28: 7100 8713 0000                         |0068: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036b2e: 0c04                                   |006b: move-result-object v4
+      036b30: 2205 8112                              |006c: new-instance v5, Ljava/lang/StringBuilder; // type@1281
+      036b34: 7010 4a7a 0500                         |006e: invoke-direct {v5}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036b3a: 1a06 f08f                              |0071: const-string v6, "requestCpuBoost failed. Mode does not exist. mode = " // string@8ff0
+      036b3e: 6e20 557a 6500                         |0073: invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036b44: 6e20 507a 9500                         |0076: invoke-virtual {v5, v9}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      036b4a: 6e10 5e7a 0500                         |0079: invoke-virtual {v5}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036b50: 0c05                                   |007c: move-result-object v5
+      036b52: 7120 1b0d 5400                         |007d: invoke-static {v4, v5}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      036b58: 2823                                   |0080: goto 00a3 // +0023
+      036b5a: 2204 8812                              |0081: new-instance v4, Ljava/lang/UnsupportedOperationException; // type@1288
+      036b5e: 1a05 4f42                              |0083: const-string v5, "Perfboost is not supported on this device" // string@424f
+      036b62: 7020 8f7a 5400                         |0085: invoke-direct {v4, v5}, Ljava/lang/UnsupportedOperationException;.<init>:(Ljava/lang/String;)V // method@7a8f
+      036b68: 2704                                   |0088: throw v4
+      036b6a: 7100 8713 0000                         |0089: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      036b70: 0c02                                   |008c: move-result-object v2
+      036b72: 2203 8112                              |008d: new-instance v3, Ljava/lang/StringBuilder; // type@1281
+      036b76: 7010 4a7a 0300                         |008f: invoke-direct {v3}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      036b7c: 1a04 ef8f                              |0092: const-string v4, "requestCpuBoost failed. MAX_PERFBOOST_DURATION = " // string@8fef
+      036b80: 6e20 557a 4300                         |0094: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      036b86: 6004 0100                              |0097: sget v4, Lamazon/app/AmazonActivityManager;.PERFBOOST_DURATION:I // field@0001
+      036b8a: 6e20 507a 4300                         |0099: invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;.append:(I)Ljava/lang/StringBuilder; // method@7a50
+      036b90: 6e10 5e7a 0300                         |009c: invoke-virtual {v3}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      036b96: 0c03                                   |009f: move-result-object v3
+      036b98: 7120 1b0d 3200                         |00a0: invoke-static {v2, v3}, Landroid/util/Slog;.d:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1b
+      036b9e: 6202 0a00                              |00a3: sget-object v2, Lamazon/app/PerfBoostBase$Status;.REQUEST_SUCCEEDED:Lamazon/app/PerfBoostBase$Status; // field@000a
+      036ba2: 3220 0300                              |00a5: if-eq v0, v2, 00a8 // +0003
+      036ba6: 1201                                   |00a7: const/4 v1, #int 0 // #0
+      036ba8: 0f01                                   |00a8: return v1
+      036baa: 2202 7b12                              |00a9: new-instance v2, Ljava/lang/SecurityException; // type@127b
+      036bae: 1a03 d244                              |00ab: const-string v3, "Requires com.amazon.permission.USE_PERFBOOST permission" // string@44d2
+      036bb2: 7020 007a 3200                         |00ad: invoke-direct {v2, v3}, Ljava/lang/SecurityException;.<init>:(Ljava/lang/String;)V // method@7a00
+      036bb8: 2702                                   |00b0: throw v2
+      036bba: 0000                                   |00b1: nop // spacer
+[new] 036bba: 0000                                   |00b1: nop // spacer
+      036bbc: 0001 0400 0100 0000 3100 0000 2a00 ... |00b2: packed-switch-data (12 units)
+[new] 036bbc: 0001 0400 0100 0000 3100 0000 2a00 ... |00b2: packed-switch-data (12 units)
+   virtual_method #4988: unregisterActivitySwitchObserver (Lamazon/app/IAmazonActivitySwitchObserver;)V
+    access=0001 (PUBLIC)
+    codeOff=3742c (226348)
+    quickening_size=0 (0)
+      037430: 5430 8d07                              |0000: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      037434: 7110 8d13 0000                         |0002: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$400:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Lamazon/internal/SystemJumpTable$ActivityManagerService; // method@138d
+      03743a: 0c00                                   |0005: move-result-object v0
+      03743c: 1a01 aa5c                              |0006: const-string v1, "com.amazon.permission.ACTIVITY_SWITCH_WATCHER" // string@5caa
+      037440: 1a02 199e                              |0008: const-string v2, "unregisterActivitySwitchObserver()" // string@9e19
+      037444: 6e30 5400 1002                         |000a: invoke-virtual {v0, v1, v2}, Lamazon/internal/SystemJumpTable$ActivityManagerService;.enforceCallingPermission:(Ljava/lang/String;Ljava/lang/String;)V // method@0054
+      03744a: 5430 8d07                              |000d: iget-object v0, v3, Lcom/amazon/android/server/am/AmazonActivityManagerService$BinderService;.this$0:Lcom/amazon/android/server/am/AmazonActivityManagerService; // field@078d
+      03744e: 7110 8f13 0000                         |000f: invoke-static {v0}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$600:(Lcom/amazon/android/server/am/AmazonActivityManagerService;)Landroid/os/RemoteCallbackList; // method@138f
+      037454: 0c00                                   |0012: move-result-object v0
+      037456: 6e20 240c 4000                         |0013: invoke-virtual {v0, v4}, Landroid/os/RemoteCallbackList;.unregister:(Landroid/os/IInterface;)Z // method@0c24
+      03745c: 0a00                                   |0016: move-result v0
+      03745e: 3900 0b00                              |0017: if-nez v0, 0022 // +000b
+      037462: 7100 8713 0000                         |0019: invoke-static {}, Lcom/amazon/android/server/am/AmazonActivityManagerService;.access$100:()Ljava/lang/String; // method@1387
+      037468: 0c00                                   |001c: move-result-object v0
+      03746a: 1a01 1266                              |001d: const-string v1, "failed to unregister activity switch observer" // string@6612
+      03746e: 7120 210d 1000                         |001f: invoke-static {v0, v1}, Landroid/util/Slog;.w:(Ljava/lang/String;Ljava/lang/String;)I // method@0d21
+      037474: 0e00                                   |0022: return-void

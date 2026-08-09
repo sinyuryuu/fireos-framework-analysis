@@ -1,0 +1,20 @@
+line,target,class,method,descriptor,method_range,mask_constants_in_method,tokens,classification
+17480,getAmazonFlagsForUser,PackageRecencyCallback,sendBroadcastWithDelay,(Landroid/content/ComponentName;Landroid/content/Intent;ILandroid/content/pm/ActivityInfo;J)V,17467-17540,none observed,none observed,"package-recency broadcast filter consumer, no HOME selector"
+95331,readFromFile,AmazonApplicationFlags,init,()V,95327-95332,none observed,readFromFile,internal flags/metadata helper
+95339,readFromFile,AmazonApplicationFlags,readFromFile,()V,95333-95340,none observed,readFromFile,internal flags/metadata helper
+95417,setApplicationInfoForUserLocked,AmazonApplicationFlags,readFromFile,(Ljava/io/File;Landroid/util/SparseArray;)V,95341-95472,none observed,readFromFile,internal flags/metadata helper
+95440,setAmazonMetadataForUserLocked,AmazonApplicationFlags,readFromFile,(Ljava/io/File;Landroid/util/SparseArray;)V,95341-95472,none observed,readFromFile,internal flags/metadata helper
+95485,removeApplicationInfoForUserLocked,AmazonApplicationFlags,removeAmazonFlagsForUser,(Ljava/util/List;II)V,95473-95488,none observed,writeToFile,internal flags/metadata helper
+95487,writeToFile,AmazonApplicationFlags,removeAmazonFlagsForUser,(Ljava/util/List;II)V,95473-95488,none observed,writeToFile,internal flags/metadata helper
+95494,removeAmazonMetadataForUserLocked,AmazonApplicationFlags,removeAmazonMetadataForUser,(Ljava/lang/String;Ljava/util/List;I)V,95489-95496,none observed,writeToFile,internal flags/metadata helper
+95495,writeToFile,AmazonApplicationFlags,removeAmazonMetadataForUser,(Ljava/lang/String;Ljava/util/List;I)V,95489-95496,none observed,writeToFile,internal flags/metadata helper
+95544,setApplicationInfoForUserLocked,AmazonApplicationFlags,setAmazonFlagsForUser,(Ljava/util/List;II)V,95531-95547,none observed,writeToFile,internal flags/metadata helper
+95546,writeToFile,AmazonApplicationFlags,setAmazonFlagsForUser,(Ljava/util/List;II)V,95531-95547,none observed,writeToFile,internal flags/metadata helper
+95553,setAmazonMetadataForUserLocked,AmazonApplicationFlags,setAmazonMetadataForUser,(Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V,95548-95555,none observed,writeToFile,internal flags/metadata helper
+95554,writeToFile,AmazonApplicationFlags,setAmazonMetadataForUser,(Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V,95548-95555,none observed,writeToFile,internal flags/metadata helper
+95608,setApplicationInfoForUserLocked,AmazonApplicationFlags,setApplicationInfoForUserLocked,(Ljava/lang/String;II)V,95603-95609,none observed,none observed,internal flags/metadata helper
+95641,writeToFile,AmazonApplicationFlags,writeToFile,()V,95630-95642,none observed,writeToFile,internal flags/metadata helper
+95893,getAmazonFlagsForUser,AmazonPackageManagerService.BinderService,getAmazonFlagsForUser,(Ljava/lang/String;I)I,95889-95895,none observed,none observed,public/read wrapper; does not itself select HOME
+96098,init,AmazonPackageManagerService,onBootPhase,(I)V,96087-96127,none observed,PackageManager,initialization path
+134746,getAmazonFlagsForUser,GameModeHelper,isGamingApp,(Ljava/lang/String;I)Z,134737-134753,2,none observed,"game-mode consumer; bit-2 decision, no HOME writer"
+181605,getAmazonFlagsForUser,AppCompatActivityManagerServiceCallback,isIncompatiblePackage,(ILjava/lang/String;)Z,181601-181612,none observed,none observed,"package compatibility consumer; bit-1 decision, no HOME writer"

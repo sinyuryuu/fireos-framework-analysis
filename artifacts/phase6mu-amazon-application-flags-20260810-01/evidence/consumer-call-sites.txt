@@ -1,0 +1,584 @@
+# PackageRecencyCallback.sendBroadcastWithDelay call at line 17480
+   direct_method #3751: sendBroadcastWithDelay (Landroid/content/ComponentName;Landroid/content/Intent;ILandroid/content/pm/ActivityInfo;J)V
+    access=0002 (PRIVATE)
+    codeOff=232aa (144042)
+    quickening_size=0 (0)
+      0232ae: 0801 1100                              |0000: move-object/from16 v1, v17
+      0232b2: 0802 1200                              |0002: move-object/from16 v2, v18
+      0232b6: 0203 1300                              |0004: move/from16 v3, v19
+      0232ba: 7701 880e 1100                         |0006: invoke-static/range {v17}, Lcom/amazon/android/internal/packagerecency/FilterConfigManager;.getConfigForComponent:(Landroid/content/ComponentName;)Lcom/amazon/android/internal/packagerecency/FilterConfig; // method@0e88
+      0232c0: 0c04                                   |0009: move-result-object v4
+      0232c2: 7401 6a02 1200                         |000a: invoke-virtual/range {v18}, Landroid/content/Intent;.getComponent:()Landroid/content/ComponentName; // method@026a
+      0232c8: 0c00                                   |000d: move-result-object v0
+      0232ca: 6e10 2302 0000                         |000e: invoke-virtual {v0}, Landroid/content/ComponentName;.getPackageName:()Ljava/lang/String; // method@0223
+      0232d0: 0c00                                   |0011: move-result-object v0
+      0232d2: 7120 5e1d 3000                         |0012: invoke-static {v0, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.getAmazonFlagsForUser:(Ljava/lang/String;I)I // method@1d5e
+      0232d8: 0a05                                   |0015: move-result v5
+      0232da: 0806 1400                              |0016: move-object/from16 v6, v20
+      0232de: 7155 b70e 2463                         |0018: invoke-static {v4, v2, v3, v6, v5}, Lcom/amazon/android/internal/packagerecency/PackageRecencyUtils;.shouldSendBroadcast:(Lcom/amazon/android/internal/packagerecency/FilterConfig;Landroid/content/Intent;ILandroid/content/pm/ActivityInfo;I)Z // method@0eb7
+      0232e4: 0a00                                   |001b: move-result v0
+      0232e6: 1217                                   |001c: const/4 v7, #int 1 // #1
+      0232e8: 3800 5f00                              |001d: if-eqz v0, 007c // +005f
+      0232ec: 2200 9000                              |001f: new-instance v0, Landroid/content/Intent; // type@0090
+      0232f0: 7010 6102 0000                         |0021: invoke-direct {v0}, Landroid/content/Intent;.<init>:()V // method@0261
+      0232f6: 1a08 1d5c                              |0024: const-string v8, "com.amazon.action.PACKAGE_RECENCY_NOTIFICATION" // string@5c1d
+      0232fa: 6e20 8102 8000                         |0026: invoke-virtual {v0, v8}, Landroid/content/Intent;.setAction:(Ljava/lang/String;)Landroid/content/Intent; // method@0281
+      023300: 6e20 8302 1000                         |0029: invoke-virtual {v0, v1}, Landroid/content/Intent;.setComponent:(Landroid/content/ComponentName;)Landroid/content/Intent; // method@0283
+      023306: 7401 6f02 1200                         |002c: invoke-virtual/range {v18}, Landroid/content/Intent;.getFlags:()I // method@026f
+      02330c: 0a08                                   |002f: move-result v8
+      02330e: 1509 8000                              |0030: const/high16 v9, #int 8388608 // #80
+      023312: b598                                   |0032: and-int/2addr v8, v9
+      023314: 3808 0700                              |0033: if-eqz v8, 003a // +0007
+      023318: 1a08 d977                              |0035: const-string v8, "launcherIgnoreRecencyUpdate" // string@77d9
+      02331c: 6e30 7b02 8007                         |0037: invoke-virtual {v0, v8, v7}, Landroid/content/Intent;.putExtra:(Ljava/lang/String;Z)Landroid/content/Intent; // method@027b
+      023322: 1a08 d588                              |003a: const-string v8, "packageName" // string@88d5
+      023326: 7401 6a02 1200                         |003c: invoke-virtual/range {v18}, Landroid/content/Intent;.getComponent:()Landroid/content/ComponentName; // method@026a
+      02332c: 0c09                                   |003f: move-result-object v9
+      02332e: 6e10 2302 0900                         |0040: invoke-virtual {v9}, Landroid/content/ComponentName;.getPackageName:()Ljava/lang/String; // method@0223
+      023334: 0c09                                   |0043: move-result-object v9
+      023336: 6e30 7a02 8009                         |0044: invoke-virtual {v0, v8, v9}, Landroid/content/Intent;.putExtra:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent; // method@027a
+      02333c: 6208 7104                              |0047: sget-object v8, Lcom/amazon/android/internal/packagerecency/PackageRecencyCallback;.sContext:Landroid/content/Context; // field@0471
+      023340: 6209 c703                              |0049: sget-object v9, Landroid/os/UserHandle;.CURRENT:Landroid/os/UserHandle; // field@03c7
+      023344: 6e30 5002 0809                         |004b: invoke-virtual {v8, v0, v9}, Landroid/content/Context;.sendBroadcastAsUser:(Landroid/content/Intent;Landroid/os/UserHandle;)V // method@0250
+      02334a: 2208 8112                              |004e: new-instance v8, Ljava/lang/StringBuilder; // type@1281
+      02334e: 7010 4a7a 0800                         |0050: invoke-direct {v8}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      023354: 1a09 651c                              |0053: const-string v9, "Intent triggered to package: " // string@1c65
+      023358: 6e20 557a 9800                         |0055: invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      02335e: 6e20 547a 1800                         |0058: invoke-virtual {v8, v1}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      023364: 1a09 2002                              |005b: const-string v9, " for " // string@0220
+      023368: 6e20 557a 9800                         |005d: invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      02336e: 6e20 547a 2800                         |0060: invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      023374: 6e10 5e7a 0800                         |0063: invoke-virtual {v8}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      02337a: 0c08                                   |0066: move-result-object v8
+      02337c: 7110 4012 0800                         |0067: invoke-static {v8}, Lcom/amazon/android/packagerecency/Utils;.logInfo:(Ljava/lang/String;)V // method@1240
+      023382: 1a09 ec88                              |006a: const-string v9, "package_recency" // string@88ec
+      023386: 1a0a 0559                              |006c: const-string v10, "broadcast_notification" // string@5905
+      02338a: 1a0b 129c                              |006e: const-string v11, "time_in_queue" // string@9c12
+      02338e: 7100 617a 0000                         |0070: invoke-static {}, Ljava/lang/System;.currentTimeMillis:()J // method@7a61
+      023394: 0b0c                                   |0073: move-result-wide v12
+      023396: 9c0c 0c15                              |0074: sub-long v12, v12, v21
+      02339a: 86cc                                   |0076: long-to-double v12, v12
+      02339c: 1a0e 7083                              |0077: const-string v14, "ms" // string@8370
+      0233a0: 7706 1111 0900                         |0079: invoke-static/range {v9, v10, v11, v12, v13, v14}, Lcom/amazon/android/metrics/Vlog;.logTimer:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DLjava/lang/String;)I // method@1111
+      0233a6: 6200 7604                              |007c: sget-object v0, Lcom/amazon/android/internal/packagerecency/PackageRecencyCallback;.sListeners:Ljava/util/List; // field@0476
+      0233aa: 7210 b37c 0000                         |007e: invoke-interface {v0}, Ljava/util/List;.size:()I // method@7cb3
+      0233b0: 0a00                                   |0081: move-result v0
+      0233b2: 3770 1100                              |0082: if-le v0, v7, 0093 // +0011
+      0233b6: 1607 f401                              |0084: const-wide/16 v7, #int 500 // #1f4
+      0233ba: 7120 7e7a 8700                         |0086: invoke-static {v7, v8}, Ljava/lang/Thread;.sleep:(J)V // method@7a7e
+      0233c0: 280a                                   |0089: goto 0093 // +000a
+      0233c2: 0d00                                   |008a: move-exception v0
+      0233c4: 0707                                   |008b: move-object v7, v0
+      0233c6: 7100 6c7a 0000                         |008c: invoke-static {}, Ljava/lang/Thread;.currentThread:()Ljava/lang/Thread; // method@7a6c
+      0233cc: 0c07                                   |008f: move-result-object v7
+      0233ce: 6e10 737a 0700                         |0090: invoke-virtual {v7}, Ljava/lang/Thread;.interrupt:()V // method@7a73
+      0233d4: 0e00                                   |0093: return-void
+
+# AmazonApplicationFlags.init call at line 95331
+   direct_method #7521: init ()V
+    access=0008 (STATIC)
+    codeOff=68faa (429994)
+    quickening_size=0 (0)
+      068fae: 7100 621d 0000                         |0000: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.readFromFile:()V // method@1d62
+      068fb4: 0e00                                   |0003: return-void
+
+# AmazonApplicationFlags.readFromFile call at line 95339
+   direct_method #7522: readFromFile ()V
+    access=0008 (STATIC)
+    codeOff=68fb6 (430006)
+    quickening_size=0 (0)
+      068fba: 6200 860f                              |0000: sget-object v0, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonInfoFile:Ljava/io/File; // field@0f86
+      068fbe: 6201 840f                              |0002: sget-object v1, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      068fc2: 7120 631d 1000                         |0004: invoke-static {v0, v1}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.readFromFile:(Ljava/io/File;Landroid/util/SparseArray;)V // method@1d63
+      068fc8: 0e00                                   |0007: return-void
+
+# AmazonApplicationFlags.readFromFile call at line 95417
+   direct_method #7523: readFromFile (Ljava/io/File;Landroid/util/SparseArray;)V
+    access=0008 (STATIC)
+    codeOff=68fcc (430028)
+    quickening_size=0 (0)
+      068fd0: 0801 1200                              |0000: move-object/from16 v1, v18
+      068fd4: 7401 7578 1100                         |0002: invoke-virtual/range {v17}, Ljava/io/File;.exists:()Z // method@7875
+      068fda: 0a00                                   |0005: move-result v0
+      068fdc: 3900 0300                              |0006: if-nez v0, 0009 // +0003
+      068fe0: 0e00                                   |0008: return-void
+      068fe2: 1202                                   |0009: const/4 v2, #int 0 // #0
+      068fe4: 2200 9702                              |000a: new-instance v0, Landroid/util/AtomicFile; // type@0297
+      068fe8: 0803 1100                              |000c: move-object/from16 v3, v17
+      068fec: 7020 fb0c 3000                         |000e: invoke-direct {v0, v3}, Landroid/util/AtomicFile;.<init>:(Ljava/io/File;)V // method@0cfb
+      068ff2: 0704                                   |0011: move-object v4, v0
+      068ff4: 6e10 fe0c 0400                         |0012: invoke-virtual {v4}, Landroid/util/AtomicFile;.openRead:()Ljava/io/FileInputStream; // method@0cfe
+      068ffa: 0c00                                   |0015: move-result-object v0
+      068ffc: 0702                                   |0016: move-object v2, v0
+      068ffe: 7100 400d 0000                         |0017: invoke-static {}, Landroid/util/Xml;.newPullParser:()Lorg/xmlpull/v1/XmlPullParser; // method@0d40
+      069004: 0c00                                   |001a: move-result-object v0
+      069006: 0705                                   |001b: move-object v5, v0
+      069008: 1200                                   |001c: const/4 v0, #int 0 // #0
+      06900a: 7230 217f 2500                         |001d: invoke-interface {v5, v2, v0}, Lorg/xmlpull/v1/XmlPullParser;.setInput:(Ljava/io/InputStream;Ljava/lang/String;)V // method@7f21
+      069010: 7210 1e7f 0500                         |0020: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.next:()I // method@7f1e
+      069016: 0a06                                   |0023: move-result v6
+      069018: 0167                                   |0024: move v7, v6
+      06901a: 1218                                   |0025: const/4 v8, #int 1 // #1
+      06901c: 1229                                   |0026: const/4 v9, #int 2 // #2
+      06901e: 3296 0500                              |0027: if-eq v6, v9, 002c // +0005
+      069022: 3287 0300                              |0029: if-eq v7, v8, 002c // +0003
+      069026: 28f5                                   |002b: goto 0020 // -000b
+      069028: 3297 0a00                              |002c: if-eq v7, v9, 0036 // +000a
+      06902c: 3802 0700                              |002e: if-eqz v2, 0035 // +0007
+      069030: 6e10 8f78 0200                         |0030: invoke-virtual {v2}, Ljava/io/FileInputStream;.close:()V // method@788f
+      069036: 2802                                   |0033: goto 0035 // +0002
+      069038: 0d00                                   |0034: move-exception v0
+      06903a: 0e00                                   |0035: return-void
+      06903c: 7210 1c7f 0500                         |0036: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.getName:()Ljava/lang/String; // method@7f1c
+      069042: 0c06                                   |0039: move-result-object v6
+      069044: 1a0a e655                              |003a: const-string v10, "amazonflagstag" // string@55e6
+      069048: 6e20 177a a600                         |003c: invoke-virtual {v6, v10}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      06904e: 0a06                                   |003f: move-result v6
+      069050: 3806 0d00                              |0040: if-eqz v6, 004d // +000d
+      069054: 1a06 9893                              |0042: const-string v6, "schemaversion" // string@9398
+      069058: 7230 197f 0506                         |0044: invoke-interface {v5, v0, v6}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      06905e: 0c06                                   |0047: move-result-object v6
+      069060: 1a0a 4807                              |0048: const-string v10, "2.0" // string@0748
+      069064: 6e20 177a 6a00                         |004a: invoke-virtual {v10, v6}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      06906a: 12f6                                   |004d: const/4 v6, #int -1 // #ff
+      06906c: 016a                                   |004e: move v10, v6
+      06906e: 0706                                   |004f: move-object v6, v0
+      069070: 7210 1e7f 0500                         |0050: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.next:()I // method@7f1e
+      069076: 0a0b                                   |0053: move-result v11
+      069078: 01b7                                   |0054: move v7, v11
+      06907a: 328b 6200                              |0055: if-eq v11, v8, 00b7 // +0062
+      06907e: 3397 f9ff                              |0057: if-ne v7, v9, 0050 // -0007
+      069082: 7210 1c7f 0500                         |0059: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.getName:()Ljava/lang/String; // method@7f1c
+      069088: 0c0b                                   |005c: move-result-object v11
+      06908a: 1a0c a988                              |005d: const-string v12, "package" // string@88a9
+      06908e: 6e20 177a bc00                         |005f: invoke-virtual {v12, v11}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      069094: 0a0c                                   |0062: move-result v12
+      069096: 380c 2100                              |0063: if-eqz v12, 0084 // +0021
+      06909a: 1a0c 5c9f                              |0065: const-string v12, "userid" // string@9f5c
+      06909e: 7230 197f 050c                         |0067: invoke-interface {v5, v0, v12}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      0690a4: 0c0c                                   |006a: move-result-object v12
+      0690a6: 7110 9c79 0c00                         |006b: invoke-static {v12}, Ljava/lang/Integer;.parseInt:(Ljava/lang/String;)I // method@799c
+      0690ac: 0a0d                                   |006e: move-result v13
+      0690ae: 01da                                   |006f: move v10, v13
+      0690b0: 1a0d ee88                              |0070: const-string v13, "packagename" // string@88ee
+      0690b4: 7230 197f 050d                         |0072: invoke-interface {v5, v0, v13}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      0690ba: 0c0d                                   |0075: move-result-object v13
+      0690bc: 07d6                                   |0076: move-object v6, v13
+      0690be: 1a0e e555                              |0077: const-string v14, "amazonflagsattr" // string@55e5
+      0690c2: 7230 197f 050e                         |0079: invoke-interface {v5, v0, v14}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      0690c8: 0c0e                                   |007c: move-result-object v14
+      0690ca: 7110 9c79 0e00                         |007d: invoke-static {v14}, Ljava/lang/Integer;.parseInt:(Ljava/lang/String;)I // method@799c
+      0690d0: 0a0f                                   |0080: move-result v15
+      0690d2: 7140 6b1d d1af                         |0081: invoke-static {v1, v13, v15, v10}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setApplicationInfoForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;II)V // method@1d6b
+      0690d8: 1a0c b182                              |0084: const-string v12, "metadata" // string@82b1
+      0690dc: 6e20 177a bc00                         |0086: invoke-virtual {v12, v11}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      0690e2: 0a0c                                   |0089: move-result v12
+      0690e4: 380c 2a00                              |008a: if-eqz v12, 00b4 // +002a
+      0690e8: 3806 2800                              |008c: if-eqz v6, 00b4 // +0028
+      0690ec: 7210 167f 0500                         |008e: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeCount:()I // method@7f16
+      0690f2: 0a0c                                   |0091: move-result v12
+      0690f4: 220d e712                              |0092: new-instance v13, Ljava/util/ArrayList; // type@12e7
+      0690f8: 7020 bb7b cd00                         |0094: invoke-direct {v13, v12}, Ljava/util/ArrayList;.<init>:(I)V // method@7bbb
+      0690fe: 220e e712                              |0097: new-instance v14, Ljava/util/ArrayList; // type@12e7
+      069102: 7020 bb7b ce00                         |0099: invoke-direct {v14, v12}, Ljava/util/ArrayList;.<init>:(I)V // method@7bbb
+      069108: 120f                                   |009c: const/4 v15, #int 0 // #0
+      06910a: 35cf 1400                              |009d: if-ge v15, v12, 00b1 // +0014
+      06910e: 7220 177f f500                         |009f: invoke-interface {v5, v15}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeName:(I)Ljava/lang/String; // method@7f17
+      069114: 0c00                                   |00a2: move-result-object v0
+      069116: 7220 a17c 0d00                         |00a3: invoke-interface {v13, v0}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@7ca1
+      06911c: 7220 187f f500                         |00a6: invoke-interface {v5, v15}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(I)Ljava/lang/String; // method@7f18
+      069122: 0c00                                   |00a9: move-result-object v0
+      069124: 7220 a17c 0e00                         |00aa: invoke-interface {v14, v0}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@7ca1
+      06912a: d80f 0f01                              |00ad: add-int/lit8 v15, v15, #int 1 // #01
+      06912e: 1200                                   |00af: const/4 v0, #int 0 // #0
+      069130: 28ed                                   |00b0: goto 009d // -0013
+      069132: 715a 6a1d 61ed                         |00b1: invoke-static {v1, v6, v13, v14, v10}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setAmazonMetadataForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V // method@1d6a
+      069138: 0000                                   |00b4: nop // spacer
+[new] 069138: 0000                                   |00b4: nop // spacer
+      06913a: 1200                                   |00b5: const/4 v0, #int 0 // #0
+      06913c: 289a                                   |00b6: goto 0050 // -0066
+      06913e: 3802 2600                              |00b7: if-eqz v2, 00dd // +0026
+      069142: 6e10 8f78 0200                         |00b9: invoke-virtual {v2}, Ljava/io/FileInputStream;.close:()V // method@788f
+      069148: 2821                                   |00bc: goto 00dd // +0021
+      06914a: 0d00                                   |00bd: move-exception v0
+      06914c: 281f                                   |00be: goto 00dd // +001f
+      06914e: 0d00                                   |00bf: move-exception v0
+      069150: 0725                                   |00c0: move-object v5, v2
+      069152: 0702                                   |00c1: move-object v2, v0
+      069154: 281c                                   |00c2: goto 00de // +001c
+      069156: 0d00                                   |00c3: move-exception v0
+      069158: 6205 7f0f                              |00c4: sget-object v5, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.TAG:Ljava/lang/String; // field@0f7f
+      06915c: 2206 8112                              |00c6: new-instance v6, Ljava/lang/StringBuilder; // type@1281
+      069160: 7010 4a7a 0600                         |00c8: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      069166: 1a07 b215                              |00cb: const-string v7, "Error reading amazon application info
+" // string@15b2
+      06916a: 6e20 557a 7600                         |00cd: invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      069170: 6e20 547a 0600                         |00d0: invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      069176: 6e10 5e7a 0600                         |00d3: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      06917c: 0c06                                   |00d6: move-result-object v6
+      06917e: 7120 1c0d 6500                         |00d7: invoke-static {v5, v6}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      069184: 3802 0300                              |00da: if-eqz v2, 00dd // +0003
+      069188: 28dd                                   |00dc: goto 00b9 // -0023
+      06918a: 0e00                                   |00dd: return-void
+      06918c: 3805 0700                              |00de: if-eqz v5, 00e5 // +0007
+      069190: 6e10 8f78 0500                         |00e0: invoke-virtual {v5}, Ljava/io/FileInputStream;.close:()V // method@788f
+      069196: 2802                                   |00e3: goto 00e5 // +0002
+      069198: 0d00                                   |00e4: move-exception v0
+      06919a: 2702                                   |00e5: throw v2
+
+# AmazonApplicationFlags.readFromFile call at line 95440
+   direct_method #7523: readFromFile (Ljava/io/File;Landroid/util/SparseArray;)V
+    access=0008 (STATIC)
+    codeOff=68fcc (430028)
+    quickening_size=0 (0)
+      068fd0: 0801 1200                              |0000: move-object/from16 v1, v18
+      068fd4: 7401 7578 1100                         |0002: invoke-virtual/range {v17}, Ljava/io/File;.exists:()Z // method@7875
+      068fda: 0a00                                   |0005: move-result v0
+      068fdc: 3900 0300                              |0006: if-nez v0, 0009 // +0003
+      068fe0: 0e00                                   |0008: return-void
+      068fe2: 1202                                   |0009: const/4 v2, #int 0 // #0
+      068fe4: 2200 9702                              |000a: new-instance v0, Landroid/util/AtomicFile; // type@0297
+      068fe8: 0803 1100                              |000c: move-object/from16 v3, v17
+      068fec: 7020 fb0c 3000                         |000e: invoke-direct {v0, v3}, Landroid/util/AtomicFile;.<init>:(Ljava/io/File;)V // method@0cfb
+      068ff2: 0704                                   |0011: move-object v4, v0
+      068ff4: 6e10 fe0c 0400                         |0012: invoke-virtual {v4}, Landroid/util/AtomicFile;.openRead:()Ljava/io/FileInputStream; // method@0cfe
+      068ffa: 0c00                                   |0015: move-result-object v0
+      068ffc: 0702                                   |0016: move-object v2, v0
+      068ffe: 7100 400d 0000                         |0017: invoke-static {}, Landroid/util/Xml;.newPullParser:()Lorg/xmlpull/v1/XmlPullParser; // method@0d40
+      069004: 0c00                                   |001a: move-result-object v0
+      069006: 0705                                   |001b: move-object v5, v0
+      069008: 1200                                   |001c: const/4 v0, #int 0 // #0
+      06900a: 7230 217f 2500                         |001d: invoke-interface {v5, v2, v0}, Lorg/xmlpull/v1/XmlPullParser;.setInput:(Ljava/io/InputStream;Ljava/lang/String;)V // method@7f21
+      069010: 7210 1e7f 0500                         |0020: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.next:()I // method@7f1e
+      069016: 0a06                                   |0023: move-result v6
+      069018: 0167                                   |0024: move v7, v6
+      06901a: 1218                                   |0025: const/4 v8, #int 1 // #1
+      06901c: 1229                                   |0026: const/4 v9, #int 2 // #2
+      06901e: 3296 0500                              |0027: if-eq v6, v9, 002c // +0005
+      069022: 3287 0300                              |0029: if-eq v7, v8, 002c // +0003
+      069026: 28f5                                   |002b: goto 0020 // -000b
+      069028: 3297 0a00                              |002c: if-eq v7, v9, 0036 // +000a
+      06902c: 3802 0700                              |002e: if-eqz v2, 0035 // +0007
+      069030: 6e10 8f78 0200                         |0030: invoke-virtual {v2}, Ljava/io/FileInputStream;.close:()V // method@788f
+      069036: 2802                                   |0033: goto 0035 // +0002
+      069038: 0d00                                   |0034: move-exception v0
+      06903a: 0e00                                   |0035: return-void
+      06903c: 7210 1c7f 0500                         |0036: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.getName:()Ljava/lang/String; // method@7f1c
+      069042: 0c06                                   |0039: move-result-object v6
+      069044: 1a0a e655                              |003a: const-string v10, "amazonflagstag" // string@55e6
+      069048: 6e20 177a a600                         |003c: invoke-virtual {v6, v10}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      06904e: 0a06                                   |003f: move-result v6
+      069050: 3806 0d00                              |0040: if-eqz v6, 004d // +000d
+      069054: 1a06 9893                              |0042: const-string v6, "schemaversion" // string@9398
+      069058: 7230 197f 0506                         |0044: invoke-interface {v5, v0, v6}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      06905e: 0c06                                   |0047: move-result-object v6
+      069060: 1a0a 4807                              |0048: const-string v10, "2.0" // string@0748
+      069064: 6e20 177a 6a00                         |004a: invoke-virtual {v10, v6}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      06906a: 12f6                                   |004d: const/4 v6, #int -1 // #ff
+      06906c: 016a                                   |004e: move v10, v6
+      06906e: 0706                                   |004f: move-object v6, v0
+      069070: 7210 1e7f 0500                         |0050: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.next:()I // method@7f1e
+      069076: 0a0b                                   |0053: move-result v11
+      069078: 01b7                                   |0054: move v7, v11
+      06907a: 328b 6200                              |0055: if-eq v11, v8, 00b7 // +0062
+      06907e: 3397 f9ff                              |0057: if-ne v7, v9, 0050 // -0007
+      069082: 7210 1c7f 0500                         |0059: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.getName:()Ljava/lang/String; // method@7f1c
+      069088: 0c0b                                   |005c: move-result-object v11
+      06908a: 1a0c a988                              |005d: const-string v12, "package" // string@88a9
+      06908e: 6e20 177a bc00                         |005f: invoke-virtual {v12, v11}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      069094: 0a0c                                   |0062: move-result v12
+      069096: 380c 2100                              |0063: if-eqz v12, 0084 // +0021
+      06909a: 1a0c 5c9f                              |0065: const-string v12, "userid" // string@9f5c
+      06909e: 7230 197f 050c                         |0067: invoke-interface {v5, v0, v12}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      0690a4: 0c0c                                   |006a: move-result-object v12
+      0690a6: 7110 9c79 0c00                         |006b: invoke-static {v12}, Ljava/lang/Integer;.parseInt:(Ljava/lang/String;)I // method@799c
+      0690ac: 0a0d                                   |006e: move-result v13
+      0690ae: 01da                                   |006f: move v10, v13
+      0690b0: 1a0d ee88                              |0070: const-string v13, "packagename" // string@88ee
+      0690b4: 7230 197f 050d                         |0072: invoke-interface {v5, v0, v13}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      0690ba: 0c0d                                   |0075: move-result-object v13
+      0690bc: 07d6                                   |0076: move-object v6, v13
+      0690be: 1a0e e555                              |0077: const-string v14, "amazonflagsattr" // string@55e5
+      0690c2: 7230 197f 050e                         |0079: invoke-interface {v5, v0, v14}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; // method@7f19
+      0690c8: 0c0e                                   |007c: move-result-object v14
+      0690ca: 7110 9c79 0e00                         |007d: invoke-static {v14}, Ljava/lang/Integer;.parseInt:(Ljava/lang/String;)I // method@799c
+      0690d0: 0a0f                                   |0080: move-result v15
+      0690d2: 7140 6b1d d1af                         |0081: invoke-static {v1, v13, v15, v10}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setApplicationInfoForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;II)V // method@1d6b
+      0690d8: 1a0c b182                              |0084: const-string v12, "metadata" // string@82b1
+      0690dc: 6e20 177a bc00                         |0086: invoke-virtual {v12, v11}, Ljava/lang/String;.equals:(Ljava/lang/Object;)Z // method@7a17
+      0690e2: 0a0c                                   |0089: move-result v12
+      0690e4: 380c 2a00                              |008a: if-eqz v12, 00b4 // +002a
+      0690e8: 3806 2800                              |008c: if-eqz v6, 00b4 // +0028
+      0690ec: 7210 167f 0500                         |008e: invoke-interface {v5}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeCount:()I // method@7f16
+      0690f2: 0a0c                                   |0091: move-result v12
+      0690f4: 220d e712                              |0092: new-instance v13, Ljava/util/ArrayList; // type@12e7
+      0690f8: 7020 bb7b cd00                         |0094: invoke-direct {v13, v12}, Ljava/util/ArrayList;.<init>:(I)V // method@7bbb
+      0690fe: 220e e712                              |0097: new-instance v14, Ljava/util/ArrayList; // type@12e7
+      069102: 7020 bb7b ce00                         |0099: invoke-direct {v14, v12}, Ljava/util/ArrayList;.<init>:(I)V // method@7bbb
+      069108: 120f                                   |009c: const/4 v15, #int 0 // #0
+      06910a: 35cf 1400                              |009d: if-ge v15, v12, 00b1 // +0014
+      06910e: 7220 177f f500                         |009f: invoke-interface {v5, v15}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeName:(I)Ljava/lang/String; // method@7f17
+      069114: 0c00                                   |00a2: move-result-object v0
+      069116: 7220 a17c 0d00                         |00a3: invoke-interface {v13, v0}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@7ca1
+      06911c: 7220 187f f500                         |00a6: invoke-interface {v5, v15}, Lorg/xmlpull/v1/XmlPullParser;.getAttributeValue:(I)Ljava/lang/String; // method@7f18
+      069122: 0c00                                   |00a9: move-result-object v0
+      069124: 7220 a17c 0e00                         |00aa: invoke-interface {v14, v0}, Ljava/util/List;.add:(Ljava/lang/Object;)Z // method@7ca1
+      06912a: d80f 0f01                              |00ad: add-int/lit8 v15, v15, #int 1 // #01
+      06912e: 1200                                   |00af: const/4 v0, #int 0 // #0
+      069130: 28ed                                   |00b0: goto 009d // -0013
+      069132: 715a 6a1d 61ed                         |00b1: invoke-static {v1, v6, v13, v14, v10}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setAmazonMetadataForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V // method@1d6a
+      069138: 0000                                   |00b4: nop // spacer
+[new] 069138: 0000                                   |00b4: nop // spacer
+      06913a: 1200                                   |00b5: const/4 v0, #int 0 // #0
+      06913c: 289a                                   |00b6: goto 0050 // -0066
+      06913e: 3802 2600                              |00b7: if-eqz v2, 00dd // +0026
+      069142: 6e10 8f78 0200                         |00b9: invoke-virtual {v2}, Ljava/io/FileInputStream;.close:()V // method@788f
+      069148: 2821                                   |00bc: goto 00dd // +0021
+      06914a: 0d00                                   |00bd: move-exception v0
+      06914c: 281f                                   |00be: goto 00dd // +001f
+      06914e: 0d00                                   |00bf: move-exception v0
+      069150: 0725                                   |00c0: move-object v5, v2
+      069152: 0702                                   |00c1: move-object v2, v0
+      069154: 281c                                   |00c2: goto 00de // +001c
+      069156: 0d00                                   |00c3: move-exception v0
+      069158: 6205 7f0f                              |00c4: sget-object v5, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.TAG:Ljava/lang/String; // field@0f7f
+      06915c: 2206 8112                              |00c6: new-instance v6, Ljava/lang/StringBuilder; // type@1281
+      069160: 7010 4a7a 0600                         |00c8: invoke-direct {v6}, Ljava/lang/StringBuilder;.<init>:()V // method@7a4a
+      069166: 1a07 b215                              |00cb: const-string v7, "Error reading amazon application info
+" // string@15b2
+      06916a: 6e20 557a 7600                         |00cd: invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder; // method@7a55
+      069170: 6e20 547a 0600                         |00d0: invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder; // method@7a54
+      069176: 6e10 5e7a 0600                         |00d3: invoke-virtual {v6}, Ljava/lang/StringBuilder;.toString:()Ljava/lang/String; // method@7a5e
+      06917c: 0c06                                   |00d6: move-result-object v6
+      06917e: 7120 1c0d 6500                         |00d7: invoke-static {v5, v6}, Landroid/util/Slog;.e:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1c
+      069184: 3802 0300                              |00da: if-eqz v2, 00dd // +0003
+      069188: 28dd                                   |00dc: goto 00b9 // -0023
+      06918a: 0e00                                   |00dd: return-void
+      06918c: 3805 0700                              |00de: if-eqz v5, 00e5 // +0007
+      069190: 6e10 8f78 0500                         |00e0: invoke-virtual {v5}, Ljava/io/FileInputStream;.close:()V // method@788f
+      069196: 2802                                   |00e3: goto 00e5 // +0002
+      069198: 0d00                                   |00e4: move-exception v0
+      06919a: 2702                                   |00e5: throw v2
+
+# AmazonApplicationFlags.removeAmazonFlagsForUser call at line 95485
+   direct_method #7524: removeAmazonFlagsForUser (Ljava/util/List;II)V
+    access=0008 (STATIC)
+    codeOff=691e6 (430566)
+    quickening_size=0 (0)
+      0691ea: 7210 ac7c 0200                         |0000: invoke-interface {v2}, Ljava/util/List;.iterator:()Ljava/util/Iterator; // method@7cac
+      0691f0: 0c00                                   |0003: move-result-object v0
+      0691f2: 7210 867c 0000                         |0004: invoke-interface {v0}, Ljava/util/Iterator;.hasNext:()Z // method@7c86
+      0691f8: 0a01                                   |0007: move-result v1
+      0691fa: 3801 0c00                              |0008: if-eqz v1, 0014 // +000c
+      0691fe: 7210 877c 0000                         |000a: invoke-interface {v0}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@7c87
+      069204: 0c01                                   |000d: move-result-object v1
+      069206: 1f01 7f12                              |000e: check-cast v1, Ljava/lang/String; // type@127f
+      06920a: 7130 671d 3104                         |0010: invoke-static {v1, v3, v4}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.removeApplicationInfoForUserLocked:(Ljava/lang/String;II)V // method@1d67
+      069210: 28f1                                   |0013: goto 0004 // -000f
+      069212: 7100 6e1d 0000                         |0014: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      069218: 0e00                                   |0017: return-void
+
+# AmazonApplicationFlags.removeAmazonFlagsForUser call at line 95487
+   direct_method #7524: removeAmazonFlagsForUser (Ljava/util/List;II)V
+    access=0008 (STATIC)
+    codeOff=691e6 (430566)
+    quickening_size=0 (0)
+      0691ea: 7210 ac7c 0200                         |0000: invoke-interface {v2}, Ljava/util/List;.iterator:()Ljava/util/Iterator; // method@7cac
+      0691f0: 0c00                                   |0003: move-result-object v0
+      0691f2: 7210 867c 0000                         |0004: invoke-interface {v0}, Ljava/util/Iterator;.hasNext:()Z // method@7c86
+      0691f8: 0a01                                   |0007: move-result v1
+      0691fa: 3801 0c00                              |0008: if-eqz v1, 0014 // +000c
+      0691fe: 7210 877c 0000                         |000a: invoke-interface {v0}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@7c87
+      069204: 0c01                                   |000d: move-result-object v1
+      069206: 1f01 7f12                              |000e: check-cast v1, Ljava/lang/String; // type@127f
+      06920a: 7130 671d 3104                         |0010: invoke-static {v1, v3, v4}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.removeApplicationInfoForUserLocked:(Ljava/lang/String;II)V // method@1d67
+      069210: 28f1                                   |0013: goto 0004 // -000f
+      069212: 7100 6e1d 0000                         |0014: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      069218: 0e00                                   |0017: return-void
+
+# AmazonApplicationFlags.removeAmazonMetadataForUser call at line 95494
+   direct_method #7525: removeAmazonMetadataForUser (Ljava/lang/String;Ljava/util/List;I)V
+    access=0009 (PUBLIC STATIC)
+    codeOff=6921a (430618)
+    quickening_size=0 (0)
+      06921e: 6200 840f                              |0000: sget-object v0, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      069222: 7140 661d 1032                         |0002: invoke-static {v0, v1, v2, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.removeAmazonMetadataForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;Ljava/util/List;I)V // method@1d66
+      069228: 7100 6e1d 0000                         |0005: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      06922e: 0e00                                   |0008: return-void
+
+# AmazonApplicationFlags.removeAmazonMetadataForUser call at line 95495
+   direct_method #7525: removeAmazonMetadataForUser (Ljava/lang/String;Ljava/util/List;I)V
+    access=0009 (PUBLIC STATIC)
+    codeOff=6921a (430618)
+    quickening_size=0 (0)
+      06921e: 6200 840f                              |0000: sget-object v0, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      069222: 7140 661d 1032                         |0002: invoke-static {v0, v1, v2, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.removeAmazonMetadataForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;Ljava/util/List;I)V // method@1d66
+      069228: 7100 6e1d 0000                         |0005: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      06922e: 0e00                                   |0008: return-void
+
+# AmazonApplicationFlags.setAmazonFlagsForUser call at line 95544
+   direct_method #7528: setAmazonFlagsForUser (Ljava/util/List;II)V
+    access=0008 (STATIC)
+    codeOff=692a8 (430760)
+    quickening_size=0 (0)
+      0692ac: 7210 ac7c 0300                         |0000: invoke-interface {v3}, Ljava/util/List;.iterator:()Ljava/util/Iterator; // method@7cac
+      0692b2: 0c00                                   |0003: move-result-object v0
+      0692b4: 7210 867c 0000                         |0004: invoke-interface {v0}, Ljava/util/Iterator;.hasNext:()Z // method@7c86
+      0692ba: 0a01                                   |0007: move-result v1
+      0692bc: 3801 0e00                              |0008: if-eqz v1, 0016 // +000e
+      0692c0: 7210 877c 0000                         |000a: invoke-interface {v0}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@7c87
+      0692c6: 0c01                                   |000d: move-result-object v1
+      0692c8: 1f01 7f12                              |000e: check-cast v1, Ljava/lang/String; // type@127f
+      0692cc: 6202 840f                              |0010: sget-object v2, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      0692d0: 7140 6b1d 1254                         |0012: invoke-static {v2, v1, v4, v5}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setApplicationInfoForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;II)V // method@1d6b
+      0692d6: 28ef                                   |0015: goto 0004 // -0011
+      0692d8: 7100 6e1d 0000                         |0016: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      0692de: 0e00                                   |0019: return-void
+
+# AmazonApplicationFlags.setAmazonFlagsForUser call at line 95546
+   direct_method #7528: setAmazonFlagsForUser (Ljava/util/List;II)V
+    access=0008 (STATIC)
+    codeOff=692a8 (430760)
+    quickening_size=0 (0)
+      0692ac: 7210 ac7c 0300                         |0000: invoke-interface {v3}, Ljava/util/List;.iterator:()Ljava/util/Iterator; // method@7cac
+      0692b2: 0c00                                   |0003: move-result-object v0
+      0692b4: 7210 867c 0000                         |0004: invoke-interface {v0}, Ljava/util/Iterator;.hasNext:()Z // method@7c86
+      0692ba: 0a01                                   |0007: move-result v1
+      0692bc: 3801 0e00                              |0008: if-eqz v1, 0016 // +000e
+      0692c0: 7210 877c 0000                         |000a: invoke-interface {v0}, Ljava/util/Iterator;.next:()Ljava/lang/Object; // method@7c87
+      0692c6: 0c01                                   |000d: move-result-object v1
+      0692c8: 1f01 7f12                              |000e: check-cast v1, Ljava/lang/String; // type@127f
+      0692cc: 6202 840f                              |0010: sget-object v2, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      0692d0: 7140 6b1d 1254                         |0012: invoke-static {v2, v1, v4, v5}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setApplicationInfoForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;II)V // method@1d6b
+      0692d6: 28ef                                   |0015: goto 0004 // -0011
+      0692d8: 7100 6e1d 0000                         |0016: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      0692de: 0e00                                   |0019: return-void
+
+# AmazonApplicationFlags.setAmazonMetadataForUser call at line 95553
+   direct_method #7529: setAmazonMetadataForUser (Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V
+    access=0008 (STATIC)
+    codeOff=692e0 (430816)
+    quickening_size=0 (0)
+      0692e4: 6200 840f                              |0000: sget-object v0, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      0692e8: 7154 6a1d 1032                         |0002: invoke-static {v0, v1, v2, v3, v4}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setAmazonMetadataForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V // method@1d6a
+      0692ee: 7100 6e1d 0000                         |0005: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      0692f4: 0e00                                   |0008: return-void
+
+# AmazonApplicationFlags.setAmazonMetadataForUser call at line 95554
+   direct_method #7529: setAmazonMetadataForUser (Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V
+    access=0008 (STATIC)
+    codeOff=692e0 (430816)
+    quickening_size=0 (0)
+      0692e4: 6200 840f                              |0000: sget-object v0, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      0692e8: 7154 6a1d 1032                         |0002: invoke-static {v0, v1, v2, v3, v4}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setAmazonMetadataForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;Ljava/util/List;Ljava/util/List;I)V // method@1d6a
+      0692ee: 7100 6e1d 0000                         |0005: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:()V // method@1d6e
+      0692f4: 0e00                                   |0008: return-void
+
+# AmazonApplicationFlags.setApplicationInfoForUserLocked call at line 95608
+   direct_method #7532: setApplicationInfoForUserLocked (Ljava/lang/String;II)V
+    access=000a (PRIVATE STATIC)
+    codeOff=693a4 (431012)
+    quickening_size=0 (0)
+      0693a8: 6200 840f                              |0000: sget-object v0, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      0693ac: 7140 6b1d 1032                         |0002: invoke-static {v0, v1, v2, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.setApplicationInfoForUserLocked:(Landroid/util/SparseArray;Ljava/lang/String;II)V // method@1d6b
+      0693b2: 0e00                                   |0005: return-void
+
+# AmazonApplicationFlags.writeToFile call at line 95641
+   direct_method #7534: writeToFile ()V
+    access=0008 (STATIC)
+    codeOff=693f6 (431094)
+    quickening_size=0 (0)
+      0693fa: 7100 5d1d 0000                         |0000: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.computeHashCode:()I // method@1d5d
+      069400: 0a00                                   |0003: move-result v0
+      069402: 6001 850f                              |0004: sget v1, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonInfoCheckpoint:I // field@0f85
+      069406: 3201 0b00                              |0006: if-eq v1, v0, 0011 // +000b
+      06940a: 6700 850f                              |0008: sput v0, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonInfoCheckpoint:I // field@0f85
+      06940e: 6201 860f                              |000a: sget-object v1, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonInfoFile:Ljava/io/File; // field@0f86
+      069412: 6202 840f                              |000c: sget-object v2, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.sAmazonFlags:Landroid/util/SparseArray; // field@0f84
+      069416: 7120 6f1d 2100                         |000e: invoke-static {v1, v2}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.writeToFile:(Ljava/io/File;Landroid/util/SparseArray;)V // method@1d6f
+      06941c: 0e00                                   |0011: return-void
+
+# AmazonPackageManagerService.BinderService.getAmazonFlagsForUser call at line 95893
+   virtual_method #7542: getAmazonFlagsForUser (Ljava/lang/String;I)I
+    access=0001 (PUBLIC)
+    codeOff=69868 (432232)
+    quickening_size=0 (0)
+      06986c: 7120 5e1d 3200                         |0000: invoke-static {v2, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.getAmazonFlagsForUser:(Ljava/lang/String;I)I // method@1d5e
+      069872: 0a00                                   |0003: move-result v0
+      069874: 0f00                                   |0004: return v0
+
+# AmazonPackageManagerService.onBootPhase call at line 96098
+   virtual_method #7558: onBootPhase (I)V
+    access=0001 (PUBLIC)
+    codeOff=699de (432606)
+    quickening_size=0 (0)
+      0699e2: 1300 f401                              |0000: const/16 v0, #int 500 // #1f4
+      0699e6: 3304 2100                              |0002: if-ne v4, v0, 0023 // +0021
+      0699ea: 1a00 a988                              |0004: const-string v0, "package" // string@88a9
+      0699ee: 7110 330c 0000                         |0006: invoke-static {v0}, Landroid/os/ServiceManager;.getService:(Ljava/lang/String;)Landroid/os/IBinder; // method@0c33
+      0699f4: 0c00                                   |0009: move-result-object v0
+      0699f6: 1f00 7709                              |000a: check-cast v0, Lcom/android/server/pm/PackageManagerService; // type@0977
+      0699fa: 5b30 960f                              |000c: iput-object v0, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mPackageManagerService:Lcom/android/server/pm/PackageManagerService; // field@0f96
+      0699fe: 7100 611d 0000                         |000e: invoke-static {}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.init:()V // method@1d61
+      069a04: 2200 e904                              |0011: new-instance v0, Lcom/amazon/android/service/audio/AudioRecordPermissionEnforcer; // type@04e9
+      069a08: 5431 940f                              |0013: iget-object v1, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mContext:Landroid/content/Context; // field@0f94
+      069a0c: 7020 f61a 1000                         |0015: invoke-direct {v0, v1}, Lcom/amazon/android/service/audio/AudioRecordPermissionEnforcer;.<init>:(Landroid/content/Context;)V // method@1af6
+      069a12: 5b30 930f                              |0018: iput-object v0, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mAudioEnforcer:Lcom/amazon/android/service/audio/AudioRecordPermissionEnforcer; // field@0f93
+      069a16: 2200 4905                              |001a: new-instance v0, Lcom/amazon/android/service/pm/DenyListArcusHelper; // type@0549
+      069a1a: 5431 940f                              |001c: iget-object v1, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mContext:Landroid/content/Context; // field@0f94
+      069a1e: 7020 bf1d 1000                         |001e: invoke-direct {v0, v1}, Lcom/amazon/android/service/pm/DenyListArcusHelper;.<init>:(Landroid/content/Context;)V // method@1dbf
+      069a24: 5b30 950f                              |0021: iput-object v0, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mDenyListArcusHelper:Lcom/amazon/android/service/pm/DenyListArcusHelper; // field@0f95
+      069a28: 1300 2602                              |0023: const/16 v0, #int 550 // #226
+      069a2c: 3304 2b00                              |0025: if-ne v4, v0, 0050 // +002b
+      069a30: 5430 960f                              |0027: iget-object v0, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mPackageManagerService:Lcom/android/server/pm/PackageManagerService; // field@0f96
+      069a34: 3800 2700                              |0029: if-eqz v0, 0050 // +0027
+      069a38: 5430 960f                              |002b: iget-object v0, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mPackageManagerService:Lcom/android/server/pm/PackageManagerService; // field@0f96
+      069a3c: 6e10 f936 0000                         |002d: invoke-virtual {v0}, Lcom/android/server/pm/PackageManagerService;.isUpgrade:()Z // method@36f9
+      069a42: 0a00                                   |0030: move-result v0
+      069a44: 3800 1f00                              |0031: if-eqz v0, 0050 // +001f
+      069a48: 2200 9000                              |0033: new-instance v0, Landroid/content/Intent; // type@0090
+      069a4c: 7010 6102 0000                         |0035: invoke-direct {v0}, Landroid/content/Intent;.<init>:()V // method@0261
+      069a52: 1a01 9755                              |0038: const-string v1, "amazon.intent.action.BOOT_AFTER_SYSTEM_OTA" // string@5597
+      069a56: 6e20 8102 1000                         |003a: invoke-virtual {v0, v1}, Landroid/content/Intent;.setAction:(Ljava/lang/String;)Landroid/content/Intent; // method@0281
+      069a5c: 1501 0001                              |003d: const/high16 v1, #int 16777216 // #100
+      069a60: 6e20 6602 1000                         |003f: invoke-virtual {v0, v1}, Landroid/content/Intent;.addFlags:(I)Landroid/content/Intent; // method@0266
+      069a66: 6201 910f                              |0042: sget-object v1, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.TAG:Ljava/lang/String; // field@0f91
+      069a6a: 1a02 3b47                              |0044: const-string v2, "Sending BOOT_AFTER_SYSTEM_OTA broadcast" // string@473b
+      069a6e: 7120 1e0d 2100                         |0046: invoke-static {v1, v2}, Landroid/util/Slog;.i:(Ljava/lang/String;Ljava/lang/String;)I // method@0d1e
+      069a74: 5431 940f                              |0049: iget-object v1, v3, Lcom/amazon/android/service/pm/AmazonPackageManagerService;.mContext:Landroid/content/Context; // field@0f94
+      069a78: 1a02 d55c                              |004b: const-string v2, "com.amazon.permission.RECEIVE_BOOT_AFTER_SYSTEM_OTA" // string@5cd5
+      069a7c: 6e30 4f02 0102                         |004d: invoke-virtual {v1, v0, v2}, Landroid/content/Context;.sendBroadcast:(Landroid/content/Intent;Ljava/lang/String;)V // method@024f
+      069a82: 0e00                                   |0050: return-void
+
+# GameModeHelper.isGamingApp call at line 134746
+   direct_method #10446: isGamingApp (Ljava/lang/String;I)Z
+    access=0009 (PUBLIC STATIC)
+    codeOff=97096 (618646)
+    quickening_size=0 (0)
+      09709a: 7110 d10c 0200                         |0000: invoke-static {v2}, Landroid/text/TextUtils;.isEmpty:(Ljava/lang/CharSequence;)Z // method@0cd1
+      0970a0: 0a00                                   |0003: move-result v0
+      0970a2: 1201                                   |0004: const/4 v1, #int 0 // #0
+      0970a4: 3800 0300                              |0005: if-eqz v0, 0008 // +0003
+      0970a8: 0f01                                   |0007: return v1
+      0970aa: 7120 5e1d 3200                         |0008: invoke-static {v2, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.getAmazonFlagsForUser:(Ljava/lang/String;I)I // method@1d5e
+      0970b0: 0a00                                   |000b: move-result v0
+      0970b2: dd00 0002                              |000c: and-int/lit8 v0, v0, #int 2 // #02
+      0970b6: 3800 0400                              |000e: if-eqz v0, 0012 // +0004
+      0970ba: 1211                                   |0010: const/4 v1, #int 1 // #1
+      0970bc: 0000                                   |0011: nop // spacer
+[new] 0970bc: 0000                                   |0011: nop // spacer
+      0970be: 0f01                                   |0012: return v1
+
+# AppCompatActivityManagerServiceCallback.isIncompatiblePackage call at line 181605
+   direct_method #13539: isIncompatiblePackage (ILjava/lang/String;)Z
+    access=0002 (PRIVATE)
+    codeOff=c57cc (808908)
+    quickening_size=0 (0)
+      0c57d0: 7120 5e1d 3400                         |0000: invoke-static {v4, v3}, Lcom/amazon/android/service/pm/AmazonApplicationFlags;.getAmazonFlagsForUser:(Ljava/lang/String;I)I // method@1d5e
+      0c57d6: 0a00                                   |0003: move-result v0
+      0c57d8: 1211                                   |0004: const/4 v1, #int 1 // #1
+      0c57da: b510                                   |0005: and-int/2addr v0, v1
+      0c57dc: 3800 0300                              |0006: if-eqz v0, 0009 // +0003
+      0c57e0: 2802                                   |0008: goto 000a // +0002
+      0c57e2: 1201                                   |0009: const/4 v1, #int 0 // #0
+      0c57e4: 0f01                                   |000a: return v1

@@ -1,0 +1,9 @@
+      032870: 7020 ab12 2000                         |0002: invoke-direct {v0, v2}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.<init>:(Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;)V // method@12ab
+      032876: 5b20 0907                              |0005: iput-object v0, v2, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.mBinderService:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService; // field@0709
+      03287a: 7100 b212 0000                         |0007: invoke-static {}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.getSystemServiceName:()Ljava/lang/String; // method@12b2
+      032880: 0c00                                   |000a: move-result-object v0
+      032882: 5421 0907                              |000b: iget-object v1, v2, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.mBinderService:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService; // field@0709
+      032886: 6e30 b612 0201                         |000d: invoke-virtual {v2, v0, v1}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.publishBinderService:(Ljava/lang/String;Landroid/os/IBinder;)V // method@12b6
+      03288c: 1c00 ce03                              |0010: const-class v0, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // type@03ce
+      032890: 6e30 b712 0202                         |0012: invoke-virtual {v2, v0, v2}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.publishLocalService:(Ljava/lang/Class;Ljava/lang/Object;)V // method@12b7
+      032896: 0e00                                   |0015: return-void

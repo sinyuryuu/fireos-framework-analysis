@@ -1,0 +1,58 @@
+  class #355: AmazonAccessibilityManagerService.BinderService ('Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;')
+   access=0001 (PUBLIC)
+   source_file=AmazonAccessibilityManagerService.java, class_data_off=243255 (2372181)
+   static_fields=0, instance_fields=1, direct_methods=1, virtual_methods=3
+   direct_method #4779: <init> (Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;)V
+    access=10001 (PUBLIC CONSTRUCTOR)
+    codeOff=3274c (206668)
+    quickening_size=0 (0)
+      032750: 5b01 0407                              |0000: iput-object v1, v0, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.this$0:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // field@0704
+      032754: 7010 b912 0000                         |0002: invoke-direct {v0}, Lcom/amazon/android/server/accessibility/IAmazonAccessibilityManager$Stub;.<init>:()V // method@12b9
+      03275a: 0e00                                   |0005: return-void
+   virtual_method #4780: magnificationCanvasAddLine (FFFFFI)V
+    access=0001 (PUBLIC)
+    codeOff=3275c (206684)
+    quickening_size=0 (0)
+      032760: 5480 0407                              |0000: iget-object v0, v8, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.this$0:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // field@0704
+      032764: 1a01 9a5c                              |0002: const-string v1, "com.amazon.logan.permission.DRAW_MAGNIFICATION_RECT" // string@5c9a
+      032768: 7120 b012 1000                         |0004: invoke-static {v0, v1}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.access$000:(Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;Ljava/lang/String;)V // method@12b0
+      03276e: 5480 0407                              |0007: iget-object v0, v8, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.this$0:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // field@0704
+      032772: 7110 b112 0000                         |0009: invoke-static {v0}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.access$100:(Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;)Lcom/amazon/android/server/accessibility/MagnificationCanvas; // method@12b1
+      032778: 0c01                                   |000c: move-result-object v1
+      03277a: 0192                                   |000d: move v2, v9
+      03277c: 01a3                                   |000e: move v3, v10
+      03277e: 01b4                                   |000f: move v4, v11
+      032780: 01c5                                   |0010: move v5, v12
+      032782: 01d6                                   |0011: move v6, v13
+      032784: 01e7                                   |0012: move v7, v14
+      032786: 7407 bd12 0100                         |0013: invoke-virtual/range {v1, v2, v3, v4, v5, v6, v7}, Lcom/amazon/android/server/accessibility/MagnificationCanvas;.addLine:(FFFFFI)V // method@12bd
+      03278c: 0e00                                   |0016: return-void
+   virtual_method #4781: magnificationCanvasAddRect (FFFFI)V
+    access=0001 (PUBLIC)
+    codeOff=3278e (206734)
+    quickening_size=0 (0)
+      032792: 5470 0407                              |0000: iget-object v0, v7, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.this$0:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // field@0704
+      032796: 1a01 9a5c                              |0002: const-string v1, "com.amazon.logan.permission.DRAW_MAGNIFICATION_RECT" // string@5c9a
+      03279a: 7120 b012 1000                         |0004: invoke-static {v0, v1}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.access$000:(Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;Ljava/lang/String;)V // method@12b0
+      0327a0: 5470 0407                              |0007: iget-object v0, v7, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.this$0:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // field@0704
+      0327a4: 7110 b112 0000                         |0009: invoke-static {v0}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.access$100:(Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;)Lcom/amazon/android/server/accessibility/MagnificationCanvas; // method@12b1
+      0327aa: 0c01                                   |000c: move-result-object v1
+      0327ac: 0182                                   |000d: move v2, v8
+      0327ae: 0193                                   |000e: move v3, v9
+      0327b0: 01a4                                   |000f: move v4, v10
+      0327b2: 01b5                                   |0010: move v5, v11
+      0327b4: 01c6                                   |0011: move v6, v12
+      0327b6: 7406 be12 0100                         |0012: invoke-virtual/range {v1, v2, v3, v4, v5, v6}, Lcom/amazon/android/server/accessibility/MagnificationCanvas;.addRect:(FFFFI)V // method@12be
+      0327bc: 0e00                                   |0015: return-void
+   virtual_method #4782: magnificationCanvasClear ()V
+    access=0001 (PUBLIC)
+    codeOff=327be (206782)
+    quickening_size=0 (0)
+      0327c2: 5420 0407                              |0000: iget-object v0, v2, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.this$0:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // field@0704
+      0327c6: 1a01 9a5c                              |0002: const-string v1, "com.amazon.logan.permission.DRAW_MAGNIFICATION_RECT" // string@5c9a
+      0327ca: 7120 b012 1000                         |0004: invoke-static {v0, v1}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.access$000:(Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;Ljava/lang/String;)V // method@12b0
+      0327d0: 5420 0407                              |0007: iget-object v0, v2, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService$BinderService;.this$0:Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService; // field@0704
+      0327d4: 7110 b112 0000                         |0009: invoke-static {v0}, Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;.access$100:(Lcom/amazon/android/server/accessibility/AmazonAccessibilityManagerService;)Lcom/amazon/android/server/accessibility/MagnificationCanvas; // method@12b1
+      0327da: 0c00                                   |000c: move-result-object v0
+      0327dc: 6e10 bf12 0000                         |000d: invoke-virtual {v0}, Lcom/amazon/android/server/accessibility/MagnificationCanvas;.clear:()V // method@12bf
+      0327e2: 0e00                                   |0010: return-void
