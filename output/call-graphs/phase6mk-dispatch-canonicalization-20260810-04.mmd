@@ -1,0 +1,10 @@
+flowchart LR
+    Main["main"] --> Reg["RegisterInstallFunctions"]
+    Main --> BlockReg["RegisterBlockImageFunction"]
+    Reg --> RF["RegisterFunction(name, function pointer)"]
+    RF -."indirect registry".-> Handler["registered handler"]
+    Handler --> Extract["PackageExtractFileFn"]
+    Handler --> Block["PerformBlockImageUpdate / WriteToPartition"]
+    Extract --> Open["ota_open / open"]
+    Block --> Write["ota_write / write / rename"]
+    Marker["readlink / realpath markers"] -."no direct edge in selected graph".-> Guard["canonicalization guard unresolved"]

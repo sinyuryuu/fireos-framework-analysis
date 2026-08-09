@@ -1,0 +1,152 @@
+{
+  "analysis": "host-only native updater registration, indirect dispatch, and canonicalization closure",
+  "bounded_interpretation": [
+    "RegisterInstallFunctions calls a common RegisterFunction routine with command-name objects and function-pointer cells; unresolved cells remain an indirect-dispatch boundary.",
+    "The supplied selected disassembly directly connects extraction and write handlers to open/write/rename wrappers as recorded in the prior audit.",
+    "readlink/realpath markers without a selected direct caller edge do not prove that canonicalization is absent from unselected functions or indirect dispatch.",
+    "No runtime behavior, OTA verification, path traversal, symlink behavior, or partition mutation was tested."
+  ],
+  "canonicalization_direct_edge_count": 0,
+  "canonicalization_marker_string_count": 5,
+  "device_contacted": false,
+  "function_pointer_symbol_resolution_count": 24,
+  "generated_at_utc": "2026-08-09T21:09:36.123327+00:00",
+  "host_only": true,
+  "inputs": {
+    "artifacts/phase6p/callback-ota-audit-20260805-02/native/strings-matched.txt": "172a57cdd82eb2891c585d8c9c31bd642ffa23733cda9a8c599b3c42e896a70e",
+    "artifacts/phase6s/ota-call-edges-20260805-01/call-edges.csv": "ede44312f2f667adff552475866de0b17c06b96161854c35a17a3a1c361eaa75",
+    "artifacts/phase6s/ota-cfg-focus-20260805-01/focus-disassembly.txt": "0e780e51ced6f7b000bf0a821ffe6cfe81bc0108e6073174b7fa0cb0b94abdcd",
+    "artifacts/phase6s/ota-debugdata-audit-20260805-01/debugdata-function-symbols.csv": "6a667275ea88bc33e3f2297077255a8f12a87f3e08318cf6d9704032e6024eca",
+    "firmware/extracted/PS7331/META-INF/com/google/android/update-binary": "02643fa987778361742a5ecaa601034b7f20a55df9bacc58ec8bbcdcd8ac896b",
+    "firmware/extracted/PS7331/META-INF/com/google/android/updater-script": "4a61d66754187a5b84f173ad7bc50216b00969743ce3193346762613615ac248"
+  },
+  "observations": {
+    "all_registration_function_pointers_resolved_to_symbols": true,
+    "canonicalization_direct_edge_in_selected_graph": false,
+    "canonicalization_markers_present": true,
+    "make_free_space_body_selected": false,
+    "package_extract_file_has_ota_open_direct_edge": true,
+    "register_function_dispatch_is_indirect": true,
+    "register_install_functions_called_by_main": true
+  },
+  "partition_written": false,
+  "phase": "6MK",
+  "recovered_command_names": [
+    "mount",
+    "is_mounted",
+    "unmount",
+    "format",
+    "show_progress",
+    "set_progress",
+    "package_extract_file",
+    "getprop",
+    "file_getprop",
+    "apply_patch",
+    "apply_patch_check",
+    "apply_patch_space",
+    "wipe_block_device",
+    "read_file",
+    "sha1_check",
+    "write_value",
+    "wipe_cache",
+    "ui_print",
+    "run_program",
+    "reboot_now",
+    "get_stage",
+    "set_stage",
+    "enable_reboot",
+    "tune2fs"
+  ],
+  "recovery_executed": false,
+  "registration_call_count": 24,
+  "rejected_operations": [
+    "Executing update-binary or recovery",
+    "Sending, modifying, or crafting OTA packages",
+    "Symlink/path-traversal/canonicalization runtime tests",
+    "Fastboot, sideload, remount, partition write, or device mutation"
+  ],
+  "selected_function_ranges": {
+    "ApplyPatchFn": [
+      "0x402788",
+      "0x402c78"
+    ],
+    "BlockImageUpdateFn": [
+      "0x40b8b8",
+      "0x40b8c8"
+    ],
+    "BlockImageVerifyFn": [
+      "0x407c48",
+      "0x407c58"
+    ],
+    "FormatFn": [
+      "0x403948",
+      "0x40432c"
+    ],
+    "LoadSrcTgtVersion3": [
+      "0x40d260",
+      "0x40e9f8"
+    ],
+    "MountFn": [
+      "0x403268",
+      "0x4035c8"
+    ],
+    "PackageExtractFileFn": [
+      "0x401fb8",
+      "0x402788"
+    ],
+    "PerformBlockImageUpdate": [
+      "0x408f08",
+      "0x40b8b8"
+    ],
+    "RegisterInstallFunctions": [
+      "0x406978",
+      "0x407078"
+    ],
+    "Sha1CheckFn": [
+      "0x402e88",
+      "0x403264"
+    ],
+    "UnmountFn": [
+      "0x403758",
+      "0x403948"
+    ],
+    "VerifyBlocks": [
+      "0x40ede0",
+      "0x40f038"
+    ],
+    "WipeBlockDeviceFn": [
+      "0x406508",
+      "0x406724"
+    ],
+    "WriteToPartition": [
+      "0x413c40",
+      "0x4142f0"
+    ],
+    "main": [
+      "0x400968",
+      "0x4015f0"
+    ],
+    "ota_open": [
+      "0x426338",
+      "0x426528"
+    ],
+    "ota_read": [
+      "0x426be0",
+      "0x426d54"
+    ],
+    "ota_write": [
+      "0x426d58",
+      "0x426ecc"
+    ],
+    "readlink": [
+      "0x4cc3d8",
+      "0x4cc3fc"
+    ],
+    "readlinkat": [
+      "0x4d48a8",
+      "0x4d48c0"
+    ]
+  },
+  "updater_executed": false,
+  "updater_script_entrypoint_count": 13
+}
