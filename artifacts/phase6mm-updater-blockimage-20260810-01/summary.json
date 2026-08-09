@@ -1,0 +1,55 @@
+{
+  "analysis": "host-only updater block-image registration and cache canonicalization closure",
+  "block_image_pointer_symbol_resolution_count": 5,
+  "block_image_registration_count": 5,
+  "block_image_registration_names": [
+    "block_image_verify",
+    "block_image_update",
+    "block_image_recover",
+    "check_first_block",
+    "range_sha1"
+  ],
+  "bounded_interpretation": [
+    "Block-image registry mapping is an indirect command-to-handler boundary; it is not a runtime invocation.",
+    "A readlink-family edge in MakeFreeSpaceOnCache establishes a static canonicalization-related call site only.",
+    "Absence of a direct edge from the selected canonicalization helper to a write sink is bounded to the selected symbol set and direct BL edges.",
+    "No updater, recovery, OTA, crafted path, symlink, device, or partition operation was executed."
+  ],
+  "canonicalization_call_site_count": 1,
+  "device_contacted": false,
+  "direct_edge_count": 818,
+  "generated_at_utc": "2026-08-09T21:16:45.568380+00:00",
+  "host_only": true,
+  "inputs": {
+    "artifacts/phase6s/ota-debugdata-audit-20260805-01/debugdata-function-symbols.csv": "6a667275ea88bc33e3f2297077255a8f12a87f3e08318cf6d9704032e6024eca",
+    "firmware/extracted/PS7331/META-INF/com/google/android/update-binary": "02643fa987778361742a5ecaa601034b7f20a55df9bacc58ec8bbcdcd8ac896b"
+  },
+  "objdump": "/opt/homebrew/opt/llvm/bin/llvm-objdump",
+  "observations": {
+    "block_image_names_recovered": true,
+    "block_image_pointers_resolved_to_symbols": true,
+    "canonicalization_direct_edge_to_extraction_or_partition_write": false,
+    "make_free_space_directly_calls_readlink_family": true,
+    "register_block_image_calls_common_register_function": true
+  },
+  "partition_written": false,
+  "phase": "6MM",
+  "recovery_executed": false,
+  "selected_function_count": 13,
+  "selected_functions": [
+    "RegisterBlockImageFunction",
+    "MakeFreeSpaceOnCache",
+    "BlockImageVerifyFn",
+    "BlockImageUpdateFn",
+    "BlockImageRecoverFn",
+    "PerformBlockImageUpdate",
+    "LoadSrcTgtVersion3",
+    "VerifyBlocks",
+    "WriteToPartition",
+    "WipeBlockDeviceFn",
+    "readlink",
+    "__readlink_chk",
+    "readlinkat"
+  ],
+  "updater_executed": false
+}

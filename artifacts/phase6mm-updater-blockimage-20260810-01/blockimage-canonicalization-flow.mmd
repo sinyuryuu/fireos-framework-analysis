@@ -1,0 +1,11 @@
+flowchart LR
+    Main["main"] --> BlockReg["RegisterBlockImageFunction"]
+    BlockReg --> RF["RegisterFunction(name, function pointer)"]
+    RF -."indirect registry".-> BlockHandlers["block_image_* handlers"]
+    BlockHandlers --> Verify["BlockImageVerifyFn"]
+    BlockHandlers --> Update["BlockImageUpdateFn"]
+    BlockHandlers --> Recover["BlockImageRecoverFn"]
+    Update --> Perform["PerformBlockImageUpdate"]
+    Perform --> Write["WriteToPartition"]
+    Cache["MakeFreeSpaceOnCache"] --> Readlink["__readlink_chk"]
+    Readlink -."no direct selected edge to write sink".-> Write
