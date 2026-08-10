@@ -60,7 +60,7 @@ Device operations in this phase: none
 - `output/call-graphs/phase6rv-rx-control-surfaces.md` —
   `51d5f02d606397ff9dcbe40fd61f2a8d8be170feaccf07109c11078ff3720c79`
 - `tools/scripts/build_phase6rv_rx_surface.py` —
-  `5837590fd405da9a864e52f31c964ba7ea7e46a8ae549add5d4e903e1f79eec1`
+  `f89da5483006f0459926f3a527937f8cf02412c9b1812525b0e78cfa2d0e0aab`
 
 ## 6RV-RX-SAFETY — not executed
 
