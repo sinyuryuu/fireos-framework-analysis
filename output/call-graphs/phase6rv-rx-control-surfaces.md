@@ -1,0 +1,21 @@
+# Phase 6RV–RX control-surface graph
+
+```mermaid
+flowchart TD
+    A["ordinary app / shell"] --> B["caller + user + permission gates"]
+    B --> C["SettingsProvider -> SettingsState/XML"]
+    B --> D["PMS preferred API -> preferred XML"]
+    D --> E["HOME resolver candidate ranking"]
+    E --> F["Fire Launcher priority 50"]
+    B --> G["Amazon PM metadata gate"]
+    G --> H["AmazonApplicationFlags XML"]
+    B --> I["OOBE/OTA/input/native protected boundaries"]
+    J["KFT child/profile lifecycle"] --> K["UserInfo.id-scoped package state"]
+    L["Accessibility user consent"] --> M["delayed explicit foreground redirect"]
+    M -.-> N["not formal HOME / not system identity"]
+    H -.-> N
+    I -.-> N
+```
+
+This is a host-only evidence map. Dashed edges denote a bounded non-HOME or
+unclosed surface, not a successful privilege transition.

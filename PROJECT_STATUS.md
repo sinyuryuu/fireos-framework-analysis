@@ -1821,3 +1821,35 @@ Records:
 - `work/luna_worker_phase6rs_settings_pm_closure_20260810.md/.csv`
 - `work/luna_worker_phase6rt_systemui_callback_closure_20260810.md/.csv`
 - `work/luna_worker_phase6ru_rootless_fallback_review_20260810.md/.csv`
+
+## Phase 6RV–RX — broad privilege-surface closure（2026-08-10）
+
+本輪由 host-only ledger 擴大追蹤 Launcher 以外的特權面，共 48 rows：
+Amazon package-metadata permission holder/caller 15、SystemUI/overlay/resource
+20、OOBE/OTA/native sensitive-sink 13。`ADD_RM_PKG_METADATA` 的 declaration、
+mutator、XML sink 已閉合，但 exact holder 與 production caller 仍為 `UNKNOWN`，
+未找到通往 HOME、package state 或 privilege transition 的 join。
+
+RX worker raw CSV 有 12 rows 含未 quoting 的逗號；normalized matrix 對受影響欄位
+標為 `UNKNOWN_DUE_TO_UNQUOTED_RAW_CSV`，raw file 保留不覆寫。
+
+保存的 SystemUI/Amazon callback corpus 未找到 explicit Fire Launcher launch；
+OOBE/OTA/native writer 具備高權限 capability，但沒有 ordinary app/shell caller
+鏈。具有足夠 system privilege 後可改變 protected package state 的結果仍成立，
+但本輪沒有找到 shell/ordinary app 取得該 privilege 的路徑。最佳無 Root 方案仍是
+使用者明確同意的 Accessibility foreground redirect，不是 formal HOME 或 root。
+
+本輪未呼叫 private Binder/protected broadcast，未修改 settings/package/AppOps/
+overlay/user，未執行 input/driver/OTA/recovery/Root/reboot/分割區操作。
+
+Records:
+
+- `findings/phase-6rv-rx-report.md`
+- `findings/phase-6rv-rx-evidence-index.md`
+- `output/tables/phase6rv-rx-privilege-surface.csv`
+- `output/tables/phase6rv-rx-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6rv-rx-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6rv_rx_surface.py`
+- `work/luna_worker_phase6rv_20260810.md/.csv`
+- `work/luna_worker_phase6rw_20260810.md/.csv`
+- `work/luna_worker_phase6rx_20260810.md/.csv`

@@ -3915,3 +3915,40 @@ Records:
 - `work/luna_worker_phase6rs_settings_pm_closure_20260810.md/.csv`
 - `work/luna_worker_phase6rt_systemui_callback_closure_20260810.md/.csv`
 - `work/luna_worker_phase6ru_rootless_fallback_review_20260810.md/.csv`
+
+## Phase 6RV–RX — broad privilege-surface closure（2026-08-10）
+
+This host-only follow-up broadens the review beyond Launcher. Three ledgers
+cover Amazon package-metadata permission holders/callers, SystemUI/overlay
+resource and callback writers, and OOBE/OTA/native sensitive sinks: 48 rows in
+total. `ADD_RM_PKG_METADATA` remains a static metadata/XML sink with exact
+holder and production caller `UNKNOWN`; no reviewed consumer joins it to HOME,
+package state, or a privilege transition. The saved SystemUI callback corpus
+contains no explicit Fire Launcher launch, and the OOBE/OTA/native writers have
+no closed ordinary-app or shell caller chain.
+
+The preserved RX raw CSV has unquoted commas in 12 rows; the normalized matrix
+marks those shifted trailing fields as `UNKNOWN_DUE_TO_UNQUOTED_RAW_CSV` and
+keeps the raw file unchanged.
+
+The existing package-state consequence is retained: a caller with the required
+system privilege could affect protected package state, but this phase did not
+find a route for shell or an ordinary app to obtain that privilege. The best
+measured no-root usability option remains the user-consented Accessibility
+foreground redirect; it is not formal HOME, package mutation, or root.
+
+No private Binder, protected broadcast, settings/package/overlay mutation,
+input/driver operation, OTA/recovery, Root/exploit, reboot, or partition write
+was performed.
+
+Records:
+
+- `findings/phase-6rv-rx-report.md`
+- `findings/phase-6rv-rx-evidence-index.md`
+- `output/tables/phase6rv-rx-privilege-surface.csv`
+- `output/tables/phase6rv-rx-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6rv-rx-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6rv_rx_surface.py`
+- `work/luna_worker_phase6rv_20260810.md/.csv`
+- `work/luna_worker_phase6rw_20260810.md/.csv`
+- `work/luna_worker_phase6rx_20260810.md/.csv`
