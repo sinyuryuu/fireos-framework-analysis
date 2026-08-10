@@ -1,0 +1,17 @@
+# Phase 6TA–TD control-surface graph
+
+```mermaid
+flowchart LR
+  A["External caller / system-created PendingIntent"] --> B["Permission or creator/UID gate"]
+  B --> C["Binder identity + ownership/user scope"]
+  C --> D["Proxy receiver or CDE policy sink"]
+  K["Source/config"] --> N["Shipped node/policy"]
+  N --> E["Exact native operation"]
+  E --> B
+  D -. "no HOME/PMS sink unless proven" .-> X["Bounded result"]
+  U["UNKNOWN caller or consumer"] --> R["Do not claim reachability"]
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f03;
+  classDef boundary fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  class U,R unknown;
+  class A,B,C,D,K,N,E,X boundary;
+```

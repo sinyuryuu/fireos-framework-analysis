@@ -1924,3 +1924,30 @@ Records:
 - `findings/phase-6sy-readonly-snapshot.md`
 - `output/tables/phase6sy-readonly-state.csv`
 - `tools/scripts/summarize_phase6sy_readonly.py`
+## Phase 6TA–TD — Proxy、DCPMS consumer、native caller 與證據整合（2026-08-10）
+
+本輪為 host-only static closure，實際整合 28 筆資料列：6TA Amazon PM proxy 2、
+6TB DCPMS consumer 5、6TC exact native caller join 14、6TD unintegrated evidence
+inventory 7。Proxy 路徑確認 system-app PendingIntent creator、receiver existence
+與 caller-UID ownership gate，沒有閉合 HOME/PMS writer。DCPMS 路徑只到 CDE
+policy persistence/evaluation、notification/Binder、可選 ODOT enqueue 或 remote
+policy sync，沒有 PackageManager、HOME、preferred/component state、SettingsProvider
+或 OTA apply sink。Native surface 沒有 exact shipped ELF caller positive join，
+因此未知項目仍標記 `UNKNOWN`。
+
+本輪沒有執行 ADB、Binder transaction、broadcast、driver operation、Root/exploit、
+OTA/recovery、reboot、套件/設定 mutation 或分割區寫入。既有工作樹中的其他使用者
+變更與 raw evidence 未覆寫；新整合以輸入 SHA-256 manifest 保存來源。
+
+Records:
+
+- `findings/phase-6ta-td-report.md`
+- `findings/phase-6ta-td-evidence-index.md`
+- `output/tables/phase6ta-td-control-surface.csv`
+- `output/tables/phase6ta-td-input-manifest.sha256`
+- `output/call-graphs/phase6ta-td-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6ta_td_surface.py`
+- `work/luna_worker_phase6ta_proxy_closure_20260810.md/.csv`
+- `work/luna_worker_phase6tb_dcpms_consumer_20260810.md/.csv`
+- `work/luna_worker_phase6tc_native_caller_join_20260810.md/.csv`
+- `work/luna_worker_phase6td_unintegrated_evidence_20260810.md/.csv`

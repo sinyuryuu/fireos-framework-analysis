@@ -4038,3 +4038,33 @@ Records:
 - `output/tables/phase6sy-readonly-state.csv`
 - `tools/scripts/summarize_phase6sy_readonly.py`
 - `tools/scripts/capture_phase6sj_readonly.sh`
+## Phase 6TA–TD — Proxy、DCPMS consumer、native caller 與證據整合（2026-08-10）
+
+本輪為 host-only static closure，整合 28 筆 ledger rows：6TA Amazon Package
+Manager proxy 2、6TB DCPMS consumer 5、6TC exact native caller join 14、6TD
+未整合證據 inventory 7。6TA 將 `registerProxyReceiver`／`deregisterProxyReceiver`
+的 system-app PendingIntent creator、receiver existence 與 caller-UID ownership
+條件閉合，但沒有 HOME/PMS writer；6TB 四條 DCPMS 路徑只落到 CDE policy
+persistence/evaluation、notification/Binder 或可選的 ODOT enqueue，沒有
+PackageManager、HOME、preferred/component state、SettingsProvider 或 OTA apply
+sink。6TC 對 GED、Vcodec、camera/sensor、thermal、USB/Type-C、PMIC 與 Amazon
+proc/misc surface 未建立 exact shipped native caller positive join，故維持
+`UNKNOWN`。
+
+本輪未執行 ADB、Binder transaction、broadcast、driver open/ioctl、Root/exploit、
+OTA/recovery、reboot、package/settings mutation 或分割區寫入。Evidence acceptance
+仍要求 caller → gate → identity/user scope → exact sink；exported component、
+source/config capability、generated Stub 或 test-only caller 不足以證明低權限可達。
+
+Records:
+
+- `findings/phase-6ta-td-report.md`
+- `findings/phase-6ta-td-evidence-index.md`
+- `output/tables/phase6ta-td-control-surface.csv`
+- `output/tables/phase6ta-td-input-manifest.sha256`
+- `output/call-graphs/phase6ta-td-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6ta_td_surface.py`
+- `work/luna_worker_phase6ta_proxy_closure_20260810.md/.csv`
+- `work/luna_worker_phase6tb_dcpms_consumer_20260810.md/.csv`
+- `work/luna_worker_phase6tc_native_caller_join_20260810.md/.csv`
+- `work/luna_worker_phase6td_unintegrated_evidence_20260810.md/.csv`
