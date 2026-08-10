@@ -1881,3 +1881,29 @@ Records:
 - `work/luna_worker_phase6so_driver_native_20260810.md/.csv`
 - `work/luna_worker_phase6sp_ota_native_20260810.md/.csv`
 - `work/luna_worker_phase6sq_home_pms_writer_20260810.md/.csv`
+
+## Phase 6SU–SX — IPC、exported component、kernel surface 與 evidence audit（2026-08-10）
+
+本輪 host-only static/evidence closure 共 50 rows：SU IPC 8、SV DCPMS exported
+surface 4、SW kernel surface 18、SX evidence audit 20。沒有新的 ordinary
+app/shell 到 trusted identity、HOME/package/settings/credential/OTA sink 的
+證據完整鏈。SV 四條新路徑只到 CDE profile/user policy persistence/evaluation；
+SW 補齊 GED、PMIC、memcfg、thermal、USB/Type-C、Vcodec、camera、sensor/audio
+與 Amazon driver surface，但沒有 exact shipped native caller positive join。
+
+SX audit 保留既有 runtime 證據與限制：root transition 未證實、driver 未 open/ioctl、
+private Binder 未成功呼叫、OTA/recovery 未執行；不可將 source capability 或
+exported status 當成低權限可達性。本輪未修改裝置、未 reboot、未寫入分割區。
+
+Records:
+
+- `findings/phase-6su-sx-report.md`
+- `findings/phase-6su-sx-evidence-index.md`
+- `output/tables/phase6su-sx-control-surface.csv`
+- `output/tables/phase6su-sx-input-manifest.sha256`
+- `output/call-graphs/phase6su-sx-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6su_sx_surface.py`
+- `work/luna_worker_phase6su_ipc_residual_20260810.md/.csv`
+- `work/luna_worker_phase6sv_exported_surface_20260810.md/.csv`
+- `work/luna_worker_phase6sw_kernel_surface_20260810.md/.csv`
+- `work/luna_worker_phase6sx_evidence_audit_20260810.md/.csv`

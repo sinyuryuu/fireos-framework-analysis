@@ -1,0 +1,13 @@
+flowchart LR
+  C["Caller / sender"] --> G["Permission + lifecycle gate"]
+  G --> I["Binder identity + user scope"]
+  I --> S["Exact system/package/HOME/OTA sink"]
+  K["GPL source + config"] --> N["Shipped node + policy"]
+  N --> E["Exact native caller"]
+  E --> G
+  X["Exported component / broadcast"] -. "inventory only" .-> G
+  U["UNKNOWN edge"] --> R["Do not claim reachability"]
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f03;
+  classDef boundary fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  class U,R unknown;
+  class C,G,I,S,K,N,E,X boundary;

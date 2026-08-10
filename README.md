@@ -3985,3 +3985,34 @@ Records:
 - `work/luna_worker_phase6so_driver_native_20260810.md/.csv`
 - `work/luna_worker_phase6sp_ota_native_20260810.md/.csv`
 - `work/luna_worker_phase6sq_home_pms_writer_20260810.md/.csv`
+
+## Phase 6SU–SX — IPC residual、exported surface、kernel completeness 與 evidence audit（2026-08-10）
+
+本輪完全為 host-only review，整合 50 筆資料列：IPC residual 8、DCPMS
+exported/protected surface 4、Amazon/MediaTek kernel surface 18、既有 evidence
+audit 20。IPC 未形成 ordinary app/shell → accepted privileged identity →
+HOME/package/settings/credential/OTA sink 的完整鏈。DCPMS 新 route 只落到 CDE
+profile/user policy persistence/evaluation，沒有 Fire Launcher、PMS preferred
+activity 或 OTA apply sink。
+
+Kernel scan 補齊 GED、PMIC、memcfg、thermal、USB/Type-C、Vcodec、camera、sensor、
+audio 與 Amazon driver surface；沒有新的 exact shipped native caller positive join。
+Source/config、SELinux label、service/library 名稱不被視為 runtime caller。Evidence
+audit 確認歷史測試、未做項目、不可重做項目與風險拒絕項目，並保留 root 未成功、
+driver 未 open/ioctl、OTA/recovery 未執行的界線。
+
+本輪未執行 ADB、Binder transaction、broadcast、driver operation、Root/exploit、
+OTA/recovery、reboot、package/settings mutation 或分割區寫入。
+
+Records:
+
+- `findings/phase-6su-sx-report.md`
+- `findings/phase-6su-sx-evidence-index.md`
+- `output/tables/phase6su-sx-control-surface.csv`
+- `output/tables/phase6su-sx-input-manifest.sha256`
+- `output/call-graphs/phase6su-sx-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6su_sx_surface.py`
+- `work/luna_worker_phase6su_ipc_residual_20260810.md/.csv`
+- `work/luna_worker_phase6sv_exported_surface_20260810.md/.csv`
+- `work/luna_worker_phase6sw_kernel_surface_20260810.md/.csv`
+- `work/luna_worker_phase6sx_evidence_audit_20260810.md/.csv`
