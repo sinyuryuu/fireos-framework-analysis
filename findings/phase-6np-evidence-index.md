@@ -1,0 +1,22 @@
+# Phase 6NP evidence index
+
+| Evidence ID | Source | File / location | SHA-256 | Observation | Interpretation | Confidence |
+|---|---|---|---|---|---|---|
+| 6NP-ION-001 | Extracted PS7331 platform policy | `artifacts/phase6c/phase6c-image-policy-extract-20260804-02/system/etc/selinux/plat_sepolicy.cil:4464-4465` | `4056ed9140f6c201cb2dd55edf70041667a195e20233bb6a6a2468b40c9a872d` | `base_typeattr_43` has ION chr-file allow for ioctl/read/write/getattr/lock/append/map/open; appdomain write/append is audited | Extracted policy permits the listed operation set for the inherited domains | Confirmed |
+| 6NP-ION-002 | Extracted PS7331 policy/type mapping | `plat_sepolicy.cil:639,1228-1229,16950-16951` | `4056ed9140f6c201cb2dd55edf70041667a195e20233bb6a6a2468b40c9a872d` | `ion_device` is a chr-file type and `base_typeattr_43` is appdomain-derived while excluding isolated_app | Shell/system_app/untrusted_app inheritance is supported by the extracted policy | Confirmed |
+| 6NP-ION-003 | Extracted PS7331 file contexts | `artifacts/phase6c/phase6c-image-policy-extract-20260804-02/system/etc/selinux/plat_file_contexts:226`; vendor equivalent `:198` | `plat_file_contexts` `218c3b071433b2dc466ef3fec23c28ab625587ee376c0ddf0ce1ded3831e37eb` | `/dev/ion` maps to `u:object_r:ion_device:s0` | The allow rule applies to the labeled node in the image inputs | Confirmed |
+| 6NP-ION-004 | PS7331 kernel source | `firmware/extracted/PS7331-SOURCE-20250617/platform/kernel/mediatek/4.4/drivers/staging/android/ion/ion.c:1482-1624,1663-1664,1912` | `5aa9f066c4b12432542df5337f3b5f0cc49e4b43fa5868b41459970190e01413` | ION ioctl dispatch and unlocked/compat handlers are present | The signed-kernel source contains the relevant ION interface; no exploitability follows | Confirmed |
+| 6NP-ION-005 | PS7331 ION UAPI | `.../drivers/staging/android/ion/uapi/ion.h:137-201` | `f63e6f82bb808e747714980430832db6340077a4585b1cd9a7c8b6371e794ecc` | ALLOC/FREE/MAP/SHARE/IMPORT/CUSTOM/SYNC definitions are present | Capability inventory only | Confirmed |
+| 6NP-ION-006 | Prior device node capture | `artifacts/phase5/cve-2020-0069-surface-20260803/cmdq_devices.stdout.txt:57` | Recorded in the Phase 5 manifest | Historical capture reported `/dev/ion` as `crw-rw-rw-` | Supports a possible shell Unix-mode surface, but is not a current live probe | Strong evidence |
+| 6NP-ION-007 | Bounded APK/JAR/native scan | `artifacts/phase5/mtk-ion-static-analysis-20260804-03/ioctl-call-sites.tsv` | `a7245aa0584189a5321ff218268fd6886b93aa92b5853192f8a6d72461f2611e` | 307 APK/JAR inputs had no direct ION token/caller; ION symbols were found in managed system/vendor native libraries | No ordinary APK direct caller was found in the captured corpus | Strong evidence |
+| 6NP-ION-008 | PS7331 final kernel config | `artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config:3532-3534,3584` | `eefb8db484f65e196a7bb401ae0165f434f08b13041aef6762917e284d013d04` | `CONFIG_ION=y`; `CONFIG_AMZN_DRV_TEST` is not set | ION is built in; the Amazon test driver is not shown as built in | Confirmed |
+| 6NP-TMEM-001 | PS7331 source/config/policy corpus | `findings/phase-6np-ion-and-control-surface-closure.md` and Phase 6NB/6ND artifacts | See linked input manifests | No complete tmem0 config/module/node/SELinux chain was found | Runtime tmem0 status remains unknown; no device access was attempted | Unknown |
+| 6NP-HOME-001 | Phase 6 continuation launcher/IPC closure | `findings/phase-6no-private-client-and-oobe-synthesis.md`; `findings/phase-6mw-home-state-sink-closure.md` | See each report | No new ordinary User-0 HOME or Fire package-state writer; foreground fallback remains non-HOME | ION does not provide a demonstrated launcher control route | Strong evidence |
+| 6NP-SAFETY-001 | This phase execution record | No device-node command issued | N/A | No ION/CMDQ/ioctl/proc/sysfs/debugfs/root/OTA/partition operation was run | Risky runtime validation was rejected | 因風險拒絕測試 |
+
+## Evidence handling
+
+All observations above are host-side or previously captured artifacts. No
+device unlock secret is part of this index. The worktree already contained
+unrelated dirty and untracked experiment files; this phase did not clean,
+overwrite, stage or delete them.
