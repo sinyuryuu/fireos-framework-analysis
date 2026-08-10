@@ -1853,3 +1853,31 @@ Records:
 - `work/luna_worker_phase6rv_20260810.md/.csv`
 - `work/luna_worker_phase6rw_20260810.md/.csv`
 - `work/luna_worker_phase6rx_20260810.md/.csv`
+
+## Phase 6SN–SQ — 權限、native driver、OTA 與 HOME/PMS writer 收尾（2026-08-10）
+
+本輪為 host-only static closure，四份 worker ledger 實際共 53 筆資料列：
+SN permission-holder/caller 15、SO native driver 11、SP OTA/recovery native 17、
+SQ HOME/PMS writer 10。ION 僅閉合到 shipped library 的 `/dev/ion` ABI caller；
+其他 driver surface 的 exact shipped native caller 未建立。PS7331 updater 的
+privileged write capability 已確認，但沒有 ordinary app/shell caller chain，且
+沒有執行 updater/recovery 或寫分割區。
+
+`ADD_RM_PKG_METADATA`、`PROFILE_INTERACTION` 的 declaration/gate 已確認，但
+holder/grant/production caller 仍 UNKNOWN。KFT writer 的 component/application
+state target 使用 supplied `UserInfo.id`，靜態證據只支持 child/profile scope；
+沒有閉合 User-0 Fire HOME/PMS writer。未執行 ADB、Binder、driver ioctl、Root/
+exploit、OTA/recovery、reboot 或任何裝置 mutation。
+
+Records:
+
+- `findings/phase-6sn-sq-report.md`
+- `findings/phase-6sn-sq-evidence-index.md`
+- `output/tables/phase6sn-sq-control-surface.csv`
+- `output/tables/phase6sn-sq-input-manifest.sha256`
+- `output/call-graphs/phase6sn-sq-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6sn_sq_surface.py`
+- `work/luna_worker_phase6sn_permission_caller_20260810.md/.csv`
+- `work/luna_worker_phase6so_driver_native_20260810.md/.csv`
+- `work/luna_worker_phase6sp_ota_native_20260810.md/.csv`
+- `work/luna_worker_phase6sq_home_pms_writer_20260810.md/.csv`

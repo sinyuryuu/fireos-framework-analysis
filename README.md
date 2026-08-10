@@ -3952,3 +3952,36 @@ Records:
 - `work/luna_worker_phase6rv_20260810.md/.csv`
 - `work/luna_worker_phase6rw_20260810.md/.csv`
 - `work/luna_worker_phase6rx_20260810.md/.csv`
+
+## Phase 6SN–SQ — 權限持有人、native driver、OTA 與 HOME/PMS writer 收尾（2026-08-10）
+
+本輪完全在主機端進行，整合四份 exact-build 靜態 ledger，共 53 筆資料列：
+permission-holder/caller 15、native driver caller 11、OTA/recovery native boundary
+17、HOME/PMS writer 10。ION 只在 shipped library 層閉合 `/dev/ion`／ION ioctl
+ABI caller；沒有閉合到 top-level process 或 unprivileged caller。其他 driver
+面向（CMDQ、perfmgr、M4U、RPMB、IDME、diagnostic/logger）保留
+`UNKNOWN / Not established`。
+
+PS7331 `update-binary` 的 parser、extraction、block-image verification/update
+與 partition-write capability 已由保存 ELF 靜態閉合，但這不是 shell route，也
+沒有執行 updater、recovery、OTA 或寫入分割區。`ADD_RM_PKG_METADATA` 與
+`PROFILE_INTERACTION` 的 declaration/gate 已確認，holder、grant 與 production
+caller 仍為 `UNKNOWN`。KFT package-state writer 明確使用 supplied `UserInfo.id`
+且屬 child/profile scope；本輪沒有找到已證明的 User-0 Fire HOME/PMS writer。
+
+本輪未執行 ADB、Binder/service call、driver open/ioctl、Root/exploit、OTA/recovery、
+reboot、套件/設定 mutation 或分割區寫入。raw worker outputs 保留；整合輸出以
+雜湊與來源路徑索引，未覆寫既有證據。
+
+Records:
+
+- `findings/phase-6sn-sq-report.md`
+- `findings/phase-6sn-sq-evidence-index.md`
+- `output/tables/phase6sn-sq-control-surface.csv`
+- `output/tables/phase6sn-sq-input-manifest.sha256`
+- `output/call-graphs/phase6sn-sq-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6sn_sq_surface.py`
+- `work/luna_worker_phase6sn_permission_caller_20260810.md/.csv`
+- `work/luna_worker_phase6so_driver_native_20260810.md/.csv`
+- `work/luna_worker_phase6sp_ota_native_20260810.md/.csv`
+- `work/luna_worker_phase6sq_home_pms_writer_20260810.md/.csv`

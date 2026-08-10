@@ -1,0 +1,21 @@
+# Phase 6SN–6SQ control-surface graph
+
+```mermaid
+flowchart LR
+  P["Permission declaration / service registration"] --> H["Holder / grant / caller inventory"]
+  H --> G["Caller and permission gate"]
+  G --> U["Identity and user-scope propagation"]
+  U --> S["State or capability sink"]
+  N["Exact source/config/native marker"] --> D["Shipped node and policy"]
+  D --> C["Exact native caller"]
+  C --> G
+  O["OTA parser / verifier"] --> W["Privileged updater write boundary"]
+  W -. "not a shell route" .-> X["No safe direct execution claim"]
+  S --> Q["HOME/package/component effect only if exact target is proven"]
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f03;
+  classDef boundary fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  class H,G,U,S,C,Q unknown;
+  class P,N,D,O,W,X boundary;
+```
+
+Text interpretation: every route requires a proven caller, gate, identity, user scope, and exact sink. Dashed OTA edge is intentionally marked as not a safe shell route.
