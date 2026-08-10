@@ -1,0 +1,17 @@
+flowchart LR
+    A["ordinary APK / ADB shell"] --> B["service discovery / exported API"]
+    B --> C["permission + SELinux + caller UID gate"]
+    C --> D["identity and user-scope validation"]
+    D --> E["PackageManager / HOME / UID / OTA / driver sink"]
+
+    K["KFT tx3"] --> K1["trusted client unresolved"]
+    K1 -.-> E
+    O["OTA / recovery"] --> O1["signed package + recovery executor"]
+    O1 -.-> E
+    I["ION / MTK driver"] --> I1["native opener / selected DTB unresolved"]
+    I1 -.-> E
+
+    P["Phase 19 result"] --> N["no complete ordinary-caller chain"]
+    N -.-> E
+
+%% Dashed edges are unresolved evidence edges, not inferred reachability.
