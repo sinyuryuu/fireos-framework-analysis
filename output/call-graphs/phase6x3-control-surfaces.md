@@ -1,0 +1,1137 @@
+# Phase 6X3 control surfaces
+
+```mermaid
+flowchart LR
+  classDef unknown fill:#fff3cd,stroke:#856404
+  classDef sink fill:#d1ecf1,stroke:#0c5460
+  N5888204305["external dumpsys caller subject to DUMP; exact UID UNKNOWN"]
+  N3b7c76d3a7["android.permission.DUMP checked in dump; service-manager/SELinux rule UNKNOWN"]
+  N9c3ca09573["device/default settings user (explicit user overload absent)"]
+  N33ccbf4bb1["FireOsDisplayPowerControllerService$BinderService"]
+  N5888204305 -->|WG-001| N3b7c76d3a7
+  N3b7c76d3a7 -->|WG-001| N9c3ca09573
+  N9c3ca09573 -->|WG-001| N33ccbf4bb1
+  N33ccbf4bb1:::sink
+  N57f1cecf6d["system_server input-monitor caller/publisher; external Binder caller not recovered"]
+  N919dde0929["system_server/internal callback; permission and SELinux/service-manager gate UNKNOWN"]
+  N41f8314df1["system/default secure-settings scope (non-user overload)"]
+  N5b107e26b1["InputFilterMonitorInputManagerServiceCallback"]
+  N57f1cecf6d -->|WG-002| N919dde0929
+  N919dde0929 -->|WG-002| N41f8314df1
+  N41f8314df1 -->|WG-002| N5b107e26b1
+  N5b107e26b1:::sink
+  Nb02fcc14c5["remote Binder caller with MODE_SWITCH; exact UID UNKNOWN"]
+  Nc467a1a089["com.amazon.alexa.permission.MODE_SWITCH enforced by checkCallingOrSelfPermission; service…"]
+  N9fe5dd7651["USER_CURRENT/-2 passed to putIntForUser"]
+  Neabd83298f["AlexaModeSwitchManagerService$AlexaModeSwitchAPIImpl"]
+  Nb02fcc14c5 -->|WG-003| Nc467a1a089
+  Nc467a1a089 -->|WG-003| N9fe5dd7651
+  N9fe5dd7651 -->|WG-003| Neabd83298f
+  Neabd83298f:::sink
+  N25ba44ec3b["UNKNOWN"]
+  N25ba44ec3b -->|6WL-ROW-004| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-004| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-004| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6WL-ROW-005| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-005| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-005| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6WL-ROW-006| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-006| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-006| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6WL-ROW-007| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-007| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-007| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6WL-ROW-008| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-008| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-008| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6WL-ROW-009| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-009| N25ba44ec3b
+  N25ba44ec3b -->|6WL-ROW-009| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nb32529ce79["policy names device type only; no exact caller identity or framework/HOME/package sink"]
+  N25ba44ec3b -->|WI-01| N25ba44ec3b
+  N25ba44ec3b -->|WI-01| Nb32529ce79
+  Nb32529ce79 -->|WI-01| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nc770f824ba["ION library labels are same_process_hal_file; no exact identity and no package/HOME/setti…"]
+  N25ba44ec3b -->|WI-02| N25ba44ec3b
+  N25ba44ec3b -->|WI-02| Nc770f824ba
+  Nc770f824ba -->|WI-02| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nac7c89dd9d["no userland identity or sensitive sink identified"]
+  N25ba44ec3b -->|WI-03| N25ba44ec3b
+  N25ba44ec3b -->|WI-03| Nac7c89dd9d
+  Nac7c89dd9d -->|WI-03| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N6b4b00aa38["HAL service identity is privileged-domain context only; no exact package/HOME/PMS sink"]
+  N25ba44ec3b -->|WI-04| N25ba44ec3b
+  N25ba44ec3b -->|WI-04| N6b4b00aa38
+  N6b4b00aa38 -->|WI-04| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N7a80b73908["diagnostic HAL/domain name is not a proc caller and no package/HOME/privilege sink is joi…"]
+  N25ba44ec3b -->|WI-05| N25ba44ec3b
+  N25ba44ec3b -->|WI-05| N7a80b73908
+  N7a80b73908 -->|WI-05| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N2382c43382["rpmb_svc identity is a service observation; no package/HOME sink"]
+  N25ba44ec3b -->|WI-06| N25ba44ec3b
+  N25ba44ec3b -->|WI-06| N2382c43382
+  N2382c43382 -->|WI-06| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nc60af97a43["HAL/service identity only; no package/HOME/settings sink"]
+  N25ba44ec3b -->|WI-07| N25ba44ec3b
+  N25ba44ec3b -->|WI-07| Nc60af97a43
+  Nc60af97a43 -->|WI-07| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-01| N25ba44ec3b
+  N25ba44ec3b -->|WJ-01| N25ba44ec3b
+  N25ba44ec3b -->|WJ-01| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-02| N25ba44ec3b
+  N25ba44ec3b -->|WJ-02| N25ba44ec3b
+  N25ba44ec3b -->|WJ-02| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-03| N25ba44ec3b
+  N25ba44ec3b -->|WJ-03| N25ba44ec3b
+  N25ba44ec3b -->|WJ-03| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-04| N25ba44ec3b
+  N25ba44ec3b -->|WJ-04| N25ba44ec3b
+  N25ba44ec3b -->|WJ-04| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-05| N25ba44ec3b
+  N25ba44ec3b -->|WJ-05| N25ba44ec3b
+  N25ba44ec3b -->|WJ-05| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-06| N25ba44ec3b
+  N25ba44ec3b -->|WJ-06| N25ba44ec3b
+  N25ba44ec3b -->|WJ-06| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-07| N25ba44ec3b
+  N25ba44ec3b -->|WJ-07| N25ba44ec3b
+  N25ba44ec3b -->|WJ-07| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-08| N25ba44ec3b
+  N25ba44ec3b -->|WJ-08| N25ba44ec3b
+  N25ba44ec3b -->|WJ-08| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-09| N25ba44ec3b
+  N25ba44ec3b -->|WJ-09| N25ba44ec3b
+  N25ba44ec3b -->|WJ-09| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WJ-10| N25ba44ec3b
+  N25ba44ec3b -->|WJ-10| N25ba44ec3b
+  N25ba44ec3b -->|WJ-10| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N8355aace37["DefaultPermissionGrantPolicy"]
+  N5db745617b["system_server/internal policy path; exact caller gate UNKNOWN"]
+  N17c37f2e47["userId argument"]
+  N8355aace37 -->|WK-001| N5db745617b
+  N5db745617b -->|WK-001| N17c37f2e47
+  N17c37f2e47 -->|WK-001| N8355aace37
+  N8355aace37:::sink
+  N3c6d58b864["UserManagerService Binder implementation"]
+  N1b51ce2f3d["checkManageOrCreateUsersPermission(flags); MANAGE_USERS or CREATE_USERS; system/root acce…"]
+  N2136084e4d["system/default user scope"]
+  N9263c45b38["UserManagerService"]
+  N3c6d58b864 -->|WK-002| N1b51ce2f3d
+  N1b51ce2f3d -->|WK-002| N2136084e4d
+  N2136084e4d -->|WK-002| N9263c45b38
+  N9263c45b38:::sink
+  N7f367ab5e6["parent userId plus created profile"]
+  N3c6d58b864 -->|WK-003| N1b51ce2f3d
+  N1b51ce2f3d -->|WK-003| N7f367ab5e6
+  N7f367ab5e6 -->|WK-003| N9263c45b38
+  N9263c45b38:::sink
+  N29244e7439["checkManageOrCreateUsersPermission('Only the system can remove users'); exact downstream …"]
+  Ncd54039829["userHandle argument"]
+  N3c6d58b864 -->|WK-004| N29244e7439
+  N29244e7439 -->|WK-004| Ncd54039829
+  Ncd54039829 -->|WK-004| N9263c45b38
+  N9263c45b38:::sink
+  Nc76b2e48db["UserController Binder-facing path"]
+  N8340ae66ad["INTERACT_ACROSS_USERS_FULL or amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL; Binder c…"]
+  N69509065b9["userId; system user rejected"]
+  N913fbd7a84["UserController"]
+  Nc76b2e48db -->|WK-005| N8340ae66ad
+  N8340ae66ad -->|WK-005| N69509065b9
+  N69509065b9 -->|WK-005| N913fbd7a84
+  N913fbd7a84:::sink
+  N3957f78701["ActivityManagerShellCommand"]
+  N1f0726c446["shell command plus canSwitchUsers restriction; exact shell UID enforcement in downstream …"]
+  Nd8b6f3d0de["supplied target user"]
+  N3957f78701 -->|WK-006| N1f0726c446
+  N1f0726c446 -->|WK-006| Nd8b6f3d0de
+  Nd8b6f3d0de -->|WK-006| N3957f78701
+  N3957f78701:::sink
+  N699f619336["shell command path; downstream caller and SELinux gate UNKNOWN"]
+  N3957f78701 -->|WK-007| N699f619336
+  N699f619336 -->|WK-007| Nd8b6f3d0de
+  Nd8b6f3d0de -->|WK-007| N3957f78701
+  N3957f78701:::sink
+  N4aeb52300a["shell command path; downstream INTERACT_ACROSS_USERS_FULL gate visible in UserController"]
+  N3957f78701 -->|WK-008| N4aeb52300a
+  N4aeb52300a -->|WK-008| Nd8b6f3d0de
+  Nd8b6f3d0de -->|WK-008| N3957f78701
+  N3957f78701:::sink
+  N7006fa3073["AppRestrictionsHelper"]
+  Nac5a67b577["PackageManager validation; Settings UI/profile-policy caller and SELinux rule UNKNOWN"]
+  N559b9abd7c["explicit userId"]
+  N7006fa3073 -->|WK-009| Nac5a67b577
+  Nac5a67b577 -->|WK-009| N559b9abd7c
+  N559b9abd7c -->|WK-009| N7006fa3073
+  N7006fa3073:::sink
+  Nfa75e0fca6["PackageManager uninstall validation; only restricted-profile branch visible"]
+  N7006fa3073 -->|WK-010| Nfa75e0fca6
+  Nfa75e0fca6 -->|WK-010| N559b9abd7c
+  N559b9abd7c -->|WK-010| N7006fa3073
+  N7006fa3073:::sink
+  N15b285a43e["UserManagerHelper"]
+  N56a77350eb["helper checks no_add_user restriction; service permission gate remains authoritative"]
+  N2d40f06f6d["current process/default user scope"]
+  N15b285a43e -->|WK-011| N56a77350eb
+  N56a77350eb -->|WK-011| N2d40f06f6d
+  N2d40f06f6d -->|WK-011| N15b285a43e
+  N15b285a43e:::sink
+  Nf65bf738c9["helper excludes system/current-user case; service permission gate remains authoritative"]
+  N40529f128f["userInfo.id"]
+  N15b285a43e -->|WK-012| Nf65bf738c9
+  Nf65bf738c9 -->|WK-012| N40529f128f
+  N40529f128f -->|WK-012| N15b285a43e
+  N15b285a43e:::sink
+  N17b698a07c["helper checks current/foreground user only; downstream switch gate and SELinux rule UNKNO…"]
+  N2d3569756b["target user id"]
+  N15b285a43e -->|WK-013| N17b698a07c
+  N17b698a07c -->|WK-013| N2d3569756b
+  N2d3569756b -->|WK-013| N15b285a43e
+  N15b285a43e:::sink
+  N08dfb1fbdb["external callers through exported SettingsProvider"]
+  N6d4fa4920e["global/secure writes enforce WRITE_SECURE_SETTINGS; system writes use WRITE_SETTINGS or a…"]
+  N8f29561940["calling user and requested setting namespace"]
+  N7a86629222["SettingsProvider"]
+  N08dfb1fbdb -->|WK-014| N6d4fa4920e
+  N6d4fa4920e -->|WK-014| N8f29561940
+  N8f29561940 -->|WK-014| N7a86629222
+  N7a86629222:::sink
+  N9e8dd59218["android:exported=true; sharedUserId=android.uid.system; provider write methods enforce pe…"]
+  Nc568a5acc2["singleUser across users"]
+  N7a86629222 -->|WK-015| N9e8dd59218
+  N9e8dd59218 -->|WK-015| Nc568a5acc2
+  Nc568a5acc2 -->|WK-015| N7a86629222
+  N7a86629222:::sink
+  N3c361edc10["MediaSessionService"]
+  Nc2f78ff8a8["internal service path; exact caller/permission and SELinux rule UNKNOWN"]
+  N2e50679b5f["full user id"]
+  N3c361edc10 -->|WK-016| Nc2f78ff8a8
+  Nc2f78ff8a8 -->|WK-016| N2e50679b5f
+  N2e50679b5f -->|WK-016| N3c361edc10
+  N3c361edc10:::sink
+  Nf2612a93b1["system_server internal; file path, DAC, SELinux and caller gate UNKNOWN"]
+  N4ed4246555["user list and user state"]
+  N9263c45b38 -->|WK-017| Nf2612a93b1
+  Nf2612a93b1 -->|WK-017| N4ed4246555
+  N4ed4246555 -->|WK-017| N9263c45b38
+  N9263c45b38:::sink
+  N25ba44ec3b -->|WF-POL-001| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-001| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-001| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WF-POL-002| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-002| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-002| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WF-POL-003| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-003| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-003| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WF-POL-004| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-004| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-004| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|WF-POL-005| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-005| N25ba44ec3b
+  N25ba44ec3b -->|WF-POL-005| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nca4d416eab["Binder caller UID from Binder.getCallingUid(); verified default package resolved from tha…"]
+  Ne62b3c9a4b["checkUidPermission(android.permission.CONTROL_KEYGUARD) OR checkUidPermission(com.amazon.…"]
+  N5a89dcdebc["caller UID is retained and forwarded with verified package; no clearCallingIdentity/resto…"]
+  N89f1d0f4cc["IAmazonKeyguardServiceSystemUI.dismissWithPendingIntent; SystemUI keyguard dismissal/Pend…"]
+  Nca4d416eab -->|KX-IPC-001| Ne62b3c9a4b
+  Ne62b3c9a4b -->|KX-IPC-001| N5a89dcdebc
+  N5a89dcdebc -->|KX-IPC-001| N89f1d0f4cc
+  N89f1d0f4cc:::sink
+  N3ae37149d3["caller UID and verified package are forwarded to SystemUI; no identity clear observed; us…"]
+  N2e6477a4a1["IAmazonKeyguardServiceSystemUI.setAccessibilityInfo; keyguard accessibility metadata/list…"]
+  Nca4d416eab -->|KX-IPC-002| Ne62b3c9a4b
+  Ne62b3c9a4b -->|KX-IPC-002| N3ae37149d3
+  N3ae37149d3 -->|KX-IPC-002| N2e6477a4a1
+  N2e6477a4a1:::sink
+  N337675f112["IAmazonKeyguardServiceSystemUI.setForegroundColor; keyguard foreground color/presentation…"]
+  Nca4d416eab -->|KX-IPC-003| Ne62b3c9a4b
+  Ne62b3c9a4b -->|KX-IPC-003| N3ae37149d3
+  N3ae37149d3 -->|KX-IPC-003| N337675f112
+  N337675f112:::sink
+  Nf90e132fae["OTA privileged lifecycle is not established by this file alone"]
+  N99bc998e1c["manifest metadata records product/version/key_type; no runtime install gate is exercised"]
+  Nc78dbadb0e["PS7331.4463N package identity only; installed baseline is PS7330.4104N; runtime UID/SELin…"]
+  N31a71e0d13["No caller-to-writer inference; no exact installed-build post-install or rollback sink"]
+  Nf90e132fae -->|6X-OTA-01| N99bc998e1c
+  N99bc998e1c -->|6X-OTA-01| Nc78dbadb0e
+  Nc78dbadb0e -->|6X-OTA-01| N31a71e0d13
+  N31a71e0d13:::sink
+  N3972a34f91["No installer/recovery caller; extraction is host-side"]
+  Nbba158797f["file list and per-output SHA-256 only; no package signature, recovery, or execution gate"]
+  N675caf682e["Derived artifact identity only; runtime process/UID/SELinux UNKNOWN"]
+  N5b967c2226["Framework/APK/VDEX outputs are analysis inputs, not post-install/native writer execution"]
+  N3972a34f91 -->|6X-OTA-02| Nbba158797f
+  Nbba158797f -->|6X-OTA-02| N675caf682e
+  N675caf682e -->|6X-OTA-02| N5b967c2226
+  N5b967c2226:::sink
+  N12b13fadde["Privileged OTA lifecycle and recovery context are capability candidates; ordinary app/she…"]
+  Na70b2acc29["metadata/hash/recovery-verification/controller gates precede handoff; indirect dispatch a…"]
+  N3603ba8f5a["UpdateSystem/recovery UID, SELinux domain, AVB rollback authority, and exact user scope U…"]
+  Nfa58c38a7a["Edify extraction/block-image/cache/readlink paths reach high-privilege file/partition cap…"]
+  N12b13fadde -->|6X-OTA-03| Na70b2acc29
+  Na70b2acc29 -->|6X-OTA-03| N3603ba8f5a
+  N3603ba8f5a -->|6X-OTA-03| Nfa58c38a7a
+  Nfa58c38a7a:::sink
+  Nd62b10e717["SideloadMover/MakeFreeSpaceOnCache are static callers only; external input provenance UNK…"]
+  Nea76d728f0["basename staging, rename/copy-delete fallback, readlink/unlink/free-space helpers; no pro…"]
+  N34ae896d50["Path owner, race semantics, helper return dataflow, and writer identity UNKNOWN"]
+  N73f4630697["Potential staging/cache and native writer capability remains bounded; no arbitrary-path w…"]
+  Nd62b10e717 -->|6X-OTA-04| Nea76d728f0
+  Nea76d728f0 -->|6X-OTA-04| N34ae896d50
+  N34ae896d50 -->|6X-OTA-04| N73f4630697
+  N73f4630697:::sink
+  N66c7a955b8["uinput_fops: read, write, unlocked_ioctl, compat_ioctl; misc_register"]
+  N07f8baf676["CONFIG_INPUT_UINPUT=y (artifacts/phase5/ps7331-ikconfig-20260804-01/kernel.config:2146); …"]
+  N3710fa6b7a["No exact shipped native ELF open/write/ioctl callsite; package and UID/domain not establi…"]
+  N25be3acbd8["Synthetic input device creation and event injection into the kernel input graph; no direc…"]
+  N66c7a955b8 -->|6XG-001| N07f8baf676
+  N07f8baf676 -->|6XG-001| N3710fa6b7a
+  N3710fa6b7a -->|6XG-001| N25be3acbd8
+  N25be3acbd8:::sink
+  N2668053399["POWER_SUPPLY_ATTR store; power_supply_store_property -> power_supply_set_property"]
+  Ne59cc99fa6["CONFIG_POWER_SUPPLY=y; attributes are read-only by default and gain S_IWUSR only when psy…"]
+  N68056e61cb["No exact shipped native sysfs write caller, package, UID, or domain established"]
+  Nd59fa98cfd["Battery/charger power-supply property mutation when the provider advertises a writable pr…"]
+  N2668053399 -->|6XG-002| Ne59cc99fa6
+  Ne59cc99fa6 -->|6XG-002| N68056e61cb
+  N68056e61cb -->|6XG-002| Nd59fa98cfd
+  Nd59fa98cfd:::sink
+  N624abb1bd3["rpmb_fops: open, release, unlocked_ioctl; .write=NULL; .read=NULL; cdev_add/device_create…"]
+  Nf41bd9b9fa["CONFIG_RPMB=y; CONFIG_RPMB_INTF_DEV is not set in merged kernel.config:2235-2237; no loca…"]
+  Nc66acc16ec["Existing rpmb_svc process evidence does not identify a native open/ioctl callsite or pack…"]
+  N24dc53857c["Authenticated persistent RPMB read/write/counter operations are available only through io…"]
+  N624abb1bd3 -->|6XG-003| Nf41bd9b9fa
+  Nf41bd9b9fa -->|6XG-003| Nc66acc16ec
+  Nc66acc16ec -->|6XG-003| N24dc53857c
+  N24dc53857c:::sink
+  N4e0311e172["No source registration/API because path is absent"]
+  N4267febb84["Archive-level path absence; do not infer that a separate vendor tree is kernel build prov…"]
+  N8e77d4f278["No caller/package/UID can be assigned to an absent path"]
+  N76d0d846a3["No driver sink attributable to absent vendor/mediatek path; any vendor ELF/policy linkage…"]
+  N4e0311e172 -->|6XG-004| N4267febb84
+  N4267febb84 -->|6XG-004| N8e77d4f278
+  N8e77d4f278 -->|6XG-004| N76d0d846a3
+  N76d0d846a3:::sink
+  Nd2ee1f8f67["No exact shipped ELF open/write/ioctl caller; no uinput-specific file-context/allow tuple…"]
+  Nf3a91e709d["Inventory/policy absence is a negative join only; it does not prove node absence or denial"]
+  N19cac871a1["No package, UID, or SELinux domain established"]
+  Na7f3bb6b0b["No confirmed input-injection or package/HOME effect from shipped native code"]
+  Nd2ee1f8f67 -->|6XG-005| Nf3a91e709d
+  Nf3a91e709d -->|6XG-005| N19cac871a1
+  N19cac871a1 -->|6XG-005| Na7f3bb6b0b
+  Na7f3bb6b0b:::sink
+  N18ffbe29ad["unknown/no bounded requester"]
+  N6824b2716b["manifest declaration only; no service-side check joined; protection=0x0 (normal)"]
+  N64ce42cb5a["owner android.amazon.perm sharedUserId=android.uid.system; holder/grant not established"]
+  N2eb2b1a025["none joined in bounded exact manifests/disassembly"]
+  N18ffbe29ad -->|6Y-001| N6824b2716b
+  N6824b2716b -->|6Y-001| N64ce42cb5a
+  N64ce42cb5a -->|6Y-001| N2eb2b1a025
+  N2eb2b1a025:::sink
+  N18ffbe29ad -->|6Y-002| N6824b2716b
+  N6824b2716b -->|6Y-002| N64ce42cb5a
+  N64ce42cb5a -->|6Y-002| N2eb2b1a025
+  N2eb2b1a025:::sink
+  N5456950c48["manifest declaration only; no service-side check joined; protection=0x1 (dangerous)"]
+  N18ffbe29ad -->|6Y-003| N5456950c48
+  N5456950c48 -->|6Y-003| N64ce42cb5a
+  N64ce42cb5a -->|6Y-003| N2eb2b1a025
+  N2eb2b1a025:::sink
+  N966e48d299["manifest declaration only; no service-side check joined; protection=UNKNOWN (no protectio…"]
+  N18ffbe29ad -->|6Y-004| N966e48d299
+  N966e48d299 -->|6Y-004| N64ce42cb5a
+  N64ce42cb5a -->|6Y-004| N2eb2b1a025
+  N2eb2b1a025:::sink
+  Nea4d7e99f1["SystemServer AmazonPackageManagerService.onBootPhase-550 plus PMS.isUpgrade"]
+  N0cd2c4fc29["protected RECEIVE_BOOT_AFTER_SYSTEM_OTA plus receiver action-OOBE-retail-demo guards; act…"]
+  N9728571969["system-server Context user-derived; numeric user UNKNOWN"]
+  N1804f28239["PackageHelper.enableComponent to OobeHomeActivity plus OOBEActivationHelper"]
+  Nea4d7e99f1 -->|6Z-001| N0cd2c4fc29
+  N0cd2c4fc29 -->|6Z-001| N9728571969
+  N9728571969 -->|6Z-001| N1804f28239
+  N1804f28239:::sink
+  Nd870af75f4["BootAfterSystemOTAReceiver guarded lifecycle sender"]
+  Nbbf3d45538["protected OTA lifecycle plus incremental-OOBE branch; no ordinary caller path; action=gua…"]
+  N0a3e38649d["ContentResolver user inherited from receiver Context; numeric user UNKNOWN"]
+  N0b563468f2["SettingsDBUtils to Settings.Secure-Global user_setup_complete=0 and isOOBEActive=1"]
+  Nd870af75f4 -->|6Z-002| Nbbf3d45538
+  Nbbf3d45538 -->|6Z-002| N0a3e38649d
+  N0a3e38649d -->|6Z-002| N0b563468f2
+  N0b563468f2:::sink
+  Nd1cd2f4174["upstream producer UNKNOWN; exported entry has no component permission in saved manifest"]
+  Ncdf2faaac0["manifest action gate plus PROGRAM_ID and PACKAGE_NAME extras; action=com.amazon.device.AC…"]
+  Na0cea9dea9["receiver application user scope and cross-user acceptance UNKNOWN"]
+  N968c3a3f18["CDE profile type and OS user type and active-app list persistence to DeviceExperienceMode…"]
+  Nd1cd2f4174 -->|6Z-003| Ncdf2faaac0
+  Ncdf2faaac0 -->|6Z-003| Na0cea9dea9
+  Na0cea9dea9 -->|6Z-003| N968c3a3f18
+  N968c3a3f18:::sink
+  N36f1a1c6a4["system/framework USER_SWITCHED producer"]
+  Nae8a649e5c["protected USER_SWITCHED gate; ordinary sender not established; action=android.intent.acti…"]
+  N4c58279d75["receiver user and profile scope UNKNOWN"]
+  Na67e1b0ad3["CDE PCA-profile and OS-user persistence plus child active-app-list clear to evaluator"]
+  N36f1a1c6a4 -->|6Z-004| Nae8a649e5c
+  Nae8a649e5c -->|6Z-004| N4c58279d75
+  N4c58279d75 -->|6Z-004| Na67e1b0ad3
+  Na67e1b0ad3:::sink
+  N1c459bab36["producer UNKNOWN"]
+  Nbdd765b914["caller must satisfy AmazonAccountPropertyService.property.changed; permission protection …"]
+  N2b5417a3eb["receiver user scope UNKNOWN"]
+  Ndb7f8ca1c1["CDE profile type and OS-user persistence to evaluator"]
+  N1c459bab36 -->|6Z-005| Nbdd765b914
+  Nbdd765b914 -->|6Z-005| N2b5417a3eb
+  N2b5417a3eb -->|6Z-005| Ndb7f8ca1c1
+  Ndb7f8ca1c1:::sink
+  N470b5b08a4["GLOBAL_SYNC required; holder-protection and caller route UNKNOWN; action=com.amazon.inten…"]
+  N23e18fade9["receiver exact user scope UNKNOWN"]
+  N093028117e["JobIntentService to GlobalContentSyncEventService to ArcusSyncService.syncCDEPolicy"]
+  N1c459bab36 -->|6Z-006| N470b5b08a4
+  N470b5b08a4 -->|6Z-006| N23e18fade9
+  N23e18fade9 -->|6Z-006| N093028117e
+  N093028117e:::sink
+  N872922ad53["init and system-server loader"]
+  N9ec1511d7c["registered in-process fosinit; no exported app component or external caller evidence; act…"]
+  N519c78a453["system-server service identity; Binder publication and caller gate UNKNOWN"]
+  Na6898e931c["ProductPolicy service registration only; no verified HOME package Settings or OTA sink in…"]
+  N872922ad53 -->|6Z-007| N9ec1511d7c
+  N9ec1511d7c -->|6Z-007| N519c78a453
+  N519c78a453 -->|6Z-007| Na6898e931c
+  Na6898e931c:::sink
+  N19a1cd1c37["Settings UI or shell read path; no new writer established"]
+  N2e62620e6b["DefaultHomePreferenceController resource gate; normal dashboard omits default_home; set-h…"]
+  Ne95627a305["per-user PMS Settings state; exact shell authorization is existing PMS gate; no new calle…"]
+  N946b62deff["com.android.server.pm.Settings preferred-activities and persistent-preferred-activities p…"]
+  N19a1cd1c37 -->|6Z-008| N2e62620e6b
+  N2e62620e6b -->|6Z-008| Ne95627a305
+  Ne95627a305 -->|6Z-008| N946b62deff
+  N946b62deff:::sink
+  N173da53b3e["adb shell getprop"]
+  N8ebb5c0f9e["none; observation only"]
+  N57a2d20c46["serial G001LT0511550CFT; User 0 current"]
+  N973288ebb6["build fingerprint"]
+  N173da53b3e -->|6X-LIVE-001| N8ebb5c0f9e
+  N8ebb5c0f9e -->|6X-LIVE-001| N57a2d20c46
+  N57a2d20c46 -->|6X-LIVE-001| N973288ebb6
+  N973288ebb6:::sink
+  N10f96ed2ec["shell read-only query"]
+  Na582ee99bd["resolver observation"]
+  Nd095acab18["User 0"]
+  Nfaa2d4a040["formal HOME resolver"]
+  N10f96ed2ec -->|6X-LIVE-002| Na582ee99bd
+  Na582ee99bd -->|6X-LIVE-002| Nd095acab18
+  Nd095acab18 -->|6X-LIVE-002| Nfaa2d4a040
+  Nfaa2d4a040:::sink
+  Ncf46065b2d["candidate set"]
+  N10f96ed2ec -->|6X-LIVE-003| Na582ee99bd
+  Na582ee99bd -->|6X-LIVE-003| Nd095acab18
+  Nd095acab18 -->|6X-LIVE-003| Ncf46065b2d
+  Ncf46065b2d:::sink
+  N8592b00ae8["User 10 test profile"]
+  N10f96ed2ec -->|6X-LIVE-004| Na582ee99bd
+  Na582ee99bd -->|6X-LIVE-004| N8592b00ae8
+  N8592b00ae8 -->|6X-LIVE-004| Ncf46065b2d
+  Ncf46065b2d:::sink
+  N3d74ff5eee["shell read-only dump"]
+  N7a897014eb["package-state observation"]
+  N87609ba772["User 0 enabled=0; User 10 enabled=2"]
+  Nc4278cc979["package state"]
+  N3d74ff5eee -->|6X-LIVE-005| N7a897014eb
+  N7a897014eb -->|6X-LIVE-005| N87609ba772
+  N87609ba772 -->|6X-LIVE-005| Nc4278cc979
+  Nc4278cc979:::sink
+  N6f47862f18["preferred state observation"]
+  Nfd7540caaf["User 0 record"]
+  Nf98282e1e2["ordinary preferred activity"]
+  N3d74ff5eee -->|6X-LIVE-006| N6f47862f18
+  N6f47862f18 -->|6X-LIVE-006| Nfd7540caaf
+  Nfd7540caaf -->|6X-LIVE-006| Nf98282e1e2
+  Nf98282e1e2:::sink
+  N8310f09004["external dump caller; UID UNKNOWN"]
+  N145dcaf2a8["android.permission.DUMP protection semantics not re-derived in bounded corpus"]
+  N9120d01094["default/device settings user; explicit user overload absent"]
+  N0ebd867696["Settings.System.putInt(screen_brightness)"]
+  N8310f09004 -->|6X2-IPC-001| N145dcaf2a8
+  N145dcaf2a8 -->|6X2-IPC-001| N9120d01094
+  N9120d01094 -->|6X2-IPC-001| N0ebd867696
+  N0ebd867696:::sink
+  N177f58b876["remote Binder caller UNKNOWN"]
+  N526059592f["com.amazon.alexa.permission.MODE_SWITCH protection level/holder UNKNOWN"]
+  Nddcaff73a5["USER_CURRENT=-2"]
+  N1ec8dbec33["SecureSettingsHelper.putIntForUser(orientation_in_previous_mode)"]
+  N177f58b876 -->|6X2-IPC-002| N526059592f
+  N526059592f -->|6X2-IPC-002| Nddcaff73a5
+  Nddcaff73a5 -->|6X2-IPC-002| N1ec8dbec33
+  N1ec8dbec33:::sink
+  Nb6bc14bded["system_server/input-monitor publisher; external caller UNKNOWN"]
+  Nbab1ca7f66["permission and protection UNKNOWN"]
+  N2632c2107e["system/default secure scope; non-user overload"]
+  Nf5b8e00f7e["Settings.Secure.putInt(camera_shutter_state)"]
+  Nb6bc14bded -->|6X2-IPC-003| Nbab1ca7f66
+  Nbab1ca7f66 -->|6X2-IPC-003| N2632c2107e
+  N2632c2107e -->|6X2-IPC-003| Nf5b8e00f7e
+  Nf5b8e00f7e:::sink
+  N14d9b4dcdd["external sender UNKNOWN"]
+  Na4b1445b6a["com.amazon.kindle.otter.oobe.OOBE_PERMISSION protection level and holder UNKNOWN"]
+  N93b98ca5a0["downstream Settings/HOME/package sink not joined"]
+  N14d9b4dcdd -->|6X2-IPC-004| Na4b1445b6a
+  Na4b1445b6a -->|6X2-IPC-004| N2b5417a3eb
+  N2b5417a3eb -->|6X2-IPC-004| N93b98ca5a0
+  N93b98ca5a0:::sink
+  Nbebbaf6aa3["com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed protection/ho…"]
+  Nbb508a1c68["CDE/profile persistence and evaluator; no HOME/PMS/OTA sink"]
+  N1c459bab36 -->|6X2-IPC-005| Nbebbaf6aa3
+  Nbebbaf6aa3 -->|6X2-IPC-005| N2b5417a3eb
+  N2b5417a3eb -->|6X2-IPC-005| Nbb508a1c68
+  Nbb508a1c68:::sink
+  N050991d253["production caller UNKNOWN; test-only callers excluded"]
+  N59ced733ca["register: no local permission; deregister: creator UID equality gate; protection holder U…"]
+  N9f14c6a4d7["user scope not explicit; receiver map only"]
+  Nee0052ecca["implicit receiver registration map; first package/HOME sink NOT_FOUND"]
+  N050991d253 -->|6X2-IPC-006| N59ced733ca
+  N59ced733ca -->|6X2-IPC-006| N9f14c6a4d7
+  N9f14c6a4d7 -->|6X2-IPC-006| Nee0052ecca
+  Nee0052ecca:::sink
+  Nc0965cede0["external client UNKNOWN"]
+  N5c62c4b9d0["signature BIND_SERVICE declaration; exact holder/grant join UNKNOWN"]
+  N4c7a7442f1["trusted adult/child profile scope; exact user data-flow partial"]
+  N0ea42802af["user creation/removal and profile Settings relay; no HOME/PMS component sink"]
+  Nc0965cede0 -->|6X2-IPC-007| N5c62c4b9d0
+  N5c62c4b9d0 -->|6X2-IPC-007| N4c7a7442f1
+  N4c7a7442f1 -->|6X2-IPC-007| N0ea42802af
+  N0ea42802af:::sink
+  Ncb27cea5ab["caller/package/account provenance UNKNOWN"]
+  Nf0bfc2d9d8["o() and qualification gates; exact permission protection UNKNOWN"]
+  N0c7b116beb["UserHandle.myUserId plus injected user/profile semantics UNKNOWN"]
+  N695b9f2624["secure-settings-class writer; browser-default/install bookkeeping; no HOME/Fire writer"]
+  Ncb27cea5ab -->|6X2-IPC-008| Nf0bfc2d9d8
+  Nf0bfc2d9d8 -->|6X2-IPC-008| N0c7b116beb
+  N0c7b116beb -->|6X2-IPC-008| N695b9f2624
+  N695b9f2624:::sink
+  N00b058b2b5["official OTA ZIP"]
+  N62ae1f6dd0["PS7331.4463N trona release OTA; SHA-256 9f50d2f321f31d2db6bff9bc463cd5faa3597b2fba83d4c35…"]
+  Nb9f123cedf["PS7331"]
+  N00b058b2b5 -->|6X2-OTA-001| N62ae1f6dd0
+  N62ae1f6dd0 -->|6X2-OTA-001| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-001| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nf5c282f367["ZIP member inventory"]
+  N439a4436f8["META-INF metadata otacert update-binary updater-script; .new.dat.br; transfer lists; boot…"]
+  Nf5c282f367 -->|6X2-OTA-002| N439a4436f8
+  N439a4436f8 -->|6X2-OTA-002| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-002| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Ne557fa2a4d["No payload.bin and no A/B postinstall executable member"]
+  Nf5c282f367 -->|6X2-OTA-003| Ne557fa2a4d
+  Ne557fa2a4d -->|6X2-OTA-003| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-003| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N7e620f7c75["updater-script assertions"]
+  Ne40e1df0a5["Build date and ro.product.device trona assertions"]
+  N7e620f7c75 -->|6X2-OTA-004| Ne40e1df0a5
+  Ne40e1df0a5 -->|6X2-OTA-004| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-004| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N58014ea616["SideloadMetadataChecker.check"]
+  N52d5c5c240["Version signature-transition product and PVT checks"]
+  N58014ea616 -->|6X2-OTA-005| N52d5c5c240
+  N52d5c5c240 -->|6X2-OTA-005| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-005| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nc2e059682e["SideloadVerifier.verifySideloadWithRecoveryCheck"]
+  Nab5559a9fd["Sanity metadata RecoverySystemWrapper.verifyPackage device state"]
+  Nc2e059682e -->|6X2-OTA-006| Nab5559a9fd
+  Nab5559a9fd -->|6X2-OTA-006| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-006| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N9a2dcfa1fe["OSUpdateValidator.validateOSUpdate"]
+  Nd6f347774a["Hash then RecoverySystem.verifyPackage then OSUpdatePropertiesValidator"]
+  N9a2dcfa1fe -->|6X2-OTA-007| Nd6f347774a
+  Nd6f347774a -->|6X2-OTA-007| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-007| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N3f3fb27719["SideloadMover.maybeMoveSideloadFile"]
+  N72f5ec86a2["Basename destination and FileHelper.moveFile"]
+  N3f3fb27719 -->|6X2-OTA-008| N72f5ec86a2
+  N72f5ec86a2 -->|6X2-OTA-008| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-008| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N29f712417f["SideloadInstaller.installSideload"]
+  Nfc41156c27["Metadata/device checks then mover then installOSUpdate"]
+  N29f712417f -->|6X2-OTA-009| Nfc41156c27
+  Nfc41156c27 -->|6X2-OTA-009| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-009| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nd68393dbfe["UpdateSystemWrapper.install"]
+  N68b00bfab7["Path prefix remap settings write then UpdateSystem.install"]
+  Nd68393dbfe -->|6X2-OTA-010| N68b00bfab7
+  N68b00bfab7 -->|6X2-OTA-010| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-010| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nd4e90e2134["OTA controller holders"]
+  Nc1518e9461["com.amazon.dcp.ota.permission.CONTROLLER and PROCESS_UPDATES protected surface"]
+  Nd4e90e2134 -->|6X2-OTA-011| Nc1518e9461
+  Nc1518e9461 -->|6X2-OTA-011| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-011| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Ncfdca8a2ca["main to block-image registry"]
+  N77250ebe99["RegisterBlockImageFunction to RegisterFunction; block_image_update to BlockImageUpdateFn …"]
+  Ncfdca8a2ca -->|6X2-OTA-012| N77250ebe99
+  N77250ebe99 -->|6X2-OTA-012| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-012| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Ne1d487672e["PackageExtractFileFn"]
+  N4cb44971a5["PackageExtractFileFn to ota_open to open and extraction fsync close"]
+  Ne1d487672e -->|6X2-OTA-013| N4cb44971a5
+  N4cb44971a5 -->|6X2-OTA-013| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-013| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Na11bf86d4f["BlockImageUpdateFn to WriteToPartition"]
+  N3ffdb959c7["PerformBlockImageUpdate to WriteToPartition to ota_write to write"]
+  Na11bf86d4f -->|6X2-OTA-014| N3ffdb959c7
+  N3ffdb959c7 -->|6X2-OTA-014| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-014| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N4f6570f8f8["updater-script"]
+  N5d30970a08["system vendor boot preloader lk tee1 tee2 spmfw sspm_1 cam_vpu1 cam_vpu2 cam_vpu3 and cac…"]
+  N4f6570f8f8 -->|6X2-OTA-015| N5d30970a08
+  N5d30970a08 -->|6X2-OTA-015| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-015| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N895e516192["MakeFreeSpaceOnCache"]
+  N854cecd134["0x417bf0 to __readlink_chk 0x4ce4e8"]
+  N895e516192 -->|6X2-OTA-016| N854cecd134
+  N854cecd134 -->|6X2-OTA-016| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-016| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nf736d7b7aa["selected direct-call graph"]
+  N4ffaa9ca2a["No selected direct edge from readlink helper to extraction/block-image/write sinks"]
+  Nf736d7b7aa -->|6X2-OTA-017| N4ffaa9ca2a
+  N4ffaa9ca2a -->|6X2-OTA-017| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-017| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nacb23beced["CacheSizeCheck and callers"]
+  N450bed7137["Body return/error branches and all indirect dispatch not fully selected"]
+  Nacb23beced -->|6X2-OTA-018| N450bed7137
+  N450bed7137 -->|6X2-OTA-018| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-018| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N6cd46d717a["platform recovery verifier"]
+  Ne42e41a0ee["RecoverySystemWrapper delegates to platform RecoverySystem; exact native verifier absent"]
+  N6cd46d717a -->|6X2-OTA-019| Ne42e41a0ee
+  Ne42e41a0ee -->|6X2-OTA-019| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-019| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N5e91b606ab["otacert and verifyPackage"]
+  Nb85ec5e1a4["Certificate material plus verification API call boundary"]
+  N5e91b606ab -->|6X2-OTA-020| Nb85ec5e1a4
+  Nb85ec5e1a4 -->|6X2-OTA-020| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-020| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  Nd796ab4ec7["bootloader/recovery rollback index"]
+  Nfad98cd969["No exact rollback-index decision branch in saved corpus"]
+  Nd796ab4ec7 -->|6X2-OTA-021| Nfad98cd969
+  Nfad98cd969 -->|6X2-OTA-021| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-021| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N240be13042["shell UID / ordinary app"]
+  N4cb071afaf["No saved caller chain from shell or ordinary APK to UpdateSystem.install/recovery writer"]
+  N240be13042 -->|6X2-OTA-022| N4cb071afaf
+  N4cb071afaf -->|6X2-OTA-022| Nb9f123cedf
+  Nb9f123cedf -->|6X2-OTA-022| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N7a0d4dfaac["installed device snapshot"]
+  N9f9a75989e["Installed snapshot PS7330.4104N versus adjacent OTA PS7331.4463N"]
+  N6d0fd1b20d["PS7330"]
+  N7a0d4dfaac -->|6X2-OTA-023| N9f9a75989e
+  N9f9a75989e -->|6X2-OTA-023| N6d0fd1b20d
+  N6d0fd1b20d -->|6X2-OTA-023| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-001| N25ba44ec3b
+  N25ba44ec3b -->|AC-001| N25ba44ec3b
+  N25ba44ec3b -->|AC-001| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-002| N25ba44ec3b
+  N25ba44ec3b -->|AC-002| N25ba44ec3b
+  N25ba44ec3b -->|AC-002| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-003| N25ba44ec3b
+  N25ba44ec3b -->|AC-003| N25ba44ec3b
+  N25ba44ec3b -->|AC-003| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-004| N25ba44ec3b
+  N25ba44ec3b -->|AC-004| N25ba44ec3b
+  N25ba44ec3b -->|AC-004| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-005| N25ba44ec3b
+  N25ba44ec3b -->|AC-005| N25ba44ec3b
+  N25ba44ec3b -->|AC-005| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-006| N25ba44ec3b
+  N25ba44ec3b -->|AC-006| N25ba44ec3b
+  N25ba44ec3b -->|AC-006| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-007| N25ba44ec3b
+  N25ba44ec3b -->|AC-007| N25ba44ec3b
+  N25ba44ec3b -->|AC-007| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-008| N25ba44ec3b
+  N25ba44ec3b -->|AC-008| N25ba44ec3b
+  N25ba44ec3b -->|AC-008| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-009| N25ba44ec3b
+  N25ba44ec3b -->|AC-009| N25ba44ec3b
+  N25ba44ec3b -->|AC-009| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-010| N25ba44ec3b
+  N25ba44ec3b -->|AC-010| N25ba44ec3b
+  N25ba44ec3b -->|AC-010| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|AC-011| N25ba44ec3b
+  N25ba44ec3b -->|AC-011| N25ba44ec3b
+  N25ba44ec3b -->|AC-011| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6X2-ROUTES-001| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-001| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-001| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6X2-ROUTES-002| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-002| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-002| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6X2-ROUTES-003| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-003| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-003| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6X2-ROUTES-004| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-004| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-004| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6X2-ROUTES-005| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-005| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-005| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N25ba44ec3b -->|6X2-ROUTES-006| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-006| N25ba44ec3b
+  N25ba44ec3b -->|6X2-ROUTES-006| N25ba44ec3b
+  N25ba44ec3b:::unknown
+  N122533368b["AmazonPackageManagerService.onBootPhase(550) -> BootAfterSystemOTAReceiver.onReceive"]
+  Nd54566bff3["isUpgrade + BOOT_AFTER_SYSTEM_OTA lifecycle; protected RECEIVE_BOOT_AFTER_SYSTEM_OTA prov…"]
+  Nced65b24d6["No ordinary Binder caller; trusted system-server lifecycle identity; clearCallingIdentity…"]
+  N06ece878d5["PackageHelper.enableComponent(OobeHomeActivity); OOBEActivationHelper.activateOOBEIF"]
+  N122533368b -->|6AE-001| Nd54566bff3
+  Nd54566bff3 -->|6AE-001| Nced65b24d6
+  Nced65b24d6 -->|6AE-001| N06ece878d5
+  N06ece878d5:::sink
+  Nb9b968ec15["BootAfterSystemOTAReceiver guarded branch -> OOBEActivationHelper"]
+  N4434d58375["Same protected OTA lifecycle guard; ordinary caller UNKNOWN"]
+  N90df80b6aa["No Binder caller in helper path; identity inheritance from receiver Context; clearCalling…"]
+  N9d253bac8d["SettingsDBUtils -> Settings.Secure user_setup_complete=0 and isOOBEActive=1"]
+  Nb9b968ec15 -->|6AE-002| N4434d58375
+  N4434d58375 -->|6AE-002| N90df80b6aa
+  N90df80b6aa -->|6AE-002| N9d253bac8d
+  N9d253bac8d:::sink
+  N5ef69b261a["PCAActiveProfileReceiver <- com.amazon.device.ACTION_ACTIVE_PROFILE_UPDATED -> DeviceExpe…"]
+  N00e348fe09["Receiver exported with no local permission marker in saved manifest; producer, protection…"]
+  Nd6c16486fa["Broadcast receiver identity; Binder caller/clearCallingIdentity not present in bounded re…"]
+  Nfc9c7eae2e["CDE profile type/OS user type/active-app persistence feeding policy evaluator"]
+  N5ef69b261a -->|6AE-003| N00e348fe09
+  N00e348fe09 -->|6AE-003| Nd6c16486fa
+  Nd6c16486fa -->|6AE-003| Nfc9c7eae2e
+  Nfc9c7eae2e:::sink
+  N5adebb3268["DeviceUserSwitchReceiver <- android.intent.action.USER_SWITCHED -> CDE/PCA policy persist…"]
+  Nde1c577f5a["Protected USER_SWITCHED producer is system/framework; ordinary sender not established"]
+  N9fa5ece51b["Lifecycle receiver context; no Binder caller or clearCallingIdentity evidence in bounded …"]
+  N56648c826b["CDE PCA-profile and OS-user persistence; child active-app-list clear to evaluator"]
+  N5adebb3268 -->|6AE-004| Nde1c577f5a
+  Nde1c577f5a -->|6AE-004| N9fa5ece51b
+  N9fa5ece51b -->|6AE-004| N56648c826b
+  N56648c826b:::sink
+  Nf277d79e5c["fosinit productpolicyservice registration -> ProductPolicyService Binder publication"]
+  N9228d3abd6["init/system-server loader and in-process fosinit registration; external caller and Binder…"]
+  N5f59f97bf8["system-server/service identity; clearCallingIdentity UNKNOWN; User scope UNKNOWN; no meth…"]
+  N5f12483a6f["ProductPolicy service registration only; exact downstream state sink NOT FOUND"]
+  Nf277d79e5c -->|6AE-005| N9228d3abd6
+  N9228d3abd6 -->|6AE-005| N5f59f97bf8
+  N5f59f97bf8 -->|6AE-005| N5f12483a6f
+  N5f12483a6f:::sink
+  N95b0cfd5f1["AmazonActivityManagerImpl -> IAmazonActivityManager.preWarmApplicationForUser -> BinderSe…"]
+  N594c9e6a20["checkCallingPermission(com.amazon.permission.APP_PREWARM); result consumption in bounded …"]
+  Nc9ba3f34d7["clearCallingIdentity observed after permission check; restore path present; caller UID ha…"]
+  N0b57e9b5d1["IPackageManager.getApplicationInfo(target,1024,user) -> PreWarmCacheHelper -> ActivityMan…"]
+  N95b0cfd5f1 -->|6AE-006| N594c9e6a20
+  N594c9e6a20 -->|6AE-006| Nc9ba3f34d7
+  Nc9ba3f34d7 -->|6AE-006| N0b57e9b5d1
+  N0b57e9b5d1:::sink
+  N91b8dac89f["android.amazon.perm declaration -> possible USE_SDK/PLUGIN consumer; exact consumer/calle…"]
+  Ncaf6278359["USE_SDK protection=normal; PLUGIN=dangerous; PLUGIN_CONSUMER protection UNKNOWN; declarat…"]
+  Na00a932583["No Binder transaction or identity relay joined; User scope UNKNOWN"]
+  N72bfc6db4b["No exact PMS/Settings/DevicePolicy/HOME/OTA sink found in bounded join"]
+  N91b8dac89f -->|6AE-007| Ncaf6278359
+  Ncaf6278359 -->|6AE-007| Na00a932583
+  Na00a932583 -->|6AE-007| N72bfc6db4b
+  N72bfc6db4b:::sink
+  Na32d7c0776["external-storage sideload discovery -> SideloadInstaller verification -> UpdateSystemWrap…"]
+  Nf71f66bb8d["Metadata/device/signature/recovery verification gates; exact caller/SELinux/native flags …"]
+  N998580ea2d["No Binder caller established in saved Java path; clearCallingIdentity UNKNOWN/NOT APPLICA…"]
+  N8bc32ed257["SideloadMover basename + FileHelper.renameTo/copy-delete -> UpdateSystem.install high-ris…"]
+  Na32d7c0776 -->|6AE-008| Nf71f66bb8d
+  Nf71f66bb8d -->|6AE-008| N998580ea2d
+  N998580ea2d -->|6AE-008| N8bc32ed257
+  N8bc32ed257:::sink
+  Nc7625fd143["recovery/Edify context implied; Java verifier caller remains privileged OTA path"]
+  N071e346fbb["script admission gate before named targets; AVB/rollback implementation and caller handof…"]
+  Nc7625fd143 -->|6AF-OTA-001| Nc7625fd143
+  Nc7625fd143 -->|6AF-OTA-001| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-001| N071e346fbb
+  N071e346fbb:::sink
+  Nb75a3b3b97["RecoverySystemWrapper/RecoverySystem API boundary; native recovery identity not recovered"]
+  Ndeb9e425f5["native updater capability is evidenced, while verifier-to-AVB/rollback-to-exec provenance…"]
+  Nb75a3b3b97 -->|6AF-OTA-002| Nb75a3b3b97
+  Nb75a3b3b97 -->|6AF-OTA-002| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-002| Ndeb9e425f5
+  Ndeb9e425f5:::sink
+  Nf34b32f993["PerformBlockImageUpdate caller at 0x409cb4 and 0x409cdc; native recovery identity only"]
+  Nd4f5e5a132["CacheSizeCheck normalizes helper failure into a nonzero error result; exact cache path/si…"]
+  Nf34b32f993 -->|6AF-OTA-003| Nf34b32f993
+  Nf34b32f993 -->|6AF-OTA-003| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-003| Nd4f5e5a132
+  Nd4f5e5a132:::sink
+  N54261648f2["PerformBlockImageUpdate direct callers at 0x409cb4/0x409cdc; recovery/update-binary gate"]
+  N99422de4cc["decision branches are proven, but the selected evidence does not prove whether either con…"]
+  N54261648f2 -->|6AF-OTA-004| N54261648f2
+  N54261648f2 -->|6AF-OTA-004| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-004| N99422de4cc
+  N99422de4cc:::sink
+  N132f0079a7["MakeFreeSpaceOnCache entered from CacheSizeCheck 0x414730; no untrusted caller established"]
+  N305f5795e7["cache helper's filesystem operations include readlink-check at 0x417bf0 and unlink at 0x4…"]
+  N132f0079a7 -->|6AF-OTA-005| N132f0079a7
+  N132f0079a7 -->|6AF-OTA-005| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-005| N305f5795e7
+  N305f5795e7:::sink
+  N0c87b72f0f["registry dispatch is indirect; selected native updater context only"]
+  Nd6008858e9["canonicalization-to-extraction/writer argument flow and O_NOFOLLOW semantics remain unres…"]
+  N0c87b72f0f -->|6AF-OTA-006| N0c87b72f0f
+  N0c87b72f0f -->|6AF-OTA-006| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-006| Nd6008858e9
+  Nd6008858e9:::sink
+  Ne876b71486["registered Edify handlers; recovery updater identity; ordinary app/shell caller not estab…"]
+  Naee067ba35["capability-to-sink exists statically; per-call named-partition argument provenance and ve…"]
+  Ne876b71486 -->|6AF-OTA-007| Ne876b71486
+  Ne876b71486 -->|6AF-OTA-007| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-007| Naee067ba35
+  Naee067ba35:::sink
+  N773a73a0ff["Java privileged OTA path calls RecoverySystem verification and UpdateSystem.install; nati…"]
+  N0a4db4168c["verifier acceptance, UpdateSystem handoff, recovery exec, and updater registry are separa…"]
+  N773a73a0ff -->|6AF-OTA-008| N773a73a0ff
+  N773a73a0ff -->|6AF-OTA-008| N25ba44ec3b
+  N25ba44ec3b -->|6AF-OTA-008| N0a4db4168c
+  N0a4db4168c:::sink
+  Ne205f1fd4d["No exact shipped native caller for /proc/idme, /proc/amzn_drvs or lifecycle nodes"]
+  Ncfc6d9eb42["Source modes/DT permission are insufficient; exact file_contexts/vendor-TE/domain absent"]
+  Nc80190e12d["Read/diagnostic or conditional test state only; package/HOME/root effect UNKNOWN"]
+  Ne205f1fd4d -->|6AG-001| Ncfc6d9eb42
+  Ncfc6d9eb42 -->|6AG-001| Ncfc6d9eb42
+  Ncfc6d9eb42 -->|6AG-001| Nc80190e12d
+  Nc80190e12d:::sink
+  Na253d84035["No exact open/write caller; com.amazon.connectivitydiag presence is not a proc caller"]
+  Neac0400dfe["proc mode/label, init import and TE allow not jointly retained; caller UID/domain UNKNOWN"]
+  N72401d3a10["If built/allowed, factory test dispatcher can alter diagnostic/RTC-special state; no prov…"]
+  Na253d84035 -->|6AG-002| Neac0400dfe
+  Neac0400dfe -->|6AG-002| Neac0400dfe
+  Neac0400dfe -->|6AG-002| N72401d3a10
+  N72401d3a10:::sink
+  N8b4775e3a7["IDME HAL/library evidence only; no exact ELF open/read path-specific caller"]
+  N02201fd027["UID 1000 is source-side handling, not caller identity; exact file_contexts, vendor-TE all…"]
+  N6ce1f39252["Possible device metadata disclosure; no write/package/HOME/root effect established"]
+  N8b4775e3a7 -->|6AG-003| N02201fd027
+  N02201fd027 -->|6AG-003| N02201fd027
+  N02201fd027 -->|6AG-003| N6ce1f39252
+  N6ce1f39252:::sink
+  Ndcb8190046["rpmb_svc/process evidence does not identify exact native open + ioctl callsite or package…"]
+  N36dbae5e50["No capable()/caller policy tuple established; node mode/file_contexts/domain UNKNOWN"]
+  Na19f0404f6["Authenticated persistent-storage operation is a possible state sink; no package/HOME/root…"]
+  Ndcb8190046 -->|6AG-004| N36dbae5e50
+  N36dbae5e50 -->|6AG-004| N36dbae5e50
+  N36dbae5e50 -->|6AG-004| Na19f0404f6
+  Na19f0404f6:::sink
+  Nf0409fcae0["No exact shipped native ELF path-specific open/write/ioctl caller in bounded native inven…"]
+  N0f65dd35f7["0664 is owner/group writable and world-readable, not world-writable; effective owner/grou…"]
+  Neb39a113bc["Performance/governor/control state may be affected by an authorized writer; no PMS/HOME/r…"]
+  Nf0409fcae0 -->|6AG-005| N0f65dd35f7
+  N0f65dd35f7 -->|6AG-005| N0f65dd35f7
+  N0f65dd35f7 -->|6AG-005| Neb39a113bc
+  Neb39a113bc:::sink
+  Nb7da19c666["No exact shipped native caller for AUXADC ioctl or writable sysfs/proc attributes"]
+  Nde6a927a80["No capable() proof, exact mode/owner, file_contexts or TE caller allow; UID/domain UNKNOWN"]
+  N049650393f["ADC/register diagnostic and calibration/hardware-read state may be affected; no package/H…"]
+  Nb7da19c666 -->|6AG-006| Nde6a927a80
+  Nde6a927a80 -->|6AG-006| Nde6a927a80
+  Nde6a927a80 -->|6AG-006| N049650393f
+  N049650393f:::sink
+  Nfcde681475["No exact shipped native debugfs writer or caller"]
+  Nb78f2840db["Source debugfs entries are not a policy proof; exact debugfs type, file_contexts/TE and d…"]
+  Ncef7a1ed46["Potential PMIC register/debug state effect if writable surface is exposed; no package/HOM…"]
+  Nfcde681475 -->|6AG-007| Nb78f2840db
+  Nb78f2840db -->|6AG-007| Nb78f2840db
+  Nb78f2840db -->|6AG-007| Ncef7a1ed46
+  Ncef7a1ed46:::sink
+  N382303e45d["No exact shipped native proc/sysfs write caller in bounded corpus"]
+  N422c83d58b["No joined node mode/file_contexts/TE/domain evidence; caller identity UNKNOWN"]
+  Nb8b27a16da["Possible touch firmware/calibration/input-state mutation; no package/HOME/root effect pro…"]
+  N382303e45d -->|6AG-008| N422c83d58b
+  N422c83d58b -->|6AG-008| N422c83d58b
+  N422c83d58b -->|6AG-008| Nb8b27a16da
+  Nb8b27a16da:::sink
+  N89f356096a["No exact shipped native writer, package, UID or domain; generic store is not a caller"]
+  N7c124da7bd["S_IWUSR is added conditionally by provider; SELinux/file_contexts/domain allow UNKNOWN"]
+  Nc6ccc1df88["Battery/charger property mutation is provider-dependent; no package/HOME/root effect"]
+  N89f356096a -->|6AG-009| N7c124da7bd
+  N7c124da7bd -->|6AG-009| N7c124da7bd
+  N7c124da7bd -->|6AG-009| Nc6ccc1df88
+  Nc6ccc1df88:::sink
+  Nc289a273d7["No exact shipped native ELF /dev/uinput open/write/ioctl caller; library/package markers …"]
+  N3df13ae592["No local capable()/credential gate found; node policy, UID/domain and caller allow UNKNOWN"]
+  Nfffed83f6b["Synthetic input injection can affect kernel input graph; no PMS/HOME/root effect"]
+  Nc289a273d7 -->|6AG-010| N3df13ae592
+  N3df13ae592 -->|6AG-010| N3df13ae592
+  N3df13ae592 -->|6AG-010| Nfffed83f6b
+  Nfffed83f6b:::sink
+  Nb1b0a900e2["ION libion/libion_mtk markers are library capability only; no top-level process consumer;…"]
+  Na959cb5e1c["Policy allow/node metadata do not establish effective ordinary-app access or domain path"]
+  N29d920030b["Potential DMA/display/memory-resource effect remains source/artifact-only; no package/HOM…"]
+  Nb1b0a900e2 -->|6AG-011| Na959cb5e1c
+  Na959cb5e1c -->|6AG-011| Na959cb5e1c
+  Na959cb5e1c -->|6AG-011| N29d920030b
+  N29d920030b:::sink
+  N18455c7492["User 0; Fire Launcher"]
+  N3e6ca0fc79["已整合/已排除 as replacement; Resolver selection is not a writer; do not infer bypass"]
+  N98138dc43a["MAIN+HOME resolver"]
+  N18455c7492 -->|R01| N3e6ca0fc79
+  N3e6ca0fc79 -->|R01| N18455c7492
+  N18455c7492 -->|R01| N98138dc43a
+  N98138dc43a:::sink
+  Nf8b912cd95["User 0; ordinary caller"]
+  N004f60642a["已排除; No setter"]
+  N9e3733ea7b["preferred/set-home/priority"]
+  Nf8b912cd95 -->|R02| N004f60642a
+  N004f60642a -->|R02| Nf8b912cd95
+  Nf8b912cd95 -->|R02| N9e3733ea7b
+  N9e3733ea7b:::sink
+  N53d0a1d59c["User 0; shell/ordinary caller"]
+  N8c8e372144["已排除; Protected-package rejection is not a privilege transition"]
+  N449dee76ed["Fire protected package and force-stop"]
+  N53d0a1d59c -->|R03| N8c8e372144
+  N8c8e372144 -->|R03| N53d0a1d59c
+  N53d0a1d59c -->|R03| N449dee76ed
+  N449dee76ed:::sink
+  Na2c730a02e["User 0 versus child profile"]
+  N680d377b90["已整合/已排除 as User0 route; No component-state replay or grant/revoke"]
+  N04ddb2597e["Tahoe enable/component state"]
+  Na2c730a02e -->|R04| N680d377b90
+  N680d377b90 -->|R04| Na2c730a02e
+  Na2c730a02e -->|R04| N04ddb2597e
+  N04ddb2597e:::sink
+  Nf93d64d020["User 10/11 child/profile; UserInfo.id"]
+  N175fe725d5["已整合/已排除 as User0; Private tx3 and user lifecycle are out of scope"]
+  N0b95c63d8b["KFT launcher writer"]
+  Nf93d64d020 -->|R05| N175fe725d5
+  N175fe725d5 -->|R05| Nf93d64d020
+  Nf93d64d020 -->|R05| N0b95c63d8b
+  N0b95c63d8b:::sink
+  N18181973ec["owner/admin/profile scope; not ordinary app"]
+  N4e9e702634["已排除 as ordinary route/待驗證 caller provenance; No provisioning/removal or Binder transaction"]
+  Nf917001cda["DPM tx100 -> PMS tx73"]
+  N18181973ec -->|R06| N4e9e702634
+  N4e9e702634 -->|R06| N18181973ec
+  N18181973ec -->|R06| Nf917001cda
+  Nf917001cda:::sink
+  Nccab58a933["build resource and overlay; runtime user not shown"]
+  Nbf59c086c6["已排除 as proof of HOME/待驗證 static join; No settings mutation or UI dispatch"]
+  N6ed0fb9b4b["default-home resource/overlay/UI"]
+  Nccab58a933 -->|R07| Nbf59c086c6
+  Nbf59c086c6 -->|R07| Nccab58a933
+  Nccab58a933 -->|R07| N6ed0fb9b4b
+  N6ed0fb9b4b:::sink
+  Nedf2f748d1["verified Binder UID/package; privileged gate"]
+  N94c8cd2ecb["待驗證 host-only caller/transaction join; CONTROL_KEYGUARD gate and private SystemUI boundar…"]
+  Ncf1c78076f["keyguard PendingIntent/SystemUI handoff"]
+  Nedf2f748d1 -->|R08| N94c8cd2ecb
+  N94c8cd2ecb -->|R08| Nedf2f748d1
+  Nedf2f748d1 -->|R08| Ncf1c78076f
+  Ncf1c78076f:::sink
+  N85369cf518["kernel input graph; shipped caller unknown"]
+  N831181b9cc["已排除 as formal HOME/待驗證 shipped caller; No input injection or node access"]
+  N52653dd54e["input/uinput/navigation event path"]
+  N85369cf518 -->|R09| N831181b9cc
+  N831181b9cc -->|R09| N85369cf518
+  N85369cf518 -->|R09| N52653dd54e
+  N52653dd54e:::sink
+  Nd622201bfc["User 0; user consent/service state"]
+  N9fc97d0a94["已排除 as deterministic route/待驗證 consent; Do not enable Accessibility or install/update APK"]
+  N75317de84b["installed service binding"]
+  Nd622201bfc -->|R10| N9fc97d0a94
+  N9fc97d0a94 -->|R10| Nd622201bfc
+  Nd622201bfc -->|R10| N75317de84b
+  N75317de84b:::sink
+  Ne151900fc7["User 0; target foreground only"]
+  N4e7d004462["已整合 as limited alternative; Fire remains resolver winner; no unlock bypass"]
+  N4fcbf38daa["consented delayed foreground redirect"]
+  Ne151900fc7 -->|R11| N4e7d004462
+  N4e7d004462 -->|R11| Ne151900fc7
+  Ne151900fc7 -->|R11| N4fcbf38daa
+  N4fcbf38daa:::sink
+  Nb211530511["User 0; foreground redirect"]
+  Nb429625452["已排除/不採用; No timing optimization replay"]
+  Nd00e188ac2["timeout A/B variant"]
+  Nb211530511 -->|R12| Nb429625452
+  Nb429625452 -->|R12| Nb211530511
+  Nb211530511 -->|R12| Nd00e188ac2
+  Nd00e188ac2:::sink
+  N6d6ea9dde3["ordinary app; PACKAGE_USAGE_STATS/app-op boundary"]
+  Nc76ad8aede["待驗證 host-only permission/consumer join; Do not add permission or use it as HOME writer"]
+  N6026e93534["third-party foreground observation"]
+  N6d6ea9dde3 -->|R13| Nc76ad8aede
+  Nc76ad8aede -->|R13| N6d6ea9dde3
+  N6d6ea9dde3 -->|R13| N6026e93534
+  N6026e93534:::sink
+  Nd16fa38d1e["ADB-connected host; not resident device route"]
+  Ned694a5c75["已排除 as approved resident solution; No new ADB monitor or device contact"]
+  Nd554c65f2f["host ADB foreground relay"]
+  Nd16fa38d1e -->|R14| Ned694a5c75
+  Ned694a5c75 -->|R14| Nd16fa38d1e
+  Nd16fa38d1e -->|R14| Nd554c65f2f
+  Nd554c65f2f:::sink
+  N908ffc7ffa["system-server OTA lifecycle; numeric user unknown"]
+  N336bb586ba["已整合/待驗證 natural official OTA only; No broadcast injection"]
+  Nf1791ebce3["BootAfterSystemOTAReceiver -> OOBE activation"]
+  N908ffc7ffa -->|R15| N336bb586ba
+  N336bb586ba -->|R15| N908ffc7ffa
+  N908ffc7ffa -->|R15| Nf1791ebce3
+  Nf1791ebce3:::sink
+  N5fd2c123e9["child/profile lifecycle; producer and user handle incomplete"]
+  N240c586a12["待驗證 host-only provenance; No lifecycle broadcast or profile mutation"]
+  Nbe9ea336db["DCPMS lifecycle receiver -> profile policy"]
+  N5fd2c123e9 -->|R16| N240c586a12
+  N240c586a12 -->|R16| N5fd2c123e9
+  N5fd2c123e9 -->|R16| Nbe9ea336db
+  Nbe9ea336db:::sink
+  Nb1c7ffb55e["PS7331 OTA artifact; controller/privileged path"]
+  N1b650f27a8["已整合 static boundary/待驗證 verifier implementation; No sideload"]
+  N67aa972a36["metadata/signature/recovery verification"]
+  Nb1c7ffb55e -->|R17| N1b650f27a8
+  N1b650f27a8 -->|R17| Nb1c7ffb55e
+  Nb1c7ffb55e -->|R17| N67aa972a36
+  N67aa972a36:::sink
+  N83739d4ddf["PS7331 recovery/updater; caller unknown"]
+  N78eb584f94["已排除 as ordinary route/因風險拒絕 runtime; No updater/recovery/partition execution; no bypass i…"]
+  N127c6baebe["native updater/block-image/partition writer"]
+  N83739d4ddf -->|R18| N78eb584f94
+  N78eb584f94 -->|R18| N83739d4ddf
+  N83739d4ddf -->|R18| N127c6baebe
+  N127c6baebe:::sink
+  Nb642d7d3d8["shell UID 2000; private service gate"]
+  N576e487a28["已排除 method reachability; No unknown Binder transaction or handle guessing"]
+  Nbfca1c0df1["private Amazon service visibility/lookup"]
+  Nb642d7d3d8 -->|R19| N576e487a28
+  N576e487a28 -->|R19| Nb642d7d3d8
+  Nb642d7d3d8 -->|R19| Nbfca1c0df1
+  Nbfca1c0df1:::sink
+  Nd7b9388f60["external requester/holder/grant unknown"]
+  N0262bca997["待驗證 host-only holder/requester join; No bind/call or guessed code"]
+  N69a8882d4e["H2 BIND_SERVICE custom permission"]
+  Nd7b9388f60 -->|R20| N0262bca997
+  N0262bca997 -->|R20| Nd7b9388f60
+  Nd7b9388f60 -->|R20| N69a8882d4e
+  N69a8882d4e:::sink
+  N5fa0f61354["producer and user scope unknown"]
+  Ne8048f8c16["待驗證 host-only caller/permission/user join; No broadcast replay or cross-user mutation"]
+  N16eebec543["exported OOBE/account/profile receivers"]
+  N5fa0f61354 -->|R21| Ne8048f8c16
+  Ne8048f8c16 -->|R21| N5fa0f61354
+  N5fa0f61354 -->|R21| N16eebec543
+  N16eebec543:::sink
+  Nae42cb0ffb["ordinary/untrusted app"]
+  N93c909ac58["已排除 bounded route; Private Binder out of scope; no APK/install"]
+  N9a2603530d["untrusted PendingIntent/cross-user"]
+  Nae42cb0ffb -->|R22| N93c909ac58
+  N93c909ac58 -->|R22| Nae42cb0ffb
+  Nae42cb0ffb -->|R22| N9a2603530d
+  N9a2603530d:::sink
+  Nda2228e6b1["system/shell permission gates; user overload varies"]
+  N196905ec1e["已整合/待驗證 caller provenance; No settings write or settings modification"]
+  Nbd0e052034["SettingsProvider and generic settings writers"]
+  Nda2228e6b1 -->|R23| N196905ec1e
+  N196905ec1e -->|R23| Nda2228e6b1
+  Nda2228e6b1 -->|R23| Nbd0e052034
+  Nbd0e052034:::sink
+  N1a92736273["privileged/system or unknown production caller"]
+  N2563f885cf["待驗證 host-only provenance/已排除 replay; No grant/revoke/install/package mutation"]
+  N4cc8ebec4a["Amazon PM/Vending/package-state writers"]
+  N1a92736273 -->|R24| N2563f885cf
+  N2563f885cf -->|R24| N1a92736273
+  N1a92736273 -->|R24| N4cc8ebec4a
+  N4cc8ebec4a:::sink
+  N7370e2372d["retail node/caller/domain not joined"]
+  N6042271a35["待驗證 host-only image/DT/relocation join; No node access"]
+  N79957cbc41["driver CMDQ/ION/MDP nodes"]
+  N7370e2372d -->|R25| N6042271a35
+  N6042271a35 -->|R25| N7370e2372d
+  N7370e2372d -->|R25| N79957cbc41
+  N79957cbc41:::sink
+  N433463e08e["shipped native caller unknown"]
+  N42f4e5bf45["已排除 as proven bypass/待驗證 caller only; No synthetic input"]
+  Na56b80a3f3["uinput/power-supply low-level path"]
+  N433463e08e -->|R26| N42f4e5bf45
+  N42f4e5bf45 -->|R26| N433463e08e
+  N433463e08e -->|R26| Na56b80a3f3
+  Na56b80a3f3:::sink
+  N72ca5c0920["device/root boundary"]
+  Nb5ed72c5b0["因風險拒絕; Exploit/root/payload execution explicitly excluded"]
+  N7ddbb8150f["root/futex/rtmutex/privilege transition"]
+  N72ca5c0920 -->|R27| Nb5ed72c5b0
+  Nb5ed72c5b0 -->|R27| N72ca5c0920
+  N72ca5c0920 -->|R27| N7ddbb8150f
+  N7ddbb8150f:::sink
+  Ndf15744f24["system/in-process policy path; caller gate unknown"]
+  Na5f2921342["待驗證 host-only registration/permission join; No service call or policy mutation"]
+  Ndec018a7a8["ProductPolicy/fosinit Binder publication"]
+  Ndf15744f24 -->|R28| Na5f2921342
+  Na5f2921342 -->|R28| Ndf15744f24
+  Ndf15744f24 -->|R28| Ndec018a7a8
+  Ndec018a7a8:::sink
+  N704a479aff["Amazon/system caller; user propagation incomplete"]
+  Nd3811de7d7["待驗證 host-only identity/user-flow join; No process launch or Binder invocation"]
+  N93e688fd48["ASP preWarmApplicationForUser"]
+  N704a479aff -->|R29| Nd3811de7d7
+  Nd3811de7d7 -->|R29| N704a479aff
+  N704a479aff -->|R29| N93e688fd48
+  N93e688fd48:::sink
+```
