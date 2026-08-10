@@ -1,0 +1,31 @@
+flowchart LR
+    SRC["PS7331 source / boot / OTA artifacts"] --> K["kernel driver source and config"]
+    K --> KG["registration → fops → config → label/policy → caller"]
+    KG -->|"GED read-only only"| TEL["shell telemetry"]
+    KG -->|"no proven caller/effect"| KX["CMDQ / ION / RPMB / USB / debug surfaces\nstatic or risk-rejected"]
+    K -->|"no direct source edge"| FNO["no PMS / AMS / ATMS / HOME sink"]
+
+    IPC["Amazon IPC / OTA residuals"] --> PM["IAmazonPackageManager tx6/tx7"]
+    IPC --> VEND["Vending exported receiver/service"]
+    IPC --> OTA["OTA verifier → UpdateSystem → recovery"]
+    IPC --> OOBE["phase 550 + isUpgrade → BOOT_AFTER_SYSTEM_OTA"]
+    PM -->|"caller/identity/consumer incomplete"| UX["bounded unknown"]
+    VEND -->|"skipped body"| UX
+    OTA -->|"trusted capability; no shell handoff"| RX["risk-rejected boundary"]
+    OOBE -->|"OOBE/setup sink, not normal HOME"| OX["protected lifecycle"]
+    ARC["Phase 6MI outer archive EOF"] -->|"35 source/build members"| CLOSED["source completeness closed"]
+
+    HOME["User-0 formal HOME"] --> FIRE["Fire Launcher priority 50"]
+    HOME --> PREF["preferred/set-home record"]
+    PREF -->|"record persists but loses ranking"| FIRE
+    CHILD["trusted child lifecycle"] --> TAHOE["Tahoe HOME per child user"]
+    REDIR["user-authorized Accessibility / ADB"] --> FG["foreground redirect"]
+    FG -->|"temporary; resolver unchanged"| FIRE
+    GAP["4 host-only evidence gaps"] -->|"no device mutation yet"| REVIEW["source/report normalization"]
+
+    classDef confirmed fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
+    classDef boundary fill:#fff3e0,stroke:#ef6c00,color:#7f3f00;
+    classDef unknown fill:#fce4ec,stroke:#ad1457,color:#880e4f;
+    class TEL,FIRE,TAHOE,FG,CLOSED confirmed;
+    class KX,FNO,RX,OX,REVIEW boundary;
+    class UX,PREF,GAP unknown;

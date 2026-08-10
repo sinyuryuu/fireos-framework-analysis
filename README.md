@@ -3658,3 +3658,35 @@ Outputs:
 - `work/luna_worker_amazon_service_permission_followup_20260810.md/.csv`
 - `work/luna_worker_fire_state_writer_followup_20260810.md/.csv`
 - `work/luna_worker_fosinit_exported_sink_followup_20260810.md/.csv`
+
+## Phase 6PZ — kernel, IPC/OTA and workaround broad-surface closure (2026-08-10)
+
+Phase 6PZ integrates three host-only worker audits beyond the Launcher-specific
+path: 13 PS7331 kernel/driver surfaces, 6 bounded Amazon IPC/OTA/OOBE unknowns,
+and 22 existing HOME/package/Accessibility/child-profile workaround rows. The
+41-row closure adds no confirmed low-privilege caller to User-0 package state,
+formal HOME, system, root, or partition sink. The child Tahoe result remains
+per-user only; Accessibility/ADB remains a timing-sensitive foreground
+fallback rather than a resolver replacement.
+
+Phase 6MI's existing EOF-complete source archive audit supersedes the worker's
+archive-tail unknown: the outer 7.3.3.1 source stream has 35 source/build
+members and no hidden updater/post-install member. Remaining IPC rows are kept
+as bounded unknowns where skipped code, caller provenance, identity relay, or
+user mapping is incomplete.
+
+No device-node open, ioctl, Binder transaction, broadcast, OTA/recovery,
+package/settings mutation, reboot, Root, exploit, or partition operation was
+performed in this phase.
+
+Outputs:
+
+- `findings/phase-6pz-broad-surface-closure.md`
+- `findings/phase-6pz-evidence-index.md`
+- `output/tables/phase6pz-broad-surface-closure.csv`
+- `output/tables/phase6pz-broad-surface-closure.csv.manifest.json`
+- `output/call-graphs/phase6pz-broad-surface-closure.mmd`
+- `tools/scripts/build_phase6pz_broad_surface_closure.py`
+- `work/luna_worker_kernel_driver_surface_followup2_20260810.md/.csv`
+- `work/luna_worker_ipc_ota_unclosed_followup_20260810.md/.csv`
+- `work/luna_worker_workaround_gap_followup_20260810.md/.csv`

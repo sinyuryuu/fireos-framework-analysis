@@ -1572,3 +1572,33 @@ Records:
 - `work/luna_worker_amazon_service_permission_followup_20260810.md/.csv`
 - `work/luna_worker_fire_state_writer_followup_20260810.md/.csv`
 - `work/luna_worker_fosinit_exported_sink_followup_20260810.md/.csv`
+
+## Phase 6PZ — kernel、IPC/OTA 與 workaround broad-surface closure（2026-08-10）
+
+本輪把 kernel/driver、Amazon IPC/OTA/OOBE 與既有 HOME workaround 放在同一個
+證據矩陣：13 個 kernel rows、6 個 bounded IPC/OTA unknowns、22 個 workaround rows，
+共 41 rows。沒有新增 ordinary-app／ADB shell 到 User-0 package state、正式 HOME、
+system/root 或 partition sink 的閉合鏈。GED 只有保存的 shell read-only telemetry；
+CMDQ、ION、RPMB、USB、debugfs/sysfs 等仍是 source capability 或 risk-rejected
+surface。
+
+既有 Phase 6MI 已將 7.3.3.1 outer source archive 讀到 EOF（35 members），因此
+worker 所列 archive-tail unknown 已 supersede，不重複解包。剩餘 IPC rows 仍保留為
+bounded unknown，原因是 skipped code、caller provenance、identity relay 或 user
+mapping 未完整恢復。child Tahoe 仍是 per-user HOME；Accessibility/ADB 仍是時序敏感
+foreground fallback，不是 User-0 formal HOME replacement。
+
+本輪未執行 device-node open、ioctl、Binder transaction、broadcast、OTA/recovery、
+package/settings mutation、reboot、Root、exploit 或分割區操作。
+
+Records:
+
+- `findings/phase-6pz-broad-surface-closure.md`
+- `findings/phase-6pz-evidence-index.md`
+- `output/tables/phase6pz-broad-surface-closure.csv`
+- `output/tables/phase6pz-broad-surface-closure.csv.manifest.json`
+- `output/call-graphs/phase6pz-broad-surface-closure.mmd`
+- `tools/scripts/build_phase6pz_broad_surface_closure.py`
+- `work/luna_worker_kernel_driver_surface_followup2_20260810.md/.csv`
+- `work/luna_worker_ipc_ota_unclosed_followup_20260810.md/.csv`
+- `work/luna_worker_workaround_gap_followup_20260810.md/.csv`
