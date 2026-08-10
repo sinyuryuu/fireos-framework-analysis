@@ -1,0 +1,16 @@
+Test ID: PHASE6PD-ACCESSIBILITY-PENDINGINTENT-T01
+Host timestamp: 2026-08-10
+Target: research package org.fireosresearch.phase4.redirect only
+
+Command:
+adb -s <DEVICE_SERIAL> install -r --user 0 tools/phase4-accessibility/dist/20260804-pendingintent-jdk17-01/org.fireosresearch.phase4.redirect.apk
+
+Observed stdout/stderr:
+Performing Streamed Install
+adb: failed to install tools/phase4-accessibility/dist/20260804-pendingintent-jdk17-01/org.fireosresearch.phase4.redirect.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Package org.fireosresearch.phase4.redirect signatures do not match previously installed version; ignoring!]
+
+Exit code: 1
+Expected state: candidate APK replaces the existing research APK.
+Observed state: replacement rejected; existing research APK remained installed.
+No alias APK was installed.
+No settings, package state, Fire Launcher state, resolver state, or Accessibility state was intentionally changed.
