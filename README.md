@@ -3630,3 +3630,31 @@ Outputs:
 - `work/luna_worker_denylist_provenance_followup_20260810.md/.csv`
 - `work/luna_worker_bootafter_ota_provenance_followup_20260810.md/.csv`
 - `work/luna_worker_ota_recovery_handoff_followup_20260810.md/.csv`
+
+## Phase 6PY — service permission, package-state writer and exported sink closure (2026-08-10)
+
+Phase 6PY broadens the privilege-surface audit beyond Launcher-specific paths.
+It normalizes Amazon service permission candidates, Fire/Tahoe package-state
+writers, and 123 PS7331 `fosinit`/exported-component registrations into one
+caller→gate→identity→sink matrix. The result adds no ordinary-app or ADB-shell
+route to User-0 HOME, PackageManager, system, or root state. ASP tablet
+permission behavior and the bounded prewarm check remain static authorization
+anomaly candidates, not exploit or root evidence. KFT state writing is child/
+profile-scoped, and `BOOT_AFTER_SYSTEM_OTA` remains a protected system-server
+OOBE lifecycle.
+
+No unknown Binder transaction, service call, ioctl, package/settings mutation,
+user provisioning, reboot, OTA/recovery, Root, exploit, or partition operation
+was performed in this phase.
+
+Outputs:
+
+- `findings/phase-6py-service-state-exported-closure.md`
+- `findings/phase-6py-evidence-index.md`
+- `output/tables/phase6py-service-state-exported-closure.csv`
+- `output/tables/phase6py-service-state-exported-closure.csv.manifest.json`
+- `output/call-graphs/phase6py-service-state-exported-closure.mmd`
+- `tools/scripts/build_phase6py_service_state_closure.py`
+- `work/luna_worker_amazon_service_permission_followup_20260810.md/.csv`
+- `work/luna_worker_fire_state_writer_followup_20260810.md/.csv`
+- `work/luna_worker_fosinit_exported_sink_followup_20260810.md/.csv`

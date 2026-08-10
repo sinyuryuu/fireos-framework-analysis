@@ -1544,3 +1544,31 @@ Records:
 - `work/luna_worker_denylist_provenance_followup_20260810.md/.csv`
 - `work/luna_worker_bootafter_ota_provenance_followup_20260810.md/.csv`
 - `work/luna_worker_ota_recovery_handoff_followup_20260810.md/.csv`
+
+## Phase 6PY — service permission、package-state writer 與 exported sink closure（2026-08-10）
+
+本輪把研究範圍擴展到 Launcher 以外的 Amazon 高權限表面：ASP、SmartSuspend、
+thermal、fosdebug、Activity/Window/Input service；Fire/Tahoe/KFT、PMS、DPM、
+Arcus、OOBE/OTA package-state writer；以及 123 個 PS7331 fosinit XML 與 exported
+component candidate。三份 worker CSV 正規化成 38-row caller→gate→identity→sink
+矩陣。結果沒有新增 ordinary-app／ADB shell 到 User-0 HOME、PackageManager、
+system/root 的閉合鏈。
+
+ASP tablet branch 與 `preWarmApplicationForUser` 保留為靜態授權異常候選，但 sink
+分別受限於 native audio 與 process/resource effect，沒有 HOME/package/root 證據。
+KFT writer 只在 supplied child/profile `UserInfo.id` 寫 Fire/Tahoe state；
+`BOOT_AFTER_SYSTEM_OTA` 仍是 system-server phase-550、upgrade-gated 的 OOBE
+lifecycle。沒有猜測或重放未知 Binder transaction，沒有執行 package/settings
+mutation、provisioning、reboot、OTA/recovery、Root、exploit、ioctl 或分割區操作。
+
+Records:
+
+- `findings/phase-6py-service-state-exported-closure.md`
+- `findings/phase-6py-evidence-index.md`
+- `output/tables/phase6py-service-state-exported-closure.csv`
+- `output/tables/phase6py-service-state-exported-closure.csv.manifest.json`
+- `output/call-graphs/phase6py-service-state-exported-closure.mmd`
+- `tools/scripts/build_phase6py_service_state_closure.py`
+- `work/luna_worker_amazon_service_permission_followup_20260810.md/.csv`
+- `work/luna_worker_fire_state_writer_followup_20260810.md/.csv`
+- `work/luna_worker_fosinit_exported_sink_followup_20260810.md/.csv`

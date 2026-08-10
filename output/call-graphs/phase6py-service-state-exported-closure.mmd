@@ -1,0 +1,38 @@
+flowchart LR
+    APP["ordinary app / shell"] --> FIND["ServiceManager.find(private Amazon service)"]
+    FIND --> POLICY["SELinux / service-manager boundary"]
+    POLICY -->|"saved denial or visibility only"| NOREACH["no proven low-privilege method reachability"]
+
+    ASP["AmazonAspService tablet branch"] --> ASPG["hasCallerGotPermission()"]
+    ASPG --> ASPN["command / capture / injection native sink"]
+    ASPN --> ASPX["no HOME / package / root sink found"]
+
+    PRE["preWarmApplicationForUser"] --> PREP["checkCallingPermission(APP_PREWARM)\nresult not consumed in bounded method"]
+    PREP --> PREID["clearCallingIdentity()"]
+    PREID --> PRES["startProcessLocked()"]
+    PRES --> PREX["process/resource effect only"]
+
+    KFT["trusted KFT child lifecycle / tx3"] --> KFTM["enableKftLauncherComponent(UserInfo.id)"]
+    KFTM --> KFTID["clearCallingIdentity()"]
+    KFTID --> PMS["PMS component/application enabled-state API"]
+    PMS --> GATE["protected-package + cross-user gate"]
+    GATE -->|"User-0 shell attempt rejected before write"| KFTX["no User-0 mutation"]
+
+    RES["fireos-res.apk raw deny-list"] --> ARCUS["DenyListArcusHelper.processJSON()"]
+    ARCUS --> CALLBACK["ControlProtectedPackagesCallback"]
+    CALLBACK --> GATE
+    GATE -->|"pre-write rejection"| PROTX["Fire protected state preserved"]
+
+    INIT["123 fosinit XML / exported candidates"] --> JOIN["registration + manifest + source sink join"]
+    JOIN -->|"no qualifying ordinary caller"| CLOSED["no User-0 HOME / preferred / settings / DPM sink"]
+
+    SYS["system-server phase 550 + PMS.isUpgrade()"] --> OTA["BOOT_AFTER_SYSTEM_OTA protected delivery"]
+    OTA --> OOBE["OOBE Home / setup flags"]
+    OOBE -->|"protected lifecycle; not public HOME writer"| OTAX["no ordinary route established"]
+
+    classDef safe fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20;
+    classDef boundary fill:#fff3e0,stroke:#ef6c00,color:#7f3f00;
+    classDef unknown fill:#fce4ec,stroke:#ad1457,color:#880e4f;
+    class NOREACH,KFTX,PROTX,CLOSED,OTAX,ASPX,PREX safe;
+    class POLICY,GATE boundary;
+    class ASPG,PREP unknown;
