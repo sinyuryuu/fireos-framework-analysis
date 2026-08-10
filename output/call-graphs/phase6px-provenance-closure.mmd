@@ -1,0 +1,31 @@
+flowchart LR
+    Res["PS7331 fireos-res.apk\nraw/package_manager_deny_list"] --> Json["packages_deny_list\ncom.amazon.firelauncher"]
+    Json --> Arcus["DenyListArcusHelper.processJSON()"]
+    Arcus --> Persist["PackageManagerDenyList /\nDenyListKeyPackages"]
+    Persist --> Callback["ControlProtectedPackagesCallback"]
+    Callback --> Gate["PMS protected-package\nstate mutation gate"]
+    Shell["shell UID 2000\ndisable request"] --> Gate
+    Gate --> Reject["Cannot disable protected package"]
+
+    Perm["android.amazon.perm\nprotected broadcast"] --> OTAAction["BOOT_AFTER_SYSTEM_OTA"]
+    Sys["system_server phase 550\n+ PMS.isUpgrade()"] --> OTAAction
+    OTAAction --> Receiver["BootAfterSystemOTAReceiver"]
+    Receiver --> OOBE["OobeHomeActivity +\nsetup/OOBE settings"]
+    OTAAction --> Alexa["two Alexa consumers"]
+
+    Verifier["OTA verifier / metadata"] --> Stage["basename staging"]
+    Stage --> UpdateSystem["UpdateSystem.install"]
+    UpdateSystem --> Recovery["recovery/native handoff"]
+    Recovery --> Binary["update-binary callbacks"]
+    Binary --> Write["fixed by-name\npartition writers"]
+    Ordinary["ordinary app / shell"] -. no caller evidence .-> Recovery
+
+    OOBE -. no Fire HOME writer .-> Home["User 0 HOME\nFire priority 50"]
+    Write -. high privilege only .-> Home
+
+    classDef confirmed fill:#d9f7be,stroke:#389e0d,color:#000;
+    classDef inferred fill:#fff1b8,stroke:#d48806,color:#000;
+    classDef rejected fill:#ffd6e7,stroke:#c41d7f,color:#000;
+    class Res,Json,Arcus,Callback,Gate,Reject,Perm,Sys,OTAAction,Receiver,OOBE confirmed;
+    class Persist,Alexa,Verifier,Stage,UpdateSystem,Recovery,Binary inferred;
+    class Ordinary,Write rejected;

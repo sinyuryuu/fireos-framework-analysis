@@ -3604,3 +3604,29 @@ Outputs:
 - `work/luna_worker_evidence_audit_followup_20260810.md/.csv`
 - `work/luna_worker_ipc_boundary_followup_20260810.md/.csv`
 - `work/luna_worker_workaround_audit_followup_20260810.md/.csv`
+
+## Phase 6PX — provenance closure (2026-08-10)
+
+Phase 6PX closes the static provenance of the PS7331 protected-package seed,
+the `BOOT_AFTER_SYSTEM_OTA` lifecycle, and the signed OTA/recovery handoff.
+The extracted `fireos-res.apk` resource `package_manager_deny_list.json`
+directly lists `com.amazon.firelauncher`; the live persisted deny-list contents
+remain ACL-protected and are not claimed as directly read. The OOBE action is
+system-server phase-550 plus `isUpgrade()` and has no ordinary caller or Fire
+HOME writer in the reviewed chain. The updater has high-privilege partition
+capability but no shell/ordinary-app recovery handoff was established.
+
+No broadcast, Binder transaction, OTA/recovery execution, package/settings
+mutation, reboot, Root, or partition operation was performed.
+
+Outputs:
+
+- `findings/phase-6px-provenance-closure.md`
+- `findings/phase-6px-evidence-index.md`
+- `output/tables/phase6px-provenance-closure.csv`
+- `output/tables/phase6px-provenance-closure.csv.manifest.json`
+- `output/call-graphs/phase6px-provenance-closure.mmd`
+- `tools/scripts/build_phase6px_provenance_closure.py`
+- `work/luna_worker_denylist_provenance_followup_20260810.md/.csv`
+- `work/luna_worker_bootafter_ota_provenance_followup_20260810.md/.csv`
+- `work/luna_worker_ota_recovery_handoff_followup_20260810.md/.csv`

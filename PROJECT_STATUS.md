@@ -1517,3 +1517,30 @@ Records:
 - `work/luna_worker_evidence_audit_followup_20260810.md/.csv`
 - `work/luna_worker_ipc_boundary_followup_20260810.md/.csv`
 - `work/luna_worker_workaround_audit_followup_20260810.md/.csv`
+
+## Phase 6PX — provenance closure（2026-08-10）
+
+本輪由三個 `luna_worker` 分別完成 deny-list、BOOT_AFTER_SYSTEM_OTA 與
+OTA/recovery handoff 的 host-only provenance。新的關鍵證據是 PS7331
+`fireos-res.apk` 的 `package_manager_deny_list.json` 直接包含
+`com.amazon.firelauncher`；因此 protected seed membership 已有靜態直接證據。
+但 `/data/system/PackageManagerDenyList` 的 live persisted 內容仍受 ACL 保護，
+未被讀取，不能過度宣稱 literal live membership。
+
+`BOOT_AFTER_SYSTEM_OTA` 已閉合為 `android.amazon.perm` protected broadcast →
+system-server phase 550 + `isUpgrade()` → OOBE/Alexa sinks；沒有普通 caller 或
+Fire HOME writer。OTA/recovery 只閉合到受信任的 updater/partition capability，
+沒有 shell/ordinary-app handoff。未執行 broadcast、Binder、OTA/recovery、Root、
+reboot、package/settings mutation 或分割區操作。
+
+Records:
+
+- `findings/phase-6px-provenance-closure.md`
+- `findings/phase-6px-evidence-index.md`
+- `output/tables/phase6px-provenance-closure.csv`
+- `output/tables/phase6px-provenance-closure.csv.manifest.json`
+- `output/call-graphs/phase6px-provenance-closure.mmd`
+- `tools/scripts/build_phase6px_provenance_closure.py`
+- `work/luna_worker_denylist_provenance_followup_20260810.md/.csv`
+- `work/luna_worker_bootafter_ota_provenance_followup_20260810.md/.csv`
+- `work/luna_worker_ota_recovery_handoff_followup_20260810.md/.csv`
