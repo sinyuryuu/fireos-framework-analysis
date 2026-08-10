@@ -108,6 +108,30 @@ policy allow / historical node metadata
 | `tmem0` | Unknown | Source material was not closed through config, module packaging, file context, SELinux and runtime existence. No proc/sysfs/debugfs access was attempted. |
 | ION debugfs | Not a tested route | The audited policy did not establish ordinary read/write/ioctl access to the debugfs files. |
 
+## Module and overlay packaging closure
+
+The follow-up host-only packaging audit closes the remaining ambiguity for the
+two source-only candidates:
+
+- `amzn_drv_test` is a `tristate` source target, but the PS7331 `trona_defconfig`
+  does not enable it and the final `kernel.config:3584` says
+  `# CONFIG_AMZN_DRV_TEST is not set`.
+- `tmem0` has a module-capable source path, but its build configuration is
+  tied to engineering/trusted-memory options that are not enabled in the
+  selected PS7331 config. No product `.ko`, `modules.dep`, `modules.load`,
+  `vendor_dlkm`, or `odm` packaging evidence was found.
+- `CONFIG_MODULES=y` at `kernel.config:250` is only generic module support;
+  it does not establish that either candidate was delivered as a loadable
+  module.
+- `CONFIG_OF_OVERLAY`, `CONFIG_OVERLAY_FS` and target ODM copy-out are not
+  enabled in the inspected config. The extracted PS7331 image has no matching
+  `vendor_dlkm` or `odm` overlay payload.
+
+This is a **Strong negative** for a delivered `amzn_drv_test` module and a
+**bounded Unknown** for `tmem0` runtime existence. The source remains useful
+for defensive comparison, but no further device probing is justified without
+new image provenance.
+
 ## Relation to the launcher objective
 
 The IPC/OTA and launcher reviews in this continuation found no new ordinary
@@ -136,14 +160,15 @@ The following were intentionally not performed:
 These are marked **因風險拒絕測試**, not failures and not evidence that a
 vulnerability exists.
 
-## Next smallest safe step
+## Stop decision and next research boundary
 
-The only proportionate follow-up is host-only packaging closure:
+The host-only packaging closure is complete. The driver line should stop at
+this boundary unless new provenance identifies a delivered module, a trusted
+caller, or a direct framework sink. No device-node operation is justified by
+the present evidence.
 
-1. verify all PS7331 module manifests and extracted module paths for ION,
-   `amzn_drv_test` and `tmem0`;
-2. compare the policy compiler inputs with the selected image manifest; and
-3. stop the driver line unless a new, trusted caller or a direct framework
-   sink appears.
-
-No device-node operation is justified by the present evidence.
+The remaining launcher work is separate: a formal User-0 HOME replacement is
+still unconfirmed, while the only measured practical fallback is the
+user-consented Accessibility/PendingIntent foreground redirect. Any future
+measurement of that fallback must retain visible manual consent and the
+existing rollback guard.
