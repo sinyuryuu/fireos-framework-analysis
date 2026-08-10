@@ -1,0 +1,88 @@
+{
+  "binder_transaction": false,
+  "commands": [
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "get-state"
+      ],
+      "name": "adb_state",
+      "returncode": 0,
+      "stderr": "adb_state.stderr.txt",
+      "stdout": "adb_state.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "name": "fingerprint",
+      "returncode": 0,
+      "stderr": "fingerprint.stderr.txt",
+      "stdout": "fingerprint.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "am",
+        "get-current-user"
+      ],
+      "name": "current_user",
+      "returncode": 0,
+      "stderr": "current_user.stderr.txt",
+      "stdout": "current_user.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "--user",
+        "0",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "name": "home_user0",
+      "returncode": 0,
+      "stderr": "home_user0.stderr.txt",
+      "stdout": "home_user0.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.firelauncher"
+      ],
+      "name": "fire_package",
+      "returncode": 0,
+      "stderr": "fire_package.stderr.txt",
+      "stdout": "fire_package.stdout.txt"
+    }
+  ],
+  "finished_timestamp_utc": "2026-08-10T08:41:55.473069+00:00",
+  "mutation": false,
+  "read_only": true,
+  "reboot": false,
+  "serial": "G001LT0511550CFT",
+  "started_timestamp_utc": "2026-08-10T08:41:55.254269+00:00"
+}

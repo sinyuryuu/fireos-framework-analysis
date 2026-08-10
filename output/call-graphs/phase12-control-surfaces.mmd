@@ -1,0 +1,17 @@
+flowchart TD
+    A["ordinary app / shell"] --> B["Binder or framework entry"]
+    B --> C{"caller + permission + identity + user scope closed?"}
+    C -->|No| U["UNKNOWN / stop; no payload"]
+    C -->|KFT child only| K["UserInfo.id child/profile lifecycle"]
+    C -->|PMS standard gate| P["protected package / preferred / cross-user checks"]
+    C -->|OTA protected| O["recovery/update-binary capability; not invoked"]
+    C -->|driver edges missing| D["node/policy/native caller UNKNOWN"]
+    K --> K2["observed child state only; no User-0 HOME effect"]
+    P --> P2["no ordinary User-0 Fire/HOME writer observed"]
+    O --> O2["partition sinks static only; AVB/SELinux/runtime UNKNOWN"]
+    D --> D2["no device node opened; no HOME/PMS sink"]
+    U --> Z["No UID 0 or formal HOME replacement established"]
+    K2 --> Z
+    P2 --> Z
+    O2 --> Z
+    D2 --> Z
