@@ -4160,3 +4160,37 @@ Records:
 - `work/luna_worker_phase6tm_h2_permission_20260810.md/.csv`
 - `work/luna_worker_phase6tn_ion_loader_graph_20260810.md/.csv`
 - `work/luna_worker_phase6tm_ota_public_repair_20260810.md/.csv`
+
+## Phase 6TU–TV — current read-only state and control-surface reconciliation
+
+Phase 6TU records a fresh, redacted, exact-serial read-only snapshot: PS7331.4463N /
+KFTRWI / trona, Android 9/API 28, SELinux Enforcing, verified boot green, two users,
+and HOME still resolving to `com.amazon.firelauncher/.Launcher` with effective priority
+50. Raw settings and dumps remain local; only the redacted summary, table and parser are
+published.
+
+Phase 6TV integrates 76 rows from the IPC sink audit, OTA writer audit, GPL/exact-image
+driver inventory and historical-test reconciliation. No bounded chain reaches a User-0
+HOME/package-state/root/partition sink from an ordinary app or shell caller. Static OTA
+writers and driver nodes remain capability evidence with missing authentication, caller,
+policy, loader or downstream-effect edges.
+
+No Binder/service call, driver `open/ioctl`, OTA/recovery/flash, Root/exploit, reboot,
+package/settings mutation, Fire Launcher mutation or partition write was performed.
+
+Records:
+
+- `findings/phase-6tu-readonly-snapshot.md`
+- `output/tables/phase6tu-readonly-state.csv`
+- `tools/scripts/summarize_phase6tu_readonly.py`
+- `findings/phase-6tv-report.md`
+- `findings/phase-6tv-evidence-index.md`
+- `output/tables/phase6tv-control-surface.csv`
+- `output/tables/phase6tv-input-manifest.sha256`
+- `output/tables/phase6tv-test-reconciliation.csv`
+- `output/call-graphs/phase6tv-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6tv_surface.py`
+- `work/luna_worker_phase6to_ipc_sink_audit_20260810.md/.csv`
+- `work/luna_worker_phase6tp_ota_writer_audit_20260810.md/.csv`
+- `work/luna_worker_phase6tq_driver_inventory_20260810.md/.csv`
+- `work/luna_worker_phase6tr_test_reconciliation_20260810.md/.csv`

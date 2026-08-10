@@ -2038,3 +2038,35 @@ Records:
 - `work/luna_worker_phase6tm_h2_permission_20260810.md/.csv`
 - `work/luna_worker_phase6tn_ion_loader_graph_20260810.md/.csv`
 - `work/luna_worker_phase6tm_ota_public_repair_20260810.md/.csv`
+
+## Phase 6TU–TV — read-only state and cross-surface audit (2026-08-10)
+
+Phase 6TU refreshed the exact-serial read-only state and preserved raw output locally;
+the redacted summary confirms PS7331.4463N / KFTRWI / trona, Android 9/API 28, SELinux
+Enforcing, verified boot green, two users, and Fire Launcher HOME priority 50.
+
+Phase 6TV integrated 76 rows: IPC sink audit (15), OTA writer audit (12), GPL/custom
+driver inventory (24), and existing-test reconciliation (25). No ordinary app/shell to
+accepted identity to User-0 HOME/package/root/partition sink was closed. Static writer,
+node, permission and policy evidence remains bounded; UNKNOWN is not upgraded to a
+vulnerability claim.
+
+No Binder/service invocation, driver operation, OTA/recovery/flash, Root/exploit, reboot,
+package/settings mutation, Fire Launcher mutation or partition write was performed.
+
+Records:
+
+- `findings/phase-6tu-readonly-snapshot.md`
+- `output/tables/phase6tu-readonly-state.csv`
+- `tools/scripts/summarize_phase6tu_readonly.py`
+- `findings/phase-6tv-report.md`
+- `findings/phase-6tv-evidence-index.md`
+- `output/tables/phase6tv-control-surface.csv`
+- `output/tables/phase6tv-input-manifest.sha256`
+- `output/tables/phase6tv-test-reconciliation.csv`
+- `output/call-graphs/phase6tv-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6tv_surface.py`
+- `work/luna_worker_phase6to_ipc_sink_audit_20260810.md/.csv`
+- `work/luna_worker_phase6tp_ota_writer_audit_20260810.md/.csv`
+- `work/luna_worker_phase6tq_driver_inventory_20260810.md/.csv`
+- `work/luna_worker_phase6tr_test_reconciliation_20260810.md/.csv`
