@@ -1,0 +1,25 @@
+flowchart LR
+  O["android.amazon.perm
+UID 1000 owner"] --> P["custom permission
+0x80000002 artifact"]
+  P --> G["AmazonPermissionsGranter
+grantSignaturePermission"]
+  G --> S["SELinux / restricted-set
+gate"]
+  C["createChildUser"] --> T["IAmazonUserManager tx3
+enableKftLauncher(UserInfo)"]
+  B["onBootPhase(500)
+isUpgrade + isChildUser"] --> T
+  T --> U["UserInfo.id"]
+  U --> W["Tahoe enabled
+Fire/Launcher3 disabled
+child scope"]
+  X["external caller / service-manager
+permission boundary"] -. "UNKNOWN" .-> T
+  H["H2 candidate packages"] -. "no closed bind/client edge" .-> I["runtime client UNKNOWN"]
+  S -. "no shell grant proven" .-> N["no ordinary-app/shell sink proof"]
+  W -. "not User-0 proof" .-> N
+  classDef bound fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f3f;
+  class O,P,G,S,C,T,B,U,W bound;
+  class X,H,I,N unknown;

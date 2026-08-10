@@ -2125,3 +2125,39 @@ Records:
 - `work/luna_worker_phase6ua_h2_grant_client_20260810.md/.csv`
 - `work/luna_worker_phase6ub_kft_caller_scope_20260810.md/.csv`
 - `work/luna_worker_phase6uc_amazon_perm_semantics_20260810.md/.csv`
+
+## Current-state update — Phase 6UH (2026-08-10)
+
+Phase 6UH integrates the exact-build H2 missing-candidate search, KFT tx3
+authorization/scope review, and Amazon permission parser/grant analysis. The
+most concrete new static result is the compiled
+`AmazonPermissionsGranter.grantSignaturePermission` hook in `fosservices`:
+the branch checks vendor protection bits, SELinux grant state, and the Amazon
+restricted-permission set. This confirms an Amazon-specific permission-grant
+layer, but it does not show a shell or ordinary-app grant.
+
+The KFT writer is confirmed to consume `UserInfo.id` and change Tahoe plus
+Fire/Launcher3 state in the supplied user scope. Child creation and upgrade
+boot are confirmed internal callers. The tx3 Stub/service slice shows no local
+UID/MANAGE_USERS check, but service-manager policy, external caller reachability,
+cross-user authorization, and downstream PackageManager behavior remain
+`UNKNOWN`; this is not a demonstrated confused deputy.
+
+H2 remains open: no candidate-specific H2 AIDL bind/client edge is closed in
+the bounded artifacts. AVOD's Playback SDK bind is unrelated. The integrated
+ledger contains 90 rows and zero CSV parse warnings, with input/context hashes
+in the manifest. No Binder/service call, driver operation, Root/exploit,
+reboot, package/settings mutation, Fire Launcher mutation, OTA, or partition
+write was performed.
+
+Records:
+
+- `findings/phase-6uh-report.md`
+- `findings/phase-6uh-evidence-index.md`
+- `output/tables/phase6uh-control-surface.csv`
+- `output/tables/phase6uh-input-manifest.sha256`
+- `output/call-graphs/phase6uh-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6uh_surface.py`
+- `work/luna_worker_phase6ue_h2_missing_candidates_20260810.md/.csv`
+- `work/luna_worker_phase6uf_kft_gate_20260810.md/.csv`
+- `work/luna_worker_phase6ug_permission_parser_20260810.md/.csv`

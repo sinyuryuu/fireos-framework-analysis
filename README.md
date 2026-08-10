@@ -4251,3 +4251,42 @@ Records:
 - `work/luna_worker_phase6ua_h2_grant_client_20260810.md/.csv`
 - `work/luna_worker_phase6ub_kft_caller_scope_20260810.md/.csv`
 - `work/luna_worker_phase6uc_amazon_perm_semantics_20260810.md/.csv`
+
+## Phase 6UH — bounded permission, KFT and control-surface integration (2026-08-10)
+
+Phase 6UH integrates the missing H2 candidate search, KFT transaction-3
+authorization review, and exact-build Amazon permission-grant parser review.
+The strongest new fact is a compiled Amazon-specific
+`AmazonPermissionsGranter.grantSignaturePermission` branch in `fosservices`,
+including the SELinux/restricted-permission checks. This is a protected grant
+hook, not evidence of a shell bypass.
+
+The recovered KFT path confirms child creation and upgrade lifecycle callers
+feed `UserInfo.id` into a sink that enables Tahoe and disables Fire/Launcher3
+for that user. The generated tx3 Stub/service slice has no visible local UID or
+`MANAGE_USERS` check, but the external Binder/service-manager boundary and
+downstream PackageManager authorization remain unknown. No private transaction
+was invoked, and no ordinary-app/shell path to User-0 package state, HOME,
+root, or partition effect was accepted.
+
+The H2 candidate search still lacks a closed candidate-specific
+`bindService`/`ServiceConnection`/`IH2ClientService` edge. AVOD's separate
+Playback SDK bind is not H2 evidence. The bundle integrates 90 ledger rows with
+zero CSV parse warnings; all source and context hashes are preserved in the
+manifest.
+
+No Binder/service call, driver operation, Root/exploit, OTA/recovery/flash,
+reboot, package/settings mutation, Fire Launcher mutation, or partition write
+was performed.
+
+Records:
+
+- `findings/phase-6uh-report.md`
+- `findings/phase-6uh-evidence-index.md`
+- `output/tables/phase6uh-control-surface.csv`
+- `output/tables/phase6uh-input-manifest.sha256`
+- `output/call-graphs/phase6uh-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6uh_surface.py`
+- `work/luna_worker_phase6ue_h2_missing_candidates_20260810.md/.csv`
+- `work/luna_worker_phase6uf_kft_gate_20260810.md/.csv`
+- `work/luna_worker_phase6ug_permission_parser_20260810.md/.csv`
