@@ -1,0 +1,29 @@
+flowchart TD
+    A[Ordinary APK or ADB shell] --> B{Reachable entry?}
+    B -->|Known public PMS| C[PackageManagerService]
+    C --> D{caller + user + protected-package gate}
+    D -->|reject| E[No package/HOME mutation]
+    D -->|accept only trusted authority| F[State writer]
+
+    A --> G[Amazon private Binder candidate]
+    G --> H{ServiceManager / SELinux / permission gate}
+    H -->|unknown or denied| E
+    H -->|trusted client only| I[Amazon service implementation]
+    I --> J{clearCallingIdentity ordering}
+    J -->|identity retained| C
+    J -->|trusted lifecycle identity| K[KFT/OOBE/other sink]
+
+    A --> L[Native driver candidate]
+    L --> M{shipped opener + node policy + domain}
+    M -->|not closed| N[Static capability only]
+    M -->|trusted native path| O[ION/CMDQ/M4U/uinput/RPMB/etc.]
+
+    A --> P[OTA/recovery candidate]
+    P --> Q{signature + AVB + rollback + recovery SELinux}
+    Q -->|not proven from app/shell| R[Recovery-only capability]
+    Q -->|trusted lifecycle| S[Partition/update sink]
+
+    F --> T[Could change Fire state only with accepted authority]
+    K --> T
+    O --> U[No demonstrated UID/HOME/package sink]
+    S --> V[High-risk; not executed]
