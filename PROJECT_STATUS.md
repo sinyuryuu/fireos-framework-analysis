@@ -2199,3 +2199,41 @@ Records:
 - `work/luna_worker_phase6uj_ota_postinstall_20260810.md/.csv`
 - `work/luna_worker_phase6uk_driver_surface_20260810.md/.csv`
 - `work/luna_worker_phase6ul_test_reconciliation_20260810.md/.csv`
+
+## Current-state update — Phase 6UR (2026-08-10)
+
+Phase 6UR integrates four host-only evidence groups: exact PS7331 native
+CMDQ/ION/Amazon-LD node joins, signed OTA verifier and recovery handoff, ASP
+and prewarm caller/sink review, and fosinit/classloader completeness. The
+normalized ledger contains 59 rows and zero parse warnings. Nine source-format
+notes are explicitly retained for provenance/summary rows in the raw 6UQ CSV;
+that raw evidence was not edited.
+
+The current evidence supports protected lifecycle writers and high-impact
+static capabilities, but no ordinary app or shell caller is closed through
+the required permission/SELinux/service-manager and identity/user-scope gates
+to a User-0 package, HOME, root, or partition effect. ASP's tablet branch
+consumed `ASP_PERMISSION` and the saved shell probe returned `-13`; the
+prewarm permission-result anomaly has no accepted package/HOME/settings sink.
+The PS7331 OTA is signed and gated and its partition writer is recovery-context;
+exact AVB/rollback/handoff identity remains unknown. CMDQ/ION/Amazon-LD source
+and config capability is present, but shipped node policy, DT/init, and native
+caller joins remain unknown. Fosinit has bounded completeness evidence, with
+seven residual source-to-effect groups left for finite host-only review.
+
+No device mutation, private Binder call, driver/ioctl, malformed OTA,
+updater/recovery execution, reboot, package/settings mutation, Fire Launcher
+mutation, Root/exploit attempt, or partition write was performed.
+
+Records:
+
+- `findings/phase-6ur-report.md`
+- `findings/phase-6ur-evidence-index.md`
+- `output/tables/phase6ur-control-surface.csv`
+- `output/tables/phase6ur-input-manifest.sha256`
+- `output/call-graphs/phase6ur-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6ur_surface.py`
+- `work/luna_worker_phase6un_native_node_join_20260810.md/.csv`
+- `work/luna_worker_phase6uo_ota_verifier_handoff_20260810.md/.csv`
+- `work/luna_worker_phase6up_asp_prewarm_closure_20260810.md/.csv`
+- `work/luna_worker_phase6uq_fosinit_completeness_20260810.md/.csv`

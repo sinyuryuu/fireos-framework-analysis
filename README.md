@@ -4330,3 +4330,37 @@ Records:
 - `work/luna_worker_phase6uj_ota_postinstall_20260810.md/.csv`
 - `work/luna_worker_phase6uk_driver_surface_20260810.md/.csv`
 - `work/luna_worker_phase6ul_test_reconciliation_20260810.md/.csv`
+
+## Phase 6UR — caller/sink and artifact-completeness closure (2026-08-10)
+
+Phase 6UR integrates the next host-only closure bundle: native CMDQ/ION/Amazon-LD
+node joins, signed OTA verifier-to-recovery handoff, ASP/prewarm caller/sink
+review, and fosinit/classloader completeness. The normalized ledger contains
+59 rows with zero parse warnings. Nine explicitly labeled source-format notes
+come from retained provenance/summary rows in the raw 6UQ CSV; the raw file is
+not modified.
+
+The evidence confirms capability or protected lifecycle boundaries, but does
+not close an ordinary app/shell caller through a permission, SELinux,
+service-manager, identity/user-scope gate to a User-0 package/HOME/root or
+partition effect. ASP's tablet path returned `-13` for the saved shell probe;
+prewarm remains a static permission-result anomaly with no accepted package or
+HOME sink. OTA writing remains recovery-context and signed/gated. Exact
+shipped driver node policy and native callers remain `UNKNOWN`.
+
+No Binder/service transaction, driver/ioctl, OTA/recovery execution, malformed
+input, package/settings mutation, Fire Launcher mutation, reboot, Root/exploit
+attempt, or partition write was performed.
+
+Records:
+
+- `findings/phase-6ur-report.md`
+- `findings/phase-6ur-evidence-index.md`
+- `output/tables/phase6ur-control-surface.csv`
+- `output/tables/phase6ur-input-manifest.sha256`
+- `output/call-graphs/phase6ur-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6ur_surface.py`
+- `work/luna_worker_phase6un_native_node_join_20260810.md/.csv`
+- `work/luna_worker_phase6uo_ota_verifier_handoff_20260810.md/.csv`
+- `work/luna_worker_phase6up_asp_prewarm_closure_20260810.md/.csv`
+- `work/luna_worker_phase6uq_fosinit_completeness_20260810.md/.csv`

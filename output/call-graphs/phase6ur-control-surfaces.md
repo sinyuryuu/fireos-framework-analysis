@@ -1,0 +1,20 @@
+# Phase 6UR control-surface graph
+
+```mermaid
+flowchart LR
+  C["caller"] --> G["permission / SELinux / phase gate"]
+  G -. "identity or handle missing" .-> X["No accepted low-privilege effect"]
+  N["CMDQ / ION / Amazon-LD"] -. "DT/module/node/policy/client incomplete" .-> X
+  O["signed OTA"] --> V["product/build/cert/recovery gates"]
+  V --> W["recovery partition/cache writer"]
+  W -. "handoff/AVB/caller unknown" .-> X
+  A["ASP tablet"] --> A2["ASP_PERMISSION → -EACCES saved result"]
+  P["prewarm"] --> P2["clear identity → process prewarm"]
+  P2 -. "service lookup/dispatch denied; no HOME/package sink" .-> X
+  F["fosinit corpus"] --> F2["services/callbacks/receivers"]
+  F2 -. "residual source-to-effect gaps" .-> X
+  classDef bound fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f3f;
+  class G,O,V,W,A,A2,P,P2,F,F2 bound;
+  class C,N,X unknown;
+```
