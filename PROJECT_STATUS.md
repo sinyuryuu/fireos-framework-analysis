@@ -1602,3 +1602,29 @@ Records:
 - `work/luna_worker_kernel_driver_surface_followup2_20260810.md/.csv`
 - `work/luna_worker_ipc_ota_unclosed_followup_20260810.md/.csv`
 - `work/luna_worker_workaround_gap_followup_20260810.md/.csv`
+
+## Phase 6QA — residual IPC、Vending 與 Settings closure（2026-08-10）
+
+本輪以 Phase 6PZ 公開基準 `d34b2909f968d20496a0929822e36586a7e8729b` 整合三份
+host-only follow-up。18-row matrix 沒有新增低權限 caller 到 User-0 HOME、Fire
+Launcher package state、system/root 或 partition sink 的閉合鏈。Vending receiver
+與 DSE 只達 Play restore、browser/search、secure-settings/install；Amazon PM
+tx6/tx7 只達 system-created PendingIntent proxy receiver map；Settings 的
+`default_home`/`config_show_default_home` 沒有形成新的 shell-writable HOME route。
+
+本輪沒有接觸裝置、沒有 private Binder、broadcast、settings/overlay mutation、
+APK、reboot、OTA/recovery、Root、ioctl 或分割區操作。未閉合的 production caller、
+DSE decompiler warning branch 與 dormant picker reachability 仍標為 bounded
+unknown，不升級為漏洞或 root 證據。
+
+Records:
+
+- `findings/phase-6qa-residual-control-closure.md`
+- `findings/phase-6qa-evidence-index.md`
+- `output/tables/phase6qa-residual-control-closure.csv`
+- `output/tables/phase6qa-residual-control-closure.csv.manifest.json`
+- `output/call-graphs/phase6qa-residual-control-closure.mmd`
+- `tools/scripts/build_phase6qa_residual_control_closure.py`
+- `work/luna_worker_vending_skipped_methods_followup_20260810.md/.csv`
+- `work/luna_worker_amazonpm_proxy_followup_20260810.md/.csv`
+- `work/luna_worker_settings_home_resource_followup_20260810.md/.csv`

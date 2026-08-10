@@ -3690,3 +3690,28 @@ Outputs:
 - `work/luna_worker_kernel_driver_surface_followup2_20260810.md/.csv`
 - `work/luna_worker_ipc_ota_unclosed_followup_20260810.md/.csv`
 - `work/luna_worker_workaround_gap_followup_20260810.md/.csv`
+
+## Phase 6QA — residual IPC、Vending 與 Settings control-surface closure（2026-08-10）
+
+Phase 6QA 延續 Phase 6PZ，以 host-only 靜態證據閉合三組未完成表面：Vending
+`LauncherConfigurationReceiver`/`DseService`、`IAmazonPackageManager` tx6/tx7，
+以及 Settings/PMS/overlay HOME resource state。合計 18 rows，沒有新增
+ordinary-app／ADB shell 到 User-0 PackageManager、HOME、Fire Launcher、system/root
+或 partition sink 的閉合鏈。tx6/tx7 是受 creator/UID gate 保護的 PendingIntent
+proxy map；Vending sinks 是 Play restore、browser/search、secure-settings 與
+install bookkeeping；`default_home` 仍是 dormant/internal picker surface。
+
+本輪沒有 ADB、Binder/service call、broadcast、settings/overlay mutation、APK
+安裝、user provisioning、reboot、OTA/recovery、Root、ioctl 或 partition 操作。
+
+Records:
+
+- `findings/phase-6qa-residual-control-closure.md`
+- `findings/phase-6qa-evidence-index.md`
+- `output/tables/phase6qa-residual-control-closure.csv`
+- `output/tables/phase6qa-residual-control-closure.csv.manifest.json`
+- `output/call-graphs/phase6qa-residual-control-closure.mmd`
+- `tools/scripts/build_phase6qa_residual_control_closure.py`
+- `work/luna_worker_vending_skipped_methods_followup_20260810.md/.csv`
+- `work/luna_worker_amazonpm_proxy_followup_20260810.md/.csv`
+- `work/luna_worker_settings_home_resource_followup_20260810.md/.csv`

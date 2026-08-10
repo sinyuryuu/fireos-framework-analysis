@@ -1,0 +1,29 @@
+flowchart LR
+    TX6["IAmazonPackageManager tx6\nregisterProxyReceiver"] --> G6["FLAG_SYSTEM creator\n+ queryBroadcastReceivers"]
+    G6 --> MAP["ProxyReceiver\nmOnTheFlyRegisteredIntents"]
+    MAP --> SEND["PendingIntent.send()\nforwarding sink"]
+    SEND --> NOHOME["No PMS / HOME / Fire\nwriter recovered"]
+
+    TX7["IAmazonPackageManager tx7\nderegisterProxyReceiver"] --> G7["creatorUid ==\nBinder.getCallingUid()"]
+    G7 --> UNREG["remove owner entry\nthen unregisterReceiver"]
+    UNREG --> NOHOME
+
+    VREC["Vending\nLauncherConfigurationReceiver"] --> VT["verificationToken\ncurrent-launcher + setup/HOME checks"]
+    VT --> RESTORE["Play restore / hotseat /\nworkspace bookkeeping"]
+    RESTORE --> NOHOME
+
+    DSE["Vending DseService"] --> GDSE["DSE permission + DeviceSetup\n+ calling UID authorization"]
+    GDSE --> DSESINK["browser/search/secure settings/\nSetup Wizard/install bookkeeping"]
+    DSESINK --> NOHOME
+
+    SETTINGS["Settings / PMS HOME surface"] --> KEYS["default_home\nconfig_show_default_home=true"]
+    KEYS --> PICKER["dormant/internal\nDefaultHomePicker"]
+    PICKER --> PREF["replacePreferredActivity()\nper-user preferred state"]
+    PREF --> FIRE["Fire effective priority 50\nremains resolver winner"]
+
+    classDef bounded fill:#eef6ff,stroke:#4472c4,color:#111;
+    classDef sink fill:#fff4e5,stroke:#c77d00,color:#111;
+    classDef negative fill:#f3f3f3,stroke:#777,color:#111;
+    class TX6,TX7,VREC,DSE,SETTINGS,G6,G7,GDSE,VT,KEYS,PICKER,PREF bounded;
+    class MAP,SEND,UNREG,RESTORE,DSESINK,FIRE sink;
+    class NOHOME negative;
