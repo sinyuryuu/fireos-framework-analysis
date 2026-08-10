@@ -3885,3 +3885,33 @@ Records:
 - `work/luna_worker_phase6rh_source_package_20260810.md/.csv`
 - `work/luna_worker_phase6ri_existing_results_20260810.md/.csv`
 - `work/phase6rg_asset_scope_20260810.md`
+
+## Phase 6RS–RU — Settings/PMS、SystemUI callback 與 rootless fallback closure（2026-08-10）
+
+Three host-only worker ledgers cover SettingsProvider/PMS/Amazon PM writers,
+SystemUI/Amazon callbacks, and rootless launcher alternatives. The normalized
+matrix has 35 rows. Settings writes remain permission/user gated; PMS preferred
+activity persistence is distinct from effective HOME selection; no explicit Fire
+component launch was found in the saved SystemUI callback corpus.
+
+The best measured rootless approximation is a user-consented Accessibility
+foreground redirect. It is not a formal HOME replacement, package-state writer,
+or privilege transition. UsageStats, PendingIntent, ADB monitor, Settings Home
+picker, and historical disable/corruption methods remain temporary, excluded, or
+risk-rejected.
+
+No new device mutation, Accessibility enablement, Binder, OTA/recovery, driver,
+Root, reboot, or partition operation was performed.
+
+Records:
+
+- `findings/phase-6rs-ru-report.md`
+- `findings/phase-6rs-ru-evidence-index.md`
+- `output/tables/phase6rs-ru-privilege-surface.csv`
+- `output/tables/phase6rs-ru-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6rs-ru-control-surfaces.mmd`
+- `output/call-graphs/phase6rs-ru-control-surfaces.md`
+- `tools/scripts/build_phase6rs_ru_surface.py`
+- `work/luna_worker_phase6rs_settings_pm_closure_20260810.md/.csv`
+- `work/luna_worker_phase6rt_systemui_callback_closure_20260810.md/.csv`
+- `work/luna_worker_phase6ru_rootless_fallback_review_20260810.md/.csv`

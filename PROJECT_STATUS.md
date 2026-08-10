@@ -1794,3 +1794,30 @@ Records:
 - `work/luna_worker_phase6rh_source_package_20260810.md/.csv`
 - `work/luna_worker_phase6ri_existing_results_20260810.md/.csv`
 - `work/phase6rg_asset_scope_20260810.md`
+
+## Phase 6RS–RU — Settings/PMS、SystemUI callback 與 rootless fallback closure（2026-08-10）
+
+本輪整合三個 host-only worker ledger，共 35 rows：SettingsProvider/PMS/Amazon
+PM writer 10、SystemUI/Amazon callback 14、rootless fallback 11。
+
+SettingsProvider 的 caller/user/permission gates 已閉合到 SettingsState/XML；
+PMS `setHomeActivity()` 的 preferred persistence 與有效 HOME resolver 勝出仍
+是不同層。保存的 SystemUI callback/resource corpus 未找到 explicit Fire
+component launch。Accessibility delayed foreground redirect 是最佳近似方案，
+但不是 formal HOME 或 privilege transition。
+
+本輪未啟用 Accessibility/UsageStats、未修改 settings/package/AppOps/overlay、
+未呼叫 Binder/broadcast、未執行 OTA/recovery、Root、driver、reboot 或分割區寫入。
+
+Records:
+
+- `findings/phase-6rs-ru-report.md`
+- `findings/phase-6rs-ru-evidence-index.md`
+- `output/tables/phase6rs-ru-privilege-surface.csv`
+- `output/tables/phase6rs-ru-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6rs-ru-control-surfaces.mmd`
+- `output/call-graphs/phase6rs-ru-control-surfaces.md`
+- `tools/scripts/build_phase6rs_ru_surface.py`
+- `work/luna_worker_phase6rs_settings_pm_closure_20260810.md/.csv`
+- `work/luna_worker_phase6rt_systemui_callback_closure_20260810.md/.csv`
+- `work/luna_worker_phase6ru_rootless_fallback_review_20260810.md/.csv`

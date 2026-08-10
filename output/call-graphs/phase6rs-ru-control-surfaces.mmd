@@ -1,0 +1,16 @@
+flowchart TD
+    A["ordinary app / shell"] --> B{ "API permission and caller-user gate" }
+    B -->|"SettingsProvider"| C["SettingsState / XML persistence"]
+    B -->|"PMS setHomeActivity"| D["preferred-activity XML"]
+    B -->|"SystemUI / Amazon callback"| E["resolver, window, profile or event sink"]
+    C -. "no HOME/package writer shown" .-> X["No formal HOME replacement"]
+    D --> F["HOME resolver ranking"]
+    F -->|"Fire priority 50"| G["com.amazon.firelauncher/.Launcher"]
+    E -. "no explicit Fire selector in saved corpus" .-> X
+    H["Accessibility consent"] --> I["delayed explicit third-party launch"]
+    J["ADB foreground monitor"] --> I
+    I -. "foreground only; no resolver/package mutation" .-> X
+    K["Amazon PM metadata mutators"] --> L{ "ADD_RM_PKG_METADATA and caller provenance" }
+    L -. "permission holder/production caller unknown" .-> X
+    M["OOBE/OTA protected lifecycle"] --> N["OOBE/setup writer"]
+    N -. "not Fire HOME writer" .-> X
