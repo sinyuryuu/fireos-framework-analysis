@@ -1,0 +1,35 @@
+flowchart TD
+    A["Low-privilege caller"] --> B{"Observed accepted gate?"}
+    B -->|"not established"| X["Do not invoke private Binder / OTA / native path"]
+    B -->|"static candidate only"| C["Amazon private service"]
+
+    C --> P["preWarmApplicationForUser"]
+    P --> P1["APP_PREWARM check result not observed consumed"]
+    P1 --> P2["clearCallingIdentity"]
+    P2 --> P3["getApplicationInfo -> startProcessLocked(prewarm)"]
+    P3 --> P4["Process prewarm; no HOME/PMS/root sink observed"]
+
+    C --> S["AmazonAspService"]
+    S --> S1["tablet branch returns true before ASP_PERMISSION"]
+    S1 --> S2["nativeCommand / capture / injection / IR"]
+    S2 --> S3["Audio/HAL-adjacent sink; shell runtime was EACCES"]
+
+    C --> A1["AmazonAudioService"]
+    A1 --> A2["signature/privileged audio permission checks"]
+    A2 --> A3["AudioSystem / routing / Dolby / HDMI / volume"]
+    A3 --> A4["No package/HOME/root writer in reviewed scope"]
+
+    O["Privileged OTA controller"] --> O1["hash + certificate + product/PVT checks"]
+    O1 --> O2["UpdateSystem.install"]
+    O2 --> O3["recovery/update-binary"]
+    O3 --> O4["extract or block_image_update"]
+    O4 --> O5["WriteToPartition -> ota_write -> write"]
+    O5 --> O6["Recovery capability; shell caller not established"]
+    O3 -.-> O7["MakeFreeSpaceOnCache -> readlink marker"]
+    O7 -. "indirect data-flow unresolved" .-> O4
+
+    X --> Z["Bounded Phase 6QC result: no low-privilege -> system/root -> sensitive sink chain"]
+    P4 --> Z
+    S3 --> Z
+    A4 --> Z
+    O6 --> Z

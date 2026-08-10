@@ -3743,3 +3743,32 @@ Records:
 - `work/luna_worker_amazonpm_caller_inventory_20260810.md/.csv`
 - `work/luna_worker_vending_downstream_closure_20260810.md/.csv`
 - `work/luna_worker_ps7331_residual_writer_inventory_20260810.md/.csv`
+
+## Phase 6QC — privilege-surface closure beyond HOME (2026-08-10)
+
+Phase 6QC broadens the audit to any reviewed path that might cross from a low-
+privilege caller into system/root-sensitive state. Three host-only audits cover
+`preWarmApplicationForUser` identity handling, the PS7331 ASP tablet permission
+branch plus AudioService sinks, and OTA verifier/recovery/native canonicalization
+and partition-write provenance. The normalized matrix has 26 rows.
+
+The bounded result is unchanged: no new low-privilege caller was closed to a
+system/root identity followed by User-0 PackageManager, HOME, credential,
+SELinux, APK, OTA, or partition write. The ASP tablet `true` branch and the
+prewarm permission-result anomaly remain static candidates; the captured shell
+runtime still denied ASP with `EACCES`, prewarm's bounded sink is process start,
+and OTA writes remain privileged recovery capability. No private Binder
+transaction, native ASP operation, OTA/recovery execution, Root, reboot, or
+partition write was performed.
+
+Records:
+
+- `findings/phase-6qc-privilege-closure.md`
+- `findings/phase-6qc-evidence-index.md`
+- `output/tables/phase6qc-privilege-closure.csv`
+- `output/tables/phase6qc-privilege-closure.csv.manifest.json`
+- `output/call-graphs/phase6qc-privilege-closure.mmd`
+- `tools/scripts/build_phase6qc_privilege_closure.py`
+- `work/luna_worker_prewarm_identity_closure_20260810.md/.csv`
+- `work/luna_worker_asp_permission_sink_closure_20260810.md/.csv`
+- `work/luna_worker_ota_canonicalization_provenance_20260810.md/.csv`

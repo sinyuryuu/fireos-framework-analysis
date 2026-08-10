@@ -1656,3 +1656,29 @@ Records:
 - `work/luna_worker_amazonpm_caller_inventory_20260810.md/.csv`
 - `work/luna_worker_vending_downstream_closure_20260810.md/.csv`
 - `work/luna_worker_ps7331_residual_writer_inventory_20260810.md/.csv`
+
+## Phase 6QC — privilege-surface closure beyond HOME（2026-08-10）
+
+本輪把 prewarm identity、ASP/Audio permission-to-sink、OTA verifier/recovery/
+canonicalization 三條線整合為 26-row host-only matrix。`preWarmApplicationForUser`
+的 bounded sink 是 `startProcessLocked("prewarm")`；ASP tablet branch 的
+`true` 是 static authorization anomaly candidate，但既有 shell runtime 仍為
+`EACCES`；OTA 的 certificate/product/PVT/recovery/write chain 是 privileged
+capability，沒有 shell/ordinary-app caller 閉合。
+
+沒有執行 private Binder transaction、native audio/ASP operation、protected
+broadcast、OTA/recovery、reboot、Root、exploit、settings/package mutation 或
+partition write。所有未知 caller、PIP `Stub/onTransact`、OEM SELinux mapping
+與 OTA indirect canonicalization data-flow 保留 `UNKNOWN`。
+
+Records:
+
+- `findings/phase-6qc-privilege-closure.md`
+- `findings/phase-6qc-evidence-index.md`
+- `output/tables/phase6qc-privilege-closure.csv`
+- `output/tables/phase6qc-privilege-closure.csv.manifest.json`
+- `output/call-graphs/phase6qc-privilege-closure.mmd`
+- `tools/scripts/build_phase6qc_privilege_closure.py`
+- `work/luna_worker_prewarm_identity_closure_20260810.md/.csv`
+- `work/luna_worker_asp_permission_sink_closure_20260810.md/.csv`
+- `work/luna_worker_ota_canonicalization_provenance_20260810.md/.csv`
