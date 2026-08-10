@@ -1,0 +1,20 @@
+flowchart TD
+  A["ordinary app / ADB shell"] --> B{"caller / SELinux / permission / user gate"}
+  B -->|"tx1"| C["system-server prewarm"]
+  C --> C1["bounded process/resource effect"]
+  B -->|"tx4"| D["system-server setup settings"]
+  D --> D1["fixed setup flags; rollbackable"]
+  B -->|"KFT tx3"| E["child-scoped Fire/Tahoe/Launcher3 writer"]
+  E --> E1{"PMS cross-user + protected-package gate"}
+  E1 --> E2["saved User10/User0 attempts rejected"]
+  B -->|"H2 / DPM / KOR / Vending"| F["signature, admin, DCP, lifecycle or unresolved holder gate"]
+  F --> F1["no ordinary Fire/HOME/root closure"]
+  B -->|"driver nodes"| G["CMDQ / ION / GED / M4U / RPMB / input / USB"]
+  G --> G1["telemetry or source capability only"]
+  G1 -.->|"no audited edge"| H["PMS / ATMS / HOME / root"]
+  I["official OTA / recovery context"] --> J["native updater extraction + block writes"]
+  J --> K["fixed partition targets; no shell caller"]
+  I --> L["phase 550 + isUpgrade OOBE lifecycle"]
+  L --> M["OobeHome/settings state; replay rejected"]
+  N["Phase 6MI source tar"] --> O["35 members; EOF reached; host-only"]
+  O -.-> H

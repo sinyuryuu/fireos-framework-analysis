@@ -1467,3 +1467,27 @@ Records:
 - `work/luna_worker_high_holder_kor_provisioning_closure_20260810.md`
 - `work/luna_worker_parent_profile_dpm_sink_closure_20260810.md`
 - `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`
+
+## Phase 6PV — 廣泛權限路徑 follow-up（2026-08-10）
+
+本輪由三個 `luna_worker` 分別盤點 PS7331 GPL/kernel driver、Amazon IPC sink
+與 OTA/post-install/recovery；主 Agent 將結果正規化成 29-row caller→gate→
+identity→sink matrix。結果沒有新增 ordinary-app／ADB shell 到 system/root、
+Fire protected-package mutation 或正式 HOME replacement 的閉合鏈。
+
+Phase 6MI 的 source tar EOF-complete 證據已覆蓋 Phase 6FE 舊的外層 archive
+未完成限制；但 recovery updater 的 privileged block-write capability 仍不是
+shell caller route。CMDQ/ION/M4U/RPMB/ioctl、未知 Binder、OOBE replay、
+malformed OTA、Root、recovery、flash 與 partition 操作均未執行。
+
+Records:
+
+- `findings/phase-6pv-broad-route-followup.md`
+- `findings/phase-6pv-evidence-index.md`
+- `output/tables/phase6pv-broad-route-closure.csv`
+- `output/tables/phase6pv-broad-route-closure.csv.manifest.json`
+- `output/call-graphs/phase6pv-broad-route.mmd`
+- `tools/scripts/build_phase6pv_route_closure.py`
+- `work/luna_worker_kernel_gpl_driver_surface_followup_20260810.md`
+- `work/luna_worker_ipc_sink_inventory_followup_20260810.md`
+- `work/luna_worker_ota_postinstall_followup_20260810.md`

@@ -3548,3 +3548,33 @@ Outputs:
 - `work/luna_worker_high_holder_kor_provisioning_closure_20260810.md`
 - `work/luna_worker_parent_profile_dpm_sink_closure_20260810.md`
 - `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`
+
+## Phase 6PV — broad privilege-route follow-up (2026-08-10)
+
+Phase 6PV follows Phase 6PT by reviewing the PS7331 GPL/kernel driver surface,
+Amazon Binder sink inventory, and OTA/post-install/recovery paths in parallel.
+The normalized 29-row table keeps source capability, caller reachability, policy
+gate, identity boundary, sink, runtime result, and risk disposition separate.
+
+The result adds no ordinary-app or ADB-shell route to system/root, accepted Fire
+protected-package mutation, or formal HOME replacement. It confirms the two
+bounded ordinary-app deputies (prewarm and fixed setup settings), retains KFT as
+a child-scoped static writer rejected by saved PMS gates, and classifies kernel
+ioctl/recovery/OTA capabilities as host-only or risk-rejected. Phase 6MI's
+EOF-complete 35-member GPL source-tar audit supersedes the earlier Phase 6FE
+bounded-listing limitation.
+
+No Binder transaction, ioctl, broadcast, package/settings mutation, updater,
+recovery, Root, reboot, flash, or partition operation was performed.
+
+Outputs:
+
+- `findings/phase-6pv-broad-route-followup.md`
+- `findings/phase-6pv-evidence-index.md`
+- `output/tables/phase6pv-broad-route-closure.csv`
+- `output/tables/phase6pv-broad-route-closure.csv.manifest.json`
+- `output/call-graphs/phase6pv-broad-route.mmd`
+- `tools/scripts/build_phase6pv_route_closure.py`
+- `work/luna_worker_kernel_gpl_driver_surface_followup_20260810.md`
+- `work/luna_worker_ipc_sink_inventory_followup_20260810.md`
+- `work/luna_worker_ota_postinstall_followup_20260810.md`
