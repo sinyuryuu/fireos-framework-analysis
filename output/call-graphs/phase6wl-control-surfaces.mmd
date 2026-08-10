@@ -1,0 +1,18 @@
+flowchart LR
+  L["ordinary app / shell"] --> G["permission + SELinux + service gate"]
+  G -. "caller/identity not closed" .-> X["no accepted low-privilege effect"]
+  PP["ProductPolicy"] --> PX["live XML inputs"]
+  PX -. "no Fire Launcher entry; product_policy absent" .-> X
+  PP --> PS["AmazonPackageManager state writer"]
+  PS -. "policy/caller/user scope bounded" .-> X
+  I["residual IPC"] --> IS["settings/user/profile sinks"]
+  IS -. "transaction/SELinux/UID unknown" .-> X
+  O["OTA handlers"] --> OW["recovery/partition capability"]
+  OW -. "recovery caller/AVB unknown" .-> X
+  N["native drivers"] --> NW["node/policy capability"]
+  NW -. "exact shipped caller unknown" .-> X
+  T["historical tests"] --> T2["no durable User-0 HOME replacement"]
+  classDef high fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f3f;
+  class PP,PX,PS,I,IS,O,OW,N,NW,T,T2 high;
+  class L,G,X unknown;
