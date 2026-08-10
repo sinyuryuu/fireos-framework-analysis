@@ -2011,3 +2011,30 @@ Records:
 - `work/luna_worker_phase6tj_h2_bind_clients_20260810.md/.csv`
 - `work/luna_worker_phase6tk_ion_process_provenance_20260810.md/.csv`
 - `work/luna_worker_phase6tl_evidence_qa_20260810.md/.csv`
+
+## Phase 6TM — host-only provenance closure (2026-08-10)
+
+Integrated 28 ledger rows across H2 custom-permission provenance, the ION
+service/HAL loader graph, and OTA citation repair. H2's `BIND_SERVICE` is
+confirmed `signature`-level and referenced by an exported service; its custom
+holder, grant, and external caller remain `UNKNOWN`. ION evidence confirms
+library/ELF edges and a gralloc `dlopen`/`dlsym` target, but not a complete
+process-to-device-node-to-effect chain. OTA citation records now distinguish
+public committed artifacts, derived outputs, and local-only raw paths.
+
+No device mutation, Binder/service invocation, driver open/ioctl, Root/exploit,
+OTA/recovery/flash, reboot, or partition write was performed. The acceptance
+rule remains caller → gate → identity/user scope → exact sink.
+
+Records:
+
+- `findings/phase-6tm-report.md`
+- `findings/phase-6tm-evidence-index.md`
+- `output/tables/phase6tm-control-surface.csv`
+- `output/tables/phase6tm-input-manifest.sha256`
+- `output/tables/phase6tm-public-citation-repair.csv`
+- `output/call-graphs/phase6tm-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6tm_surface.py`
+- `work/luna_worker_phase6tm_h2_permission_20260810.md/.csv`
+- `work/luna_worker_phase6tn_ion_loader_graph_20260810.md/.csv`
+- `work/luna_worker_phase6tm_ota_public_repair_20260810.md/.csv`

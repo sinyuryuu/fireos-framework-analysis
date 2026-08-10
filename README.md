@@ -4132,3 +4132,31 @@ Records:
 - `work/luna_worker_phase6tj_h2_bind_clients_20260810.md/.csv`
 - `work/luna_worker_phase6tk_ion_process_provenance_20260810.md/.csv`
 - `work/luna_worker_phase6tl_evidence_qa_20260810.md/.csv`
+
+## Phase 6TM — H2 permission provenance, ION loader graph and citation repair
+
+Phase 6TM is a host-only evidence closure. It confirms the exact-build H2 custom
+`BIND_SERVICE` declaration is signature-level and used by the exported service,
+while the custom holder, grant and external production caller remain `UNKNOWN`.
+It also records the bounded ION loader/ELF graph: gralloc/hwcomposer/library
+edges are present, but the complete process → loaded implementation → `/dev/ion`
+→ ioctl → downstream-effect chain is not closed. Finally, it separates public
+committed OTA manifests and derived analyses from local-only raw OTA/extracted
+paths, correcting the TG-01/TG-03/TG-04/TG-05/TG-06 citation scope.
+
+No device, Binder call, service call, driver open/ioctl, Root/exploit,
+OTA/recovery/sideload/flash, reboot, package/settings mutation or partition write
+was performed.
+
+Records:
+
+- `findings/phase-6tm-report.md`
+- `findings/phase-6tm-evidence-index.md`
+- `output/tables/phase6tm-control-surface.csv`
+- `output/tables/phase6tm-input-manifest.sha256`
+- `output/tables/phase6tm-public-citation-repair.csv`
+- `output/call-graphs/phase6tm-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6tm_surface.py`
+- `work/luna_worker_phase6tm_h2_permission_20260810.md/.csv`
+- `work/luna_worker_phase6tn_ion_loader_graph_20260810.md/.csv`
+- `work/luna_worker_phase6tm_ota_public_repair_20260810.md/.csv`
