@@ -1437,3 +1437,33 @@ Records:
 - `work/luna_worker_component_permission_provenance_20260810.md`
 - `work/luna_worker_binder_sink_closure_20260810.md`
 - `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`
+
+## Phase 6PT — 全域高權限路徑 closure（2026-08-10）
+
+本輪把已保存的高影響 permission holder、Play Store exported launcher
+receiver、KOR、ManagedProvisioning、H2、parent/profile、DPM 與 kernel/OTA
+候選放入同一個 caller→gate→identity→sink 矩陣。結果確認 holder row 不等於
+caller reachability；新增的 Play Store receiver 是 homescreen restore metadata
+路徑，沒有 bounded Fire/HOME setter。沒有找到新的 ordinary-app→system/root
+transition 或正式 HOME replacement。
+
+既有兩個 ordinary-app deputy 仍然成立，但影響受限：prewarm 只建立
+system-server process，tx4 只寫固定 setup flags。KFT static writer 仍被既有
+cross-user/protected PMS gate 擋下。本輪未送 private Binder、broadcast、
+ioctl、package/settings mutation、OTA/recovery、root 或 partition 操作。
+
+Records:
+
+- `findings/phase-6pt-broad-privilege-surface.md`
+- `findings/phase-6pt-vending-receiver-analysis.md`
+- `findings/phase-6pt-evidence-index.md`
+- `output/tables/phase6pt-privilege-route-closure.csv`
+- `output/call-graphs/phase6pt-privilege-route.mmd`
+- `tools/scripts/audit_phase6ps_vending_launcher_receiver.py`
+- `artifacts/phase6ps-vending-receiver-20260810-01/`
+- `adb/phase6pt/PHASE6PT-READONLY-20260810-01/`
+- `work/luna_worker_high_privilege_holder_inventory_20260810.md`
+- `work/luna_worker_vending_unclosed_surface_20260810.md`
+- `work/luna_worker_high_holder_kor_provisioning_closure_20260810.md`
+- `work/luna_worker_parent_profile_dpm_sink_closure_20260810.md`
+- `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`

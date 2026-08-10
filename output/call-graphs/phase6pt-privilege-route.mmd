@@ -1,0 +1,19 @@
+flowchart TD
+  A["ordinary app / shell"] --> B{"caller, permission, user and policy gates"}
+  B -->|"tx1; confirmed bounded"| C["AmazonActivityManager prewarm"]
+  C --> D["system-server process start"]
+  D --> E["resource/process effect only"]
+  B -->|"tx4; confirmed bounded"| F["AmazonUserManager setup flags"]
+  F --> G["fixed secure settings write"]
+  G --> H["settings effect only"]
+  B -->|"KFT tx3"| I["child/profile launcher state writer"]
+  I --> J{"cross-user / protected PMS gate"}
+  J --> K["saved User10/User0 attempts rejected"]
+  B -->|"holder metadata"| L["Play Store / KOR / provisioning / H2"]
+  L --> M{"exported, signature, DCP, admin or lifecycle gate"}
+  M --> N["trusted or unresolved sink; no ordinary Fire/HOME closure"]
+  B -->|"unsafe capability candidates"| O["driver / OTA / init / kernel"]
+  O --> P["write, boot or race effects"]
+  P --> Q["host-only or risk-rejected; not executed"]
+  R["formal Fire HOME/package mutation"] --> S["requires accepted trusted PMS/policy actor"]
+  S --> T["no ordinary-to-system/root transition proven"]

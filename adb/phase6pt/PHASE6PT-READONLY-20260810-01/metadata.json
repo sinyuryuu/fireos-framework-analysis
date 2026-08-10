@@ -1,0 +1,267 @@
+{
+  "binder_transactions_invoked": false,
+  "commands": [
+    {
+      "argv": [
+        "adb",
+        "devices",
+        "-l"
+      ],
+      "command": "adb devices -l",
+      "id": "adb_devices_l",
+      "returncode": 0,
+      "stderr": "adb_devices_l.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "adb_devices_l.stdout.txt",
+      "stdout_sha256": "8167247ca6338b0ef0577d4047c365c0845309c8c680503d7740662bca1c5d7c"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "get-state"
+      ],
+      "command": "adb -s G001LT0511550CFT get-state",
+      "id": "target_state",
+      "returncode": 0,
+      "stderr": "target_state.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "target_state.stdout.txt",
+      "stdout_sha256": "c98373c1abef78070f6beef6b4ae4fbf3de348dac280195c7f93441920584af9"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "id"
+      ],
+      "command": "adb -s G001LT0511550CFT shell id",
+      "id": "target_id",
+      "returncode": 0,
+      "stderr": "target_id.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "target_id.stdout.txt",
+      "stdout_sha256": "7bb4a293663f02c546ed9222fac711bbc22aa451bbfdada564d7019e8e4daff8"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getenforce"
+      ],
+      "command": "adb -s G001LT0511550CFT shell getenforce",
+      "id": "getenforce",
+      "returncode": 0,
+      "stderr": "getenforce.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "getenforce.stdout.txt",
+      "stdout_sha256": "4fefafd0dcddf54b31a0fef448083e7b77576d86a9ec97c14bfd92479c404290"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "command": "adb -s G001LT0511550CFT shell getprop ro.build.fingerprint",
+      "id": "fingerprint",
+      "returncode": 0,
+      "stderr": "fingerprint.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "fingerprint.stdout.txt",
+      "stdout_sha256": "15efeeb538e9463865e2851c32dc3142d71c8412b8b55447506b1d65db402e4b"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "pm",
+        "path",
+        "com.android.vending"
+      ],
+      "command": "adb -s G001LT0511550CFT shell pm path com.android.vending",
+      "id": "vending_path",
+      "returncode": 0,
+      "stderr": "vending_path.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "vending_path.stdout.txt",
+      "stdout_sha256": "645fa51d679562f7b6fcf5686378ddebed3824fa2d9015767fa6ba9d13e7f812"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.android.vending"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package com.android.vending",
+      "id": "vending_package",
+      "returncode": 0,
+      "stderr": "vending_package.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "vending_package.stdout.txt",
+      "stdout_sha256": "d5f14d258467db63110abbae908c3ffb103213f7b361a0f41442e7cacb3446a0"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "permissions"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package permissions",
+      "id": "permission_definition",
+      "returncode": 0,
+      "stderr": "permission_definition.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "permission_definition.stdout.txt",
+      "stdout_sha256": "62d133892d6488861e85bc7e9aeb9418e258e930e0cda507a695aac1e2e406cc"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "--user",
+        "0",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "command": "adb -s G001LT0511550CFT shell cmd package resolve-activity --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.HOME",
+      "id": "home_resolve",
+      "returncode": 0,
+      "stderr": "home_resolve.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "home_resolve.stdout.txt",
+      "stdout_sha256": "d65b3f8990fb3a8907405d3785dd8cf2826570b92baccb5477f3502df47608f6"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "query-activities",
+        "--brief",
+        "--user",
+        "0",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "command": "adb -s G001LT0511550CFT shell cmd package query-activities --brief --user 0 -a android.intent.action.MAIN -c android.intent.category.HOME",
+      "id": "home_candidates",
+      "returncode": 0,
+      "stderr": "home_candidates.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "home_candidates.stdout.txt",
+      "stdout_sha256": "e868693c97bce5ec4c93c6e5e144225797c2219fafde54d46fdbd3bdf462442c"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "preferred-activities"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys package preferred-activities",
+      "id": "preferred_activities",
+      "returncode": 0,
+      "stderr": "preferred_activities.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "preferred_activities.stdout.txt",
+      "stdout_sha256": "c1390545ad718a6ac4f5c1923c592e0e1b23c28185b79b8a90a0ba995344950a"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "device_policy"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys device_policy",
+      "id": "device_policy",
+      "returncode": 0,
+      "stderr": "device_policy.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "device_policy.stdout.txt",
+      "stdout_sha256": "83a8a24fcff44629cb2e1c9816abf5a8df94f3389216a68e101991a735e99fef"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "appops",
+        "get",
+        "com.android.vending"
+      ],
+      "command": "adb -s G001LT0511550CFT shell appops get com.android.vending",
+      "id": "vending_appops",
+      "returncode": 0,
+      "stderr": "vending_appops.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "vending_appops.stdout.txt",
+      "stdout_sha256": "ea2c3a454de91238f25798cf7f9a33eb6c32d5e0805719cb63424b353de89530"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "activity",
+        "top"
+      ],
+      "command": "adb -s G001LT0511550CFT shell dumpsys activity top",
+      "id": "activity_top",
+      "returncode": 0,
+      "stderr": "activity_top.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "activity_top.stdout.txt",
+      "stdout_sha256": "dd1275de9518c55893f5f1b7a24a0fa0ac624ba4569794d9c4aba121f29a3cce"
+    }
+  ],
+  "device_serial": "G001LT0511550CFT",
+  "generated_at_utc": "2026-08-10T01:05:35.094493+00:00",
+  "mutating_commands": false,
+  "ota_or_partition_operation": false,
+  "package_state_changed": false,
+  "phase": "6PR-VENDING",
+  "purpose": "current read-only permission-holder provenance capture",
+  "rebooted": false,
+  "settings_changed": false
+}

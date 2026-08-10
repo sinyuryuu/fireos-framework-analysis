@@ -3518,3 +3518,33 @@ Outputs:
 - `work/luna_worker_component_permission_provenance_20260810.md`
 - `work/luna_worker_binder_sink_closure_20260810.md`
 - `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`
+
+## Phase 6PT — broad privilege-surface closure (2026-08-10)
+
+Phase 6PT extends the privilege analysis beyond Launcher to all preserved
+high-impact holder families and the Play Store launcher-configuration receiver.
+It keeps holder metadata separate from caller reachability, protected-package
+acceptance, and system/root identity. The result is no new ordinary-app or shell
+transition to a package/HOME/system/root sink. The two confirmed ordinary-app
+deputies remain bounded to process prewarm and fixed setup settings.
+
+This phase was host-only except for the already preserved read-only Vending
+capture. No private Binder transaction, broadcast, package mutation, permission
+mutation, driver operation, OTA/recovery operation, root, or partition operation
+was performed.
+
+Outputs:
+
+- `findings/phase-6pt-broad-privilege-surface.md`
+- `findings/phase-6pt-vending-receiver-analysis.md`
+- `findings/phase-6pt-evidence-index.md`
+- `output/tables/phase6pt-privilege-route-closure.csv`
+- `output/call-graphs/phase6pt-privilege-route.mmd`
+- `tools/scripts/audit_phase6ps_vending_launcher_receiver.py`
+- `artifacts/phase6ps-vending-receiver-20260810-01/`
+- `adb/phase6pt/PHASE6PT-READONLY-20260810-01/`
+- `work/luna_worker_high_privilege_holder_inventory_20260810.md`
+- `work/luna_worker_vending_unclosed_surface_20260810.md`
+- `work/luna_worker_high_holder_kor_provisioning_closure_20260810.md`
+- `work/luna_worker_parent_profile_dpm_sink_closure_20260810.md`
+- `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`
