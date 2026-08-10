@@ -1,0 +1,16 @@
+# Phase 6TJ–TL control-surface graph
+
+```mermaid
+flowchart LR
+  H["H2 exported service"] --> G["signature BIND_SERVICE"]
+  G --> U["user/profile workflow sink"]
+  G -. "holder/client UNKNOWN" .-> X["No ordinary reachability claim"]
+  L["ION library callsites"] --> E["gralloc/hwcomposer ELF relocations"]
+  E -. "top-level process/load/runtime UNKNOWN" .-> Y["Library-only result"]
+  Q["Prior OTA ledger"] --> C["Citation QA map"]
+  C -. "path/hash corrections" .-> R["Do not upgrade capability to caller"]
+  classDef bound fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f03;
+  class H,G,U,L,E,Q,C,R bound;
+  class X,Y unknown;
+```

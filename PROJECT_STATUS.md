@@ -1984,3 +1984,30 @@ Records:
 - `work/luna_worker_phase6tf_ipc_residual_20260810.md/.csv`
 - `work/luna_worker_phase6tg_ota_scope_20260810.md/.csv`
 - `work/luna_worker_phase6th_kernel_residual_20260810.md/.csv`
+## Phase 6TJ–TL — H2 bind/client、ION provenance 與 citation QA（2026-08-10）
+
+本輪 host-only closure 實際整合 30 筆資料列：H2 bind/client 7、ION provenance 8、
+evidence QA 15。H2 service 的 exported/singleUser/directBootAware 與 signature-level
+custom `BIND_SERVICE` 已由 exact XML-tree 閉合；holder/grant、外部 client 與低權限
+可達性仍 `UNKNOWN`，沒有 HOME/PMS sink。ION 已閉合 library/ELF callsites，但缺
+top-level process、loader/runtime invocation 與 downstream effect，因此維持
+`POSITIVE_LIBRARY_ONLY`/`UNKNOWN`。
+
+QA 發現上一輪 TG-01/03/04 raw source path 不在 public tree、TG-05 path/hash mismatch、
+TG-06 source/summary hash conflation；canonical citation map 已保存，且未把這些
+provenance 問題誤寫成漏洞。Phase 6TF 的 production edge 不等於 external caller。
+本輪未執行 Binder、driver、Root/exploit、OTA/recovery、reboot、套件/設定 mutation
+或分割區寫入。
+
+Records:
+
+- `findings/phase-6tj-tl-report.md`
+- `findings/phase-6tj-tl-evidence-index.md`
+- `output/tables/phase6tj-tl-control-surface.csv`
+- `output/tables/phase6tj-input-manifest.sha256`
+- `output/tables/phase6tj-citation-map.csv`
+- `output/call-graphs/phase6tj-tl-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6tj_tl_surface.py`
+- `work/luna_worker_phase6tj_h2_bind_clients_20260810.md/.csv`
+- `work/luna_worker_phase6tk_ion_process_provenance_20260810.md/.csv`
+- `work/luna_worker_phase6tl_evidence_qa_20260810.md/.csv`
