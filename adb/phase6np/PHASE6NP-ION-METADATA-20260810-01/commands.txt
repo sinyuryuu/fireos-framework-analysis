@@ -1,0 +1,10 @@
+# Host collection timestamp: 2026-08-10T00:03:46Z
+# The serial is intentionally redacted in this public evidence file.
+adb -s <DEVICE_SERIAL> shell ls -lZ /dev/ion /dev/mtk_cmdq /proc/ged
+adb -s <DEVICE_SERIAL> shell stat -c '%n %F %a %U:%G %t:%T' /dev/ion /dev/mtk_cmdq /proc/ged
+adb -s <DEVICE_SERIAL> shell getenforce
+adb -s <DEVICE_SERIAL> shell id
+adb -s <DEVICE_SERIAL> shell cat /proc/self/attr/current
+
+# No open(2), ioctl(2), read(2), write(2), service call, or package mutation
+# was issued by this capture.

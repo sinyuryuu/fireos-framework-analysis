@@ -55,6 +55,16 @@ The policy hashes are recorded in
 does not provide text line locations, so this report does not claim that the
 currently booted policy was independently decoded from the device.
 
+## Live metadata-only corroboration
+
+Capture `adb/phase6np/PHASE6NP-ION-METADATA-20260810-01/` verified, without
+opening the nodes, that the current device exposes `/dev/ion` as mode `0666`
+with owner `system:graphics` and label `ion_device`. The same capture reports
+SELinux `Enforcing` and the executing context `u:r:shell:s0`. It also records
+the neighboring CMDQ and GED metadata. This is stronger than relying only on
+an old device snapshot for node existence, but it remains metadata evidence:
+no ION operation was issued and no memory or privilege effect was tested.
+
 ## ION source and caller boundary
 
 The build-selected source contains the standard ION UAPI and MTK custom path:

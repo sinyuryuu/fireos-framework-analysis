@@ -1,5 +1,5 @@
 surface,source_or_capture,caller_scope,home_or_pms_sink,confidence,status,next_safe_step
-ION,/dev/ion + ion_device policy,shell/untrusted_app/system_app policy allow; no ordinary APK caller found,no direct sink found,Strong evidence,"Policy/capability confirmed; live ioctl and exploitability not tested","Host-only module and policy packaging closure"
+ION,/dev/ion + ion_device policy,shell/untrusted_app/system_app policy allow; live node metadata corroborates mode/label; no ordinary APK caller found,no direct sink found,Strong evidence,"Policy and metadata confirmed; live ioctl and exploitability not tested","Host-only module and policy packaging closure"
 CMDQ,/dev/mtk_cmdq + MT8183 v3 driver,system/vendor path; ordinary app path unknown,no direct sink found,Strong evidence,"No HOME/PMS edge in audited corpus","Stop unless a trusted caller or new sink appears"
 GED,/proc/ged,shell query observation,no HOME/PMS sink,Strong evidence,"Query-only boundary in prior runtime capture","No further mutation"
 amzn_drv_test,/proc/amzn_drvs source and PS7331 config,source-only; built-in disabled,no HOME/PMS sink,Strong evidence,"Built-in negative; loadable module unknown","Host-only packaging manifest check"
