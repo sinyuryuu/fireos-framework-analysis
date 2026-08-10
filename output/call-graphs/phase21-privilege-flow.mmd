@@ -1,0 +1,55 @@
+flowchart LR
+    A["ordinary APK / ADB shell"] --> B["exported API, callback, receiver or service discovery"]
+    B --> C["permission + SELinux + caller/creator gate"]
+    C --> D["accepted Binder identity / user scope"]
+    D --> E["sensitive sink"]
+
+    subgraph FOSINIT["P21A FOSINIT residual fan-out"]
+        F1["registration / implementation"] --> F2["settings, PMS, user, OTA, trust or relay callback"]
+        F2 -.-> F3["caller, authz, identity and sink join incomplete"]
+    end
+    B -.-> F1
+
+    subgraph VENDING["P21B Vending / DSE"]
+        V1["LauncherConfigurationReceiver"] --> V2["verificationToken / creator qualification"]
+        V3["DseService"] --> V4["DSE + DeviceSetup + calling UID gates"]
+        V4 --> V5["browser default / WEB_SEARCH / setup / bookkeeping"]
+        V4 -.-> V6["secure-settings writer and installer provenance unresolved"]
+        V5 -.-> V7["not HOME; no Fire Launcher sink"]
+    end
+    B -.-> V1
+    B -.-> V3
+
+    subgraph ION["P21C ION host-only provenance"]
+        I1["init / VINTF ownership"] --> I2["service-to-ELF load unresolved"]
+        I2 -.-> I3["gralloc / hwcomposer / media / camera"]
+        I3 --> I4["ION library / relocation / dlopen intent"]
+        I4 -.-> I5["graphics, media, camera and DMA sinks only"]
+    end
+    B -.-> I1
+
+    subgraph DENY["P21D PackageManager deny-list"]
+        D1["PS7331 raw resource seed"] --> D2["conditional persisted set write"]
+        D2 -.-> D3["live DenyListKeyPackages literal unread"]
+        D3 --> D4["saved protected-package rejection"]
+        D4 -.-> D5["no bypass or all-operation equivalence proven"]
+    end
+    D1 --> D2
+
+    subgraph EXISTING["Existing bounded surfaces, not new chains"]
+        K1["KFT/H2 trusted profile workflow"] -.-> K2["PMS enabled-state sink; User 0 not closed"]
+        O1["OTA / recovery static capability"] -.-> O2["partition/boot sink; executor and acceptance unknown"]
+        R1["meta_tst / rpmb_svc partials"] -.-> R2["diagnostic/storage sinks; no UID0 or kernel-memory closure"]
+    end
+
+    E -.-> X["Phase 21: no new complete caller-to-authority-to-sensitive-sink chain"]
+    F3 -.-> X
+    V6 -.-> X
+    I5 -.-> X
+    D5 -.-> X
+    K2 -.-> X
+    O2 -.-> X
+    R2 -.-> X
+
+%% Solid edges are host-verified capability or observation edges.
+%% Dashed edges are unresolved or explicitly untested; they are not inferred reachability.
