@@ -2161,3 +2161,41 @@ Records:
 - `work/luna_worker_phase6ue_h2_missing_candidates_20260810.md/.csv`
 - `work/luna_worker_phase6uf_kft_gate_20260810.md/.csv`
 - `work/luna_worker_phase6ug_permission_parser_20260810.md/.csv`
+
+## Current-state update — Phase 6UM (2026-08-10)
+
+Phase 6UM broadens the exact-build review from Launcher to Amazon IPC,
+OTA/post-install, GPL/native driver capability, and prior-test reconciliation.
+The strongest results are capability facts: KFT child/profile state writing,
+trusted DPM/PMS preferred-activity sinks, signed block-OTA partition/cache
+writers, and conditional CMDQ/ION/Amazon-LD surfaces. None closes an ordinary
+app or shell caller through permission/service-manager gates to a User-0
+package/HOME/root/partition effect.
+
+The fresh serial-bound read-only snapshot still identifies PS7331.4463N / KFTRWI
+/ trona, verified boot green, SELinux Enforcing, two users, and Fire Launcher
+HOME priority 50. Raw settings and service dumps remain local; only the
+redacted summary/table are intended for publication. The integrated ledger has
+65 rows and zero CSV parse warnings, with input/context hashes preserved.
+
+This phase did not invoke Binder or driver interfaces, execute OTA/recovery,
+send malformed input, mutate packages/settings, reboot, attempt Root/exploit,
+modify Fire Launcher, or write any partition. Remaining work is artifact
+completeness (module/DT/policy/client joins), not guessing private transaction
+codes or treating static capability as a bypass.
+
+Records:
+
+- `findings/phase-6um-report.md`
+- `findings/phase-6um-evidence-index.md`
+- `output/tables/phase6um-control-surface.csv`
+- `output/tables/phase6um-input-manifest.sha256`
+- `output/call-graphs/phase6um-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6um_surface.py`
+- `findings/phase-6ui-readonly-snapshot.md`
+- `output/tables/phase6ui-readonly-state.csv`
+- `tools/scripts/summarize_phase6ui_readonly.py`
+- `work/luna_worker_phase6ui_ipc_sinks_20260810.md/.csv`
+- `work/luna_worker_phase6uj_ota_postinstall_20260810.md/.csv`
+- `work/luna_worker_phase6uk_driver_surface_20260810.md/.csv`
+- `work/luna_worker_phase6ul_test_reconciliation_20260810.md/.csv`

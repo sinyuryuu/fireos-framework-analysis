@@ -4290,3 +4290,43 @@ Records:
 - `work/luna_worker_phase6ue_h2_missing_candidates_20260810.md/.csv`
 - `work/luna_worker_phase6uf_kft_gate_20260810.md/.csv`
 - `work/luna_worker_phase6ug_permission_parser_20260810.md/.csv`
+
+## Phase 6UM — broad privilege-surface and reachability closure (2026-08-10)
+
+Phase 6UM expands the review beyond Launcher into Amazon Framework IPC, the
+exact PS7331 OTA/update boundary, GPL/native driver capability, and historical
+test reconciliation. The acceptance rule remains caller → permission or
+service-manager gate → identity/user scope → exact sink → observed effect.
+
+The exact-build evidence confirms concrete privileged capabilities: KFT child
+state writing, DPM/PMS preferred-activity sinks, signed block-OTA partition and
+cache writers, and CMDQ/ION/Amazon-LD driver surfaces. It does not close an
+ordinary-app or shell caller to User-0 package state, formal HOME, root, or
+partition effect. Static capability is not reachability, and a missing
+method-local permission check is not proof that an external caller can obtain a
+Binder handle.
+
+A fresh read-only PS7331 snapshot still shows Fire Launcher resolving at
+priority 50, verified boot green, SELinux Enforcing, and no device mutation.
+The integrated ledger contains 65 rows with zero parse warnings; source and
+context hashes are recorded in the manifest.
+
+No Binder transaction, driver/ioctl, malformed OTA, updater/recovery execution,
+Root/exploit, reboot, package/settings mutation, Fire Launcher mutation, or
+partition write was performed.
+
+Records:
+
+- `findings/phase-6um-report.md`
+- `findings/phase-6um-evidence-index.md`
+- `output/tables/phase6um-control-surface.csv`
+- `output/tables/phase6um-input-manifest.sha256`
+- `output/call-graphs/phase6um-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6um_surface.py`
+- `findings/phase-6ui-readonly-snapshot.md`
+- `output/tables/phase6ui-readonly-state.csv`
+- `tools/scripts/summarize_phase6ui_readonly.py`
+- `work/luna_worker_phase6ui_ipc_sinks_20260810.md/.csv`
+- `work/luna_worker_phase6uj_ota_postinstall_20260810.md/.csv`
+- `work/luna_worker_phase6uk_driver_surface_20260810.md/.csv`
+- `work/luna_worker_phase6ul_test_reconciliation_20260810.md/.csv`
