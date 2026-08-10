@@ -1,0 +1,18 @@
+flowchart TD
+    A["PS7331 official source / image / package"] --> B["Registration or shipped config"]
+    B --> C["Binder Stub, init, file_context, CIL, manifest"]
+    C --> D{ "Caller / permission / SELinux gate" }
+    D -->|"ordinary app or shell"| X["No accepted high-impact path observed"]
+    D -->|"trusted system, owner, profile or OTA lifecycle"| E["Identity and user propagation"]
+    E --> F["Sensitive sink"]
+    F --> F1["PackageManager / HOME / package state"]
+    F --> F2["Settings / DPM / profile state"]
+    F --> F3["OTA / recovery / partition capability"]
+    F --> F4["driver / procfs / native client"]
+
+    G["Existing runtime evidence"] --> H["Read-only state or prior reversible result"]
+    H -. "not a new writer" .-> D
+    I["Accessibility / foreground fallback"] --> J["Delayed explicit launch"]
+    J -. "not formal HOME or privilege transition" .-> X
+    K["Unknown caller, client, holder, or consumer"] -. "evidence gap" .-> X
+    L["Risk-rejected: unknown Binder, ioctl, OTA replay, Root, partition write"] -. "not executed" .-> F

@@ -1764,3 +1764,33 @@ Records:
 - `work/luna_worker_phase6qf_ipc_provenance_20260810.md/.csv`
 - `work/luna_worker_phase6qf_exact_policy_client_20260810.md/.csv`
 - `work/luna_worker_phase6qf_existing_runtime_audit_20260810.md/.csv`
+
+## Phase 6RG — 廣域權限路徑與 7.3.3.1 資產交叉驗證（2026-08-10）
+
+本輪由三個 luna_worker host-only ledger 與一個新的 serial-bound
+metadata-only snapshot 組成，共 38 rows：14 Amazon IPC、12 source/package/
+policy、10 existing runtime、1 exact-device、1 provenance boundary。
+
+結果沒有閉合 ordinary app/shell → accepted gate → system/root →
+PackageManager/HOME/package-state/credential/OTA/partition sink 的鏈。未知
+caller、client、permission-holder、user propagation 與 first consumer 保留
+UNKNOWN。GPL source 搜尋範圍沒有完整 `/init` tree；local boot_unpacked
+exploit/root files 不屬於官方 OTA/GPL 證據，且未執行。
+
+本輪未呼叫未知 Binder、driver ioctl、OTA/recovery、Root/exploit、Fire Launcher
+mutation、reboot 或分割區寫入。
+
+Records:
+
+- `findings/phase-6rg-report.md`
+- `findings/phase-6rg-evidence-index.md`
+- `adb/phase6rg/PHASE6RG-DEVICE-READONLY-20260810-01/`
+- `output/tables/phase6rg-privilege-surface.csv`
+- `output/tables/phase6rg-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6rg-privilege-transition.mmd`
+- `output/call-graphs/phase6rg-privilege-transition.md`
+- `tools/scripts/build_phase6rg_privilege_surface.py`
+- `work/luna_worker_phase6rg_ipc_residual_20260810.md/.csv`
+- `work/luna_worker_phase6rh_source_package_20260810.md/.csv`
+- `work/luna_worker_phase6ri_existing_results_20260810.md/.csv`
+- `work/phase6rg_asset_scope_20260810.md`

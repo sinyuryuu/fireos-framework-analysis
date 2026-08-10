@@ -3852,3 +3852,36 @@ Records:
 - `work/luna_worker_phase6qf_ipc_provenance_20260810.md/.csv`
 - `work/luna_worker_phase6qf_exact_policy_client_20260810.md/.csv`
 - `work/luna_worker_phase6qf_existing_runtime_audit_20260810.md/.csv`
+
+## Phase 6RG — 廣域權限路徑與 7.3.3.1 資產交叉驗證（2026-08-10）
+
+Phase 6RG extends the audit beyond Launcher to Amazon IPC caller provenance,
+KFT/profile/DPM/SettingsProvider/SystemUI, MTK/Amazon driver policy and client
+mapping, OTA/post-install lifecycle, and all saved privilege-route tests. Three
+host-only ledgers plus a new serial-bound metadata-only snapshot normalize to
+38 rows.
+
+The bounded result is unchanged: no ordinary app/shell → accepted gate →
+system/root identity → PackageManager/HOME/package-state/credential/OTA/
+partition sink chain was closed. `UNKNOWN` remains an evidence gap. The GPL
+source does not contain a complete `/init` tree in the searched scope, and the
+local `boot_unpacked/src/exploit_main.c`/`root.c` files are explicitly excluded
+from official OTA/GPL provenance and were not executed.
+
+No unknown Binder, driver ioctl, OTA/recovery replay, Root/exploit, Fire Launcher
+mutation, reboot or partition operation was performed.
+
+Records:
+
+- `findings/phase-6rg-report.md`
+- `findings/phase-6rg-evidence-index.md`
+- `adb/phase6rg/PHASE6RG-DEVICE-READONLY-20260810-01/`
+- `output/tables/phase6rg-privilege-surface.csv`
+- `output/tables/phase6rg-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6rg-privilege-transition.mmd`
+- `output/call-graphs/phase6rg-privilege-transition.md`
+- `tools/scripts/build_phase6rg_privilege_surface.py`
+- `work/luna_worker_phase6rg_ipc_residual_20260810.md/.csv`
+- `work/luna_worker_phase6rh_source_package_20260810.md/.csv`
+- `work/luna_worker_phase6ri_existing_results_20260810.md/.csv`
+- `work/phase6rg_asset_scope_20260810.md`
