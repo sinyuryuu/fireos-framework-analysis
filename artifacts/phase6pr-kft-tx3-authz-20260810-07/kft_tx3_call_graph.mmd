@@ -1,0 +1,11 @@
+flowchart TD
+  C[AmazonUserManagerImpl.createChildUser] --> P[IAmazonUserManager.Proxy.enableKftLauncher]
+  P --> T[Binder.transact code 3]
+  T --> S[IAmazonUserManager.Stub.onTransact]
+  S --> B[BinderService.enableKftLauncher(UserInfo)]
+  B --> E[tryEnableKftLauncherComponent(UserInfo)]
+  E --> W[enableKftLauncherComponent(UserInfo)]
+  W --> Q[AmazonPackageManager setters using UserInfo.id]
+  Q --> F[Fire Launcher state=2 for supplied user]
+  B -. after try path .-> I[clearCallingIdentity before DPM empowerment]
+  M[checkManageUsersPermission] -. bounded caller .-> U[getUserSortedListFromFile]

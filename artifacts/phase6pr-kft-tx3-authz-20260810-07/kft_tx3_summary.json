@@ -1,0 +1,38 @@
+{
+  "device_contacted": false,
+  "binder_invoked": false,
+  "exploit_attempted": false,
+  "source_sha256": {
+    "/Users/bob/Documents/Codex/2026-08-03-fire-os-7-framework-amazon-fire/decompiled/baksmali/vdexExtractor/fosservices/disassembly.log": "ecbe62fe8eb8bd575da8b2a73a155875df937073ccc2faa020ca592c0515151c",
+    "/Users/bob/Documents/Codex/2026-08-03-fire-os-7-framework-amazon-fire/decompiled/baksmali/vdexExtractor/boot-fosframework/disassembly.log": "fc101d798368bf91fae1ee553e44964d52bb9e2287652de8c92b43964600ad71"
+  },
+  "service_name": "amazonusermanagerservice",
+  "descriptor": "amazon.os.IAmazonUserManager",
+  "transaction": 3,
+  "static_sink": {
+    "method": "AmazonUserManagerService.BinderService.enableKftLauncherComponent(UserInfo)",
+    "effects": [
+      "enable com.amazon.tahoe/.launcher.FreeTimeLauncherActivity",
+      "disable com.amazon.firelauncher",
+      "disable com.android.launcher3"
+    ],
+    "user_selector": "UserInfo.id"
+  },
+  "authorization_review": {
+    "tx3_local_caller_check_visible": false,
+    "checkManageUsersPermission_exists": true,
+    "checkManageUsersPermission_direct_callers_in_bounded_slice": [
+      "AmazonUserManagerService.getUserSortedListFromFile"
+    ],
+    "enableKftLauncher_calls_checkManageUsersPermission": false,
+    "enableKftLauncher_clears_calling_identity": true,
+    "tryEnable_path_calls_setters_before_identity_clear": true,
+    "classification": "static deputy review point; runtime exploitability not established"
+  },
+  "method_rows": 11,
+  "outputs": [
+    "kft_tx3_method_security.csv",
+    "kft_tx3_summary.json",
+    "kft_tx3_call_graph.mmd"
+  ]
+}
