@@ -1,0 +1,8 @@
+surface,result,source_config,shipped_node,policy_init,exact_caller,evidence_gap
+/dev/mtk_cmdq,UNKNOWN,source+config present,node metadata present,SELinux policy present,no exact shipped native open+ioctl caller,native caller join missing
+/dev/ion,UNKNOWN,source+config present,shipped node not established,policy references present,no exact shipped native open+ION ioctl caller,node and caller joins missing
+/proc/perfmgr/perf_ioctl,UNKNOWN,source+proc creation present,proc label metadata present,SELinux policy present,no exact shipped native open+ioctl caller,native caller join missing
+/proc/m4u,UNKNOWN,source+config branch present,proc/node not established,complete file-context+caller join not established,no exact shipped native proc caller,node and caller joins missing
+RPMB,UNKNOWN,source+config present,rpmb thread/service observed,init+SELinux policy present,rpmb_svc operation not identified,exact open/ioctl caller missing
+IDME,UNKNOWN,source+config present,proc/idme nodes observed,init+SELinux policy present,no exact shipped native proc caller,exact caller operation missing
+Amazon diagnostics,UNKNOWN,source present but drv-test not enabled,proc/amzn_drvs absent; package present,diagnostic HAL policy/init present,no exact shipped native driver caller,shipped node and caller joins missing

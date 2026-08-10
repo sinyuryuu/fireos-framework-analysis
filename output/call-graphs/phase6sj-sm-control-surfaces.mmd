@@ -1,0 +1,20 @@
+flowchart TD
+    A["6SJ IPC permission declaration/gate"] --> B["ADD_RM_PKG_METADATA signature|privileged"]
+    B --> C["holder + production caller"]
+    C -->|UNKNOWN| D["AmazonApplicationFlags metadata sink"]
+    D --> E["No bounded HOME/PMS/component-state edge"]
+
+    F["6SK OTA Java verifier/install"] --> G["RecoverySystem / UpdateSystem"]
+    G --> H["update-binary partition capability"]
+    H -->|protected caller not closed| I["No shell/ordinary-app route"]
+
+    J["6SL source/config/policy"] --> K["shipped node + exact native caller"]
+    K -->|all 7 UNKNOWN| L["No driver reachability claim"]
+
+    M["6SM existing test catalog"] --> N["duplicate / changed premise / rejected"]
+    N --> O["Do not repeat high-risk device tests"]
+
+    E --> P["Bounded conclusion: no new low-privilege trusted sink"]
+    I --> P
+    L --> P
+    O --> P
