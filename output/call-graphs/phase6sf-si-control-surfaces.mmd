@@ -1,0 +1,21 @@
+flowchart TD
+    S["Phase 6SF exact-build permission XML"] --> P["signature|privileged declaration"]
+    P --> G["holder/grant/caller join"]
+    G -->|not closed| M["AmazonApplicationFlags metadata sink"]
+    M --> X["No bounded HOME/PMS/component-state edge"]
+
+    K["Phase 6SG source + config"] --> N["shipped node / file context / TE"]
+    N --> C["exact native open/ioctl/proc caller"]
+    C -->|not closed for 11 targets| D["Capability only; no reachability claim"]
+
+    V["Phase 6SH Java verifier"] --> U["UpdateSystem.install handoff"]
+    U --> W["recovery/update-binary/partition writer"]
+    W -->|protected caller not established| R["No low-privilege route"]
+
+    T["Phase 6SI existing-test catalog"] --> Q["duplicate / changed premise / insufficient / rejected"]
+    Q --> H["Do not repeat private Binder, driver, OTA or Fire Launcher mutations"]
+
+    X --> Z["Bounded conclusion: no new ordinary app/shell privilege chain"]
+    D --> Z
+    R --> Z
+    H --> Z
