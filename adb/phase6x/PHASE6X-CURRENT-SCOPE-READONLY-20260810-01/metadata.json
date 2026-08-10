@@ -1,0 +1,291 @@
+{
+  "binder_transaction": false,
+  "commands": [
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "get-state"
+      ],
+      "name": "adb_get_state",
+      "returncode": 0,
+      "stderr": "adb_get_state.stderr.txt",
+      "stdout": "adb_get_state.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "am",
+        "get-current-user"
+      ],
+      "name": "current_user",
+      "returncode": 0,
+      "stderr": "current_user.stderr.txt",
+      "stdout": "current_user.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "user",
+        "list"
+      ],
+      "name": "users",
+      "returncode": 0,
+      "stderr": "users.stderr.txt",
+      "stdout": "users.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getprop",
+        "ro.build.fingerprint"
+      ],
+      "name": "fingerprint",
+      "returncode": 0,
+      "stderr": "fingerprint.stderr.txt",
+      "stdout": "fingerprint.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "getenforce"
+      ],
+      "name": "getenforce",
+      "returncode": 0,
+      "stderr": "getenforce.stderr.txt",
+      "stdout": "getenforce.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "--user",
+        "0",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "name": "home_user0",
+      "returncode": 0,
+      "stderr": "home_user0.stderr.txt",
+      "stdout": "home_user0.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "query-activities",
+        "--brief",
+        "--user",
+        "0",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "name": "home_candidates_user0",
+      "returncode": 0,
+      "stderr": "home_candidates_user0.stderr.txt",
+      "stdout": "home_candidates_user0.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "resolve-activity",
+        "--brief",
+        "--user",
+        "10",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "name": "home_user10",
+      "returncode": 0,
+      "stderr": "home_user10.stderr.txt",
+      "stdout": "home_user10.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "cmd",
+        "package",
+        "query-activities",
+        "--brief",
+        "--user",
+        "10",
+        "-a",
+        "android.intent.action.MAIN",
+        "-c",
+        "android.intent.category.HOME"
+      ],
+      "name": "home_candidates_user10",
+      "returncode": 0,
+      "stderr": "home_candidates_user10.stderr.txt",
+      "stdout": "home_candidates_user10.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "preferred-activities"
+      ],
+      "name": "preferred_activities",
+      "returncode": 0,
+      "stderr": "preferred_activities.stderr.txt",
+      "stdout": "preferred_activities.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.firelauncher"
+      ],
+      "name": "firelauncher_package",
+      "returncode": 0,
+      "stderr": "firelauncher_package.stderr.txt",
+      "stdout": "firelauncher_package.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "package",
+        "com.amazon.tahoe"
+      ],
+      "name": "tahoe_package",
+      "returncode": 0,
+      "stderr": "tahoe_package.stderr.txt",
+      "stdout": "tahoe_package.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "device_policy"
+      ],
+      "name": "device_policy",
+      "returncode": 0,
+      "stderr": "device_policy.stderr.txt",
+      "stdout": "device_policy.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "activity",
+        "activities"
+      ],
+      "name": "activity_state",
+      "returncode": 0,
+      "stderr": "activity_state.stderr.txt",
+      "stdout": "activity_state.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "shell",
+        "dumpsys",
+        "window",
+        "policy"
+      ],
+      "name": "window_policy",
+      "returncode": 0,
+      "stderr": "window_policy.stderr.txt",
+      "stdout": "window_policy.stdout.txt"
+    },
+    {
+      "argv": [
+        "adb",
+        "-s",
+        "G001LT0511550CFT",
+        "logcat",
+        "-d",
+        "-b",
+        "system",
+        "-b",
+        "main",
+        "-b",
+        "events",
+        "-v",
+        "threadtime",
+        "-s",
+        "ActivityManager:I",
+        "ActivityTaskManager:I",
+        "PackageManager:I",
+        "DevicePolicyManager:I",
+        "AmazonProductPolicyService:I",
+        "AmazonUserManagerService:I",
+        "*:S"
+      ],
+      "name": "filtered_logcat",
+      "returncode": 0,
+      "stderr": "filtered_logcat.stderr.txt",
+      "stdout": "filtered_logcat.stdout.txt"
+    }
+  ],
+  "finished_timestamp_utc": "2026-08-10T06:42:18.346843+00:00",
+  "ota_or_kernel_operation": false,
+  "package_state_changed": false,
+  "phase": "6EE",
+  "pin_access": false,
+  "private_service_lookup": false,
+  "read_only": true,
+  "reboot_requested": false,
+  "serial": "G001LT0511550CFT",
+  "settings_changed": false,
+  "started_timestamp_utc": "2026-08-10T06:42:15.517901+00:00",
+  "user_switch": false
+}
