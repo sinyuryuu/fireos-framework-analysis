@@ -1,0 +1,33 @@
+flowchart TD
+    L["Low-privilege app or shell"] --> I{"Caller + accepted gate proven?"}
+    I -->|"No / UNKNOWN"| R["Do not invoke private API or device node"]
+    I -->|"Static candidate only"| S["Service or driver boundary"]
+
+    S --> P["Amazon IPC"]
+    P --> P1["PM flags / DPM / Profile / WMS / Vending"]
+    P1 --> P2["Caller, user, or first sensitive consumer unresolved"]
+
+    S --> C["CMDQ / MDP"]
+    C --> C1["/dev/mtk_cmdq + async/readback + MDP register operations"]
+    C1 --> C2["Node owner/SELinux/shipped client unresolved"]
+    C2 --> C3["Hardware/display sink; no PMS/HOME/root sink shown"]
+
+    S --> M["M4U"]
+    M --> M1["__M4U_USE_PROC_NODE -> /proc/m4u"]
+    M1 --> M2["DMA/IOMMU sink; access policy unresolved"]
+
+    S --> T["Amazon driver test"]
+    T --> T1["factory-reset / RTC special modes"]
+    T1 --> T2["CONFIG_AMZN_DRV_TEST absent in trona_defconfig"]
+    T2 --> T3["Conditional engineering source; not shipped-confirmed"]
+
+    O["Privileged OTA controller"] --> O1["certificate + product/PVT + recovery gate"]
+    O1 --> O2["update-binary -> block_image_update -> partition write"]
+    O2 --> O3["High-impact capability; ordinary caller not proven"]
+
+    R --> Z["Bounded result: no low-privilege -> system/root -> sensitive sink chain"]
+    P2 --> Z
+    C3 --> Z
+    M2 --> Z
+    T3 --> Z
+    O3 --> Z

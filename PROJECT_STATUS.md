@@ -1682,3 +1682,31 @@ Records:
 - `work/luna_worker_prewarm_identity_closure_20260810.md/.csv`
 - `work/luna_worker_asp_permission_sink_closure_20260810.md/.csv`
 - `work/luna_worker_ota_canonicalization_provenance_20260810.md/.csv`
+
+## Phase 6QD — IPC、GPL driver 與高影響權限面審計（2026-08-10）
+
+本輪整合 12 個未閉合 Amazon IPC、9 個 PS7331 GPL custom-driver/ioctl/
+procfs/debugfs、12 個 residual high-impact rows，共 33-row host-only matrix。
+CMDQ/MDP、M4U、perf、sensor factory、Amazon driver-test、IDME/lifecycle、
+PM/DPM/Profile/WMS/Vending IPC 與 OTA/recovery 都已分類。
+
+結果沒有 low-privilege app/shell → accepted gate → system/root →
+PackageManager/HOME/package-state/credential/SELinux/partition 的閉合鏈。
+`CONFIG_AMZN_DRV_TEST` 不在 `trona_defconfig`；M4U active source branch 是
+`/proc/m4u` 而非 `/dev/m4u`；final node/SELinux/client mapping 仍是 evidence gap。
+
+本輪未執行 device-node open、ioctl、private Binder、protected broadcast、
+OTA/recovery、reboot、Root、exploit、settings/package mutation 或分割區寫入。
+
+Records:
+
+- `findings/phase-6qd-privilege-surface.md`
+- `findings/phase-6qd-evidence-index.md`
+- `adb/phase6qd/PHASE6QD-READONLY-20260810-01/`
+- `output/tables/phase6qd-privilege-surface.csv`
+- `output/tables/phase6qd-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6qd-privilege-surface.mmd`
+- `tools/scripts/build_phase6qd_privilege_surface.py`
+- `work/luna_worker_ipc_unclosed_sink_inventory_20260810.md/.csv`
+- `work/luna_worker_gpl_driver_surface_inventory_20260810.md/.csv`
+- `work/luna_worker_residual_high_impact_gap_audit_20260810.md/.csv`

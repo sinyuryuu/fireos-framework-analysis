@@ -3772,3 +3772,32 @@ Records:
 - `work/luna_worker_prewarm_identity_closure_20260810.md/.csv`
 - `work/luna_worker_asp_permission_sink_closure_20260810.md/.csv`
 - `work/luna_worker_ota_canonicalization_provenance_20260810.md/.csv`
+
+## Phase 6QD — IPC、GPL driver 與高影響權限面審計（2026-08-10）
+
+Phase 6QD extends the research beyond Launcher. It combines 12 unclosed Amazon
+IPC rows, 9 PS7331 GPL custom-driver/ioctl/procfs/debugfs rows, and 12 residual
+high-impact rows into a 33-row host-only matrix. The review covers CMDQ/MDP,
+M4U, performance ioctl, sensor factory, Amazon driver-test source, IDME/lifecycle
+surfaces, PM/DPM/Profile/WMS/Vending IPC, and OTA/recovery boundaries.
+
+The bounded result is unchanged: no low-privilege app/shell → accepted gate →
+system/root → PackageManager/HOME/package-state/credential/SELinux/partition
+chain was closed. `CONFIG_AMZN_DRV_TEST` is absent from `trona_defconfig`; its
+factory-reset/RTC test code is conditional source, not shipped-confirmed. M4U's
+active source branch is `/proc/m4u`, not `/dev/m4u`, and final node/SELinux/client
+mapping remains an artifact gap. No device node, ioctl, private Binder, OTA,
+recovery, reboot, Root, exploit, or partition operation was performed.
+
+Records:
+
+- `findings/phase-6qd-privilege-surface.md`
+- `findings/phase-6qd-evidence-index.md`
+- `adb/phase6qd/PHASE6QD-READONLY-20260810-01/`
+- `output/tables/phase6qd-privilege-surface.csv`
+- `output/tables/phase6qd-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6qd-privilege-surface.mmd`
+- `tools/scripts/build_phase6qd_privilege_surface.py`
+- `work/luna_worker_ipc_unclosed_sink_inventory_20260810.md/.csv`
+- `work/luna_worker_gpl_driver_surface_inventory_20260810.md/.csv`
+- `work/luna_worker_residual_high_impact_gap_audit_20260810.md/.csv`

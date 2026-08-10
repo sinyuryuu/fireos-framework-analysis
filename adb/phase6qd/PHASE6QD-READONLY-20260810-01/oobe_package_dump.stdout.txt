@@ -1,0 +1,449 @@
+Activity Resolver Table:
+  Schemes:
+      amzn:
+        c334ca5 com.amazon.kindle.otter.oobe/.OOBELauncherV2 filter a74bd50
+          Action: "android.intent.action.VIEW"
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_TUTORIAL_FLOW"
+          Category: "android.intent.category.DEFAULT"
+          Scheme: "amzn"
+          Authority: "tabletoobe": -1
+          Path: "PatternMatcher{LITERAL: /frv_campaign}"
+
+  Non-Data Actions:
+      com.amazon.kindle.otter.oobe.ATSWiFiActivity.NO_WIFI_DIALOG_FLOW:
+        fd0187a com.amazon.kindle.otter.oobe/.modules.settings.wifi.ATSWiFiActivity filter de6058b
+          Action: "com.amazon.kindle.otter.oobe.ATSWiFiActivity.NO_WIFI_DIALOG_FLOW"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.kindle.otter.oobe.LAUNCH_TIMEZONE_FLOW:
+        b6bc82b com.amazon.kindle.otter.oobe/.modules.amazonServices.timezone.SettingsTimezoneActivity filter 6a4c16f
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_TIMEZONE_FLOW"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.kindle.otter.oobe.modules.ota.START_FLOW_AFTER_OTA:
+        238488 com.amazon.kindle.otter.oobe/.OobeHomeActivity filter d2a674d
+          Action: "com.amazon.kindle.otter.oobe.modules.ota.START_FLOW_AFTER_OTA"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.kindle.otter.settings.SECONDARY_ADULT_ODAC:
+        ab10e21 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.OdacActivity filter ac16f5a
+          Action: "com.amazon.kindle.otter.settings.SECONDARY_ADULT_ODAC"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.LAUNCHER"
+      android.intent.action.MAIN:
+        238488 com.amazon.kindle.otter.oobe/.OobeHomeActivity filter 7ab16e4
+          Action: "android.intent.action.MAIN"
+          Category: "android.intent.category.SETUP_WIZARD"
+          Category: "android.intent.category.HOME"
+          Category: "android.intent.category.DEFAULT"
+          mPriority=100, mOrder=0, mHasPartialTypes=false
+      com.android.intent.action.MAIN:
+        e374246 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.MyAccountRegistrationActivity filter 1f05e7c
+          Action: "com.android.intent.action.MAIN"
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Action: "com.amazon.kindle.otter.oobe.MYACCOUNT_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.LAUNCHER"
+          mPriority=20, mOrder=0, mHasPartialTypes=false
+      com.amazon.kindle.otter.settings.LAUNCH_CONFIRM_CREDENTIAL:
+        bdcbc07 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.ConfirmCredentialsActivity filter a3305
+          Action: "com.amazon.kindle.otter.settings.LAUNCH_CONFIRM_CREDENTIAL"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.dcp.sso.AddAccount:
+        c334ca5 com.amazon.kindle.otter.oobe/.OOBELauncherV2 filter 1432b49
+          Action: "com.amazon.dcp.sso.AddAccount"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.kindle.otter.oobe.MYACCOUNT_SETTINGS:
+        e374246 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.MyAccountRegistrationActivity filter 1f05e7c
+          Action: "com.android.intent.action.MAIN"
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Action: "com.amazon.kindle.otter.oobe.MYACCOUNT_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.LAUNCHER"
+          mPriority=20, mOrder=0, mHasPartialTypes=false
+      com.amazon.kindle.otter.oobe.LAUNCH_LOCALE_PICKER:
+        2b06134 com.amazon.kindle.otter.oobe/.modules.languagePickerModule.SettingsLanguagePickerActivity filter 43fdc4e
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_LOCALE_PICKER"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.kindle.otter.oobe.LAUNCH_BY_EASTER_EGG:
+        c334ca5 com.amazon.kindle.otter.oobe/.OOBELauncherV2 filter 51ec713
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_BY_EASTER_EGG"
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_BY_MYACCOUNT"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.kindle.otter.oobe.LAUNCH_OOBE:
+        c334ca5 com.amazon.kindle.otter.oobe/.OOBELauncherV2 filter 915a202
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_OOBE"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.SETUP_WIZARD"
+      com.amazon.kindle.otter.oobe.LAUNCH_BY_MYACCOUNT:
+        c334ca5 com.amazon.kindle.otter.oobe/.OOBELauncherV2 filter 51ec713
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_BY_EASTER_EGG"
+          Action: "com.amazon.kindle.otter.oobe.LAUNCH_BY_MYACCOUNT"
+          Category: "android.intent.category.DEFAULT"
+      com.android.settings.action.IA_SETTINGS:
+        e374246 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.MyAccountRegistrationActivity filter 1f05e7c
+          Action: "com.android.intent.action.MAIN"
+          Action: "com.android.settings.action.IA_SETTINGS"
+          Action: "com.amazon.kindle.otter.oobe.MYACCOUNT_SETTINGS"
+          Category: "android.intent.category.DEFAULT"
+          Category: "android.intent.category.LAUNCHER"
+          mPriority=20, mOrder=0, mHasPartialTypes=false
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      amazon.intent.action.BOOT_AFTER_SYSTEM_OTA:
+        4ef6b5d com.amazon.kindle.otter.oobe/.BootAfterSystemOTAReceiver filter 8bab476
+          Action: "amazon.intent.action.BOOT_AFTER_SYSTEM_OTA"
+      com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_BEGIN:
+        3953cd2 com.amazon.kindle.otter.oobe/.modules.jumpstart.TutorialsReceiver filter 3befa77
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_END"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_END"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.firelauncher.tutorial.JIT_TUTORIAL_END:
+        3953cd2 com.amazon.kindle.otter.oobe/.modules.jumpstart.TutorialsReceiver filter 3befa77
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_END"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_END"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_END:
+        3953cd2 com.amazon.kindle.otter.oobe/.modules.jumpstart.TutorialsReceiver filter 3befa77
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_END"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_END"
+          Category: "android.intent.category.DEFAULT"
+      com.amazon.firelauncher.tutorial.JIT_TUTORIAL_BEGIN:
+        3953cd2 com.amazon.kindle.otter.oobe/.modules.jumpstart.TutorialsReceiver filter 3befa77
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.ALEXA_TUTORIAL_END"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_BEGIN"
+          Action: "com.amazon.firelauncher.tutorial.JIT_TUTORIAL_END"
+          Category: "android.intent.category.DEFAULT"
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.amazon.kindleautomatictimezone.ATZ_FINISHED_ACTION:
+        b7f11a3 com.amazon.kindle.otter.oobe/.timezone.ATZService filter f0f2b11 permission com.amazon.kindleautomatictimezone.permission.OOBE_ATZ_INTERACTION
+          Action: "com.amazon.kindleautomatictimezone.ATZ_FINISHED_ACTION"
+          Category: "android.intent.category.DEFAULT"
+
+Provider Resolver Table:
+  Non-Data Actions:
+      android.content.action.SEARCH_INDEXABLES_PROVIDER:
+        38c5ca0 com.amazon.kindle.otter.oobe/.modules.languagePickerModule.CustomContentProvider filter b49ff9b
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+        abc6059 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.CustomContentProvider filter 7453f38
+          Action: "android.content.action.SEARCH_INDEXABLES_PROVIDER"
+
+Permissions:
+  Permission [com.amazon.whisperjoin.provisionableSDK.LAUNCH] (566541e):
+    sourcePackage=com.amazon.kindle.otter.oobe
+    uid=10023 gids=null type=0 prot=signature
+    perm=Permission{76724ff com.amazon.whisperjoin.provisionableSDK.LAUNCH}
+    packageSetting=PackageSetting{6aa2cc com.amazon.kindle.otter.oobe/10023}
+
+Permissions:
+  Permission [com.amazon.kindle.otter.oobe.RESTORE_PERMISSION] (c9a915):
+    sourcePackage=com.amazon.kindle.otter.oobe
+    uid=10023 gids=null type=0 prot=signature
+    perm=Permission{29f942a com.amazon.kindle.otter.oobe.RESTORE_PERMISSION}
+    packageSetting=PackageSetting{6aa2cc com.amazon.kindle.otter.oobe/10023}
+
+Registered ContentProviders:
+  com.amazon.kindle.otter.oobe/com.reactnativecommunity.webview.RNCWebViewFileProvider:
+    Provider{f93121b com.amazon.kindle.otter.oobe/com.reactnativecommunity.webview.RNCWebViewFileProvider}
+  com.amazon.kindle.otter.oobe/.modules.languagePickerModule.CustomContentProvider:
+    Provider{38c5ca0 com.amazon.kindle.otter.oobe/.modules.languagePickerModule.CustomContentProvider}
+  com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.CustomContentProvider:
+    Provider{abc6059 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.CustomContentProvider}
+
+ContentProvider Authorities:
+  [com.amazon.oobe.registration]:
+    Provider{abc6059 com.amazon.kindle.otter.oobe/com.amazon.oobe.registration.CustomContentProvider}
+      applicationInfo=ApplicationInfo{d051fb8 com.amazon.kindle.otter.oobe}
+  [com.amazon.kindle.otter.oobe]:
+    Provider{38c5ca0 com.amazon.kindle.otter.oobe/.modules.languagePickerModule.CustomContentProvider}
+      applicationInfo=ApplicationInfo{d051fb8 com.amazon.kindle.otter.oobe}
+  [com.amazon.kindle.otter.oobe.fileprovider]:
+    Provider{f93121b com.amazon.kindle.otter.oobe/com.reactnativecommunity.webview.RNCWebViewFileProvider}
+      applicationInfo=ApplicationInfo{d051fb8 com.amazon.kindle.otter.oobe}
+
+Key Set Manager:
+  [com.amazon.kindle.otter.oobe]
+      Signing KeySets: 2
+
+Packages:
+  Package [com.amazon.kindle.otter.oobe] (6aa2cc):
+    userId=10023
+    pkg=Package{b28c191 com.amazon.kindle.otter.oobe}
+    codePath=/system/priv-app/com.amazon.kindle.otter.oobe
+    resourcePath=/system/priv-app/com.amazon.kindle.otter.oobe
+    legacyNativeLibraryDir=/system/priv-app/com.amazon.kindle.otter.oobe/lib
+    primaryCpuAbi=arm64-v8a
+    secondaryCpuAbi=null
+    versionCode=23096110 minSdk=26 targetSdk=26
+    versionName=1.0.212780.0-fos7_23096110
+    splits=[base]
+    apkSigningVersion=1
+    applicationInfo=ApplicationInfo{d051fb8 com.amazon.kindle.otter.oobe}
+    flags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    privateFlags=[ PRIVATE_FLAG_ACTIVITIES_RESIZE_MODE_UNRESIZEABLE DIRECT_BOOT_AWARE PARTIALLY_DIRECT_BOOT_AWARE PRIVILEGED ]
+    dataDir=/data/user/0/com.amazon.kindle.otter.oobe
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    usesLibraries:
+      org.apache.http.legacy
+      com.fireos.sdk.h2shared
+      com.fireos.sdk.mapclientlib
+      com.fireos.sdk.h2contracts
+      com.fireos.sdk.ota_contracts
+      com.fireos.sdk.metrics
+      com.fireos.sdk.backup_and_restore
+      com.fireos.sdk.minerva
+    usesOptionalLibraries:
+      com.amazon.asp
+      com.amazon.kindle.cms.api
+    usesLibraryFiles:
+      /system/framework/org.apache.http.legacy.boot.jar
+      /system/framework/com.amazon.h2shared.jar
+      /system/framework/com.amazon.identity.auth.device.jar
+      /system/framework/com.amazon.h2contracts.jar
+      /system/priv-app/DeviceSoftwareOTAContracts/DeviceSoftwareOTAContracts.apk
+      /system/priv-app/MetricsApi/MetricsApi.apk
+      /system/priv-app/com.amazon.device.backup.sdk.internal.library/com.amazon.device.backup.sdk.internal.library.apk
+      /system/priv-app/MinervaApi/MinervaApi.apk
+      /system/framework/aspclient.jar
+    timeStamp=2009-01-01 08:00:00
+    firstInstallTime=2009-01-01 08:00:00
+    lastUpdateTime=2009-01-01 08:00:00
+    signatures=PackageSignatures{27ac8f6 version:1, signatures:[e627f73a], past signatures:[]}
+    installPermissionsFixed=true
+    pkgFlags=[ SYSTEM HAS_CODE ALLOW_CLEAR_USER_DATA ]
+    declared permissions:
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: prot=signature|privileged
+      com.amazon.identity.auth.device.perm.AUTH_SDK: prot=signature
+      com.amazon.dcp.sso.permission.account.changed: prot=signature|privileged
+      com.amazon.kindle.otter.oobe.OOBE_PERMISSION: prot=signature
+      com.amazon.kindle.otter.oobe.RESTORE_PERMISSION: prot=signature, INSTALLED
+      com.amazon.kindleautomatictimezone.permission.RECEIVE_OOBE_INTENT_FOR_ATZ: prot=signature|privileged
+      com.amazon.kindle.otter.oobe.permission.OOBE_ATZ_INTERACTION: prot=signature|privileged
+      com.amazon.whisperjoin.provisionableSDK.LAUNCH: prot=signature, INSTALLED
+    requested permissions:
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.READ_PHONE_STATE
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.READ_PRIVILEGED_PHONE_STATE
+      android.permission.PEERS_MAC_ADDRESS
+      android.permission.REBOOT
+      android.permission.SHUTDOWN
+      android.permission.WRITE_SETTINGS
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.INTERNET
+      android.permission.USE_CREDENTIALS
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION
+      android.permission.VIBRATE
+      android.permission.MANAGE_USERS
+      android.permission.MANAGE_DEVICE_ADMINS
+      amazon.aosp.permission.MANAGE_DEVICE_ADMINS
+      android.permission.INTERACT_ACROSS_USERS
+      android.permission.INTERACT_ACROSS_USERS_FULL
+      android.permission.WAKE_LOCK
+      android.permission.DISABLE_KEYGUARD
+      com.amazon.tahoe.BIND_SERVICE
+      com.amazon.tahoe.RECEIVE_BROADCASTS
+      android.permission.ACCESS_FINE_LOCATION
+      amazon.permission.AMZN_KEY
+      android.permission.BLUETOOTH
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.BLUETOOTH_PRIVILEGED
+      android.permission.CHANGE_CONFIGURATION
+      com.amazon.alta.h2clientservice.permission.BIND_SERVICE
+      com.amazon.sharingservice.android.client.proxy.permission.BINDING
+      android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS
+      amazon.aosp.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS
+      com.amazon.kindle.otter.oobe.RESTORE_PERMISSION
+      amazon.permission.COLLECT_METRICS
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED
+      com.amazon.dcp.settings.permission.READ_SETTINGS
+      android.permission.GET_ACCOUNTS
+      android.permission.MANAGE_ACCOUNTS
+      android.permission.AUTHENTICATE_ACCOUNTS
+      com.amazon.identity.auth.device.perm.AUTH_SDK
+      com.amazon.identity.permission.GENERIC_IPC
+      com.amazon.dcp.sso.permission.EXPIRE_ACCESS_TOKEN
+      com.amazon.dcp.sso.permission.account.changed
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER
+      com.amazon.kindle.otter.oobe.TRIGGER_OOBE_TASKS_PERMISSION
+      com.amazon.dcp.sso.permission.AMAZON_ACCOUNT_PROPERTY
+      android.permission.SET_TIME_ZONE
+      com.amazon.dcp.messaging.permission.INITIATE_DEVICE_MESSAGING
+      com.amazon.dcp.messaging.permission.SERVICE_BROADCASTS
+      com.amazon.dcp.ota.permission.MONITOR_OTA_UPDATES
+      com.amazon.dcp.ota.permission.PROCESS_UPDATES
+      android.permission.ACCESS_NETWORK_STATE
+      com.amazon.permission.SET_FLAG_NOSOFTKEYS
+      com.amazon.permission.CONFIG_SOFTKEYS
+      com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS
+      com.amazon.dcp.ota.permission.CONTROLLER
+      com.amazon.dcp.ota.permission.QUERY_PENDING_UPDATES
+      android.permission.BACKUP
+      com.amazon.dataplanmanager.DATA_PLAN_MANAGER
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.STATUS_BAR
+      com.amazon.permission.ENABLE_KEYGUARD_FLAGS
+      com.amazon.permission.RECEIVE_BOOT_AFTER_SYSTEM_OTA
+      com.amazon.permission.READ_MARKETPLACE
+      android.permission.NETWORK_SETTINGS
+      amazon.aosp.permission.NETWORK_SETTINGS
+      android.permission.NETWORK_SETUP_WIZARD
+      com.amazon.kindle.otter.oobe.OOBE_PERMISSION
+      com.amazon.kindle.otter.oobe.forced.ota.FOTA_PERMISSION
+      android.permission.SYSTEM_ALERT_WINDOW
+      com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL
+      com.amazon.dpc.permission.SETTINGS_CHANGED
+      com.amazon.device.backup.permission.ENABLE_BACKUP
+      com.amazon.kindleautomatictimezone.permission.OOBE_ATZ_INTERACTION
+      com.amazon.kindle.starsight.consent.permission.launch
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION
+      amazon.permission.START_RESTORE
+      com.amazon.device.restore.permission.FETCH_RESTORE_POINTS
+      android.permission.CHANGE_WIFI_MULTICAST_STATE
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.BIND_NOTIFICATION_LISTENER_SERVICE
+      android.permission.REQUEST_NETWORK_SCORES
+      com.amazon.settings.AMAZONTABLETSETTINGS_PERMISSION
+      amazon.permission.SHARED_STORAGE_WRITE
+      com.amazon.alta.h2clientservice.CAN_CALL_H2CS_USER_ICON_PROVIDER
+      amazon.speech.permission.SEND_DATA_TO_ALEXA
+      com.amazon.permission.ASP_PERMISSION
+      com.amazon.kindle.cms.CMS_ACCESS
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL
+    install permissions:
+      android.permission.WRITE_SETTINGS: granted=true
+      com.amazon.dcp.ota.permission.QUERY_PENDING_UPDATES: granted=true
+      android.permission.USE_CREDENTIALS: granted=true
+      com.amazon.permission.SET_FLAG_NOSOFTKEYS: granted=true
+      amazon.permission.SHARED_STORAGE_WRITE: granted=true
+      com.amazon.firelauncher.permission.TUTORIAL_RECEIVER_BROADCAST_PERMISSION: granted=true
+      android.permission.MANAGE_ACCOUNTS: granted=true
+      android.permission.SYSTEM_ALERT_WINDOW: granted=true
+      com.amazon.kindle.otter.oobe.forced.ota.FOTA_PERMISSION: granted=true
+      android.permission.SHUTDOWN: granted=true
+      com.amazon.kindleautomatictimezone.permission.OOBE_ATZ_INTERACTION: granted=true
+      amazon.aosp.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      android.permission.CHANGE_NETWORK_STATE: granted=true
+      com.amazon.dpc.permission.SETTINGS_CHANGED: granted=true
+      com.amazon.dcp.ota.permission.CONTROLLER: granted=true
+      com.amazon.device.backup.permission.ENABLE_BACKUP: granted=true
+      android.permission.PEERS_MAC_ADDRESS: granted=true
+      com.amazon.dcp.sso.permission.MANAGE_COR_PFM: granted=true
+      com.amazon.kindle.starsight.consent.permission.launch: granted=true
+      android.permission.SET_TIME_ZONE: granted=true
+      com.amazon.kor.demo.provider.permission.READ_PROVIDER: granted=true
+      android.permission.BLUETOOTH: granted=true
+      android.permission.CHANGE_WIFI_MULTICAST_STATE: granted=true
+      com.amazon.kindle.otter.oobe.OOBE_PERMISSION: granted=true
+      android.permission.AUTHENTICATE_ACCOUNTS: granted=true
+      android.permission.INTERNET: granted=true
+      com.amazon.dcp.sso.permission.EXPIRE_ACCESS_TOKEN: granted=true
+      android.permission.BLUETOOTH_ADMIN: granted=true
+      com.amazon.permission.RECEIVE_BOOT_AFTER_SYSTEM_OTA: granted=true
+      com.amazon.dcp.config.permission.DYN_CONFIG_VALUES_UPDATED: granted=true
+      com.amazon.dcp.settings.permission.READ_SETTINGS: granted=true
+      android.permission.WRITE_SECURE_SETTINGS: granted=true
+      com.amazon.permission.READ_MARKETPLACE: granted=true
+      com.amazon.permission.INTERACT_ACROSS_USERS_FULL: granted=true
+      amazon.permission.COLLECT_METRICS: granted=true
+      amazon.speech.permission.SEND_DATA_TO_ALEXA: granted=true
+      android.permission.READ_PRIVILEGED_PHONE_STATE: granted=true
+      android.permission.BLUETOOTH_PRIVILEGED: granted=true
+      com.amazon.settings.AMAZONTABLETSETTINGS_PERMISSION: granted=true
+      com.amazon.dcp.sso.permission.account.changed: granted=true
+      com.amazon.dataplanmanager.DATA_PLAN_MANAGER: granted=true
+      com.amazon.permission.ENABLE_KEYGUARD_FLAGS: granted=true
+      com.amazon.dcp.sso.permission.AmazonAccountPropertyService.property.changed: granted=true
+      com.amazon.sharingservice.android.client.proxy.permission.BINDING: granted=true
+      com.amazon.dcp.sso.permission.CUSTOMER_ATTRIBUTE_SERVICE: granted=true
+      android.permission.CHANGE_WIFI_STATE: granted=true
+      com.amazon.dcp.sso.permission.AMAZON_ACCOUNT_PROPERTY: granted=true
+      android.permission.NETWORK_SETUP_WIZARD: granted=true
+      android.permission.MANAGE_USERS: granted=true
+      android.permission.ACCESS_NETWORK_STATE: granted=true
+      android.permission.DISABLE_KEYGUARD: granted=true
+      com.amazon.identity.auth.device.perm.AUTH_SDK: granted=true
+      android.permission.BACKUP: granted=true
+      android.permission.CHANGE_CONFIGURATION: granted=true
+      com.amazon.kindle.cms.CMS_ACCESS: granted=true
+      com.amazon.dcp.ota.permission.PROCESS_UPDATES: granted=true
+      android.permission.INTERACT_ACROSS_USERS: granted=true
+      amazon.permission.START_RESTORE: granted=true
+      android.permission.REQUEST_NETWORK_SCORES: granted=true
+      com.amazon.permission.ASP_PERMISSION: granted=true
+      android.permission.REBOOT: granted=true
+      com.amazon.dcp.ota.permission.MONITOR_OTA_UPDATES: granted=true
+      com.amazon.dcp.messaging.permission.INITIATE_DEVICE_MESSAGING: granted=true
+      com.amazon.identity.permission.GENERIC_IPC: granted=true
+      android.permission.MANAGE_DEVICE_ADMINS: granted=true
+      com.amazon.kindle.otter.oobe.TRIGGER_OOBE_TASKS_PERMISSION: granted=true
+      com.amazon.tahoe.BIND_SERVICE: granted=true
+      android.permission.VIBRATE: granted=true
+      com.amazon.kindle.otter.oobe.RESTORE_PERMISSION: granted=true
+      com.amazon.firelauncher.DISABLE_TUTORIAL_EXTERNAL: granted=true
+      com.amazon.tahoe.RECEIVE_BROADCASTS: granted=true
+      com.amazon.dcp.sso.permission.USE_DEVICE_CREDENTIALS: granted=true
+      android.permission.ACCESS_WIFI_STATE: granted=true
+      amazon.aosp.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS: granted=true
+      com.amazon.alta.h2clientservice.permission.BIND_SERVICE: granted=true
+      com.amazon.identity.permission.CAN_CALL_MAP_INFORMATION_PROVIDER: granted=true
+      android.permission.STATUS_BAR: granted=true
+      com.amazon.device.restore.permission.FETCH_RESTORE_POINTS: granted=true
+      android.permission.WAKE_LOCK: granted=true
+      com.amazon.dcp.metrics.permission.METRICS_PERMISSION: granted=true
+    User 0: ceDataInode=852371 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[5901, 3002, 3003, 3001]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.ACCESS_COARSE_LOCATION: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+      disabledComponents:
+        com.amazon.kindle.otter.oobe.modules.settings.wifi.CaptivePortalActivityLauncher
+        com.amazon.kindle.otter.oobe.OobeHomeActivity
+    User 10: ceDataInode=827720 installed=true hidden=false suspended=false stopped=false notLaunched=false enabled=0 instant=false virtual=false
+      gids=[5901, 3002, 3003, 3001]
+      runtime permissions:
+        android.permission.ACCESS_FINE_LOCATION: granted=false, flags=[ POLICY_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.ACCESS_COARSE_LOCATION: granted=false, flags=[ POLICY_FIXED GRANTED_BY_DEFAULT ]
+        android.permission.READ_PHONE_STATE: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+        android.permission.GET_ACCOUNTS: granted=true, flags=[ GRANTED_BY_DEFAULT ]
+      disabledComponents:
+        com.amazon.kindle.otter.oobe.OobeHomeActivity
+
+Package Changes:
+  Sequence number=23
+  User 0:
+    seq=3, package=com.google.android.gms
+    seq=14, package=com.amazon.frameworksettings
+    seq=20, package=org.fireosresearch.phase6mx.lookup
+    seq=22, package=com.microsoft.launcher
+
+
+Dexopt state:
+  [com.amazon.kindle.otter.oobe]
+    path: /system/priv-app/com.amazon.kindle.otter.oobe/com.amazon.kindle.otter.oobe.apk
+      arm64: [status=speed-profile] [reason=bg-dexopt]
+
+
+Compiler stats:
+  [com.amazon.kindle.otter.oobe]
+     com.amazon.kindle.otter.oobe.apk - 1427
