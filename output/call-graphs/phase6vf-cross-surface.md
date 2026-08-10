@@ -1,0 +1,25 @@
+# Phase 6VF cross-surface graph
+
+```mermaid
+flowchart LR
+  U["ordinary app / shell"] --> G["caller + permission + SELinux/service gate"]
+  G -. "not closed" .-> N["no accepted low-privilege effect"]
+  K["KFT / ProductPolicy"] --> P["AmazonPackageManager → PMS enabled-state sink"]
+  P --> S["explicit user/profile scope"]
+  S -. "User-0 restoration not proven" .-> N
+  H["PMS preferred/HOME"] --> R["priority 50 Fire Launcher resolver"]
+  R -. "ordinary preferred record did not win" .-> N
+  D["DPM / Amazon user-settings"] --> D2["protected system-service sink"]
+  D2 -. "caller and owner/admin gate incomplete" .-> N
+  O["signed OTA / recovery"] --> W["block-image / partition writer"]
+  W -. "recovery identity and AVB handoff unknown" .-> N
+  V["CMDQ / ION / Amazon-LD"] --> V2["native capability / node policy"]
+  V2 -. "exact shipped caller and security sink unknown" .-> N
+  F["fosinit residual services"] --> F2["callbacks / receivers / Binder"]
+  F2 -. "authz or final sink unresolved" .-> N
+  T["historical tests"] --> T2["no sustainable User-0 replacement"]
+  classDef high fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f3f;
+  class K,P,S,H,R,D,D2,O,W,V,V2,F,F2,T,T2 high;
+  class U,G,N unknown;
+```
