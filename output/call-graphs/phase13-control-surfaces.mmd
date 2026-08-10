@@ -1,0 +1,18 @@
+flowchart TD
+  A["Unknown external caller"] -. "caller/UID/package unknown" .-> B["amazonusermanagerservice tx3"]
+  C["AmazonUserManagerImpl.createChildUser"] --> D["IAmazonUserManager.Proxy.enableKftLauncher(UserInfo)"]
+  D --> E["Parcel UserInfo + transact(3)"]
+  E --> F["IAmazonUserManager.Stub.onTransact(3)"]
+  F --> G["BinderService.enableKftLauncher(UserInfo)"]
+  G -. "authorization edge unresolved" .-> H["tryEnableKftLauncherComponent"]
+  G --> I["AmazonPackageManagerImpl facade"]
+  I --> J["ServiceManager package -> IPackageManager proxy"]
+  J --> K["PackageManagerService setters"]
+  K --> L["Tahoe FreeTimeLauncherActivity enabled"]
+  K --> M["Fire Launcher disabled for supplied user"]
+  K --> N["Launcher3 disabled for supplied user"]
+  H -. "DPM/child lifecycle scope" .-> O["empowerKftUser(UserInfo)"]
+  P["ordinary app: descriptor-only historical test"] -. "no tx3" .-> B
+  Q["shell UID: saved service-manager lookup denied"] -. "no handle" .-> B
+  R["driver/static surfaces"] -. "caller/policy/identity/sink unknown" .-> S["No closed low-privilege route"]
+  M -. "not formal HOME setter" .-> S
