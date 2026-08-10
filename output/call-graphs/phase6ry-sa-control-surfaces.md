@@ -1,0 +1,17 @@
+# Phase 6RY–SA control-surface graph
+
+```mermaid
+flowchart TD
+    A["ordinary app / shell"] --> B["permission + user + SELinux gates"]
+    B -.-> C["Amazon PM metadata -> flags XML"]
+    B -.-> D["driver node -> hardware/DMA/control state"]
+    B -.-> E["OTA controller -> recovery/partition writer"]
+    F["system / privileged lifecycle"] --> G["package/OOBE/partition capability"]
+    H["exact serial read-only snapshot"] --> I["Fire HOME priority 50; Microsoft 0"]
+    C -. no bounded HOME/PMS bridge .-> J["no low-privilege transition proven"]
+    D -. no client/effect join .-> J
+    E -. no ordinary caller chain .-> J
+```
+
+Dashed paths represent capabilities or bounded unknowns, not successful
+privilege transitions.
