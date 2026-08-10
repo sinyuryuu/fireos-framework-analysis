@@ -1907,3 +1907,20 @@ Records:
 - `work/luna_worker_phase6sv_exported_surface_20260810.md/.csv`
 - `work/luna_worker_phase6sw_kernel_surface_20260810.md/.csv`
 - `work/luna_worker_phase6sx_evidence_audit_20260810.md/.csv`
+
+## Phase 6SY — 唯讀 current-state 核對（2026-08-10）
+
+指定序號設備的新唯讀 snapshot 已完成，與 Phase 6SJ selected build/HOME/candidate/
+users 輸出逐檔比較沒有差異。當前仍為 PS7331.4463N、KFTRWI/trona、verified boot
+green，Fire Launcher priority 50 且為前景；User 0 package state `enabled=0` 為
+default state，ActivityInfo 仍 enabled。這次沒有 package/settings/Binder/driver/
+OTA/recovery/reboot 或 partition mutation。
+
+Raw snapshot 因 settings 可能含帳號相關值而只留本機；公開 commit 僅包含 redacted
+summary、state table 與 parser script。
+
+Records:
+
+- `findings/phase-6sy-readonly-snapshot.md`
+- `output/tables/phase6sy-readonly-state.csv`
+- `tools/scripts/summarize_phase6sy_readonly.py`

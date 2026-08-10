@@ -4016,3 +4016,25 @@ Records:
 - `work/luna_worker_phase6sv_exported_surface_20260810.md/.csv`
 - `work/luna_worker_phase6sw_kernel_surface_20260810.md/.csv`
 - `work/luna_worker_phase6sx_evidence_audit_20260810.md/.csv`
+
+## Phase 6SY — 指定序號唯讀狀態核對（2026-08-10）
+
+使用既有唯讀採集腳本對指定設備建立新 snapshot；命令先 dry-run，再只執行
+getprop、resolver query、dumpsys、package/user/service/overlay list 與 settings
+list。與 Phase 6SJ 的 selected `getprop`、HOME resolver、HOME candidates、users
+輸出逐檔 diff 無差異。
+
+最新狀態仍確認：PS7331.4463N／KFTRWI／trona、verified boot `green`、Fire Launcher
+為 priority 50 的 resolver 結果與前景；Microsoft Launcher 為 priority 0；Fire
+User 0 package state `enabled=0` 是 default state，ActivityInfo 仍 `enabled=true`。
+這不是新的替換或提權結果，而是無 mutation 的 current-state evidence。
+
+完整 raw snapshot 含可能的帳號相關 settings，僅保留本機；公開 repo 只加入 redacted
+摘要、CSV 與輸入腳本。
+
+Records:
+
+- `findings/phase-6sy-readonly-snapshot.md`
+- `output/tables/phase6sy-readonly-state.csv`
+- `tools/scripts/summarize_phase6sy_readonly.py`
+- `tools/scripts/capture_phase6sj_readonly.sh`
