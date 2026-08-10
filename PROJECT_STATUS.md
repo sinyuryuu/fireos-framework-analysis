@@ -1408,3 +1408,32 @@ Outputs:
 - findings/phase-6a-pi-lock-smoke-evidence-index.md
 - local raw evidence under adb/phase6a/PHASE6A-PI-SMOKE-T02/
 - local result under artifacts/phase6a/phase6a-pi-lock-smoke-T02/
+
+## Phase 6PS — 全域特權面追蹤（2026-08-10）
+
+Phase 6PS 把 Launcher 以外的 package/component、user、settings、HOME、
+process、driver、OTA 與 `/init` 控制面放入同一個 caller→permission→identity→
+sink 框架。Play Store 的 live package dump 確認它持有
+`CHANGE_COMPONENT_ENABLED_STATE` 及多項高影響 permission rows，但它是
+`/data/app` 且沒有 captured `PRIVATE_FLAG_PRIVILEGED`；主機端 bounded scan
+沒有 Fire Launcher literal、HOME preferred writer 或直接 HOME launch path。
+因此這是 provenance 待驗證線索，不是 protected-package bypass。
+
+新增的主機端 closure 將 16 個 Binder/service surfaces 與 8 個 kernel/OTA/init
+候選分為：已證實的受限 prewarm/settings deputies、KFT/DPM/OOBE/OTA 等
+trusted 或下游受阻 writer、以及 query/resource/driver capability-only surfaces。
+沒有新的 ordinary-app→system/root transition 或正式 HOME replacement。這輪
+沒有送 Binder、未知 service transaction、ioctl、OTA/recovery、root 或任何
+分割區操作。
+
+Records:
+
+- `findings/phase-6ps-privilege-surface-followup.md`
+- `findings/phase-6ps-evidence-index.md`
+- `output/tables/phase6ps-privilege-route-closure.csv`
+- `output/call-graphs/phase6ps-privilege-surface.mmd`
+- `tools/scripts/capture_phase6pr_vending_provenance.py`
+- `adb/phase6pr/PHASE6PR-VENDING-READONLY-20260810-01/`
+- `work/luna_worker_component_permission_provenance_20260810.md`
+- `work/luna_worker_binder_sink_closure_20260810.md`
+- `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`

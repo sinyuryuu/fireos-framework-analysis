@@ -3488,3 +3488,33 @@ Outputs:
 - `findings/phase-6g-cmdq-static-surface.md`
 - `artifacts/phase6g/phase6g-cmdq-static-20260804-02/`
 - `output/call-graphs/phase6g-cmdq-static.mmd`
+
+## Phase 6PS — privilege-surface follow-up (2026-08-10)
+
+This follow-up expands the scope beyond Launcher. A read-only live capture
+confirmed that `com.android.vending` holds several package-management-related
+permissions, including `CHANGE_COMPONENT_ENABLED_STATE`, while remaining a
+`/data/app` package without a captured `PRIVATE_FLAG_PRIVILEGED` flag. The
+preserved Play Store code contains generic package/component writers, but no
+bounded Fire Launcher literal, HOME preferred writer, or direct launcher
+selection path. The grant provenance and any hidden/native path remain
+unknown; no setter, exported component, or permission operation was invoked.
+
+The host-only closure maps cover 16 Amazon Binder/service surfaces and eight
+kernel/OTA/init candidates. They distinguish the two confirmed bounded
+ordinary-app deputies (prewarm process start and setup-state settings write)
+from KFT/package-state, DPM, OOBE, updater, driver, `/init`, and GhostLock
+capability candidates that lack a proven low-privilege transition. No new
+formal HOME replacement or root/system-UID transition was found.
+
+Outputs:
+
+- `findings/phase-6ps-privilege-surface-followup.md`
+- `findings/phase-6ps-evidence-index.md`
+- `output/tables/phase6ps-privilege-route-closure.csv`
+- `output/call-graphs/phase6ps-privilege-surface.mmd`
+- `tools/scripts/capture_phase6pr_vending_provenance.py`
+- `adb/phase6pr/PHASE6PR-VENDING-READONLY-20260810-01/`
+- `work/luna_worker_component_permission_provenance_20260810.md`
+- `work/luna_worker_binder_sink_closure_20260810.md`
+- `work/luna_worker_kernel_ota_unclosed_closure_20260810.md`
