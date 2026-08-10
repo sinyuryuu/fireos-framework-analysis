@@ -3578,3 +3578,29 @@ Outputs:
 - `work/luna_worker_kernel_gpl_driver_surface_followup_20260810.md`
 - `work/luna_worker_ipc_sink_inventory_followup_20260810.md`
 - `work/luna_worker_ota_postinstall_followup_20260810.md`
+
+## Phase 6PW — broad privilege and HOME follow-up (2026-08-10)
+
+Phase 6PW delegated three independent host-only audits to `luna_worker` and
+cross-checked their results against a new read-only PS7331 runtime capture. The
+new evidence does not add an ordinary-app or ADB-shell path to User-0
+PackageManager/HOME/system privileges. It preserves two bounded deputies
+(prewarm and setup flags), child-profile Tahoe HOME as a per-user result, and a
+timing-sensitive Accessibility foreground redirect as an approximation rather
+than a real HOME replacement.
+
+No Binder transaction, ioctl, package/settings mutation, user switch, reboot,
+OTA/recovery, Root, or partition operation was performed in this phase.
+
+Outputs:
+
+- `findings/phase-6pw-broad-privilege-followup.md`
+- `findings/phase-6pw-evidence-index.md`
+- `adb/phase6pw/PHASE6PW-READONLY-20260810-01/`
+- `output/tables/phase6pw-route-classification.csv`
+- `output/tables/phase6pw-route-classification.csv.manifest.json`
+- `output/call-graphs/phase6pw-privilege-route.mmd`
+- `tools/scripts/build_phase6pw_route_classification.py`
+- `work/luna_worker_evidence_audit_followup_20260810.md/.csv`
+- `work/luna_worker_ipc_boundary_followup_20260810.md/.csv`
+- `work/luna_worker_workaround_audit_followup_20260810.md/.csv`

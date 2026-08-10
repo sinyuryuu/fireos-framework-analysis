@@ -1,0 +1,36 @@
+flowchart LR
+    Live["Live read-only capture"] --> PMS["PMS / HOME resolver"]
+    PMS --> Fire["Fire Launcher\nUser 0 priority 50"]
+    PMS --> Ms["Microsoft candidate\npriority 0"]
+
+    App["Ordinary APK"] --> Prewarm["AmazonActivityManager\nprewarm"]
+    Prewarm --> Process["system-server process/resource effect"]
+    Prewarm -. no HOME/package sink .-> PMS
+
+    App --> Tx4["AmazonUserManager tx4"]
+    Tx4 --> Setup["setup flags only"]
+    Setup -. HOME unchanged .-> PMS
+
+    H2["H2 / trusted child lifecycle"] --> Child["child user/profile"]
+    KFT["KFT child-scoped writer"] --> ChildState["Tahoe / Fire / Launcher3\nchild package state"]
+    Child --> Tahoe["Tahoe HOME\nchild user only"]
+    ChildState -. PMS User-0 gate .-> Fire
+
+    OTA["SystemServer OTA/OOBE lifecycle"] --> OOBE["OOBE component/setup state"]
+    OOBE -. no Fire HOME writer .-> PMS
+
+    Drivers["GPL kernel drivers\nCMDQ / ION / GED / etc."] --> HW["hardware/telemetry capability"]
+    Drivers -. no direct framework edge .-> PMS
+
+    Updater["Signed updater/recovery capability"] --> Part["partition write capability"]
+    Updater -. no ordinary caller route .-> PMS
+
+    A11y["User-consented Accessibility"] --> Redirect["foreground redirect"]
+    Redirect -. resolver unchanged; temporary .-> Fire
+
+    classDef confirmed fill:#d9f7be,stroke:#389e0d,color:#000;
+    classDef bounded fill:#fff1b8,stroke:#d48806,color:#000;
+    classDef rejected fill:#ffd6e7,stroke:#c41d7f,color:#000;
+    class Fire,Ms,Live confirmed;
+    class Prewarm,Tx4,Child,Tahoe,Redirect bounded;
+    class Drivers,Updater,Part rejected;

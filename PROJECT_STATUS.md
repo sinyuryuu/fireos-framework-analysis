@@ -1491,3 +1491,29 @@ Records:
 - `work/luna_worker_kernel_gpl_driver_surface_followup_20260810.md`
 - `work/luna_worker_ipc_sink_inventory_followup_20260810.md`
 - `work/luna_worker_ota_postinstall_followup_20260810.md`
+
+## Phase 6PW — 廣泛權限與 HOME follow-up（2026-08-10）
+
+三個 `luna_worker` 分別整理既有測試、Amazon IPC 邊界及 HOME/workaround
+結果；主 Agent 以 `PHASE6PW-READONLY-20260810-01` 重新核對現況。User 0
+HOME 仍為 Fire priority 50，Microsoft candidate 為 priority 0。沒有新增
+ordinary-app／ADB shell 到 User-0 PackageManager、HOME 或 system/root 的閉合鏈。
+
+Child profile 的 Tahoe HOME 是已證實的 per-user 結果；Accessibility redirect
+只能列為需使用者授權、時序敏感的 foreground workaround。KFT、OOBE/OTA、kernel
+driver 與 updater 仍分別受 child/PMS、system lifecycle、node/SELinux 或
+recovery/partition 邊界約束。本輪未執行未知 Binder、ioctl、package/settings
+mutation、user switch、reboot、OTA/recovery、Root 或分割區操作。
+
+Records:
+
+- `findings/phase-6pw-broad-privilege-followup.md`
+- `findings/phase-6pw-evidence-index.md`
+- `adb/phase6pw/PHASE6PW-READONLY-20260810-01/`
+- `output/tables/phase6pw-route-classification.csv`
+- `output/tables/phase6pw-route-classification.csv.manifest.json`
+- `output/call-graphs/phase6pw-privilege-route.mmd`
+- `tools/scripts/build_phase6pw_route_classification.py`
+- `work/luna_worker_evidence_audit_followup_20260810.md/.csv`
+- `work/luna_worker_ipc_boundary_followup_20260810.md/.csv`
+- `work/luna_worker_workaround_audit_followup_20260810.md/.csv`
