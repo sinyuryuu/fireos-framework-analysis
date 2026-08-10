@@ -1710,3 +1710,31 @@ Records:
 - `work/luna_worker_ipc_unclosed_sink_inventory_20260810.md/.csv`
 - `work/luna_worker_gpl_driver_surface_inventory_20260810.md/.csv`
 - `work/luna_worker_residual_high_impact_gap_audit_20260810.md/.csv`
+
+## Phase 6QE — 廣域權限面與 exact-device policy 驗證（2026-08-10）
+
+Phase 6QE 整合 15 個 Amazon IPC caller→sink、8 個 PS7331 GPL
+driver/exact-image policy、14 個既有測試結果，共 37 rows。metadata-only
+實機快照確認 HOME 仍是 `com.amazon.firelauncher/.Launcher` priority 50；
+`/dev/mtk_cmdq` 是 `0644 system:system`、`/dev/gsensor` 是
+`0660 radio:system`，shell 對 `/proc/m4u` 與 `/proc/life_cycle_reason` 無法讀取
+metadata。未開啟 node、未執行 ioctl、Binder transaction、mutation、Root、OTA、
+recovery、reboot 或分割區操作。
+
+本輪仍未閉合 ordinary app/shell → accepted gate → system/root →
+PackageManager/HOME/package-state/credential/SELinux/partition 的鏈；未知 caller
+與 native/client mapping 保留 UNKNOWN，不視為漏洞。
+
+Records:
+
+- `findings/phase-6qe-report.md`
+- `findings/phase-6qe-evidence-index.md`
+- `adb/phase6qe/PHASE6QE-DEVICE-READONLY-20260810-02/`
+- `output/tables/phase6qe-privilege-surface.csv`
+- `output/tables/phase6qe-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6qe-privilege-surface.mmd`
+- `tools/scripts/capture_phase6qe_device_readonly.py`
+- `tools/scripts/build_phase6qe_privilege_surface.py`
+- `work/luna_worker_phase6qe_ipc_caller_closure_20260810.md/.csv`
+- `work/luna_worker_phase6qe_driver_policy_20260810.md/.csv`
+- `work/luna_worker_phase6qe_existing_tests_20260810.md/.csv`

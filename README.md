@@ -3801,3 +3801,28 @@ Records:
 - `work/luna_worker_ipc_unclosed_sink_inventory_20260810.md/.csv`
 - `work/luna_worker_gpl_driver_surface_inventory_20260810.md/.csv`
 - `work/luna_worker_residual_high_impact_gap_audit_20260810.md/.csv`
+
+## Phase 6QE — 廣域權限面與 exact-device policy 驗證（2026-08-10）
+
+Phase 6QE extends the scope beyond Launcher with 15 Amazon IPC caller-to-sink
+rows, 8 PS7331 GPL driver/exact-image policy rows, and 14 reconciled existing
+tests. The normalized matrix has 37 rows. A metadata-only live snapshot confirms
+HOME remains `com.amazon.firelauncher/.Launcher` at priority 50; `/dev/mtk_cmdq`
+is `0644 system:system`, `/dev/gsensor` is `0660 radio:system`, and shell cannot
+metadata-read `/proc/m4u` or `/proc/life_cycle_reason`. No node was opened and no
+ioctl, Binder transaction, mutation, Root, OTA, recovery, reboot, or partition
+operation was performed.
+
+Records:
+
+- `findings/phase-6qe-report.md`
+- `findings/phase-6qe-evidence-index.md`
+- `adb/phase6qe/PHASE6QE-DEVICE-READONLY-20260810-02/`
+- `output/tables/phase6qe-privilege-surface.csv`
+- `output/tables/phase6qe-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6qe-privilege-surface.mmd`
+- `tools/scripts/capture_phase6qe_device_readonly.py`
+- `tools/scripts/build_phase6qe_privilege_surface.py`
+- `work/luna_worker_phase6qe_ipc_caller_closure_20260810.md/.csv`
+- `work/luna_worker_phase6qe_driver_policy_20260810.md/.csv`
+- `work/luna_worker_phase6qe_existing_tests_20260810.md/.csv`
