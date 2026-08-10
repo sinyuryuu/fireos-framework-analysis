@@ -1951,3 +1951,36 @@ Records:
 - `work/luna_worker_phase6tb_dcpms_consumer_20260810.md/.csv`
 - `work/luna_worker_phase6tc_native_caller_join_20260810.md/.csv`
 - `work/luna_worker_phase6td_unintegrated_evidence_20260810.md/.csv`
+## Phase 6TE–TI — 測試稽核、IPC residual、OTA/native 與唯讀狀態（2026-08-10）
+
+本輪由 `luna_worker` 分工完成 host-only evidence audit，整合 46 筆資料列：既有
+ADB/Launcher/child-user/權限/workaround 測試 16、Amazon Alta/H2 IPC residual 4、
+PS7331 OTA/source scope 15、kernel/native residual 11，另有指定序號唯讀 snapshot。
+H2ClientService 的 user creation/removal、per-profile Settings relay 與 sort-order
+sink 是 production static chain，但 bind permission、外部 caller 與低權限可達性
+仍 `UNKNOWN`，沒有 formal HOME/PMS sink。OTA/recovery writer 是 privileged
+capability；ION 僅到 library-level positive，其餘 driver surface 缺 exact shipped
+caller 或 final policy/effect join。
+
+設備 snapshot 仍為 `KFTRWI`/`trona`、PS7331.4463N、verified boot green，User 0 HOME
+仍為 `com.amazon.firelauncher/.Launcher` priority 50。child HOME 與 foreground
+redirect 沒有被升格為 User 0 durable replacement。本輪未執行 Root/exploit、未知
+Binder transaction、driver open/ioctl、OTA/recovery、reboot、套件/設定 mutation 或
+分割區寫入；raw snapshot 僅留本機，公開內容是 redacted summary、表格、ledger、
+hash manifest 與可重現腳本。
+
+Records:
+
+- `findings/phase-6te-th-report.md`
+- `findings/phase-6te-th-evidence-index.md`
+- `findings/phase-6ti-readonly-snapshot.md`
+- `output/tables/phase6te-th-control-surface.csv`
+- `output/tables/phase6te-th-input-manifest.sha256`
+- `output/tables/phase6ti-readonly-state.csv`
+- `output/call-graphs/phase6te-th-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6te_th_surface.py`
+- `tools/scripts/summarize_phase6ti_readonly.py`
+- `work/luna_worker_phase6te_test_audit_20260810.md/.csv`
+- `work/luna_worker_phase6tf_ipc_residual_20260810.md/.csv`
+- `work/luna_worker_phase6tg_ota_scope_20260810.md/.csv`
+- `work/luna_worker_phase6th_kernel_residual_20260810.md/.csv`
