@@ -1,0 +1,23 @@
+flowchart LR
+    A["ordinary APK / ADB shell"] --> B["exported API or service discovery"]
+    B --> C["permission + SELinux + caller gate"]
+    C --> D["Binder identity + user scope"]
+    D --> E["concrete sink"]
+
+    H["H2ClientService"] --> H1["signature|amazon bind"]
+    H1 --> H2["child/profile workflow"]
+    H2 -.-> K["KFT tx3 package writer"]
+
+    O["OTA Java verifier"] --> O1["RecoverySystem / UpdateSystem"]
+    O1 --> O2["update_verifier / recovery capability"]
+    O2 -.-> P["partition/slot sink; caller unresolved"]
+
+    M["meta_tst"] --> M1["gsensor / USB sysfs policy edge"]
+    R["rpmb_svc"] --> R1["TEE / RPMB policy edge"]
+    M1 -.-> N["hardware diagnostic sink"]
+    R1 -.-> N
+
+    Z["Phase 20"] --> Q["No ordinary-caller chain to Fire/HOME/UID0 sink"]
+    Q -.-> E
+
+%% Dashed edges are unresolved evidence edges, not inferred reachability.
