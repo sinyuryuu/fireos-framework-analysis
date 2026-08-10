@@ -1,0 +1,32 @@
+flowchart LR
+    APP["ordinary app / shell"] --> PM["tx6/tx7 caller\nNOT_FOUND in corpus"]
+    PM --> PMG["FLAG_SYSTEM creator\ncreator-UID ownership"]
+    PMG --> PROXY["ProxyReceiver map\nregister/unregister"]
+    PROXY --> PI["PendingIntent.send()"]
+    PI --> NEG["No PMS / HOME / Fire\nsink recovered"]
+
+    VEND["Vending receiver"] --> VT["verificationToken +\ncurrent launcher/setup gate"]
+    VT --> REST["aoba.k / aofc.y\nrestore bookkeeping"]
+    REST --> NEG
+
+    DSE["DseService"] --> DG["DSE + DeviceSetup +\ncalling UID/package auth"]
+    DG --> DS["browser/search/secure\nsettings/install sinks"]
+    DS --> NEG
+
+    OOBE["system-server OTA lifecycle"] --> OOBEG["phase 550 + isUpgrade\nprotected action"]
+    OOBEG --> OOBES["OOBE component/settings\nwriter; user scope unknown"]
+    OOBES --> RISK["lifecycle-only; no ordinary\nHOME replacement"]
+
+    OTA["OTA verifier / updater"] --> OTAG["signature/product/PVT/AVB\nand recovery boundary"]
+    OTAG --> PART["partition-write capability\ncaller provenance unknown"]
+    PART --> RISK
+
+    BASE["read-only baseline"] --> HOME["Fire Launcher priority 50\nUser 0 resolver winner"]
+    BASE --> AVC["SELinux Enforcing\nshell service_manager find denied"]
+
+    classDef control fill:#eef6ff,stroke:#4472c4,color:#111;
+    classDef sink fill:#fff4e5,stroke:#c77d00,color:#111;
+    classDef negative fill:#f3f3f3,stroke:#777,color:#111;
+    class APP,PM,PMG,VEND,VT,DSE,DG,OOBE,OOBEG,OTA,OTAG,BASE control;
+    class PROXY,PI,REST,DS,OOBES,PART,HOME,AVC sink;
+    class NEG,RISK negative;

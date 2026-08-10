@@ -1628,3 +1628,31 @@ Records:
 - `work/luna_worker_vending_skipped_methods_followup_20260810.md/.csv`
 - `work/luna_worker_amazonpm_proxy_followup_20260810.md/.csv`
 - `work/luna_worker_settings_home_resource_followup_20260810.md/.csv`
+
+## Phase 6QB — PS7331 residual caller、writer 與 runtime boundary（2026-08-10）
+
+本輪由三個 `luna_worker` 完成 host-only 搜尋，再由主 Agent 以
+`PHASE6QB-READONLY-20260810-01` 進行實機只讀交叉驗收。18-row matrix 包含
+Amazon PM tx6/tx7 caller、Vending downstream 與 PS7331 Framework/OTA residual
+writer。結果沒有新增低權限 caller 到 User-0 HOME、Fire package state、
+system/root 或 partition sink 的閉合鏈。
+
+只讀 baseline 確認 PS7331.4463N、SELinux Enforcing、Fire priority 50 HOME，
+以及 shell 對 Amazon private service 的 `service_manager find` denial。沒有
+執行 private Binder、broadcast、settings/package mutation、APK、reboot、
+OTA/recovery、Root、ioctl 或分割區操作。tx6/tx7 production caller、DSE
+injected writer、OOBE numeric-user mapping 與 OTA→recovery provenance 仍是
+bounded UNKNOWN，不得升級為漏洞或 root 證據。
+
+Records:
+
+- `findings/phase-6qb-residual-inventory.md`
+- `findings/phase-6qb-evidence-index.md`
+- `adb/phase6qb/PHASE6QB-READONLY-20260810-01/`
+- `output/tables/phase6qb-residual-inventory.csv`
+- `output/tables/phase6qb-residual-inventory.csv.manifest.json`
+- `output/call-graphs/phase6qb-residual-control-closure.mmd`
+- `tools/scripts/build_phase6qb_residual_inventory.py`
+- `work/luna_worker_amazonpm_caller_inventory_20260810.md/.csv`
+- `work/luna_worker_vending_downstream_closure_20260810.md/.csv`
+- `work/luna_worker_ps7331_residual_writer_inventory_20260810.md/.csv`
