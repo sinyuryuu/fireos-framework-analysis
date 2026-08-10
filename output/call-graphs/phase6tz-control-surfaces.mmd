@@ -1,0 +1,15 @@
+flowchart LR
+  P["BIND_SERVICE permission"] --> O["android.amazon.perm
+UID 1000
+signature|amazon"]
+  O --> G["10 explicit grant candidates"]
+  G -. "uses-permission/bind/client UNKNOWN" .-> X["No shell reachability claim"]
+  K["KFT child writer"] --> C["UserInfo.id
+child/profile scope"]
+  C -. "User-0 Fire restoration UNKNOWN" .-> Y["No HOME writer proof"]
+  S["amzn_drv_test source"] --> F["final config/Image/module audit"]
+  F -. "not shipped/runtime nodes UNKNOWN" .-> Z["No driver exploit claim"]
+  classDef bound fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f3f;
+  class P,O,G,K,C,S,F bound;
+  class X,Y,Z unknown;

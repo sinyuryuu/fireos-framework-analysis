@@ -4194,3 +4194,32 @@ Records:
 - `work/luna_worker_phase6tp_ota_writer_audit_20260810.md/.csv`
 - `work/luna_worker_phase6tq_driver_inventory_20260810.md/.csv`
 - `work/luna_worker_phase6tr_test_reconciliation_20260810.md/.csv`
+
+## Phase 6TZ — H2 owner/grant, User-0 writer and amzn_drv_test closure
+
+Host-only follow-up closed a high-value permission provenance fact: the exact
+PackageManager record names `android.amazon.perm` (UID 1000) as owner of
+`com.amazon.alta.h2clientservice.permission.BIND_SERVICE` with
+`signature|amazon` protection, and lists ten explicit grant candidates. Their
+manifest requests, actual bind edges and accepted caller identities remain
+unknown; no Binder invocation was performed.
+
+The User-0 Fire restoration-writer search remains `UNKNOWN`; the recovered
+KFT writer is explicitly `UserInfo.id` child/profile scoped. `amzn_drv_test`
+source registration is present, but the exact final config does not select it,
+unique Image markers are absent, and the audited module corpus has no payload.
+
+No device, Binder, driver, Root/exploit, OTA, reboot, package/settings mutation
+or partition write was performed.
+
+Records:
+
+- `findings/phase-6tz-report.md`
+- `findings/phase-6tz-evidence-index.md`
+- `output/tables/phase6tz-control-surface.csv`
+- `output/tables/phase6tz-input-manifest.sha256`
+- `output/call-graphs/phase6tz-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6tz_surface.py`
+- `work/luna_worker_phase6tw_h2_owner_grant_20260810.md/.csv`
+- `work/luna_worker_phase6tx_amzn_drv_test_closure_20260810.md/.csv`
+- `work/luna_worker_phase6ty_user0_fire_restoration_20260810.md/.csv`

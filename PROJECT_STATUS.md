@@ -2070,3 +2070,31 @@ Records:
 - `work/luna_worker_phase6tp_ota_writer_audit_20260810.md/.csv`
 - `work/luna_worker_phase6tq_driver_inventory_20260810.md/.csv`
 - `work/luna_worker_phase6tr_test_reconciliation_20260810.md/.csv`
+
+## Phase 6TZ — permission owner and writer provenance (2026-08-10)
+
+The H2 exact-build permission record now positively identifies
+`android.amazon.perm` / UID 1000 as owner of the custom
+`BIND_SERVICE` permission with `signature|amazon` protection. Ten explicit
+grant candidates are recorded, but manifest requests, actual bind clients and
+accepted caller identity remain `UNKNOWN`.
+
+The User-0 Fire restoration writer remains unclosed; KFT's Fire setter is
+child/profile `UserInfo.id` scoped. `amzn_drv_test` is source-registered but
+not selected by the exact final config, has no unique Image markers and no
+matching audited module payload.
+
+No device mutation, Binder/driver invocation, Root/exploit, OTA/recovery/flash,
+reboot or partition write was performed.
+
+Records:
+
+- `findings/phase-6tz-report.md`
+- `findings/phase-6tz-evidence-index.md`
+- `output/tables/phase6tz-control-surface.csv`
+- `output/tables/phase6tz-input-manifest.sha256`
+- `output/call-graphs/phase6tz-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6tz_surface.py`
+- `work/luna_worker_phase6tw_h2_owner_grant_20260810.md/.csv`
+- `work/luna_worker_phase6tx_amzn_drv_test_closure_20260810.md/.csv`
+- `work/luna_worker_phase6ty_user0_fire_restoration_20260810.md/.csv`
