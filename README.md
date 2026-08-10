@@ -4223,3 +4223,31 @@ Records:
 - `work/luna_worker_phase6tw_h2_owner_grant_20260810.md/.csv`
 - `work/luna_worker_phase6tx_amzn_drv_test_closure_20260810.md/.csv`
 - `work/luna_worker_phase6ty_user0_fire_restoration_20260810.md/.csv`
+
+## Phase 6UD — H2 client, KFT scope and permission semantics
+
+The exact-build H2 follow-up found three preserved manifest requested-permission
+records (Tahoe, Kindle OOBE and Parental Controls), but no closed external
+`bindService`/`ServiceConnection`/AIDL caller for the ten grant candidates.
+`android.amazon.perm` ownership and `signature|amazon` encoding remain bounded
+static facts; FireOS parser semantics and shell/ordinary-app eligibility remain
+unknown.
+
+KFT static correlation confirms child creation → transaction 3 → `UserInfo.id`
+→ Tahoe enabled and Fire/Launcher3 disabled. Caller authorization and
+cross-user/admin gating are unresolved, and no User-0 restoration path is shown.
+
+No Binder call, user creation, package/permission mutation, driver operation,
+Root/exploit, OTA, reboot or partition write was performed.
+
+Records:
+
+- `findings/phase-6ud-report.md`
+- `findings/phase-6ud-evidence-index.md`
+- `output/tables/phase6ud-control-surface.csv`
+- `output/tables/phase6ud-input-manifest.sha256`
+- `output/call-graphs/phase6ud-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6ud_surface.py`
+- `work/luna_worker_phase6ua_h2_grant_client_20260810.md/.csv`
+- `work/luna_worker_phase6ub_kft_caller_scope_20260810.md/.csv`
+- `work/luna_worker_phase6uc_amazon_perm_semantics_20260810.md/.csv`

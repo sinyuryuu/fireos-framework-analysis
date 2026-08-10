@@ -2098,3 +2098,30 @@ Records:
 - `work/luna_worker_phase6tw_h2_owner_grant_20260810.md/.csv`
 - `work/luna_worker_phase6tx_amzn_drv_test_closure_20260810.md/.csv`
 - `work/luna_worker_phase6ty_user0_fire_restoration_20260810.md/.csv`
+
+## Phase 6UD — H2 client and KFT caller closure (2026-08-10)
+
+Three preserved exact-build XML trees show requested custom H2 permission
+records, but no external bind/AIDL caller was closed for the ten explicit grant
+candidates. `android.amazon.perm` ownership and the encoded signature/Amazon
+flag are confirmed; FireOS parser semantics and shell/ordinary-app eligibility
+remain `UNKNOWN`.
+
+KFT child creation and upgrade lifecycle paths feed `UserInfo.id` into the
+Tahoe/Fire/Launcher3 writer. The missing tx3 authorization and cross-user gate
+prevent a User-0 or arbitrary-caller conclusion.
+
+No device mutation, Binder invocation, user creation/switch, driver operation,
+Root/exploit, OTA/recovery/flash, reboot or partition write was performed.
+
+Records:
+
+- `findings/phase-6ud-report.md`
+- `findings/phase-6ud-evidence-index.md`
+- `output/tables/phase6ud-control-surface.csv`
+- `output/tables/phase6ud-input-manifest.sha256`
+- `output/call-graphs/phase6ud-control-surfaces.mmd/.md`
+- `tools/scripts/build_phase6ud_surface.py`
+- `work/luna_worker_phase6ua_h2_grant_client_20260810.md/.csv`
+- `work/luna_worker_phase6ub_kft_caller_scope_20260810.md/.csv`
+- `work/luna_worker_phase6uc_amazon_perm_semantics_20260810.md/.csv`

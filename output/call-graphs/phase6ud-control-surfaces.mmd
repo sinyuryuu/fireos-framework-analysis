@@ -1,0 +1,15 @@
+flowchart LR
+  O["android.amazon.perm
+UID 1000 owner"] --> P["signature|amazon record"]
+  P --> G["10 grant candidates"]
+  G -. "requested/bind/client incomplete" .-> X["No ordinary reachability"]
+  C["createChildUser"] --> T["tx3 enableKftLauncher"]
+  T --> U["UserInfo.id"]
+  U --> W["Tahoe enabled
+Fire/Launcher3 disabled"]
+  W -. "child scope; User-0 gate UNKNOWN" .-> Y["No User-0 restoration proof"]
+  A["AOSP permission checks"] -. "FireOS parser flag semantics UNKNOWN" .-> F["no bypass claim"]
+  classDef bound fill:#e8f1ff,stroke:#1d4e89,color:#102a43;
+  classDef unknown fill:#fff3cd,stroke:#856404,color:#533f3f;
+  class O,P,G,C,T,U,W,A bound;
+  class X,Y,F unknown;
