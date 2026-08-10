@@ -1,0 +1,36 @@
+# Phase 15 prewarm and package-state boundary
+
+flowchart TD
+  A[ordinary APK / saved Alexa caller] --> B[ServiceManager.getService amazonactivitymanager]
+  B --> C[IAmazonActivityManager Proxy]
+  C -->|transact code 1: token + String + int + int| D[Stub.onTransact]
+  D --> E[BinderService.preWarmApplicationForUser]
+  E --> F[checkCallingPermission APP_PREWARM]
+  F --> G[result not visibly consumed]
+  G --> H[clearCallingIdentity]
+  H --> I[IPackageManager.getApplicationInfo]
+  I --> J[PreWarmCacheHelper]
+  J --> K[startProcessLocked prewarm]
+  K --> L[process/resource effect only]
+  K -.-> X[NO observed HOME/package-state sink]
+  M[shell UID 2000] -.->|SELinux find denied| B
+  N[ordinary app handle] --> B
+  O[KFT child lifecycle] --> P[enableKftLauncherComponent UserInfo]
+  P --> Q[Amazon Package Manager enabled-state calls]
+  Q --> R[child/profile UserInfo.id scope]
+  R -.-> S[User 0 Fire Launcher relay not closed]
+
+
+Plain-text form:
+
+ordinary APK/Alexa -> ServiceManager -> Proxy -> transact(1)
+  -> Stub.onTransact -> preWarmApplicationForUser
+  -> permission check -> clearCallingIdentity -> getApplicationInfo
+  -> PreWarmCacheHelper -> startProcessLocked("prewarm")
+  -> process/resource effect
+  -X-> HOME resolver / package enabled-state writer
+
+KFT child lifecycle -> enableKftLauncherComponent(UserInfo)
+  -> Amazon Package Manager enabled-state calls
+  -> supplied child/profile UserInfo.id
+  -X-> demonstrated ordinary User 0 relay

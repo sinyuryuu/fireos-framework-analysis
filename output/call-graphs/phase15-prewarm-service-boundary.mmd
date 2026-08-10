@@ -1,0 +1,19 @@
+flowchart TD
+  A[ordinary APK / saved Alexa caller] --> B[ServiceManager.getService amazonactivitymanager]
+  B --> C[IAmazonActivityManager Proxy]
+  C -->|transact code 1: token + String + int + int| D[Stub.onTransact]
+  D --> E[BinderService.preWarmApplicationForUser]
+  E --> F[checkCallingPermission APP_PREWARM]
+  F --> G[result not visibly consumed]
+  G --> H[clearCallingIdentity]
+  H --> I[IPackageManager.getApplicationInfo]
+  I --> J[PreWarmCacheHelper]
+  J --> K[startProcessLocked prewarm]
+  K --> L[process/resource effect only]
+  K -.-> X[NO observed HOME/package-state sink]
+  M[shell UID 2000] -.->|SELinux find denied| B
+  N[ordinary app handle] --> B
+  O[KFT child lifecycle] --> P[enableKftLauncherComponent UserInfo]
+  P --> Q[Amazon Package Manager enabled-state calls]
+  Q --> R[child/profile UserInfo.id scope]
+  R -.-> S[User 0 Fire Launcher relay not closed]
