@@ -1,0 +1,19 @@
+flowchart TD
+    A["Source or published capability"] --> B["Exact image / service registration"]
+    B --> C["SELinux label, init mode, Binder contract"]
+    C --> D{ "Caller identity and permission gate" }
+    D -->|"accepted trusted caller"| E["User / profile / role propagation"]
+    D -->|"ordinary app or shell"| X["Observed denial or provenance gap"]
+    E --> F["Sensitive sink: PM, HOME, package state, OTA, credential, SELinux, partition"]
+    F --> G["Impact requires complete reachability chain"]
+
+    I["Amazon IPC service"] --> J["Stub / onTransact / facade"]
+    J --> D
+    K["GPL driver or procfs source"] --> L["init + node + file_context"]
+    L --> M["compiled client domain"]
+    M --> D
+    N["Existing device evidence"] --> O["read-only state and prior mutation result"]
+    O -. "does not establish a new writer" .-> D
+
+    U["UNKNOWN caller, client, consumer, or user mapping"] -. "must not be promoted to vulnerability" .-> X
+    R["Risk-rejected: unknown Binder, driver open/ioctl, OTA/recovery, Root, partition write"] -. "not executed" .-> F

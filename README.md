@@ -3826,3 +3826,29 @@ Records:
 - `work/luna_worker_phase6qe_ipc_caller_closure_20260810.md/.csv`
 - `work/luna_worker_phase6qe_driver_policy_20260810.md/.csv`
 - `work/luna_worker_phase6qe_existing_tests_20260810.md/.csv`
+
+## Phase 6QF — 廣域權限面與 privilege-transition closure（2026-08-10）
+
+Phase 6QF 將研究問題擴展到所有已保存的高影響權限面，而不只限於 Launcher：
+Amazon IPC caller provenance、PS7331 exact-image SELinux/client mapping，以及
+既有 package/KFT/DPM/Accessibility/OOBE/OTA/driver runtime evidence。三份 ledger
+正規化為 26 rows（12 IPC、7 policy/client、7 existing runtime）。
+
+有界結論仍是：沒有閉合出 ordinary app/shell → accepted gate → system/root →
+PackageManager/HOME/package-state/credential/SELinux/OTA/partition sink 的鏈。
+`UNKNOWN` 保留為證據缺口，不視為漏洞。Phase 6QE 的 exact-device metadata-only
+snapshot 被重用；本輪沒有新增 device mutation、private Binder、driver ioctl、OTA、
+Root、reboot 或 partition operation。
+
+Records:
+
+- `findings/phase-6qf-report.md`
+- `findings/phase-6qf-evidence-index.md`
+- `output/tables/phase6qf-privilege-surface.csv`
+- `output/tables/phase6qf-privilege-surface.csv.manifest.json`
+- `output/call-graphs/phase6qf-privilege-surface.mmd`
+- `output/call-graphs/phase6qf-privilege-surface.md`
+- `tools/scripts/build_phase6qf_privilege_surface.py`
+- `work/luna_worker_phase6qf_ipc_provenance_20260810.md/.csv`
+- `work/luna_worker_phase6qf_exact_policy_client_20260810.md/.csv`
+- `work/luna_worker_phase6qf_existing_runtime_audit_20260810.md/.csv`
